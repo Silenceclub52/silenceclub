@@ -1,0 +1,3 @@
+# Las direcciones de prueba (workers.dev) no deben aparecer en Google.
+https://:subdomain.workers.dev/*
+  X-Robots-Tag: noindex
