@@ -307,10 +307,9 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
 .about .portrait{grid-column:1/span 4;position:relative;margin:0}
 .about .portrait::before{content:"";position:absolute;inset:0;transform:translate(14px,14px);border-radius:200px 200px 14px 14px;background:var(--melocoton);opacity:.6}
 .about .photo{position:relative;aspect-ratio:4/5;border-radius:200px 200px 14px 14px;overflow:hidden;background:var(--melocoton)}
-.about .photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%;opacity:.95;filter:brightness(.97) contrast(.94) saturate(.9) sepia(.04)}
+.about .photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
 .about .photo .alt{position:absolute;inset:0;opacity:0;transition:opacity .8s cubic-bezier(.45,0,.55,1)}
-.about .portrait:hover .alt,.about .portrait.swap .alt{opacity:.95}
-.about .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(243,198,177,0) 50%,rgba(243,198,177,.28));mix-blend-mode:multiply;pointer-events:none}
+.about .portrait:hover .alt,.about .portrait.swap .alt{opacity:1}
 .about .mono{position:absolute;right:22px;bottom:18px;display:flex;align-items:baseline;gap:3px;color:var(--papel);font-family:var(--serif);font-variation-settings:"SOFT" 100;font-size:64px;font-weight:450;line-height:1;text-shadow:0 2px 16px rgba(28,30,42,.4)}
 .about .mono svg{width:16px;height:16px;color:var(--melocoton);filter:drop-shadow(0 1px 4px rgba(28,30,42,.35))}
 .about .txt{grid-column:6/span 6;align-self:center}
@@ -408,7 +407,6 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
   .site-foot .fsc .fl{background:rgba(236,237,242,.5)}
   .site-foot .fdot,.fbrand .fname,.fbrand svg{color:#ECEDF2}
   .about .mono{color:#F7F8FA}
-  .about .photo img{filter:brightness(.9) contrast(.94) saturate(.88) sepia(.04)}
   .case .shot{background:#20222D}
   .shot .frame{background:linear-gradient(160deg,#2A2430,#20222D 60%)}
   nav.glass .wrap{background:linear-gradient(180deg,rgba(40,42,56,.8),rgba(27,29,39,.72) 48%,rgba(40,42,56,.76));box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),inset 2px 2px 1px -1px rgba(255,255,255,.32),inset -2px -2px 1px -1px rgba(255,255,255,.1),inset 0 -12px 20px -14px rgba(255,255,255,.16),0 14px 34px -12px rgba(0,0,0,.6),0 2px 6px rgba(0,0,0,.3)}
