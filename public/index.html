@@ -106,7 +106,7 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 .hero .pitch{grid-column:7/span 6;max-width:34em;margin-top:64px}
 .hero .pitch .hook{font-size:clamp(21px,1.9vw,27px);font-weight:400;line-height:1.3;letter-spacing:-.01em;color:var(--tinta);text-wrap:pretty}
 .hero .pitch .lead{margin-top:1em;font-size:clamp(17px,1.45vw,20px);line-height:1.5;color:var(--tinta);opacity:.86;text-wrap:pretty}
-.hero .pitch .punch{display:block;width:fit-content;margin-top:.45em;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-weight:360;font-size:clamp(19px,1.55vw,22px);line-height:1.3;color:var(--tinta);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}
+.hero .pitch .punch{display:block;width:fit-content;margin-top:.45em;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:clamp(19px,1.55vw,22px);line-height:1.3;color:var(--tinta);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}
 .hero .actions{display:flex;gap:12px 16px;flex-wrap:wrap;margin-top:36px}
 .btn{display:inline-flex;align-items:center;height:52px;padding:0 28px;border-radius:999px;font:500 16px/1 var(--sans);text-decoration:none;transition:background .25s,color .25s,border-color .25s}
 .btn.solid{background:var(--tinta);color:var(--papel)}
@@ -125,13 +125,13 @@ section.block{padding:clamp(96px,14vw,176px) 0}
 .prose p+p{margin-top:1em}
 
 /* Historia */
-/* Pausa: una línea que pasa en silencio con la frase en medio; poco alto, no frena el scroll */
-.story{padding:clamp(28px,4vw,48px) 0}
-.story .end{display:flex;align-items:center;gap:clamp(14px,2vw,24px)}
-.story .ln{flex:1;height:1px;background:var(--linea)}
-.story .dot{flex:none;width:9px;height:9px;color:var(--grafito)}
-.motto{flex:none;max-width:min(36ch,80vw);font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-weight:340;font-size:clamp(18px,1.7vw,24px);line-height:1.3;letter-spacing:-.005em;color:var(--grafito);text-align:center;text-wrap:balance}
-@media (max-width:600px){.story .end{gap:12px}.story .dot{display:none}.motto{max-width:24ch}}
+/* Pausa: una franja corta con la frase al centro y una línea pequeña que suena al verla y se calla */
+.story{padding:clamp(56px,7vw,96px) 0;background:var(--papel);text-align:center}
+.story .dot{display:block;width:10px;height:10px;margin:0 auto 22px;color:var(--grafito)}
+.motto{max-width:22ch;margin:0 auto;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(28px,3.4vw,46px);line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
+.story .hush{display:block;width:min(240px,50vw);height:24px;margin:26px auto 0;overflow:visible}
+.story .hush path{fill:none;stroke:var(--grafito);stroke-width:1.25;vector-effect:non-scaling-stroke;opacity:.7}
+@media (max-width:600px){.motto br{display:none}}
 
 /* Cómo trabajo: un proyecto en tres fases y, aparte, lo que viene después */
 section.proc-sec{padding-top:clamp(40px,5vw,72px)}
@@ -209,7 +209,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .pil-does li,.pj-tags>span{display:inline-flex;align-items:center;gap:8px}
 .pil-does li::before,.pj-tags>span::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;border:1px solid currentColor;background:linear-gradient(90deg,transparent 50%,currentColor 50%)}
 /* Precio: aún sin cifra (··· €), con el check de "se incluye" */
-.pil-price{display:flex;align-items:center;gap:10px;margin-top:20px;padding-top:14px;border-top:1px dashed var(--linea);font-size:14px;color:var(--grafito)}
+.pil-price{display:flex;align-items:center;gap:10px;margin:22px calc(-1*clamp(20px,2.4vw,28px)) -24px;padding:14px clamp(20px,2.4vw,28px) 16px;border-top:1px solid var(--linea);border-radius:0 0 15px 15px;background:color-mix(in srgb,var(--violeta) 5%,var(--niebla));font-size:14px;color:var(--grafito)}
 .pil-price .ok,.ph-incl .ok{flex:none;width:16px;height:16px;fill:none;stroke:var(--violeta);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .pil-price span{margin-left:auto;white-space:nowrap}
 .amt{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:20px;letter-spacing:-.01em;color:var(--tinta)}
@@ -264,7 +264,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .pj-line{display:block;width:100%;height:16px;margin:-8px 0;overflow:visible;pointer-events:none}
 .pj-line path{fill:none;stroke:var(--linea);stroke-width:1.2;vector-effect:non-scaling-stroke;transition:stroke .4s}
 .pj:hover>.pj-line path,.pj.open>.pj-line path{stroke:var(--grafito)}
-.pj-head{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);align-items:baseline;width:100%;padding:52px 0 36px;background:none;border:0;text-align:left;cursor:pointer;color:var(--tinta)}
+.pj-head{font:inherit;display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);align-items:baseline;width:100%;padding:52px 0 36px;background:none;border:0;text-align:left;cursor:pointer;color:var(--tinta)}
 .pj-meta{grid-column:1/span 3;display:flex;flex-direction:column;gap:2px;font-size:14px;color:var(--grafito)}
 .pj-meta b{font-weight:500;color:var(--tinta);font-size:15px}
 .pj-title{grid-column:4/span 8;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(28px,3.4vw,46px);line-height:1.05;letter-spacing:-.02em;transition:transform .6s cubic-bezier(.3,.8,.3,1)}
@@ -508,7 +508,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="Silence Club, dirección creativa de Jorge. Ir al inicio"><svg class="logo" viewBox="0 0 362 97" aria-hidden="true" focusable="false"><defs><clipPath id="sc-up"><rect x="-40" y="-40" width="440" height="87.2"/></clipPath><clipPath id="sc-dn"><rect x="-40" y="48.8" width="440" height="88"/></clipPath></defs><g clip-path="url(#sc-up)"><use class="ls" href="#sc-s0"/><use class="ls" href="#sc-s1"/><use class="ls" href="#sc-s2"/><use class="ls" href="#sc-s3"/><use class="ls" href="#sc-s4"/><use class="ls" href="#sc-s5"/><use class="ls" href="#sc-s6"/></g><path class="ln" d="M0 48H358"/><g clip-path="url(#sc-dn)"><use class="lc" href="#sc-c0"/><use class="lc" href="#sc-c1"/><use class="lc" href="#sc-c2"/><use class="lc" href="#sc-c3"/></g><g class="dot"><circle class="db" cx="351" cy="86.5" r="9"/><path class="dh" d="M351 77.5a9 9 0 0 1 0 18z"/></g></svg></a>
     <ul>
-      <li><a href="#como-trabajo">Cómo trabajo</a></li>
+      <li><a href="#servicio">Servicio</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#contacto" class="cta">Hablemos</a></li>
@@ -517,7 +517,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   </div>
   <div class="mobile-menu" id="mmenu">
     <ul>
-      <li><a href="#como-trabajo">Cómo trabajo</a></li>
+      <li><a href="#servicio">Servicio</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#contacto">Hablemos</a></li>
@@ -619,7 +619,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
       <h3 class="hook">Acompaño a personas con un negocio que todavía no ven todo lo que pueden construir con él.</h3>
       <p class="lead">Si piensas que tu marca puede estar mejor expresada, comunicar mejor qué te hace diferente, tener una web más fiel a ella o una mejor estrategia de captación, <span class="punch">este es tu sitio.</span></p>
       <div class="actions">
-        <a class="btn solid" href="#como-trabajo">Ver cómo trabajo</a>
+        <a class="btn solid" href="#servicio">Ver cómo trabajo</a>
         <a class="btn ghost" href="#contacto">Cuéntame tu negocio</a>
       </div>
     </div>
@@ -629,13 +629,15 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 
 <section class="story" aria-label="Pausa">
   <div class="wrap">
-    <div class="end"><i class="ln" aria-hidden="true"></i><svg class="dot" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg><p class="motto">Las mejores decisiones no se toman a todo volumen.</p><i class="ln" aria-hidden="true"></i></div>
+    <svg class="dot" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg>
+    <p class="motto">Las mejores decisiones <br>no se toman a todo volumen.</p>
+    <svg class="hush" viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M0 12H240"/></svg>
   </div>
 </section>
 
-<section class="block proc-sec" id="como-trabajo">
+<section class="block proc-sec" id="servicio">
   <div class="wrap grid proc-head">
-    <p class="kicker">Cómo trabajo</p>
+    <p class="kicker">Servicio</p>
     <h2 class="h2">Trabajo por proyectos.</h2>
     <p class="proc-lead">Cada uno tiene un inicio, un desarrollo y un desenlace. Te cuento qué pasa en cada parte.</p>
   </div>
@@ -704,7 +706,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
               <p class="pil-pain"><span class="pil-k">Lo que te preocupa</span>«Me llegan pocos clientes. O no los que quiero.»</p>
               <h4>Captación de clientes</h4>
               <p class="pil-one">Hacemos que tu marca llegue a quien tiene que llegar. Y que vuelva.</p>
-              <ul class="pil-does"><li>Mapas 3D de reservas</li><li>Mapas 2D de reservas</li><li>Análisis de datos de venta</li></ul>
+              <ul class="pil-does"><li>Mapas 3D de reservas</li><li>Mapas 2D de reservas</li><li>Estrategia de publicidad en RRSS</li><li>Posicionamiento SEO</li></ul>
               <p class="pil-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>Si tu proyecto lo necesita<span>desde <b class="amt">··· €</b></span></p>
             </div>
           </li>
@@ -1112,6 +1114,18 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   var onTheme=function(){readInk();size();L.forEach(function(o){ldraw(o,lt(o));});};
   if(dm.addEventListener)dm.addEventListener('change',onTheme);else if(dm.addListener)dm.addListener(onTheme);
 
+
+  /* Pausa: la línea suena al aparecer y vuelve al silencio */
+  var hp=document.querySelector('.story .hush path');
+  if(hp&&!reduce&&'IntersectionObserver' in window){
+    var hio=new IntersectionObserver(function(en){
+      if(!en[0].isIntersecting)return;hio.disconnect();var t0=performance.now();
+      (function f(){var t=(performance.now()-t0)/1000,k=Math.max(0,1-t/1.8),A=8*k*k,d='M0 12';
+        for(var x=0;x<=240;x+=4){var e=Math.sin(Math.PI*x/240);d+='L'+x+' '+(12+A*e*(Math.sin(x*.09-t*14)*.6+Math.sin(x*.21+t*21)*.4)).toFixed(2);}
+        hp.setAttribute('d',k>0?d:'M0 12H240');if(k>0)requestAnimationFrame(f);})();
+    },{threshold:.8});
+    hio.observe(hp.parentNode);
+  }
 
   /* Retrato: al tocar en móvil cambia de foto */
   var pt=document.querySelector('.about .portrait');if(pt&&window.matchMedia('(hover: none)').matches)pt.addEventListener('click',function(){pt.classList.toggle('swap');});
