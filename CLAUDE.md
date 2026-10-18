@@ -24,8 +24,8 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Rama `main` → producción (`silenceclub.es`). Comando: `npx wrangler deploy`.
 - Cualquier otra rama → versión de prueba automática (`npx wrangler preview`):
   `https://<rama-con-guiones>-silenceclub.floral-snowflake-c31a.workers.dev/`
-- Rama de trabajo actual: `claude/great-euler-ytewtv` (parte de `claude/gallant-thompson-hyejgu`) →
-  https://claude-great-euler-ytewtv-silenceclub.floral-snowflake-c31a.workers.dev/
+- Rama de trabajo actual: `claude/determined-gauss-cmhm1g` →
+  https://claude-determined-gauss-cmhm1g-silenceclub.floral-snowflake-c31a.workers.dev/
 - Método: cambios en la rama de pruebas → Jorge revisa → si aprueba, se pasa a `main`.
 - Volver atrás: Cloudflare → silenceclub → Implementaciones → ⋯ → Revertir.
 
@@ -43,7 +43,14 @@ Solo se publica `public/`. No meter nada sensible ahí.
 
 ## La web (public/index.html)
 - SEO y redes: título "Silence Club · Dirección creativa y estratégica", descripción de ~155 caracteres, Open Graph y Twitter con `og-silenceclub.jpg` (fondo negro, logo, "Primero, silencio.", la línea de sonido de violeta a calma) y JSON-LD `ProfessionalService`. Si se cambia la imagen, cambiarle el nombre de archivo para que las redes no sirvan la antigua de caché.
-- Secciones: hero "Primero, silencio." · Qué hago · Trabajos (Bela Brow Studio, Bela Marchica, Marina Beach Club, AMOK) · Cómo trabajo · Detalle/retícula · Cosas que no voy a hacer · Hola, soy Jorge · Contacto.
+- Secciones: hero · pausa "Las mejores decisiones…" · Cómo trabajo (`#como-trabajo`) · Proyectos (`#proyectos`) · Así será trabajar juntos (`#juntos`, oscura) · Detalle/retícula · Cosas que no voy a hacer · Hola, soy Jorge (`#sobre-mi`) · Contacto.
+- Menú: Cómo trabajo · Proyectos · Sobre mí · Hablemos.
+- **Hero**: H1 "Primero, silencio." con "Dirección creativa y estratégica" firmado a su derecha (debajo en móvil). Fila 2: H2 `.say` (a quién acompaño) a la izquierda y, a la derecha, el párrafo (qué hago, en las 3 patas) que remata en `.punch` "este es tu sitio.". CTA principal (sólido, blanco en oscuro) "Ver cómo trabajo" → `#como-trabajo`; secundario "Cuéntame tu negocio" → `#contacto`.
+- **Cómo trabajo** ("Trabajo por proyectos."): 4 fases `.ph` (01 Inicio · 02 Desarrollo · 03 Desenlace · 04 Y después). A la izquierda, fijo (`.proc-side`, sticky), un visor con la línea de sonido en canvas `#procLine` que cambia según la fase que se lee: ruido con cabezal de escucha y marcas de oportunidades → se separa en tres pistas (una por pata; se ilumina la que se lee) → una línea que se mide y sube → calma con pulso y cola discontinua ("sigue"). Debajo, índice de fases clicable y barra de progreso. En móvil el visor es una franja fija bajo el menú y el índice se oculta. El progreso se mide cuando el título `.ph-n` de cada fase cruza el 55 % de la pantalla.
+  - Inicio: tarjeta `.score` "Scoring de tu negocio" con puntos (lleno/medio/vacío) **marcada como Ejemplo** (no son datos de clientes), "Alcance y presupuesto" ✓ y "Soluciones" tachado (`.redact`): no se desvelan, se aplican.
+  - Desarrollo: las 3 patas `.pil` con frase de dolor del cliente («…»), título, frase de solución y entregables. Cada una con su línea SVG (pico / onda / pulso), dibujada por JS con las mismas formas que el visor.
+- **Proyectos** ("Negocios a los que he acompañado."): filtro por sector `.pf` (Todos · Nightlife · Belleza; contadores calculados por JS desde `data-sector`). Orden: Marina, AMOK, Marchica (Nightlife) y Bela (Belleza); Marina abierto al cargar. Cada proyecto: titular = resultado · "Qué necesitaba" · "Qué hicimos" (viñetas vacío → medio → lleno) · "Resultado".
+- Desplegables (Proyectos y "Cosas que no voy a hacer") con chevron violeta (como en la web de Bela), ya no con el medio punto. Se mantiene la línea que vibra al pasar y al abrir.
 - Retícula de 12 columnas (`.grid`); tecla G o botón "Mostrar retícula" la muestra.
 - Tipografías Google Fonts: Fraunces (serif) y Figtree (sans).
 - Colores: tokens en `:root` (`--niebla` fondo, `--papel`, `--tinta`, `--grafito`, `--linea`, `--violeta`, `--melocoton`).
@@ -64,6 +71,8 @@ Solo se publica `public/`. No meter nada sensible ahí.
 4. Valorar si el pie debe pasar también al logo nuevo.
 5. Si se usa `workers.dev` de producción, apagarlo en Cloudflare → Dominios, para no duplicar la web.
 6. Bajar Netlify a Free.
+7. "Así será trabajar juntos" (`#juntos`) repite ideas de la nueva "Cómo trabajo" (escuchar, decir lo que veo, hacerlo). Decidir con Jorge si se fusiona o se quita.
+8. Confirmar con Jorge que Marchica es Nightlife (se dedujo por entradas, reservas y temporada).
 
 ## Pruebas locales
 - Servir `public/` con `python3 -m http.server` y usar Playwright con `executablePath: '/opt/pw-browsers/chromium'`.

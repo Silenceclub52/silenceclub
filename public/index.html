@@ -102,21 +102,16 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 .mobile-menu a{display:block;padding:10px 0;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:32px;line-height:1.2;text-decoration:none;color:var(--tinta)}
 
 /* Hero */
-.hero{padding:clamp(72px,12vh,140px) 0 0;position:relative}
-.hero h1{grid-column:1/span 11;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(64px,12vw,176px);line-height:.92;letter-spacing:-.035em}
-.hero .role{grid-column:1/span 5;margin-top:64px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:clamp(34px,3.8vw,56px);line-height:1.02;letter-spacing:-.02em}
+.hero{padding:clamp(56px,10vh,140px) 0 0;position:relative}
+.hero h1{grid-column:1/span 9;grid-row:1;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(64px,12vw,176px);line-height:.92;letter-spacing:-.035em}
+/* Qué soy, firmado junto al lema; debajo, a quién acompaño (H2) y qué hago por él (párrafo) */
+.hero .role{grid-column:10/span 3;grid-row:1;align-self:end;justify-self:end;padding-bottom:.4em;text-align:right;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:clamp(20px,1.75vw,26px);line-height:1.15;letter-spacing:-.01em}
 .hero .role span{display:block;color:var(--grafito);font-weight:340}
-.hero .role .dot-mark{display:inline-block;width:.26em;height:.26em;margin-left:.08em;vertical-align:baseline;color:var(--tinta)}
-.hero .pitch{grid-column:7/span 6;margin-top:64px}
-.hero .pitch .lead{font-size:clamp(19px,1.5vw,21px);line-height:1.55}
-.hero .pitch{max-width:34em}
-.hero .pitch .lead{font-size:clamp(17px,1.45vw,20px);line-height:1.5;color:var(--tinta);opacity:.86;text-wrap:pretty}
-.hero .pitch .lead.hook{opacity:1}
-.hero .pitch .lead.hook{font-size:clamp(21px,1.9vw,27px);line-height:1.3;letter-spacing:-.01em;color:var(--tinta)}
-.hero .pitch .lead.hook+.lead{margin-top:1em}
-.hero .pitch .lead .list{display:block;margin-top:.7em;padding-left:14px;border-left:1px solid var(--linea);font-size:clamp(17px,1.45vw,20px);line-height:1.5;color:var(--tinta);opacity:1}
-.hero .pitch .actions{margin-top:36px}
-.hero .actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:32px}
+.hero .say{grid-column:1/span 6;grid-row:2;margin-top:clamp(40px,4.6vw,80px);font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(28px,2.9vw,42px);line-height:1.14;letter-spacing:-.018em;text-wrap:balance}
+.hero .pitch{grid-column:8/span 5;grid-row:2;margin-top:clamp(40px,4.6vw,80px);padding-top:.5em}
+.hero .pitch p{font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--grafito);text-wrap:pretty}
+.hero .pitch .punch{display:block;margin-top:.4em;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-weight:360;font-size:clamp(23px,2vw,29px);line-height:1.2;letter-spacing:-.01em;color:var(--tinta)}
+.hero .actions{display:flex;gap:12px 16px;flex-wrap:wrap;margin-top:32px}
 .btn{display:inline-flex;align-items:center;height:52px;padding:0 28px;border-radius:999px;font:500 16px/1 var(--sans);text-decoration:none;transition:background .25s,color .25s,border-color .25s}
 .btn.solid{background:var(--tinta);color:var(--papel)}
 .btn.solid:hover{background:var(--violeta)}
@@ -146,16 +141,82 @@ section.block{padding:clamp(96px,14vw,176px) 0}
 .motto{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(34px,4.4vw,64px);line-height:1.06;letter-spacing:-.025em;max-width:none;margin:0 auto}
 .motto-sub{margin-top:16px;color:var(--grafito);font-size:16px}
 @media (max-width:900px){.story .them,.story .me{grid-column:1/-1}.story .me{margin-top:48px}}
-canvas.line{display:block;width:100%;height:150px;margin-top:24px}
 
-/* Qué hago */
-.what .h2{grid-column:1/span 7}
-.what .intro{grid-column:1/span 5;margin-top:24px;font-size:19px}
-.services{margin-top:clamp(48px,7vw,88px)}
-.svc{padding-top:clamp(40px,5vw,64px)}
-.svc .ask{grid-column:1/span 3;align-self:start;justify-self:start;margin-top:.9em;padding:7px 15px 8px;border-radius:999px;background:var(--tinta);color:var(--papel);font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-size:16px;line-height:1.2;box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 8px 18px -10px rgba(28,30,42,.55)}
-.svc h3{grid-column:4/span 9;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(42px,6.4vw,92px);line-height:.98;letter-spacing:-.03em}
-.svc .one{grid-column:4/span 6;margin-top:20px;font-size:19px;color:var(--grafito)}
+/* Cómo trabajo: un proyecto por fases. A la izquierda, fija, la línea cuenta la fase que lees */
+.proc-head .h2{grid-column:1/span 8}
+.proc-lead{grid-column:1/span 6;margin-top:24px;font-size:clamp(18px,1.5vw,21px);line-height:1.5;color:var(--grafito)}
+.proc{margin-top:clamp(64px,8vw,112px);align-items:start}
+.proc-side{grid-column:1/span 5;position:sticky;top:max(96px,calc(50vh - 220px))}
+.viz{border-radius:18px;overflow:hidden;background:var(--papel);box-shadow:0 1px 0 var(--linea),0 30px 60px -30px rgba(28,30,42,.25)}
+.viz-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;height:42px;padding:0 18px;border-bottom:1px solid var(--linea);font-size:13px;color:var(--grafito)}
+.viz-ph,.viz-you{font-weight:500;color:var(--tinta)}
+.viz-ph{display:none}
+.viz-ph b{margin-right:8px;font-weight:400;color:var(--grafito)}
+.viz-st{display:inline-flex;align-items:center;gap:8px}
+.viz-st::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--violeta);animation:rec 1.8s ease-in-out infinite}
+@keyframes rec{50%{opacity:.25}}
+.viz canvas{display:block;width:100%;height:clamp(220px,22vw,300px);background-image:radial-gradient(circle,var(--linea) 1px,transparent 1.3px);background-size:22px 22px;background-position:center}
+.viz-prog{height:2px;background:var(--linea)}
+.viz-prog i{display:block;width:0;height:100%;background:var(--tinta)}
+.proc-idx{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px;padding:0;list-style:none}
+.proc-idx a{display:block;padding:6px 0;font-size:14px;line-height:1.3;color:var(--grafito);text-decoration:none;transition:color .3s}
+.proc-idx a span{display:block;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-size:13px;opacity:.7}
+.proc-idx a:hover,.proc-idx a[aria-current="step"]{color:var(--tinta)}
+.proc-steps{grid-column:7/span 6}
+.ph{padding:clamp(56px,10vh,112px) 0}
+.ph:first-child{padding-top:0}
+.ph:last-child{padding-bottom:0}
+.ph-n{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-size:19px;color:var(--violeta)}
+.ph-n span{margin-right:8px;font-style:normal;font-size:15px;opacity:.75}
+.ph h3{margin-top:12px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(34px,3.6vw,54px);line-height:1.02;letter-spacing:-.025em;text-wrap:balance}
+.ph-p{margin-top:22px;max-width:34em;font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--grafito);text-wrap:pretty}
+/* Inicio: lo que se lleva el cliente. Las soluciones van tachadas: no se desvelan, se aplican */
+.score{max-width:440px;margin:40px 0 0;padding:20px 24px 14px;border-radius:16px;background:var(--papel);box-shadow:0 1px 0 var(--linea),0 24px 50px -30px rgba(28,30,42,.3)}
+.score-h{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;color:var(--grafito)}
+.score-h em{padding:3px 10px;border:1px solid var(--linea);border-radius:999px;font-style:normal;font-size:12px}
+.score-t{margin-top:6px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:24px;letter-spacing:-.01em}
+.score ul{margin:12px 0 0;padding:0;list-style:none}
+.score li{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;border-top:1px solid var(--linea);font-size:15px}
+.score .more{margin-top:10px}
+.sds{display:inline-flex;gap:6px;color:var(--tinta)}
+.sd{position:relative;width:11px;height:11px;border-radius:50%;border:1px solid currentColor}
+.sd.f::after,.sd.h::after{content:"";position:absolute;inset:-1px;border-radius:50%;background:currentColor;transition:opacity .5s var(--d,0s)}
+.sd.h::after{clip-path:inset(0 0 0 50%)}
+.score.wait .sd::after{opacity:0}
+.score .ok{width:18px;height:18px;fill:none;stroke:var(--violeta);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.redact{position:relative;overflow:hidden;width:42%;height:12px;border-radius:3px;background:var(--tinta)}
+.redact::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:translateX(-100%);animation:sweep 3.2s 1s ease-in-out infinite}
+@keyframes sweep{40%,100%{transform:translateX(100%)}}
+.ph-note{max-width:440px;margin-top:16px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-size:18px;line-height:1.4;color:var(--grafito)}
+/* Desarrollo: las tres patas, cada una con su pista */
+.pils{margin:36px 0 0;padding:0;list-style:none}
+.pil{padding:6px 0 44px}
+.pil:last-child{padding-bottom:0}
+.pil-line{display:block;width:100%;height:28px;overflow:visible}
+.pil-line path{fill:none;stroke:var(--linea);stroke-width:1.25;vector-effect:non-scaling-stroke;transition:stroke .5s}
+.pil.on .pil-line path{stroke:var(--violeta)}
+.pil-pain{margin-top:18px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-weight:340;font-size:clamp(19px,1.6vw,23px);line-height:1.3;color:var(--grafito)}
+.pil h4{margin-top:12px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(30px,3vw,44px);line-height:1.02;letter-spacing:-.025em;text-wrap:balance}
+.pil-one{margin-top:14px;font-size:clamp(17px,1.35vw,19px);line-height:1.5}
+.pil-does{display:flex;flex-wrap:wrap;gap:6px 20px;margin:16px 0 0;padding:0;list-style:none;font-size:14px;color:var(--grafito)}
+.pil-does li{display:inline-flex;align-items:center;gap:8px}
+.pil-does li::before{content:"";width:7px;height:7px;border-radius:50%;border:1px solid currentColor;background:linear-gradient(90deg,transparent 50%,currentColor 50%)}
+.ph-next{display:inline-flex;align-items:center;gap:10px;margin-top:32px;padding-bottom:2px;border-bottom:1px solid currentColor;font-weight:500;text-decoration:none;transition:color .3s}
+.ph-next svg{width:11px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .4s}
+.ph-next:hover{color:var(--violeta)}
+.ph-next:hover svg{transform:translateY(3px)}
+@media (max-width:900px){
+  .proc-head .h2,.proc-lead,.proc-side,.proc-steps{grid-column:1/-1}
+  /* En móvil la línea va en una franja fija bajo el menú */
+  .proc-side{top:76px;z-index:6;margin-bottom:44px}
+  .viz{border-radius:14px;box-shadow:0 1px 0 var(--linea),0 14px 30px -18px rgba(28,30,42,.4)}
+  .viz-bar{height:32px;padding:0 14px;font-size:12px}
+  .viz-you{display:none}
+  .viz-ph{display:inline}
+  .viz canvas{height:64px;background-size:16px 16px}
+  .proc-idx{display:none}
+  .ph{padding:56px 0}
+}
 
 /* Método */
 .how{background:var(--tinta);color:var(--papel)}
@@ -171,56 +232,58 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
 .how .cred{grid-column:1/-1;margin-top:clamp(56px,7vw,88px);max-width:40ch;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-weight:340;font-size:clamp(22px,2.2vw,28px);line-height:1.35;color:rgba(247,248,250,.78)}
 .steps p{margin-top:20px;color:rgba(247,248,250,.72);font-size:17px;max-width:34ch}
 @media (max-width:900px){
-  .hero .role,.hero .pitch,.story .reply,.svc .ask,.svc h3,.svc .one,.how .sub{grid-column:1/-1}
-  .hero .pitch{margin-top:32px}
+  .hero h1,.hero .role,.hero .say,.hero .pitch,.story .reply,.how .sub{grid-column:1/-1}
+  .hero .role{grid-row:2;justify-self:start;margin-top:24px;padding:0;text-align:left}
+  .hero .say{grid-row:3;margin-top:40px;max-width:22em}
+  .hero .pitch{grid-row:4;margin-top:20px;padding:0;max-width:34em}
   .story .reply{margin-top:32px}
-  .svc .ask{margin-top:0;margin-bottom:14px}
 }
 
 /* Caso */
 .block.case{background-color:var(--papel);background-image:radial-gradient(circle,var(--linea) 1px,transparent 1.3px);background-size:28px 28px;background-position:center}
-.pj-top{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:16px 32px;flex-wrap:wrap;margin-bottom:28px}
-.pj-top .kicker{margin:0;font-weight:inherit}
-.pj-hint{font-size:15px;color:var(--grafito)}
+.pj-top{grid-column:1/-1;margin-bottom:36px}
+.pj-top .h2{max-width:13em}
+/* Filtro por sector */
+.pj-filter{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+.pf{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 8px 0 18px;border:1px solid var(--linea);border-radius:999px;background:var(--papel);font:500 15px/1 var(--sans);color:var(--grafito);cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.pf span{display:inline-grid;place-items:center;min-width:28px;height:28px;padding:0 6px;border-radius:999px;background:color-mix(in srgb,currentColor 12%,transparent);font-size:12px}
+.pf:hover{border-color:var(--tinta);color:var(--tinta)}
+.pf[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--papel)}
 .pjs{grid-column:1/-1}
+.pj.in{animation:pjin .7s cubic-bezier(.3,.8,.3,1) both;animation-delay:calc(var(--k,0) * 80ms)}
+@keyframes pjin{from{opacity:0;transform:translateY(14px)}}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .pj-line{display:block;width:100%;height:16px;margin:-8px 0;overflow:visible;pointer-events:none}
 .pj-line path{fill:none;stroke:var(--linea);stroke-width:1.2;vector-effect:non-scaling-stroke;transition:stroke .4s}
 .pj:hover>.pj-line path,.pj.open>.pj-line path{stroke:var(--grafito)}
 .pj-head{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);align-items:baseline;width:100%;padding:52px 0 36px;background:none;border:0;text-align:left;cursor:pointer;color:var(--tinta)}
 .pj-meta{grid-column:1/span 3;display:flex;flex-direction:column;gap:2px;font-size:14px;color:var(--grafito)}
 .pj-meta b{font-weight:500;color:var(--tinta);font-size:15px}
-.pj-title{grid-column:4/span 6;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(28px,3.4vw,46px);line-height:1.05;letter-spacing:-.02em;transition:transform .6s cubic-bezier(.3,.8,.3,1)}
+.pj-title{grid-column:4/span 8;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(28px,3.4vw,46px);line-height:1.05;letter-spacing:-.02em;transition:transform .6s cubic-bezier(.3,.8,.3,1)}
 .pj-head:hover .pj-title{transform:translateX(6px)}
 .pj.open .pj-head:hover .pj-title{transform:none}
 .pj-tags{grid-column:1/span 3;grid-row:2;margin-top:6px;font-size:14px;color:var(--grafito)}
 .pj{position:relative}
-.pj-more{position:relative;height:0;z-index:2}
-.pj-tog{position:absolute;left:50%;top:0;transform:translateX(-16px);display:flex;align-items:flex-start;gap:10px;padding:0 0 10px;background:none;border:0;cursor:pointer;color:var(--grafito);font:500 14px/1 var(--sans);transition:color .3s}
-.pj-tog svg{flex:none;width:32px;height:16px;overflow:visible;transition:transform .6s cubic-bezier(.3,.8,.3,1)}
-.pj-tog path{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.pj-tog span{margin-top:3px;white-space:nowrap}
-.pj-tog .t-c,.pj.open .pj-tog .t-o{display:none}
-.pj.open .pj-tog .t-c{display:inline}
-.pj.open .pj-tog svg{transform:rotate(180deg)}
-.pj-tog:hover,.pj-head:hover~.pj-more .pj-tog{color:var(--tinta)}
-.pj:not(.open) .pj-tog:hover svg,.pj:not(.open) .pj-head:hover~.pj-more .pj-tog svg{transform:translateY(4px)}
-.pjs.invite .pj:not(.open) .pj-tog svg{animation:nudge 1.4s cubic-bezier(.45,0,.55,1) 2}
-.pjs.invite .pj:nth-child(2) .pj-tog svg{animation-delay:.15s}
-.pjs.invite .pj:nth-child(3) .pj-tog svg{animation-delay:.3s}
-.pjs.invite .pj:nth-child(4) .pj-tog svg{animation-delay:.45s}
-@keyframes nudge{50%{transform:translateY(5px)}}
 .pj-meta{grid-row:1}
 .pj-title{grid-row:1/span 2}
-.pj-btn{grid-column:10/span 3;grid-row:1;justify-self:end;display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 8px 0 18px;border:1px solid var(--linea);border-radius:999px;font:500 14px/1 var(--sans);color:var(--tinta);background:var(--papel);transition:background .3s,color .3s,border-color .3s}
-.pj-btn svg{width:26px;height:26px;padding:6px;border-radius:50%;background:var(--niebla);transition:transform .6s cubic-bezier(.3,.8,.3,1),background .3s}
-.pj-head:hover .pj-btn,.pj.open .pj-btn{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
-.pj.open .pj-btn svg{background:rgba(255,255,255,.14)}
-.pj-head:hover .pj-btn svg{background:rgba(255,255,255,.14);transform:rotate(90deg)}
-.pj.open .pj-btn svg{transform:rotate(180deg)}
-.pj-btn .t-c,.pj.open .pj-btn .t-o{display:none}
-.pj.open .pj-btn .t-c{display:inline}
+/* Desplegable: chevron claro, como en la web de Bela */
+.pj-chev{grid-column:12;grid-row:1/span 2;justify-self:end;align-self:center;width:34px;height:20px;overflow:visible;color:var(--violeta);transition:transform .6s cubic-bezier(.3,.8,.3,1)}
+.pj-chev path{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pj-head:hover .pj-chev{transform:translateY(4px)}
+.pj.open .pj-chev{transform:rotate(180deg)}
+.pj.open .pj-head:hover .pj-chev{transform:rotate(180deg) translateY(4px)}
+.pjs.invite .pj:not(.open) .pj-chev{animation:nudge 1.4s cubic-bezier(.45,0,.55,1) 2}
+.pjs.invite .pj:nth-child(2) .pj-chev{animation-delay:.15s}
+.pjs.invite .pj:nth-child(3) .pj-chev{animation-delay:.3s}
+.pjs.invite .pj:nth-child(4) .pj-chev{animation-delay:.45s}
+@keyframes nudge{50%{transform:translateY(5px)}}
 .pj-head{padding:40px 0 34px}
-@media (max-width:900px){.pj-btn{grid-column:1;grid-row:3;justify-self:start;margin-top:14px}.pj-title{grid-row:2}.pj-tags{display:none}}
+@media (max-width:900px){.pj-tags{display:none}}
+@media (max-width:600px){
+  .pj-filter{flex-wrap:nowrap;gap:8px;overflow-x:auto;margin:0 calc(-1*var(--pad)) 32px;padding:0 var(--pad);scrollbar-width:none}
+  .pf{flex:none;height:40px;padding:0 6px 0 14px;gap:8px;font-size:14px}
+  .pf span{min-width:26px;height:26px}
+}
 .shot .frame.demo{aspect-ratio:16/9;display:block;background:#141416;overflow:hidden}
 .demo .cam{position:absolute;inset:0;transition:transform 1.6s cubic-bezier(.65,0,.35,1);will-change:transform}
 .demo .cam img{position:static;width:100%;height:100%;object-fit:cover;display:block}
@@ -251,7 +314,11 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
 .pj-lbl:first-child{margin-top:0}
 .pj-ctx{margin-top:8px;font-size:17px;line-height:1.55}
 .pj-steps{list-style:none;padding:0;margin:8px 0 0}
-.pj-steps li{padding:12px 0;border-top:1px solid var(--linea);font-size:16px;line-height:1.5;color:var(--grafito)}
+.pj-steps li{position:relative;padding:12px 0 12px 26px;border-top:1px solid var(--linea);font-size:16px;line-height:1.5;color:var(--grafito)}
+/* Del silencio a la forma: vacío, medio, lleno */
+.pj-steps li::before{content:"";position:absolute;left:1px;top:22px;width:10px;height:10px;border-radius:50%;border:1px solid var(--tinta)}
+.pj-steps li:nth-child(2)::before{background:linear-gradient(90deg,transparent 50%,var(--tinta) 50%)}
+.pj-steps li:nth-child(3)::before{background:var(--tinta)}
 .pj-steps li:last-child{border-bottom:1px solid var(--linea)}
 .pj-steps b{display:block;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:420;font-size:20px;color:var(--tinta);margin-bottom:2px}
 .pj-res{margin-top:8px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:clamp(22px,2vw,28px);line-height:1.2;letter-spacing:-.015em}
@@ -265,12 +332,13 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
 .rep li{counter-increment:r;display:flex;gap:12px;padding:8px 0;border-top:1px solid var(--linea);font-size:clamp(13px,1vw,15px);line-height:1.4;color:var(--grafito)}
 .rep li::before{content:counter(r);font-family:var(--serif);color:var(--tinta);min-width:12px}
 @media (max-width:900px){
-  .pj-head{grid-template-columns:1fr;row-gap:10px}
+  .pj-head{grid-template-columns:1fr auto;column-gap:20px;row-gap:10px}
   .pj-meta{grid-column:1;flex-direction:row;flex-wrap:wrap;gap:0 8px}
-  .pj-title{grid-column:1/-1;grid-row:2}
+  .pj-title{grid-column:1;grid-row:2}
+  .pj-chev{grid-column:2;grid-row:1/span 2}
   .pj-tags{display:none}
   .pj-inner{display:flex;flex-direction:column}
-  .pj-media.shot{position:static;margin:0 0 32px;order:-1}
+  .pj-media.shot{position:static;align-self:stretch;margin:0 0 32px;order:-1}
   .pj-text{padding-bottom:32px}
 }
 .case .shot{background:#fff}
@@ -303,9 +371,10 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
 .nope .no-line path{fill:none;stroke:var(--linea);stroke-width:1;vector-effect:non-scaling-stroke;transition:stroke .4s}
 .nope .no.open .no-line path,.nope .no:hover .no-line path{stroke:var(--grafito)}
 .nope .no-q{display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%;padding:24px 0;background:none;border:0;cursor:pointer;text-align:left;color:var(--tinta);font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(22px,2.2vw,28px);line-height:1.25}
-.nope .no-i{flex:none;width:14px;height:14px;color:var(--grafito);transition:transform .6s cubic-bezier(.3,.8,.3,1),color .3s}
-.nope .no-q:hover .no-i{color:var(--tinta);transform:rotate(90deg)}
-.nope .no.open .no-i{color:var(--tinta);transform:rotate(180deg)}
+.nope .no-i{flex:none;width:28px;height:16px;overflow:visible;color:var(--violeta);transition:transform .6s cubic-bezier(.3,.8,.3,1)}
+.nope .no-i path{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.nope .no-q:hover .no-i{transform:translateY(3px)}
+.nope .no.open .no-i{transform:rotate(180deg)}
 .nope .no-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.3,.8,.3,1)}
 .nope .no-a>p{overflow:hidden;min-height:0;font:400 17px/1.55 var(--sans);color:var(--grafito);opacity:0;transform:translateY(-6px);transition:opacity .45s,transform .45s}
 .nope .no.open .no-a{grid-template-rows:1fr}
@@ -383,9 +452,8 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
   .burger{display:block}
   .mobile-menu{display:block;max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.45,0,.55,1)}
   .mobile-menu.open{max-height:420px}
-  .hero .lead,.what .intro,.case .ctx,.contact p{grid-column:1/span 10}
-  .hero .side{grid-column:1/span 9}
-  .story blockquote,.story .prose,.what .h2,.q h3,.q .body,.how .h2,.case .h2,.shot,.case ol,.detail .h2,.detail .prose,.proof,.nope .h2,.nope ul,.about .portrait,.about .txt{grid-column:1/-1}
+  .case .ctx,.contact p{grid-column:1/span 10}
+  .story blockquote,.story .prose,.q h3,.q .body,.how .h2,.case .h2,.shot,.case ol,.detail .h2,.detail .prose,.proof,.nope .h2,.nope ul,.about .portrait,.about .txt{grid-column:1/-1}
   .story .prose,.q .body,.detail .prose,.nope ul,.about .txt{margin-top:32px}
   .about .portrait{max-width:340px}
   .steps{grid-template-columns:1fr;row-gap:48px}
@@ -394,12 +462,12 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
 @media (max-width:600px){
   :root{--gut:16px}
   .grid,.q{grid-template-columns:repeat(4,1fr)}
-  .hero .lead,.hero .side,.what .intro,.case .ctx,.contact p,.hero h1,.contact .h2{grid-column:1/-1}
+  .case .ctx,.contact p,.contact .h2{grid-column:1/-1}
   .overlay .grid div:nth-child(n+5){display:none}
   body{font-size:17px}
   .wave{height:120px;margin-top:24px}
   .hero{padding-top:48px}
-  .hero .role{margin-top:40px}
+  .hero .say{margin-top:32px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -433,18 +501,18 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="Silence Club, dirección creativa de Jorge. Ir al inicio"><svg class="logo" viewBox="0 0 362 97" aria-hidden="true" focusable="false"><defs><clipPath id="sc-up"><rect x="-40" y="-40" width="440" height="87.2"/></clipPath><clipPath id="sc-dn"><rect x="-40" y="48.8" width="440" height="88"/></clipPath></defs><g clip-path="url(#sc-up)"><use class="ls" href="#sc-s0"/><use class="ls" href="#sc-s1"/><use class="ls" href="#sc-s2"/><use class="ls" href="#sc-s3"/><use class="ls" href="#sc-s4"/><use class="ls" href="#sc-s5"/><use class="ls" href="#sc-s6"/></g><path class="ln" d="M0 48H358"/><g clip-path="url(#sc-dn)"><use class="lc" href="#sc-c0"/><use class="lc" href="#sc-c1"/><use class="lc" href="#sc-c2"/><use class="lc" href="#sc-c3"/></g><g class="dot"><circle class="db" cx="351" cy="86.5" r="9"/><path class="dh" d="M351 77.5a9 9 0 0 1 0 18z"/></g></svg></a>
     <ul>
-      <li><a href="#que-hago">Qué hago</a></li>
-      <li><a href="#bela">Trabajos</a></li>
       <li><a href="#como-trabajo">Cómo trabajo</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#contacto" class="cta">Hablemos</a></li>
     </ul>
     <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mmenu"><svg viewBox="0 0 28 20" aria-hidden="true"><path class="l1" d="M2.00 4.09 L2.50 4.11 L3.00 4.13 L3.50 4.15 L4.00 4.16 L4.50 4.18 L5.00 4.19 L5.50 4.20 L6.00 4.21 L6.50 4.22 L7.00 4.22 L7.50 4.22 L8.00 4.22 L8.50 4.22 L9.00 4.21 L9.50 4.20 L10.00 4.19 L10.50 4.18 L11.00 4.16 L11.50 4.15 L12.00 4.13 L12.50 4.11 L13.00 4.09 L13.50 4.07 L14.00 4.05 L14.50 4.02 L15.00 4.00 L15.50 3.98 L16.00 3.95 L16.50 3.93 L17.00 3.91 L17.50 3.89 L18.00 3.87 L18.50 3.85 L19.00 3.84 L19.50 3.82 L20.00 3.81 L20.50 3.80 L21.00 3.79 L21.50 3.78 L22.00 3.78 L22.50 3.78 L23.00 3.78 L23.50 3.78 L24.00 3.79 L24.50 3.80 L25.00 3.81 L25.50 3.82 L26.00 3.84"/><path class="l2" d="M2.00 10.13 L2.50 10.11 L3.00 10.09 L3.50 10.07 L4.00 10.04 L4.50 10.02 L5.00 10.00 L5.50 9.98 L6.00 9.95 L6.50 9.93 L7.00 9.91 L7.50 9.89 L8.00 9.87 L8.50 9.85 L9.00 9.84 L9.50 9.82 L10.00 9.81 L10.50 9.80 L11.00 9.79 L11.50 9.78 L12.00 9.78 L12.50 9.78 L13.00 9.78 L13.50 9.79 L14.00 9.79 L14.50 9.80 L15.00 9.81 L15.50 9.82 L16.00 9.84 L16.50 9.85 L17.00 9.87 L17.50 9.89 L18.00 9.91 L18.50 9.93 L19.00 9.96 L19.50 9.98 L20.00 10.00 L20.50 10.02 L21.00 10.05 L21.50 10.07 L22.00 10.09 L22.50 10.11 L23.00 10.13 L23.50 10.15 L24.00 10.16 L24.50 10.18 L25.00 10.19 L25.50 10.20 L26.00 10.21"/><path class="l3" d="M2.00 15.78 L2.50 15.78 L3.00 15.78 L3.50 15.79 L4.00 15.79 L4.50 15.80 L5.00 15.81 L5.50 15.82 L6.00 15.84 L6.50 15.85 L7.00 15.87 L7.50 15.89 L8.00 15.91 L8.50 15.93 L9.00 15.96 L9.50 15.98 L10.00 16.00 L10.50 16.03 L11.00 16.05 L11.50 16.07 L12.00 16.09 L12.50 16.11 L13.00 16.13 L13.50 16.15 L14.00 16.17 L14.50 16.18 L15.00 16.19 L15.50 16.20 L16.00 16.21 L16.50 16.22 L17.00 16.22 L17.50 16.22 L18.00 16.22 L18.50 16.21 L19.00 16.21 L19.50 16.20 L20.00 16.19 L20.50 16.18 L21.00 16.16 L21.50 16.15 L22.00 16.13 L22.50 16.11 L23.00 16.09 L23.50 16.07 L24.00 16.04 L24.50 16.02 L25.00 16.00 L25.50 15.97 L26.00 15.95"/></svg></button>
   </div>
   <div class="mobile-menu" id="mmenu">
     <ul>
-      <li><a href="#que-hago">Qué hago</a></li>
-      <li><a href="#bela">Trabajos</a></li>
       <li><a href="#como-trabajo">Cómo trabajo</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#contacto">Hablemos</a></li>
     </ul>
   </div>
@@ -529,12 +597,12 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
   <div class="wrap grid">
     <h1>Primero, silencio.</h1>
     <p class="role">Dirección creativa<span>y estratégica</span></p>
+    <h2 class="say">Acompaño a personas que tienen un negocio y todavía no ven todo lo que pueden construir con él.</h2>
     <div class="pitch">
-      <p class="lead hook">Acompaño a personas con un negocio que todavía no ven todo lo que pueden construir con él.</p>
-      <p class="lead">Les ayudo a verlo, a darle una dirección concreta y a aterrizarlo en algo real:<span class="list">un posicionamiento claro, una identidad de marca y web coherentes y la manera adecuada de captar clientes.</span></p>
+      <p>Si crees que tu marca puede contar mejor lo que te hace diferente, tener una imagen y una web a la altura de lo que haces o atraer a mejores clientes, <span class="punch">este es tu sitio.</span></p>
       <div class="actions">
-        <a class="btn solid" href="#contacto">Cuéntame tu negocio</a>
-        <a class="btn ghost" href="#como-trabajo">Ver cómo trabajo</a>
+        <a class="btn solid" href="#como-trabajo">Ver cómo trabajo</a>
+        <a class="btn ghost" href="#contacto">Cuéntame tu negocio</a>
       </div>
     </div>
   </div>
@@ -550,134 +618,189 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
   </div>
 </section>
 
-<section class="block what" id="que-hago">
-  <div class="wrap grid">
-    <h2 class="h2">Esto es lo que hago.</h2>
+<section class="block proc-sec" id="como-trabajo">
+  <div class="wrap grid proc-head">
+    <p class="kicker">Cómo trabajo</p>
+    <h2 class="h2">Trabajo por proyectos.</h2>
+    <p class="proc-lead">Cada uno tiene un inicio, un desarrollo y un desenlace. Te cuento qué pasa en cada parte.</p>
   </div>
-  <div class="services">
-    <article class="svc">
-      <div class="wrap grid">
-        <p class="ask">¿Qué te hace diferente?</p>
-        <h3>Estrategia y posicionamiento de marca</h3>
-        <p class="one">Ponemos orden hasta que se oiga una sola cosa: lo que te hace diferente.</p>
+  <div class="wrap grid proc">
+    <div class="proc-side">
+      <div class="viz">
+        <div class="viz-bar"><span class="viz-you">Tu negocio</span><span class="viz-ph"><b>01</b><span class="viz-name">Inicio</span></span><span class="viz-st">Escuchando</span></div>
+        <canvas id="procLine" aria-hidden="true"></canvas>
+        <div class="viz-prog" aria-hidden="true"><i></i></div>
       </div>
-      <canvas class="line" data-shape="signal" aria-hidden="true"></canvas>
-    </article>
-    <article class="svc">
-      <div class="wrap grid">
-        <p class="ask">¿Cómo se nota?</p>
-        <h3>Identidad visual y web</h3>
-        <p class="one">Le damos forma: cómo te ves, cómo suenas y la web donde te eligen.</p>
-      </div>
-      <canvas class="line" data-shape="form" aria-hidden="true"></canvas>
-    </article>
-    <article class="svc">
-      <div class="wrap grid">
-        <p class="ask">¿Cómo te eligen?</p>
-        <h3>Captación de clientes</h3>
-        <p class="one">Hacemos que tu marca llegue a quien tiene que llegar. Y que vuelva.</p>
-      </div>
-      <canvas class="line" data-shape="reach" aria-hidden="true"></canvas>
-    </article>
+      <ol class="proc-idx" aria-label="Fases de un proyecto">
+        <li><a href="#fase-inicio"><span>01</span>Inicio</a></li>
+        <li><a href="#fase-desarrollo"><span>02</span>Desarrollo</a></li>
+        <li><a href="#fase-desenlace"><span>03</span>Desenlace</a></li>
+        <li><a href="#fase-despues"><span>04</span>Y después</a></li>
+      </ol>
+    </div>
+    <div class="proc-steps">
+      <article class="ph" id="fase-inicio">
+        <p class="ph-n"><span>01</span>Inicio</p>
+        <h3>Antes de proponer nada, te escucho.</h3>
+        <p class="ph-p">Me siento contigo y analizo tu negocio hasta entenderlo: qué lo frena, a qué retos se enfrenta y qué oportunidades tiene delante.</p>
+        <figure class="score">
+          <figcaption class="score-h"><span>Lo que te llevas</span><em>Ejemplo</em></figcaption>
+          <p class="score-t">Scoring de tu negocio</p>
+          <ul>
+            <li><span>Posicionamiento</span><span class="sds" role="img" aria-label="2,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i></span></li>
+            <li><span>Identidad y web</span><span class="sds" role="img" aria-label="1,5 de 5"><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i></span></li>
+            <li><span>Captación</span><span class="sds" role="img" aria-label="3,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i></span></li>
+          </ul>
+          <ul class="more">
+            <li><span>Alcance y presupuesto del proyecto</span><svg class="ok" viewBox="0 0 18 18" role="img" aria-label="Incluido"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></li>
+            <li><span>Soluciones</span><span class="redact" role="img" aria-label="No se desvelan"></span></li>
+          </ul>
+        </figure>
+        <p class="ph-note">Las soluciones no te las desvelo, porque las aplico directamente.</p>
+      </article>
+      <article class="ph" id="fase-desarrollo">
+        <p class="ph-n"><span>02</span>Desarrollo</p>
+        <h3>Aquí es donde se nota.</h3>
+        <p class="ph-p">Lo que hemos visto se convierte en ideas, y las ideas en trabajo hecho. Siempre sobre tres patas. ¿Te suena alguna de estas frases?</p>
+        <ul class="pils">
+          <li class="pil">
+            <svg class="pil-line" viewBox="0 0 600 28" preserveAspectRatio="none" aria-hidden="true"><path d="M0 16H600"/></svg>
+            <p class="pil-pain">«Lo hago bien, pero desde fuera parezco uno más.»</p>
+            <h4>Estrategia y posicionamiento de marca</h4>
+            <p class="pil-one">Ponemos orden hasta que se oiga una sola cosa: lo que te hace diferente.</p>
+            <ul class="pil-does"><li>Estrategia de marca</li><li>Posicionamiento</li></ul>
+          </li>
+          <li class="pil">
+            <svg class="pil-line" viewBox="0 0 600 28" preserveAspectRatio="none" aria-hidden="true"><path d="M0 16H600"/></svg>
+            <p class="pil-pain">«Mi imagen y mi web no están a la altura de lo que hago.»</p>
+            <h4>Identidad visual y web</h4>
+            <p class="pil-one">Le damos forma: cómo te ves, cómo suenas y la web donde te eligen.</p>
+            <ul class="pil-does"><li>Identidad visual</li><li>Web acorde a tu marca</li></ul>
+          </li>
+          <li class="pil">
+            <svg class="pil-line" viewBox="0 0 600 28" preserveAspectRatio="none" aria-hidden="true"><path d="M0 16H600"/></svg>
+            <p class="pil-pain">«Me llegan pocos clientes. O no los que quiero.»</p>
+            <h4>Captación de clientes</h4>
+            <p class="pil-one">Hacemos que tu marca llegue a quien tiene que llegar. Y que vuelva.</p>
+            <ul class="pil-does"><li>Estrategia de captación</li><li>Mapas que mejoran la venta online</li></ul>
+          </li>
+        </ul>
+      </article>
+      <article class="ph" id="fase-desenlace">
+        <p class="ph-n"><span>03</span>Desenlace</p>
+        <h3>Medimos lo que hemos hecho y lo mejoramos.</h3>
+        <p class="ph-p">Un proyecto no termina al publicarlo. Vemos qué funciona y qué no, y ajustamos con calma.</p>
+      </article>
+      <article class="ph" id="fase-despues">
+        <p class="ph-n"><span>04</span>Y después</p>
+        <h3>¿Estamos cómodos juntos?</h3>
+        <p class="ph-p">Entonces seguimos. Acordamos un seguimiento anual para que tu marca no vuelva a perderse en el ruido.</p>
+        <a class="ph-next" href="#proyectos">Mira cómo ha ido en negocios reales<svg viewBox="0 0 11 14" aria-hidden="true"><path d="M5.5 1v12M1 8.5l4.5 4.5 4.5-4.5"/></svg></a>
+      </article>
+    </div>
   </div>
 </section>
 
-<section class="block case" id="bela">
+<section class="block case" id="proyectos">
   <div class="wrap grid">
     <div class="pj-top">
-      <h2 class="kicker">Trabajos</h2>
-      <p class="pj-hint">Abre cada proyecto para ver qué pasó al escuchar primero.</p>
+      <p class="kicker">Proyectos</p>
+      <h2 class="h2">Negocios a los que he acompañado.</h2>
     </div>
+    <div class="pj-filter" role="group" aria-label="Filtrar proyectos por sector">
+      <button type="button" class="pf" data-f="*" aria-pressed="true">Todos <span>4</span></button>
+      <button type="button" class="pf" data-f="nightlife" aria-pressed="false">Nightlife <span>3</span></button>
+      <button type="button" class="pf" data-f="belleza" aria-pressed="false">Belleza <span>1</span></button>
+    </div>
+    <p class="sr-only" id="pjCount" aria-live="polite"></p>
     <div class="pjs">
-      <article class="pj open" id="pj-bela">
+      <article class="pj open" id="pj-marina" data-sector="nightlife">
         <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
-        <button type="button" class="pj-head" aria-expanded="true" aria-controls="pjb-bela">
-          <span class="pj-meta"><b>Bela Brow Studio</b>Micropigmentación, Valencia</span>
-          <span class="pj-title">Bela pidió una web. Salió una marca.</span>
-          <span class="pj-tags">Estrategia, marca y web</span>
-          <span class="pj-btn"><span class="t-o">Ver proyecto</span><span class="t-c">Cerrar</span><svg viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg></span>
-        </button>
-        <div class="pj-body" id="pjb-bela" role="region" aria-label="Bela Brow Studio">
-          <div class="pj-inner">
-            <div class="pj-text">
-              <p class="pj-lbl">El reto</p>
-              <p class="pj-ctx">En un sector donde casi todos se parecen, el reto no era tener web. Era que se notara por qué Bela es diferente.</p>
-              <p class="pj-lbl">Lo que hice</p>
-              <ol class="pj-steps"><li><b>Escuché</b>Cómo trabaja, cómo trata a sus clientas y qué la hace única.</li><li><b>Definí</b>Qué tenía que transmitir su marca para separarse del resto de estudios.</li><li><b>Diseñé</b>Su web desde cero, coherente con esa marca y pensada para conseguir citas.</li></ol>
-              <p class="pj-lbl">Lo que cambió</p>
-              <p class="pj-res">Una marca que se reconoce a primera vista y una web pensada para conseguir citas.</p>
-              <a class="link" href="https://bela-vlc.netlify.app/" target="_blank" rel="noopener">Ver la web de Bela</a>
-            </div>
-            <figure class="shot pj-media"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>belabrowstudio.com</span></div><div class="frame"><em>Bela</em><iframe id="belaFrame" src="https://bela-vlc.netlify.app/" title="Web de Bela Brow Studio" loading="lazy" tabindex="-1" scrolling="no"></iframe></div></figure>
-          </div>
-        </div>
-      </article>
-      <article class="pj" id="pj-marchica">
-        <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
-        <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-marchica">
-          <span class="pj-meta"><b>Marchica</b>Temporada 25/26</span>
-          <span class="pj-title">Los datos ya estaban. Faltaba escucharlos.</span>
-          <span class="pj-tags">Análisis y estrategia</span>
-          <span class="pj-btn"><span class="t-o">Ver proyecto</span><span class="t-c">Cerrar</span><svg viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg></span>
-        </button>
-        <div class="pj-body" id="pjb-marchica" role="region" aria-label="Marchica">
-          <div class="pj-inner">
-            <div class="pj-text">
-              <p class="pj-lbl">El reto</p>
-              <p class="pj-ctx">Una temporada entera de ventas, reservas y público, pero sin conclusiones claras. El reto era entender qué funcionaba y qué se estaba escapando.</p>
-              <p class="pj-lbl">Lo que hice</p>
-              <ol class="pj-steps"><li><b>Escuché</b>Dos temporadas completas de datos de venta: entradas, reservas y comportamiento del público.</li><li><b>Definí</b>Cinco conclusiones claras, cada una con su propuesta concreta.</li><li><b>Construí</b>Un plan para la temporada siguiente con objetivos medibles y revisión cada quince días.</li></ol>
-              <p class="pj-lbl">Lo que cambió</p>
-              <p class="pj-res">Siete objetivos medibles para la próxima temporada, con qué hacer, cuándo y cómo medirlo.</p>
-              
-            </div>
-            <figure class="shot pj-media"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Informe de temporada</span></div><div class="frame rep"><div><p class="rep-t">Cinco conclusiones</p><ol><li>El precio se acepta: se mantiene.</li><li>La promoción une los dos espacios.</li><li>El acceso anticipado puede recaudar más.</li><li>Las reservas deben cobrarse por adelantado.</li><li>Sin datos del comprador no hay decisiones.</li></ol></div></div></figure>
-          </div>
-        </div>
-      </article>
-      <article class="pj" id="pj-marina">
-        <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
-        <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-marina">
-          <span class="pj-meta"><b>Marina Beach Club</b>Valencia</span>
+        <button type="button" class="pj-head" aria-expanded="true" aria-controls="pjb-marina">
+          <span class="pj-meta"><b>Marina Beach Club</b>Nightlife · Valencia</span>
           <span class="pj-title">Elegir mesa como si ya estuvieras allí.</span>
           <span class="pj-tags">Experiencia digital y reservas</span>
-          <span class="pj-btn"><span class="t-o">Ver proyecto</span><span class="t-c">Cerrar</span><svg viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg></span>
+          <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
         </button>
         <div class="pj-body" id="pjb-marina" role="region" aria-label="Marina Beach Club">
           <div class="pj-inner">
             <div class="pj-text">
-              <p class="pj-lbl">El reto</p>
-              <p class="pj-ctx">Reservar online era rellenar un formulario más. El reto era que el cliente pudiera ver el espacio y elegir su sitio antes de llegar.</p>
-              <p class="pj-lbl">Lo que hice</p>
+              <p class="pj-lbl">Qué necesitaba</p>
+              <p class="pj-ctx">Que el cliente viera el espacio y eligiera su mesa antes de llegar. Hasta entonces, reservar online era rellenar un formulario más.</p>
+              <p class="pj-lbl">Qué hicimos</p>
               <ol class="pj-steps"><li><b>Escuché</b>Cómo se reservaba hasta ahora y qué echaban en falta sus clientes.</li><li><b>Definí</b>Una reserva en la que el propio espacio convence.</li><li><b>Dirigí</b>La creación de un mapa 3D navegable, conectado en tiempo real con la venta.</li></ol>
-              <p class="pj-lbl">Lo que cambió</p>
+              <p class="pj-lbl">Resultado</p>
               <p class="pj-res">Más reservas online, porque el cliente elige su mesa viéndola.</p>
-              
             </div>
             <figure class="shot pj-media"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Mapa 3D de reservas</span></div><div class="frame demo" data-glb="marina.glb" data-pins='[[40, 38, "Banco de cubierta", "Desde 500 €", "ok"], [48, 48, "Sofás lounge", "Agotado", "no"], [56, 42, "Sofás centrales", "Desde 700 €", "ok"], [68, 40, "Sofás escenario", "Desde 900 €", "ok"], [70, 34.5, "Primera fila", "Agotado", "no"]]'><div class="cam"><img src="img/marina-3d.webp" alt="Mapa 3D de reservas de Marina Beach Club" loading="lazy"><div class="pins"></div></div><div class="cursor"></div><div class="panel"><span class="p-zone"></span><span class="p-price"></span><span class="p-pax">Hasta 8 personas</span><span class="p-btn">Reservar mesa</span></div><button class="to3d" type="button">Explorar en 3D</button></div></figure>
           </div>
         </div>
       </article>
-      <article class="pj" id="pj-amok">
+      <article class="pj" id="pj-amok" data-sector="nightlife">
         <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
         <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-amok">
-          <span class="pj-meta"><b>AMOK</b>Mallorca</span>
+          <span class="pj-meta"><b>AMOK</b>Nightlife · Mallorca</span>
           <span class="pj-title">Reservar mesa en pocos clics.</span>
           <span class="pj-tags">Experiencia digital y reservas</span>
-          <span class="pj-btn"><span class="t-o">Ver proyecto</span><span class="t-c">Cerrar</span><svg viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg></span>
+          <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
         </button>
         <div class="pj-body" id="pjb-amok" role="region" aria-label="AMOK">
           <div class="pj-inner">
             <div class="pj-text">
-              <p class="pj-lbl">El reto</p>
-              <p class="pj-ctx">Dos espacios, interior y terraza, y una reserva de mesas que no lo reflejaba. El reto era que el cliente supiera qué reservaba y lo hiciera sin dudar.</p>
-              <p class="pj-lbl">Lo que hice</p>
+              <p class="pj-lbl">Qué necesitaba</p>
+              <p class="pj-ctx">Que el cliente supiera qué reservaba y lo hiciera sin dudar. Tiene dos espacios, interior y terraza, y la reserva no lo reflejaba.</p>
+              <p class="pj-lbl">Qué hicimos</p>
               <ol class="pj-steps"><li><b>Escuché</b>Cómo se vendía cada espacio y qué preguntaba el cliente antes de reservar.</li><li><b>Definí</b>Un mapa por espacio, claro y rápido, para decidir sin dudas.</li><li><b>Dirigí</b>Mapas 2D de interior y terraza, conectados con la venta y activos en su web.</li></ol>
-              <p class="pj-lbl">Lo que cambió</p>
+              <p class="pj-lbl">Resultado</p>
               <p class="pj-res">Más reservas online, cada una con su mesa elegida.</p>
               <a class="link" href="https://www.amokmallorca.com" target="_blank" rel="noopener">Ver AMOK</a>
             </div>
             <figure class="shot pj-media"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>amokmallorca.com</span></div><div class="frame demo" data-pins='[[49.4, 15.6, "Reservado superior", "Desde 400 €", "ok"], [37.1, 24.7, "Galería principal", "Agotado", "no"], [21.5, 30.6, "Reservado esquina", "Desde 400 €", "ok"], [52.3, 21.2, "Reservado galería", "Desde 450 €", "ok"], [58.2, 38.9, "Reservado pista", "Agotado", "no"], [41.0, 61.1, "Lounge inferior", "Agotado", "no"], [66.4, 72.9, "Reservado backstage", "Desde 700 €", "ok"]]'><div class="cam"><img src="img/amok-mapa.webp" alt="Mapa de reservas del interior de AMOK" loading="lazy"><div class="pins"></div></div><div class="cursor"></div><div class="panel"><span class="p-zone"></span><span class="p-price"></span><span class="p-pax">Hasta 8 personas</span><span class="p-btn">Reservar mesa</span></div></div></figure>
+          </div>
+        </div>
+      </article>
+      <article class="pj" id="pj-marchica" data-sector="nightlife">
+        <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
+        <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-marchica">
+          <span class="pj-meta"><b>Marchica</b>Nightlife · Temporada 25/26</span>
+          <span class="pj-title">Siete objetivos claros para la próxima temporada.</span>
+          <span class="pj-tags">Análisis y estrategia</span>
+          <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
+        </button>
+        <div class="pj-body" id="pjb-marchica" role="region" aria-label="Marchica">
+          <div class="pj-inner">
+            <div class="pj-text">
+              <p class="pj-lbl">Qué necesitaba</p>
+              <p class="pj-ctx">Entender qué funcionaba y qué se le estaba escapando. Tenía los datos de toda una temporada, pero ninguna conclusión clara.</p>
+              <p class="pj-lbl">Qué hicimos</p>
+              <ol class="pj-steps"><li><b>Escuché</b>Dos temporadas completas de datos de venta: entradas, reservas y comportamiento del público.</li><li><b>Definí</b>Cinco conclusiones claras, cada una con su propuesta concreta.</li><li><b>Construí</b>Un plan para la temporada siguiente con objetivos medibles y revisión cada quince días.</li></ol>
+              <p class="pj-lbl">Resultado</p>
+              <p class="pj-res">Siete objetivos medibles para la próxima temporada, con qué hacer, cuándo y cómo medirlo.</p>
+            </div>
+            <figure class="shot pj-media"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Informe de temporada</span></div><div class="frame rep"><div><p class="rep-t">Cinco conclusiones</p><ol><li>El precio se acepta: se mantiene.</li><li>La promoción une los dos espacios.</li><li>El acceso anticipado puede recaudar más.</li><li>Las reservas deben cobrarse por adelantado.</li><li>Sin datos del comprador no hay decisiones.</li></ol></div></div></figure>
+          </div>
+        </div>
+      </article>
+      <article class="pj" id="pj-bela" data-sector="belleza">
+        <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
+        <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-bela">
+          <span class="pj-meta"><b>Bela Brow Studio</b>Micropigmentación · Valencia</span>
+          <span class="pj-title">Bela pidió una web. Salió una marca.</span>
+          <span class="pj-tags">Estrategia, marca y web</span>
+          <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
+        </button>
+        <div class="pj-body" id="pjb-bela" role="region" aria-label="Bela Brow Studio">
+          <div class="pj-inner">
+            <div class="pj-text">
+              <p class="pj-lbl">Qué necesitaba</p>
+              <p class="pj-ctx">Que se notara por qué es diferente. En su sector casi todos se parecen, y tener web no bastaba.</p>
+              <p class="pj-lbl">Qué hicimos</p>
+              <ol class="pj-steps"><li><b>Escuché</b>Cómo trabaja, cómo trata a sus clientas y qué la hace única.</li><li><b>Definí</b>Qué tenía que transmitir su marca para separarse del resto de estudios.</li><li><b>Diseñé</b>Su web desde cero, coherente con esa marca y pensada para conseguir citas.</li></ol>
+              <p class="pj-lbl">Resultado</p>
+              <p class="pj-res">Una marca que se reconoce a primera vista y una web pensada para conseguir citas.</p>
+              <a class="link" href="https://bela-vlc.netlify.app/" target="_blank" rel="noopener">Ver la web de Bela</a>
+            </div>
+            <figure class="shot pj-media"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>belabrowstudio.com</span></div><div class="frame"><em>Bela</em><iframe id="belaFrame" src="https://bela-vlc.netlify.app/" title="Web de Bela Brow Studio" loading="lazy" tabindex="-1" scrolling="no"></iframe></div></figure>
           </div>
         </div>
       </article>
@@ -686,7 +809,7 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
   </div>
 </section>
 
-<section class="block how" id="como-trabajo">
+<section class="block how" id="juntos">
   <div class="wrap grid">
     <h2 class="h2">Así será trabajar juntos.</h2>
     <ol class="steps">
@@ -718,29 +841,29 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
     <ul class="nos">
       <li class="no">
         <svg class="no-line" viewBox="0 0 600 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H600"/></svg>
-        <button type="button" class="no-q" aria-expanded="false" aria-controls="no0"><span>Pasarte un presupuesto sin escucharte.</span><svg class="no-i" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg></button>
+        <button type="button" class="no-q" aria-expanded="false" aria-controls="no0"><span>Pasarte un presupuesto sin escucharte.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
         <div class="no-a" id="no0" role="region"><p>Primero entiendo. Después propongo.</p></div>
       </li>
       <li class="no">
         <svg class="no-line" viewBox="0 0 600 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H600"/></svg>
-        <button type="button" class="no-q" aria-expanded="false" aria-controls="no1"><span>Diseñar para que te guste a ti.</span><svg class="no-i" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg></button>
+        <button type="button" class="no-q" aria-expanded="false" aria-controls="no1"><span>Diseñar para que te guste a ti.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
         <div class="no-a" id="no1" role="region"><p>Diseño para que te elijan tus clientes. A veces coincide, a veces no.</p></div>
       </li>
       <li class="no">
         <svg class="no-line" viewBox="0 0 600 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H600"/></svg>
-        <button type="button" class="no-q" aria-expanded="false" aria-controls="no2"><span>Decirte que el problema es la web si el problema es otro.</span><svg class="no-i" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg></button>
+        <button type="button" class="no-q" aria-expanded="false" aria-controls="no2"><span>Decirte que el problema es la web si el problema es otro.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
         <div class="no-a" id="no2" role="region"><p>Si no te hace falta lo que hago, te lo diré.</p></div>
       </li>
       <li class="no">
         <svg class="no-line" viewBox="0 0 600 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H600"/></svg>
-        <button type="button" class="no-q" aria-expanded="false" aria-controls="no3"><span>Trabajar con todo el mundo.</span><svg class="no-i" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg></button>
+        <button type="button" class="no-q" aria-expanded="false" aria-controls="no3"><span>Trabajar con todo el mundo.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
         <div class="no-a" id="no3" role="region"><p>Elijo pocos proyectos para poder cuidarlos de verdad.</p></div>
       </li>
     </ul>
   </div>
 </section>
 
-<section class="block about">
+<section class="block about" id="sobre-mi">
   <div class="wrap grid">
     <figure class="portrait"><div class="photo"><img class="main" src="img/jorge.webp" alt="Retrato de Jorge"><img class="alt" src="img/jorge-alt.webp" alt="" aria-hidden="true"></div><span class="mono" aria-hidden="true">J<svg viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg></span></figure>
     <div class="txt">
@@ -777,6 +900,7 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
 
 <script>
 (function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   /* Línea del silencio dentro de los CTA */
   if(!reduce)[].forEach.call(document.querySelectorAll('.btn.solid'),function(b){
     var tx=document.createElement('span');tx.className='btn-txt';while(b.firstChild)tx.appendChild(b.firstChild);b.appendChild(tx);
@@ -788,7 +912,7 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
       g.clearRect(0,0,W,H);
       var base=H*.22,sg=Math.max(22,W*.12);g.beginPath();
       for(var i=0;i<=W;i+=2){var d=i-vx,k=Math.exp(-d*d/(2*sg*sg)),y=base+(Math.max(vy,base)-base)*k+1.2*Math.sin(i*.22-t*8)*k;i?g.lineTo(i,y):g.moveTo(i,y);}
-      g.strokeStyle='rgba(255,255,255,'+(.38*a).toFixed(3)+')';g.lineWidth=1.2;g.stroke();
+      g.strokeStyle=getComputedStyle(b).color;g.globalAlpha=.38*a;g.lineWidth=1.2;g.stroke();g.globalAlpha=1;
       if(ta>0||a>.01)requestAnimationFrame(fr);else{g.clearRect(0,0,W,H);run=false;}
     }
     function pos(e){var r=b.getBoundingClientRect();px=e.clientX-r.left;py=e.clientY-r.top;}
@@ -829,7 +953,6 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
 
   /* Línea que escucha */
   var c=document.getElementById('wave'), ctx=c.getContext('2d');
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var W=0,H=0,dpr=1,px=-9999,energy=0,target=0,t0=performance.now(),running=false,raf;
   var css=getComputedStyle(document.documentElement);
   var ink=css.getPropertyValue('--tinta').trim(), vio=css.getPropertyValue('--violeta').trim();
@@ -903,42 +1026,110 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
   } else start();
   size();
 
-  /* Líneas que se calman al verse */
-  var L=[].map.call(document.querySelectorAll('canvas.line'),function(c,i){return {i:i,c:c,x:c.getContext('2d'),s:c.dataset.shape,t0:null,v:false,W:0,H:0};});
-  function lsize(o){var d=Math.min(window.devicePixelRatio||1,2);o.W=o.c.clientWidth;o.H=o.c.clientHeight;o.c.width=o.W*d;o.c.height=o.H*d;o.x.setTransform(d,0,0,d,0,0);}
-  function lshape(s,x,t,W,p){
-    if(s==='signal'){var cx=W*.7,g=Math.max(36,W*.035),d=x-cx;return -p*46*Math.exp(-d*d/(2*g*g))*(1+.05*Math.sin(t*1.7));}
-    if(s==='form')return p*11*Math.sin(x*.032-t*1.2);
-    if(s==='reach'){if(t<2.4)return 0;var ph=((t-2.4)%4)/4,c=-150+(W+300)*ph,e=x-c;return -p*16*Math.exp(-e*e/(2*70*70))*Math.sin(x*.11-t*7);}
-    return 0;
+  /* Cómo trabajo: mientras lees, la línea cuenta el proyecto.
+     Inicio: ruido que se escucha de izquierda a derecha y deja marcadas las oportunidades.
+     Desarrollo: el ruido se ordena en tres pistas, una por pata, y se ilumina la que lees.
+     Desenlace: una sola línea que se mide y sube. Y después: calma, un pulso de vez en cuando, y sigue. */
+  var pv=document.getElementById('procLine'), pg=pv.getContext('2d'), pbox=document.querySelector('.proc');
+  var phs=[].slice.call(document.querySelectorAll('.ph')), pls=[].slice.call(document.querySelectorAll('.pil'));
+  var pilP=pls.map(function(e){return e.querySelector('.pil-line path');});
+  var pIdx=[].slice.call(document.querySelectorAll('.proc-idx a')), vNum=document.querySelector('.viz-ph b'), vName=document.querySelector('.viz-name'), vSt=document.querySelector('.viz-st'), vBar=document.querySelector('.viz-prog i');
+  var PN=['Inicio','Desarrollo','Desenlace','Y después'], PS=['Escuchando','Dando forma','Midiendo','Seguimos'], PT=['Posicionamiento','Identidad y web','Captación'];
+  var PW=0,PH=0,pp=0,pph=-1,ppk=-1,pon=false,prun=false,pt0=performance.now(),pc={};
+  function pcol(){var s=getComputedStyle(document.documentElement);pc.ink=s.getPropertyValue('--tinta').trim();pc.vio=s.getPropertyValue('--violeta').trim();pc.gra=s.getPropertyValue('--grafito').trim();pc.bg=s.getPropertyValue('--papel').trim();}
+  function psize(){var d=Math.min(window.devicePixelRatio||1,2);PW=pv.clientWidth;PH=pv.clientHeight;pv.width=PW*d;pv.height=PH*d;pg.setTransform(d,0,0,d,0,0);}
+  function sm(a,b,v){v=(v-a)/(b-a);v=v<0?0:v>1?1:v;return v*v*(3-2*v);}
+  /* Progreso de lectura de 0 a 4: una fase empieza cuando su título cruza algo por debajo de la mitad de la pantalla */
+  function ptarget(){
+    var m=innerHeight*.55, a=phs.map(function(e){return e.querySelector('.ph-n').getBoundingClientRect().top;});
+    a.push(phs[phs.length-1].getBoundingClientRect().bottom);
+    if(m<a[0])return 0;
+    for(var i=0;i<phs.length;i++)if(m<a[i+1])return i+(m-a[i])/(a[i+1]-a[i]);
+    return phs.length;
   }
-  function ldraw(o,t){
-    var c=o.x,W=o.W,H=o.H,mid=o.s==='signal'?H*.66:H/2,k=Math.max(0,1-t/2.6),A=46*Math.pow(k,2.2),p=1-k*k;
-    c.clearRect(0,0,W,H);var ys=[],xs=[];
-    for(var x=0;x<=W+3;x+=3){
-      var env=Math.sin(Math.PI*Math.min(x,W)/W),n=Math.sin(x*.018-t*7)*.45+Math.sin(x*.047+t*11)*.3+Math.sin(x*.113-t*19)*.25;
-      xs.push(x);ys.push(mid+A*env*(.55+.45*Math.sin(x*.006+t*2.3))*n+lshape(o.s,x,t,W,p)+Math.sin(x*.012+t*.6)*.6);
+  /* Cada pata tiene su forma: una sola cosa que se oye, una forma que se repite, un pulso que llega y vuelve */
+  function pshape(k,u,t,A){
+    if(k===0){var d=u-400;return -A*.5*Math.exp(-d*d/(2*28*28))*(1+.06*Math.sin(t*1.7));}
+    if(k===1)return A*.17*Math.sin(u*.055-t*1.4);
+    var ph=(t%4.6)/4.6,c=-40+680*(ph<.5?ph*2:2-ph*2),e=u-c;
+    return -A*.3*Math.exp(-e*e/(2*36*36))*Math.sin(u*.17-t*9);
+  }
+  function pilPath(k,t){var d='';for(var u=0;u<=600;u+=6)d+=(d?'L':'M')+u+' '+(16+pshape(k,u,t,24)).toFixed(2);return d;}
+  function phalf(x,y,r,a){
+    pg.save();pg.globalAlpha=a;pg.lineWidth=1;
+    pg.beginPath();pg.arc(x,y,r,0,Math.PI*2);pg.fillStyle=pc.bg;pg.fill();pg.strokeStyle=pc.ink;pg.stroke();
+    pg.beginPath();pg.arc(x,y,r,-Math.PI/2,Math.PI/2);pg.closePath();pg.fillStyle=pc.ink;pg.fill();pg.restore();
+  }
+  function pdraw(t){
+    var W=PW,H=PH,A=H*.26,mid=H*.5,sp=H*.25,p=pp,big=H>140;
+    var wN=1-sm(.82,1.05,p), wS=sm(.92,1.18,p)*(1-sm(1.85,2.15,p)), wM=sm(1.9,2.2,p)*(1-sm(2.85,3.15,p)), wC=sm(2.9,3.2,p);
+    var head=Math.min(1,p)*W, n=wS>.01?3:1, tail=W*(1-.14*wC);
+    function yAt(k,x){
+      var u=x/W*600, y=mid+(k-1)*sp*wS+Math.sin(u*.02+t*.6)*.6;
+      if(wN>.001)y+=wN*A*.75*Math.sin(Math.PI*x/W)*(.55+.45*Math.sin(u*.01+t*2.3))*(Math.sin(u*.03-t*7)*.45+Math.sin(u*.075+t*11)*.3+Math.sin(u*.17-t*19)*.25);
+      if(wS>.001)y+=wS*pshape(k,u,t,A);
+      if(wM>.001)y+=wM*(-A*.6*(u/600-.5)+A*.08*Math.sin(u*.035-t*1.3));
+      if(wC>.001){var c=-60+720*((t%3.6)/3.6),e=u-c;y-=wC*A*.18*Math.exp(-e*e/(2*26*26))*Math.sin(u*.22-t*7);}
+      return y;
     }
-    c.beginPath();
-    for(var i=0;i<xs.length;i++){var h=(16+6*Math.sin(xs[i]*.005+t*.4))/2;i?c.lineTo(xs[i],ys[i]-h):c.moveTo(xs[i],ys[i]-h);}
-    for(i=xs.length-1;i>=0;i--){h=(16+6*Math.sin(xs[i]*.005+t*.4))/2;c.lineTo(xs[i],ys[i]+h);}
-    c.closePath();
-    var dk=dm.matches,g=c.createLinearGradient(0,0,W,0);g.addColorStop(0,dk?'rgba(200,190,255,.05)':'rgba(255,255,255,.45)');g.addColorStop(.5,dk?'rgba(214,206,255,.17)':'#fff');g.addColorStop(1,dk?'rgba(200,190,255,.05)':'rgba(255,255,255,.45)');
-    var sh=[[-7,9],[2,11],[8,7]][o.i%3];c.save();c.shadowColor=dk?'rgba(0,0,0,.55)':'rgba(28,30,42,.2)';c.shadowBlur=22;c.shadowOffsetX=sh[0];c.shadowOffsetY=sh[1];c.fillStyle=g;c.fill();c.restore();
+    pg.clearRect(0,0,W,H);
+    for(var j=0;j<n;j++){
+      var k=n===1?1:j, on=n===3&&ppk===k, fade=n===3&&ppk>=0&&!on?1-.6*wS:1, path=new Path2D();
+      for(var x=0;;x+=2){var xx=Math.min(x,tail);x?path.lineTo(xx,yAt(k,xx)):path.moveTo(0,yAt(k,0));if(xx>=tail)break;}
+      pg.lineWidth=on?1.8:1.3;pg.strokeStyle=on?pc.vio:pc.ink;
+      if(wN>.01&&head<W){
+        /* Lo que ya se ha escuchado, en tinta; lo que falta, apagado */
+        pg.save();pg.beginPath();pg.rect(0,0,head,H);pg.clip();pg.globalAlpha=fade;pg.stroke(path);pg.restore();
+        pg.save();pg.beginPath();pg.rect(head,0,W-head,H);pg.clip();pg.globalAlpha=fade*(1-.65*wN);pg.stroke(path);pg.restore();
+      }else{pg.globalAlpha=fade;pg.stroke(path);pg.globalAlpha=1;}
+      if(n===3&&big&&wS>.6){pg.globalAlpha=sm(.6,1,wS)*(on?1:.8);pg.fillStyle=on?pc.vio:pc.gra;pg.font='500 11px Figtree,system-ui,sans-serif';pg.fillText(PT[k],14,mid+(k-1)*sp*wS-20);pg.globalAlpha=1;}
+    }
+    if(wN>.01){
+      [80,200,300,410,520].forEach(function(u){var x=u/600*W;if(x<head)phalf(x,yAt(1,x),(big?4.5:3)*Math.min(1,(head-x)/30),wN);});
+      if(head>6&&head<W-1){pg.globalAlpha=wN*.55;pg.fillStyle=pc.vio;pg.fillRect(head-.5,0,1,H);pg.globalAlpha=1;}
+    }
+    if(wM>.01)[60,180,300,420,540].forEach(function(u,i){
+      var s=Math.max(0,Math.min(1,(p-2)*8-i)),x=u/600*W,y=yAt(1,x);if(!s)return;
+      if(big){pg.save();pg.globalAlpha=wM*s*.4;pg.strokeStyle=pc.gra;pg.setLineDash([2,4]);pg.beginPath();pg.moveTo(x,y+7);pg.lineTo(x,H-10);pg.stroke();pg.restore();}
+      phalf(x,y,(big?4.5:3)*s,wM);
+    });
+    if(wC>.01){
+      /* Y después: la línea no se corta, sigue */
+      var tp=new Path2D();for(var x=tail;x<=W+1;x+=2){var y=yAt(1,Math.min(x,W));x===tail?tp.moveTo(x,y):tp.lineTo(Math.min(x,W),y);}
+      pg.save();pg.setLineDash([2,5]);pg.globalAlpha=wC;pg.strokeStyle=pc.ink;pg.lineWidth=1.3;pg.stroke(tp);pg.restore();
+    }
   }
-  function lt(o){return reduce?10:o.t0===null?0:(performance.now()-o.t0)/1000;}
-  var lr=false;
-  function lloop(){var any=false;L.forEach(function(o){if(o.v){any=true;ldraw(o,lt(o));}});lr=any;if(any)requestAnimationFrame(lloop);}
-  L.forEach(function(o){lsize(o);ldraw(o,lt(o));});
-  if(!reduce&&'IntersectionObserver' in window){
-    var lio=new IntersectionObserver(function(en){
-      en.forEach(function(e){var o=L.filter(function(l){return l.c===e.target;})[0];o.v=e.isIntersecting;if(o.v&&o.t0===null)o.t0=performance.now();});
-      if(!lr){lr=true;requestAnimationFrame(lloop);}
-    },{threshold:.35});
-    L.forEach(function(o){lio.observe(o.c);});
+  function pframe(){
+    var T=ptarget(), ph=Math.min(3,Math.floor(T)), k=-1, m=innerHeight*.55;
+    pp+=reduce?T-pp:(T-pp)*.12;if(Math.abs(T-pp)<.0005)pp=T;
+    if(ph===1)pls.forEach(function(e,i){var r=e.getBoundingClientRect();if(r.top<m&&r.bottom>m)k=i;});
+    if(ph!==pph){pph=ph;vNum.textContent='0'+(ph+1);vName.textContent=PN[ph];vSt.textContent=PS[ph];
+      pIdx.forEach(function(a,i){if(i===ph)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});}
+    if(k!==ppk){if(ppk>=0)pilP[ppk].setAttribute('d',pilPath(ppk,1.15));ppk=k;pls.forEach(function(e,i){e.classList.toggle('on',i===k);});}
+    vBar.style.width=(pp/4*100).toFixed(2)+'%';
+    var t=reduce?1.15:(performance.now()-pt0)/1000;
+    pdraw(t);
+    if(ppk>=0&&!reduce)pilP[ppk].setAttribute('d',pilPath(ppk,t));
+    if(pon&&!reduce)requestAnimationFrame(pframe);else prun=false;
   }
-  window.addEventListener('resize',function(){L.forEach(function(o){lsize(o);ldraw(o,lt(o));});});
-  var onTheme=function(){readInk();L.forEach(function(o){ldraw(o,lt(o));});size();};
+  function pgo(){if(!prun){prun=true;requestAnimationFrame(pframe);}}
+  pcol();psize();
+  pilP.forEach(function(p,i){p.setAttribute('d',pilPath(i,1.15));});
+  if('IntersectionObserver' in window)new IntersectionObserver(function(en){pon=en[0].isIntersecting;if(pon)pgo();}).observe(pbox);
+  else{pon=true;pgo();}
+  if(reduce)window.addEventListener('scroll',function(){if(pon)pgo();},{passive:true});
+  window.addEventListener('resize',function(){psize();pgo();});
+
+  /* Scoring: los puntos se rellenan uno a uno al verlo */
+  var sc=document.querySelector('.score');
+  if(sc&&!reduce&&'IntersectionObserver' in window){
+    sc.classList.add('wait');
+    [].forEach.call(sc.querySelectorAll('.sd.f,.sd.h'),function(d,i){d.style.setProperty('--d',(i*.09).toFixed(2)+'s');});
+    var sio=new IntersectionObserver(function(en){if(en[0].isIntersecting){sc.classList.remove('wait');sio.disconnect();}},{threshold:.6});
+    sio.observe(sc);
+  }
+
+  var onTheme=function(){readInk();size();pcol();pgo();};
   if(dm.addEventListener)dm.addEventListener('change',onTheme);else if(dm.addListener)dm.addListener(onTheme);
 
 
@@ -988,6 +1179,26 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
       pj.classList.toggle('open',o);b.setAttribute('aria-expanded',o);pj.shake();
       if(o){if(window.fitBela)setTimeout(window.fitBela,60);
         setTimeout(function(){var top=pj.getBoundingClientRect().top;if(top<90||top>innerHeight*.6)window.scrollTo({top:scrollY+top-100,behavior:reduce?'auto':'smooth'});},480);}
+    });
+  });
+
+  /* Filtro por sector: los proyectos que quedan entran uno a uno y su línea suena al llegar */
+  var pfs=[].slice.call(document.querySelectorAll('.pf')), pjc=document.getElementById('pjCount');
+  function inSector(pj,f){return f==='*'||pj.dataset.sector===f;}
+  pfs.forEach(function(b){
+    var f=b.dataset.f;
+    b.querySelector('span').textContent=pjs.filter(function(pj){return inSector(pj,f);}).length;
+    b.addEventListener('click',function(){
+      if(b.getAttribute('aria-pressed')==='true')return;
+      pfs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      var k=0;
+      pjs.forEach(function(pj){
+        var on=inSector(pj,f);
+        if(!on&&pj.classList.contains('open')){pj.classList.remove('open');pj.querySelector('.pj-head').setAttribute('aria-expanded','false');}
+        pj.hidden=!on;pj.classList.remove('in');
+        if(on){pj.style.setProperty('--k',k);void pj.offsetWidth;pj.classList.add('in');setTimeout(pj.shake,k*80+120);k++;}
+      });
+      pjc.textContent=k+(k===1?' proyecto':' proyectos');
     });
   });
 
