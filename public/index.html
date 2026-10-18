@@ -260,6 +260,14 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .pjs{grid-column:1/-1}
 .pj.in{animation:pjin .7s cubic-bezier(.3,.8,.3,1) both;animation-delay:calc(var(--k,0) * 80ms)}
 @keyframes pjin{from{opacity:0;transform:translateY(14px)}}
+/* Marcas: siluetas de un solo color, apagadas; se encienden al pasar */
+.brands{grid-column:1/-1;margin-top:clamp(56px,7vw,96px)}
+.brands-k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--grafito);text-align:center}
+.brands-l{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:26px clamp(30px,4.4vw,56px);margin:26px 0 0;padding:0;list-style:none}
+.lg{display:block;height:var(--h);aspect-ratio:var(--r);background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat;color:var(--grafito);opacity:.55;transition:opacity .5s,color .5s,transform .8s cubic-bezier(.3,.8,.3,1)}
+.lg:hover{opacity:1;color:var(--tinta)}
+.brands.wait .lg{opacity:0;transform:translateY(8px)}
+@media (max-width:600px){.brands-l{display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;gap:26px 18px}.lg{height:calc(var(--h)*.8);max-width:100%}}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .pj-line{display:block;width:100%;height:16px;margin:-8px 0;overflow:visible;pointer-events:none}
 .pj-line path{fill:none;stroke:var(--linea);stroke-width:1.2;vector-effect:non-scaling-stroke;transition:stroke .4s}
@@ -839,6 +847,10 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
       </article>
       <svg class="pj-line pj-end" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
     </div>
+    <div class="brands">
+      <p class="brands-k">Marcas con las que he trabajado</p>
+      <ul class="brands-l"><li><span class="lg" role="img" aria-label="Grupo Sounds" style="--i:url(img/logos/sounds.png);--r:0.988;--h:50.3px"></span></li><li><span class="lg" role="img" aria-label="Condado Club" style="--i:url(img/logos/condado.png);--r:3.188;--h:26.4px"></span></li><li><span class="lg" role="img" aria-label="Marina Beach Club" style="--i:url(img/logos/marina.png);--r:1.325;--h:42.8px"></span></li><li><span class="lg" role="img" aria-label="AMOK" style="--i:url(img/logos/amok.png);--r:3.294;--h:26.0px"></span></li><li><span class="lg" role="img" aria-label="Sala Sonora" style="--i:url(img/logos/sonora.png);--r:3.587;--h:24.8px"></span></li><li><span class="lg" role="img" aria-label="Marchica" style="--i:url(img/logos/marchica.png);--r:1.594;--h:38.7px"></span></li><li><span class="lg" role="img" aria-label="The Big Room Formigal" style="--i:url(img/logos/bigroom.png);--r:2.388;--h:31.0px"></span></li><li><span class="lg" role="img" aria-label="Aramón" style="--i:url(img/logos/aramon.png);--r:3.519;--h:25.0px"></span></li><li><span class="lg" role="img" aria-label="Bela Brow Studio" style="--i:url(img/logos/bela.png);--r:2.524;--h:30.0px"></span></li></ul>
+    </div>
   </div>
 </section>
 
@@ -1125,6 +1137,16 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
         hp.setAttribute('d',k>0?d:'M0 12H240');if(k>0)requestAnimationFrame(f);})();
     },{threshold:.8});
     hio.observe(hp.parentNode);
+  }
+
+  /* Marcas: entran una a una al verlas */
+  var br=document.querySelector('.brands');
+  if(br&&!reduce&&'IntersectionObserver' in window){
+    br.classList.add('wait');
+    [].forEach.call(br.querySelectorAll('.lg'),function(l,i){l.style.transitionDelay=(i*.07).toFixed(2)+'s';});
+    var bio=new IntersectionObserver(function(en){if(en[0].isIntersecting){br.classList.remove('wait');bio.disconnect();
+      setTimeout(function(){[].forEach.call(br.querySelectorAll('.lg'),function(l){l.style.transitionDelay='';});},1600);}},{threshold:.4});
+    bio.observe(br);
   }
 
   /* Retrato: al tocar en móvil cambia de foto */

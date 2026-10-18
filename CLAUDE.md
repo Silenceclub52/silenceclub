@@ -46,6 +46,7 @@ public/
   _headers         # X-Robots-Tag: noindex en *.workers.dev
   favicon.svg, favicon.ico, apple-touch-icon.png, icon-192.png, icon-512.png, site.webmanifest   # favicon: la línea de sonido (ruido violeta → calma) y el punto a medias, sobre negro #0B0A0C
   robots.txt, sitemap.xml
+  img/logos/       # siluetas de marcas (sounds, condado, marina, amok, sonora, marchica, bigroom, aramon, bela)
   img/             # jorge.webp, jorge-alt.webp, marina-3d.webp, amok-mapa.webp, og-silenceclub.jpg (1200x630, imagen para redes)
 ```
 Solo se publica `public/`. No meter nada sensible ahí.
@@ -65,6 +66,7 @@ Solo se publica `public/`. No meter nada sensible ahí.
   - Desenlace: pastilla ✓ "Incluido en el precio de tu proyecto" (`.ph-incl`).
   - Aparte de las fases, tarjeta `.beyond` "Más allá del proyecto · ¿Estamos cómodos juntos?" (seguimiento anual, tinte violeta, icono ↻, pie con "··· € al año") y el CTA "Mira cómo ha ido en negocios reales" (no tocar).
 - **Proyectos** ("Negocios a los que he acompañado."): filtro por sector `.pf` (Todos marcado · Nightlife · Belleza; contadores por JS desde `data-sector`). Orden: Bela (abierta al cargar), Marina, AMOK, Marchica. Etiquetas `.pj-tags` como ítems con medio punto, idénticos a los de las patas (también en móvil). Ojo: `.pj-head` es un `<button>` y necesita `font:inherit`, si no sale la fuente del sistema. Cada proyecto: titular = resultado · "Qué necesitaba" · "Qué hicimos" (viñetas vacío → medio → lleno) · "Resultado".
+- **Marcas** (`.brands`, al final de Proyectos): "Marcas con las que he trabajado" + 9 logos como siluetas de un color (`public/img/logos/*.png`, blanco + alfa, 160 px de alto, usados como `mask` con `background:currentColor`): gris `--grafito` al 55 %, se encienden al pasar. Alto compensado a ojo por proporción (`--h = 50/r^0.55`). En móvil, cuadrícula 3×3. Origen: las propuestas de Jorge (index_17: Grupo Sounds, Condado, Marina, Sala Sonora, AMOK; index_18: Aramón, Marchica, The Big Room Formigal) y la imagen de Bela que envió (260 px; su web no es accesible desde el entorno).
 - Desplegables (Proyectos y "Cosas que no voy a hacer") con chevron violeta (como en la web de Bela), ya no con el medio punto. Se mantiene la línea que vibra al pasar y al abrir.
 - **Precio** (Jorge quiere que se intuya que todo tiene coste): por pata "desde ··· €", Desenlace "incluido en el precio", seguimiento "··· € al año". Las cifras son marcadores `.amt` con "··· €" hasta que Jorge dé importes reales. **No pasar a main con "··· €".**
 - Detalle: "Tengo debilidad por el detalle." (antes "Soy perfeccionista. Mucho."). Cosas que no voy a hacer: "Diseñar para que te guste únicamente a ti."
