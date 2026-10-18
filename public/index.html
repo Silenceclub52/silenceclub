@@ -869,6 +869,22 @@ canvas.line{display:block;width:100%;height:150px;margin-top:24px}
     target=Math.min(1,target+(near?.35:.08));
   });
   hero.addEventListener('pointerleave',function(){target=0;});
+  /* Móvil: al hacer scroll, la línea suena en la vertical del dedo (también con la inercia) */
+  var tx=null, sy=window.scrollY, ty=null, te=0;
+  function onLine(){var r=c.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight?r:null;}
+  window.addEventListener('touchstart',function(e){var r=onLine();ty=e.touches[0].clientY;if(r)tx=e.touches[0].clientX-r.left;},{passive:true});
+  window.addEventListener('touchmove',function(e){
+    var r=onLine(),p=e.touches[0];if(!r)return;
+    tx=px=p.clientX-r.left;
+    if(ty!==null)target=Math.min(.6,target+Math.min(.12,Math.abs(p.clientY-ty)*.006));
+    ty=p.clientY;
+  },{passive:true});
+  window.addEventListener('touchend',function(){ty=null;te=performance.now();},{passive:true});
+  window.addEventListener('scroll',function(){
+    var d=Math.abs(window.scrollY-sy);sy=window.scrollY;
+    if(tx===null||ty!==null||performance.now()-te>1500||!onLine())return;
+    px=tx;target=Math.min(.6,target+Math.min(.08,d*.004));
+  },{passive:true});
   window.addEventListener('resize',size);
   if('IntersectionObserver' in window){
     var seen=false;new IntersectionObserver(function(en){if(en[0].isIntersecting){if(!seen){seen=true;t0=performance.now();}start();}else stop();},{threshold:.5}).observe(c);
