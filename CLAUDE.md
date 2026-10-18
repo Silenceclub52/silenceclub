@@ -50,7 +50,7 @@ Solo se publica `public/`. No meter nada sensible ahí.
   En el menú sustituye a "Jorge"; al pasar el ratón la línea vibra y vuelve al silencio. El pie aún dice "Jorge" y usa el logo antiguo en máscaras PNG (`.fsc`).
 - **Intro de marca** (~1,8 s, solo dentro del logo del menú; sin capa a pantalla completa, sin bloquear scroll ni ocultar el hero):
   la línea se dibuja desde el centro con un poco de ruido y, a la vez, 15 barras verticales tenues (`g.bars`, opacidad .16, creadas por JS y retiradas al terminar) nacen de ella como ecualizador; todo se calma → SILENCE sube y CLUB baja desde la línea (recortados con `clipPath` `sc-up`/`sc-dn` del propio SVG del menú) → aparece el punto.
-  No sale con "reducir movimiento" ni con la pestaña oculta. El estado inicial se pinta en el mismo script que sigue al `<nav>`, así que no hay parpadeo. Durante la intro se ignora el hover del logo. La onda del hero (bajo "Ver cómo trabajo") suena a la vez y con el mismo ritmo, pero mucho más baja (16 px frente a 74 sin intro; `introSoft`), sincronizada con el reloj del logo vía `window.__scIntro` (= `performance.now()` al arrancar la intro).
+  No sale con "reducir movimiento" ni con la pestaña oculta. El estado inicial se pinta en el mismo script que sigue al `<nav>`, así que no hay parpadeo. Durante la intro se ignora el hover del logo. La onda del hero (bajo "Ver cómo trabajo") suena a la vez y con el mismo ritmo, pero más baja (34 px frente a 74 sin intro; `introSoft`), sincronizada con el reloj del logo vía `window.__scIntro` (= `performance.now()` al arrancar la intro).
   (La versión anterior, a pantalla completa con columnas y el logo viajando al menú, está en el commit `a22760a`.)
 - Retrato sin filtros ni capa melocotón (se quitó a petición de Jorge).
 
