@@ -52,7 +52,7 @@ public/
 Solo se publica `public/`. No meter nada sensible ahí.
 
 ## La web (public/index.html)
-- SEO y redes: título "Silence Club · Dirección creativa y estratégica", descripción de ~155 caracteres, Open Graph y Twitter con `og-silenceclub.jpg` (fondo negro, logo, "Primero, silencio.", la línea de sonido de violeta a calma) y JSON-LD `ProfessionalService`. Si se cambia la imagen, cambiarle el nombre de archivo para que las redes no sirvan la antigua de caché.
+- SEO y redes: título "Silence Club · Dirección creativa y estratégica", descripción (la misma en meta, Open Graph, Twitter y JSON-LD: "Acompaño a personas con un negocio que todavía no ven todo lo que pueden construir con él. Estrategia de marca, identidad, web y captación."), Open Graph y Twitter con `og-silenceclub.jpg` (fondo negro, logo, "Primero, silencio.", la línea de sonido de violeta a calma) y JSON-LD `ProfessionalService`. Si se cambia la imagen, cambiarle el nombre de archivo para que las redes no sirvan la antigua de caché.
 - Secciones: hero · pausa "Las mejores decisiones…" · Servicio (`#servicio`) · Proyectos (`#proyectos`) · Detalle/retícula · Cosas que no voy a hacer · Hola, soy Jorge (`#sobre-mi`) · Contacto. "Así será trabajar juntos" se quitó (repetía "Cómo trabajo").
 - Menú: Servicio · Proyectos · Sobre mí · Hablemos. (El kicker violeta de la sección también dice "Servicio"; el botón del hero sigue siendo "Ver cómo trabajo".)
 - **Hero** (jerarquía original, a petición de Jorge): H1 "Primero, silencio."; debajo, a la izquierda, H2 `.role` "Dirección creativa y estratégica" grande (muy importante para Jorge); a la derecha `.pitch`: H3 `.hook` (sans, la tipografía de antes) "Acompaño a personas con un negocio que todavía no ven todo lo que pueden construir con él.", párrafo `.lead` y remate `.punch` "este es tu sitio." en serif **recta (sin cursiva), subrayado**, a 19–22 px. CTA principal (sólido, blanco en oscuro) "Ver cómo trabajo" → `#servicio`; secundario "Cuéntame tu negocio" → `#contacto`.
@@ -93,7 +93,7 @@ Solo se publica `public/`. No meter nada sensible ahí.
 - Retrato sin filtros ni capa melocotón (se quitó a petición de Jorge). La "J" sobre la foto lleva el medio punto del mismo color que la letra (antes melocotón), como en el logo.
 
 ## Pendientes conocidos
-0. Tras publicar en `main` cambios de SEO o imagen para redes: forzar la relectura en developers.facebook.com/tools/debug (Volver a extraer) y linkedin.com/post-inspector; enviar `sitemap.xml` en Search Console.
+0. WhatsApp: si no sale vista previa o sale una antigua, es la caché o Cloudflare bloqueando al lector (Security → Bots). Comprobar con developers.facebook.com/tools/debug. Tras publicar en `main` cambios de SEO o imagen para redes: forzar la relectura en developers.facebook.com/tools/debug (Volver a extraer) y linkedin.com/post-inspector; enviar `sitemap.xml` en Search Console.
 1. Botón "Explorar en 3D" de Marina: faltan `marina.glb` y `model-viewer.min.js` en `public/`.
 2. Enlace e iframe de Bela apuntan a `bela-vlc.netlify.app`; cambiar a `belabrowstudio.com` cuando ese dominio funcione.
 3. Textos (descartado por ahora): resultados con cifras reales, frase de entrada más clara, quitar "Soy perfeccionista. Mucho.".
