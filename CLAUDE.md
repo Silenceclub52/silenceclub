@@ -52,19 +52,25 @@ Solo se publica `public/`. No meter nada sensible ahí.
 
 ## La web (public/index.html)
 - SEO y redes: título "Silence Club · Dirección creativa y estratégica", descripción de ~155 caracteres, Open Graph y Twitter con `og-silenceclub.jpg` (fondo negro, logo, "Primero, silencio.", la línea de sonido de violeta a calma) y JSON-LD `ProfessionalService`. Si se cambia la imagen, cambiarle el nombre de archivo para que las redes no sirvan la antigua de caché.
-- Secciones: hero · pausa "Las mejores decisiones…" firmada con el logo · Cómo trabajo (`#como-trabajo`) · Proyectos (`#proyectos`) · Detalle/retícula · Cosas que no voy a hacer · Hola, soy Jorge (`#sobre-mi`) · Contacto. "Así será trabajar juntos" se quitó (repetía "Cómo trabajo").
+- Secciones: hero · pausa "Las mejores decisiones…" · Cómo trabajo (`#como-trabajo`) · Proyectos (`#proyectos`) · Detalle/retícula · Cosas que no voy a hacer · Hola, soy Jorge (`#sobre-mi`) · Contacto. "Así será trabajar juntos" se quitó (repetía "Cómo trabajo").
 - Menú: Cómo trabajo · Proyectos · Sobre mí · Hablemos.
-- **Hero** (jerarquía original, a petición de Jorge): H1 "Primero, silencio."; debajo, a la izquierda, H2 `.role` "Dirección creativa y estratégica" grande (muy importante para Jorge); a la derecha `.pitch`: H3 `.hook` (sans, la tipografía de antes) "Acompaño a personas con un negocio que todavía no ven todo lo que pueden construir con él.", párrafo `.lead` y remate `.punch` "este es tu sitio." en serif cursiva **subrayado**. CTA principal (sólido, blanco en oscuro) "Ver cómo trabajo" → `#como-trabajo`; secundario "Cuéntame tu negocio" → `#contacto`.
-- **Pausa**: bajo la frase, el logo (`svg.logo.sign`, `<use>` de los `sc-*`) centrado, ~30 px de alto, color `--grafito` y opacidad .55.
+- **Hero** (jerarquía original, a petición de Jorge): H1 "Primero, silencio."; debajo, a la izquierda, H2 `.role` "Dirección creativa y estratégica" grande (muy importante para Jorge); a la derecha `.pitch`: H3 `.hook` (sans, la tipografía de antes) "Acompaño a personas con un negocio que todavía no ven todo lo que pueden construir con él.", párrafo `.lead` y remate `.punch` "este es tu sitio." en serif cursiva **subrayado**, a 19–22 px (Jorge pidió bajarle jerarquía). CTA principal (sólido, blanco en oscuro) "Ver cómo trabajo" → `#como-trabajo`; secundario "Cuéntame tu negocio" → `#contacto`.
+- **Pausa** (`section.story`, sin `.block`): transición mínima. Una línea fina a cada lado, medio punto y la frase en serif cursiva gris de 18–24 px, en una fila. Sin fondo propio ni logo; ocupa ~100 px. Jorge: "transición rápida, que no entorpezca y refuerce la marca".
 - **Cómo trabajo** ("Trabajo por proyectos."): 3 fases `.ph` (01 Inicio · 02 Desarrollo · 03 Desenlace). Sin animación de líneas (a Jorge no le gustó: demasiado ruido).
   - Escritorio: índice fijo `.proc-idx` a la izquierda (cols 1–3) con marcas vacío/medio/lleno según la fase, y el estado ("Escuchando", "Dando forma", "Midiendo") bajo la fase activa. Contenido en cols 5–12.
   - Móvil: solo el faldón `.viz-bar` fijo bajo el menú (top 60 px, mismo cristal que la barra): "02 Desarrollo · ● Dando forma". Es lo que Jorge quiere conservar.
   - La fase activa es la última cuyo título `.ph-n` ha cruzado el 55 % de la pantalla.
-  - Inicio: tarjeta `.score` "Scoring de tu negocio" (**Ejemplo**, no datos reales). Debajo, separado en `.score-out` ("Al cerrar el scoring"): "Alcance y presupuesto" ✓ y "Soluciones" con candado (`.unlock`, enlaza a Desarrollo) y texto desenfocado; al llegar a Desarrollo el candado se abre (`.score.open`). Nota: "no te las desvelo aquí porque las aplico en la siguiente fase".
-  - Desarrollo ("Ahora, manos a la obra."): las 3 patas como cajas `.pil` (borde fino, sombra suave, estilo Condado pero sobrio). Cada caja: franja con la cinta de sonido en canvas (estilo de las líneas antiguas, más fina: 8 px; se agita al verla y se queda respirando con su forma: pico, onda, pulso; sin violeta), frase de dolor en sans legible con filete a la izquierda, título, solución y entregables con medio punto.
-  - Aparte de las fases, tarjeta `.beyond` "Más allá del proyecto · ¿Estamos cómodos juntos?" (seguimiento anual, tinte violeta, icono ↻) y el CTA "Mira cómo ha ido en negocios reales" (no tocar).
+  - Inicio: tarjeta `.score` "Scoring de tu negocio" (**Ejemplo**, no datos reales). Debajo, separado en `.score-out` ("Al cerrar el scoring"): "Alcance y presupuesto" ✓ y "Soluciones" con candado (`.unlock`, enlaza a Desarrollo) y texto desenfocado; al llegar a Desarrollo el candado se abre (`.score.open`). "Alcance y presupuesto" lleva un icono € (`.eur`). Sin nota debajo (Jorge la quitó).
+  - Desarrollo ("Ahora, manos a la obra."): las 3 patas como cajas `.pil` (borde fino, sombra suave, estilo Condado pero sobrio). Cada caja: franja con la cinta de sonido en canvas (estilo de las líneas antiguas, más fina: 8 px; se agita al verla y se queda respirando con su forma: pico, onda, pulso; sin violeta), etiqueta "Lo que te preocupa" (`.pil-k`, para que se entienda que son dolores del cliente) + frase en sans legible con filete, título, solución, entregables tangibles con medio punto (no repetir el título: p. ej. "Mapas 3D de reservas") y pie de precio `.pil-price`: ✓ "Si tu proyecto lo necesita · desde ··· €".
+  - Desenlace: pastilla ✓ "Incluido en el precio de tu proyecto" (`.ph-incl`).
+  - Aparte de las fases, tarjeta `.beyond` "Más allá del proyecto · ¿Estamos cómodos juntos?" (seguimiento anual, tinte violeta, icono ↻, pie con "··· € al año") y el CTA "Mira cómo ha ido en negocios reales" (no tocar).
 - **Proyectos** ("Negocios a los que he acompañado."): filtro por sector `.pf` (Todos marcado · Nightlife · Belleza; contadores por JS desde `data-sector`). Orden: Bela (abierta al cargar), Marina, AMOK, Marchica. Etiquetas `.pj-tags` como ítems con medio punto (también en móvil). Cada proyecto: titular = resultado · "Qué necesitaba" · "Qué hicimos" (viñetas vacío → medio → lleno) · "Resultado".
 - Desplegables (Proyectos y "Cosas que no voy a hacer") con chevron violeta (como en la web de Bela), ya no con el medio punto. Se mantiene la línea que vibra al pasar y al abrir.
+- **Precio** (Jorge quiere que se intuya que todo tiene coste): por pata "desde ··· €", Desenlace "incluido en el precio", seguimiento "··· € al año". Las cifras son marcadores `.amt` con "··· €" hasta que Jorge dé importes reales. **No pasar a main con "··· €".**
+- Detalle: "Tengo debilidad por los detalles." (antes "Soy perfeccionista. Mucho."). Cosas que no voy a hacer: "Diseñar para que te guste únicamente a ti."
+- Contacto: "Te toca a ti."; el botón principal muestra el email `info@silenceclub.es`.
+- Pie: logo vectorial (`svg.logo`) + "Dirección creativa y estratégica" a la izquierda; "Mostrar retícula" a la derecha. Ya no existe el logo PNG en máscaras (`.fsc`).
+- `public/opciones-desarrollo.html`: página de trabajo con 5 diseños (A–E) de las tres patas para que Jorge elija. **Borrarla antes de pasar a main.**
 - Retícula de 12 columnas (`.grid`); tecla G o botón "Mostrar retícula" la muestra.
 - Tipografías Google Fonts: Fraunces (serif) y Figtree (sans).
 - Colores: tokens en `:root` (`--niebla` fondo, `--papel`, `--tinta`, `--grafito`, `--linea`, `--violeta`, `--melocoton`).
@@ -89,9 +95,9 @@ Solo se publica `public/`. No meter nada sensible ahí.
 1. Botón "Explorar en 3D" de Marina: faltan `marina.glb` y `model-viewer.min.js` en `public/`.
 2. Enlace e iframe de Bela apuntan a `bela-vlc.netlify.app`; cambiar a `belabrowstudio.com` cuando ese dominio funcione.
 3. Textos (descartado por ahora): resultados con cifras reales, frase de entrada más clara, quitar "Soy perfeccionista. Mucho.".
-4. Valorar si el pie debe pasar también al logo nuevo.
 5. Si se usa `workers.dev` de producción, apagarlo en Cloudflare → Dominios, para no duplicar la web.
 6. Bajar Netlify a Free.
+4. Importes reales para las patas y el seguimiento anual (sustituir "··· €").
 7. Confirmar con Jorge que Marchica es Nightlife (se dedujo por entradas, reservas y temporada).
 
 ## Pruebas locales
