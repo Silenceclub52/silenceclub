@@ -24,8 +24,8 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Rama `main` → producción (`silenceclub.es`). Comando: `npx wrangler deploy`.
 - Cualquier otra rama → versión de prueba automática (`npx wrangler preview`):
   `https://<rama-con-guiones>-silenceclub.floral-snowflake-c31a.workers.dev/`
-- Rama de trabajo actual: `claude/gallant-thompson-hyejgu` →
-  https://claude-gallant-thompson-hyejgu-silenceclub.floral-snowflake-c31a.workers.dev/
+- Rama de trabajo actual: `claude/great-euler-ytewtv` (parte de `claude/gallant-thompson-hyejgu`) →
+  https://claude-great-euler-ytewtv-silenceclub.floral-snowflake-c31a.workers.dev/
 - Método: cambios en la rama de pruebas → Jorge revisa → si aprueba, se pasa a `main`.
 - Volver atrás: Cloudflare → silenceclub → Implementaciones → ⋯ → Revertir.
 
@@ -48,9 +48,10 @@ Solo se publica `public/`. No meter nada sensible ahí.
   Modo oscuro sigue al sistema, con negros profundos: fondo `#0B0A0C`, superficies `#141317`, secciones oscuras `#040405`.
 - **Logo Silence Club**: vectorizado letra a letra en un `<svg class="sc-defs">` (ids `sc-s0..6` = SILENCE, `sc-c0..3` = CLUB), reutilizado con `<use>`. viewBox `0 0 362 97`: línea en y=48 de x=0 a 358, punto (círculo medio relleno) en 351,86.5 r9.
   En el menú sustituye a "Jorge"; al pasar el ratón la línea vibra y vuelve al silencio. El pie aún dice "Jorge" y usa el logo antiguo en máscaras PNG (`.fsc`).
-- **Intro de marca** (~2,8 s, capa `.sc-intro`; la clase `intro` va en `<html>`, por eso la capa NO puede llamarse `.intro`):
-  línea que cruza la pantalla con ruido y ecos → columnas negras como ecualizador → calma y la línea se acorta → SILENCE sube y CLUB baja desde la línea → aparece el punto → el logo viaja al menú y las columnas se retiran.
-  Se salta con clic, tecla, rueda o gesto. No sale con "reducir movimiento" ni con un ancla en la URL. Se retira sola a los 6 s si falla. Tras la intro, la onda del hero empieza en calma (`window.__scIntro`).
+- **Intro de marca** (~1,8 s, solo dentro del logo del menú; sin capa a pantalla completa, sin bloquear scroll ni ocultar el hero):
+  la línea se dibuja desde el centro con un poco de ruido y se calma → SILENCE sube y CLUB baja desde la línea (recortados con `clipPath` `sc-up`/`sc-dn` del propio SVG del menú) → aparece el punto.
+  No sale con "reducir movimiento" ni con la pestaña oculta. El estado inicial se pinta en el mismo script que sigue al `<nav>`, así que no hay parpadeo. Durante la intro se ignora el hover del logo. Tras la intro, la onda del hero empieza en calma (`window.__scIntro`), para que no suenen dos líneas a la vez.
+  (La versión anterior, a pantalla completa con columnas y el logo viajando al menú, está en el commit `a22760a`.)
 - Retrato sin filtros ni capa melocotón (se quitó a petición de Jorge).
 
 ## Pendientes conocidos
