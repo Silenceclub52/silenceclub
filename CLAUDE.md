@@ -102,6 +102,8 @@ Solo se publica `public/`. No meter nada sensible ahí.
 4. Cuando Jorge tenga importes: sustituir los "··· €" de cada pata y del seguimiento anual.
 
 ## Pruebas locales
+- **Compatibilidad (iPhone con Safari antiguo)**: no depender de `aspect-ratio` (Safari ≥15) ni de `color-mix` (Safari ≥16.2) sin alternativa. Los logos `.lg` llevan ancho explícito `calc(var(--h)*var(--r))` (antes, con `aspect-ratio`, salían con ancho 0 en algunos iPhone). Cada `color-mix` va precedido de un `rgba` equivalente, y hay un bloque `@supports not (aspect-ratio:1)` para los marcos y el retrato. Nada de `max-width:100%` en hijos de celdas de grid que se ajustan al contenido.
+- Antes de pasar a main: auditoría en 8 anchos (320–1440), claro/oscuro y con Safari antiguo simulado (quitando `aspect-ratio` y `color-mix` de las hojas de estilo): sin errores JS, sin scroll horizontal, logos con tamaño, imágenes cargadas y marcos con alto.
 - Servir `public/` con `python3 -m http.server` y usar Playwright con `executablePath: '/opt/pw-browsers/chromium'`.
 - Bloquear `fonts.googleapis`/`netlify` en las pruebas (la red del entorno no llega y bloquea el renderizado).
 - Para animaciones: falsear `performance.now` y `requestAnimationFrame` con un script de inicio y avanzar el tiempo a mano (`page.clock` no funciona aquí).
