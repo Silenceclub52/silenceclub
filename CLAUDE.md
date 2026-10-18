@@ -100,7 +100,6 @@ Solo se publica `public/`. No meter nada sensible ahí.
 5. Si se usa `workers.dev` de producción, apagarlo en Cloudflare → Dominios, para no duplicar la web.
 6. Bajar Netlify a Free.
 4. Importes reales para las patas y el seguimiento anual (sustituir "··· €").
-7. Confirmar con Jorge que Marchica es Nightlife (se dedujo por entradas, reservas y temporada).
 
 ## Pruebas locales
 - Servir `public/` con `python3 -m http.server` y usar Playwright con `executablePath: '/opt/pw-browsers/chromium'`.
