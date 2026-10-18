@@ -35,12 +35,14 @@ wrangler.jsonc     # name silenceclub, assets ./public, "previews": {} (obligato
 public/
   index.html       # toda la web en un solo archivo (CSS y JS en línea)
   _headers         # X-Robots-Tag: noindex en *.workers.dev
-  favicon.svg, favicon.ico, apple-touch-icon.png   # favicon: la línea de sonido (ruido violeta → calma) y el punto a medias, sobre negro #0B0A0C
-  img/             # jorge.webp, jorge-alt.webp, marina-3d.webp, amok-mapa.webp, og.jpg (1200x630)
+  favicon.svg, favicon.ico, apple-touch-icon.png, icon-192.png, icon-512.png, site.webmanifest   # favicon: la línea de sonido (ruido violeta → calma) y el punto a medias, sobre negro #0B0A0C
+  robots.txt, sitemap.xml
+  img/             # jorge.webp, jorge-alt.webp, marina-3d.webp, amok-mapa.webp, og-silenceclub.jpg (1200x630, imagen para redes)
 ```
 Solo se publica `public/`. No meter nada sensible ahí.
 
 ## La web (public/index.html)
+- SEO y redes: título "Silence Club · Dirección creativa y estratégica", descripción de ~155 caracteres, Open Graph y Twitter con `og-silenceclub.jpg` (fondo negro, logo, "Primero, silencio.", la línea de sonido de violeta a calma) y JSON-LD `ProfessionalService`. Si se cambia la imagen, cambiarle el nombre de archivo para que las redes no sirvan la antigua de caché.
 - Secciones: hero "Primero, silencio." · Qué hago · Trabajos (Bela Brow Studio, Bela Marchica, Marina Beach Club, AMOK) · Cómo trabajo · Detalle/retícula · Cosas que no voy a hacer · Hola, soy Jorge · Contacto.
 - Retícula de 12 columnas (`.grid`); tecla G o botón "Mostrar retícula" la muestra.
 - Tipografías Google Fonts: Fraunces (serif) y Figtree (sans).
