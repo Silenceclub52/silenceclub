@@ -35,7 +35,7 @@ wrangler.jsonc     # name silenceclub, assets ./public, "previews": {} (obligato
 public/
   index.html       # toda la web en un solo archivo (CSS y JS en línea)
   _headers         # X-Robots-Tag: noindex en *.workers.dev
-  favicon.svg, apple-touch-icon.png
+  favicon.svg, favicon.ico, apple-touch-icon.png   # favicon: la línea de sonido (ruido violeta → calma) y el punto a medias, sobre negro #0B0A0C
   img/             # jorge.webp, jorge-alt.webp, marina-3d.webp, amok-mapa.webp, og.jpg (1200x630)
 ```
 Solo se publica `public/`. No meter nada sensible ahí.
