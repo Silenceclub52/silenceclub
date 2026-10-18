@@ -35,7 +35,7 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Volver atrás: Cloudflare → silenceclub → Implementaciones → ⋯ → Revertir.
 
 ### Estado (actualizar en cada paso a `main`)
-- En `main` (producción) desde el último "pásalo a main": todo lo descrito abajo (hero, pausa, Servicio por fases, Proyectos con filtro y logos, marcas, menú esmerilado, pie con logo), con precios "X €" por definir.
+- En `main` (producción) desde el último "pásalo a main": todo lo descrito abajo (hero, pausa, Servicio por fases, Proyectos con filtro y logos, marcas, menú esmerilado, pie con logo), con precios "··· €" por definir.
 - Rama de pruebas = `main` en ese momento; los cambios nuevos se hacen en la rama y se vuelven a pasar.
 
 ## Estructura del repositorio
@@ -69,7 +69,7 @@ Solo se publica `public/`. No meter nada sensible ahí.
 - **Logo por proyecto** (`.pj-lg`): encima del nombre del cliente en cada proyecto, pequeño (alto `30/r^0.55`), gris al 50 %, más visible al pasar o abrir. En escritorio `flex:none` (la columna de `.pj-meta` estiraría el alto); en móvil `flex-basis:100%` para que vaya en su propia línea.
 - **Marcas** (`.brands`, al final de Proyectos): "Negocios que he acompañado" + 9 logos como siluetas de un color (`public/img/logos/*.png`, blanco + alfa, 160 px de alto, usados como `mask` con `background:currentColor`): gris `--grafito` al 55 %, se encienden al pasar. Alto compensado a ojo por proporción (`--h = 50/r^0.55`). En móvil, cuadrícula 3×3. Origen: las propuestas de Jorge (index_17: Grupo Sounds, Condado, Marina, Sala Sonora, AMOK; index_18: Aramón, Marchica, The Big Room Formigal) y la imagen de Bela que envió (260 px; su web no es accesible desde el entorno).
 - Desplegables (Proyectos y "Cosas que no voy a hacer") con chevron violeta (como en la web de Bela), ya no con el medio punto. Se mantiene la línea que vibra al pasar y al abrir.
-- **Precio** (Jorge quiere que se intuya que todo tiene coste): por pata "desde ··· €", Desenlace "incluido en el precio", seguimiento "··· € al año". Se publican con el marcador **"X €"** (Jorge quiere que se vea que hay precio aunque aún no esté definido; no quitarlos). Cuando dé importes, sustituir cada `X €` en `.amt`.
+- **Precio** (Jorge quiere que se intuya que todo tiene coste): por pata "desde ··· €", Desenlace "incluido en el precio", seguimiento "··· € al año". Se publican con el marcador **"··· €"** (Jorge quiere que se vea que hay precio aunque aún no esté definido; no quitarlos). Cuando dé importes, sustituir cada `··· €` en `.amt`.
 - Detalle: "Tengo debilidad por el detalle." (antes "Soy perfeccionista. Mucho."). Cosas que no voy a hacer: "Diseñar para que te guste únicamente a ti."
 - Contacto: "Te toca a ti."; el botón principal muestra el email `info@silenceclub.es`.
 - Pie: logo vectorial (`svg.logo`) + "Dirección creativa y estratégica" a la izquierda; "Mostrar retícula" a la derecha. Ya no existe el logo PNG en máscaras (`.fsc`).
@@ -99,7 +99,7 @@ Solo se publica `public/`. No meter nada sensible ahí.
 3. Textos (descartado por ahora): resultados con cifras reales, frase de entrada más clara, quitar "Soy perfeccionista. Mucho.".
 5. Si se usa `workers.dev` de producción, apagarlo en Cloudflare → Dominios, para no duplicar la web.
 6. Bajar Netlify a Free.
-4. Cuando Jorge tenga importes: sustituir los "X €" de cada pata y del seguimiento anual.
+4. Cuando Jorge tenga importes: sustituir los "··· €" de cada pata y del seguimiento anual.
 
 ## Pruebas locales
 - Servir `public/` con `python3 -m http.server` y usar Playwright con `executablePath: '/opt/pw-browsers/chromium'`.
