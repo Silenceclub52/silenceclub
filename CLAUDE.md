@@ -36,7 +36,7 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 
 ### Estado (actualizar en cada paso a `main`)
 - En `main` (producción): intro de marca en el logo con barras, onda del hero sincronizada y reactiva al dedo, favicon nuevo, SEO e imagen para redes.
-- Solo en la rama de pruebas, pendiente de "pásalo a main": menú esmerilado sobrio (barra de lado a lado en móvil), hamburguesa recta, onda del hero que suena al aparecer en iPhone y vibración del logo al rebotar.
+- Solo en la rama de pruebas, pendiente de "pásalo a main": hero, Cómo trabajo, Proyectos con filtro, chevrons, logo bajo la pausa; menú esmerilado sobrio (barra de lado a lado en móvil), hamburguesa recta, onda del hero que suena al aparecer en iPhone y vibración del logo al rebotar.
 
 ## Estructura del repositorio
 ```
@@ -52,13 +52,18 @@ Solo se publica `public/`. No meter nada sensible ahí.
 
 ## La web (public/index.html)
 - SEO y redes: título "Silence Club · Dirección creativa y estratégica", descripción de ~155 caracteres, Open Graph y Twitter con `og-silenceclub.jpg` (fondo negro, logo, "Primero, silencio.", la línea de sonido de violeta a calma) y JSON-LD `ProfessionalService`. Si se cambia la imagen, cambiarle el nombre de archivo para que las redes no sirvan la antigua de caché.
-- Secciones: hero · pausa "Las mejores decisiones…" · Cómo trabajo (`#como-trabajo`) · Proyectos (`#proyectos`) · Así será trabajar juntos (`#juntos`, oscura) · Detalle/retícula · Cosas que no voy a hacer · Hola, soy Jorge (`#sobre-mi`) · Contacto.
+- Secciones: hero · pausa "Las mejores decisiones…" firmada con el logo · Cómo trabajo (`#como-trabajo`) · Proyectos (`#proyectos`) · Detalle/retícula · Cosas que no voy a hacer · Hola, soy Jorge (`#sobre-mi`) · Contacto. "Así será trabajar juntos" se quitó (repetía "Cómo trabajo").
 - Menú: Cómo trabajo · Proyectos · Sobre mí · Hablemos.
-- **Hero**: H1 "Primero, silencio." con "Dirección creativa y estratégica" firmado a su derecha (debajo en móvil). Fila 2: H2 `.say` (a quién acompaño) a la izquierda y, a la derecha, el párrafo (qué hago, en las 3 patas) que remata en `.punch` "este es tu sitio.". CTA principal (sólido, blanco en oscuro) "Ver cómo trabajo" → `#como-trabajo`; secundario "Cuéntame tu negocio" → `#contacto`.
-- **Cómo trabajo** ("Trabajo por proyectos."): 4 fases `.ph` (01 Inicio · 02 Desarrollo · 03 Desenlace · 04 Y después). A la izquierda, fijo (`.proc-side`, sticky), un visor con la línea de sonido en canvas `#procLine` que cambia según la fase que se lee: ruido con cabezal de escucha y marcas de oportunidades → se separa en tres pistas (una por pata; se ilumina la que se lee) → una línea que se mide y sube → calma con pulso y cola discontinua ("sigue"). Debajo, índice de fases clicable y barra de progreso. En móvil el visor es una franja fija bajo el menú y el índice se oculta. El progreso se mide cuando el título `.ph-n` de cada fase cruza el 55 % de la pantalla.
-  - Inicio: tarjeta `.score` "Scoring de tu negocio" con puntos (lleno/medio/vacío) **marcada como Ejemplo** (no son datos de clientes), "Alcance y presupuesto" ✓ y "Soluciones" tachado (`.redact`): no se desvelan, se aplican.
-  - Desarrollo: las 3 patas `.pil` con frase de dolor del cliente («…»), título, frase de solución y entregables. Cada una con su línea SVG (pico / onda / pulso), dibujada por JS con las mismas formas que el visor.
-- **Proyectos** ("Negocios a los que he acompañado."): filtro por sector `.pf` (Todos · Nightlife · Belleza; contadores calculados por JS desde `data-sector`). Orden: Marina, AMOK, Marchica (Nightlife) y Bela (Belleza); Marina abierto al cargar. Cada proyecto: titular = resultado · "Qué necesitaba" · "Qué hicimos" (viñetas vacío → medio → lleno) · "Resultado".
+- **Hero** (jerarquía original, a petición de Jorge): H1 "Primero, silencio."; debajo, a la izquierda, H2 `.role` "Dirección creativa y estratégica" grande (muy importante para Jorge); a la derecha `.pitch`: H3 `.hook` (sans, la tipografía de antes) "Acompaño a personas con un negocio que todavía no ven todo lo que pueden construir con él.", párrafo `.lead` y remate `.punch` "este es tu sitio." en serif cursiva **subrayado**. CTA principal (sólido, blanco en oscuro) "Ver cómo trabajo" → `#como-trabajo`; secundario "Cuéntame tu negocio" → `#contacto`.
+- **Pausa**: bajo la frase, el logo (`svg.logo.sign`, `<use>` de los `sc-*`) centrado, ~30 px de alto, color `--grafito` y opacidad .55.
+- **Cómo trabajo** ("Trabajo por proyectos."): 3 fases `.ph` (01 Inicio · 02 Desarrollo · 03 Desenlace). Sin animación de líneas (a Jorge no le gustó: demasiado ruido).
+  - Escritorio: índice fijo `.proc-idx` a la izquierda (cols 1–3) con marcas vacío/medio/lleno según la fase, y el estado ("Escuchando", "Dando forma", "Midiendo") bajo la fase activa. Contenido en cols 5–12.
+  - Móvil: solo el faldón `.viz-bar` fijo bajo el menú (top 60 px, mismo cristal que la barra): "02 Desarrollo · ● Dando forma". Es lo que Jorge quiere conservar.
+  - La fase activa es la última cuyo título `.ph-n` ha cruzado el 55 % de la pantalla.
+  - Inicio: tarjeta `.score` "Scoring de tu negocio" (**Ejemplo**, no datos reales). Debajo, separado en `.score-out` ("Al cerrar el scoring"): "Alcance y presupuesto" ✓ y "Soluciones" con candado (`.unlock`, enlaza a Desarrollo) y texto desenfocado; al llegar a Desarrollo el candado se abre (`.score.open`). Nota: "no te las desvelo aquí porque las aplico en la siguiente fase".
+  - Desarrollo ("Ahora, manos a la obra."): las 3 patas como cajas `.pil` (borde fino, sombra suave, estilo Condado pero sobrio). Cada caja: franja con la cinta de sonido en canvas (estilo de las líneas antiguas, más fina: 8 px; se agita al verla y se queda respirando con su forma: pico, onda, pulso; sin violeta), frase de dolor en sans legible con filete a la izquierda, título, solución y entregables con medio punto.
+  - Aparte de las fases, tarjeta `.beyond` "Más allá del proyecto · ¿Estamos cómodos juntos?" (seguimiento anual, tinte violeta, icono ↻) y el CTA "Mira cómo ha ido en negocios reales" (no tocar).
+- **Proyectos** ("Negocios a los que he acompañado."): filtro por sector `.pf` (Todos marcado · Nightlife · Belleza; contadores por JS desde `data-sector`). Orden: Bela (abierta al cargar), Marina, AMOK, Marchica. Etiquetas `.pj-tags` como ítems con medio punto (también en móvil). Cada proyecto: titular = resultado · "Qué necesitaba" · "Qué hicimos" (viñetas vacío → medio → lleno) · "Resultado".
 - Desplegables (Proyectos y "Cosas que no voy a hacer") con chevron violeta (como en la web de Bela), ya no con el medio punto. Se mantiene la línea que vibra al pasar y al abrir.
 - Retícula de 12 columnas (`.grid`); tecla G o botón "Mostrar retícula" la muestra.
 - Tipografías Google Fonts: Fraunces (serif) y Figtree (sans).
@@ -87,8 +92,7 @@ Solo se publica `public/`. No meter nada sensible ahí.
 4. Valorar si el pie debe pasar también al logo nuevo.
 5. Si se usa `workers.dev` de producción, apagarlo en Cloudflare → Dominios, para no duplicar la web.
 6. Bajar Netlify a Free.
-7. "Así será trabajar juntos" (`#juntos`) repite ideas de la nueva "Cómo trabajo" (escuchar, decir lo que veo, hacerlo). Decidir con Jorge si se fusiona o se quita.
-8. Confirmar con Jorge que Marchica es Nightlife (se dedujo por entradas, reservas y temporada).
+7. Confirmar con Jorge que Marchica es Nightlife (se dedujo por entradas, reservas y temporada).
 
 ## Pruebas locales
 - Servir `public/` con `python3 -m http.server` y usar Playwright con `executablePath: '/opt/pw-browsers/chromium'`.
