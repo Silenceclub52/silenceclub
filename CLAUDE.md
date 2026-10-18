@@ -35,7 +35,7 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Volver atrás: Cloudflare → silenceclub → Implementaciones → ⋯ → Revertir.
 
 ### Estado (actualizar en cada paso a `main`)
-- En `main` (producción) desde el último "pásalo a main": todo lo descrito abajo (hero, pausa, Servicio por fases, Proyectos con filtro y logos, marcas, menú esmerilado, pie con logo), con precios "··· €" por definir.
+- En `main` (producción) desde el último "pásalo a main" (commit `7d1ba69`): todo lo descrito abajo (hero, pausa, Servicio por fases, Proyectos con filtro y logos, marcas, menú esmerilado, pie con logo), con precios "··· €" por definir y las correcciones de compatibilidad para iPhone antiguos.
 - Rama de pruebas = `main` en ese momento; los cambios nuevos se hacen en la rama y se vuelven a pasar.
 
 ## Estructura del repositorio
