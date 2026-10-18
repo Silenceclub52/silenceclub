@@ -67,7 +67,7 @@ Solo se publica `public/`. No meter nada sensible ahí.
 - **Proyectos** ("Negocios a los que he acompañado."): filtro por sector `.pf` (Todos marcado · Nightlife · Belleza; contadores por JS desde `data-sector`). Orden: Bela (abierta al cargar), Marina, AMOK, Marchica. Etiquetas `.pj-tags` como ítems con medio punto, idénticos a los de las patas (también en móvil). Ojo: `.pj-head` es un `<button>` y necesita `font:inherit`, si no sale la fuente del sistema. Cada proyecto: titular = resultado · "Qué necesitaba" · "Qué hicimos" (viñetas vacío → medio → lleno) · "Resultado".
 - Desplegables (Proyectos y "Cosas que no voy a hacer") con chevron violeta (como en la web de Bela), ya no con el medio punto. Se mantiene la línea que vibra al pasar y al abrir.
 - **Precio** (Jorge quiere que se intuya que todo tiene coste): por pata "desde ··· €", Desenlace "incluido en el precio", seguimiento "··· € al año". Las cifras son marcadores `.amt` con "··· €" hasta que Jorge dé importes reales. **No pasar a main con "··· €".**
-- Detalle: "Tengo debilidad por los detalles." (antes "Soy perfeccionista. Mucho."). Cosas que no voy a hacer: "Diseñar para que te guste únicamente a ti."
+- Detalle: "Tengo debilidad por el detalle." (antes "Soy perfeccionista. Mucho."). Cosas que no voy a hacer: "Diseñar para que te guste únicamente a ti."
 - Contacto: "Te toca a ti."; el botón principal muestra el email `info@silenceclub.es`.
 - Pie: logo vectorial (`svg.logo`) + "Dirección creativa y estratégica" a la izquierda; "Mostrar retícula" a la derecha. Ya no existe el logo PNG en máscaras (`.fsc`).
 - Retícula de 12 columnas (`.grid`); tecla G o botón "Mostrar retícula" la muestra.
@@ -87,7 +87,7 @@ Solo se publica `public/`. No meter nada sensible ahí.
   - Móvil (≤900 px): barra de lado a lado, sin esquinas, 60 px de alto, solo una línea fina abajo. El panel de la hamburguesa se abre pegado debajo como una sola lámina, casi opaco (.98, antes .93), con separadores finos. Las reglas móviles llevan `html` delante para ganar en especificidad al bloque de modo oscuro, y hay un bloque `prefers-color-scheme:dark and max-width:900px` propio.
   - Hamburguesa: tres líneas rectas (`M3 4H25`, `M3 10H25`, `M3 16H25`), extremos rectos; al abrir forman la X.
   - Pendiente de decisión de Jorge: si la barra debe ser más transparente (65–70 %) para que se note más el cristal.
-- Retrato sin filtros ni capa melocotón (se quitó a petición de Jorge).
+- Retrato sin filtros ni capa melocotón (se quitó a petición de Jorge). La "J" sobre la foto lleva el medio punto del mismo color que la letra (antes melocotón), como en el logo.
 
 ## Pendientes conocidos
 0. Tras publicar en `main` cambios de SEO o imagen para redes: forzar la relectura en developers.facebook.com/tools/debug (Volver a extraer) y linkedin.com/post-inspector; enviar `sitemap.xml` en Search Console.
