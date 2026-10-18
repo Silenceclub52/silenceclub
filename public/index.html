@@ -60,16 +60,15 @@ a{color:inherit}
 /* Nav */
 nav{position:sticky;top:0;z-index:20;pointer-events:none}
 nav .wrap,nav .mobile-menu{pointer-events:auto}
-/* Liquid glass */
+/* Cristal esmerilado: desenfoque generoso, un borde fino, luz mínima arriba y sombra suave */
 nav .wrap{position:relative;border-radius:999px;transition:height .5s cubic-bezier(.3,.8,.3,1),margin .5s cubic-bezier(.3,.8,.3,1),padding .5s cubic-bezier(.3,.8,.3,1),width .5s cubic-bezier(.3,.8,.3,1),background .4s,box-shadow .4s}
-nav.glass .wrap{height:58px;margin-top:7px;margin-bottom:7px;width:calc(100% - 24px);padding:0 clamp(18px,2.6vw,32px);
-  background:linear-gradient(180deg,rgba(247,248,250,.8),rgba(247,248,250,.7) 48%,rgba(247,248,250,.76));
-  -webkit-backdrop-filter:blur(14px) saturate(180%) brightness(1.04);backdrop-filter:blur(14px) saturate(180%) brightness(1.04);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.6),inset 2px 2px 1px -1px rgba(255,255,255,.95),inset -2px -2px 1px -1px rgba(255,255,255,.55),inset 0 -12px 20px -14px rgba(255,255,255,.9),inset 0 10px 18px -14px rgba(28,30,42,.12),0 14px 34px -12px rgba(28,30,42,.28),0 2px 6px rgba(28,30,42,.08)}
-nav.glass .wrap::after{content:"";position:absolute;left:28%;width:34%;bottom:0;height:1.5px;border-radius:2px;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,200,150,.9),rgba(190,255,190,.9),rgba(150,200,255,.9),rgba(240,170,255,.9),transparent);opacity:.75;filter:blur(.3px)}
-nav.glass.dark .wrap{background:linear-gradient(180deg,rgba(52,54,70,.8),rgba(28,30,42,.74) 50%,rgba(52,54,70,.76));box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),inset 2px 2px 1px -1px rgba(255,255,255,.5),inset -2px -2px 1px -1px rgba(255,255,255,.2),inset 0 -12px 20px -14px rgba(255,255,255,.35),0 14px 34px -12px rgba(0,0,0,.55)}
-nav .mobile-menu.open{margin:0 12px;border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,.62),rgba(255,255,255,.4));-webkit-backdrop-filter:blur(18px) saturate(180%);backdrop-filter:blur(18px) saturate(180%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),inset 2px 2px 1px -1px #fff,0 14px 34px -12px rgba(28,30,42,.28)}
-nav.dark .mobile-menu.open{background:linear-gradient(180deg,rgba(28,30,42,.7),rgba(28,30,42,.55));box-shadow:inset 0 0 0 1px rgba(255,255,255,.2),0 14px 34px -12px rgba(0,0,0,.5)}
+nav.glass .wrap,nav .mobile-menu.open{background:rgba(247,248,250,.8);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);
+  box-shadow:inset 0 0 0 1px rgba(28,30,42,.07),inset 0 1px 0 rgba(255,255,255,.75),0 1px 2px rgba(28,30,42,.04),0 10px 28px -14px rgba(28,30,42,.2)}
+nav.glass .wrap{height:56px;margin-top:10px;margin-bottom:10px;width:calc(100% - 24px);padding:0 clamp(18px,2.6vw,30px)}
+nav.glass.dark .wrap,nav.dark .mobile-menu.open{background:rgba(20,19,23,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.09),inset 0 1px 0 rgba(255,255,255,.07),0 12px 30px -14px rgba(0,0,0,.55)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){nav.glass .wrap,nav .mobile-menu.open{background:rgba(247,248,250,.97)}nav.glass.dark .wrap,nav.dark .mobile-menu.open{background:rgba(20,19,23,.96)}}
+nav .mobile-menu.open{margin:0 12px;border-radius:22px;background:rgba(247,248,250,.93)}
+nav.dark .mobile-menu.open{background:rgba(20,19,23,.93)}
 nav.dark .brand,nav.dark .burger,nav.dark .mobile-menu a{color:var(--papel)}
 nav.dark ul a{color:rgba(247,248,250,.7)}
 nav.dark ul a:hover,nav.dark ul a.cta{color:var(--papel);border-color:var(--papel)}
@@ -93,7 +92,7 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 
 .burger{display:none;background:none;border:0;padding:12px;margin-right:-12px;cursor:pointer;color:var(--tinta)}
 .burger svg{display:block;width:28px;height:20px;overflow:visible}
-.burger path{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;transform-box:fill-box;transform-origin:center;transition:transform .35s ease,opacity .25s}
+.burger path{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:butt;transform-box:fill-box;transform-origin:center;transition:transform .35s ease,opacity .25s}
 .burger[aria-expanded="true"] .l1{transform:translateY(6px) rotate(45deg)}
 .burger[aria-expanded="true"] .l2{opacity:0}
 .burger[aria-expanded="true"] .l3{transform:translateY(-6px) rotate(-45deg)}
@@ -452,6 +451,17 @@ section.block{padding:clamp(96px,14vw,176px) 0}
   .burger{display:block}
   .mobile-menu{display:block;max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.45,0,.55,1)}
   .mobile-menu.open{max-height:420px}
+  /* Móvil: barra de lado a lado, sin esquinas; el panel se abre pegado debajo, como una sola lámina */
+  html nav.glass .wrap{width:100%;height:60px;margin:0;border-radius:0;padding:0 var(--pad);box-shadow:inset 0 -1px 0 rgba(28,30,42,.08)}
+  html nav .mobile-menu.open{margin:0;border-radius:0;box-shadow:inset 0 -1px 0 rgba(28,30,42,.08),0 18px 30px -22px rgba(28,30,42,.35)}
+  html nav.glass.dark .wrap{box-shadow:inset 0 -1px 0 rgba(255,255,255,.08)}
+  html nav.dark .mobile-menu.open{box-shadow:inset 0 -1px 0 rgba(255,255,255,.08),0 18px 30px -22px rgba(0,0,0,.6)}
+  .mobile-menu ul{padding:4px var(--pad) 22px}
+  html nav .mobile-menu.open{background:rgba(247,248,250,.98)}
+  html nav.dark .mobile-menu.open{background:rgba(20,19,23,.98)}
+  .mobile-menu a{padding:14px 0;font-size:28px}
+  .mobile-menu li+li a{border-top:1px solid rgba(28,30,42,.08)}
+  nav.dark .mobile-menu li+li a{border-top-color:rgba(255,255,255,.09)}
   .case .ctx,.contact p{grid-column:1/span 10}
   .story blockquote,.story .prose,.q h3,.q .body,.how .h2,.case .h2,.shot,.case ol,.detail .h2,.detail .prose,.proof,.nope .h2,.nope ul,.about .portrait,.about .txt{grid-column:1/-1}
   .story .prose,.q .body,.detail .prose,.nope ul,.about .txt{margin-top:32px}
@@ -476,6 +486,8 @@ section.block{padding:clamp(96px,14vw,176px) 0}
 
 /* Modo oscuro: sigue al sistema */
 @media (prefers-color-scheme:dark){
+  .mobile-menu li+li a{border-top-color:rgba(255,255,255,.09)}
+  nav .mobile-menu.open{background:rgba(20,19,23,.93)}
   :root{--niebla:#0B0A0C;--papel:#141317;--tinta:#EDECF0;--grafito:#9D9BA5;--linea:#27262C;--violeta:#A08CF5;--melocoton:#F2BCA3;color-scheme:dark}
   ::selection{color:#0B0A0C}
   .how,.site-foot{background:#040405}
@@ -487,10 +499,14 @@ section.block{padding:clamp(96px,14vw,176px) 0}
   .about .mono{color:#F7F8FA}
   .case .shot{background:#17161A}
   .shot .frame{background:linear-gradient(160deg,#211C22,#17161A 60%)}
-  nav.glass .wrap{background:linear-gradient(180deg,rgba(32,31,36,.8),rgba(20,19,23,.72) 48%,rgba(32,31,36,.76));box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),inset 2px 2px 1px -1px rgba(255,255,255,.32),inset -2px -2px 1px -1px rgba(255,255,255,.1),inset 0 -12px 20px -14px rgba(255,255,255,.16),0 14px 34px -12px rgba(0,0,0,.6),0 2px 6px rgba(0,0,0,.3)}
-  nav .mobile-menu.open,nav.dark .mobile-menu.open{background:linear-gradient(180deg,rgba(26,25,30,.95),rgba(20,19,23,.92));box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),inset 2px 2px 1px -1px rgba(255,255,255,.25),0 14px 34px -12px rgba(0,0,0,.6)}
+  nav.glass .wrap,nav .mobile-menu.open,nav.glass.dark .wrap,nav.dark .mobile-menu.open{background:rgba(20,19,23,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),inset 0 1px 0 rgba(255,255,255,.06),0 12px 30px -14px rgba(0,0,0,.6)}
   nav.dark .brand,nav.dark .burger,nav.dark .mobile-menu a,nav.dark ul a:hover,nav.dark ul a.cta{color:#ECEDF2;border-color:#ECEDF2}
   nav.dark ul a{color:rgba(236,237,242,.7)}
+}
+@media (prefers-color-scheme:dark) and (max-width:900px){
+  html nav .mobile-menu.open,html nav.dark .mobile-menu.open{background:rgba(20,19,23,.98)}
+  html nav.glass .wrap,html nav.glass.dark .wrap{box-shadow:inset 0 -1px 0 rgba(255,255,255,.08)}
+  html nav .mobile-menu.open,html nav.dark .mobile-menu.open{box-shadow:inset 0 -1px 0 rgba(255,255,255,.08),0 18px 30px -22px rgba(0,0,0,.6)}
 }
 </style>
 </head>
@@ -506,7 +522,7 @@ section.block{padding:clamp(96px,14vw,176px) 0}
       <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#contacto" class="cta">Hablemos</a></li>
     </ul>
-    <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mmenu"><svg viewBox="0 0 28 20" aria-hidden="true"><path class="l1" d="M2.00 4.09 L2.50 4.11 L3.00 4.13 L3.50 4.15 L4.00 4.16 L4.50 4.18 L5.00 4.19 L5.50 4.20 L6.00 4.21 L6.50 4.22 L7.00 4.22 L7.50 4.22 L8.00 4.22 L8.50 4.22 L9.00 4.21 L9.50 4.20 L10.00 4.19 L10.50 4.18 L11.00 4.16 L11.50 4.15 L12.00 4.13 L12.50 4.11 L13.00 4.09 L13.50 4.07 L14.00 4.05 L14.50 4.02 L15.00 4.00 L15.50 3.98 L16.00 3.95 L16.50 3.93 L17.00 3.91 L17.50 3.89 L18.00 3.87 L18.50 3.85 L19.00 3.84 L19.50 3.82 L20.00 3.81 L20.50 3.80 L21.00 3.79 L21.50 3.78 L22.00 3.78 L22.50 3.78 L23.00 3.78 L23.50 3.78 L24.00 3.79 L24.50 3.80 L25.00 3.81 L25.50 3.82 L26.00 3.84"/><path class="l2" d="M2.00 10.13 L2.50 10.11 L3.00 10.09 L3.50 10.07 L4.00 10.04 L4.50 10.02 L5.00 10.00 L5.50 9.98 L6.00 9.95 L6.50 9.93 L7.00 9.91 L7.50 9.89 L8.00 9.87 L8.50 9.85 L9.00 9.84 L9.50 9.82 L10.00 9.81 L10.50 9.80 L11.00 9.79 L11.50 9.78 L12.00 9.78 L12.50 9.78 L13.00 9.78 L13.50 9.79 L14.00 9.79 L14.50 9.80 L15.00 9.81 L15.50 9.82 L16.00 9.84 L16.50 9.85 L17.00 9.87 L17.50 9.89 L18.00 9.91 L18.50 9.93 L19.00 9.96 L19.50 9.98 L20.00 10.00 L20.50 10.02 L21.00 10.05 L21.50 10.07 L22.00 10.09 L22.50 10.11 L23.00 10.13 L23.50 10.15 L24.00 10.16 L24.50 10.18 L25.00 10.19 L25.50 10.20 L26.00 10.21"/><path class="l3" d="M2.00 15.78 L2.50 15.78 L3.00 15.78 L3.50 15.79 L4.00 15.79 L4.50 15.80 L5.00 15.81 L5.50 15.82 L6.00 15.84 L6.50 15.85 L7.00 15.87 L7.50 15.89 L8.00 15.91 L8.50 15.93 L9.00 15.96 L9.50 15.98 L10.00 16.00 L10.50 16.03 L11.00 16.05 L11.50 16.07 L12.00 16.09 L12.50 16.11 L13.00 16.13 L13.50 16.15 L14.00 16.17 L14.50 16.18 L15.00 16.19 L15.50 16.20 L16.00 16.21 L16.50 16.22 L17.00 16.22 L17.50 16.22 L18.00 16.22 L18.50 16.21 L19.00 16.21 L19.50 16.20 L20.00 16.19 L20.50 16.18 L21.00 16.16 L21.50 16.15 L22.00 16.13 L22.50 16.11 L23.00 16.09 L23.50 16.07 L24.00 16.04 L24.50 16.02 L25.00 16.00 L25.50 15.97 L26.00 15.95"/></svg></button>
+    <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mmenu"><svg viewBox="0 0 28 20" aria-hidden="true"><path class="l1" d="M3 4H25"/><path class="l2" d="M3 10H25"/><path class="l3" d="M3 16H25"/></svg></button>
   </div>
   <div class="mobile-menu" id="mmenu">
     <ul>
@@ -539,13 +555,24 @@ section.block{padding:clamp(96px,14vw,176px) 0}
   /* Menú: al pasar por el logo, la línea suena un instante y vuelve al silencio */
   var bl=brand&&brand.querySelector('.ln'), busy=false;
   if(bl&&!reduce){
-    var hr=false,ht0=0;
+    var hr=false,ht0=0,hk=1;
     var hf=function(now){
       var t=(now-ht0)/1000,a=Math.max(0,1-t/.9);a=a*a*Math.min(1,t/.08);
-      bl.setAttribute('d',a>.003?wavePath(0,358,3,function(x){return 48+10*a*Math.sin(Math.PI*x/358)*noise(x,t);}):'M0 48H358');
+      bl.setAttribute('d',a>.003?wavePath(0,358,3,function(x){return 48+10*hk*a*Math.sin(Math.PI*x/358)*noise(x,t);}):'M0 48H358');
       if(a>.003||t<.1)requestAnimationFrame(hf);else hr=false;
     };
-    brand.addEventListener('pointerenter',function(){if(busy)return;ht0=performance.now();if(!hr){hr=true;requestAnimationFrame(hf);}});
+    var ring=function(k){if(busy)return;hk=typeof k==='number'?k:1;ht0=performance.now();if(!hr){hr=true;requestAnimationFrame(hf);}};
+    brand.addEventListener('pointerenter',ring);
+    /* Al rebotar arriba o abajo de la página (sobre todo en móvil, donde no hay cursor), la línea del logo suena igual */
+    var edgeOf=function(){var y=window.scrollY,m=document.documentElement.scrollHeight-innerHeight;return y<=0?-1:y>=m-6?1:0;};
+    var edge=edgeOf(),ty0=null,pulled=false;
+    window.addEventListener('scroll',function(){var e=edgeOf();if(e&&e!==edge)ring(2);edge=e;},{passive:true});
+    window.addEventListener('touchstart',function(e){ty0=e.touches[0].clientY;pulled=false;},{passive:true});
+    window.addEventListener('touchmove',function(e){
+      if(ty0===null||pulled)return;var d=e.touches[0].clientY-ty0,g=edgeOf();
+      if((g<0&&d>36)||(g>0&&d<-36)){pulled=true;ring(2);}
+    },{passive:true});
+    window.addEventListener('touchend',function(){ty0=null;},{passive:true});
   }
 
   /* Intro de marca, en el propio logo del menú: la línea suena y se calma,
@@ -1022,7 +1049,9 @@ section.block{padding:clamp(96px,14vw,176px) 0}
   },{passive:true});
   window.addEventListener('resize',size);
   if('IntersectionObserver' in window){
-    var seen=false;new IntersectionObserver(function(en){if(en[0].isIntersecting){if(!seen){seen=true;t0=performance.now();}start();}else stop();},{threshold:.5}).observe(c);
+    var seen=false;new IntersectionObserver(function(en){if(en[0].isIntersecting){if(!seen){seen=true;t0=performance.now();
+      /* Si la línea no estaba a la vista durante la intro del logo (móvil: queda bajo el pliegue), su onda suena al aparecer */
+      if(window.__scIntro!=null&&t0-window.__scIntro>300)window.__scIntro=t0;}start();}else stop();},{threshold:.35}).observe(c);
   } else start();
   size();
 
