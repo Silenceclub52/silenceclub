@@ -1038,6 +1038,11 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     b.addEventListener('pointerenter',function(e){sz();pos(e);vx=px;vy=py;ta=1;if(!run){run=true;requestAnimationFrame(fr);}});
     b.addEventListener('pointermove',pos);
     b.addEventListener('pointerleave',function(){ta=0;});
+    /* Barrido sin cursor: la ondita recorre el botón de izquierda a derecha (lo usa el relleno de "Te toca a ti") */
+    b.sweep=function(dur){
+      sz();var s0=performance.now();px=vx=0;py=vy=H*.62;ta=1;if(!run){run=true;requestAnimationFrame(fr);}
+      (function mv(){var q=Math.min(1,(performance.now()-s0)/dur),e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2;px=e*W;if(q<1)requestAnimationFrame(mv);else ta=0;})();
+    };
   });
 
   /* Estado del menú: cristal al hacer scroll y tono oscuro sobre secciones oscuras */
@@ -1283,7 +1288,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   var cta=document.querySelector('#contacto .btn.solid');
   if(cta&&!reduce&&'IntersectionObserver' in window){
     var cio=new IntersectionObserver(function(en){if(!en[0].isIntersecting)return;cio.disconnect();
-      setTimeout(function(){cta.classList.add('fill');cta.addEventListener('animationend',function(){cta.classList.remove('fill');},{once:true});},250);},{rootMargin:'0px 0px -20% 0px',threshold:1});
+      setTimeout(function(){cta.classList.add('fill');if(cta.sweep)cta.sweep(900);cta.addEventListener('animationend',function(){cta.classList.remove('fill');},{once:true});},250);},{rootMargin:'0px 0px -20% 0px',threshold:1});
     cio.observe(cta);
   }
 
