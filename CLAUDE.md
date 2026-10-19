@@ -24,15 +24,25 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Rama `main` → producción (`silenceclub.es`). Comando: `npx wrangler deploy`.
 - Cualquier otra rama → versión de prueba automática (`npx wrangler preview`):
   `https://<rama-con-guiones>-silenceclub.floral-snowflake-c31a.workers.dev/`
-- Rama de trabajo actual: `claude/determined-gauss-cmhm1g` →
-  https://claude-determined-gauss-cmhm1g-silenceclub.floral-snowflake-c31a.workers.dev/
-  Incluye todo `claude/great-euler-ytewtv` (menú). Antes de empezar una rama nueva, partir de la última rama de trabajo
+- Rama de trabajo actual (candidata a `main`): `claude/intelligent-cannon-dipviu` →
+  https://claude-intelligent-cannon-dipviu-silenceclub.floral-snowflake-c31a.workers.dev/
+  Sale de `main` y trae de `claude/nueva-estetica-contraste` solo lo que Jorge eligió (ver abajo).
+  Las ramas `claude/nueva-estetica` y `claude/nueva-estetica-contraste` (versión única sin modo oscuro) quedan como referencia; Jorge las descartó como base. Antes de empezar una rama nueva, partir de la última rama de trabajo
   si aún no está en `main`, no de `main`: así se perdió el menú una vez.
   (`claude/gallant-thompson-hyejgu` ya está entera dentro de `main`; no se usa.)
 - Pasar a `main`: avance rápido (`git push origin <rama>:main`), sin merge ni rebase. Antes, `npx wrangler@4 deploy --dry-run`.
   Después, Jorge comprueba en Cloudflare → Implementaciones que la publicación salió en verde (desde aquí no se puede ver).
 - Método: cambios en la rama de pruebas → Jorge revisa → si aprueba, se pasa a `main`.
 - Volver atrás: Cloudflare → silenceclub → Implementaciones → ⋯ → Revertir.
+
+### Cambios de la rama candidata (sobre `main`)
+- Se mantiene modo claro y oscuro. Nada de losas redondeadas a sangre en secciones grandes.
+- Modo oscuro: hero y "Te toca a ti" en negro con un toque muy ligero de púrpura `#0E0B14` (`theme-color` oscuro igual). El hero sube bajo el menú (`margin-top:-72px`) para que ese fondo llegue arriba.
+- Servicio con la estructura, textos y funcionamiento de la rama de contraste (colores de `main`): títulos "01 · INICIO"; scoring en tarjeta con medios puntos que se rellenan despacio (.22 s por punto, con la tarjeta bien a la vista) y debajo dos cajas; el candado se sacude una vez (`.nudge`) cuando las soluciones cruzan la mitad de la pantalla y se abre al llegar a Desarrollo; patas con "Responde a", título algo más grande, frase en primera persona y entregables plegados ("Ver entregables"); faldón móvil solo cuando el título de la fase ya no se ve. Intro de Desarrollo: "Con todo lo analizado, paso a la acción. Trabajo sobre tres áreas:". Seguimiento anual: "Seguimos trabajando juntos todo el año, con seguimiento de todo lo que hemos puesto en marcha."
+- Proyectos: tarjetas `.card` sobre el fondo (sin el papel punteado); la línea de sonido es el borde superior; filtro en una cápsula.
+- "Cosas que no voy a hacer": lista editorial, título fijo a la izquierda, sin numeración ni medio punto.
+- Sobre mí: el de `main`, con la sombra del retrato en gris corporativo (`--grafito` al 22 %, antes melocotón) y la frase de Silence Club en serif recta.
+- "Te toca a ti": centrado, con el medio punto encima. Detalle: texto de Jorge ("Intento cuidar siempre hasta el último detalle…").
 
 ### Estado (actualizar en cada paso a `main`)
 - En `main` (producción) desde el último "pásalo a main": todo lo descrito abajo (hero, pausa, Servicio por fases, Proyectos con filtro y logos, marcas, menú esmerilado, pie con logo), con precios "··· €" por definir.
