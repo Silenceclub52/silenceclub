@@ -242,23 +242,6 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .beyond-price .amt{font-size:clamp(30px,3vw,40px);font-weight:340}
 .beyond div>p:last-child{margin-top:14px;max-width:34em;font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--grafito)}
 .proc-end{grid-column:5/span 8}
-/* Prueba (versión "C"): en escritorio el índice de fases pasa a ser una cápsula horizontal fija arriba.
-   Para volver al índice lateral basta con quitar la clase "seg" de la sección #servicio. */
-@media (min-width:901px){
-  .proc-sec.seg .proc-side{grid-column:1/-1;top:82px;z-index:6;margin-bottom:clamp(48px,6vw,80px)}
-  .proc-sec.seg .proc-steps,.proc-sec.seg .beyond,.proc-sec.seg .proc-end{grid-column:1/span 9}
-  .proc-sec.seg .proc-idx{display:flex;gap:4px;width:fit-content;padding:5px;border-radius:999px;background:rgba(243,241,247,.86);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);box-shadow:inset 0 0 0 1px rgba(25,21,38,.06),0 10px 28px -16px rgba(25,21,38,.25)}
-  .proc-sec.seg .proc-idx::before{display:none}
-  .proc-sec.seg .proc-idx li+li{margin-top:0}
-  .proc-sec.seg .proc-idx a{display:flex;align-items:center;gap:10px;height:44px;padding:0 20px 0 16px;border-radius:999px;transition:background .4s,color .4s}
-  .proc-sec.seg .proc-idx a>i{position:static;flex:none;width:11px;height:11px}
-  .proc-sec.seg .proc-idx a span{margin-right:-2px}
-  .proc-sec.seg .proc-idx a[aria-current]{background:var(--tinta);color:var(--papel)}
-  .proc-sec.seg .proc-idx a[aria-current]>i{background:linear-gradient(90deg,var(--tinta) 50%,currentColor 50%)}
-  .proc-sec.seg .proc-idx .st{max-height:none;max-width:0;margin:0;white-space:nowrap;color:rgba(243,241,247,.7);transition:max-width .5s,opacity .4s}
-  .proc-sec.seg .proc-idx a[aria-current] .st{max-width:160px;margin:0}
-  .proc-sec.seg .proc-idx .st::before{background:#B6A6FF}
-}
 .ph-next{display:inline-flex;align-items:center;gap:10px;margin-top:32px;padding-bottom:2px;border-bottom:1px solid currentColor;font-weight:500;text-decoration:none;transition:color .3s}
 .ph-next svg{width:11px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .4s}
 .ph-next:hover{color:var(--violeta)}
@@ -676,7 +659,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   </div>
 </section>
 
-<section class="block proc-sec seg" id="servicio">
+<section class="block proc-sec" id="servicio">
   <div class="wrap grid proc-head">
     <p class="kicker">Servicio</p>
     <h2 class="h2">Trabajo por proyectos.</h2>
