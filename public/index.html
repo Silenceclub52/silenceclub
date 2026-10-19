@@ -530,13 +530,13 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
    Aparece al salir del hero y se va al llegar a "Te toca a ti" */
 .tour{display:none}
 @media (max-width:900px){
-  .tour{position:fixed;left:50%;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:19;display:block;
+  .tour{position:fixed;left:50%;bottom:6px;bottom:max(6px,calc(env(safe-area-inset-bottom,0px) - 18px));z-index:19;display:block;
     border-radius:999px;background:rgba(247,248,250,.93);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);
     box-shadow:inset 0 0 0 1px rgba(28,30,42,.07),0 8px 24px -12px rgba(28,30,42,.28);
-    opacity:0;transform:translate(-50%,16px);pointer-events:none;transition:opacity .35s,transform .45s cubic-bezier(.3,.8,.3,1)}
+    opacity:0;transform:translate(-50%,10px);pointer-events:none;transition:opacity .35s,transform .45s cubic-bezier(.3,.8,.3,1)}
   .tour.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
   .tour ul{display:flex;margin:0;padding:0 4px;list-style:none}
-  .tour a{display:flex;align-items:center;height:36px;padding:0 11px;font:500 12.5px/1 var(--sans);color:var(--grafito);text-decoration:none;white-space:nowrap;transition:color .3s}
+  .tour a{display:flex;align-items:center;height:34px;padding:0 11px;font:500 12.5px/1 var(--sans);color:var(--grafito);text-decoration:none;white-space:nowrap;transition:color .3s}
   .tour a.on{color:var(--tinta)}
   .tour a.cta{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--violeta)}
 }
