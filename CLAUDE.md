@@ -40,7 +40,7 @@ https://claude-nueva-estetica-silenceclub.floral-snowflake-c31a.workers.dev/
 - Fondo gris violáceo `--niebla:#DEDBE6`, superficies `--papel:#F3F1F7`, violeta `#4B2FC0`.
 - Bloques hondos `.deep` (hero y "Te toca a ti"): casi negro con un punto de violeta (`--hondo:#14101D`), redondeados, a 10 px del borde (6 px en móvil); redefinen los tokens dentro, así que la onda del hero lee los colores del propio canvas. Llevan `.how` para que el menú se vuelva oscuro encima. El hero sube bajo el menú (`margin-top: m - 72px`).
 - Tarjetas `.card` (proyectos y "Cosas que no voy a hacer"): sobresalen un poco por los lados para que el texto siga alineado con la columna; en móvil quedan a 8 px del borde. En cada proyecto la línea de sonido es el borde superior de la tarjeta.
-- Scoring al estilo "A": tarjeta con barras y nota, y debajo dos cajas (Alcance y presupuesto · Soluciones con candado). Títulos de fase "01 · INICIO" en versalitas sans.
+- Scoring: tarjeta al estilo "A" con la puntuación de siempre en medios puntos (vacío, medio, lleno; sin cifras), y debajo dos cajas (Alcance y presupuesto · Soluciones con candado). Títulos de fase "01 · INICIO" en versalitas sans.
 - Filtro de proyectos en una sola cápsula. Pausa y marcas sobre el fondo; "Detalle" sigue en franja `--papel`. Marco del retrato en violeta. Pie sobre el fondo con el logo en tinta.
 
 ### Estado (actualizar en cada paso a `main`)
