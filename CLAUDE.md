@@ -34,6 +34,15 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Método: cambios en la rama de pruebas → Jorge revisa → si aprueba, se pasa a `main`.
 - Volver atrás: Cloudflare → silenceclub → Implementaciones → ⋯ → Revertir.
 
+### Prototipo "nueva estética" (rama `claude/nueva-estetica`, no tocar `main` con ella sin que Jorge lo pida)
+https://claude-nueva-estetica-silenceclub.floral-snowflake-c31a.workers.dev/
+- Una sola versión para todos: sin modo oscuro (`color-scheme: only light`). Elegida por Jorge a partir de la propuesta "C · Frecuencia" del lienzo de diseño, con matices de la "A" y de la web original.
+- Fondo gris violáceo `--niebla:#DEDBE6`, superficies `--papel:#F3F1F7`, violeta `#4B2FC0`.
+- Bloques hondos `.deep` (hero y "Te toca a ti"): casi negro con un punto de violeta (`--hondo:#14101D`), redondeados, a 10 px del borde (6 px en móvil); redefinen los tokens dentro, así que la onda del hero lee los colores del propio canvas. Llevan `.how` para que el menú se vuelva oscuro encima. El hero sube bajo el menú (`margin-top: m - 72px`).
+- Tarjetas `.card` (proyectos y "Cosas que no voy a hacer"): sobresalen un poco por los lados para que el texto siga alineado con la columna; en móvil quedan a 8 px del borde. En cada proyecto la línea de sonido es el borde superior de la tarjeta.
+- Scoring al estilo "A": tarjeta con barras y nota, y debajo dos cajas (Alcance y presupuesto · Soluciones con candado). Títulos de fase "01 · INICIO" en versalitas sans.
+- Filtro de proyectos en una sola cápsula. Pausa y marcas sobre el fondo; "Detalle" sigue en franja `--papel`. Marco del retrato en violeta. Pie sobre el fondo con el logo en tinta.
+
 ### Estado (actualizar en cada paso a `main`)
 - En `main` (producción) desde el último "pásalo a main": todo lo descrito abajo (hero, pausa, Servicio por fases, Proyectos con filtro y logos, marcas, menú esmerilado, pie con logo), con precios "··· €" por definir.
 - Rama de pruebas = `main` en ese momento; los cambios nuevos se hacen en la rama y se vuelven a pasar.
