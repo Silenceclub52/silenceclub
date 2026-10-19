@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="theme-color" content="#EDEFF3" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0B0A0C" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0E0B14" media="(prefers-color-scheme: dark)">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Silence Club · Dirección creativa y estratégica</title>
 <meta name="description" content="Acompaño a personas con un negocio que todavía no ven todo lo que pueden construir con él. Estrategia de marca, identidad, web y captación.">
@@ -99,7 +99,7 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 .mobile-menu a{display:block;padding:10px 0;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:32px;line-height:1.2;text-decoration:none;color:var(--tinta)}
 
 /* Hero */
-.hero{padding:clamp(56px,10vh,140px) 0 0;position:relative}
+.hero{margin-top:-72px;padding:calc(72px + clamp(56px,10vh,140px)) 0 0;position:relative}
 .hero h1{grid-column:1/span 11;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(64px,12vw,176px);line-height:.92;letter-spacing:-.035em}
 .hero .role{grid-column:1/span 5;margin-top:64px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:clamp(34px,3.8vw,56px);line-height:1.02;letter-spacing:-.02em}
 .hero .role span{display:block;color:var(--grafito);font-weight:340}
@@ -148,7 +148,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .proc-idx a>i{position:absolute;left:0;top:4px;width:11px;height:11px;border-radius:50%;border:1px solid currentColor;background:var(--niebla);transition:background .3s}
 .proc-idx a.done>i{background:currentColor}
 .proc-idx a[aria-current]>i{background:linear-gradient(90deg,var(--niebla) 50%,currentColor 50%)}
-.proc-idx a span{margin-right:8px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-size:13px;opacity:.7}
+.proc-idx a span{margin-right:8px;font-size:12px;letter-spacing:.08em;opacity:.7}
 .proc-idx a:hover,.proc-idx a[aria-current]{color:var(--tinta)}
 .proc-idx .st{display:flex;font-style:normal;align-items:center;gap:7px;max-height:0;overflow:hidden;opacity:0;font-size:13px;color:var(--grafito);transition:max-height .4s,opacity .4s,margin .4s}
 .proc-idx a[aria-current] .st{max-height:22px;margin-top:5px;opacity:1}
@@ -159,52 +159,73 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .ph{padding:clamp(56px,10vh,112px) 0}
 .ph:first-child{padding-top:0}
 .ph:last-child{padding-bottom:0}
-.ph-n{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-size:19px;color:var(--violeta)}
-.ph-n span{margin-right:8px;font-style:normal;font-size:15px;opacity:.75}
+.ph-n{font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--grafito)}
+.ph-n span::after{content:"·";margin:0 .6em}
 .ph h3{margin-top:12px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(34px,3.6vw,54px);line-height:1.02;letter-spacing:-.025em;text-wrap:balance}
 .ph-p{margin-top:22px;max-width:34em;font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--grafito);text-wrap:pretty}
-/* Inicio: el scoring y, aparte, lo que sale de él */
-.score{max-width:480px;margin:40px 0 0;padding:20px 20px 20px 24px;border-radius:16px;background:var(--papel);box-shadow:0 1px 0 var(--linea),0 24px 50px -30px rgba(28,30,42,.3)}
-.score-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-right:4px;font-size:13px;color:var(--grafito)}
-.score-h em{padding:3px 10px;border:1px solid var(--linea);border-radius:999px;font-style:normal;font-size:12px}
-.score-t{margin-top:6px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:24px;letter-spacing:-.01em}
-.score ul{margin:12px 0 0;padding:0 4px 0 0;list-style:none}
-.score li{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;border-top:1px solid var(--linea);font-size:15px}
+/* Inicio: el scoring (puntos a medias) en su tarjeta y, debajo, lo que sale de él en dos cajas */
+.score{max-width:640px;margin:40px 0 0}
+.score-c{padding:24px 28px 26px;border:1px solid var(--linea);border-radius:16px;background:var(--papel);box-shadow:0 24px 50px -32px rgba(28,30,42,.3)}
+.score-h{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.score-h em{flex:none;padding:3px 10px;border:1px solid var(--linea);border-radius:999px;font-style:normal;font-size:12px;color:var(--grafito)}
+.score-k0{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--grafito)}
+.score-t{display:block;margin-top:6px;font-weight:600;font-size:18px;letter-spacing:-.005em}
+.score-l{margin:14px 0 0;padding:0;list-style:none}
+.score-l li{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:46px;border-top:1px solid var(--linea);font-size:15px}
+/* Puntuación con puntos: vacío, medio y lleno, como el punto del logo */
 .sds{display:inline-flex;gap:6px;color:var(--tinta)}
 .sd{position:relative;width:11px;height:11px;border-radius:50%;border:1px solid currentColor}
-.sd.f::after,.sd.h::after{content:"";position:absolute;inset:-1px;border-radius:50%;background:currentColor;transition:opacity .5s var(--d,0s)}
+.sd.f::after,.sd.h::after{content:"";position:absolute;inset:-1px;border-radius:50%;background:currentColor;transition:opacity .9s cubic-bezier(.45,0,.55,1) var(--d,0s)}
 .sd.h::after{clip-path:inset(0 0 0 50%)}
 .score.wait .sd::after{opacity:0}
-.score-out{margin:14px -4px 0 -8px;padding:14px 16px 16px;border-radius:12px;background:rgba(128,128,140,.08);background:color-mix(in srgb,var(--tinta) 4%,transparent)}
-.score-k{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--grafito)}
-.score-out ul{margin-top:6px;padding:0}
-.score-out li{min-height:40px;border:0}
-.score-out li+li{border-top:1px dashed var(--linea)}
+.score-k{margin:22px 0 10px;font-size:13px;color:var(--grafito)}
+.score-out{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0;padding:0;list-style:none}
+.score-out>li{display:flex;align-items:center;gap:12px;padding:16px 18px;border:1px solid var(--linea);border-radius:12px;font-size:15px;line-height:1.35}
 .row-l{display:inline-flex;align-items:center;gap:10px}
-.eur{display:inline-grid;place-items:center;flex:none;width:20px;height:20px;border:1px solid rgba(107,79,214,.45);border:1px solid color-mix(in srgb,var(--violeta) 45%,transparent);border-radius:50%;font:500 11px/1 var(--sans);font-style:normal;color:var(--violeta)}
-.score .ok{flex:none;width:18px;height:18px;fill:none;stroke:var(--violeta);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.eur{display:inline-grid;place-items:center;flex:none;width:24px;height:24px;border-radius:50%;background:rgba(107,79,214,.12);font:600 12px/1 var(--sans);font-style:normal;color:var(--violeta)}
+.score .ok{flex:none;width:18px;height:18px;margin-left:auto;fill:none;stroke:var(--violeta);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 /* Soluciones: bajo llave hasta la fase siguiente */
-.score .sol{display:block;padding:12px 0 2px}
-.sol-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.score .sol{display:block}
+.sol-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 12px}
 .unlock{display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 12px 0 10px;border:1px solid var(--linea);border-radius:999px;background:var(--papel);font-size:13px;color:var(--tinta);text-decoration:none;white-space:nowrap;transition:border-color .3s}
 .unlock svg{width:14px;height:16px;overflow:visible;fill:none;stroke:var(--violeta);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .unlock .shk{transform-box:view-box;transform-origin:11.5px 8px;transition:transform .5s cubic-bezier(.3,.8,.3,1)}
 .unlock:hover{border-color:var(--violeta)}
 .unlock:hover .shk{transform:translateY(-1.5px)}
 .score.open .unlock .shk{transform:translateY(-2px) rotate(28deg)}
-.sol-blur{margin-top:10px;font-size:14px;line-height:1.5;color:var(--grafito);filter:blur(5px);user-select:none;transition:filter .6s}
+.sol-blur{display:block;margin-top:10px;font-size:14px;line-height:1.5;color:var(--grafito);filter:blur(5px);user-select:none;transition:filter .6s}
 .sol:hover .sol-blur{filter:blur(3.5px)}
+@media (max-width:600px){
+  .score-c{padding:20px 18px 22px}
+  .score-out{grid-template-columns:1fr}
+}
+/* Candado: al llegar a las soluciones (media pantalla) se sacude un poco, cerrado; al llegar a Desarrollo se abre */
+.unlock.nudge svg{animation:lockwig .9s cubic-bezier(.45,0,.55,1) 1;transform-origin:50% 100%}
+.unlock.nudge{border-color:var(--violeta)}
+@keyframes lockwig{20%{transform:rotate(-9deg)}45%{transform:rotate(7deg)}70%{transform:rotate(-3deg)}100%{transform:none}}
+.score.open .unlock{border-color:var(--violeta)}
+.score.open .unlock .shk{transition-duration:.8s}
 /* Desarrollo: las tres patas como servicios, cada una con su línea */
 .pils{display:grid;gap:48px;margin:58px 0 0;padding:0;list-style:none}
 /* La cinta de sonido hace de borde superior de la caja */
 .pil{position:relative;border:1px solid var(--linea);border-top:0;border-radius:0 0 16px 16px;background:var(--papel);box-shadow:0 24px 50px -32px rgba(28,30,42,.3)}
 .pil-line{position:absolute;left:-1px;top:-22px;display:block;width:calc(100% + 2px);height:44px}
 .pil-b{padding:34px clamp(20px,2.4vw,28px) 24px}
-.pil-pain{position:relative;padding-left:14px;font-size:clamp(16px,1.25vw,18px);line-height:1.45;color:var(--grafito)}
+.pil-pain{position:relative;padding-left:14px;font-size:clamp(15px,1.15vw,17px);line-height:1.45;color:var(--grafito)}
 .pil-k{display:block;margin-bottom:4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--violeta)}
 .pil-pain::before{content:"";position:absolute;left:0;top:.2em;bottom:.2em;width:2px;border-radius:2px;background:var(--linea)}
-.pil h4{margin-top:16px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(28px,2.6vw,38px);line-height:1.04;letter-spacing:-.02em;text-wrap:balance}
-.pil-one{margin-top:10px;font-size:clamp(17px,1.3vw,18px);line-height:1.5}
+.pil h4{margin-top:16px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(31px,3vw,44px);line-height:1.02;letter-spacing:-.022em;text-wrap:balance}
+.pil-one{margin-top:12px;font-size:clamp(17px,1.3vw,18px);line-height:1.5}
+/* Entregables plegados: el título manda; el detalle, a un toque */
+.pil-more{margin-top:18px}
+.pil-tg{display:inline-flex;align-items:center;gap:10px;padding:6px 0;background:none;border:0;font:500 14px/1.2 var(--sans);color:var(--tinta);cursor:pointer;border-bottom:1px solid var(--linea);transition:border-color .3s}
+.pil-tg:hover{border-color:currentColor}
+.pil-tg svg{width:14px;height:9px;overflow:visible;fill:none;stroke:var(--violeta);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .5s cubic-bezier(.3,.8,.3,1)}
+.pil-more.open .pil-tg svg{transform:rotate(180deg)}
+.pil-dw{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.3,.8,.3,1)}
+.pil-dw>.pil-does{overflow:hidden;min-height:0;margin:0;opacity:0;transition:opacity .4s}
+.pil-more.open .pil-dw{grid-template-rows:1fr}
+.pil-more.open .pil-dw>.pil-does{margin-top:14px;opacity:1}
 .pil-does,.pj-tags{display:flex;flex-wrap:wrap;gap:6px 18px;margin:16px 0 0;padding:0;list-style:none;font-size:14px;color:var(--grafito)}
 .pil-does li,.pj-tags>span{display:inline-flex;align-items:center;gap:8px}
 .pil-does li::before,.pj-tags>span::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;border:1px solid currentColor;background:linear-gradient(90deg,transparent 50%,currentColor 50%)}
@@ -232,7 +253,9 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 @media (max-width:900px){
   .proc-head .h2,.proc-lead,.proc-side,.proc-steps,.beyond,.proc-end{grid-column:1/-1}
   /* Móvil: un faldón fijo bajo el menú con la fase en la que estás */
-  .proc-side{top:60px;z-index:6;margin:0 calc(-1*var(--pad)) 44px}
+  .proc-side{top:60px;z-index:6;margin:0 calc(-1*var(--pad)) -44px}
+  .viz-bar{opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .35s,transform .35s}
+  .viz-bar.on{opacity:1;transform:none}
   .proc-idx{display:none}
   .viz-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;height:44px;padding:0 var(--pad);font-size:14px;color:var(--grafito);background:rgba(247,248,250,.8);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);box-shadow:inset 0 -1px 0 rgba(28,30,42,.08)}
   .viz-ph{font-weight:500;color:var(--tinta)}
@@ -248,14 +271,20 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 }
 
 /* Caso */
-.block.case{background-color:var(--papel);background-image:radial-gradient(circle,var(--linea) 1px,transparent 1.3px);background-size:28px 28px;background-position:center}
+/* Proyectos: cada uno es una tarjeta sobre el fondo; su línea de sonido hace de borde superior */
+.card{--cx:clamp(16px,2.2vw,32px);margin-left:calc(-1*var(--cx));margin-right:calc(-1*var(--cx));padding-left:var(--cx);padding-right:var(--cx);border-radius:22px;background:var(--papel)}
+@media (max-width:900px){.card{--cx:calc(var(--pad) - 8px);border-radius:18px}}
+.pj.card{margin-top:14px}
+.pj.card:first-child{margin-top:0}
+.pj.card>.pj-line{position:absolute;top:-8px;left:var(--cx);width:calc(100% - 2*var(--cx));margin:0}
+.pj-end{display:none}
 .pj-top{grid-column:1/-1;margin-bottom:36px}
 .pj-top .h2{max-width:13em}
 /* Filtro por sector */
-.pj-filter{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
-.pf{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 8px 0 18px;border:1px solid var(--linea);border-radius:999px;background:var(--papel);font:500 15px/1 var(--sans);color:var(--grafito);cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.pj-filter{grid-column:1/-1;justify-self:start;display:flex;flex-wrap:wrap;gap:4px;max-width:100%;margin-bottom:32px;padding:5px;border-radius:999px;background:var(--papel)}
+.pf{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 7px 0 17px;border:0;border-radius:999px;background:none;font:500 15px/1 var(--sans);color:var(--grafito);cursor:pointer;transition:background .3s,color .3s,border-color .3s}
 .pf span{display:inline-grid;place-items:center;min-width:28px;height:28px;padding:0 6px;border-radius:999px;background:rgba(128,128,140,.18);background:color-mix(in srgb,currentColor 12%,transparent);font-size:12px}
-.pf:hover{border-color:var(--tinta);color:var(--tinta)}
+.pf:hover{color:var(--tinta)}
 .pf[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--papel)}
 .pjs{grid-column:1/-1}
 .pj.in{animation:pjin .7s cubic-bezier(.3,.8,.3,1) both;animation-delay:calc(var(--k,0) * 80ms)}
@@ -297,10 +326,10 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .pjs.invite .pj:nth-child(3) .pj-chev{animation-delay:.3s}
 .pjs.invite .pj:nth-child(4) .pj-chev{animation-delay:.45s}
 @keyframes nudge{50%{transform:translateY(5px)}}
-.pj-head{padding:40px 0 34px}
+.pj-head{padding:34px 0 30px}
 @media (max-width:600px){
-  .pj-filter{flex-wrap:nowrap;gap:8px;overflow-x:auto;margin:0 calc(-1*var(--pad)) 32px;padding:0 var(--pad);scrollbar-width:none}
-  .pf{flex:none;height:40px;padding:0 6px 0 14px;gap:8px;font-size:14px}
+  .pj-filter{flex-wrap:nowrap;overflow-x:auto;margin-bottom:24px;scrollbar-width:none}
+  .pf{flex:none;height:38px;padding:0 6px 0 14px;gap:8px;font-size:14px}
   .pf span{min-width:26px;height:26px}
 }
 .shot .frame.demo{aspect-ratio:16/9;display:block;background:#141416;overflow:hidden}
@@ -360,7 +389,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .pj-media.shot{position:static;align-self:stretch;margin:0 0 32px;order:-1}
   .pj-text{padding-bottom:32px}
 }
-.case .shot{background:#fff}
+.case .shot{background:#fff;box-shadow:0 0 0 1px var(--linea),0 30px 60px -34px rgba(28,30,42,.3)}
 .kicker{grid-column:1/-1;margin-bottom:16px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-size:19px;color:var(--violeta)}
 .shot{grid-column:1/span 7;margin-top:72px;border-radius:14px;overflow:hidden;background:var(--papel);box-shadow:0 1px 0 var(--linea),0 30px 60px -30px rgba(28,30,42,.25)}
 .shot .bar{display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-bottom:1px solid var(--linea);font-size:12px;color:var(--grafito)}
@@ -382,28 +411,35 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .proof button{margin-top:20px;font:500 15px/1 var(--sans);background:none;border:1px solid var(--tinta);border-radius:999px;height:44px;padding:0 22px;cursor:pointer;color:var(--tinta);transition:background .2s,color .2s}
 .proof button:hover,.proof button[aria-pressed="true"]{background:var(--tinta);color:var(--papel)}
 
-/* No hago */
-.nope .h2{grid-column:1/span 5}
+/* Cosas que no voy a hacer: lista editorial sobre el fondo. Título fijo a la izquierda; cada "no" numerado,
+   con la línea de sonido como separador; al abrir, la respuesta entra debajo */
+.nope .h2{grid-column:1/span 5;align-self:start;position:sticky;top:120px}
 .nope ul{grid-column:7/span 6;list-style:none;padding:0}
 .nope .no{position:relative}
 .nope .no-line{display:block;width:100%;height:12px;margin:-6px 0;overflow:visible}
-.nope .no-line path{fill:none;stroke:var(--linea);stroke-width:1;vector-effect:non-scaling-stroke;transition:stroke .4s}
-.nope .no.open .no-line path,.nope .no:hover .no-line path{stroke:var(--grafito)}
-.nope .no-q{display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%;padding:24px 0;background:none;border:0;cursor:pointer;text-align:left;color:var(--tinta);font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(22px,2.2vw,28px);line-height:1.25}
-.nope .no-i{flex:none;width:28px;height:16px;overflow:visible;color:var(--violeta);transition:transform .6s cubic-bezier(.3,.8,.3,1)}
+.nope .no-line path{fill:none;stroke:var(--linea);stroke-width:1.2;vector-effect:non-scaling-stroke;transition:stroke .4s}
+.nope .no.open .no-line path,.nope .no:hover .no-line path{stroke:var(--tinta)}
+.nope .no-q{display:grid;grid-template-columns:1fr auto;align-items:center;gap:0 24px;width:100%;padding:30px 0;background:none;border:0;cursor:pointer;text-align:left;color:var(--tinta);font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:350;font-size:clamp(24px,2.4vw,32px);line-height:1.2;letter-spacing:-.015em}
+.nope .no-q>span{transition:transform .6s cubic-bezier(.3,.8,.3,1)}
+.nope .no-q:hover>span{transform:translateX(6px)}
+.nope .no-i{flex:none;width:26px;height:15px;overflow:visible;color:var(--violeta);transition:transform .6s cubic-bezier(.3,.8,.3,1)}
 .nope .no-i path{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .nope .no-q:hover .no-i{transform:translateY(3px)}
 .nope .no.open .no-i{transform:rotate(180deg)}
 .nope .no-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.3,.8,.3,1)}
-.nope .no-a>p{overflow:hidden;min-height:0;font:400 17px/1.55 var(--sans);color:var(--grafito);opacity:0;transform:translateY(-6px);transition:opacity .45s,transform .45s}
+.nope .no-a>p{overflow:hidden;min-height:0;font:400 18px/1.55 var(--sans);color:var(--grafito);opacity:0;transform:translateY(-6px);transition:opacity .45s,transform .45s}
 .nope .no.open .no-a{grid-template-rows:1fr}
-.nope .no.open .no-a>p{opacity:1;transform:none;padding-bottom:24px}
+.nope .no.open .no-a>p{opacity:1;transform:none;padding-bottom:30px}
 .nope .nos{border-bottom:1px solid var(--linea)}
+@media (max-width:900px){
+  .nope .h2{position:static}
+  .nope .no-q{padding:24px 0}
+}
 
 /* Sobre mí */
 .about .portrait{grid-column:1/span 4;position:relative;margin:0}
-.about .portrait::before{content:"";position:absolute;inset:0;transform:translate(14px,14px);border-radius:200px 200px 14px 14px;background:var(--melocoton);opacity:.6}
-.about .photo{position:relative;aspect-ratio:4/5;border-radius:200px 200px 14px 14px;overflow:hidden;background:var(--melocoton)}
+.about .portrait::before{content:"";position:absolute;inset:0;transform:translate(14px,14px);border-radius:200px 200px 14px 14px;background:var(--grafito);opacity:.22}
+.about .photo{position:relative;aspect-ratio:4/5;border-radius:200px 200px 14px 14px;overflow:hidden;background:var(--linea)}
 .about .photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
 .about .photo .alt{position:absolute;inset:0;opacity:0;transition:opacity .8s cubic-bezier(.45,0,.55,1)}
 .about .portrait:hover .alt,.about .portrait.swap .alt{opacity:1}
@@ -411,13 +447,14 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .about .mono svg{width:16px;height:16px;color:currentColor;filter:drop-shadow(0 1px 4px rgba(28,30,42,.35))}
 .about .txt{grid-column:6/span 6;align-self:center}
 .about .prose{margin-top:32px;font-size:19px}
-.about .why{margin-top:32px;padding-top:24px;border-top:1px solid var(--linea);font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-size:22px;line-height:1.4;color:var(--grafito)}
+.about .why{margin-top:32px;padding-top:24px;border-top:1px solid var(--linea);font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(22px,2vw,28px);line-height:1.3;letter-spacing:-.01em;color:var(--tinta)}
 
 /* Contacto */
-.contact{padding:clamp(96px,14vw,176px) 0 clamp(96px,12vw,160px);text-align:left}
-.contact .h2{grid-column:1/span 10;font-size:clamp(52px,8vw,120px);line-height:.95;letter-spacing:-.035em}
-.contact p{grid-column:1/span 6;margin-top:32px;font-size:19px}
-.contact .actions{grid-column:1/-1;display:flex;gap:16px;flex-wrap:wrap;margin-top:40px}
+.contact{padding:clamp(96px,12vw,160px) 0 clamp(88px,10vw,136px);text-align:center}
+.contact .dot{grid-column:1/-1;display:block;width:12px;height:12px;margin:0 auto 28px;color:var(--grafito)}
+.contact .h2{grid-column:1/-1;font-size:clamp(52px,8vw,120px);line-height:.95;letter-spacing:-.035em}
+.contact p{grid-column:1/-1;max-width:30em;margin:28px auto 0;font-size:19px}
+.contact .actions{grid-column:1/-1;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:40px}
 .site-foot{background:var(--tinta);color:rgba(247,248,250,.62);font-size:14px}
 .site-foot .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px 32px;flex-wrap:wrap;padding-top:34px;padding-bottom:calc(34px + env(safe-area-inset-bottom,0px))}
 .fbrand{display:inline-flex;align-items:center;gap:18px}
@@ -477,7 +514,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .mobile-menu a{padding:14px 0;font-size:28px}
   .mobile-menu li+li a{border-top:1px solid rgba(28,30,42,.08)}
   nav.dark .mobile-menu li+li a{border-top-color:rgba(255,255,255,.09)}
-  .case .ctx,.contact p{grid-column:1/span 10}
+  .case .ctx{grid-column:1/span 10}
   .story blockquote,.story .prose,.q h3,.q .body,.case .h2,.shot,.case ol,.detail .h2,.detail .prose,.proof,.nope .h2,.nope ul,.about .portrait,.about .txt{grid-column:1/-1}
   .story .prose,.q .body,.detail .prose,.nope ul,.about .txt{margin-top:32px}
   .about .portrait{max-width:340px}
@@ -485,11 +522,11 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 @media (max-width:600px){
   :root{--gut:16px}
   .grid,.q{grid-template-columns:repeat(4,1fr)}
-  .case .ctx,.contact p,.contact .h2{grid-column:1/-1}
+  .case .ctx{grid-column:1/-1}
   .overlay .grid div:nth-child(n+5){display:none}
   body{font-size:17px}
   .wave{height:120px;margin-top:24px}
-  .hero{padding-top:48px}
+  .hero{padding-top:calc(72px + 48px)}
   .hero h1{grid-column:1/-1}
   .hero .role{margin-top:40px}
 }
@@ -502,6 +539,8 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 @media (prefers-color-scheme:dark){
   .mobile-menu li+li a{border-top-color:rgba(255,255,255,.09)}
   nav .mobile-menu.open{background:rgba(20,19,23,.93)}
+  /* Hero y "Te toca a ti": casi negro con un toque muy ligero de púrpura */
+  .hero,.contact{background:#0E0B14}
   :root{--niebla:#0B0A0C;--papel:#141317;--tinta:#EDECF0;--grafito:#9D9BA5;--linea:#27262C;--violeta:#A08CF5;--melocoton:#F2BCA3;color-scheme:dark}
   ::selection{color:#0B0A0C}
   .site-foot{background:#040405}
@@ -676,58 +715,57 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
         <p class="ph-n"><span>01</span>Inicio</p>
         <h3>Antes de proponer nada, te escucho.</h3>
         <p class="ph-p">Analizo tu negocio contigo para ver qué lo frena y qué oportunidades tiene delante.</p>
-        <figure class="score">
-          <figcaption class="score-h"><span>Lo que te llevas</span><em>Ejemplo</em></figcaption>
-          <p class="score-t">Scoring de tu negocio</p>
-          <ul>
-            <li><span>Posicionamiento</span><span class="sds" role="img" aria-label="2,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i></span></li>
-            <li><span>Identidad y web</span><span class="sds" role="img" aria-label="1,5 de 5"><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i></span></li>
-            <li><span>Captación</span><span class="sds" role="img" aria-label="3,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i></span></li>
-          </ul>
-          <div class="score-out">
-            <p class="score-k">Al cerrar el scoring</p>
-            <ul>
-              <li><span class="row-l"><i class="eur" aria-hidden="true">€</i>Alcance y presupuesto del proyecto</span><svg class="ok" viewBox="0 0 18 18" role="img" aria-label="Incluido"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></li>
-              <li class="sol">
-                <span class="sol-top"><span>Soluciones</span><a class="unlock" href="#fase-desarrollo"><svg viewBox="0 0 16 18" aria-hidden="true"><path class="shk" d="M4.5 8V5.5a3.5 3.5 0 0 1 7 0V8"/><rect x="2.5" y="8" width="11" height="8.5" rx="2"/><path d="M8 11.5v2"/></svg>Se desbloquean en Desarrollo</a></span>
-                <span class="sol-blur" aria-hidden="true">Nueva propuesta de marca, web a medida y un plan de captación por temporadas.</span>
-              </li>
+        <div class="score">
+          <figure class="score-c">
+            <figcaption class="score-h"><span><span class="score-k0">Lo que te llevas</span><span class="score-t">Scoring de tu negocio</span></span><em>Ejemplo</em></figcaption>
+            <ul class="score-l">
+              <li><span>Posicionamiento</span><span class="sds" role="img" aria-label="2,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i></span></li>
+              <li><span>Identidad y web</span><span class="sds" role="img" aria-label="1,5 de 5"><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i></span></li>
+              <li><span>Captación</span><span class="sds" role="img" aria-label="3,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i></span></li>
             </ul>
-          </div>
-        </figure>
+          </figure>
+          <p class="score-k">Al cerrar el scoring</p>
+          <ul class="score-out">
+            <li><span class="row-l"><i class="eur" aria-hidden="true">€</i>Alcance y presupuesto del proyecto</span><svg class="ok" viewBox="0 0 18 18" role="img" aria-label="Incluido"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></li>
+            <li class="sol">
+              <span class="sol-top"><span>Soluciones</span><a class="unlock" href="#fase-desarrollo"><svg viewBox="0 0 16 18" aria-hidden="true"><path class="shk" d="M4.5 8V5.5a3.5 3.5 0 0 1 7 0V8"/><rect x="2.5" y="8" width="11" height="8.5" rx="2"/><path d="M8 11.5v2"/></svg>Se desbloquean en Desarrollo</a></span>
+              <span class="sol-blur" aria-hidden="true">Nueva propuesta de marca, web a medida y un plan de captación por temporadas.</span>
+            </li>
+          </ul>
+        </div>
       </article>
       <article class="ph" id="fase-desarrollo">
         <p class="ph-n"><span>02</span>Desarrollo</p>
         <h3>Ahora, manos a la obra.</h3>
-        <p class="ph-p">Pongo en práctica todo lo analizado: genero las ideas y las aplico, siempre sobre tres patas. ¿Te suena alguna de estas frases?</p>
+        <p class="ph-p">Con todo lo analizado, paso a la acción. Trabajo sobre tres áreas:</p>
         <ul class="pils">
           <li class="pil">
             <canvas class="pil-line" data-shape="signal" aria-hidden="true"></canvas>
             <div class="pil-b">
-              <p class="pil-pain"><span class="pil-k">Lo que te preocupa</span>«Lo hago bien, pero desde fuera parezco uno más.»</p>
+              <p class="pil-pain"><span class="pil-k">Responde a</span>«Lo hago bien, pero desde fuera parezco uno más.»</p>
               <h4>Estrategia y posicionamiento de marca</h4>
-              <p class="pil-one">Ponemos orden hasta que se oiga una sola cosa: lo que te hace diferente.</p>
-              <ul class="pil-does"><li>Análisis de tu competencia</li><li>Propuesta de valor</li><li>Mensajes y tono de voz</li></ul>
+              <p class="pil-one">Pongo orden hasta que se vea claro qué te hace diferente.</p>
+              <div class="pil-more"><button type="button" class="pil-tg" aria-expanded="false" aria-controls="pd1">Ver entregables<svg viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button><div class="pil-dw" id="pd1" role="region"><ul class="pil-does"><li>Análisis de tu competencia</li><li>Propuesta de valor</li><li>Mensajes y tono de voz</li></ul></div></div>
               <p class="pil-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>Si tu proyecto lo necesita<span>desde <b class="amt">··· €</b></span></p>
             </div>
           </li>
           <li class="pil">
             <canvas class="pil-line" data-shape="form" aria-hidden="true"></canvas>
             <div class="pil-b">
-              <p class="pil-pain"><span class="pil-k">Lo que te preocupa</span>«Mi imagen y mi web no están a la altura de lo que hago.»</p>
+              <p class="pil-pain"><span class="pil-k">Responde a</span>«Mi imagen y mi web no transmiten lo que hago.»</p>
               <h4>Identidad visual y web</h4>
-              <p class="pil-one">Le damos forma: cómo te ves, cómo suenas y la web donde te eligen.</p>
-              <ul class="pil-does"><li>Logotipo y sistema visual</li><li>Manual de marca</li><li>Diseño y desarrollo de tu web</li></ul>
+              <p class="pil-one">Diseño cómo te ves, cómo hablas y la web donde te eligen.</p>
+              <div class="pil-more"><button type="button" class="pil-tg" aria-expanded="false" aria-controls="pd2">Ver entregables<svg viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button><div class="pil-dw" id="pd2" role="region"><ul class="pil-does"><li>Logotipo y sistema visual</li><li>Manual de marca</li><li>Diseño y desarrollo de tu web</li></ul></div></div>
               <p class="pil-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>Si tu proyecto lo necesita<span>desde <b class="amt">··· €</b></span></p>
             </div>
           </li>
           <li class="pil">
             <canvas class="pil-line" data-shape="reach" aria-hidden="true"></canvas>
             <div class="pil-b">
-              <p class="pil-pain"><span class="pil-k">Lo que te preocupa</span>«Me llegan pocos clientes. O no los que quiero.»</p>
+              <p class="pil-pain"><span class="pil-k">Responde a</span>«Me llegan pocos clientes. O no los que quiero.»</p>
               <h4>Captación de clientes</h4>
-              <p class="pil-one">Hacemos que tu marca llegue a quien tiene que llegar. Y que vuelva.</p>
-              <ul class="pil-does"><li>Mapas de reservas en 2D y 3D</li><li>Estrategia de publicidad en RRSS</li><li>Posicionamiento SEO</li></ul>
+              <p class="pil-one">Hago que te encuentre quien te tiene que encontrar. Y que repita.</p>
+              <div class="pil-more"><button type="button" class="pil-tg" aria-expanded="false" aria-controls="pd3">Ver entregables<svg viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button><div class="pil-dw" id="pd3" role="region"><ul class="pil-does"><li>Mapas de reservas en 2D y 3D</li><li>Estrategia de publicidad en RRSS</li><li>Posicionamiento SEO</li></ul></div></div>
               <p class="pil-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>Si tu proyecto lo necesita<span>desde <b class="amt">··· €</b></span></p>
             </div>
           </li>
@@ -747,7 +785,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
       <div>
         <p class="beyond-k">Más allá del proyecto</p>
         <h3 id="beyond-t">¿Estamos cómodos juntos?</h3>
-        <p>Entonces seguimos. Acordamos un seguimiento anual para que tu marca no vuelva a perderse en el ruido.</p>
+        <p>Seguimos trabajando juntos todo el año, con seguimiento de todo lo que hemos puesto en marcha.</p>
       </div>
       <p class="beyond-price"><span>Seguimiento anual</span><b class="amt">··· €</b><small>al año</small></p>
     </aside>
@@ -768,7 +806,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     </div>
     <p class="sr-only" id="pjCount" aria-live="polite"></p>
     <div class="pjs">
-      <article class="pj open" id="pj-bela" data-sector="belleza">
+      <article class="pj card open" id="pj-bela" data-sector="belleza">
         <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
         <button type="button" class="pj-head" aria-expanded="true" aria-controls="pjb-bela">
           <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/bela.png);--r:2.524;--h:18.0px"></span><b>Bela Brow Studio</b>Micropigmentación · Valencia</span>
@@ -791,7 +829,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
           </div>
         </div>
       </article>
-      <article class="pj" id="pj-marina" data-sector="nightlife">
+      <article class="pj card" id="pj-marina" data-sector="nightlife">
         <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
         <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-marina">
           <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/marina.png);--r:1.325;--h:25.7px"></span><b>Marina Beach Club</b>Nightlife · Valencia</span>
@@ -813,7 +851,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
           </div>
         </div>
       </article>
-      <article class="pj" id="pj-amok" data-sector="nightlife">
+      <article class="pj card" id="pj-amok" data-sector="nightlife">
         <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
         <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-amok">
           <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/amok.png);--r:3.294;--h:15.6px"></span><b>AMOK</b>Nightlife · Mallorca</span>
@@ -836,7 +874,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
           </div>
         </div>
       </article>
-      <article class="pj" id="pj-marchica" data-sector="nightlife">
+      <article class="pj card" id="pj-marchica" data-sector="nightlife">
         <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
         <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-marchica">
           <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/marchica.png);--r:1.594;--h:23.2px"></span><b>Marchica</b>Nightlife · Temporada 25/26</span>
@@ -872,7 +910,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   <div class="wrap grid">
     <h2 class="h2">Tengo debilidad por el detalle.</h2>
     <div class="prose">
-      <p>Me fijo en lo que casi nadie ve: un margen, una palabra, el orden de un proceso. Lo reviso hasta que encaja y se ve bonito, porque un cliente confía en lo que está bien hecho aunque no sepa explicar por qué.</p>
+      <p>Intento cuidar siempre hasta el último detalle. Aplico un criterio estético a cada cosa que creo y no la termino hasta que la veo prácticamente perfecta. Me tomo el tiempo que haga falta.</p>
     </div>
     <div class="proof">
       <p>Esta web está construida sobre una retícula de 12 columnas. Nada está colocado a ojo.<span class="k-hint"> Pulsa <kbd>G</kbd> para verla.</span></p>
@@ -925,6 +963,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 
 <section class="contact" id="contacto">
   <div class="wrap grid">
+    <svg class="dot" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg>
     <h2 class="h2">Te toca a ti.</h2>
     <p class="muted">Cuéntame en qué punto está tu negocio y qué te gustaría que cambiara. Te respondo yo, siempre.</p>
     <div class="actions">
@@ -1079,8 +1118,12 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   var PN=['Inicio','Desarrollo','Desenlace'], PS=['Escuchando','Dando forma','Midiendo'], pph=-1, pon=false, pq=false;
   /* Una fase empieza cuando su título cruza algo por debajo de la mitad de la pantalla */
   function phase(){var m=innerHeight*.55,k=0;phs.forEach(function(e,i){if(e.querySelector('.ph-n').getBoundingClientRect().top<m)k=i;});return k;}
+  var vbar=document.querySelector('.viz-bar');
   function pupd(){
-    pq=false;var ph=phase();if(ph===pph)return;pph=ph;
+    pq=false;var ph=phase();
+    /* Móvil: el faldón solo se ve cuando el título de la fase activa ya no está en pantalla (así no se repite) */
+    vbar.classList.toggle('on',phs[ph].querySelector('.ph-n').getBoundingClientRect().bottom<110);
+    if(ph===pph)return;pph=ph;
     vNum.textContent='0'+(ph+1);vName.textContent=PN[ph];vSt.textContent=PS[ph];
     pIdx.forEach(function(a,i){a.classList.toggle('done',i<ph);if(i===ph)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
     /* Al llegar a Desarrollo, el candado de las soluciones queda abierto */
@@ -1127,13 +1170,17 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   }
   window.addEventListener('resize',function(){L.forEach(function(o){lsize(o);ldraw(o,lt(o));});});
 
-  /* Scoring: los puntos se rellenan uno a uno al verlo */
+  /* Scoring: los puntos se rellenan despacio, uno a uno, cuando la tarjeta ya está bien a la vista */
   var sc=document.querySelector('.score');
   if(sc&&!reduce&&'IntersectionObserver' in window){
     sc.classList.add('wait');
-    [].forEach.call(sc.querySelectorAll('.sd.f,.sd.h'),function(d,i){d.style.setProperty('--d',(i*.09).toFixed(2)+'s');});
-    var sio=new IntersectionObserver(function(en){if(en[0].isIntersecting){sc.classList.remove('wait');sio.disconnect();}},{threshold:.6});
-    sio.observe(sc);
+    [].forEach.call(sc.querySelectorAll('.sd.f,.sd.h'),function(d,i){d.style.setProperty('--d',(.15+i*.22).toFixed(2)+'s');});
+    var sio=new IntersectionObserver(function(en){if(en[0].isIntersecting){sc.classList.remove('wait');sio.disconnect();}},{rootMargin:'0px 0px -30% 0px',threshold:.5});
+    sio.observe(sc.querySelector('.score-c'));
+    /* Candado: cuando las soluciones cruzan la mitad de la pantalla, se sacude una vez (sigue cerrado) */
+    var un=sc.querySelector('.unlock'),uio=new IntersectionObserver(function(en){if(en[0].isIntersecting){uio.disconnect();
+      un.classList.add('nudge');un.addEventListener('animationend',function(){un.classList.remove('nudge');},{once:true});}},{rootMargin:'-42% 0px -42% 0px'});
+    uio.observe(sc.querySelector('.sol'));
   }
 
   var onTheme=function(){readInk();size();L.forEach(function(o){ldraw(o,lt(o));});};
@@ -1176,6 +1223,12 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
         p.setAttribute('d',d);if(k>0)raf=requestAnimationFrame(f);else quiet();})();
     }
     b.addEventListener('click',function(){var o=!li.classList.contains('open');li.classList.toggle('open',o);b.setAttribute('aria-expanded',o);shake();});
+  });
+
+  /* Patas: ver entregables */
+  [].forEach.call(document.querySelectorAll('.pil-more'),function(m){
+    var b=m.querySelector('.pil-tg');
+    b.addEventListener('click',function(){var o=!m.classList.contains('open');m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.firstChild.nodeValue=o?'Ocultar entregables':'Ver entregables';});
   });
 
   /* Trabajos: acordeón; la línea escucha el cursor y se agita al abrir */
