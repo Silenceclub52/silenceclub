@@ -1027,7 +1027,8 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   /* Estado del menú: cristal al hacer scroll y tono oscuro sobre secciones oscuras */
   var nav=document.querySelector('nav'),darks=document.querySelectorAll('.how'),nt=false;
   function navState(){
-    nt=false;var h=nav.offsetHeight,open=nav.querySelector('.mobile-menu.open'),dk=false;
+    /* Altura de la barra, no del menú entero: con el panel abierto o cerrándose, nav mide mucho más y el hero quedaba fuera de la comprobación */
+    nt=false;var h=nav.querySelector('.wrap').offsetHeight,open=nav.querySelector('.mobile-menu.open'),dk=false;
     nav.classList.toggle('glass',window.scrollY>8||!!open);
     [].forEach.call(darks,function(d){var r=d.getBoundingClientRect();if(r.top<h*.6&&r.bottom>h*.4)dk=true;});
     nav.classList.toggle('dark',dk);
@@ -1039,6 +1040,8 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   /* Menú móvil */
   var bg=document.querySelector('.burger'),mm=document.getElementById('mmenu');
   function setMenu(o){bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú');mm.classList.toggle('open',o);navState();}
+  /* Al terminar de abrirse o cerrarse el panel, la página se ha movido: se vuelve a mirar qué hay bajo la barra */
+  mm.addEventListener('transitionend',function(e){if(e.target===mm)navState();});
   bg.addEventListener('click',function(){setMenu(bg.getAttribute('aria-expanded')!=='true');});
   [].forEach.call(mm.querySelectorAll('a'),function(a){a.addEventListener('click',function(){setMenu(false);});});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false);});
