@@ -60,12 +60,12 @@ a{color:inherit}
 .grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut)}
 /* Ritmo de tonos: tres oscuros (los del modo oscuro de la web actual) y tres claros, alternando por sección.
    Oscuros = losas redondeadas que flotan sobre el fondo; claros = el fondo y franjas a sangre.
-   D0 (hero y cierre) · D1 (Desarrollo y "Cosas que no voy a hacer") · D2, el menos oscuro (Proyectos)
+   D0 (hero y cierre, negro púrpura) · D1 (Desarrollo y "Cosas que no voy a hacer") · D2, el menos oscuro (Proyectos)
    L0 papel (pausa y detalle) · L1 gris violáceo (fondo) · L2 rosado muy pálido (Sobre mí, donde aparece la persona) */
 :root{--m:10px}
 @media (max-width:900px){:root{--m:6px}}
 .deep,.dk1,.dk2{--tinta:#EDECF0;--grafito:#9D9BA5;--violeta:#A08CF5;color:var(--tinta)}
-.deep{--niebla:#0B0A0C;--papel:#141317;--linea:#27262C}
+.deep{--niebla:#14101D;--papel:#14101D;--tinta:#EFECF7;--grafito:#ABA4BF;--linea:rgba(239,236,247,.18);--violeta:#B6A6FF}
 .dk1{--niebla:#15131A;--papel:#1F1D25;--linea:#2F2C36}
 .dk2{--niebla:#221F2A;--papel:#2C2935;--linea:#3C3846;--grafito:#ADA8BA}
 .deep,.slab{margin:var(--m);border-radius:28px;background:var(--niebla)}

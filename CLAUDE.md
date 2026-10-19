@@ -47,7 +47,7 @@ https://claude-nueva-estetica-silenceclub.floral-snowflake-c31a.workers.dev/
 https://claude-nueva-estetica-contraste-silenceclub.floral-snowflake-c31a.workers.dev/
 - Ritmo de tonos para no pasar mucho scroll en el mismo: oscuros = losas redondeadas flotando (margen `--m`), claros = fondo y franjas a sangre. Base de los oscuros: el modo oscuro de la web actual.
 - Orden: hero D0 · pausa L0 · Servicio/Inicio L1 · Desarrollo D1 · Desenlace L1 · Proyectos D2 · Detalle L0 · "Cosas que no voy a hacer" tarjeta D1 · Sobre mí L2 · Contacto D0 · pie L1.
-- D0 `.deep` #0B0A0C (superficie #141317) · D1 `.dk1` #15131A (#1F1D25) · D2 `.dk2` #221F2A (#2C2935), el menos oscuro · L0 #F3F1F7 · L1 #DEDBE6 · L2 `.tone-l2` #EFE6E5 (rosado pálido, solo en Sobre mí).
+- D0 `.deep` #14101D, el negro púrpura de la versión anterior (tinta #EFECF7, violeta #B6A6FF) · D1 `.dk1` #15131A (#1F1D25) · D2 `.dk2` #221F2A (#2C2935), el menos oscuro · L0 #F3F1F7 · L1 #DEDBE6 · L2 `.tone-l2` #EFE6E5 (rosado pálido, solo en Sobre mí).
 - Desarrollo es `.band`: el fondo sale a todo el ancho con `::before`; JS le pasa `--bx` y `--vw`. El índice lateral pasa a tinta clara (`.on-dk`) mientras está sobre la losa y lleva `z-index:2` para no quedar debajo. Las cintas de las patas usan los colores oscuros si están dentro de un tono oscuro.
 
 ### Estado (actualizar en cada paso a `main`)
