@@ -1239,6 +1239,20 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     hio.observe(hp.parentNode);
   }
 
+  /* Pausa (escritorio): la línea sigue al cursor; suena un poco en el tramo por el que pasa y vuelve a la calma */
+  if(hp&&!reduce&&matchMedia('(hover: hover) and (pointer: fine)').matches){
+    var hs=document.querySelector('.story'),hsv=hp.parentNode,hx=-999,ha=0,hta=0,hraf=0,ht0=performance.now();
+    var hdraw=function(){
+      var t=(performance.now()-ht0)/1000,d='M0 12';ha+=(hta-ha)*.1;
+      for(var x=0;x<=240;x+=3){var dx=x-hx,g=Math.exp(-dx*dx/(2*26*26)),e=Math.sin(Math.PI*x/240);d+='L'+x+' '+(12+4*ha*g*e*(Math.sin(x*.16-t*12)*.6+Math.sin(x*.37+t*17)*.4)).toFixed(2);}
+      hp.setAttribute('d',d);
+      if(hta>0||ha>.01)hraf=requestAnimationFrame(hdraw);else{hp.setAttribute('d','M0 12H240');hraf=0;}
+    };
+    hs.addEventListener('pointermove',function(e){var r=hsv.getBoundingClientRect();hx=(e.clientX-r.left)/r.width*240;
+      var near=e.clientX>r.left-40&&e.clientX<r.right+40&&Math.abs(e.clientY-(r.top+r.height/2))<120;hta=near?1:0;if(!hraf)hraf=requestAnimationFrame(hdraw);});
+    hs.addEventListener('pointerleave',function(){hta=0;});
+  }
+
   /* Marcas: entran una a una al verlas */
   var br=document.querySelector('.brands');
   if(br&&!reduce&&'IntersectionObserver' in window){
