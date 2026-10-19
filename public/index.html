@@ -114,6 +114,10 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 .btn.solid{position:relative;overflow:hidden;isolation:isolate}
 .btn .btn-line{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
 .btn .btn-txt{position:relative;z-index:1}
+/* "Te toca a ti": la primera vez que se ve, el botón del email se rellena de violeta de izquierda a derecha y vuelve a su color */
+.btn.solid::before{content:"";position:absolute;inset:0;z-index:0;border-radius:inherit;background:var(--violeta);transform:scaleX(0);transform-origin:left center;pointer-events:none}
+.btn.solid.fill::before{animation:btnfill 1.25s cubic-bezier(.45,0,.55,1)}
+@keyframes btnfill{0%{transform:scaleX(0);opacity:1}50%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
 .btn.ghost{border:1px solid var(--linea)}
 .btn.ghost:hover{border-color:var(--tinta)}
 .wave{display:block;width:100%;height:180px;margin-top:56px;cursor:crosshair;touch-action:pan-y}
@@ -313,7 +317,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .pf.play .pfi-ball .gl{animation:pfglow 1.1s ease-out}
 @keyframes pfglow{25%{opacity:1}100%{opacity:0}}
 .pfi-lip .gl{fill:currentColor;stroke:none;opacity:.55;transform:translateX(-12px)}
-.pf.play .pfi-lip .gl{animation:pfsweep .9s cubic-bezier(.45,0,.55,1)}
+.pf.play .pfi-lip .gl{animation:pfsweep 1.1s cubic-bezier(.45,0,.55,1)}
 @keyframes pfsweep{from{transform:translateX(-12px)}to{transform:translateX(12px)}}
 .pf[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--papel)}
 .pjs{grid-column:1/-1}
@@ -1273,6 +1277,14 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
       },{rootMargin:'0px 0px -25% 0px',threshold:1});
       yio.observe(yr);
     }
+  }
+
+  /* Te toca a ti: el botón del email se rellena una vez al verlo */
+  var cta=document.querySelector('#contacto .btn.solid');
+  if(cta&&!reduce&&'IntersectionObserver' in window){
+    var cio=new IntersectionObserver(function(en){if(!en[0].isIntersecting)return;cio.disconnect();
+      setTimeout(function(){cta.classList.add('fill');cta.addEventListener('animationend',function(){cta.classList.remove('fill');},{once:true});},250);},{rootMargin:'0px 0px -20% 0px',threshold:1});
+    cio.observe(cta);
   }
 
   /* Patas: ver entregables */
