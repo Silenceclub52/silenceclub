@@ -525,32 +525,24 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .about .photo img{position:absolute;top:0;left:0}
 }
 
-/* Barra de recorrido (móvil): las cuatro secciones siempre a mano del pulgar. La línea de sonido hace de progreso:
-   el medio punto avanza con el scroll, lo leído queda en tinta y, al entrar en otra sección, la línea suena y se calma.
-   En Servicio, tres puntitos (vacío, medio, lleno) dicen en qué fase estás. Aparece al salir del hero y se va al llegar a "Te toca a ti" */
+/* Barra de recorrido (móvil): una cápsula pequeña de cristal abajo, con las cuatro secciones a mano del pulgar.
+   La sección en la que estás va en tinta. Se aparta mientras bajas leyendo y vuelve al parar o al subir.
+   Aparece al salir del hero y se va al llegar a "Te toca a ti" */
 .tour{display:none}
 @media (max-width:900px){
-  .tour{position:fixed;left:0;right:0;bottom:0;z-index:19;display:block;padding:0 0 env(safe-area-inset-bottom,0px);
-    background:rgba(247,248,250,.95);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);
-    box-shadow:inset 0 1px 0 rgba(28,30,42,.08);transform:translateY(110%);transition:transform .5s cubic-bezier(.3,.8,.3,1)}
-  .tour.on{transform:none}
-  .tour-ln{position:absolute;left:0;top:-7px;width:100%;height:14px;overflow:visible;pointer-events:none}
-  .tour-ln path{fill:none;stroke:var(--linea);stroke-width:1.2;vector-effect:non-scaling-stroke}
-  .tour-done{position:absolute;left:0;top:-.6px;height:1.2px;width:var(--p,0%);background:var(--tinta);opacity:.75;pointer-events:none}
-  .tour-dot{position:absolute;top:0;left:var(--p,0%);width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:1px solid var(--tinta);background:linear-gradient(90deg,var(--papel) 50%,var(--tinta) 50%);pointer-events:none}
-  .tour ul{display:grid;grid-template-columns:repeat(4,1fr);margin:0;padding:0;list-style:none}
-  .tour a{display:flex;align-items:center;justify-content:center;gap:6px;height:56px;font:500 13px/1 var(--sans);color:var(--grafito);text-decoration:none;transition:color .3s}
+  .tour{position:fixed;left:50%;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:19;display:block;
+    border-radius:999px;background:rgba(247,248,250,.93);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);
+    box-shadow:inset 0 0 0 1px rgba(28,30,42,.07),0 8px 24px -12px rgba(28,30,42,.28);
+    opacity:0;transform:translate(-50%,16px);pointer-events:none;transition:opacity .35s,transform .45s cubic-bezier(.3,.8,.3,1)}
+  .tour.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+  .tour ul{display:flex;margin:0;padding:0 4px;list-style:none}
+  .tour a{display:flex;align-items:center;height:36px;padding:0 11px;font:500 12.5px/1 var(--sans);color:var(--grafito);text-decoration:none;white-space:nowrap;transition:color .3s}
   .tour a.on{color:var(--tinta)}
-  .tour a.cta{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--violeta)}
-  .tour-ph{display:none;gap:3px}
-  .tour a.on .tour-ph{display:inline-flex}
-  .tour-ph i{width:5px;height:5px;border-radius:50%;border:1px solid currentColor}
-  .tour-ph i.done{background:currentColor}
-  .tour-ph i.now{background:linear-gradient(90deg,transparent 50%,currentColor 50%)}
+  .tour a.cta{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--violeta)}
 }
-@media (max-width:360px){.tour a{font-size:12px;gap:4px}}
+@media (max-width:360px){.tour a{padding:0 8px;font-size:12px}}
 @media (prefers-color-scheme:dark) and (max-width:900px){
-  .tour{background:rgba(20,19,23,.95);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+  .tour{background:rgba(20,19,23,.92);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 8px 24px -12px rgba(0,0,0,.6)}
 }
 
 /* Retícula */
@@ -647,10 +639,8 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   </div>
 </nav>
 <div class="tour" role="navigation" aria-label="Recorrido de la página">
-  <svg class="tour-ln" viewBox="0 0 1000 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7H1000"/></svg>
-  <i class="tour-done" aria-hidden="true"></i><i class="tour-dot" aria-hidden="true"></i>
   <ul>
-    <li><a href="#servicio">Servicio<span class="tour-ph" aria-hidden="true"><i></i><i></i><i></i></span></a></li>
+    <li><a href="#servicio">Servicio</a></li>
     <li><a href="#proyectos">Proyectos</a></li>
     <li><a href="#sobre-mi">Sobre mí</a></li>
     <li><a href="#contacto" class="cta">Hablemos</a></li>
@@ -1348,27 +1338,20 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   var tour=document.querySelector('.tour');
   if(tour){
     var tl=[].slice.call(tour.querySelectorAll('a')),tsec=['servicio','proyectos','sobre-mi','contacto'].map(function(id){return document.getElementById(id);}),
-        tpath=tour.querySelector('.tour-ln path'),tph=[].slice.call(tour.querySelectorAll('.tour-ph i')),thero=document.querySelector('.hero'),
-        tcur=-2,tq=false,traf=0;
-    var tring=function(pos){if(reduce)return;cancelAnimationFrame(traf);var t0=performance.now(),cx=pos*1000;
-      (function f(){var t=(performance.now()-t0)/1000,k=Math.max(0,1-t/1.1),A=4.5*k*k,d='M0 7';
-        for(var x=0;x<=1000;x+=8){var g=Math.exp(-Math.pow(x-cx,2)/(2*110*110));d+='L'+x+' '+(7+A*g*(Math.sin(x*.05-t*16)*.6+Math.sin(x*.13+t*22)*.4)).toFixed(2);}
-        tpath.setAttribute('d',k>0?d:'M0 7H1000');if(k>0)traf=requestAnimationFrame(f);})();};
+        thero=document.querySelector('.hero'),tq=false,tlast=window.scrollY,thide=false,tidle=0;
     var tupd=function(){
       tq=false;if(!matchMedia('(max-width: 900px)').matches)return;
-      var ih=innerHeight,m=ih*.45,r=tsec.map(function(e){return e.getBoundingClientRect().top;}),cur=-1;
-      r.forEach(function(top,i){if(top<m)cur=i;});
-      var show=thero.getBoundingClientRect().bottom<ih*.4&&r[3]>ih*.62;
-      tour.classList.toggle('on',show);
-      var pos;
-      if(cur<0)pos=.125*Math.max(0,Math.min(1,1-(r[0]-m)/ih));
-      else if(cur>=3)pos=.875;
-      else pos=(cur+.5+Math.max(0,Math.min(1,(m-r[cur])/(r[cur+1]-r[cur]))))/4;
-      tour.style.setProperty('--p',(pos*100).toFixed(2)+'%');
-      if(cur!==tcur){tl.forEach(function(a,i){a.classList.toggle('on',i===cur);});if(tcur!==-2&&cur>=0&&show)tring(pos);tcur=cur;}
-      /* Fase de Servicio: la misma que marca el índice de escritorio */
-      var ia=[].slice.call(document.querySelectorAll('.proc-idx a'));
-      tph.forEach(function(d,i){d.classList.toggle('done',ia[i].classList.contains('done'));d.classList.toggle('now',ia[i].hasAttribute('aria-current'));});
+      var ih=innerHeight,m=ih*.45,cur=-1,y=window.scrollY;
+      tsec.forEach(function(e,i){if(e.getBoundingClientRect().top<m)cur=i;});
+      tl.forEach(function(a,i){a.classList.toggle('on',i===cur);});
+      /* Bajando: se aparta. Subiendo o al parar: vuelve */
+      if(y>tlast+4)thide=true;else if(y<tlast-4)thide=false;tlast=y;
+      clearTimeout(tidle);tidle=setTimeout(function(){thide=false;tshow();},450);
+      tshow();
+    };
+    var tshow=function(){
+      var ih=innerHeight,zone=thero.getBoundingClientRect().bottom<ih*.4&&tsec[3].getBoundingClientRect().top>ih*.62;
+      tour.classList.toggle('on',zone&&!thide);
     };
     window.addEventListener('scroll',function(){if(!tq){tq=true;requestAnimationFrame(tupd);}},{passive:true});
     window.addEventListener('resize',tupd);tupd();
