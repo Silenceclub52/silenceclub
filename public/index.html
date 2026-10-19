@@ -244,15 +244,16 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .beyond-k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--violeta)}
 .beyond h3{margin-top:10px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(30px,3vw,44px);line-height:1.04;letter-spacing:-.02em}
 .beyond-price{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-top:6px;font-size:14px;color:var(--grafito)}
-/* El año como línea de sonido: doce marcas con la inicial de cada mes; al verla, el medio punto la recorre de enero a diciembre
-   y la línea vibra un poco a su paso. Sustituye al filete que separaba el precio */
+/* El año como línea: doce marcas con la inicial de cada mes; al verla, el medio punto se desliza despacio de enero a diciembre
+   y deja lo recorrido algo más marcado. Sustituye al filete que separaba el precio */
 .yr{grid-column:1/-1;position:relative;padding-top:6px;color:var(--violeta)}
 .yr svg{display:block;width:100%;height:16px;overflow:visible}
 .yr path{fill:none;stroke:rgba(107,79,214,.3);stroke:color-mix(in srgb,var(--violeta) 34%,transparent);stroke-width:1.2;vector-effect:non-scaling-stroke}
 .yr-m{display:grid;grid-template-columns:repeat(12,1fr);margin:4px 0 0;padding:0;list-style:none;font:500 10.5px/1 var(--sans);letter-spacing:.08em;color:var(--grafito)}
 .yr-m li{position:relative;padding-top:8px}
 .yr-m li::before{content:"";position:absolute;left:0;top:-12px;width:1px;height:6px;background:currentColor;opacity:.35}
-.yr-d{position:absolute;top:8px;left:var(--p,100%);width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:1px solid currentColor;background:linear-gradient(90deg,var(--papel) 50%,currentColor 50%)}
+.yr-done{position:absolute;left:0;top:13.4px;width:var(--p,100%);height:1.2px;background:currentColor;opacity:.55}
+.yr-d{position:absolute;top:14px;left:var(--p,100%);width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;border:1px solid currentColor;background:linear-gradient(90deg,var(--papel) 50%,currentColor 50%)}
 .beyond-price span{margin-right:auto}
 .beyond-price .amt{font-size:clamp(30px,3vw,40px);font-weight:340}
 .beyond div>p:last-child{margin-top:14px;max-width:34em;font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--grafito)}
@@ -296,6 +297,25 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .pf{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 7px 0 17px;border:0;border-radius:999px;background:none;font:500 15px/1 var(--sans);color:var(--grafito);cursor:pointer;transition:background .3s,color .3s,border-color .3s}
 .pf span{display:inline-grid;place-items:center;min-width:28px;height:28px;padding:0 6px;border-radius:999px;background:rgba(128,128,140,.18);background:color-mix(in srgb,currentColor 12%,transparent);font-size:12px}
 .pf:hover{color:var(--tinta)}
+/* Icono de cada sector, a línea; al pulsar el filtro: el medio punto gira (Todos), la bola de discoteca rueda y destella
+   (Nightlife), la barra de labios recibe un reflejo (Beauty). Todo breve y en el color del texto */
+.pfi{flex:none;width:18px;height:18px;margin-right:-3px;overflow:visible;fill:none;stroke:currentColor;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round}
+.pfi .fl,.pfi .spk{fill:currentColor;stroke:none}
+.pfi .spk{transform-box:fill-box;transform-origin:center;transform:scale(0)}
+.pf.play .pfi .spk{animation:pfspk .95s cubic-bezier(.3,.8,.3,1) var(--d,0s) both}
+@keyframes pfspk{0%{transform:scale(0) rotate(0)}35%{transform:scale(1) rotate(30deg)}100%{transform:scale(0) rotate(80deg)}}
+.pfi-all .hf{transform-box:view-box;transform-origin:10px 10px}
+.pf.play .pfi-all .hf{animation:pfhalf .9s cubic-bezier(.45,0,.55,1)}
+@keyframes pfhalf{to{transform:rotate(180deg)}}
+.pfi-ball .bl{transform-box:view-box;transform-origin:10px 5px}
+.pf.play .pfi-ball .bl{animation:pfroll 1.1s cubic-bezier(.3,.8,.3,1)}
+@keyframes pfroll{0%{transform:rotate(0)}30%{transform:rotate(-14deg)}65%{transform:rotate(7deg)}100%{transform:rotate(0)}}
+.pfi-ball .gl{fill:currentColor;stroke:none;opacity:0}
+.pf.play .pfi-ball .gl{animation:pfglow 1.1s ease-out}
+@keyframes pfglow{25%{opacity:1}100%{opacity:0}}
+.pfi-lip .gl{fill:currentColor;stroke:none;opacity:.55;transform:translateX(-12px)}
+.pf.play .pfi-lip .gl{animation:pfsweep .9s cubic-bezier(.45,0,.55,1)}
+@keyframes pfsweep{from{transform:translateX(-12px)}to{transform:translateX(12px)}}
 .pf[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--papel)}
 .pjs{grid-column:1/-1}
 .pj.in{animation:pjin .7s cubic-bezier(.3,.8,.3,1) both;animation-delay:calc(var(--k,0) * 80ms)}
@@ -798,7 +818,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
         <h3 id="beyond-t">¿Estamos cómodos juntos?</h3>
         <p>Seguimos trabajando juntos todo el año, con seguimiento de todo lo que hemos puesto en marcha.</p>
       </div>
-      <div class="yr" aria-hidden="true"><svg viewBox="0 0 1000 16" preserveAspectRatio="none"><path d="M0 8H1000"/></svg><ol class="yr-m"><li>E</li><li>F</li><li>M</li><li>A</li><li>M</li><li>J</li><li>J</li><li>A</li><li>S</li><li>O</li><li>N</li><li>D</li></ol><i class="yr-d"></i></div>
+      <div class="yr" aria-hidden="true"><svg viewBox="0 0 1000 16" preserveAspectRatio="none"><path d="M0 8H1000"/></svg><i class="yr-done"></i><ol class="yr-m"><li>E</li><li>F</li><li>M</li><li>A</li><li>M</li><li>J</li><li>J</li><li>A</li><li>S</li><li>O</li><li>N</li><li>D</li></ol><i class="yr-d"></i></div>
       <p class="beyond-price"><span>Seguimiento anual</span><b class="amt">··· €</b><small>al año</small></p>
     </aside>
     <div class="proc-end"><a class="ph-next" href="#proyectos">Mira cómo ha ido en negocios reales<svg viewBox="0 0 11 14" aria-hidden="true"><path d="M5.5 1v12M1 8.5l4.5 4.5 4.5-4.5"/></svg></a></div>
@@ -812,9 +832,9 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
       <h2 class="h2">Negocios a los que he acompañado.</h2>
     </div>
     <div class="pj-filter" role="group" aria-label="Filtrar proyectos por sector">
-      <button type="button" class="pf" data-f="*" aria-pressed="true">Todos <span>4</span></button>
-      <button type="button" class="pf" data-f="nightlife" aria-pressed="false">Nightlife <span>3</span></button>
-      <button type="button" class="pf" data-f="belleza" aria-pressed="false">Beauty <span>1</span></button>
+      <button type="button" class="pf" data-f="*" aria-pressed="true"><svg class="pfi pfi-all" viewBox="0 0 20 20" aria-hidden="true"><g class="hf"><circle cx="10" cy="10" r="5"/><path class="fl" d="M10 5a5 5 0 0 1 0 10z"/></g></svg>Todos <span>4</span></button>
+      <button type="button" class="pf" data-f="nightlife" aria-pressed="false"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/></g><g transform="translate(17.6 5.2)" style="--d:0s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g><g transform="translate(2.2 8)" style="--d:0.18s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g><g transform="translate(18 16)" style="--d:0.32s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g></svg>Nightlife <span>3</span></button>
+      <button type="button" class="pf" data-f="belleza" aria-pressed="false"><svg class="pfi pfi-lip" viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="pfc-lip"><path d="M8.3 8.6V4.7L11.7 2.4V8.6Z"/><rect x="7.6" y="8.6" width="4.8" height="2.6"/><rect x="7" y="11.2" width="6" height="7.8" rx="1"/></clipPath></defs><path d="M8.3 8.6V4.7L11.7 2.4V8.6"/><rect x="7.6" y="8.6" width="4.8" height="2.6" rx=".4"/><rect x="7" y="11.2" width="6" height="7.8" rx="1"/><g clip-path="url(#pfc-lip)"><rect class="gl" x="9" y="-2" width="2.2" height="24" transform="rotate(24 10 10)"/></g><g transform="translate(14.6 3)" style="--d:0.25s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g></svg>Beauty <span>1</span></button>
     </div>
     <p class="sr-only" id="pjCount" aria-live="polite"></p>
     <div class="pjs">
@@ -1237,14 +1257,13 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     b.addEventListener('click',function(){var o=!li.classList.contains('open');li.classList.toggle('open',o);b.setAttribute('aria-expanded',o);shake();});
   });
 
-  /* Seguimiento anual: el medio punto recorre el año y la línea vibra a su paso */
+  /* Seguimiento anual: el medio punto se desliza despacio de enero a diciembre y deja el año recorrido algo más marcado */
   var yr=document.querySelector('.yr');
   if(yr&&!reduce&&'IntersectionObserver' in window){
-    var yp=yr.querySelector('path'),yd=yr.querySelector('.yr-d');yd.style.setProperty('--p','0%');
-    var yio=new IntersectionObserver(function(en){if(!en[0].isIntersecting)return;yio.disconnect();var t0=performance.now(),T=4.2;
-      (function f(){var t=(performance.now()-t0)/1000,q=Math.min(1,t/T),e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2,px=e*1000,k=1-Math.pow(q,3),d='M0 8';
-        for(var x=0;x<=1000;x+=8){var g=Math.exp(-Math.pow(x-px,2)/(2*45*45));d+='L'+x+' '+(8+3.2*k*g*Math.sin(x*.08-t*16)).toFixed(2);}
-        yp.setAttribute('d',q<1?d:'M0 8H1000');yd.style.setProperty('--p',(e*100).toFixed(2)+'%');if(q<1)requestAnimationFrame(f);})();
+    var yd=yr.querySelector('.yr-d');yr.style.setProperty('--p','0%');
+    var yio=new IntersectionObserver(function(en){if(!en[0].isIntersecting)return;yio.disconnect();var t0=performance.now(),T=6.5;
+      (function f(){var q=Math.min(1,(performance.now()-t0)/1000/T),e=-(Math.cos(Math.PI*q)-1)/2;
+        yr.style.setProperty('--p',(e*100).toFixed(2)+'%');if(q<1)requestAnimationFrame(f);})();
     },{rootMargin:'0px 0px -25% 0px',threshold:1});
     yio.observe(yr);
   }
@@ -1298,6 +1317,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     var f=b.dataset.f;
     b.querySelector('span').textContent=pjs.filter(function(pj){return inSector(pj,f);}).length;
     b.addEventListener('click',function(){
+      b.classList.remove('play');void b.offsetWidth;b.classList.add('play');
       if(b.getAttribute('aria-pressed')==='true')return;
       pfs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
       var k=0;
