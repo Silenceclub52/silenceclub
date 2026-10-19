@@ -244,16 +244,14 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .beyond-k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--violeta)}
 .beyond h3{margin-top:10px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(30px,3vw,44px);line-height:1.04;letter-spacing:-.02em}
 .beyond-price{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-top:6px;font-size:14px;color:var(--grafito)}
-/* El año como línea: doce marcas con la inicial de cada mes; al verla, el medio punto se desliza despacio de enero a diciembre
-   y deja lo recorrido algo más marcado. Sustituye al filete que separaba el precio */
-.yr{grid-column:1/-1;position:relative;padding-top:6px;color:var(--violeta)}
-.yr svg{display:block;width:100%;height:16px;overflow:visible}
-.yr path{fill:none;stroke:rgba(107,79,214,.3);stroke:color-mix(in srgb,var(--violeta) 34%,transparent);stroke-width:1.2;vector-effect:non-scaling-stroke}
-.yr-m{display:grid;grid-template-columns:repeat(12,1fr);margin:4px 0 0;padding:0;list-style:none;font:500 10.5px/1 var(--sans);letter-spacing:.08em;color:var(--grafito)}
-.yr-m li{position:relative;padding-top:8px}
-.yr-m li::before{content:"";position:absolute;left:0;top:-12px;width:1px;height:6px;background:currentColor;opacity:.35}
-.yr-done{position:absolute;left:0;top:13.4px;width:var(--p,100%);height:1.2px;background:currentColor;opacity:.55}
-.yr-d{position:absolute;top:14px;left:var(--p,100%);width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;border:1px solid currentColor;background:linear-gradient(90deg,var(--papel) 50%,currentColor 50%)}
+/* El año que se llena: doce puntos, uno por mes, que pasan de vacío a lleno como el medio punto del logo
+   (enero vacío, junio a medias, diciembre lleno). Una línea fina los une. Al verlos se rellenan uno a uno, despacio */
+.yr{grid-column:1/-1;position:relative;display:grid;grid-template-columns:repeat(12,1fr);margin:4px 0 0;padding:0;list-style:none;color:var(--violeta)}
+.yr::before{content:"";position:absolute;left:calc(100%/24);right:calc(100%/24);top:5px;height:1px;background:currentColor;opacity:.22}
+.yr li{position:relative;display:flex;flex-direction:column;align-items:center;gap:9px;font:500 10.5px/1 var(--sans);letter-spacing:.08em;color:var(--grafito)}
+.yr i{position:relative;width:11px;height:11px;border-radius:50%;border:1px solid var(--violeta);background:var(--papel)}
+.yr i::after{content:"";position:absolute;inset:-1px;border-radius:50%;background:var(--violeta);clip-path:inset(0 0 0 calc((1 - var(--f))*100%));transition:clip-path 1.1s cubic-bezier(.45,0,.55,1) var(--d,0s)}
+.yr.wait i::after{clip-path:inset(0 0 0 100%)}
 .beyond-price span{margin-right:auto}
 .beyond-price .amt{font-size:clamp(30px,3vw,40px);font-weight:340}
 .beyond div>p:last-child{margin-top:14px;max-width:34em;font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--grafito)}
@@ -818,7 +816,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
         <h3 id="beyond-t">¿Estamos cómodos juntos?</h3>
         <p>Seguimos trabajando juntos todo el año, con seguimiento de todo lo que hemos puesto en marcha.</p>
       </div>
-      <div class="yr" aria-hidden="true"><svg viewBox="0 0 1000 16" preserveAspectRatio="none"><path d="M0 8H1000"/></svg><i class="yr-done"></i><ol class="yr-m"><li>E</li><li>F</li><li>M</li><li>A</li><li>M</li><li>J</li><li>J</li><li>A</li><li>S</li><li>O</li><li>N</li><li>D</li></ol><i class="yr-d"></i></div>
+      <ol class="yr" aria-hidden="true"><li><i style="--f:0.000;--d:0.20s"></i>E</li><li><i style="--f:0.091;--d:0.36s"></i>F</li><li><i style="--f:0.182;--d:0.52s"></i>M</li><li><i style="--f:0.273;--d:0.68s"></i>A</li><li><i style="--f:0.364;--d:0.84s"></i>M</li><li><i style="--f:0.455;--d:1.00s"></i>J</li><li><i style="--f:0.545;--d:1.16s"></i>J</li><li><i style="--f:0.636;--d:1.32s"></i>A</li><li><i style="--f:0.727;--d:1.48s"></i>S</li><li><i style="--f:0.818;--d:1.64s"></i>O</li><li><i style="--f:0.909;--d:1.80s"></i>N</li><li><i style="--f:1.000;--d:1.96s"></i>D</li></ol>
       <p class="beyond-price"><span>Seguimiento anual</span><b class="amt">··· €</b><small>al año</small></p>
     </aside>
     <div class="proc-end"><a class="ph-next" href="#proyectos">Mira cómo ha ido en negocios reales<svg viewBox="0 0 11 14" aria-hidden="true"><path d="M5.5 1v12M1 8.5l4.5 4.5 4.5-4.5"/></svg></a></div>
@@ -1257,14 +1255,11 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     b.addEventListener('click',function(){var o=!li.classList.contains('open');li.classList.toggle('open',o);b.setAttribute('aria-expanded',o);shake();});
   });
 
-  /* Seguimiento anual: el medio punto se desliza despacio de enero a diciembre y deja el año recorrido algo más marcado */
+  /* Seguimiento anual: los meses se van llenando, uno a uno, al ver la tarjeta */
   var yr=document.querySelector('.yr');
   if(yr&&!reduce&&'IntersectionObserver' in window){
-    var yd=yr.querySelector('.yr-d');yr.style.setProperty('--p','0%');
-    var yio=new IntersectionObserver(function(en){if(!en[0].isIntersecting)return;yio.disconnect();var t0=performance.now(),T=6.5;
-      (function f(){var q=Math.min(1,(performance.now()-t0)/1000/T),e=-(Math.cos(Math.PI*q)-1)/2;
-        yr.style.setProperty('--p',(e*100).toFixed(2)+'%');if(q<1)requestAnimationFrame(f);})();
-    },{rootMargin:'0px 0px -25% 0px',threshold:1});
+    yr.classList.add('wait');
+    var yio=new IntersectionObserver(function(en){if(en[0].isIntersecting){yr.classList.remove('wait');yio.disconnect();}},{rootMargin:'0px 0px -25% 0px',threshold:1});
     yio.observe(yr);
   }
 
