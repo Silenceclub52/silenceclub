@@ -24,7 +24,7 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Rama `main` → producción (`silenceclub.es`). Comando: `npx wrangler deploy`.
 - Cualquier otra rama → versión de prueba automática (`npx wrangler preview`):
   `https://<rama-con-guiones>-silenceclub.floral-snowflake-c31a.workers.dev/`
-- Rama de trabajo actual (candidata a `main`): `claude/intelligent-cannon-dipviu` →
+- Rama de trabajo actual (en `main` desde el último "pásalo a main"): `claude/intelligent-cannon-dipviu` →
   https://claude-intelligent-cannon-dipviu-silenceclub.floral-snowflake-c31a.workers.dev/
   Sale de `main` y trae de `claude/nueva-estetica-contraste` solo lo que Jorge eligió (ver abajo).
   Las ramas `claude/nueva-estetica` y `claude/nueva-estetica-contraste` (versión única sin modo oscuro) quedan como referencia; Jorge las descartó como base. Antes de empezar una rama nueva, partir de la última rama de trabajo
@@ -35,7 +35,7 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Método: cambios en la rama de pruebas → Jorge revisa → si aprueba, se pasa a `main`.
 - Volver atrás: Cloudflare → silenceclub → Implementaciones → ⋯ → Revertir.
 
-### Cambios de la rama candidata (sobre `main`)
+### Lo último que pasó a `main` (sobre la versión anterior; manda sobre la descripción general de abajo si se contradicen)
 - Se mantiene modo claro y oscuro. Nada de losas redondeadas a sangre en secciones grandes.
 - Modo oscuro: hero y "Te toca a ti" en negro con un toque muy ligero de púrpura `#0E0B14` (`theme-color` oscuro igual). El hero sube bajo el menú (`margin-top:-72px`) para que ese fondo llegue arriba.
 - Servicio con la estructura, textos y funcionamiento de la rama de contraste (colores de `main`): títulos "01 · INICIO"; scoring en tarjeta con medios puntos que se rellenan despacio (.22 s por punto, con la tarjeta bien a la vista) y debajo dos cajas; el candado se sacude una vez (`.nudge`) cuando las soluciones cruzan la mitad de la pantalla y se abre al llegar a Desarrollo; patas con "Responde a", título algo más grande, frase en primera persona y entregables plegados ("Ver entregables"; su línea `.pil-ln` vibra al abrir y cerrar, como en "Cosas que no voy a hacer"); faldón móvil solo cuando el título de la fase ya no se ve. Intro de Desarrollo: "Con todo lo analizado, paso a la acción. Trabajo sobre tres áreas:". Seguimiento anual: "Seguimos trabajando juntos todo el año, con seguimiento de todo lo que hemos puesto en marcha."
@@ -49,7 +49,8 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - "Te toca a ti": centrado, con el medio punto encima. La primera vez que se ve, el botón del email se rellena de violeta de izquierda a derecha y vuelve a su color (`.btn.solid.fill`, 1,25 s); a la vez, la ondita de sonido del hover lo recorre de izquierda a derecha (`b.sweep(900)`). Detalle: texto de Jorge ("Intento cuidar siempre hasta el último detalle…"). Desenlace: "El proyecto no acaba al publicarlo. Vemos qué ajustar."
 
 ### Estado (actualizar en cada paso a `main`)
-- En `main` (producción) desde el último "pásalo a main": todo lo descrito abajo (hero, pausa, Servicio por fases, Proyectos con filtro y logos, marcas, menú esmerilado, pie con logo), con precios "··· €" por definir.
+- En `main` (producción) desde el último "pásalo a main": todo lo de "Lo último que pasó a `main`" más lo descrito abajo que no contradiga eso (en móvil ya no hay hamburguesa ni faldón de fases: los sustituye la cápsula de recorrido). Precios "··· €" por definir.
+- Auditoría previa: 8 anchos (320–1440) × claro/oscuro × Safari antiguo simulado, sin errores JS ni scroll horizontal; logos, imágenes y marcos correctos. (El detector de "elementos fuera de pantalla" marca el panel de la demo de reservas, `.demo .panel`: está oculto a propósito dentro de su marco con `overflow:hidden`.)
 - Rama de pruebas = `main` en ese momento; los cambios nuevos se hacen en la rama y se vuelven a pasar.
 
 ## Estructura del repositorio
