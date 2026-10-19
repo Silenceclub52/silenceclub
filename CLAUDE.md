@@ -44,7 +44,7 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Filtro de proyectos con icono a línea por sector (`.pfi`): Todos = medio punto que gira medio giro; Nightlife = bola de discoteca (rejilla de facetas, cuelga de un hilo) que se balancea con un brillo y tres destellos; Beauty = barra de labios con un reflejo que la cruza y un destello. Solo al pulsar (`.pf.play`).
 - "Cosas que no voy a hacer": lista editorial, título fijo a la izquierda, sin numeración ni medio punto.
 - Sobre mí: el de `main`, con la sombra del retrato en gris corporativo (`--grafito` al 22 %, antes melocotón) y la frase de Silence Club en serif recta.
-- "Te toca a ti": centrado, con el medio punto encima. Detalle: texto de Jorge ("Intento cuidar siempre hasta el último detalle…").
+- "Te toca a ti": centrado, con el medio punto encima. Detalle: texto de Jorge ("Intento cuidar siempre hasta el último detalle…"). Desenlace: "El proyecto no acaba al publicarlo. Vemos qué ajustar."
 
 ### Estado (actualizar en cada paso a `main`)
 - En `main` (producción) desde el último "pásalo a main": todo lo descrito abajo (hero, pausa, Servicio por fases, Proyectos con filtro y logos, marcas, menú esmerilado, pie con logo), con precios "··· €" por definir.
