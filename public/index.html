@@ -58,11 +58,25 @@ a{color:inherit}
 
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
 .grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut)}
-/* Bloques hondos (hero y cierre): casi negro con un punto de violeta, redondeados y separados del borde lo justo */
-.deep{--niebla:var(--hondo);--papel:var(--hondo);--tinta:#EFECF7;--grafito:#ABA4BF;--linea:rgba(239,236,247,.18);--violeta:#B6A6FF;
-  --m:10px;margin:0 var(--m);border-radius:28px;background:var(--hondo);color:var(--tinta)}
-.deep .wrap{padding-left:calc(var(--pad) - var(--m));padding-right:calc(var(--pad) - var(--m))}
-@media (max-width:900px){.deep{--m:6px;border-radius:22px}}
+/* Ritmo de tonos: tres oscuros (los del modo oscuro de la web actual) y tres claros, alternando por sección.
+   Oscuros = losas redondeadas que flotan sobre el fondo; claros = el fondo y franjas a sangre.
+   D0 (hero y cierre) · D1 (Desarrollo y "Cosas que no voy a hacer") · D2, el menos oscuro (Proyectos)
+   L0 papel (pausa y detalle) · L1 gris violáceo (fondo) · L2 rosado muy pálido (Sobre mí, donde aparece la persona) */
+:root{--m:10px}
+@media (max-width:900px){:root{--m:6px}}
+.deep,.dk1,.dk2{--tinta:#EDECF0;--grafito:#9D9BA5;--violeta:#A08CF5;color:var(--tinta)}
+.deep{--niebla:#0B0A0C;--papel:#141317;--linea:#27262C}
+.dk1{--niebla:#15131A;--papel:#1F1D25;--linea:#2F2C36}
+.dk2{--niebla:#221F2A;--papel:#2C2935;--linea:#3C3846;--grafito:#ADA8BA}
+.deep,.slab{margin:var(--m);border-radius:28px;background:var(--niebla)}
+.deep .wrap,.slab .wrap{padding-left:calc(var(--pad) - var(--m));padding-right:calc(var(--pad) - var(--m))}
+@media (max-width:900px){.deep,.slab{border-radius:22px}}
+/* Losa dentro de la retícula (Desarrollo): el fondo sale a todo el ancho; JS le pasa su posición (--bx) y el ancho útil (--vw) */
+.band{position:relative;isolation:isolate}
+.band::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:calc(var(--m) - var(--bx,0px));width:calc(var(--vw,100vw) - 2*var(--m));border-radius:28px;background:var(--niebla)}
+@media (max-width:900px){.band::before{border-radius:22px}}
+.tone-l0{background:#F3F1F7}
+.tone-l2{background:#EFE6E5}
 /* Tarjetas sobre el fondo: el texto queda alineado con la columna; la tarjeta sobresale un poco por los lados */
 .card{--cx:clamp(16px,2.2vw,32px);margin-left:calc(-1*var(--cx));margin-right:calc(-1*var(--cx));padding-left:var(--cx);padding-right:var(--cx);border-radius:22px;background:var(--papel)}
 @media (max-width:900px){.card{--cx:calc(var(--pad) - 8px);border-radius:18px}}
@@ -128,7 +142,7 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 .btn.ghost:hover{border-color:var(--tinta)}
 .wave{display:block;width:100%;height:180px;margin-top:56px;cursor:crosshair;touch-action:pan-y}
 /* El hero sube bajo el menú: el bloque hondo empieza a 10 px del borde de arriba */
-.hero.deep{margin-top:calc(var(--m) - 72px);padding:calc(62px + clamp(48px,9vh,128px)) 0 clamp(8px,2vw,24px)}
+.hero.deep{margin-top:calc(var(--m) - 72px);margin-bottom:0;padding:calc(62px + clamp(48px,9vh,128px)) 0 clamp(8px,2vw,24px)}
 
 /* Secciones */
 section.block{padding:clamp(96px,14vw,176px) 0}
@@ -138,7 +152,7 @@ section.block{padding:clamp(96px,14vw,176px) 0}
 
 /* Historia */
 /* Pausa: una franja corta con la frase al centro y una línea pequeña que suena al verla y se calla */
-.story{padding:clamp(72px,9vw,120px) 0;text-align:center}
+.story{margin-top:var(--m);padding:clamp(72px,9vw,120px) 0;text-align:center;background:#F3F1F7}
 .story .dot{display:block;width:10px;height:10px;margin:0 auto 22px;color:var(--grafito)}
 .motto{max-width:22ch;margin:0 auto;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(28px,3.4vw,46px);line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
 .story .hush{display:block;width:min(240px,50vw);height:24px;margin:26px auto 0;overflow:visible}
@@ -215,6 +229,13 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .pils{display:grid;gap:48px;margin:58px 0 0;padding:0;list-style:none}
 /* La cinta de sonido hace de borde superior de la caja */
 .pil{position:relative;border:1px solid var(--linea);border-top:0;border-radius:0 0 16px 16px;background:var(--papel);box-shadow:0 24px 50px -32px rgba(28,30,42,.3)}
+.dk1 .pil{box-shadow:0 24px 50px -28px rgba(0,0,0,.75)}
+/* Índice lateral: cuando pasa por encima de la losa oscura de Desarrollo, cambia a tinta clara */
+@media (min-width:901px){
+  .proc-side{z-index:2}
+  .proc-side.on-dk{--violeta:#A08CF5;--tinta:#EDECF0;--grafito:#9D9BA5;--linea:#2F2C36;--niebla:#15131A}
+  .proc-side .proc-idx::before{transition:background .3s}
+}
 .pil-line{position:absolute;left:-1px;top:-22px;display:block;width:calc(100% + 2px);height:44px}
 .pil-b{padding:34px clamp(20px,2.4vw,28px) 24px}
 .pil-pain{position:relative;padding-left:14px;font-size:clamp(16px,1.25vw,18px);line-height:1.45;color:var(--grafito)}
@@ -381,7 +402,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .pj-media.shot{position:static;align-self:stretch;margin:0 0 32px;order:-1}
   .pj-text{padding-bottom:32px}
 }
-.case .shot{background:#fff;box-shadow:0 0 0 1px var(--linea),0 30px 60px -34px rgba(25,21,38,.3)}
+.case .shot{background:#19171E;box-shadow:0 0 0 1px var(--linea),0 30px 60px -30px rgba(0,0,0,.6)}
 .kicker{grid-column:1/-1;margin-bottom:16px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-size:19px;color:var(--violeta)}
 .shot{grid-column:1/span 7;margin-top:72px;border-radius:14px;overflow:hidden;background:var(--papel);box-shadow:0 1px 0 var(--linea),0 30px 60px -30px rgba(28,30,42,.25)}
 .shot .bar{display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-bottom:1px solid var(--linea);font-size:12px;color:var(--grafito)}
@@ -394,7 +415,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .case .link:hover{color:var(--violeta)}
 
 /* Detalle */
-.detail{background:var(--papel)}
+.detail{background:#F3F1F7}
 .detail .h2{grid-column:1/span 6}
 .detail .prose{grid-column:8/span 5;font-size:19px}
 .proof{grid-column:8/span 5;margin-top:40px;padding:28px;border:1px dashed var(--violeta);border-radius:14px;font-size:16px}
@@ -405,7 +426,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 
 /* No hago */
 /* Cosas que no voy a hacer: una pastilla ancha; título a la izquierda y lista a la derecha, como antes */
-.nope .card{padding-top:clamp(36px,5vw,72px);padding-bottom:clamp(36px,5vw,72px);border-radius:28px}
+.nope .card{background:var(--niebla);padding-top:clamp(36px,5vw,72px);padding-bottom:clamp(36px,5vw,72px);border-radius:28px}
 .nope .h2{grid-column:1/span 5}
 .nope ul{grid-column:7/span 6;list-style:none;padding:0}
 .nope .no{position:relative}
@@ -698,7 +719,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
           </ul>
         </div>
       </article>
-      <article class="ph" id="fase-desarrollo">
+      <article class="ph band dk1 how" id="fase-desarrollo">
         <p class="ph-n"><span>02</span>Desarrollo</p>
         <h3>Ahora, manos a la obra.</h3>
         <p class="ph-p">Pongo en práctica todo lo analizado: genero las ideas y las aplico, siempre sobre tres patas. ¿Te suena alguna de estas frases?</p>
@@ -757,7 +778,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   </div>
 </section>
 
-<section class="block case" id="proyectos">
+<section class="block case slab dk2 how" id="proyectos">
   <div class="wrap grid">
     <div class="pj-top">
       <p class="kicker">Proyectos</p>
@@ -885,7 +906,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 
 <section class="block nope">
   <div class="wrap">
-  <div class="grid card">
+  <div class="grid card dk1 how">
     <h2 class="h2">Cosas que no voy a hacer.</h2>
     <ul class="nos">
       <li class="no">
@@ -913,7 +934,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   </div>
 </section>
 
-<section class="block about" id="sobre-mi">
+<section class="block about tone-l2" id="sobre-mi">
   <div class="wrap grid">
     <figure class="portrait"><div class="photo"><img class="main" src="img/jorge.webp" alt="Retrato de Jorge"><img class="alt" src="img/jorge-alt.webp" alt="" aria-hidden="true"></div><span class="mono" aria-hidden="true">J<svg viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg></span></figure>
     <div class="txt">
@@ -1077,14 +1098,23 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   } else start();
   size();
 
+  /* Losas dentro de la retícula: el fondo ocupa todo el ancho útil */
+  function bands(){var vw=document.documentElement.clientWidth;[].forEach.call(document.querySelectorAll('.band'),function(e){e.style.setProperty('--vw',vw+'px');e.style.setProperty('--bx',e.getBoundingClientRect().left+'px');});}
+  bands();window.addEventListener('resize',bands);window.addEventListener('load',bands);
+
   /* Cómo trabajo: la fase que lees se marca en el índice (escritorio) y en el faldón bajo el menú (móvil) */
   var pbox=document.querySelector('.proc'), phs=[].slice.call(document.querySelectorAll('.ph')), score=document.querySelector('.score');
   var pIdx=[].slice.call(document.querySelectorAll('.proc-idx a')), vNum=document.querySelector('.viz-ph b'), vName=document.querySelector('.viz-name'), vSt=document.querySelector('.viz-st');
   var PN=['Inicio','Desarrollo','Desenlace'], PS=['Escuchando','Dando forma','Midiendo'], pph=-1, pon=false, pq=false;
   /* Una fase empieza cuando su título cruza algo por debajo de la mitad de la pantalla */
   function phase(){var m=innerHeight*.55,k=0;phs.forEach(function(e,i){if(e.querySelector('.ph-n').getBoundingClientRect().top<m)k=i;});return k;}
+  var pside=document.querySelector('.proc-side'), pdev=document.getElementById('fase-desarrollo');
   function pupd(){
-    pq=false;var ph=phase();if(ph===pph)return;pph=ph;
+    pq=false;
+    /* El índice se vuelve claro mientras está sobre la losa oscura de Desarrollo */
+    var dr=pdev.getBoundingClientRect(), sr=pside.getBoundingClientRect(), cy=sr.top+sr.height/2;
+    pside.classList.toggle('on-dk',cy>dr.top&&cy<dr.bottom);
+    var ph=phase();if(ph===pph)return;pph=ph;
     vNum.textContent='0'+(ph+1);vName.textContent=PN[ph];vSt.textContent=PS[ph];
     pIdx.forEach(function(a,i){a.classList.toggle('done',i<ph);if(i===ph)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
     /* Al llegar a Desarrollo, el candado de las soluciones queda abierto */
@@ -1096,7 +1126,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   pupd();
 
   /* Las tres patas: su línea suena al verla, se calma y se queda respirando con su forma */
-  var L=[].map.call(document.querySelectorAll('canvas.pil-line'),function(c,i){return {i:i,c:c,x:c.getContext('2d'),s:c.dataset.shape,t0:null,v:false,W:0,H:0};});
+  var L=[].map.call(document.querySelectorAll('canvas.pil-line'),function(c,i){return {i:i,c:c,x:c.getContext('2d'),dk:!!c.closest('.deep,.dk1,.dk2'),s:c.dataset.shape,t0:null,v:false,W:0,H:0};});
   function lsize(o){var d=Math.min(window.devicePixelRatio||1,2);o.W=o.c.clientWidth;o.H=o.c.clientHeight;o.c.width=o.W*d;o.c.height=o.H*d;o.x.setTransform(d,0,0,d,0,0);}
   function lshape(s,x,t,W,H,p){
     if(s==='signal'){var cx=W*.66,g=Math.max(30,W*.04),d=x-cx;return -p*H*.3*Math.exp(-d*d/(2*g*g))*(1+.05*Math.sin(t*1.7));}
@@ -1115,8 +1145,8 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     for(var i=0;i<xs.length;i++){var h=(8+3*Math.sin(xs[i]*.005+t*.4))/2;i?c.lineTo(xs[i],ys[i]-h):c.moveTo(xs[i],ys[i]-h);}
     for(i=xs.length-1;i>=0;i--){h=(8+3*Math.sin(xs[i]*.005+t*.4))/2;c.lineTo(xs[i],ys[i]+h);}
     c.closePath();
-    var g=c.createLinearGradient(0,0,W,0);g.addColorStop(0,'rgba(255,255,255,.5)');g.addColorStop(.5,'#fff');g.addColorStop(1,'rgba(255,255,255,.5)');
-    var sh=[[-6,7],[2,8],[6,6]][o.i%3];c.save();c.shadowColor='rgba(25,21,38,.2)';c.shadowBlur=16;c.shadowOffsetX=sh[0];c.shadowOffsetY=sh[1];c.fillStyle=g;c.fill();c.restore();
+    var dk=o.dk,g=c.createLinearGradient(0,0,W,0);g.addColorStop(0,dk?'rgba(200,190,255,.08)':'rgba(255,255,255,.5)');g.addColorStop(.5,dk?'rgba(214,206,255,.24)':'#fff');g.addColorStop(1,dk?'rgba(200,190,255,.08)':'rgba(255,255,255,.5)');
+    var sh=[[-6,7],[2,8],[6,6]][o.i%3];c.save();c.shadowColor=dk?'rgba(0,0,0,.6)':'rgba(25,21,38,.2)';c.shadowBlur=16;c.shadowOffsetX=sh[0];c.shadowOffsetY=sh[1];c.fillStyle=g;c.fill();c.restore();
   }
   function lt(o){return reduce?10:o.t0===null?0:(performance.now()-o.t0)/1000;}
   var lr=false;
