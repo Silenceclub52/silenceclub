@@ -46,14 +46,15 @@ https://claude-nueva-estetica-silenceclub.floral-snowflake-c31a.workers.dev/
 ### Variante "contraste" (rama `claude/nueva-estetica-contraste`, sale de `claude/nueva-estetica`)
 https://claude-nueva-estetica-contraste-silenceclub.floral-snowflake-c31a.workers.dev/
 - Ritmo de tonos para no pasar mucho scroll en el mismo: oscuros = losas redondeadas flotando (margen `--m`), claros = fondo y franjas a sangre. Base de los oscuros: el modo oscuro de la web actual.
-- Orden: hero D0 · pausa L0 · Servicio/Inicio L1 · Desarrollo D1 · Desenlace L1 · Proyectos D2 · Detalle L0 · "Cosas que no voy a hacer" L1 · Sobre mí L2 · Contacto D0 · pie L1.
-- D0 `.deep` #14101D, el negro púrpura de la versión anterior (tinta #EFECF7, violeta #B6A6FF) · D1 `.dk1` #15131A (#1F1D25) · D2 `.dk2` #221F2A (#2C2935), el menos oscuro · L0 #F3F1F7 · L1 #DEDBE6 · L2 `.tone-l2` #EFE6E5 (rosado pálido, solo en Sobre mí).
+- Orden: hero D0 · pausa L0 · Servicio/Inicio L1 · Desarrollo D1 · Desenlace L1 · Proyectos D2 · Detalle L0 · "Cosas que no voy a hacer" L1 · Sobre mí L0 · Contacto D0 · pie L1.
+- D0 `.deep` #14101D, el negro púrpura de la versión anterior (tinta #EFECF7, violeta #B6A6FF) · D1 `.dk1` #15131A (#1F1D25) · D2 `.dk2` #221F2A (#2C2935), el menos oscuro · L0 #F3F1F7 · L1 #DEDBE6. (El rosado L2 de Sobre mí se quitó: a Jorge le pareció amarillento y anticuado.)
 - Hero a sangre como en `main` (sin esquinas ni márgenes, sube hasta arriba bajo el menú); `html` y `theme-color` en #14101D para que en iPhone no asome el fondo claro arriba. "Te toca a ti" sigue como losa redondeada.
 - Prueba de menú estilo "C": enlaces dentro de una cápsula y "Hablemos" sin relleno, solo subrayado (Jorge no quiere el botón relleno) (bloque `nav .wrap>ul`). Si Jorge no lo quiere, se borra ese bloque.
 - Patas: etiqueta "Responde a" (no "Lo que te preocupa"); entregables plegados tras "Ver entregables" (`.pil-more`, `.pil-tg`). Intro de Desarrollo: "Con todo lo analizado, paso a la acción. Trabajo sobre tres áreas:". Identidad: «Mi imagen y mi web no transmiten lo que hago.»
 - Faldón móvil `.viz-bar`: solo aparece (`.on`) cuando el título de la fase activa ya ha subido por detrás del menú, para no repetir "01 Inicio" dos veces en pantalla. No ocupa sitio (margen −44 px).
 - Seguimiento anual: "Seguimos trabajando juntos todo el año, con seguimiento de todo lo que hemos puesto en marcha." Detalle: texto de Jorge ("Intento cuidar siempre hasta el último detalle…").
 - "Cosas que no voy a hacer": sin tarjeta; lista editorial sobre el fondo L1, título fijo a la izquierda, cada "no" numerado 01–04 en violeta, respuesta en texto limpio alineada con la frase (sin medio punto: a Jorge no le gustó).
+- Sobre mí compuesto como el logo: arriba de la línea, "Sobre mí" + "Hola, soy Jorge." grande (cols 1–7) y el retrato apaisado 6/5 recortado arriba para quitar la mesa (cols 8–12, esquinas 22 px, sin arco ni marco de color); la línea de sonido `.ab-line` cruza la sección y acaba en el medio punto (suena al verla y al pasar por el retrato); debajo, el texto (cols 1–6) y la frase de Silence Club en serif (cols 8–12). Fondo papel.
 - Desarrollo es `.band`: el fondo sale a todo el ancho con `::before`; JS le pasa `--bx` y `--vw`. El índice lateral pasa a tinta clara (`.on-dk`) mientras está sobre la losa y lleva `z-index:2` para no quedar debajo. Las cintas de las patas usan los colores oscuros si están dentro de un tono oscuro.
 
 ### Estado (actualizar en cada paso a `main`)
