@@ -111,14 +111,14 @@ nav ul{display:flex;gap:32px;list-style:none;padding:0;font-size:15px}
 nav ul a{text-decoration:none;color:var(--grafito);transition:color .2s}
 nav ul a:hover{color:var(--tinta)}
 nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bottom:2px}
-/* Prueba (versión "C"): enlaces dentro de una cápsula y "Hablemos" como botón relleno */
+/* Prueba (versión "C"): enlaces dentro de una cápsula; "Hablemos" sin relleno, subrayado */
 nav .wrap>ul{gap:2px;padding:4px;border-radius:999px;background:rgba(25,21,38,.06)}
 nav .wrap>ul a{display:block;padding:9px 16px;border-radius:999px;transition:color .2s,background .2s}
 nav .wrap>ul a:hover{background:rgba(25,21,38,.06)}
-nav .wrap>ul a.cta{border:0;padding:9px 18px;background:var(--tinta);color:#F3F1F7}
+nav .wrap>ul a.cta{border:0;padding:9px 18px;background:none;color:var(--tinta);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:7px}
 nav.dark .wrap>ul{background:rgba(255,255,255,.08)}
 nav.dark .wrap>ul a:hover{background:rgba(255,255,255,.08)}
-nav.dark .wrap>ul a.cta{background:#EFECF7;color:#14101D}
+nav.dark .wrap>ul a.cta{background:none;color:#EFECF7}
 nav.glass .wrap{padding-right:8px}
 
 .burger{display:none;background:none;border:0;padding:12px;margin-right:-12px;cursor:pointer;color:var(--tinta)}
