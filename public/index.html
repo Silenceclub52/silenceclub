@@ -218,8 +218,10 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .pil-one{margin-top:12px;font-size:clamp(17px,1.3vw,18px);line-height:1.5}
 /* Entregables plegados: el título manda; el detalle, a un toque */
 .pil-more{margin-top:18px}
-.pil-tg{display:inline-flex;align-items:center;gap:10px;padding:6px 0;background:none;border:0;font:500 14px/1.2 var(--sans);color:var(--tinta);cursor:pointer;border-bottom:1px solid var(--linea);transition:border-color .3s}
-.pil-tg:hover{border-color:currentColor}
+.pil-tg{position:relative;display:inline-flex;align-items:center;gap:10px;padding:6px 0 8px;background:none;border:0;font:500 14px/1.2 var(--sans);color:var(--tinta);cursor:pointer}
+.pil-tg .pil-ln,.pil-more.open .pil-tg .pil-ln{position:absolute;left:0;bottom:-6px;width:100%;height:12px;overflow:visible;pointer-events:none;transform:none;transition:none}
+.pil-ln path{fill:none;stroke:var(--linea);stroke-width:1;vector-effect:non-scaling-stroke;transition:stroke .4s}
+.pil-tg:hover .pil-ln path,.pil-more.open .pil-ln path{stroke:var(--grafito)}
 .pil-tg svg{width:14px;height:9px;overflow:visible;fill:none;stroke:var(--violeta);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .5s cubic-bezier(.3,.8,.3,1)}
 .pil-more.open .pil-tg svg{transform:rotate(180deg)}
 .pil-dw{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.3,.8,.3,1)}
@@ -745,7 +747,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
               <p class="pil-pain"><span class="pil-k">Responde a</span>«Lo hago bien, pero desde fuera parezco uno más.»</p>
               <h4>Estrategia y posicionamiento de marca</h4>
               <p class="pil-one">Pongo orden hasta que se vea claro qué te hace diferente.</p>
-              <div class="pil-more"><button type="button" class="pil-tg" aria-expanded="false" aria-controls="pd1">Ver entregables<svg viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button><div class="pil-dw" id="pd1" role="region"><ul class="pil-does"><li>Análisis de tu competencia</li><li>Propuesta de valor</li><li>Mensajes y tono de voz</li></ul></div></div>
+              <div class="pil-more"><button type="button" class="pil-tg" aria-expanded="false" aria-controls="pd1">Ver entregables<svg viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg><svg class="pil-ln" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H200"/></svg></button><div class="pil-dw" id="pd1" role="region"><ul class="pil-does"><li>Análisis de tu competencia</li><li>Propuesta de valor</li><li>Mensajes y tono de voz</li></ul></div></div>
               <p class="pil-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>Si tu proyecto lo necesita<span>desde <b class="amt">··· €</b></span></p>
             </div>
           </li>
@@ -755,7 +757,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
               <p class="pil-pain"><span class="pil-k">Responde a</span>«Mi imagen y mi web no transmiten lo que hago.»</p>
               <h4>Identidad visual y web</h4>
               <p class="pil-one">Diseño cómo te ves, cómo hablas y la web donde te eligen.</p>
-              <div class="pil-more"><button type="button" class="pil-tg" aria-expanded="false" aria-controls="pd2">Ver entregables<svg viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button><div class="pil-dw" id="pd2" role="region"><ul class="pil-does"><li>Logotipo y sistema visual</li><li>Manual de marca</li><li>Diseño y desarrollo de tu web</li></ul></div></div>
+              <div class="pil-more"><button type="button" class="pil-tg" aria-expanded="false" aria-controls="pd2">Ver entregables<svg viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg><svg class="pil-ln" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H200"/></svg></button><div class="pil-dw" id="pd2" role="region"><ul class="pil-does"><li>Logotipo y sistema visual</li><li>Manual de marca</li><li>Diseño y desarrollo de tu web</li></ul></div></div>
               <p class="pil-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>Si tu proyecto lo necesita<span>desde <b class="amt">··· €</b></span></p>
             </div>
           </li>
@@ -765,7 +767,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
               <p class="pil-pain"><span class="pil-k">Responde a</span>«Me llegan pocos clientes. O no los que quiero.»</p>
               <h4>Captación de clientes</h4>
               <p class="pil-one">Hago que te encuentre quien te tiene que encontrar. Y que repita.</p>
-              <div class="pil-more"><button type="button" class="pil-tg" aria-expanded="false" aria-controls="pd3">Ver entregables<svg viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button><div class="pil-dw" id="pd3" role="region"><ul class="pil-does"><li>Mapas de reservas en 2D y 3D</li><li>Estrategia de publicidad en RRSS</li><li>Posicionamiento SEO</li></ul></div></div>
+              <div class="pil-more"><button type="button" class="pil-tg" aria-expanded="false" aria-controls="pd3">Ver entregables<svg viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg><svg class="pil-ln" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H200"/></svg></button><div class="pil-dw" id="pd3" role="region"><ul class="pil-does"><li>Mapas de reservas en 2D y 3D</li><li>Estrategia de publicidad en RRSS</li><li>Posicionamiento SEO</li></ul></div></div>
               <p class="pil-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>Si tu proyecto lo necesita<span>desde <b class="amt">··· €</b></span></p>
             </div>
           </li>
@@ -1227,8 +1229,15 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 
   /* Patas: ver entregables */
   [].forEach.call(document.querySelectorAll('.pil-more'),function(m){
-    var b=m.querySelector('.pil-tg');
-    b.addEventListener('click',function(){var o=!m.classList.contains('open');m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.firstChild.nodeValue=o?'Ocultar entregables':'Ver entregables';});
+    var b=m.querySelector('.pil-tg'),lp=b.querySelector('.pil-ln path'),raf;
+    /* La línea se agita y vuelve al silencio, como en "Cosas que no voy a hacer" */
+    function shake(){
+      if(reduce)return;cancelAnimationFrame(raf);var t0=performance.now();
+      (function f(){var t=(performance.now()-t0)/1000,k=Math.max(0,1-t/1.4),A=5*Math.pow(k,2),d='M0 6';
+        for(var x=0;x<=200;x+=3){var e=Math.sin(Math.PI*x/200);d+='L'+x+' '+(6+A*e*(Math.sin(x*.15-t*14)*.6+Math.sin(x*.39+t*20)*.4)).toFixed(2);}
+        lp.setAttribute('d',k>0?d:'M0 6H200');if(k>0)raf=requestAnimationFrame(f);})();
+    }
+    b.addEventListener('click',function(){var o=!m.classList.contains('open');m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.firstChild.nodeValue=o?'Ocultar entregables':'Ver entregables';shake();});
   });
 
   /* Trabajos: acordeón; la línea escucha el cursor y se agita al abrir */
