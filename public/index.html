@@ -529,24 +529,28 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .about .photo img{position:absolute;top:0;left:0}
 }
 
-/* Barra de recorrido (móvil): una cápsula pequeña de cristal abajo, con las cuatro secciones a mano del pulgar.
-   La sección en la que estás va en tinta. Se aparta mientras bajas leyendo y vuelve al parar o al subir.
-   Aparece al salir del hero y se va al llegar a "Te toca a ti" */
+/* Barra de recorrido (móvil). Comportamiento "parcialmente persistente" (NN/g): se aparta al bajar leyendo y vuelve
+   cuando el gesto dice que quieres navegar (subir un poco), en los cambios de sección y tras saltar con ella.
+   Entra en ~320 ms y sale en ~240 ms. Una pastilla suave marca la sección en la que estás y se desliza a la que pulsas */
 .tour{display:none}
 @media (max-width:900px){
   .tour{position:fixed;left:50%;bottom:6px;bottom:max(6px,calc(env(safe-area-inset-bottom,0px) - 18px));z-index:19;display:block;
     border-radius:999px;background:rgba(247,248,250,.93);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);
     box-shadow:inset 0 0 0 1px rgba(28,30,42,.07),0 8px 24px -12px rgba(28,30,42,.28);
-    opacity:0;transform:translate(-50%,10px);pointer-events:none;transition:opacity .35s,transform .45s cubic-bezier(.3,.8,.3,1)}
-  .tour.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
-  .tour ul{display:flex;margin:0;padding:0 4px;list-style:none}
-  .tour a{display:flex;align-items:center;height:34px;padding:0 11px;font:500 12.5px/1 var(--sans);color:var(--grafito);text-decoration:none;white-space:nowrap;transition:color .3s}
+    opacity:0;transform:translate(-50%,12px);pointer-events:none;transition:opacity .24s ease-in,transform .24s ease-in}
+  .tour.on{opacity:1;transform:translate(-50%,0);pointer-events:auto;transition:opacity .32s ease-out,transform .32s cubic-bezier(.2,.8,.2,1)}
+  .tour ul{position:relative;display:flex;margin:0;padding:3px;list-style:none}
+  .tour-ind{position:absolute;top:3px;bottom:3px;left:0;width:var(--iw,0px);transform:translateX(var(--ix,0px));border-radius:999px;background:rgba(28,30,42,.08);opacity:0;transition:transform .38s cubic-bezier(.3,.8,.3,1),width .38s cubic-bezier(.3,.8,.3,1),opacity .25s}
+  .tour-ind.on{opacity:1}
+  .tour a{position:relative;display:flex;align-items:center;height:30px;padding:0 11px;border-radius:999px;font:500 12.5px/1 var(--sans);color:var(--grafito);text-decoration:none;white-space:nowrap;-webkit-tap-highlight-color:transparent;transition:color .3s,transform .15s}
   .tour a.on{color:var(--tinta)}
+  .tour a:active{transform:scale(.94)}
   .tour a.cta{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--violeta)}
 }
 @media (max-width:360px){.tour a{padding:0 8px;font-size:12px}}
 @media (prefers-color-scheme:dark) and (max-width:900px){
   .tour{background:rgba(20,19,23,.92);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 8px 24px -12px rgba(0,0,0,.6)}
+  .tour-ind{background:rgba(255,255,255,.1)}
 }
 
 /* Retícula */
@@ -644,6 +648,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 </nav>
 <div class="tour" role="navigation" aria-label="Recorrido de la página">
   <ul>
+    <li class="tour-ind" aria-hidden="true"></li>
     <li><a href="#servicio">Servicio</a></li>
     <li><a href="#proyectos">Proyectos</a></li>
     <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -1338,27 +1343,45 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     cio.observe(cta);
   }
 
-  /* Barra de recorrido (móvil) */
+  /* Barra de recorrido (móvil): aparece cuando el usuario la va a querer, no mientras lee.
+     - Bajando (lectura): se aparta tras 24 px seguidos hacia abajo.
+     - Subiendo 40 px seguidos (intención de volver o saltar): aparece y se queda hasta que vuelvas a bajar.
+     - Al entrar en otra sección: aparece 2,2 s para decir dónde estás y qué hay, y se aparta si sigues leyendo.
+     - Al pulsar una sección: marca el destino al instante, se queda durante el desplazamiento y se aparta 1,6 s después de llegar.
+     - Nunca en el hero (ya tiene sus botones) ni en "Te toca a ti" (ya estás en el destino). */
   var tour=document.querySelector('.tour');
   if(tour){
-    var tl=[].slice.call(tour.querySelectorAll('a')),tsec=['servicio','proyectos','sobre-mi','contacto'].map(function(id){return document.getElementById(id);}),
-        thero=document.querySelector('.hero'),tq=false,tlast=window.scrollY,thide=false,tidle=0;
+    var tl=[].slice.call(tour.querySelectorAll('a')),tind=tour.querySelector('.tour-ind'),
+        tsec=tl.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));}),thero=document.querySelector('.hero'),
+        T={shown:false,pin:false,last:window.scrollY,up:0,down:0,cur:-2,nav:-1,until:0,ht:0,it:0,q:false};
+    var tmob=function(){return matchMedia('(max-width: 900px)').matches;};
+    var tset=function(v){if(T.shown===v)return;T.shown=v;tour.classList.toggle('on',v);};
+    var tmark=function(i){
+      tl.forEach(function(a,k){a.classList.toggle('on',k===i);});
+      if(i<0){tind.classList.remove('on');return;}
+      var a=tl[i];tind.style.setProperty('--ix',a.offsetLeft+'px');tind.style.setProperty('--iw',a.offsetWidth+'px');tind.classList.add('on');
+    };
+    var tlater=function(ms){clearTimeout(T.ht);T.ht=setTimeout(function(){if(T.nav<0&&!T.pin)tset(false);},ms);};
+    var tzone=function(){var ih=innerHeight;return thero.getBoundingClientRect().bottom<ih*.4&&tsec[3].getBoundingClientRect().top>ih*.62;};
     var tupd=function(){
-      tq=false;if(!matchMedia('(max-width: 900px)').matches)return;
-      var ih=innerHeight,m=ih*.45,cur=-1,y=window.scrollY;
-      tsec.forEach(function(e,i){if(e.getBoundingClientRect().top<m)cur=i;});
-      tl.forEach(function(a,i){a.classList.toggle('on',i===cur);});
-      /* Bajando: se aparta. Subiendo o al parar: vuelve */
-      if(y>tlast+4)thide=true;else if(y<tlast-4)thide=false;tlast=y;
-      clearTimeout(tidle);tidle=setTimeout(function(){thide=false;tshow();},450);
-      tshow();
+      T.q=false;if(!tmob())return;
+      var y=window.scrollY,dy=y-T.last,now=performance.now(),m=innerHeight*.45,cur=-1;T.last=y;
+      tsec.forEach(function(e,k){if(e.getBoundingClientRect().top<m)cur=k;});
+      if(!tzone()){tset(false);T.pin=false;T.up=T.down=0;if(T.nav<0)tmark(cur);T.cur=cur;return;}
+      if(dy>0){T.down+=dy;T.up=0;}else if(dy<0){T.up-=dy;T.down=0;}
+      if(T.nav<0){
+        if(cur!==T.cur){tmark(cur);if(T.cur!==-2&&dy>0){tset(true);T.until=now+2200;tlater(2200);}}
+        if(T.up>40){T.pin=true;tset(true);clearTimeout(T.ht);}
+        if(T.down>24){T.pin=false;if(now>T.until)tset(false);}
+      }
+      T.cur=cur;
+      /* Fin del desplazamiento (al saltar con la barra) */
+      clearTimeout(T.it);T.it=setTimeout(function(){if(T.nav>=0){T.nav=-1;T.pin=false;T.until=performance.now()+1600;tlater(1600);}},180);
     };
-    var tshow=function(){
-      var ih=innerHeight,zone=thero.getBoundingClientRect().bottom<ih*.4&&tsec[3].getBoundingClientRect().top>ih*.62;
-      tour.classList.toggle('on',zone&&!thide);
-    };
-    window.addEventListener('scroll',function(){if(!tq){tq=true;requestAnimationFrame(tupd);}},{passive:true});
-    window.addEventListener('resize',tupd);tupd();
+    tl.forEach(function(a,k){a.addEventListener('click',function(){if(!tmob())return;T.nav=k;tmark(k);tset(true);clearTimeout(T.ht);});});
+    window.addEventListener('scroll',function(){if(!T.q){T.q=true;requestAnimationFrame(tupd);}},{passive:true});
+    window.addEventListener('resize',function(){if(T.cur>=0)tmark(T.nav>=0?T.nav:T.cur);});
+    tupd();
   }
 
   /* Patas: ver entregables */
