@@ -243,7 +243,16 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .beyond-i svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .beyond-k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--violeta)}
 .beyond h3{margin-top:10px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(30px,3vw,44px);line-height:1.04;letter-spacing:-.02em}
-.beyond-price{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-top:18px;border-top:1px solid rgba(107,79,214,.22);border-top:1px solid color-mix(in srgb,var(--violeta) 22%,transparent);font-size:14px;color:var(--grafito)}
+.beyond-price{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-top:6px;font-size:14px;color:var(--grafito)}
+/* El año como línea de sonido: doce marcas con la inicial de cada mes; al verla, el medio punto la recorre de enero a diciembre
+   y la línea vibra un poco a su paso. Sustituye al filete que separaba el precio */
+.yr{grid-column:1/-1;position:relative;padding-top:6px;color:var(--violeta)}
+.yr svg{display:block;width:100%;height:16px;overflow:visible}
+.yr path{fill:none;stroke:rgba(107,79,214,.3);stroke:color-mix(in srgb,var(--violeta) 34%,transparent);stroke-width:1.2;vector-effect:non-scaling-stroke}
+.yr-m{display:grid;grid-template-columns:repeat(12,1fr);margin:4px 0 0;padding:0;list-style:none;font:500 10.5px/1 var(--sans);letter-spacing:.08em;color:var(--grafito)}
+.yr-m li{position:relative;padding-top:8px}
+.yr-m li::before{content:"";position:absolute;left:0;top:-12px;width:1px;height:6px;background:currentColor;opacity:.35}
+.yr-d{position:absolute;top:8px;left:var(--p,100%);width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:1px solid currentColor;background:linear-gradient(90deg,var(--papel) 50%,currentColor 50%)}
 .beyond-price span{margin-right:auto}
 .beyond-price .amt{font-size:clamp(30px,3vw,40px);font-weight:340}
 .beyond div>p:last-child{margin-top:14px;max-width:34em;font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--grafito)}
@@ -789,6 +798,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
         <h3 id="beyond-t">¿Estamos cómodos juntos?</h3>
         <p>Seguimos trabajando juntos todo el año, con seguimiento de todo lo que hemos puesto en marcha.</p>
       </div>
+      <div class="yr" aria-hidden="true"><svg viewBox="0 0 1000 16" preserveAspectRatio="none"><path d="M0 8H1000"/></svg><ol class="yr-m"><li>E</li><li>F</li><li>M</li><li>A</li><li>M</li><li>J</li><li>J</li><li>A</li><li>S</li><li>O</li><li>N</li><li>D</li></ol><i class="yr-d"></i></div>
       <p class="beyond-price"><span>Seguimiento anual</span><b class="amt">··· €</b><small>al año</small></p>
     </aside>
     <div class="proc-end"><a class="ph-next" href="#proyectos">Mira cómo ha ido en negocios reales<svg viewBox="0 0 11 14" aria-hidden="true"><path d="M5.5 1v12M1 8.5l4.5 4.5 4.5-4.5"/></svg></a></div>
@@ -1226,6 +1236,18 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     }
     b.addEventListener('click',function(){var o=!li.classList.contains('open');li.classList.toggle('open',o);b.setAttribute('aria-expanded',o);shake();});
   });
+
+  /* Seguimiento anual: el medio punto recorre el año y la línea vibra a su paso */
+  var yr=document.querySelector('.yr');
+  if(yr&&!reduce&&'IntersectionObserver' in window){
+    var yp=yr.querySelector('path'),yd=yr.querySelector('.yr-d');yd.style.setProperty('--p','0%');
+    var yio=new IntersectionObserver(function(en){if(!en[0].isIntersecting)return;yio.disconnect();var t0=performance.now(),T=4.2;
+      (function f(){var t=(performance.now()-t0)/1000,q=Math.min(1,t/T),e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2,px=e*1000,k=1-Math.pow(q,3),d='M0 8';
+        for(var x=0;x<=1000;x+=8){var g=Math.exp(-Math.pow(x-px,2)/(2*45*45));d+='L'+x+' '+(8+3.2*k*g*Math.sin(x*.08-t*16)).toFixed(2);}
+        yp.setAttribute('d',q<1?d:'M0 8H1000');yd.style.setProperty('--p',(e*100).toFixed(2)+'%');if(q<1)requestAnimationFrame(f);})();
+    },{rootMargin:'0px 0px -25% 0px',threshold:1});
+    yio.observe(yr);
+  }
 
   /* Patas: ver entregables */
   [].forEach.call(document.querySelectorAll('.pil-more'),function(m){
