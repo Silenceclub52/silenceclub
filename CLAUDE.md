@@ -53,7 +53,7 @@ https://claude-nueva-estetica-contraste-silenceclub.floral-snowflake-c31a.worker
 - Patas: etiqueta "Responde a" (no "Lo que te preocupa"); entregables plegados tras "Ver entregables" (`.pil-more`, `.pil-tg`). Intro de Desarrollo: "Con todo lo analizado, paso a la acción. Trabajo sobre tres áreas:". Identidad: «Mi imagen y mi web no transmiten lo que hago.»
 - Faldón móvil `.viz-bar`: solo aparece (`.on`) cuando el título de la fase activa ya ha subido por detrás del menú, para no repetir "01 Inicio" dos veces en pantalla. No ocupa sitio (margen −44 px).
 - Seguimiento anual: "Seguimos trabajando juntos todo el año, con seguimiento de todo lo que hemos puesto en marcha." Detalle: texto de Jorge ("Intento cuidar siempre hasta el último detalle…").
-- "Cosas que no voy a hacer": sin tarjeta; lista editorial sobre el fondo L1, título fijo a la izquierda, cada "no" numerado 01–04 en violeta, respuesta con medio punto.
+- "Cosas que no voy a hacer": sin tarjeta; lista editorial sobre el fondo L1, título fijo a la izquierda, cada "no" numerado 01–04 en violeta, respuesta en texto limpio alineada con la frase (sin medio punto: a Jorge no le gustó).
 - Desarrollo es `.band`: el fondo sale a todo el ancho con `::before`; JS le pasa `--bx` y `--vw`. El índice lateral pasa a tinta clara (`.on-dk`) mientras está sobre la losa y lleva `z-index:2` para no quedar debajo. Las cintas de las patas usan los colores oscuros si están dentro de un tono oscuro.
 
 ### Estado (actualizar en cada paso a `main`)

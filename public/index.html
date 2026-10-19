@@ -450,7 +450,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 /* No hago */
 /* Cosas que no voy a hacer: una pastilla ancha; título a la izquierda y lista a la derecha, como antes */
 /* Cosas que no voy a hacer: lista editorial sobre el fondo. Título fijo a la izquierda; cada "no" numerado,
-   con la línea de sonido como separador; al abrir, la respuesta entra con el medio punto */
+   con la línea de sonido como separador; al abrir, la respuesta entra alineada con la frase */
 .nope .h2{grid-column:1/span 5;align-self:start;position:sticky;top:120px}
 .nope ul{grid-column:7/span 6;list-style:none;padding:0;counter-reset:no}
 .nope .no{position:relative;counter-increment:no}
@@ -466,8 +466,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .nope .no-q:hover .no-i{transform:translateY(3px)}
 .nope .no.open .no-i{transform:rotate(180deg)}
 .nope .no-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.3,.8,.3,1)}
-.nope .no-a>p{position:relative;overflow:hidden;min-height:0;margin-left:60px;padding-left:22px;font:400 18px/1.55 var(--sans);color:var(--grafito);opacity:0;transform:translateY(-6px);transition:opacity .45s,transform .45s}
-.nope .no-a>p::before{content:"";position:absolute;left:0;top:.5em;width:9px;height:9px;border-radius:50%;border:1px solid var(--violeta);background:linear-gradient(90deg,transparent 50%,var(--violeta) 50%)}
+.nope .no-a>p{overflow:hidden;min-height:0;margin-left:60px;font:400 18px/1.55 var(--sans);color:var(--grafito);opacity:0;transform:translateY(-6px);transition:opacity .45s,transform .45s}
 .nope .no.open .no-a{grid-template-rows:1fr}
 .nope .no.open .no-a>p{opacity:1;transform:none;padding-bottom:30px}
 .nope .nos{border-bottom:1px solid var(--linea)}
