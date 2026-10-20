@@ -570,9 +570,33 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .tour a.cta{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--violeta)}
 }
 @media (max-width:360px){.tour a{padding:0 8px;font-size:12px}}
+/* Menú móvil: hamburguesa siempre a mano (aunque esté la cápsula) y, al abrir, una tarjeta flotante del mismo cristal
+   que la cápsula, con la misma pastilla suave en la sección en la que estás. Mientras está abierto, la cápsula se aparta */
+.burger,.mm{display:none}
+@media (max-width:900px){
+  .burger{display:grid;place-items:center;width:44px;height:44px;margin-right:-11px;padding:0;border:0;background:none;color:var(--tinta);cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .burger svg{width:22px;height:14px;overflow:visible}
+  .burger path{fill:none;stroke:currentColor;stroke-width:1.5;transform-box:fill-box;transform-origin:center;transition:transform .35s cubic-bezier(.3,.8,.3,1),opacity .2s}
+  .burger[aria-expanded="true"] .l1{transform:translateY(5px) rotate(45deg)}
+  .burger[aria-expanded="true"] .l2{opacity:0}
+  .burger[aria-expanded="true"] .l3{transform:translateY(-5px) rotate(-45deg)}
+  .mm{position:fixed;top:calc(66px + env(safe-area-inset-top,0px));right:10px;display:block;min-width:200px;pointer-events:auto;
+    border-radius:22px;background:rgba(247,248,250,.93);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);
+    box-shadow:inset 0 0 0 1px rgba(28,30,42,.07),0 14px 34px -16px rgba(28,30,42,.35);
+    opacity:0;visibility:hidden;transform:translateY(-8px) scale(.98);transform-origin:100% 0;transition:opacity .24s ease-in,transform .24s ease-in,visibility 0s .24s}
+  .mm.open{opacity:1;visibility:visible;transform:none;transition:opacity .32s ease-out,transform .32s cubic-bezier(.2,.8,.2,1),visibility 0s}
+  .mm ul{display:block;margin:0;padding:6px;list-style:none}
+  .mm a{display:flex;align-items:center;height:44px;padding:0 18px;border-radius:999px;font:500 16px/1 var(--sans);color:var(--grafito);text-decoration:none;-webkit-tap-highlight-color:transparent;transition:color .3s,background .3s,transform .15s}
+  .mm a.on,.mm a.cta.on{background:rgba(28,30,42,.08);color:var(--tinta)}
+  .mm a:active{transform:scale(.97)}
+  .mm a.cta{border:0;padding-bottom:0;color:var(--grafito);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--violeta)}
+  .menu-open .tour{opacity:0;pointer-events:none}
+}
 @media (prefers-color-scheme:dark) and (max-width:900px){
   .tour{background:rgba(20,19,23,.92);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 8px 24px -12px rgba(0,0,0,.6)}
   .tour-ind{background:rgba(255,255,255,.1)}
+  .mm{background:rgba(20,19,23,.92);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 14px 34px -14px rgba(0,0,0,.65)}
+  .mm a.on{background:rgba(255,255,255,.1)}
 }
 
 /* Retícula */
@@ -633,6 +657,15 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 <nav aria-label="Principal">
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="Silence Club, dirección creativa de Jorge. Ir al inicio"><svg class="logo" viewBox="0 0 362 97" aria-hidden="true" focusable="false"><defs><clipPath id="sc-up"><rect x="-40" y="-40" width="440" height="87.2"/></clipPath><clipPath id="sc-dn"><rect x="-40" y="48.8" width="440" height="88"/></clipPath></defs><g clip-path="url(#sc-up)"><use class="ls" href="#sc-s0"/><use class="ls" href="#sc-s1"/><use class="ls" href="#sc-s2"/><use class="ls" href="#sc-s3"/><use class="ls" href="#sc-s4"/><use class="ls" href="#sc-s5"/><use class="ls" href="#sc-s6"/></g><path class="ln" d="M0 48H358"/><g clip-path="url(#sc-dn)"><use class="lc" href="#sc-c0"/><use class="lc" href="#sc-c1"/><use class="lc" href="#sc-c2"/><use class="lc" href="#sc-c3"/></g><g class="dot"><circle class="db" cx="351" cy="86.5" r="9"/><path class="dh" d="M351 77.5a9 9 0 0 1 0 18z"/></g></svg></a>
+    <ul>
+      <li><a href="#servicio">Servicio</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#contacto" class="cta">Hablemos</a></li>
+    </ul>
+    <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mmenu"><svg viewBox="0 0 22 14" aria-hidden="true"><path class="l1" d="M1 2H21"/><path class="l2" d="M1 7H21"/><path class="l3" d="M1 12H21"/></svg></button>
+  </div>
+  <div class="mm" id="mmenu">
     <ul>
       <li><a href="#servicio">Servicio</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
@@ -1099,11 +1132,23 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     };
   });
 
-  /* Menú: pasa a cristal al hacer scroll */
-  var nav=document.querySelector('nav'),nt=false;
-  function navState(){nt=false;nav.classList.toggle('glass',window.scrollY>8);}
+  /* Menú: pasa a cristal al hacer scroll (o con el menú móvil abierto) */
+  var nav=document.querySelector('nav'),nt=false,bg=nav.querySelector('.burger'),mm=document.getElementById('mmenu');
+  function navState(){nt=false;nav.classList.toggle('glass',window.scrollY>8||mm.classList.contains('open'));}
   window.addEventListener('scroll',function(){if(!nt){nt=true;requestAnimationFrame(navState);}},{passive:true});
   navState();
+
+  /* Menú móvil: marca la sección en la que estás y se cierra al elegir, al tocar fuera o con Escape */
+  var ml=[].slice.call(mm.querySelectorAll('a')),msec=ml.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+  function setMenu(o){
+    if(o){var m=innerHeight*.45,cur=-1;msec.forEach(function(e,k){if(e.getBoundingClientRect().top<m)cur=k;});ml.forEach(function(a,k){a.classList.toggle('on',k===cur);});}
+    mm.classList.toggle('open',o);document.body.classList.toggle('menu-open',o);
+    bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú');navState();
+  }
+  bg.addEventListener('click',function(){setMenu(!mm.classList.contains('open'));});
+  ml.forEach(function(a){a.addEventListener('click',function(){setMenu(false);});});
+  document.addEventListener('click',function(e){if(mm.classList.contains('open')&&!mm.contains(e.target)&&!bg.contains(e.target))setMenu(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mm.classList.contains('open')){setMenu(false);bg.focus();}});
 
   /* Retícula */
   var ov=document.getElementById('overlay'), b1=document.getElementById('gridBtn'), b2=document.getElementById('gridBtn2');
