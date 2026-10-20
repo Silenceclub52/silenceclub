@@ -597,7 +597,6 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 /* Al cambiar, el modo nuevo se abre en círculo desde el interruptor (lo anima el JS); el interruptor va aparte para que
    su bolita ruede en vivo */
 ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
-.mode{view-transition-name:mode}
 ::view-transition-old(mode){display:none}
 ::view-transition-new(mode){animation:none}
 /* Menú móvil: hamburguesa siempre a mano (aunque esté la cápsula) y, al abrir, una tarjeta flotante del mismo cristal
@@ -623,6 +622,12 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .mm a:active{transform:scale(.97)}
   .mm a.cta{border:0;padding-bottom:0;color:var(--grafito);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--violeta)}
   .menu-open .tour{opacity:0;pointer-events:none}
+  /* En móvil el interruptor no va en la barra: va al final del menú, bajo un filete, con la bolita entera y el carril
+     algo más marcado (ahí dentro no compite con nada) */
+  .nav-r>.mode{display:none}
+  .mm-mode{margin:0 6px;padding:12px 18px 14px;border-top:1px solid rgba(128,128,140,.16)}
+  .mm .mode{border-color:rgba(128,128,140,.26)}
+  .mm .mode-k{opacity:1}
 }
 /* Móvil: mientras lees el Servicio, la barra se desdobla en una pestaña bajo el logo con la fase en la que estás.
    Se desliza unos píxeles (Inicio algo a la izquierda, Desarrollo al centro, Desenlace algo a la derecha) y, al cambiar
@@ -750,6 +755,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
       <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#contacto" class="cta">Hablemos</a></li>
     </ul>
+    <div class="mm-mode"><button class="mode" type="button" role="switch" aria-checked="false" aria-label="Modo oscuro" title="Cambiar a modo oscuro"><span class="mode-k"><svg viewBox="0 0 18 18" aria-hidden="true"><g class="mode-r"><path d="M13.40 9.00L15.10 9.00"/><path d="M12.11 12.11L13.31 13.31"/><path d="M9.00 13.40L9.00 15.10"/><path d="M5.89 12.11L4.69 13.31"/><path d="M4.60 9.00L2.90 9.00"/><path d="M5.89 5.89L4.69 4.69"/><path d="M9.00 4.60L9.00 2.90"/><path d="M12.11 5.89L13.31 4.69"/></g><circle class="mode-c" cx="9" cy="9" r="2.8"/><circle class="mode-b" cx="12.2" cy="5.8" r="3.9"/></svg></span></button></div>
   </div>
 </nav>
 <div class="tour" role="navigation" aria-label="Recorrido de la página">
@@ -1237,25 +1243,28 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mm.classList.contains('open')){setMenu(false);bg.focus();}});
 
   /* Interruptor claro/oscuro: fuerza un modo (data-theme en <html>), lo recuerda en este navegador y avisa a los canvas */
-  var mode=nav.querySelector('.mode'),root=document.documentElement,sysDark=matchMedia('(prefers-color-scheme: dark)'),metas=document.querySelectorAll('meta[name=theme-color]');
+  var modes=[].slice.call(nav.querySelectorAll('.mode')),root=document.documentElement,sysDark=matchMedia('(prefers-color-scheme: dark)'),metas=document.querySelectorAll('meta[name=theme-color]');
   function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':sysDark.matches;}
   function modeSync(){
     var d=isDark(),t=root.getAttribute('data-theme');
-    mode.setAttribute('aria-checked',d);mode.title=d?'Cambiar a modo claro':'Cambiar a modo oscuro';
+    modes.forEach(function(b){b.setAttribute('aria-checked',d);b.title=d?'Cambiar a modo claro':'Cambiar a modo oscuro';});
     [].forEach.call(metas,function(m){m.content=(t?t==='dark':/dark/.test(m.getAttribute('media')))?'#0E0B14':'#EDEFF3';});
   }
-  mode.addEventListener('click',function(){
+  modes.forEach(function(mode){mode.addEventListener('click',function(){
     var d=!isDark();
     /* Si eliges lo mismo que el sistema, no hay nada que forzar: vuelve a seguirlo */
     function go(){var m=d?'dark':'light',sy=sysDark.matches?'dark':'light';
       try{if(m===sy){root.removeAttribute('data-theme');localStorage.removeItem('sc-theme');}else{root.setAttribute('data-theme',m);localStorage.setItem('sc-theme',m+'|'+sy);}}catch(e){root.setAttribute('data-theme',m);}
       modeSync();window.dispatchEvent(new Event('sc-theme'));}
     if(!document.startViewTransition||reduce){go();return;}
+    /* Solo el interruptor pulsado va aparte en la transición (el nombre tiene que ser único) */
+    mode.style.viewTransitionName='mode';
     var vt=document.startViewTransition(go),b=mode.getBoundingClientRect(),x=b.left+b.width/2,y=b.top+b.height/2,
         R=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
     vt.ready.then(function(){root.animate({clipPath:['circle(0px at '+x+'px '+y+'px)','circle('+R+'px at '+x+'px '+y+'px)']},
       {duration:700,easing:'cubic-bezier(.45,0,.2,1)',pseudoElement:'::view-transition-new(root)'});});
-  });
+    vt.finished.then(function(){mode.style.viewTransitionName='';});
+  });});
   /* Si el sistema cambia de modo, manda el sistema: se olvida la elección manual */
   function sysChange(){root.removeAttribute('data-theme');try{localStorage.removeItem('sc-theme');}catch(e){}modeSync();window.dispatchEvent(new Event('sc-theme'));}
   if(sysDark.addEventListener)sysDark.addEventListener('change',sysChange);else if(sysDark.addListener)sysDark.addListener(sysChange);
