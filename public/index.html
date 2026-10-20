@@ -582,8 +582,8 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .mode:hover,.mode:focus-visible{border-color:rgba(128,128,140,.4)}
 /* Zona de toque de 44 px */
 .mode::before{content:"";position:absolute;inset:-10px -4px}
-/* La bolita, no del todo maciza (85 %); entera al pasar */
-.mode-k{position:absolute;top:2px;left:2px;width:18px;height:18px;overflow:hidden;border-radius:50%;background:var(--tinta);opacity:.85;transition:transform .6s cubic-bezier(.3,.8,.3,1),background .4s,opacity .3s}
+/* La bolita, no del todo maciza (70 %); entera al pasar */
+.mode-k{position:absolute;top:2px;left:2px;width:18px;height:18px;overflow:hidden;border-radius:50%;background:var(--tinta);opacity:.7;transition:transform .6s cubic-bezier(.3,.8,.3,1),background .4s,opacity .3s}
 .mode:hover .mode-k,.mode:focus-visible .mode-k{opacity:1}
 .mode svg{display:block;width:18px;height:18px;overflow:visible}
 .mode-r path{stroke:var(--papel);stroke-width:1.2;stroke-linecap:round}
@@ -624,7 +624,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .mm a.cta{border:0;padding-bottom:0;color:var(--grafito);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--violeta)}
   .menu-open .tour{opacity:0;pointer-events:none}
 }
-/* Móvil: mientras lees el Servicio, la línea de la barra cae en una pestaña bajo el logo con la fase en la que estás.
+/* Móvil: mientras lees el Servicio, la barra se desdobla en una pestaña bajo el logo con la fase en la que estás.
    Se desliza unos píxeles (Inicio algo a la izquierda, Desarrollo al centro, Desenlace algo a la derecha) y, al cambiar
    de fase, su línea suena un instante y se calma */
 .ph-tab{display:none}
@@ -635,6 +635,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .menu-open .ph-tab .pt-in{transform:translateY(-100%)}
   .ph-tab svg{position:absolute;left:0;top:0;width:100%;height:27px;overflow:visible}
   /* El mismo cristal que la barra y sin línea: la pestaña es la barra que se desdobla (la forma la recorta el JS) */
+  /* Va fuera de nav .wrap a propósito: dentro, el desenfoque de la barra le taparía la página y solo teñiría */
   .pt-bg{position:absolute;left:0;top:0;width:100%;height:24px;background:rgba(247,248,250,.8);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);border-radius:0 0 12px 12px}
   .pt-m{visibility:hidden}
   .pt-t{position:absolute;left:50%;top:3px;transform:translateX(-50%);font:500 11.5px/17px var(--sans);letter-spacing:.02em;white-space:nowrap;color:var(--tinta);transition:opacity .22s}
@@ -741,8 +742,8 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     <button class="mode" type="button" role="switch" aria-checked="false" aria-label="Modo oscuro" title="Cambiar a modo oscuro"><span class="mode-k"><svg viewBox="0 0 18 18" aria-hidden="true"><g class="mode-r"><path d="M13.40 9.00L15.10 9.00"/><path d="M12.11 12.11L13.31 13.31"/><path d="M9.00 13.40L9.00 15.10"/><path d="M5.89 12.11L4.69 13.31"/><path d="M4.60 9.00L2.90 9.00"/><path d="M5.89 5.89L4.69 4.69"/><path d="M9.00 4.60L9.00 2.90"/><path d="M12.11 5.89L13.31 4.69"/></g><circle class="mode-c" cx="9" cy="9" r="2.8"/><circle class="mode-b" cx="12.2" cy="5.8" r="3.9"/></svg></span></button>
     <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mmenu"><svg viewBox="0 0 22 14" aria-hidden="true"><path class="l1" d="M1 2H21"/><path class="l2" d="M1 7H21"/><path class="l3" d="M1 12H21"/></svg></button>
     </div>
-    <div class="ph-tab" aria-hidden="true"><div class="pt-in"><i class="pt-bg"></i><span class="pt-t"><b>01</b><span>Inicio</span></span><span class="pt-t pt-m"><b>01</b><span>Inicio</span></span></div></div>
   </div>
+  <div class="ph-tab" aria-hidden="true"><div class="pt-in"><i class="pt-bg"></i><span class="pt-t"><b>01</b><span>Inicio</span></span><span class="pt-t pt-m"><b>01</b><span>Inicio</span></span></div></div>
   <div class="mm" id="mmenu">
     <ul>
       <li><a href="#servicio">Servicio</a></li>
