@@ -577,18 +577,18 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 /* Interruptor claro/oscuro: una bolita que rueda por su carril. De día es un sol (núcleo y rayos); al pasar a noche
    rueda a la derecha, los rayos se recogen y una sombra muerde el núcleo hasta dejar una luna. La bolita va en tinta
    y el dibujo en papel, así que se invierte sola con el modo */
-.mode{--k:var(--grafito);position:relative;flex:none;width:36px;height:20px;padding:0;border:1px solid var(--linea);border-radius:999px;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:border-color .3s}
-/* De apoyo: en gris y pequeño; solo al pasar por encima toma la tinta */
-.mode:hover,.mode:focus-visible{--k:var(--tinta)}
-/* Zona de toque de 44 px aunque se vea pequeño */
-.mode::before{content:"";position:absolute;inset:-12px -6px}
-.mode-k{position:absolute;top:2px;left:2px;width:14px;height:14px;overflow:hidden;border-radius:50%;background:var(--k);transition:transform .6s cubic-bezier(.3,.8,.3,1),background .4s}
-.mode svg{display:block;width:14px;height:14px;overflow:visible}
-.mode-r path{stroke:var(--papel);stroke-width:1.3;stroke-linecap:round}
+/* El carril, solo insinuado: gris neutro al 18 % (sirve en claro y en oscuro); al pasar se marca un poco más */
+.mode{position:relative;flex:none;width:42px;height:24px;padding:0;border:1px solid rgba(128,128,140,.18);border-radius:999px;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:border-color .3s}
+.mode:hover,.mode:focus-visible{border-color:rgba(128,128,140,.4)}
+/* Zona de toque de 44 px */
+.mode::before{content:"";position:absolute;inset:-10px -4px}
+.mode-k{position:absolute;top:2px;left:2px;width:18px;height:18px;overflow:hidden;border-radius:50%;background:var(--tinta);transition:transform .6s cubic-bezier(.3,.8,.3,1),background .4s}
+.mode svg{display:block;width:18px;height:18px;overflow:visible}
+.mode-r path{stroke:var(--papel);stroke-width:1.2;stroke-linecap:round}
 .mode-r,.mode-c,.mode-b{transform-box:view-box;transform-origin:9px 9px;transition:transform .6s cubic-bezier(.3,.8,.3,1),opacity .4s,fill .4s,stroke .4s}
 .mode-c{fill:var(--papel)}
-.mode-b{fill:var(--k);transform:translate(9px,-9px)}
-.mode[aria-checked="true"] .mode-k{transform:translateX(16px) rotate(-120deg)}
+.mode-b{fill:var(--tinta);transform:translate(9px,-9px)}
+.mode[aria-checked="true"] .mode-k{transform:translateX(18px) rotate(-120deg)}
 .mode[aria-checked="true"] .mode-r{transform:rotate(60deg) scale(.4);opacity:0}
 .mode[aria-checked="true"] .mode-c{transform:scale(1.75)}
 .mode[aria-checked="true"] .mode-b{transform:none}
@@ -1215,13 +1215,15 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 
   /* Menú móvil: marca la sección en la que estás y se cierra al elegir, al tocar fuera o con Escape */
   var ml=[].slice.call(mm.querySelectorAll('a')),msec=ml.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
-  /* Sus tres líneas suenan un instante (como la línea del logo) mientras forman la X o vuelven */
+  /* Al cerrar, de la X vuelven a la calma como el resto de líneas de la web: una onda suave que viaja por cada línea
+     (desfasada entre ellas) y se apaga hasta dejarlas horizontales. Al abrir, la X se forma sin onda */
   var bls=[].slice.call(bg.querySelectorAll('path')),braf=0;
-  function bdraw(A,t){bls.forEach(function(p,i){var y=2+5*i,d='';for(var x=1;x<=21;x++){var e=Math.sin(Math.PI*(x-1)/20);var u=x*1.4+i*5;d+=(x>1?'L':'M')+x+' '+(y+A*e*(Math.sin(u-t*21)*.42+Math.sin(u*2.6+t*33)*.26+Math.sin(u*.35-t*9)*.32)).toFixed(2);}p.setAttribute('d',d);});}
-  function bring(){if(reduce)return;cancelAnimationFrame(braf);var t0=performance.now();
-    (function f(){var t=(performance.now()-t0)/1000,k=Math.max(0,1-t/.75);bdraw(2*k*k*Math.min(1,t/.05),t);if(k>0)braf=requestAnimationFrame(f);else bdraw(0,0);})();}
+  function bdraw(A,t){bls.forEach(function(p,i){var y=2+5*i,d='';for(var x=1;x<=21;x++){var e=Math.sin(Math.PI*(x-1)/20),ph=i*1.3;
+    d+=(x>1?'L':'M')+x+' '+(y+A*e*(Math.sin(x*.42-t*12+ph)*.6+Math.sin(x*.85+t*17+ph)*.4)).toFixed(2);}p.setAttribute('d',d);});}
+  function bcalm(){if(reduce)return;cancelAnimationFrame(braf);var t0=performance.now();
+    (function f(){var t=(performance.now()-t0)/1000,k=Math.max(0,1-t/1.3);bdraw(2.4*k*k*Math.min(1,t/.08),t);if(k>0)braf=requestAnimationFrame(f);else bdraw(0,0);})();}
   function setMenu(o){
-    bring();
+    if(!o&&mm.classList.contains('open'))bcalm();
     if(o){var m=innerHeight*.45,cur=-1;msec.forEach(function(e,k){if(e.getBoundingClientRect().top<m)cur=k;});ml.forEach(function(a,k){a.classList.toggle('on',k===cur);});}
     mm.classList.toggle('open',o);document.body.classList.toggle('menu-open',o);
     bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú');navState();
