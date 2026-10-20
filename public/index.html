@@ -246,9 +246,14 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .cli-k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--violeta)}
 .cli-t{margin-top:10px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(26px,2.4vw,34px);line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
 .cli-shot{max-width:560px;margin-top:28px}
-.cl-url{display:flex;align-items:center;gap:7px;margin:0 0 10px 2px;font-size:12px;color:var(--grafito)}
+/* Marco de navegador: puntos y dirección, para que se lea "esto es una web" */
+.cl-win{overflow:hidden;border:1px solid var(--linea);border-radius:14px;background:var(--papel);box-shadow:0 2px 4px -2px rgba(28,30,42,.08),0 30px 60px -36px rgba(28,30,42,.35)}
+.cl-bar{display:flex;align-items:center;height:36px;padding:0 14px;border-bottom:1px solid var(--linea);background:var(--niebla)}
+.cl-dots{display:flex;gap:6px;width:46px}
+.cl-dots i{width:8px;height:8px;border-radius:50%;background:var(--linea)}
+.cl-url{display:inline-flex;align-items:center;gap:7px;margin:0 auto;padding:4px 14px;border-radius:999px;background:var(--papel);font-size:11.5px;color:var(--grafito);transform:translateX(-23px)}
 .cl-url svg{width:10px;height:12px;fill:none;stroke:currentColor;stroke-width:1.3}
-.cl-page{padding:22px 24px 24px;border:1px solid var(--linea);border-radius:14px;background:var(--papel);box-shadow:0 24px 50px -36px rgba(28,30,42,.3)}
+.cl-page{padding:22px 24px 24px}
 .cl-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--linea)}
 .cl-head small{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--grafito);white-space:nowrap}
 .cl-lock{display:flex;align-items:center;gap:8px;min-width:0}
@@ -264,8 +269,17 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .cl-items small{display:block;margin-bottom:3px;font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--violeta)}
 .cl-items b{flex:none;padding-bottom:1px;border-bottom:1px solid currentColor;font:500 12.5px/1.2 var(--sans)}
 .cli-shot.wait .cl-items li{opacity:0;transform:translateY(6px)}
-.cli-p{margin-top:22px;max-width:34em;font-size:clamp(16px,1.25vw,17px);line-height:1.5;color:var(--grafito)}
-@media (max-width:420px){.cl-page{padding:18px 16px 18px}.cl-head small{display:none}.cl-sc{height:18px}}
+.cli-pts{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:640px;margin:40px 0 0;padding:0;list-style:none}
+.cli-pts li{display:flex;flex-direction:column;gap:2px;font-size:14px;line-height:1.4;color:var(--grafito)}
+.cli-pts svg{width:20px;height:20px;margin-bottom:10px;fill:none;stroke:var(--violeta);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.cli-pts .fl{fill:var(--violeta);stroke:none}
+.cli-pts b{font-weight:600;font-size:15px;color:var(--tinta)}
+@media (max-width:600px){
+  .cli-pts{grid-template-columns:1fr;gap:14px}
+  .cli-pts li{display:grid;grid-template-columns:20px 1fr;column-gap:14px}
+  .cli-pts svg{grid-row:1/span 2;margin:1px 0 0}
+}
+@media (max-width:420px){.cl-dots{display:none}.cl-url{transform:none}.cl-page{padding:18px 16px 18px}.cl-head small{display:none}.cl-sc{height:18px}}
 /* Lo que viene después: fuera de las fases, otra superficie */
 .beyond{grid-column:5/span 8;position:relative;display:grid;grid-template-columns:auto 1fr;gap:20px 24px;margin-top:clamp(80px,10vw,136px);padding:clamp(26px,3vw,40px);border-radius:20px;border:1px solid rgba(107,79,214,.28);border:1px solid color-mix(in srgb,var(--violeta) 28%,transparent);background:rgba(107,79,214,.05);background:color-mix(in srgb,var(--violeta) 5%,var(--papel))}
 .beyond-i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(107,79,214,.14);background:color-mix(in srgb,var(--violeta) 14%,transparent);color:var(--violeta)}
@@ -636,7 +650,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .about .mono{color:#F7F8FA}
   .case .shot{background:#17161A}
   .shot .frame{background:linear-gradient(160deg,#211C22,#17161A 60%)}
-  .cl-page{box-shadow:0 24px 50px -30px rgba(0,0,0,.7)}
+  .cl-win{box-shadow:0 30px 60px -30px rgba(0,0,0,.75)}
   nav.glass .wrap,nav .mobile-menu.open,nav.glass.dark .wrap,nav.dark .mobile-menu.open{background:rgba(20,19,23,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),inset 0 1px 0 rgba(255,255,255,.06),0 12px 30px -14px rgba(0,0,0,.6)}
   nav.dark .brand,nav.dark .burger,nav.dark .mobile-menu a,nav.dark ul a:hover,nav.dark ul a.cta{color:#ECEDF2;border-color:#ECEDF2}
   nav.dark ul a{color:rgba(236,237,242,.7)}
@@ -877,7 +891,8 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
           <p class="cli-k">Tu área de cliente</p>
           <h4 class="cli-t">Todo el proyecto, ordenado en un solo sitio.</h4>
           <div class="cli-shot" aria-hidden="true">
-            <p class="cl-url"><svg viewBox="0 0 12 14"><rect x="1.5" y="6" width="9" height="6.5" rx="1.5"/><path d="M3.5 6V4.5a2.5 2.5 0 0 1 5 0V6"/></svg>clientes.silenceclub.es</p>
+            <div class="cl-win">
+            <div class="cl-bar"><span class="cl-dots"><i></i><i></i><i></i></span><span class="cl-url"><svg viewBox="0 0 12 14"><rect x="1.5" y="6" width="9" height="6.5" rx="1.5"/><path d="M3.5 6V4.5a2.5 2.5 0 0 1 5 0V6"/></svg>clientes.silenceclub.es</span></div>
             <div class="cl-page">
               <div class="cl-head"><span class="cl-lock"><svg class="cl-sc" viewBox="0 0 362 97"><use href="#sc-s0"/><use href="#sc-s1"/><use href="#sc-s2"/><use href="#sc-s3"/><use href="#sc-s4"/><use href="#sc-s5"/><use href="#sc-s6"/><path class="ln" d="M0 48H358"/><use href="#sc-c0"/><use href="#sc-c1"/><use href="#sc-c2"/><use href="#sc-c3"/><circle class="db" cx="351" cy="86.5" r="9"/><path d="M351 77.5a9 9 0 0 1 0 18z"/></svg><svg class="cl-br" viewBox="0 0 34 20"><path d="M0 10.00L1 10.00L2 10.00L3 10.00L4 10.00L5 10.00L6 10.00L7 10.00L8 10.00L9 10.00L10 9.97L11 9.67L12 8.37L13 6.00L14 5.13L15 7.46L16 11.21L17 14.44L18 14.86L19 12.29L20 9.48L21 7.96L22 8.15L23 9.19L24 9.82L25 9.98L26 10.00L27 10.00L28 10.00L29 10.00L30 10.00L31 10.00L32 10.00L33 10.00L34 10.00"/></svg><span class="cl-you">Tu logo</span></span><small>Área de cliente</small></div>
               <p class="cl-k">Entregables</p>
@@ -887,8 +902,13 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
                 <li><span><small>Desenlace</small>Informe de resultados</span><b>Abrir</b></li>
               </ul>
             </div>
+            </div>
           </div>
-          <p class="cli-p">Tus informes y entregables, siempre a mano. Entras con tu email, sin contraseñas.</p>
+          <ul class="cli-pts">
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 5.5V15a1.5 1.5 0 0 0 1.5 1.5h12a1.5 1.5 0 0 0 1.5-1.5V8a1.5 1.5 0 0 0-1.5-1.5H10L8.2 4H4a1.5 1.5 0 0 0-1.5 1.5z"/></svg><b>Entregables centralizados</b><span>Todo en un sitio.</span></li>
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="2"/><path d="M3 5.5l7 5.5 7-5.5"/></svg><b>Acceso fácil</b><span>Con tu email.</span></li>
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path class="fl" d="M10 3a7 7 0 0 1 0 14z"/></svg><b>Siempre al día</b><span>Sabes cómo va todo.</span></li>
+          </ul>
         </div>
       </article>
     </div>
