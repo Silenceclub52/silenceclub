@@ -243,8 +243,11 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .ph-incl{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:8px 14px 8px 12px;border:1px solid var(--linea);border-radius:999px;font-size:14px;color:var(--grafito)}
 /* Área de cliente: una miniatura fiel a la real (cabecera Silence Club ~ tu logo y la lista de entregables), sin adornos */
 .cli{margin-top:clamp(56px,7vw,88px)}
-.cli-k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--violeta)}
-.cli-t{margin-top:10px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(26px,2.4vw,34px);line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
+/* Es un diferencial: va en una insignia violeta con candado, no como un antetítulo más */
+.cli-k{display:inline-flex;align-items:center;gap:10px;height:34px;padding:0 16px 0 5px;border:1px solid rgba(107,79,214,.3);border-radius:999px;background:rgba(107,79,214,.08);font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--violeta)}
+.cli-k i{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--violeta);color:var(--papel)}
+.cli-k svg{width:11px;height:13px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.cli-t{margin-top:16px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(26px,2.4vw,34px);line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
 .cli-shot{max-width:560px;margin-top:28px}
 /* Marco de navegador: puntos y dirección, para que se lea "esto es una web" */
 .cl-win{overflow:hidden;border:1px solid var(--linea);border-radius:14px;background:var(--papel);box-shadow:0 2px 4px -2px rgba(28,30,42,.08),0 30px 60px -36px rgba(28,30,42,.35)}
@@ -657,6 +660,8 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .case .shot{background:#17161A}
   .shot .frame{background:linear-gradient(160deg,#211C22,#17161A 60%)}
   .cl-win{box-shadow:0 30px 60px -30px rgba(0,0,0,.75)}
+  .cli-k{border-color:rgba(160,140,245,.35);background:rgba(160,140,245,.12)}
+  .cli-k i{color:#0B0A0C}
   nav.glass .wrap,nav .mobile-menu.open,nav.glass.dark .wrap,nav.dark .mobile-menu.open{background:rgba(20,19,23,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),inset 0 1px 0 rgba(255,255,255,.06),0 12px 30px -14px rgba(0,0,0,.6)}
   nav.dark .brand,nav.dark .burger,nav.dark .mobile-menu a,nav.dark ul a:hover,nav.dark ul a.cta{color:#ECEDF2;border-color:#ECEDF2}
   nav.dark ul a{color:rgba(236,237,242,.7)}
@@ -894,7 +899,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
         <p class="ph-p">El proyecto no acaba al publicarlo. Vemos qué ajustar.</p>
         <p class="ph-incl"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>Incluido en el precio de tu proyecto</p>
         <div class="cli">
-          <p class="cli-k">Tu área de cliente</p>
+          <p class="cli-k"><i aria-hidden="true"><svg viewBox="0 0 12 14"><rect x="1.5" y="6" width="9" height="6.5" rx="1.5"/><path d="M3.5 6V4.5a2.5 2.5 0 0 1 5 0V6"/></svg></i>Tu área de cliente</p>
           <h4 class="cli-t">Todo el proyecto, ordenado en un solo sitio.</h4>
           <div class="cli-shot">
             <div class="cl-win">
