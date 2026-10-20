@@ -18,7 +18,7 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 | Dominio | `silenceclub.es` registrado en **DonDominio** (`.es` no se puede trasladar a Cloudflare). Nameservers ya apuntan a Cloudflare: `jonah.ns.cloudflare.com`, `monroe.ns.cloudflare.com` |
 | DNS | Gestionado en Cloudflare. Dominios personalizados del Worker: `silenceclub.es` y `www.silenceclub.es` |
 | Correo | Google Workspace (`info@silenceclub.es`). **No tocar** los registros MX, TXT (SPF, DKIM `google._domainkey`, `google-site-verification`) |
-| Netlify | Plan antiguo de 9 €/mes, a bajar a Free. **No borrar la cuenta**: aloja `bela-vlc.netlify.app` (web de la clienta Bela) y `silenceclub-propuestas.netlify.app` (solo logo, sin uso) |
+| Netlify | Plan antiguo de 9 €/mes, a bajar a Free. **No borrar la cuenta**: aloja `bela-vlc.netlify.app` (web de la clienta Bela) y `silenceclub-propuestas.netlify.app` (propuestas comerciales, repo privado `Silenceclub52/silenceclub-comercial`, una carpeta por propuesta: `condado-seo/`, `condado-consultoria/`) |
 
 ## Flujo de publicación
 - Rama `main` → producción (`silenceclub.es`). Comando: `npx wrangler deploy`.
@@ -106,6 +106,12 @@ Solo se publica `public/`. No meter nada sensible ahí.
   - Hamburguesa: tres líneas rectas (`M3 4H25`, `M3 10H25`, `M3 16H25`), extremos rectos; al abrir forman la X.
   - Pendiente de decisión de Jorge: si la barra debe ser más transparente (65–70 %) para que se note más el cristal.
 - Retrato sin filtros ni capa melocotón (se quitó a petición de Jorge). La "J" sobre la foto lleva el medio punto del mismo color que la letra (antes melocotón), como en el logo.
+
+## Área de clientes (decidido, por montar)
+- Ruta `silenceclub.es/clientes/<cliente>/` con login por email (Cloudflare Access, código de un solo uso, gratis hasta 50 usuarios). Jorge descartó `/club`, `/login` y `/user`.
+- **Nunca en este repositorio** (es público y sus ramas generan vistas previas sin protección). Va en un repo privado aparte (`silenceclub-clientes`) y un Worker propio en la ruta `silenceclub.es/clientes*`, sin `workers.dev` ni vistas previas.
+- Primer cliente: Marchica (Grupo Aramón). Acceso: solo `dvillacampa@aramon.es` (más `info@silenceclub.es`).
+- Propuestas a clientes potenciales: siguen en Netlify (`silenceclub-comercial`). Recomendado moverlas a `silenceclub.es/propuestas/<nombre>`, sin login.
 
 ## Pendientes conocidos
 0. WhatsApp: si no sale vista previa o sale una antigua, es la caché o Cloudflare bloqueando al lector (Security → Bots). Comprobar con developers.facebook.com/tools/debug. Tras publicar en `main` cambios de SEO o imagen para redes: forzar la relectura en developers.facebook.com/tools/debug (Volver a extraer) y linkedin.com/post-inspector; enviar `sitemap.xml` en Search Console.
