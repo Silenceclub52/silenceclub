@@ -241,6 +241,97 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .pil-price span{margin-left:auto;white-space:nowrap}
 .amt{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:20px;letter-spacing:-.01em;color:var(--tinta)}
 .ph-incl{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:8px 14px 8px 12px;border:1px solid var(--linea);border-radius:999px;font-size:14px;color:var(--grafito)}
+/* Área de cliente: un render (no la pantalla real) que se endereza al verlo; debajo, cuatro ventajas en dos palabras */
+.cli{margin-top:clamp(56px,7vw,88px)}
+.cli-k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--violeta)}
+.cli-t{margin-top:10px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(26px,2.4vw,34px);line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
+.cli-shot{position:relative;margin-top:36px;perspective:1600px}
+.cli-shot::before{content:"";position:absolute;left:8%;right:8%;top:14%;bottom:-6%;z-index:-1;border-radius:50%;background:radial-gradient(closest-side,rgba(107,79,214,.16),rgba(107,79,214,0));filter:blur(18px);pointer-events:none}
+.cli-win{overflow:hidden;border:1px solid var(--linea);border-radius:16px;background:var(--papel);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 2px 4px -2px rgba(28,30,42,.08),0 40px 80px -42px rgba(28,30,42,.4);
+  transform-origin:50% 0;transition:transform 1.2s cubic-bezier(.2,.8,.2,1),opacity 1s ease}
+.cli-shot.wait .cli-win{transform:rotateX(16deg) translateY(28px) scale(.97);opacity:.35}
+.cw-bar{display:flex;align-items:center;gap:14px;height:38px;padding:0 14px;border-bottom:1px solid var(--linea);background:var(--niebla)}
+.cw-dots{display:flex;gap:6px}
+.cw-dots i{width:8px;height:8px;border-radius:50%;background:var(--linea)}
+.cw-url{display:inline-flex;align-items:center;gap:7px;margin:0 auto;padding:4px 14px;border-radius:999px;background:var(--papel);font-size:11.5px;letter-spacing:.01em;color:var(--grafito);transform:translateX(-25px)}
+.cw-url svg{width:10px;height:12px;fill:none;stroke:currentColor;stroke-width:1.3}
+.cw-body{display:flex;min-height:300px}
+.cw-side{flex:none;width:168px;padding:18px 12px;border-right:1px solid var(--linea)}
+.cw-logo{display:block;height:22px;width:auto;margin:0 0 22px 8px;overflow:visible;fill:currentColor}
+.cw-logo .ln{fill:none;stroke:currentColor;stroke-width:1.6;opacity:.85}
+.cw-logo .db{opacity:.45}
+.cw-mark{display:none;width:16px;height:16px;margin:4px auto 22px;fill:none;stroke:currentColor;stroke-width:1.2}
+.cw-mark path{fill:currentColor;stroke:none}
+.cw-nav{margin:0;padding:0;list-style:none;font-size:13px;color:var(--grafito)}
+.cw-nav li{display:flex;align-items:center;gap:10px;height:32px;padding:0 8px;border-radius:8px}
+.cw-nav li+li{margin-top:2px}
+.cw-nav li.on{background:var(--niebla);color:var(--tinta);font-weight:500}
+.cw-nav svg{flex:none;width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.cw-nav li.on svg{stroke:var(--violeta)}
+.cw-main{flex:1;min-width:0;padding:20px 22px 22px}
+.cw-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.cw-head small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--grafito)}
+.cw-head b{display:block;margin-top:4px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:24px;line-height:1;letter-spacing:-.015em}
+.cw-st{display:inline-flex;align-items:center;gap:7px;padding:4px 10px;border:1px solid var(--linea);border-radius:999px;font-size:12px;color:var(--grafito);white-space:nowrap}
+.cw-st::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--violeta);animation:rec 1.8s ease-in-out infinite}
+/* Estado del proyecto: lleno, lleno y a medias, como el índice de fases */
+.cw-trk{position:relative;display:grid;grid-template-columns:repeat(3,1fr);margin:20px 0 0;padding:0;list-style:none;font-size:12px;color:var(--grafito)}
+.cw-trk::before{content:"";position:absolute;left:6px;right:calc(33.3% - 6px);top:5px;height:1px;background:var(--linea)}
+.cw-trk li{position:relative;display:flex;flex-direction:column;gap:8px}
+.cw-trk li:last-child{color:var(--tinta);font-weight:500}
+.cw-trk .sd{display:block;background:var(--papel);color:var(--tinta)}
+.cw-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:12px;margin-top:20px}
+.cw-card{display:flex;flex-direction:column;padding:14px 14px 12px;border:1px solid var(--linea);border-radius:12px;background:var(--papel)}
+.cw-ch{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12.5px;font-weight:600}
+.cw-ch em{padding:2px 8px;border:1px solid var(--linea);border-radius:999px;font-style:normal;font-weight:400;font-size:10.5px;color:var(--grafito)}
+.cw-files{margin:8px 0 0;padding:0;list-style:none}
+.cw-files li{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:12.5px;line-height:1.25;transition:opacity .6s ease,transform .6s cubic-bezier(.3,.8,.3,1);transition-delay:var(--d,0s)}
+.cw-files li+li{border-top:1px solid var(--linea)}
+.cw-files svg{flex:none;width:14px;height:16px;fill:none;stroke:var(--grafito);stroke-width:1.2;stroke-linejoin:round}
+.cw-files span{flex:1;min-width:0}
+.cw-files small{display:block;margin-top:2px;font-size:10.5px;letter-spacing:.06em;color:var(--grafito)}
+.cw-files em{flex:none;padding:2px 8px;border-radius:999px;background:rgba(107,79,214,.12);font-style:normal;font-size:10.5px;font-weight:500;color:var(--violeta)}
+.cli-shot.wait .cw-files li{opacity:0;transform:translateY(6px)}
+.cw-chart{position:relative;flex:1;min-height:96px;margin-top:18px}
+.cw-chart svg{display:block;width:100%;height:100%;overflow:visible}
+.cw-chart .g{fill:none;stroke:var(--linea);stroke-width:1;stroke-dasharray:2 4;vector-effect:non-scaling-stroke}
+.cw-chart .cv{fill:none;stroke:var(--violeta);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.cw-pt{position:absolute;left:100%;top:24.7%;width:11px;height:11px;margin:-5.5px 0 0 -5.5px;border-radius:50%;border:1px solid var(--violeta);background:linear-gradient(90deg,var(--papel) 50%,var(--violeta) 50%);transition:opacity .5s ease,transform .5s cubic-bezier(.3,.8,.3,1)}
+.cli-shot.wait .cw-pt,.cli-shot.calm .cw-pt{opacity:0;transform:scale(.4)}
+.cw-cap{margin-top:8px;font-size:11.5px;color:var(--grafito)}
+/* Aviso flotante: llega un entregable nuevo */
+.cw-toast{position:absolute;right:-14px;bottom:-24px;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border:1px solid var(--linea);border-radius:12px;background:rgba(247,248,250,.88);-webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);
+  box-shadow:0 18px 36px -18px rgba(28,30,42,.35);font-size:12.5px;line-height:1.25;transition:opacity .6s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.cw-toast i{flex:none;width:8px;height:8px;border-radius:50%;background:var(--violeta);box-shadow:0 0 0 4px rgba(107,79,214,.16)}
+.cw-toast small{display:block;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--grafito)}
+.cli-shot.wait .cw-toast,.cli-shot.calm .cw-toast{opacity:0;transform:translateY(-10px) scale(.96)}
+/* Las ventajas, en una línea de cuatro */
+.cli-pts{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:60px 0 0;padding:0;list-style:none}
+.cli-pts li{display:flex;flex-direction:column;gap:4px;font-size:14px;line-height:1.4;color:var(--grafito)}
+.cli-pts svg{width:20px;height:20px;margin-bottom:8px;fill:none;stroke:var(--violeta);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.cli-pts .fl{fill:var(--violeta);stroke:none}
+.cli-pts b{font-weight:600;font-size:15px;color:var(--tinta)}
+@media (max-width:1180px) and (min-width:901px),(max-width:720px){
+  .cw-side{width:52px;padding:16px 8px}
+  .cw-logo{display:none}
+  .cw-mark{display:block}
+  .cw-nav li{justify-content:center;padding:0}
+  .cw-nav span{display:none}
+}
+@media (max-width:900px){.cli-pts{grid-template-columns:1fr 1fr;gap:24px 20px}}
+@media (max-width:600px){
+  .cw-url{transform:none;font-size:11px}
+  .cw-bar{gap:10px}
+  .cw-main{padding:16px 14px 16px}
+  .cw-toast{right:10px}
+  /* Móvil: sin la tarjeta de la gráfica (lo cuenta "Resultados a la vista") y las ventajas en filas */
+  .cw-card+.cw-card{display:none}
+  .cli-pts{grid-template-columns:1fr;gap:16px;margin-top:56px}
+  .cli-pts li{display:grid;grid-template-columns:20px 1fr;column-gap:14px;row-gap:2px}
+  .cli-pts svg{grid-row:1/span 2;margin:1px 0 0}
+}
+@media (max-width:420px){.cw-side{display:none}.cw-dots{display:none}}
 /* Lo que viene después: fuera de las fases, otra superficie */
 .beyond{grid-column:5/span 8;position:relative;display:grid;grid-template-columns:auto 1fr;gap:20px 24px;margin-top:clamp(80px,10vw,136px);padding:clamp(26px,3vw,40px);border-radius:20px;border:1px solid rgba(107,79,214,.28);border:1px solid color-mix(in srgb,var(--violeta) 28%,transparent);background:rgba(107,79,214,.05);background:color-mix(in srgb,var(--violeta) 5%,var(--papel))}
 .beyond-i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(107,79,214,.14);background:color-mix(in srgb,var(--violeta) 14%,transparent);color:var(--violeta)}
@@ -611,6 +702,10 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .about .mono{color:#F7F8FA}
   .case .shot{background:#17161A}
   .shot .frame{background:linear-gradient(160deg,#211C22,#17161A 60%)}
+  .cli-win{box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 40px 80px -40px rgba(0,0,0,.8)}
+  .cli-shot::before{background:radial-gradient(closest-side,rgba(160,140,245,.14),rgba(160,140,245,0))}
+  .cw-toast{background:rgba(20,19,23,.86);box-shadow:0 18px 36px -16px rgba(0,0,0,.7)}
+  .cw-files em{background:rgba(160,140,245,.16)}
   nav.glass .wrap,nav .mobile-menu.open,nav.glass.dark .wrap,nav.dark .mobile-menu.open{background:rgba(20,19,23,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),inset 0 1px 0 rgba(255,255,255,.06),0 12px 30px -14px rgba(0,0,0,.6)}
   nav.dark .brand,nav.dark .burger,nav.dark .mobile-menu a,nav.dark ul a:hover,nav.dark ul a.cta{color:#ECEDF2;border-color:#ECEDF2}
   nav.dark ul a{color:rgba(236,237,242,.7)}
@@ -847,6 +942,54 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
         <h3>Medimos lo que hemos hecho y lo mejoramos.</h3>
         <p class="ph-p">El proyecto no acaba al publicarlo. Vemos qué ajustar.</p>
         <p class="ph-incl"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>Incluido en el precio de tu proyecto</p>
+        <div class="cli">
+          <p class="cli-k">Tu área de cliente</p>
+          <h4 class="cli-t">Todo el proyecto, ordenado en un solo sitio.</h4>
+          <div class="cli-shot" aria-hidden="true">
+            <div class="cli-win">
+              <div class="cw-bar"><span class="cw-dots"><i></i><i></i><i></i></span><span class="cw-url"><svg viewBox="0 0 12 14"><rect x="1.5" y="6" width="9" height="6.5" rx="1.5"/><path d="M3.5 6V4.5a2.5 2.5 0 0 1 5 0V6"/></svg>clientes.silenceclub.es</span></div>
+              <div class="cw-body">
+                <div class="cw-side">
+                  <svg class="cw-logo" viewBox="0 0 362 97"><use href="#sc-s0"/><use href="#sc-s1"/><use href="#sc-s2"/><use href="#sc-s3"/><use href="#sc-s4"/><use href="#sc-s5"/><use href="#sc-s6"/><path class="ln" d="M0 48H358"/><use href="#sc-c0"/><use href="#sc-c1"/><use href="#sc-c2"/><use href="#sc-c3"/><circle class="db" cx="351" cy="86.5" r="9"/><path d="M351 77.5a9 9 0 0 1 0 18z"/></svg>
+                  <svg class="cw-mark" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.4"/><path d="M10 1.6a8.4 8.4 0 0 1 0 16.8z"/></svg>
+                  <ul class="cw-nav">
+                    <li class="on"><svg viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="5" rx="1.2"/><rect x="9" y="2" width="5" height="5" rx="1.2"/><rect x="2" y="9" width="5" height="5" rx="1.2"/><rect x="9" y="9" width="5" height="5" rx="1.2"/></svg><span>Resumen</span></li>
+                    <li><svg viewBox="0 0 16 16"><path d="M2 4.5V12a1.5 1.5 0 0 0 1.5 1.5h9A1.5 1.5 0 0 0 14 12V6.5A1.5 1.5 0 0 0 12.5 5H8L6.5 3H3.5A1.5 1.5 0 0 0 2 4.5z"/></svg><span>Entregables</span></li>
+                    <li><svg viewBox="0 0 16 16"><path d="M1.5 11.5c2-.5 2.5-4 4-4s1.5 3 3 3 2.5-6 6-7.5"/></svg><span>Resultados</span></li>
+                    <li><svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 6.5h12M5.5 1.5V4M10.5 1.5V4"/></svg><span>Calendario</span></li>
+                    <li><svg viewBox="0 0 16 16"><path d="M2.5 3.5h11v7.5H6l-3.5 3v-3z"/></svg><span>Mensajes</span></li>
+                  </ul>
+                </div>
+                <div class="cw-main">
+                  <div class="cw-head"><span><small>Tu proyecto</small><b>Resumen</b></span><span class="cw-st">Midiendo</span></div>
+                  <ol class="cw-trk"><li class="d"><i class="sd f"></i>Inicio</li><li class="d"><i class="sd f"></i>Desarrollo</li><li><i class="sd h"></i>Desenlace</li></ol>
+                  <div class="cw-cards">
+                    <div class="cw-card">
+                      <p class="cw-ch">Entregables</p>
+                      <ul class="cw-files">
+                        <li><svg viewBox="0 0 16 18"><path d="M3 1.5h6.5L13 5v11.5H3z"/><path d="M9.5 1.5V5H13"/></svg><span>Manual de marca<small>PDF</small></span><em>Nuevo</em></li>
+                        <li><svg viewBox="0 0 16 18"><path d="M3 1.5h6.5L13 5v11.5H3z"/><path d="M9.5 1.5V5H13"/></svg><span>Logotipo y sistema visual<small>ZIP</small></span></li>
+                        <li><svg viewBox="0 0 16 18"><path d="M3 1.5h6.5L13 5v11.5H3z"/><path d="M9.5 1.5V5H13"/></svg><span>Mapa 3D de reservas<small>Web</small></span></li>
+                      </ul>
+                    </div>
+                    <div class="cw-card">
+                      <p class="cw-ch">Resultados<em>Ejemplo</em></p>
+                      <div class="cw-chart"><svg viewBox="0 0 300 90" preserveAspectRatio="none"><path class="g" d="M0 30H300M0 52H300M0 74H300"/><path class="cv" d="M0 74.0L6 75.0L12 75.7L18 76.0L24 75.8L30 75.1L36 73.8L42 72.2L48 70.4L54 68.4L60 66.5L66 64.7L72 63.2L78 62.0L84 61.1L90 60.4L96 59.8L102 59.3L108 58.6L114 57.6L120 56.4L126 54.8L132 52.9L138 50.7L144 48.3L150 45.9L156 43.5L162 41.3L168 39.3L174 37.7L180 36.3L186 35.2L192 34.4L198 33.6L204 32.9L210 32.2L216 31.3L222 30.3L228 29.1L234 27.7L240 26.3L246 24.9L252 23.6L258 22.5L264 21.7L270 21.1L276 20.9L282 20.9L288 21.3L294 21.7L300 22.2"/></svg><i class="cw-pt"></i></div>
+                      <p class="cw-cap">Reservas desde la web</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cw-toast"><i></i><span><small>Nuevo entregable</small>Manual de marca</span></div>
+          </div>
+          <ul class="cli-pts">
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 5.5V15a1.5 1.5 0 0 0 1.5 1.5h12a1.5 1.5 0 0 0 1.5-1.5V8a1.5 1.5 0 0 0-1.5-1.5H10L8.2 4H4a1.5 1.5 0 0 0-1.5 1.5z"/></svg><b>Entregables centralizados</b><span>Todo ordenado, siempre a mano.</span></li>
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path class="fl" d="M10 3a7 7 0 0 1 0 14z"/></svg><b>Estado al día</b><span>Sabes en qué punto está todo.</span></li>
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 14.5c2.5-.5 3.2-5 5-5s1.8 3.5 3.6 3.5S13.5 6 18 4"/></svg><b>Resultados a la vista</b><span>Lo que medimos, claro.</span></li>
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="2"/><path d="M3 5.5l7 5.5 7-5.5"/></svg><b>Acceso fácil</b><span>Con tu email, sin contraseñas.</span></li>
+          </ul>
+        </div>
       </article>
     </div>
   </div>
@@ -1333,6 +1476,25 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
       },{rootMargin:'0px 0px -25% 0px',threshold:1});
       yio.observe(yr);
     }
+  }
+
+  /* Área de cliente: la ventana se endereza, entran los entregables y la gráfica suena y se calma en la curva de resultados;
+     al final, el punto a medias y el aviso de entregable nuevo */
+  var cs=document.querySelector('.cli-shot');
+  if(cs&&!reduce&&'IntersectionObserver' in window){
+    var cvp=cs.querySelector('.cv');
+    var cy=function(x){var u=x/300,v=Math.min(1,u*1.05),s=v*v*(3-2*v);return 74-52*s+3*Math.sin(u*19)*(1-u*.6);};
+    var cpath=function(t,p,A){var d='';for(var x=0;x<=300;x+=4){var e=Math.sin(Math.PI*x/300),n=Math.sin(x*.09-t*8)*.5+Math.sin(x*.23+t*13)*.3+Math.sin(x*.51-t*21)*.2;
+      d+=(x?'L':'M')+x+' '+(74-p*(74-cy(x))+A*e*n).toFixed(2);}return d;};
+    cs.classList.add('wait','calm');cvp.setAttribute('d',cpath(0,0,0));
+    [].forEach.call(cs.querySelectorAll('.cw-files li'),function(l,i){l.style.setProperty('--d',(.45+i*.12).toFixed(2)+'s');});
+    var kio=new IntersectionObserver(function(en){if(!en[0].isIntersecting)return;kio.disconnect();cs.classList.remove('wait');
+      setTimeout(function(){var t0=performance.now(),T=2.4;
+        (function f(){var t=(performance.now()-t0)/1000,q=Math.min(1,t/T),A=14*(1-q)*(1-q),p=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2;
+          cvp.setAttribute('d',cpath(t,p,A));if(q<1)requestAnimationFrame(f);else cs.classList.remove('calm');})();
+      },600);
+    },{rootMargin:'0px 0px -20% 0px',threshold:.35});
+    kio.observe(cs);
   }
 
   /* Te toca a ti: el botón del email se rellena una vez al verlo */
