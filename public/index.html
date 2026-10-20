@@ -250,15 +250,22 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .cli-t{margin-top:16px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(26px,2.4vw,34px);line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
 .cli-shot{max-width:560px;margin-top:28px}
 /* Marco de navegador: puntos y dirección, para que se lea "esto es una web" */
-.cl-win{overflow:hidden;border:1px solid var(--linea);border-radius:14px;background:var(--papel);box-shadow:0 2px 4px -2px rgba(28,30,42,.08),0 30px 60px -36px rgba(28,30,42,.35)}
+/* Toda la ventana es un enlace al área de cliente: al pasar, sube un poco, se marca en violeta y los botones del navegador toman color */
+.cl-win{display:block;overflow:hidden;border:1px solid var(--linea);border-radius:14px;background:var(--papel);color:inherit;text-decoration:none;box-shadow:0 2px 4px -2px rgba(28,30,42,.08),0 30px 60px -36px rgba(28,30,42,.35);transition:transform .5s cubic-bezier(.3,.8,.3,1),border-color .4s,box-shadow .5s}
+.cl-win:hover{transform:translateY(-3px);border-color:rgba(107,79,214,.45);box-shadow:0 2px 4px -2px rgba(28,30,42,.08),0 40px 70px -36px rgba(28,30,42,.42)}
 .cl-bar{display:flex;align-items:center;height:36px;padding:0 14px;border-bottom:1px solid var(--linea);background:var(--niebla)}
-.cl-dots{display:flex;gap:6px;width:46px}
-.cl-dots i{width:8px;height:8px;border-radius:50%;background:var(--linea)}
-.cl-url{display:inline-flex;align-items:center;gap:7px;margin:0 auto;padding:4px 12px 4px 14px;border:1px solid transparent;border-radius:999px;background:var(--papel);font-size:11.5px;color:var(--grafito);text-decoration:none;transform:translateX(-23px);transition:color .3s,border-color .3s}
+.cl-dots{display:flex;gap:7px;width:50px}
+/* Cerrar, minimizar y pantalla completa, dibujados en sutil; se ven del todo al pasar */
+.cl-dots i{display:grid;place-items:center;width:11px;height:11px;border-radius:50%;background:var(--linea);transition:background .35s}
+.cl-dots svg{width:9px;height:9px;fill:none;stroke:var(--grafito);stroke-width:1.2;stroke-linecap:round;opacity:.45;transition:opacity .35s,stroke .35s}
+.cl-dots .d-f path{fill:var(--grafito);stroke:none}
+.cl-win:hover .d-x{background:#EC6A5E}.cl-win:hover .d-m{background:#F4BF4F}.cl-win:hover .d-f{background:#61C554}
+.cl-win:hover .cl-dots svg{opacity:.7;stroke:#1C1E2A}.cl-win:hover .d-f path{fill:#1C1E2A}
+.cl-url{display:inline-flex;align-items:center;gap:7px;margin:0 auto;padding:4px 12px 4px 14px;border:1px solid transparent;border-radius:999px;background:var(--papel);font-size:11.5px;color:var(--grafito);transform:translateX(-25px);transition:color .3s,border-color .3s}
 /* La dirección es un enlace de verdad al área de cliente */
-.cl-url:hover{color:var(--tinta);border-color:var(--violeta)}
+.cl-win:hover .cl-url{color:var(--tinta);border-color:var(--violeta)}
 .cl-go{width:9px!important;height:9px!important;stroke:var(--violeta)!important;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
-.cl-url:hover .cl-go{transform:translate(1.5px,-1.5px)}
+.cl-win:hover .cl-go{transform:translate(1.5px,-1.5px)}
 .cl-url svg{width:10px;height:12px;fill:none;stroke:currentColor;stroke-width:1.3}
 .cl-page{padding:22px 24px 24px}
 .cl-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--linea)}
@@ -286,7 +293,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .cli-pts li{display:grid;grid-template-columns:20px 1fr;column-gap:14px}
   .cli-pts svg{grid-row:1/span 2;margin:1px 0 0}
 }
-@media (max-width:420px){.cl-dots{display:none}.cl-url{transform:none}.cl-page{padding:18px 16px 18px}.cl-head small{display:none}.cl-sc{height:18px}}
+@media (max-width:420px){.cl-bar{gap:8px;padding:0 10px}.cl-dots{gap:5px;width:auto}.cl-dots i{width:9px;height:9px}.cl-dots svg{width:7px;height:7px}.cl-url{transform:none;gap:5px;padding:3px 9px;font-size:10.5px}.cl-page{padding:18px 16px 18px}.cl-head small{display:none}.cl-sc{height:18px}}
 /* Lo que viene después: fuera de las fases, otra superficie */
 .beyond{grid-column:5/span 8;position:relative;display:grid;grid-template-columns:auto 1fr;gap:20px 24px;margin-top:clamp(80px,10vw,136px);padding:clamp(26px,3vw,40px);border-radius:20px;border:1px solid rgba(107,79,214,.28);border:1px solid color-mix(in srgb,var(--violeta) 28%,transparent);background:rgba(107,79,214,.05);background:color-mix(in srgb,var(--violeta) 5%,var(--papel))}
 .beyond-i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(107,79,214,.14);background:color-mix(in srgb,var(--violeta) 14%,transparent);color:var(--violeta)}
@@ -902,8 +909,8 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
           <p class="cli-k"><i aria-hidden="true"><svg viewBox="0 0 12 14"><circle cx="6" cy="4.6" r="2.6"/><path d="M1.6 12.8c0-2.5 2-4.2 4.4-4.2s4.4 1.7 4.4 4.2"/></svg></i>Tu área de cliente</p>
           <h4 class="cli-t">Todo el proyecto, ordenado en un solo sitio.</h4>
           <div class="cli-shot">
-            <div class="cl-win">
-            <div class="cl-bar"><span class="cl-dots" aria-hidden="true"><i></i><i></i><i></i></span><a class="cl-url" href="https://clientes.silenceclub.es/" target="_blank" rel="noopener" aria-label="Entrar en el área de cliente (clientes.silenceclub.es, se abre en otra pestaña)"><svg viewBox="0 0 12 14" aria-hidden="true"><rect x="1.5" y="6" width="9" height="6.5" rx="1.5"/><path d="M3.5 6V4.5a2.5 2.5 0 0 1 5 0V6"/></svg>clientes.silenceclub.es<svg class="cl-go" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></a></div>
+            <a class="cl-win" href="https://clientes.silenceclub.es/" target="_blank" rel="noopener" aria-label="Entrar en el área de cliente (clientes.silenceclub.es, se abre en otra pestaña)">
+            <div class="cl-bar"><span class="cl-dots" aria-hidden="true"><i class="d-x"><svg viewBox="0 0 12 12"><path d="M4 4l4 4M8 4l-4 4"/></svg></i><i class="d-m"><svg viewBox="0 0 12 12"><path d="M3.5 6h5"/></svg></i><i class="d-f"><svg viewBox="0 0 12 12"><path d="M3.6 3.6h3.3L3.6 6.9zM8.4 8.4H5.1l3.3-3.3z"/></svg></i></span><span class="cl-url" aria-hidden="true"><svg viewBox="0 0 12 14" aria-hidden="true"><rect x="1.5" y="6" width="9" height="6.5" rx="1.5"/><path d="M3.5 6V4.5a2.5 2.5 0 0 1 5 0V6"/></svg>clientes.silenceclub.es<svg class="cl-go" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></span></div>
             <div class="cl-page" aria-hidden="true">
               <div class="cl-head"><span class="cl-lock"><svg class="cl-sc" viewBox="0 0 362 97"><use href="#sc-s0"/><use href="#sc-s1"/><use href="#sc-s2"/><use href="#sc-s3"/><use href="#sc-s4"/><use href="#sc-s5"/><use href="#sc-s6"/><path class="ln" d="M0 48H358"/><use href="#sc-c0"/><use href="#sc-c1"/><use href="#sc-c2"/><use href="#sc-c3"/><circle class="db" cx="351" cy="86.5" r="9"/><path d="M351 77.5a9 9 0 0 1 0 18z"/></svg><svg class="cl-br" viewBox="0 0 34 20"><path d="M0 10.00L1 10.00L2 10.00L3 10.00L4 10.00L5 10.00L6 10.00L7 10.00L8 10.00L9 10.00L10 9.97L11 9.67L12 8.37L13 6.00L14 5.13L15 7.46L16 11.21L17 14.44L18 14.86L19 12.29L20 9.48L21 7.96L22 8.15L23 9.19L24 9.82L25 9.98L26 10.00L27 10.00L28 10.00L29 10.00L30 10.00L31 10.00L32 10.00L33 10.00L34 10.00"/></svg><span class="cl-you">Tu marca</span></span><small>Área de cliente</small></div>
               <p class="cl-k">Entregables</p>
@@ -913,7 +920,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
                 <li><span><small>Desenlace</small>Informe de resultados</span><b>Abrir</b></li>
               </ul>
             </div>
-            </div>
+            </a>
           </div>
           <ul class="cli-pts">
             <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 5.5V15a1.5 1.5 0 0 0 1.5 1.5h12a1.5 1.5 0 0 0 1.5-1.5V8a1.5 1.5 0 0 0-1.5-1.5H10L8.2 4H4a1.5 1.5 0 0 0-1.5 1.5z"/></svg><b>Entregables centralizados</b><span>Todo en un sitio.</span></li>
