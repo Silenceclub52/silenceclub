@@ -24,9 +24,7 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Rama `main` → producción (`silenceclub.es`). Comando: `npx wrangler deploy`.
 - Cualquier otra rama → versión de prueba automática (`npx wrangler preview`):
   `https://<rama-con-guiones>-silenceclub.floral-snowflake-c31a.workers.dev/`
-- Rama de trabajo actual (en `main` desde el último "pásalo a main"): `claude/intelligent-cannon-dipviu` →
-  https://claude-intelligent-cannon-dipviu-silenceclub.floral-snowflake-c31a.workers.dev/
-  Sale de `main` y trae de `claude/nueva-estetica-contraste` solo lo que Jorge eligió (ver abajo).
+- Rama de trabajo actual: `claude/adoring-lovelace-q9o4mi` (= `main` + notas de CLAUDE.md sin pasar; la web es idéntica a producción). Antes: `claude/intelligent-cannon-dipviu`, ya en `main`.
   Las ramas `claude/nueva-estetica` y `claude/nueva-estetica-contraste` (versión única sin modo oscuro) quedan como referencia; Jorge las descartó como base. Antes de empezar una rama nueva, partir de la última rama de trabajo
   si aún no está en `main`, no de `main`: así se perdió el menú una vez.
   (`claude/gallant-thompson-hyejgu` ya está entera dentro de `main`; no se usa.)
