@@ -62,7 +62,7 @@ public/
   favicon.svg, favicon.ico, apple-touch-icon.png, icon-192.png, icon-512.png, site.webmanifest   # favicon: la línea de sonido (ruido violeta → calma) y el punto a medias, sobre negro #0B0A0C
   robots.txt, sitemap.xml
   img/logos/       # siluetas de marcas (sounds, condado, marina, amok, sonora, marchica, bigroom, aramon, bela)
-  img/             # jorge.webp, jorge-alt.webp, marina-3d.webp, amok-mapa.webp, og-silenceclub.jpg (1200x630, imagen para redes)
+  img/             # jorge.webp, jorge-alt.webp, marina-3d.webp, amok-mapa.webp, og-silenceclub.jpg (1200x630, imagen para redes), silenceclub-logo.png (logo en tinta #1C1E2A sobre transparente, 732x202: lo usa la pantalla de acceso de Cloudflare del área de clientes; tiene que estar en un sitio público)
 ```
 Solo se publica `public/`. No meter nada sensible ahí.
 
