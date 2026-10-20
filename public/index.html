@@ -5,7 +5,9 @@
 <meta name="theme-color" content="#EDEFF3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E0B14" media="(prefers-color-scheme: dark)">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>try{var t=localStorage.getItem('sc-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script>/* Modo elegido con el interruptor ("modo|modo del sistema al elegirlo"): vale mientras el sistema no cambie */
+try{var t=(localStorage.getItem('sc-theme')||'').split('|'),s=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+if((t[0]==='light'||t[0]==='dark')&&t[1]===s)document.documentElement.setAttribute('data-theme',t[0]);else localStorage.removeItem('sc-theme');}catch(e){}</script>
 <title>Silence Club · Dirección creativa y estratégica</title>
 <meta name="description" content="Acompaño a personas con un negocio que todavía no ven todo lo que pueden construir con él. Estrategia de marca, identidad, web y captación.">
 <meta name="author" content="Jorge · Silence Club">
@@ -1236,14 +1238,19 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   }
   mode.addEventListener('click',function(){
     var d=!isDark();
-    function go(){root.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('sc-theme',d?'dark':'light');}catch(e){}modeSync();window.dispatchEvent(new Event('sc-theme'));}
+    /* Si eliges lo mismo que el sistema, no hay nada que forzar: vuelve a seguirlo */
+    function go(){var m=d?'dark':'light',sy=sysDark.matches?'dark':'light';
+      try{if(m===sy){root.removeAttribute('data-theme');localStorage.removeItem('sc-theme');}else{root.setAttribute('data-theme',m);localStorage.setItem('sc-theme',m+'|'+sy);}}catch(e){root.setAttribute('data-theme',m);}
+      modeSync();window.dispatchEvent(new Event('sc-theme'));}
     if(!document.startViewTransition||reduce){go();return;}
     var vt=document.startViewTransition(go),b=mode.getBoundingClientRect(),x=b.left+b.width/2,y=b.top+b.height/2,
         R=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
     vt.ready.then(function(){root.animate({clipPath:['circle(0px at '+x+'px '+y+'px)','circle('+R+'px at '+x+'px '+y+'px)']},
       {duration:700,easing:'cubic-bezier(.45,0,.2,1)',pseudoElement:'::view-transition-new(root)'});});
   });
-  if(sysDark.addEventListener)sysDark.addEventListener('change',modeSync);else if(sysDark.addListener)sysDark.addListener(modeSync);
+  /* Si el sistema cambia de modo, manda el sistema: se olvida la elección manual */
+  function sysChange(){root.removeAttribute('data-theme');try{localStorage.removeItem('sc-theme');}catch(e){}modeSync();window.dispatchEvent(new Event('sc-theme'));}
+  if(sysDark.addEventListener)sysDark.addEventListener('change',sysChange);else if(sysDark.addListener)sysDark.addListener(sysChange);
   modeSync();
 
   /* Retícula */
