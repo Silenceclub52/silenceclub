@@ -251,7 +251,11 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .cl-bar{display:flex;align-items:center;height:36px;padding:0 14px;border-bottom:1px solid var(--linea);background:var(--niebla)}
 .cl-dots{display:flex;gap:6px;width:46px}
 .cl-dots i{width:8px;height:8px;border-radius:50%;background:var(--linea)}
-.cl-url{display:inline-flex;align-items:center;gap:7px;margin:0 auto;padding:4px 14px;border-radius:999px;background:var(--papel);font-size:11.5px;color:var(--grafito);transform:translateX(-23px)}
+.cl-url{display:inline-flex;align-items:center;gap:7px;margin:0 auto;padding:4px 12px 4px 14px;border:1px solid transparent;border-radius:999px;background:var(--papel);font-size:11.5px;color:var(--grafito);text-decoration:none;transform:translateX(-23px);transition:color .3s,border-color .3s}
+/* La dirección es un enlace de verdad al área de cliente */
+.cl-url:hover{color:var(--tinta);border-color:var(--violeta)}
+.cl-go{width:9px!important;height:9px!important;stroke:var(--violeta)!important;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.cl-url:hover .cl-go{transform:translate(1.5px,-1.5px)}
 .cl-url svg{width:10px;height:12px;fill:none;stroke:currentColor;stroke-width:1.3}
 .cl-page{padding:22px 24px 24px}
 .cl-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--linea)}
@@ -892,10 +896,10 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
         <div class="cli">
           <p class="cli-k">Tu área de cliente</p>
           <h4 class="cli-t">Todo el proyecto, ordenado en un solo sitio.</h4>
-          <div class="cli-shot" aria-hidden="true">
+          <div class="cli-shot">
             <div class="cl-win">
-            <div class="cl-bar"><span class="cl-dots"><i></i><i></i><i></i></span><span class="cl-url"><svg viewBox="0 0 12 14"><rect x="1.5" y="6" width="9" height="6.5" rx="1.5"/><path d="M3.5 6V4.5a2.5 2.5 0 0 1 5 0V6"/></svg>clientes.silenceclub.es</span></div>
-            <div class="cl-page">
+            <div class="cl-bar"><span class="cl-dots" aria-hidden="true"><i></i><i></i><i></i></span><a class="cl-url" href="https://clientes.silenceclub.es/" target="_blank" rel="noopener" aria-label="Entrar en el área de cliente (clientes.silenceclub.es, se abre en otra pestaña)"><svg viewBox="0 0 12 14" aria-hidden="true"><rect x="1.5" y="6" width="9" height="6.5" rx="1.5"/><path d="M3.5 6V4.5a2.5 2.5 0 0 1 5 0V6"/></svg>clientes.silenceclub.es<svg class="cl-go" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></a></div>
+            <div class="cl-page" aria-hidden="true">
               <div class="cl-head"><span class="cl-lock"><svg class="cl-sc" viewBox="0 0 362 97"><use href="#sc-s0"/><use href="#sc-s1"/><use href="#sc-s2"/><use href="#sc-s3"/><use href="#sc-s4"/><use href="#sc-s5"/><use href="#sc-s6"/><path class="ln" d="M0 48H358"/><use href="#sc-c0"/><use href="#sc-c1"/><use href="#sc-c2"/><use href="#sc-c3"/><circle class="db" cx="351" cy="86.5" r="9"/><path d="M351 77.5a9 9 0 0 1 0 18z"/></svg><svg class="cl-br" viewBox="0 0 34 20"><path d="M0 10.00L1 10.00L2 10.00L3 10.00L4 10.00L5 10.00L6 10.00L7 10.00L8 10.00L9 10.00L10 9.97L11 9.67L12 8.37L13 6.00L14 5.13L15 7.46L16 11.21L17 14.44L18 14.86L19 12.29L20 9.48L21 7.96L22 8.15L23 9.19L24 9.82L25 9.98L26 10.00L27 10.00L28 10.00L29 10.00L30 10.00L31 10.00L32 10.00L33 10.00L34 10.00"/></svg><span class="cl-you">Tu marca</span></span><small>Área de cliente</small></div>
               <p class="cl-k">Entregables</p>
               <ul class="cl-items">
