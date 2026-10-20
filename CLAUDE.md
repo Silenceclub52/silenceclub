@@ -107,9 +107,9 @@ Solo se publica `public/`. No meter nada sensible ahí.
   - Pendiente de decisión de Jorge: si la barra debe ser más transparente (65–70 %) para que se note más el cristal.
 - Retrato sin filtros ni capa melocotón (se quitó a petición de Jorge). La "J" sobre la foto lleva el medio punto del mismo color que la letra (antes melocotón), como en el logo.
 
-## Área de clientes (decidido, por montar)
-- Ruta `silenceclub.es/clientes/<cliente>/` con login por email (Cloudflare Access, código de un solo uso, gratis hasta 50 usuarios). Jorge descartó `/club`, `/login` y `/user`.
-- **Nunca en este repositorio** (es público y sus ramas generan vistas previas sin protección). Va en un repo privado aparte (`silenceclub-clientes`) y un Worker propio en la ruta `silenceclub.es/clientes*`, sin `workers.dev` ni vistas previas.
+## Área de clientes (montada en `Silenceclub52/silenceclub-clientes`; falta que Jorge la active en Cloudflare)
+- Subdominio `clientes.silenceclub.es/<cliente>/` con login por email (Cloudflare Access, código de un solo uso, gratis hasta 50 usuarios). Jorge descartó `/club`, `/login` y `/user`, y luego la ruta `silenceclub.es/clientes` en favor del subdominio.
+- **Nunca en este repositorio** (es público y sus ramas generan vistas previas sin protección). Va en un repo privado aparte (`silenceclub-clientes`) y un Worker propio con dominio personalizado `clientes.silenceclub.es`, sin `workers.dev` ni vistas previas.
 - Primer cliente: Marchica (Grupo Aramón). Acceso: solo `dvillacampa@aramon.es` (más `info@silenceclub.es`).
 - Propuestas a clientes potenciales: siguen en Netlify (`silenceclub-comercial`). Recomendado moverlas a `silenceclub.es/propuestas/<nombre>`, sin login.
 
