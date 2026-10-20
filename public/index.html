@@ -598,6 +598,9 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
    su bolita ruede en vivo */
 ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
 ::view-transition-old(mode){display:none}
+/* Durante el cambio de modo el navegador pinta la página como dos capturas y Safari deja de difuminar tras los cristales
+   (solo tiñen y se transparentan). Mientras dura, los cristales pasan a fondo opaco de su mismo color */
+:root.vt-glass nav.glass .wrap,:root.vt-glass .mm,:root.vt-glass .tour,:root.vt-glass .pt-bg{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:var(--papel)!important;transition:none!important}
 ::view-transition-new(mode){animation:none}
 /* Menú móvil: hamburguesa siempre a mano (aunque esté la cápsula) y, al abrir, una tarjeta flotante del mismo cristal
    que la cápsula, con la misma pastilla suave en la sección en la que estás. Mientras está abierto, la cápsula se aparta */
@@ -1258,12 +1261,12 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
       modeSync();window.dispatchEvent(new Event('sc-theme'));}
     if(!document.startViewTransition||reduce){go();return;}
     /* Solo el interruptor pulsado va aparte en la transición (el nombre tiene que ser único) */
-    mode.style.viewTransitionName='mode';
+    mode.style.viewTransitionName='mode';root.classList.add('vt-glass');
     var vt=document.startViewTransition(go),b=mode.getBoundingClientRect(),x=b.left+b.width/2,y=b.top+b.height/2,
         R=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
     vt.ready.then(function(){root.animate({clipPath:['circle(0px at '+x+'px '+y+'px)','circle('+R+'px at '+x+'px '+y+'px)']},
       {duration:700,easing:'cubic-bezier(.45,0,.2,1)',pseudoElement:'::view-transition-new(root)'});});
-    vt.finished.then(function(){mode.style.viewTransitionName='';});
+    vt.finished.then(function(){mode.style.viewTransitionName='';root.classList.remove('vt-glass');});
   });});
   /* Si el sistema cambia de modo, manda el sistema: se olvida la elección manual */
   function sysChange(){root.removeAttribute('data-theme');try{localStorage.removeItem('sc-theme');}catch(e){}modeSync();window.dispatchEvent(new Event('sc-theme'));}
