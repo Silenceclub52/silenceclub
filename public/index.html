@@ -592,11 +592,29 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .mm a.cta{border:0;padding-bottom:0;color:var(--grafito);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--violeta)}
   .menu-open .tour{opacity:0;pointer-events:none}
 }
+/* Móvil: mientras lees el Servicio, la línea de la barra cae en una pestaña bajo el logo con la fase en la que estás.
+   Se desliza unos píxeles (Inicio algo a la izquierda, Desarrollo al centro, Desenlace algo a la derecha) y, al cambiar
+   de fase, su línea suena un instante y se calma */
+.ph-tab{display:none}
+@media (max-width:900px){
+  .ph-tab{position:absolute;left:0;top:calc(100% - 1px);display:block;width:var(--tw,132px);height:30px;overflow:hidden;pointer-events:none;transform:translateX(var(--tx,0px));transition:transform .6s cubic-bezier(.3,.8,.3,1)}
+  .pt-in{position:relative;height:28px;transform:translateY(-100%);transition:transform .45s cubic-bezier(.3,.8,.3,1)}
+  .ph-tab.on .pt-in{transform:none}
+  .menu-open .ph-tab .pt-in{transform:translateY(-100%)}
+  .ph-tab svg{position:absolute;left:0;top:0;width:100%;height:27px;overflow:visible}
+  .pt-f{fill:rgba(247,248,250,.95)}
+  .pt-l{fill:none;stroke:rgba(28,30,42,.12);stroke-width:1}
+  .pt-t{position:absolute;left:50%;top:3px;transform:translateX(-50%);font:500 11.5px/17px var(--sans);letter-spacing:.02em;white-space:nowrap;color:var(--tinta);transition:opacity .22s}
+  .pt-t b{margin-right:6px;font-weight:400;color:var(--grafito)}
+  .pt-t.swap{opacity:0}
+}
 @media (prefers-color-scheme:dark) and (max-width:900px){
   .tour{background:rgba(20,19,23,.92);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 8px 24px -12px rgba(0,0,0,.6)}
   .tour-ind{background:rgba(255,255,255,.1)}
   .mm{background:rgba(20,19,23,.92);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 14px 34px -14px rgba(0,0,0,.65)}
   .mm a.on{background:rgba(255,255,255,.1)}
+  .pt-f{fill:rgba(20,19,23,.95)}
+  .pt-l{stroke:rgba(255,255,255,.1)}
 }
 
 /* Retícula */
@@ -664,6 +682,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
       <li><a href="#contacto" class="cta">Hablemos</a></li>
     </ul>
     <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mmenu"><svg viewBox="0 0 22 14" aria-hidden="true"><path class="l1" d="M1 2H21"/><path class="l2" d="M1 7H21"/><path class="l3" d="M1 12H21"/></svg></button>
+    <div class="ph-tab" aria-hidden="true"><div class="pt-in"><svg><path class="pt-f"/><path class="pt-l"/></svg><span class="pt-t"><b>01</b><span>Inicio</span></span></div></div>
   </div>
   <div class="mm" id="mmenu">
     <ul>
@@ -1244,15 +1263,38 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   var pph=-1, pon=false, pq=false;
   /* Una fase empieza cuando su título cruza algo por debajo de la mitad de la pantalla */
   function phase(){var m=innerHeight*.55,k=0;phs.forEach(function(e,i){if(e.querySelector('.ph-n').getBoundingClientRect().top<m)k=i;});return k;}
+  /* Pestaña móvil de la fase: forma de la línea (cae desde la barra), posición bajo el logo y sonido al cambiar */
+  var tab=document.querySelector('.ph-tab'),tabT=tab.querySelector('.pt-t'),tabF=tab.querySelector('.pt-f'),tabL=tab.querySelector('.pt-l'),
+      tabLogo=document.querySelector('nav .brand .logo'),TAB_N=['Inicio','Desarrollo','Desenlace'],TAB_X=[-10,0,10],tabPh=0,tabRaf=0;
+  var tabW=132;
+  function tabDraw(A,t){
+    var W=tabW,b=W-32,d='M0 .5H10C20 .5 20 22.5 32 22.5';
+    for(var x=34;x<b;x+=2){var e=Math.sin(Math.PI*(x-32)/(b-32));d+='L'+x+' '+(22.5+A*e*(Math.sin(x*.5-t*20)*.6+Math.sin(x*1.1+t*31)*.4)).toFixed(2);}
+    d+='L'+b+' 22.5C'+(W-20)+' 22.5 '+(W-20)+' .5 '+(W-10)+' .5H'+W;tabL.setAttribute('d',d);tabF.setAttribute('d',d+'V-1H0Z');
+  }
+  /* La pestaña abraza el texto: 32 px de curva a cada lado */
+  function tabFit(){tabW=Math.round(tabT.offsetWidth+64);tab.style.setProperty('--tw',tabW+'px');tabDraw(0,0);tabPlace();}
+  function tabRing(){if(reduce)return;cancelAnimationFrame(tabRaf);var t0=performance.now();
+    (function f(){var t=(performance.now()-t0)/1000,k=Math.max(0,1-t/.9);tabDraw(2.2*k*k*Math.min(1,t/.06),t);if(k>0)tabRaf=requestAnimationFrame(f);})();}
+  function tabPlace(){var r=tabLogo.getBoundingClientRect(),w=tab.parentNode.getBoundingClientRect();tab.style.setProperty('--tx',(r.left+r.width/2-w.left-tabW/2+TAB_X[tabPh])+'px');}
+  function tabSet(ph){
+    if(ph===tabPh)return;tabPh=ph;tabPlace();
+    if(!tab.classList.contains('on')||reduce){tabT.firstChild.textContent='0'+(ph+1);tabT.lastChild.textContent=TAB_N[ph];tabFit();return;}
+    tabT.classList.add('swap');
+    setTimeout(function(){tabT.firstChild.textContent='0'+(ph+1);tabT.lastChild.textContent=TAB_N[ph];tabFit();tabT.classList.remove('swap');tabRing();},220);
+  }
+  function tabShow(){var r=pbox.getBoundingClientRect();tab.classList.toggle('on',pon&&r.top<innerHeight*.5&&r.bottom>innerHeight*.35);}
+  tabFit();window.addEventListener('resize',tabPlace);
+
   function pupd(){
-    pq=false;var ph=phase();
-    if(ph===pph)return;pph=ph;
+    pq=false;var ph=phase();tabShow();
+    if(ph===pph)return;pph=ph;tabSet(ph);
     pIdx.forEach(function(a,i){a.classList.toggle('done',i<ph);if(i===ph)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
     /* Al llegar a Desarrollo, el candado de las soluciones queda abierto */
     if(ph>0)score.classList.add('open');
   }
   window.addEventListener('scroll',function(){if(pon&&!pq){pq=true;requestAnimationFrame(pupd);}},{passive:true});
-  if('IntersectionObserver' in window)new IntersectionObserver(function(en){pon=en[0].isIntersecting;if(pon)pupd();}).observe(pbox);
+  if('IntersectionObserver' in window)new IntersectionObserver(function(en){pon=en[0].isIntersecting;if(pon)pupd();else tabShow();}).observe(pbox);
   else pon=true;
   pupd();
 
