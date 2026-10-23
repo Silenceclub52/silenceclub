@@ -87,13 +87,13 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 
 
 /* Hero */
-.hero{margin-top:-72px;padding:calc(72px + clamp(56px,10vh,140px)) 0 0;position:relative}
+.hero{margin-top:-72px;padding:calc(72px + clamp(56px,10vh,140px)) 0 clamp(80px,10vw,136px);position:relative}
 .hero h1{grid-column:1/span 11;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(56px,9.4vw,138px);line-height:.92;letter-spacing:-.035em}
-.hero .role{grid-column:1/span 6;align-self:start;margin-top:64px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:clamp(38px,4.3vw,62px);line-height:1.02;letter-spacing:-.02em}
-.hero .role .r2{display:block;font-weight:340}
+.hero .role{grid-column:1/span 6;align-self:start;margin-top:12px;font:600 clamp(34px,3.9vw,56px)/1.04 var(--sans);letter-spacing:-.04em}
+.hero .role .r2{display:block}
 .hero .role .r2t{opacity:.74}
 /* El sector: su icono y la palabra, que se recoge tras el icono y se despliega con el sector nuevo (en bucle) */
-.ind{display:inline-flex;align-items:center;gap:.16em;white-space:nowrap;vertical-align:baseline}
+.ind{display:inline-flex;align-items:center;gap:.18em;white-space:nowrap;vertical-align:baseline;font-size:.88em;font-family:var(--serif);font-style:italic;font-weight:400;font-variation-settings:"SOFT" 100;letter-spacing:-.01em}
 .ind-ic{position:relative;display:inline-block;width:.74em;height:.74em;transform:translateY(.04em)}
 .ind-i{position:absolute;inset:0;opacity:0;transform:scale(.6) rotate(-20deg);transition:opacity .35s,transform .5s cubic-bezier(.3,1.4,.45,1)}
 .ind-i.on{opacity:1;transform:none}
@@ -102,7 +102,7 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 .ind-t{display:inline-block;transition:transform .55s cubic-bezier(.65,0,.35,1),opacity .4s}
 .ind.fold .ind-t{transform:translateX(-35%);opacity:0}
 .ind-m{position:absolute;visibility:hidden;white-space:nowrap}
-.hero .pitch{grid-column:7/span 6;max-width:34em;margin-top:64px}
+.hero .pitch{grid-column:7/span 6;max-width:34em;margin-top:16px}
 .hero .pitch .hook{font-size:clamp(21px,1.95vw,27px);font-weight:400;line-height:1.32;letter-spacing:-.01em;color:var(--tinta);text-wrap:pretty}
 /* Las preguntas, como una conversación conmigo: mensajes que llegan uno a uno */
 .chat{display:flex;flex-direction:column;align-items:flex-start;gap:18px;margin-top:26px}
@@ -112,12 +112,11 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 .qa.off{opacity:0;transform:translateY(-6px) scale(.97);max-height:0;margin-top:-18px;overflow:hidden;pointer-events:none}
 .chat.measure .qa{transition:none}
 .msg{transition:background-color .9s,border-color .9s}
-.chat.is-b .msg{background:#FAF3F3;border-color:rgba(108,28,49,.13)}
 .msg{padding:10px 16px 15px;border:1px solid var(--linea);border-radius:18px 18px 18px 6px;background:var(--papel);font-size:clamp(15.5px,1.2vw,17px);line-height:1.38;color:var(--tinta);text-wrap:pretty}
 @keyframes msgin{from{opacity:0;transform:translateY(8px) scale(.98)}}
 /* La respuesta a cada pregunta: la mejora digital, como una etiqueta que asoma en la esquina del mensaje y destella */
 .ans{position:absolute;right:14px;bottom:-11px;display:inline-flex;align-items:center;gap:6px;height:23px;padding:0 10px 0 8px;overflow:hidden;border-radius:999px;background:var(--papel);
-  box-shadow:inset 0 0 0 1px var(--ac-b),0 6px 14px -8px rgba(28,30,42,.35);font:500 12px/1 var(--sans);color:var(--grafito);opacity:.82;white-space:nowrap;
+  box-shadow:inset 0 0 0 1px var(--ac-b),0 6px 14px -8px rgba(28,30,42,.35);font:500 12px/1 var(--sans);color:var(--tinta);white-space:nowrap;
   animation:anspop .5s cubic-bezier(.3,1.5,.45,1) both;animation-delay:calc(var(--d,0s) + .5s)}
 .ans::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;border:1px solid var(--ac);background:linear-gradient(90deg,transparent 50%,var(--ac) 50%)}
 .ans::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.85) 50%,transparent 70%);transform:translateX(-130%);animation:glim 1s ease both;animation-delay:calc(var(--d,0s) + .8s)}
@@ -148,7 +147,7 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 @keyframes btnfill{0%{transform:scaleX(0);opacity:1}50%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
 .btn.ghost{border:1px solid var(--linea)}
 .btn.ghost:hover{border-color:var(--tinta)}
-.wave{display:block;width:100%;height:180px;margin-top:56px;cursor:crosshair;touch-action:pan-y}
+.wave{display:block;width:100%;height:150px;margin-top:20px;cursor:crosshair;touch-action:pan-y}
 
 /* Secciones */
 section.block{padding:clamp(96px,14vw,176px) 0}
@@ -296,7 +295,6 @@ section.areas{padding-top:clamp(96px,12vw,152px)}
   :root:not([data-theme=light]) .ac-m{--ac:#F2967B;--ac-t:rgba(242,150,123,.1);--ac-b:rgba(242,150,123,.3)}
   :root:not([data-theme=light]) .ans::after{background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%)}
   :root:not([data-theme=light]) .sec{background:rgba(255,255,255,.08)}
-  :root:not([data-theme=light]) .chat.is-b .msg{background:#1A1517;border-color:rgba(240,176,194,.16)}
   :root:not([data-theme=light]) .sv.op{background:rgba(160,140,245,.14)}
   :root:not([data-theme=light]) .free{background:linear-gradient(135deg,#A08CF5,#C3B4FF);color:#0B0A0C;box-shadow:0 10px 24px -12px rgba(160,140,245,.7)}
   :root:not([data-theme=light]) .a-shadow{filter:drop-shadow(0 10px 14px rgba(0,0,0,.5))}
@@ -311,7 +309,6 @@ section.areas{padding-top:clamp(96px,12vw,152px)}
 :root[data-theme=dark] .ac-m{--ac:#F2967B;--ac-t:rgba(242,150,123,.1);--ac-b:rgba(242,150,123,.3)}
 :root[data-theme=dark] .ans::after{background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%)}
 :root[data-theme=dark] .sec{background:rgba(255,255,255,.08)}
-:root[data-theme=dark] .chat.is-b .msg{background:#1A1517;border-color:rgba(240,176,194,.16)}
 :root[data-theme=dark] .sv.op{background:rgba(160,140,245,.14)}
 :root[data-theme=dark] .free{background:linear-gradient(135deg,#A08CF5,#C3B4FF);color:#0B0A0C;box-shadow:0 10px 24px -12px rgba(160,140,245,.7)}
 :root[data-theme=dark] .a-shadow{filter:drop-shadow(0 10px 14px rgba(0,0,0,.5))}
@@ -406,7 +403,7 @@ section.more{padding-top:0}
 @media (max-width:900px){
   .hero .role,.hero .pitch{grid-column:1/-1}
   .hero .pitch{margin-top:32px}
-  .hero .role{margin-top:40px}
+  .hero .role{margin-top:8px}
 }
 
 /* Proyectos: cada uno es una tarjeta sobre el fondo; su línea de sonido hace de borde superior */
@@ -449,7 +446,7 @@ section.more{padding-top:0}
 .pj-meta{grid-row:1}
 .pj-title{grid-row:1/span 2}
 /* Desplegable: chevron claro, como en la web de Bela */
-.pj-chev{grid-column:12;grid-row:1/span 2;justify-self:end;align-self:center;width:34px;height:20px;overflow:visible;color:var(--violeta);transition:transform .6s cubic-bezier(.3,.8,.3,1)}
+.pj-chev{grid-column:12;grid-row:1/span 2;justify-self:end;align-self:center;width:34px;height:20px;overflow:visible;color:var(--ac,var(--violeta));transition:transform .6s cubic-bezier(.3,.8,.3,1)}
 .pj-chev path{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .pj-head:hover .pj-chev{transform:translateY(4px)}
 .pj.open .pj-chev{transform:rotate(180deg)}
@@ -758,7 +755,7 @@ a.shot:hover .bar span{color:var(--tinta)}
   :root{--gut:16px}
   .grid{grid-template-columns:repeat(4,1fr)}
   body{font-size:17px}
-  .wave{height:120px;margin-top:24px}
+  .wave{height:110px;margin-top:12px}
   .hero{padding-top:calc(72px + 48px)}
   .hero h1{grid-column:1/-1}
 }
@@ -925,6 +922,9 @@ a.shot:hover .bar span{color:var(--tinta)}
 <header class="hero" id="inicio">
   <div class="wrap grid">
     <h1>Primero, silencio.</h1>
+  </div>
+  <canvas class="wave" id="wave" aria-hidden="true"></canvas>
+  <div class="wrap grid">
     <h2 class="role" aria-label="Decisiones inteligentes para tu negocio de nightlife o de beauty">Decisiones inteligentes<span class="r2" aria-hidden="true"><span class="r2t">para tu negocio de</span> <span class="ind"><span class="ind-ic" aria-hidden="true"><span class="ind-i on" data-k="n"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g class="rays"><path class="ray" pathLength="1" d="M5.3 7.3L1.2 3.6" style="--d:.05s"/><path class="ray" pathLength="1" d="M15.3 9L19.6 7" style="--d:.3s"/><path class="ray" pathLength="1" d="M15 15.6L18.8 19" style="--d:.55s"/><path class="ray" pathLength="1" d="M4.4 15L.6 17.4" style="--d:.8s"/><path class="ray" pathLength="1" d="M3.6 11.5H-.8" style="--d:1s"/></g></svg></span><span class="ind-i" data-k="b"><svg class="pfi pfi-lip" viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="pfc-up2"><rect x="-4" y="-6" width="28" height="14.6"/></clipPath><clipPath id="pfc-lip2"><path d="M8.3 8.6V4.7L11.7 2.4V8.6Z"/><rect x="7.6" y="8.6" width="4.8" height="2.6"/><rect x="7" y="11.2" width="6" height="7.8" rx="1"/></clipPath></defs><g clip-path="url(#pfc-up2)"><path class="bul" d="M8.3 11V4.7L11.7 2.4V11"/></g><rect x="7.6" y="8.6" width="4.8" height="2.6" rx=".4"/><rect x="7" y="11.2" width="6" height="7.8" rx="1"/><g clip-path="url(#pfc-lip2)"><rect class="gl" x="9" y="-2" width="2.2" height="24" transform="rotate(24 10 10)"/></g><g transform="translate(14.6 3)" style="--d:0.25s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g><g transform="translate(4.4 6.2) scale(.7)" style="--d:0.55s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g><g transform="translate(15.6 13.6) scale(.6)" style="--d:0.85s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g></svg></span></span><span class="ind-w"><span class="ind-t">Nightlife</span></span><span class="ind-m" aria-hidden="true"></span></span></span></h2>
     <div class="pitch">
       <p class="hook">Identifico y creo mejoras <span class="hand">digitales<svg viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true"><path d="M1.6 8.7C24 7 52 6.2 80 6.4S111.6 7.1 118.5 6.6C119.5 6.5 119.7 7.4 118.7 7.6C111 9 83 8.4 60 8.5S22 9.7 2.4 10.2C1 10.25.7 8.8 1.6 8.7Z"/></svg></span> para negocios que aún no imaginan el impacto que pueden tener en él.</p>
@@ -945,7 +945,6 @@ a.shot:hover .bar span{color:var(--tinta)}
       </div>
     </div>
   </div>
-  <canvas class="wave" id="wave" aria-hidden="true"></canvas>
 </header>
 
 <section class="story" aria-label="Pausa">
@@ -1122,7 +1121,7 @@ a.shot:hover .bar span{color:var(--tinta)}
           </button>
           <div class="pj-body" id="pjb-condado" role="region" aria-label="Condado Club">
             <div class="pj-inner">
-              <a class="shot pj-media" href="https://www.condadoclub.es/" target="_blank" rel="noopener" aria-label="Ver la web de Condado Club (condadoclub.es, se abre en otra pestaña)"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>condadoclub.es</span><svg class="go" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></div><div class="frame web" style="--pan:-12.2%"><img src="img/condado-web.webp" alt="Portada de la web de Condado Club" loading="lazy"></div></a>
+              <a class="shot pj-media" href="https://www.condadoclub.es/" target="_blank" rel="noopener" aria-label="Ver la web de Condado Club (condadoclub.es, se abre en otra pestaña)"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>condadoclub.es</span><svg class="go" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></div><div class="frame web" style="--pan:-44.7%"><img src="img/condado-web.webp" alt="Portada de la web de Condado Club" loading="lazy"></div></a>
               <div class="pj-text">
                 <p class="pj-lbl">Qué necesitaba</p>
                 <p class="pj-ctx">Su web no estaba alineada con lo que su marca pretendía comunicar, con su valor. No había coherencia estética ni visual: no iban a la par.</p>
@@ -1347,10 +1346,14 @@ a.shot:hover .bar span{color:var(--tinta)}
     var cl=function(v){return v<0?0:v>1?1:v}, ss=function(v){v=cl(v);return v*v*(3-2*v)};
     return 28*ss((t-.25)/.2)*(1-ss((t-.75)/.6));
   }
+  var bursts=[],nextBurst=0;
   function draw(t){
     ctx.clearRect(0,0,W,H);
     var mid=H/2, k=reduce?0:Math.max(0,1-t/3.2), soft=window.__scIntro!=null, ts=soft?(performance.now()-window.__scIntro)/1000:0, intro=soft?introSoft(ts):74*Math.pow(k,2.4), sig=Math.max(60,W*.07), bs=Math.max(90,W*.11);
     energy+=(target-energy)*.08; target*=.96;
+    /* Intentos de ruido: cada pocos segundos, en un tramo al azar, la línea se agita un poco y vuelve a la calma */
+    if(!reduce&&t>3.5&&t>=nextBurst){bursts.push({x:W*(.08+.84*Math.random()),a:5+9*Math.random(),w:40+80*Math.random(),t0:t,dur:1.3+1.1*Math.random(),p:Math.random()*6,e:0});nextBurst=t+2.2+3.6*Math.random();}
+    bursts=bursts.filter(function(b){var q=(t-b.t0)/b.dur;if(q>=1)return false;b.e=q<.18?q/.18:Math.pow(1-(q-.18)/.82,2);return true;});
     var g=ctx.createLinearGradient(0,0,W,0);
     if(px>0&&px<W&&energy>.02){
       var p=px/W, s=Math.min(.12,sig/W*1.6);
@@ -1358,7 +1361,8 @@ a.shot:hover .bar span{color:var(--tinta)}
     } else { g.addColorStop(0,ink); g.addColorStop(1,ink); }
     ctx.beginPath();
     for(var x=0;x<=W;x+=3){
-      var idle=reduce?0:(Math.sin(x*.012+t*.6)*.6+Math.sin(x*.031-t*.9)*.4)*1.4;
+      var idle=reduce?0:(Math.sin(x*.012+t*.6)*.6+Math.sin(x*.031-t*.9)*.4)*2.2;
+      for(var bi=0;bi<bursts.length;bi++){var b=bursts[bi],bd=x-b.x;idle+=b.e*b.a*Math.exp(-(bd*bd)/(2*b.w*b.w))*(Math.sin(x*.09-t*13+b.p)*.6+Math.sin(x*.21+t*19)*.4);}
       var env=Math.sin(Math.PI*x/W);
       var noise=Math.sin(x*.018-t*7)*.45+Math.sin(x*.047+t*11)*.3+Math.sin(x*.113-t*19)*.25;
       /* Con la intro del logo: montañas y valles concentrados en el centro, con el mismo ruido que la línea del logo */
@@ -1588,7 +1592,7 @@ a.shot:hover .bar span{color:var(--tinta)}
       qas.forEach(function(q){q.classList.toggle('off',!has(q,cur));});void chat.offsetWidth;chat.classList.remove('measure');chat.style.minHeight=h+'px';}
     function play(i){i.classList.remove('play');void i.offsetWidth;i.classList.add('play');}
     function setQ(k){
-      chat.classList.toggle('is-b',k==='b');var j=0;
+      var j=0;
       qas.forEach(function(q){var on=has(q,k);if(on===!q.classList.contains('off'))return;
         if(!on){q.classList.add('off');return;}
         (function(q,j){setTimeout(function(){q.style.setProperty('--d','0s');var a=q.querySelector('.ans');a.style.animation='none';void a.offsetWidth;a.style.animation='';q.classList.remove('off');},500+j*550);})(q,j++);
