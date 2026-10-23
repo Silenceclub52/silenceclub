@@ -89,19 +89,19 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 /* Hero */
 .hero{margin-top:-72px;padding:calc(72px + clamp(56px,10vh,140px)) 0 clamp(80px,10vw,136px);position:relative}
 .hero h1{grid-column:1/span 11;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(56px,9.4vw,138px);line-height:.92;letter-spacing:-.035em}
-.hero .role{grid-column:1/span 6;align-self:start;margin-top:12px;font:600 clamp(34px,3.9vw,56px)/1.04 var(--sans);letter-spacing:-.04em}
+.hero .role{grid-column:1/span 6;align-self:start;margin-top:12px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:420;font-size:clamp(36px,4vw,58px);line-height:1.06;letter-spacing:-.022em}
 .hero .role .r2{display:block}
-.hero .role .r2t{opacity:.74}
-/* El sector: su icono y la palabra, que se recoge tras el icono y se despliega con el sector nuevo (en bucle) */
-.ind{display:inline-flex;align-items:center;gap:.18em;white-space:nowrap;vertical-align:baseline;font-size:.88em;font-family:var(--serif);font-style:italic;font-weight:400;font-variation-settings:"SOFT" 100;letter-spacing:-.01em}
-.ind-ic{position:relative;display:inline-block;width:.74em;height:.74em;transform:translateY(.04em)}
-.ind-i{position:absolute;inset:0;opacity:0;transform:scale(.6) rotate(-20deg);transition:opacity .35s,transform .5s cubic-bezier(.3,1.4,.45,1)}
-.ind-i.on{opacity:1;transform:none}
-.ind-i .pfi{width:100%;height:100%;stroke-width:1.05}
-.ind-w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em;transition:width .55s cubic-bezier(.65,0,.35,1)}
-.ind-t{display:inline-block;transition:transform .55s cubic-bezier(.65,0,.35,1),opacity .4s}
-.ind.fold .ind-t{transform:translateX(-35%);opacity:0}
-.ind-m{position:absolute;visibility:hidden;white-space:nowrap}
+.hero .role .r2t{font-weight:340;opacity:.62}
+/* El sector, en cursiva y en la misma celda que el otro (no se mueve nada al cambiar). Al cambiar, la palabra se
+   disuelve, la línea de debajo suena y se ajusta al ancho de la nueva, y la nueva se enfoca letra a letra */
+.sector{position:relative;display:inline-grid;vertical-align:baseline;font-style:italic;font-weight:380}
+.sw{grid-area:1/1;justify-self:start;white-space:nowrap}
+.sw i{display:inline-block;font-style:inherit;opacity:0;filter:blur(6px);transform:translateY(.14em);transition:opacity .55s ease-out,filter .7s ease-out,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i)*32ms)}
+.sw.on i{opacity:1;filter:blur(0);transform:none}
+.sw.out i{opacity:0;filter:blur(5px);transform:translateY(-.06em);transition-duration:.4s,.45s,.45s;transition-timing-function:ease-in;transition-delay:calc(var(--i)*14ms)}
+.sline{position:absolute;left:0;bottom:-.16em;height:.34em;overflow:visible;pointer-events:none;opacity:0;transition:opacity .6s}
+.sline.ready{opacity:1}
+.sline path{fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;vector-effect:non-scaling-stroke;opacity:.5}
 .hero .pitch{grid-column:7/span 6;max-width:34em;margin-top:16px}
 .hero .pitch .hook{font-size:clamp(21px,1.95vw,27px);font-weight:400;line-height:1.32;letter-spacing:-.01em;color:var(--tinta);text-wrap:pretty}
 /* Las preguntas, como una conversación conmigo: mensajes que llegan uno a uno */
@@ -925,7 +925,7 @@ a.shot:hover .bar span{color:var(--tinta)}
   </div>
   <canvas class="wave" id="wave" aria-hidden="true"></canvas>
   <div class="wrap grid">
-    <h2 class="role" aria-label="Decisiones inteligentes para tu negocio de nightlife o de beauty">Decisiones inteligentes<span class="r2" aria-hidden="true"><span class="r2t">para tu negocio de</span> <span class="ind"><span class="ind-ic" aria-hidden="true"><span class="ind-i on" data-k="n"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g class="rays"><path class="ray" pathLength="1" d="M5.3 7.3L1.2 3.6" style="--d:.05s"/><path class="ray" pathLength="1" d="M15.3 9L19.6 7" style="--d:.3s"/><path class="ray" pathLength="1" d="M15 15.6L18.8 19" style="--d:.55s"/><path class="ray" pathLength="1" d="M4.4 15L.6 17.4" style="--d:.8s"/><path class="ray" pathLength="1" d="M3.6 11.5H-.8" style="--d:1s"/></g></svg></span><span class="ind-i" data-k="b"><svg class="pfi pfi-lip" viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="pfc-up2"><rect x="-4" y="-6" width="28" height="14.6"/></clipPath><clipPath id="pfc-lip2"><path d="M8.3 8.6V4.7L11.7 2.4V8.6Z"/><rect x="7.6" y="8.6" width="4.8" height="2.6"/><rect x="7" y="11.2" width="6" height="7.8" rx="1"/></clipPath></defs><g clip-path="url(#pfc-up2)"><path class="bul" d="M8.3 11V4.7L11.7 2.4V11"/></g><rect x="7.6" y="8.6" width="4.8" height="2.6" rx=".4"/><rect x="7" y="11.2" width="6" height="7.8" rx="1"/><g clip-path="url(#pfc-lip2)"><rect class="gl" x="9" y="-2" width="2.2" height="24" transform="rotate(24 10 10)"/></g><g transform="translate(14.6 3)" style="--d:0.25s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g><g transform="translate(4.4 6.2) scale(.7)" style="--d:0.55s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g><g transform="translate(15.6 13.6) scale(.6)" style="--d:0.85s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g></svg></span></span><span class="ind-w"><span class="ind-t">Nightlife</span></span><span class="ind-m" aria-hidden="true"></span></span></span></h2>
+    <h2 class="role" aria-label="Decisiones inteligentes para tu negocio de nightlife o de beauty">Decisiones inteligentes<span class="r2" aria-hidden="true"><span class="r2t">para tu negocio de</span> <span class="sector"><span class="sw on" data-k="n"><i style="--i:0">n</i><i style="--i:1">i</i><i style="--i:2">g</i><i style="--i:3">h</i><i style="--i:4">t</i><i style="--i:5">l</i><i style="--i:6">i</i><i style="--i:7">f</i><i style="--i:8">e</i></span><span class="sw" data-k="b"><i style="--i:0">b</i><i style="--i:1">e</i><i style="--i:2">a</i><i style="--i:3">u</i><i style="--i:4">t</i><i style="--i:5">y</i></span><svg class="sline"><path/></svg></span></span></h2>
     <div class="pitch">
       <p class="hook">Identifico y creo mejoras <span class="hand">digitales<svg viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true"><path d="M1.6 8.7C24 7 52 6.2 80 6.4S111.6 7.1 118.5 6.6C119.5 6.5 119.7 7.4 118.7 7.6C111 9 83 8.4 60 8.5S22 9.7 2.4 10.2C1 10.25.7 8.8 1.6 8.7Z"/></svg></span> para negocios que aún no imaginan el impacto que pueden tener en él.</p>
       <div class="chat">
@@ -1576,44 +1576,53 @@ a.shot:hover .bar span{color:var(--tinta)}
     }
   }
 
-  /* Hero: el sector va cambiando (Nightlife ↔ Beauty) cuando ya ha dado tiempo a verlo todo. La palabra se recoge tras
-     el icono y se despliega con la nueva, el icono hace su animación y las preguntas se adaptan: salen las que no tocan y
-     entran, una a una, las del sector. Solo corre con el hero a la vista; con "reducir movimiento", se queda en Nightlife */
+  /* Hero: el sector va cambiando (nightlife ↔ beauty) cuando ya ha dado tiempo a verlo todo. La palabra se disuelve,
+     la línea de debajo suena y se ajusta al ancho de la nueva, que se enfoca letra a letra (ruido → calma), y las
+     preguntas se adaptan. Solo corre con el hero a la vista; con "reducir movimiento", se queda en nightlife */
   (function(){
-    var ind=document.querySelector('.ind'),chat=document.querySelector('.chat');if(!ind||!chat)return;
-    var w=ind.querySelector('.ind-w'),t=ind.querySelector('.ind-t'),m=ind.querySelector('.ind-m'),ics=[].slice.call(ind.querySelectorAll('.ind-i')),
-        qas=[].slice.call(chat.querySelectorAll('.qa')),S={n:'Nightlife',b:'Beauty'},cur='n',vis=true,acc=0,next=9500;
-    function wOf(x){m.textContent=x;return Math.ceil(m.getBoundingClientRect().width);}
-    function fit(){if(!ind.classList.contains('fold'))w.style.width=wOf(t.textContent)+'px';}
+    var sec=document.querySelector('.sector'),chat=document.querySelector('.chat');if(!sec||!chat)return;
+    var sv=sec.querySelector('.sline'),sp=sv.querySelector('path'),W={},qas=[].slice.call(chat.querySelectorAll('.qa')),cur='n',vis=true,acc=0,next=9500;
+    [].forEach.call(sec.querySelectorAll('.sw'),function(e){W[e.getAttribute('data-k')]=e;});
+    var L={w:0,w0:0,w1:0,t0:-9,run:false},ln0=performance.now();
+    function wOf(k){return W[k].getBoundingClientRect().width;}
     function has(q,k){return q.getAttribute('data-s').indexOf(k)>=0;}
+    /* La línea: respira apenas y, durante el cambio, suena y se calma mientras cambia de ancho */
+    function lpath(now){
+      var q=Math.min(1,(now-L.t0)/1150),e=function(v){v=Math.max(0,Math.min(1,v));return v<.5?4*v*v*v:1-Math.pow(-2*v+2,3)/2;};
+      L.w=L.w0+(L.w1-L.w0)*e((q-.12)/.7);
+      var A=reduce?0:3.4*Math.pow(Math.sin(Math.PI*q),1.3),t=(now-ln0)/1000,d='',w=Math.max(1,L.w);
+      sv.setAttribute('width',w.toFixed(1));sv.setAttribute('viewBox','0 0 '+w.toFixed(1)+' 12');
+      for(var x=0;x<=w+2;x+=2){var X=Math.min(x,w),en=Math.sin(Math.PI*X/w);
+        var y=6+(reduce?0:.55*Math.sin(X*.05+t*1.6))+A*en*(Math.sin(X*.21-t*15)*.6+Math.sin(X*.47+t*23)*.4);d+=(x?'L':'M')+X.toFixed(1)+' '+y.toFixed(2);}
+      sp.setAttribute('d',d);return q<1;
+    }
+    function lloop(){if(!vis||document.hidden){L.run=false;return;}lpath(performance.now());requestAnimationFrame(lloop);}
+    function lstart(){if(!L.run&&!reduce){L.run=true;requestAnimationFrame(lloop);}}
+    function fit(){L.w=L.w0=L.w1=wOf(cur);lpath(performance.now());sv.classList.add('ready');}
     /* Alto fijo para la conversación (el del sector con más preguntas): así no salta lo de debajo al cambiar */
     function minH(){chat.style.minHeight='';chat.classList.add('measure');var h=0;
       ['n','b'].forEach(function(k){qas.forEach(function(q){q.classList.toggle('off',!has(q,k));});h=Math.max(h,chat.offsetHeight);});
       qas.forEach(function(q){q.classList.toggle('off',!has(q,cur));});void chat.offsetWidth;chat.classList.remove('measure');chat.style.minHeight=h+'px';}
-    function play(i){i.classList.remove('play');void i.offsetWidth;i.classList.add('play');}
-    function setQ(k){
-      var j=0;
+    function setQ(k){var j=0;
       qas.forEach(function(q){var on=has(q,k);if(on===!q.classList.contains('off'))return;
         if(!on){q.classList.add('off');return;}
         (function(q,j){setTimeout(function(){q.style.setProperty('--d','0s');var a=q.querySelector('.ans');a.style.animation='none';void a.offsetWidth;a.style.animation='';q.classList.remove('off');},500+j*550);})(q,j++);
       });
     }
     function swap(){
-      cur=cur==='n'?'b':'n';var k=cur;
-      w.style.width=w.getBoundingClientRect().width+'px';void w.offsetWidth;ind.classList.add('fold');w.style.width='0px';
-      setTimeout(function(){
-        t.textContent=S[k];
-        ics.forEach(function(i){var on=i.getAttribute('data-k')===k;i.classList.toggle('on',on);if(on)play(i);});
-        ind.classList.remove('fold');w.style.width=wOf(S[k])+'px';
-      },560);
-      setQ(k);
+      var from=W[cur];cur=cur==='n'?'b':'n';var to=W[cur];
+      from.classList.remove('on');from.classList.add('out');
+      L.w0=L.w;L.w1=wOf(cur);L.t0=performance.now();
+      setTimeout(function(){to.classList.add('on');},420);
+      setTimeout(function(){from.classList.remove('out');},1000);
+      setQ(cur);
     }
-    fit();minH();
+    function ready(){fit();minH();}
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(ready);else ready();
     window.addEventListener('resize',function(){fit();minH();});
-    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){fit();minH();});
     if(reduce)return;
-    setTimeout(function(){play(ics[0]);},400);
-    if('IntersectionObserver' in window)new IntersectionObserver(function(en){vis=en[0].isIntersecting;},{threshold:.25}).observe(chat);
+    if('IntersectionObserver' in window)new IntersectionObserver(function(en){vis=en[0].isIntersecting;if(vis)lstart();},{threshold:.15}).observe(sec.closest('.hero'));
+    lstart();
     setInterval(function(){if(!vis||document.hidden)return;acc+=250;if(acc>=next){acc=0;next=9000;swap();}},250);
   })();
 
