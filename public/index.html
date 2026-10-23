@@ -8,8 +8,8 @@
 <script>/* Modo elegido con el interruptor ("modo|modo del sistema al elegirlo"): vale mientras el sistema no cambie */
 try{var t=(localStorage.getItem('sc-theme')||'').split('|'),s=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
 if((t[0]==='light'||t[0]==='dark')&&t[1]===s)document.documentElement.setAttribute('data-theme',t[0]);else localStorage.removeItem('sc-theme');}catch(e){}</script>
-<title>Silence Club · Dirección creativa y estratégica</title>
-<meta name="description" content="Acompaño a personas con un negocio que todavía no ven todo lo que pueden construir con él. Estrategia de marca, identidad, web y captación.">
+<title>Silence Club · Decisiones inteligentes para tu negocio</title>
+<meta name="description" content="Identifico y creo mejoras digitales para negocios que aún no imaginan el impacto que pueden tener. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
 <meta name="author" content="Jorge · Silence Club">
 <meta name="application-name" content="Silence Club">
 <meta name="apple-mobile-web-app-title" content="Silence Club">
@@ -22,19 +22,19 @@ if((t[0]==='light'||t[0]==='dark')&&t[1]===s)document.documentElement.setAttribu
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Silence Club">
 <meta property="og:url" content="https://silenceclub.es/">
-<meta property="og:title" content="Silence Club · Dirección creativa y estratégica">
-<meta property="og:description" content="Acompaño a personas con un negocio que todavía no ven todo lo que pueden construir con él. Estrategia de marca, identidad, web y captación.">
+<meta property="og:title" content="Silence Club · Decisiones inteligentes para tu negocio">
+<meta property="og:description" content="Identifico y creo mejoras digitales para negocios que aún no imaginan el impacto que pueden tener. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
 <meta property="og:image" content="https://silenceclub.es/img/og-silenceclub.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Silence Club. Primero, silencio. Dirección creativa y estratégica. silenceclub.es">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Silence Club · Dirección creativa y estratégica">
-<meta name="twitter:description" content="Acompaño a personas con un negocio que todavía no ven todo lo que pueden construir con él. Estrategia de marca, identidad, web y captación.">
+<meta name="twitter:title" content="Silence Club · Decisiones inteligentes para tu negocio">
+<meta name="twitter:description" content="Identifico y creo mejoras digitales para negocios que aún no imaginan el impacto que pueden tener. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
 <meta name="twitter:image" content="https://silenceclub.es/img/og-silenceclub.jpg">
 <meta name="twitter:image:alt" content="Silence Club. Primero, silencio. Dirección creativa y estratégica. silenceclub.es">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Silence Club", "url": "https://silenceclub.es/", "description": "Acompaño a personas con un negocio que todavía no ven todo lo que pueden construir con él. Estrategia de marca, identidad, web y captación.", "slogan": "Primero, silencio.", "email": "info@silenceclub.es", "logo": "https://silenceclub.es/icon-512.png", "image": "https://silenceclub.es/img/og-silenceclub.jpg", "founder": {"@type": "Person", "name": "Jorge", "jobTitle": "Director creativo y estratégico"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Silence Club", "url": "https://silenceclub.es/", "description": "Identifico y creo mejoras digitales para negocios que aún no imaginan el impacto que pueden tener. Mapas 3D de reservas, paneles en tiempo real y webs que venden.", "slogan": "Primero, silencio.", "email": "info@silenceclub.es", "logo": "https://silenceclub.es/icon-512.png", "image": "https://silenceclub.es/img/og-silenceclub.jpg", "founder": {"@type": "Person", "name": "Jorge", "jobTitle": "Fundador de Silence Club"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,100;1,9..144,300..600,100&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -88,13 +88,16 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 
 /* Hero */
 .hero{margin-top:-72px;padding:calc(72px + clamp(56px,10vh,140px)) 0 0;position:relative}
-.hero h1{grid-column:1/span 11;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(64px,12vw,176px);line-height:.92;letter-spacing:-.035em}
-.hero .role{grid-column:1/span 5;margin-top:64px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:clamp(34px,3.8vw,56px);line-height:1.02;letter-spacing:-.02em}
-.hero .role span{display:block;color:var(--grafito);font-weight:340}
+.hero h1{grid-column:1/-1;max-width:11.5em;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(50px,7.4vw,116px);line-height:.96;letter-spacing:-.035em;text-wrap:balance}
+/* Qué hago, a la izquierda; las preguntas, a la derecha */
+.hero .hook{grid-column:1/span 5;align-self:start;margin-top:64px;font-size:clamp(22px,2vw,29px);font-weight:400;line-height:1.3;letter-spacing:-.012em;color:var(--tinta);text-wrap:pretty}
 .hero .pitch{grid-column:7/span 6;max-width:34em;margin-top:64px}
-.hero .pitch .hook{font-size:clamp(21px,1.9vw,27px);font-weight:400;line-height:1.3;letter-spacing:-.01em;color:var(--tinta);text-wrap:pretty}
-.hero .pitch .lead{margin-top:1em;font-size:clamp(17px,1.45vw,20px);line-height:1.5;color:var(--tinta);opacity:.86;text-wrap:pretty}
-.hero .pitch .punch{display:block;width:fit-content;margin-top:.45em;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:clamp(19px,1.55vw,22px);line-height:1.3;color:var(--tinta);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}
+.asks{margin:0;padding:0;list-style:none;border-bottom:1px solid var(--linea)}
+.asks li{position:relative;padding:12px 0 12px 28px;border-top:1px solid var(--linea);font-size:clamp(16px,1.3vw,18px);line-height:1.4;text-wrap:pretty}
+/* Un punto vacío por pregunta, como una casilla por responder */
+.asks li::before{content:"";position:absolute;left:1px;top:calc(12px + .7em - 5.5px);width:11px;height:11px;border-radius:50%;border:1px solid var(--grafito)}
+.hero .pitch .lead{margin-top:22px;font-size:clamp(17px,1.45vw,20px);line-height:1.5;color:var(--tinta);opacity:.86}
+.hero .pitch .punch{display:block;width:fit-content;margin-top:.3em;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:clamp(19px,1.55vw,22px);line-height:1.3;color:var(--tinta);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}
 .hero .actions{display:flex;gap:12px 16px;flex-wrap:wrap;margin-top:36px}
 .btn{display:inline-flex;align-items:center;height:52px;padding:0 28px;border-radius:999px;font:500 16px/1 var(--sans);text-decoration:none;transition:background .25s,color .25s,border-color .25s}
 .btn.solid{background:var(--tinta);color:var(--papel)}
@@ -124,116 +127,84 @@ section.block{padding:clamp(96px,14vw,176px) 0}
 .story .hush path{fill:none;stroke:var(--grafito);stroke-width:1.25;vector-effect:non-scaling-stroke;opacity:.7}
 @media (max-width:600px){.motto br{display:none}}
 
-/* Cómo trabajo: un proyecto en tres fases y, aparte, lo que viene después */
-section.proc-sec{padding-top:clamp(40px,5vw,72px)}
-.proc-head .h2{grid-column:1/span 8}
-.proc-lead{grid-column:1/span 6;margin-top:24px;font-size:clamp(18px,1.5vw,21px);line-height:1.5;color:var(--grafito)}
-.proc{margin-top:clamp(64px,8vw,112px);align-items:start}
-/* Índice fijo: vacío, medio y lleno, como las viñetas de los proyectos */
-.proc-side{grid-column:1/span 3;position:sticky;top:120px}
-.proc-idx{position:relative;margin:0;padding:0;list-style:none}
-.proc-idx::before{content:"";position:absolute;left:5px;top:10px;bottom:10px;width:1px;background:var(--linea)}
-.proc-idx li+li{margin-top:22px}
-.proc-idx a{position:relative;display:block;padding-left:28px;font-size:15px;line-height:1.3;color:var(--grafito);text-decoration:none;transition:color .3s}
-.proc-idx a>i{position:absolute;left:0;top:4px;width:11px;height:11px;border-radius:50%;border:1px solid currentColor;background:var(--niebla);transition:background .3s}
-.proc-idx a.done>i{background:currentColor}
-.proc-idx a[aria-current]>i{background:linear-gradient(90deg,var(--niebla) 50%,currentColor 50%)}
-.proc-idx a span{margin-right:8px;font-size:12px;letter-spacing:.08em;opacity:.7}
-.proc-idx a:hover,.proc-idx a[aria-current]{color:var(--tinta)}
-.proc-idx .st{display:flex;font-style:normal;align-items:center;gap:7px;max-height:0;overflow:hidden;opacity:0;font-size:13px;color:var(--grafito);transition:max-height .4s,opacity .4s,margin .4s}
-.proc-idx a[aria-current] .st{max-height:22px;margin-top:5px;opacity:1}
-.proc-idx .st::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--violeta);animation:rec 1.8s ease-in-out infinite}
-@keyframes rec{50%{opacity:.25}}
-.proc-steps{grid-column:5/span 8}
-.ph{padding:clamp(56px,10vh,112px) 0}
-.ph:first-child{padding-top:0}
-.ph:last-child{padding-bottom:0}
-.ph-n{font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--grafito)}
-.ph-n span::after{content:"·";margin:0 .6em}
-.ph h3{margin-top:12px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(34px,3.6vw,54px);line-height:1.02;letter-spacing:-.025em;text-wrap:balance}
-.ph-p{margin-top:22px;max-width:34em;font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--grafito);text-wrap:pretty}
-/* Inicio: el scoring (puntos a medias) en su tarjeta y, debajo, lo que sale de él en dos cajas */
-.score{max-width:640px;margin:40px 0 0}
-.score-c{padding:24px 28px 26px;border:1px solid var(--linea);border-radius:16px;background:var(--papel);box-shadow:0 24px 50px -32px rgba(28,30,42,.3)}
+/* Servicio: la pregunta; debajo, la escucha y el scoring (gratis) */
+section.svc{padding-bottom:0}
+.svc-h{grid-column:1/span 9;text-wrap:balance}
+.svc-l{grid-column:1/span 5;margin-top:clamp(56px,7vw,96px)}
+.svc-t{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(28px,3vw,42px);line-height:1.08;letter-spacing:-.022em;text-wrap:balance}
+.score{--sp:28px;grid-column:7/span 6;margin-top:clamp(56px,7vw,96px)}
+.score-c{margin:0;padding:24px var(--sp) 0;overflow:hidden;border:1px solid var(--linea);border-radius:16px;background:var(--papel);box-shadow:0 24px 50px -32px rgba(28,30,42,.3)}
 .score-h{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 .score-h em{flex:none;padding:3px 10px;border:1px solid var(--linea);border-radius:999px;font-style:normal;font-size:12px;color:var(--grafito)}
 .score-k0{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--grafito)}
 .score-t{display:block;margin-top:6px;font-weight:600;font-size:18px;letter-spacing:-.005em}
 .score-l{margin:14px 0 0;padding:0;list-style:none}
-.score-l li{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:46px;border-top:1px solid var(--linea);font-size:15px}
+.score-l li{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:46px;padding:6px 0;border-top:1px solid var(--linea);font-size:15px;line-height:1.35}
 /* Puntuación con puntos: vacío, medio y lleno, como el punto del logo */
-.sds{display:inline-flex;gap:6px;color:var(--tinta)}
+.sds{display:inline-flex;flex:none;gap:6px;color:var(--tinta)}
 .sd{position:relative;width:11px;height:11px;border-radius:50%;border:1px solid currentColor}
 .sd.f::after,.sd.h::after{content:"";position:absolute;inset:-1px;border-radius:50%;background:currentColor;transition:opacity .9s cubic-bezier(.45,0,.55,1) var(--d,0s)}
 .sd.h::after{clip-path:inset(0 0 0 50%)}
 .score.wait .sd::after{opacity:0}
-.score-k{margin:22px 0 10px;font-size:13px;color:var(--grafito)}
-.score-out{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0;padding:0;list-style:none}
-.score-out>li{display:flex;align-items:center;gap:12px;padding:16px 18px;border:1px solid var(--linea);border-radius:12px;font-size:15px;line-height:1.35}
-.row-l{display:inline-flex;align-items:center;gap:10px}
-.eur{display:inline-grid;place-items:center;flex:none;width:24px;height:24px;border-radius:50%;background:rgba(107,79,214,.12);font:600 12px/1 var(--sans);font-style:normal;color:var(--violeta)}
-.score .ok{flex:none;width:18px;height:18px;margin-left:auto;fill:none;stroke:var(--violeta);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-/* Soluciones: bajo llave hasta la fase siguiente */
-.score .sol{display:block}
-.sol-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 12px}
-.unlock{display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 12px 0 10px;border:1px solid var(--linea);border-radius:999px;background:var(--papel);font-size:13px;color:var(--tinta);text-decoration:none;white-space:nowrap;transition:border-color .3s}
-.unlock svg{width:14px;height:16px;overflow:visible;fill:none;stroke:var(--violeta);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.unlock .shk{transform-box:view-box;transform-origin:11.5px 8px;transition:transform .5s cubic-bezier(.3,.8,.3,1)}
-.unlock:hover{border-color:var(--violeta)}
-.unlock:hover .shk{transform:translateY(-1.5px)}
-.score.open .unlock .shk{transform:translateY(-2px) rotate(28deg)}
-.sol-blur{display:block;margin-top:10px;font-size:14px;line-height:1.5;color:var(--grafito);filter:blur(5px);user-select:none;transition:filter .6s}
-.sol:hover .sol-blur{filter:blur(3.5px)}
-@media (max-width:600px){
-  .score-c{padding:20px 18px 22px}
-  .score-out{grid-template-columns:1fr}
-}
-/* Candado: al llegar a las soluciones (media pantalla) se sacude un poco, cerrado; al llegar a Desarrollo se abre */
-.unlock.nudge svg{animation:lockwig .9s cubic-bezier(.45,0,.55,1) 1;transform-origin:50% 100%}
-.unlock.nudge{border-color:var(--violeta)}
-@keyframes lockwig{20%{transform:rotate(-9deg)}45%{transform:rotate(7deg)}70%{transform:rotate(-3deg)}100%{transform:none}}
-.score.open .unlock{border-color:var(--violeta)}
-.score.open .unlock .shk{transition-duration:.8s}
-/* Desarrollo: las tres patas como servicios, cada una con su línea */
-.pils{display:grid;gap:48px;margin:58px 0 0;padding:0;list-style:none}
-/* La cinta de sonido hace de borde superior de la caja */
-.pil{position:relative;border:1px solid var(--linea);border-top:0;border-radius:0 0 16px 16px;background:var(--papel);box-shadow:0 24px 50px -32px rgba(28,30,42,.3)}
-.pil-line{position:absolute;left:-1px;top:-22px;display:block;width:calc(100% + 2px);height:44px}
-.pil-b{padding:34px clamp(20px,2.4vw,28px) 24px}
-.pil-pain{position:relative;padding-left:14px;font-size:clamp(15px,1.15vw,17px);line-height:1.45;color:var(--grafito)}
-.pil-k{display:block;margin-bottom:4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--violeta)}
-.pil-pain::before{content:"";position:absolute;left:0;top:.2em;bottom:.2em;width:2px;border-radius:2px;background:var(--linea)}
-.pil h4{margin-top:16px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(31px,3vw,44px);line-height:1.02;letter-spacing:-.022em;text-wrap:balance}
-.pil-one{margin-top:12px;font-size:clamp(17px,1.3vw,18px);line-height:1.5}
-/* Entregables plegados: el título manda; el detalle, a un toque */
-.pil-more{margin-top:18px}
-.pil-tg{position:relative;display:inline-flex;align-items:center;gap:10px;padding:6px 0 8px;background:none;border:0;font:500 14px/1.2 var(--sans);color:var(--tinta);cursor:pointer}
-.pil-tg .pil-ln,.pil-more.open .pil-tg .pil-ln{position:absolute;left:0;bottom:-6px;width:100%;height:12px;overflow:visible;pointer-events:none;transform:none;transition:none}
-.pil-ln path{fill:none;stroke:var(--linea);stroke-width:1;vector-effect:non-scaling-stroke;transition:stroke .4s}
-.pil-tg:hover .pil-ln path,.pil-more.open .pil-ln path{stroke:var(--grafito)}
-.pil-tg svg{width:14px;height:9px;overflow:visible;fill:none;stroke:var(--violeta);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .5s cubic-bezier(.3,.8,.3,1)}
-.pil-more.open .pil-tg svg{transform:rotate(180deg)}
-.pil-dw{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.3,.8,.3,1)}
-.pil-dw>.pil-does{overflow:hidden;min-height:0;margin:0;opacity:0;transition:opacity .4s}
-.pil-more.open .pil-dw{grid-template-rows:1fr}
-.pil-more.open .pil-dw>.pil-does{margin-top:14px;opacity:1}
-.pil-does,.pj-tags{display:flex;flex-wrap:wrap;gap:6px 18px;margin:16px 0 0;padding:0;list-style:none;font-size:14px;color:var(--grafito)}
-.pil-does li,.pj-tags>span{display:inline-flex;align-items:center;gap:8px}
-.pil-does li::before,.pj-tags>span::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;border:1px solid currentColor;background:linear-gradient(90deg,transparent 50%,currentColor 50%)}
-/* Precio: aún sin cifra (··· €), con el check de "se incluye" */
-.pil-price{display:flex;align-items:center;gap:10px;margin:22px calc(-1*clamp(20px,2.4vw,28px)) -24px;padding:14px clamp(20px,2.4vw,28px) 16px;border-top:1px solid var(--linea);border-radius:0 0 15px 15px;background:rgba(107,79,214,.06);background:color-mix(in srgb,var(--violeta) 5%,var(--niebla));font-size:14px;color:var(--grafito)}
-.pil-price .ok,.ph-incl .ok{flex:none;width:16px;height:16px;fill:none;stroke:var(--violeta);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.pil-price span{margin-left:auto;white-space:nowrap}
+/* Pie de la tarjeta: en lugar de precio, "Free", en la misma franja con tinte violeta */
+.score-free{display:flex;align-items:center;gap:10px;margin:12px calc(-1*var(--sp)) 0;padding:14px var(--sp) 16px;border-top:1px solid var(--linea);background:rgba(107,79,214,.06);background:color-mix(in srgb,var(--violeta) 5%,var(--niebla));font-size:14px;color:var(--grafito)}
+.score-free .ok{flex:none;width:16px;height:16px;fill:none;stroke:var(--violeta);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.score-free .amt{margin-left:auto}
 .amt{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:20px;letter-spacing:-.01em;color:var(--tinta)}
-.ph-incl{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:8px 14px 8px 12px;border:1px solid var(--linea);border-radius:999px;font-size:14px;color:var(--grafito)}
-/* Área de cliente: una miniatura fiel a la real (cabecera Silence Club ~ tu logo y la lista de entregables), sin adornos */
-.cli{margin-top:clamp(56px,7vw,88px)}
-/* Es un diferencial: va en una insignia violeta con candado, no como un antetítulo más */
-.cli-k{display:inline-flex;align-items:center;gap:10px;height:34px;padding:0 16px 0 5px;border:1px solid rgba(107,79,214,.3);border-radius:999px;background:rgba(107,79,214,.08);font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--violeta)}
-.cli-k i{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--violeta);color:var(--papel)}
-.cli-k svg{width:11px;height:13px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.cli-t{margin-top:16px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(26px,2.4vw,34px);line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
-.cli-shot{max-width:560px;margin-top:28px}
+@media (max-width:600px){.score{--sp:18px}.score-c{padding-top:20px}}
+
+/* Áreas: cada una abre con su línea de sonido; a la izquierda el área, a la derecha lo que hago y, debajo, dónde se ha aplicado */
+section.areas{padding-top:clamp(96px,12vw,152px)}
+.areas-h{grid-column:1/span 8}
+.area{margin-top:clamp(56px,7vw,96px)}
+.area-line{grid-column:1/-1;display:block;width:100%;height:44px;margin-bottom:clamp(24px,3vw,40px)}
+.area-t{grid-column:1/span 5;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(34px,3.8vw,56px);line-height:1.02;letter-spacing:-.025em;text-wrap:balance}
+.area-t span{display:block;color:var(--grafito);font-weight:340}
+.area-do{grid-column:7/span 6;align-self:start;margin:4px 0 0;padding:0;list-style:none;border-bottom:1px solid var(--linea)}
+.area-do li{position:relative;padding:16px 0 16px 24px;border-top:1px solid var(--linea);font-size:clamp(17px,1.35vw,19px);line-height:1.5;color:var(--grafito);text-wrap:pretty}
+.area-do li::before{content:"";position:absolute;left:0;top:calc(16px + .75em - 4px);width:8px;height:8px;border-radius:50%;border:1px solid var(--tinta);background:linear-gradient(90deg,transparent 50%,var(--tinta) 50%)}
+.area-do b{font-weight:500;color:var(--tinta)}
+/* "Todo en tu área de cliente": con la silueta de persona del área de cliente, en violeta */
+.area-cli::before{display:none}
+.area-cli i{position:absolute;left:-5px;top:calc(16px + .75em - 9px);display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--violeta);color:var(--papel)}
+.area-cli svg{width:9px;height:11px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.area-cli b{color:var(--violeta)}
+.area-q{grid-column:1/-1;margin:clamp(48px,6vw,72px) 0 28px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-size:19px;color:var(--violeta)}
+@media (max-width:900px){
+  .svc-h,.svc-l,.score,.areas-h,.area-t,.area-do{grid-column:1/-1}
+  .score{margin-top:32px}
+  .area-do{margin-top:24px}
+}
+
+/* ¿Continuamos?: el seguimiento, en otra superficie (tinte violeta), con el año como línea de sonido */
+section.more{padding-top:0}
+.beyond{grid-column:2/span 10;position:relative;display:grid;grid-template-columns:auto 1fr;gap:20px 24px;padding:clamp(26px,3.4vw,48px);border-radius:20px;border:1px solid rgba(107,79,214,.28);border:1px solid color-mix(in srgb,var(--violeta) 28%,transparent);background:rgba(107,79,214,.05);background:color-mix(in srgb,var(--violeta) 5%,var(--papel))}
+.beyond-i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(107,79,214,.14);background:color-mix(in srgb,var(--violeta) 14%,transparent);color:var(--violeta)}
+.beyond-i svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.beyond h2{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(34px,3.6vw,52px);line-height:1.02;letter-spacing:-.025em}
+.beyond-p{margin-top:16px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:clamp(22px,2vw,28px);line-height:1.25;letter-spacing:-.01em}
+.beyond div>p:last-child{margin-top:8px;max-width:34em;font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--grafito)}
+/* Aplicamos + Medimos + Mejoramos, y vuelta a empezar */
+.loop{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin-top:8px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(24px,2.4vw,34px);line-height:1.2;letter-spacing:-.015em}
+.loop i{font-style:normal;color:var(--violeta)}
+.loop span{margin-left:4px;font:500 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--violeta)}
+.beyond-price{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-top:6px;font-size:14px;color:var(--grafito)}
+/* El año como línea de sonido: al llegar suena (ondas que se agitan) y, al calmarse, se queda en reposo con una
+   montañita en cada mes. Entonces aparecen, suaves, las iniciales de los meses y se entiende que es el año */
+.yr{grid-column:1/-1;margin:6px 0 0;color:var(--violeta)}
+.yr svg{display:block;width:100%;height:30px;overflow:visible}
+.yr path{fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;opacity:.8}
+.yr ol{display:grid;grid-template-columns:repeat(12,1fr);margin:6px 0 0;padding:0;list-style:none;font:500 10.5px/1 var(--sans);letter-spacing:.06em;color:var(--grafito);text-align:center}
+.yr li{transition:opacity .7s ease,transform .7s cubic-bezier(.3,.8,.3,1);transition-delay:var(--d,0s)}
+.yr.wait li{opacity:0;transform:translateY(-4px)}
+@media (max-width:420px){.yr ol{font-size:9.5px;letter-spacing:.02em}}
+.beyond-price span{margin-right:auto}
+.beyond-price .amt{font-size:clamp(30px,3vw,40px);font-weight:340}
+@media (max-width:900px){
+  .beyond{grid-column:1/-1;grid-template-columns:1fr}
+}
+
+/* Área de cliente (Marchica): una miniatura fiel a la real, con su panel en tiempo real; las cifras, desenfocadas */
 /* Marco de navegador: puntos y dirección, para que se lea "esto es una web" */
 /* Toda la ventana es un enlace al área de cliente: al pasar, sube un poco, se marca en violeta y los botones del navegador toman color */
 .cl-win{display:block;overflow:hidden;border:1px solid var(--linea);border-radius:14px;background:var(--papel);color:inherit;text-decoration:none;box-shadow:0 2px 4px -2px rgba(28,30,42,.08),0 30px 60px -36px rgba(28,30,42,.35);transition:transform .5s cubic-bezier(.3,.8,.3,1),border-color .4s,box-shadow .5s}
@@ -247,7 +218,6 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .cl-win:hover .d-x{background:#EC6A5E}.cl-win:hover .d-m{background:#F4BF4F}.cl-win:hover .d-f{background:#61C554}
 .cl-win:hover .cl-dots svg{opacity:.7;stroke:#1C1E2A}.cl-win:hover .d-f path{fill:#1C1E2A}
 .cl-url{display:inline-flex;align-items:center;gap:7px;margin:0 auto;padding:4px 12px 4px 14px;border:1px solid transparent;border-radius:999px;background:var(--papel);font-size:11.5px;color:var(--grafito);transform:translateX(-25px);transition:color .3s,border-color .3s}
-/* La dirección es un enlace de verdad al área de cliente */
 .cl-win:hover .cl-url{color:var(--tinta);border-color:var(--violeta)}
 .cl-go{width:9px!important;height:9px!important;stroke:var(--violeta)!important;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
 .cl-win:hover .cl-go{transform:translate(1.5px,-1.5px)}
@@ -261,58 +231,25 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .cl-sc .db{opacity:.45}
 .cl-br{flex:none;width:34px;height:20px;overflow:visible}
 .cl-br path{fill:none;stroke:var(--violeta);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
-.cl-you{flex:none;padding:5px 9px;border:1px dashed var(--linea);border-radius:6px;font-size:10.5px;line-height:1;letter-spacing:.06em;text-transform:uppercase;color:var(--grafito)}
-.cl-k{margin-top:20px;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--grafito)}
-.cl-items{margin:10px 0 0;padding:0;list-style:none;border-top:1px solid var(--tinta)}
-.cl-items li{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--linea);font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:17px;line-height:1.2;transition:opacity .6s ease,transform .6s cubic-bezier(.3,.8,.3,1);transition-delay:var(--d,0s)}
-.cl-items small{display:block;margin-bottom:3px;font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--violeta)}
-.cl-items b{flex:none;padding-bottom:1px;border-bottom:1px solid currentColor;font:500 12.5px/1.2 var(--sans)}
-.cli-shot.wait .cl-items li{opacity:0;transform:translateY(6px)}
-/* Tres ventajas en una línea: icono y dos o tres palabras */
-.cli-pts{display:flex;flex-wrap:wrap;gap:12px 28px;margin:32px 0 0;padding:0;list-style:none}
-.cli-pts li{display:flex;align-items:center;gap:8px;font-size:14px;line-height:1.3;color:var(--grafito)}
-.cli-pts svg{flex:none;width:16px;height:16px;fill:none;stroke:var(--violeta);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
-.cli-pts .fl{fill:var(--violeta);stroke:none}
-.cli-pts b{font-weight:400}
-@media (max-width:600px){
-  .cli-pts{flex-direction:column;gap:10px}
-}
-@media (max-width:420px){.cl-bar{gap:8px;padding:0 10px}.cl-dots{gap:5px;width:auto}.cl-dots i{width:9px;height:9px}.cl-dots svg{width:7px;height:7px}.cl-url{transform:none;gap:5px;padding:3px 9px;font-size:10.5px}.cl-page{padding:18px 16px 18px}.cl-head small{display:none}.cl-sc{height:18px}}
-/* Lo que viene después: fuera de las fases, otra superficie */
-.beyond{grid-column:5/span 8;position:relative;display:grid;grid-template-columns:auto 1fr;gap:20px 24px;margin-top:clamp(80px,10vw,136px);padding:clamp(26px,3vw,40px);border-radius:20px;border:1px solid rgba(107,79,214,.28);border:1px solid color-mix(in srgb,var(--violeta) 28%,transparent);background:rgba(107,79,214,.05);background:color-mix(in srgb,var(--violeta) 5%,var(--papel))}
-.beyond-i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(107,79,214,.14);background:color-mix(in srgb,var(--violeta) 14%,transparent);color:var(--violeta)}
-.beyond-i svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.beyond-k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--violeta)}
-.beyond h3{margin-top:10px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(30px,3vw,44px);line-height:1.04;letter-spacing:-.02em}
-.beyond-price{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-top:6px;font-size:14px;color:var(--grafito)}
-/* El año como línea de sonido: al llegar suena (ondas que se agitan) y, al calmarse, se queda en reposo con una
-   montañita en cada mes. Entonces aparecen, suaves, las iniciales de los meses y se entiende que es el año */
-.yr{grid-column:1/-1;margin:6px 0 0;color:var(--violeta)}
-.yr svg{display:block;width:100%;height:30px;overflow:visible}
-.yr path{fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;opacity:.8}
-.yr ol{display:grid;grid-template-columns:repeat(12,1fr);margin:6px 0 0;padding:0;list-style:none;font:500 10.5px/1 var(--sans);letter-spacing:.06em;color:var(--grafito);text-align:center}
-.yr li{transition:opacity .7s ease,transform .7s cubic-bezier(.3,.8,.3,1);transition-delay:var(--d,0s)}
-.yr.wait li{opacity:0;transform:translateY(-4px)}
-@media (max-width:420px){.yr ol{font-size:9.5px;letter-spacing:.02em}}
-.beyond-price span{margin-right:auto}
-.beyond-price .amt{font-size:clamp(30px,3vw,40px);font-weight:340}
-.beyond div>p:last-child{margin-top:14px;max-width:34em;font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--grafito)}
-.proc-end{grid-column:5/span 8}
-.ph-next{display:inline-flex;align-items:center;gap:10px;margin-top:32px;padding-bottom:2px;border-bottom:1px solid currentColor;font-weight:500;text-decoration:none;transition:color .3s}
-.ph-next svg{width:11px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .4s}
-.ph-next:hover{color:var(--violeta)}
-.ph-next:hover svg{transform:translateY(3px)}
-@media (max-width:900px){
-  .proc-head .h2,.proc-lead,.proc-side,.proc-steps,.beyond,.proc-end{grid-column:1/-1}
-  /* Móvil: sin índice de fases (la cápsula de recorrido hace de guía) */
-  .proc-side{display:none}
-  .ph{padding:56px 0}
-  .beyond{grid-template-columns:1fr}
-}
+.cl-you{flex:none;color:var(--tinta);opacity:.85}
+.cl-k{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--grafito)}
+.cl-on{display:inline-flex;align-items:center;gap:6px;font-weight:500;color:var(--violeta)}
+.cl-on::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;animation:rec 1.8s ease-in-out infinite}
+@keyframes rec{50%{opacity:.25}}
+.cl-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 0;padding:0;list-style:none}
+.cl-kpis li{padding:10px 12px 11px;border:1px solid var(--linea);border-radius:10px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--grafito);transition:opacity .6s ease,transform .6s cubic-bezier(.3,.8,.3,1);transition-delay:var(--d,0s)}
+/* Los datos del cliente son suyos: se intuyen, no se leen */
+.cl-kpis b{display:block;margin-top:7px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:19px;letter-spacing:0;text-transform:none;color:var(--tinta);filter:blur(4.5px);user-select:none}
+.cl-chart{display:block;width:100%;height:84px;margin-top:14px;overflow:visible;color:var(--violeta)}
+.cl-chart .ar{fill:currentColor;opacity:.09;stroke:none}
+.cl-chart .ln{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.cli-shot.wait .cl-kpis li{opacity:0;transform:translateY(6px)}
+@media (max-width:420px){.cl-bar{gap:8px;padding:0 10px}.cl-dots{gap:5px;width:auto}.cl-dots i{width:9px;height:9px}.cl-dots svg{width:7px;height:7px}.cl-url{transform:none;gap:5px;padding:3px 9px;font-size:10.5px}.cl-page{padding:18px 16px 18px}.cl-head small{display:none}.cl-sc{height:18px}.cl-kpis{gap:6px}.cl-kpis li{padding:8px 9px}.cl-kpis b{font-size:16px}}
 
 @media (max-width:900px){
-  .hero .role,.hero .pitch{grid-column:1/-1}
+  .hero .hook,.hero .pitch{grid-column:1/-1}
   .hero .pitch{margin-top:32px}
+  .hero .hook{margin-top:40px}
 }
 
 /* Proyectos: cada uno es una tarjeta sobre el fondo; su línea de sonido hace de borde superior */
@@ -322,40 +259,10 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .pj.card:first-child{margin-top:0}
 .pj.card>.pj-line{position:absolute;top:-8px;left:var(--cx);width:calc(100% - 2*var(--cx));margin:0}
 .pj-end{display:none}
-.pj-top{grid-column:1/-1;margin-bottom:36px}
-.pj-top .h2{max-width:13em}
-/* Filtro por sector */
-.pj-filter{grid-column:1/-1;justify-self:start;display:flex;flex-wrap:wrap;gap:4px;max-width:100%;margin-bottom:32px;padding:5px;border-radius:999px;background:var(--papel)}
-.pf{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 7px 0 17px;border:0;border-radius:999px;background:none;font:500 15px/1 var(--sans);color:var(--grafito);cursor:pointer;transition:background .3s,color .3s,border-color .3s}
-.pf span{display:inline-grid;place-items:center;min-width:28px;height:28px;padding:0 6px;border-radius:999px;background:rgba(128,128,140,.18);background:color-mix(in srgb,currentColor 12%,transparent);font-size:12px}
-.pf:hover{color:var(--tinta)}
-/* Icono de cada sector, a línea; al pulsar el filtro: el medio punto gira (Todos), la bola de discoteca rueda y destella
-   (Nightlife), la barra de labios recibe un reflejo (Beauty). Todo breve y en el color del texto */
-.pfi{flex:none;width:18px;height:18px;margin-right:-3px;overflow:visible;fill:none;stroke:currentColor;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round}
-.pfi .fl,.pfi .spk{fill:currentColor;stroke:none}
-.pfi .spk{transform-box:fill-box;transform-origin:center;transform:scale(0)}
-.pf.play .pfi .spk{animation:pfspk .95s cubic-bezier(.3,.8,.3,1) var(--d,0s) both}
-@keyframes pfspk{0%{transform:scale(0) rotate(0)}35%{transform:scale(1) rotate(30deg)}100%{transform:scale(0) rotate(80deg)}}
-.pfi-all .hf{transform-box:view-box;transform-origin:10px 10px}
-.pf.play .pfi-all .hf{animation:pfhalf .9s cubic-bezier(.45,0,.55,1)}
-@keyframes pfhalf{to{transform:rotate(180deg)}}
-.pfi-ball .bl{transform-box:view-box;transform-origin:10px 5px}
-.pf.play .pfi-ball .bl{animation:pfroll 1.3s cubic-bezier(.3,.8,.3,1)}
-/* El vaivén de siempre, estirado a lo que dura el pintalabios (1,3 s) */
-@keyframes pfroll{0%{transform:rotate(0)}30%{transform:rotate(-14deg)}65%{transform:rotate(7deg)}100%{transform:rotate(0)}}
-.pfi-ball .gl{fill:currentColor;stroke:none;opacity:0}
-.pf.play .pfi-ball .gl{animation:pfglow .5s ease-out var(--d,0s) both}
-/* Brillos que saltan de faceta en faceta mientras se balancea */
-@keyframes pfglow{0%{opacity:0}35%{opacity:1}100%{opacity:0}}
-/* La barra sube un poco, se guarda en el tubo y vuelve a salir, como al abrir un pintalabios */
-.pfi-lip .bul{transform-box:view-box}
-.pf.play .pfi-lip .bul{animation:pflip 1.3s cubic-bezier(.45,0,.55,1)}
-@keyframes pflip{0%{transform:none}22%{transform:translateY(-1.6px)}60%{transform:translateY(6.4px)}100%{transform:none}}
-.pfi-lip .gl{fill:currentColor;stroke:none;opacity:.55;transform:translateX(-12px)}
-.pf.play .pfi-lip .gl{animation:pfsweep 1.1s cubic-bezier(.45,0,.55,1)}
-@keyframes pfsweep{from{transform:translateX(-12px)}to{transform:translateX(12px)}}
-.pf[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--papel)}
 .pjs{grid-column:1/-1}
+.pj-tags{display:flex;flex-wrap:wrap;margin:16px 0 0;padding:0;list-style:none;font-size:14px;color:var(--grafito)}
+.pj-tags>span{display:inline-flex;align-items:center;gap:8px}
+.pj-tags>span::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;border:1px solid currentColor;background:linear-gradient(90deg,transparent 50%,currentColor 50%)}
 .pj.in{animation:pjin .7s cubic-bezier(.3,.8,.3,1) both;animation-delay:calc(var(--k,0) * 80ms)}
 @keyframes pjin{from{opacity:0;transform:translateY(14px)}}
 /* Marcas: siluetas de un solo color, apagadas; se encienden al pasar */
@@ -396,11 +303,6 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .pjs.invite .pj:nth-child(4) .pj-chev{animation-delay:.45s}
 @keyframes nudge{50%{transform:translateY(5px)}}
 .pj-head{padding:34px 0 30px}
-@media (max-width:600px){
-  .pj-filter{flex-wrap:nowrap;overflow-x:auto;margin-bottom:24px;scrollbar-width:none}
-  .pf{flex:none;height:38px;padding:0 6px 0 14px;gap:8px;font-size:14px}
-  .pf span{min-width:26px;height:26px}
-}
 .shot .frame.demo{aspect-ratio:16/9;display:block;background:#141416;overflow:hidden}
 .demo .cam{position:absolute;inset:0;transition:transform 1.6s cubic-bezier(.65,0,.35,1);will-change:transform}
 .demo .cam img{position:static;width:100%;height:100%;object-fit:cover;display:block}
@@ -440,14 +342,8 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .pj-steps b{display:block;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:420;font-size:20px;color:var(--tinta);margin-bottom:2px}
 .pj-res{margin-top:8px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:clamp(22px,2vw,28px);line-height:1.2;letter-spacing:-.015em}
 .pj-text .link{margin-top:28px}
-.pj-media.shot{grid-column:8/span 5;margin:4px 0 56px;align-self:start;position:sticky;top:100px}
+.pj-media.shot,.pj-media.cli-shot{grid-column:8/span 5;margin:4px 0 56px;align-self:start;position:sticky;top:100px}
 .shot .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.shot .rep{place-items:stretch;background:var(--papel)}
-.rep>div{padding:clamp(18px,2.4vw,30px)}
-.rep-t{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-size:clamp(20px,1.8vw,26px);letter-spacing:-.01em}
-.rep ol{margin:14px 0 0;padding:0;list-style:none;counter-reset:r}
-.rep li{counter-increment:r;display:flex;gap:12px;padding:8px 0;border-top:1px solid var(--linea);font-size:clamp(13px,1vw,15px);line-height:1.4;color:var(--grafito)}
-.rep li::before{content:counter(r);font-family:var(--serif);color:var(--tinta);min-width:12px}
 @media (max-width:900px){
   .pj-head{grid-template-columns:1fr auto;column-gap:20px;row-gap:10px}
   .pj-meta{grid-column:1;flex-direction:row;flex-wrap:wrap;gap:0 8px}
@@ -455,7 +351,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .pj-chev{grid-column:2;grid-row:1/span 2}
   .pj-tags{grid-column:1;grid-row:3;margin-top:2px}
   .pj-inner{display:flex;flex-direction:column}
-  .pj-media.shot{position:static;align-self:stretch;margin:0 0 32px;order:-1}
+  .pj-media.shot,.pj-media.cli-shot{position:static;align-self:stretch;margin:0 0 32px;order:-1}
   .pj-text{padding-bottom:32px}
 }
 .case .shot{background:#fff;box-shadow:0 0 0 1px var(--linea),0 30px 60px -34px rgba(28,30,42,.3)}
@@ -469,16 +365,13 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 .shot .frame iframe{position:absolute;top:0;left:0;width:1440px;height:900px;border:0;transform-origin:0 0;pointer-events:none;background:#fff}
 .case .link{display:inline-block;margin-top:24px;font-weight:500;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 .case .link:hover{color:var(--violeta)}
-
-/* Detalle */
-.detail{background:var(--papel)}
-.detail .h2{grid-column:1/span 6}
-.detail .prose{grid-column:8/span 5;font-size:19px}
-.proof{grid-column:8/span 5;margin-top:40px;padding:28px;border:1px dashed var(--violeta);border-radius:14px;font-size:16px}
-.proof kbd{display:inline-grid;place-items:center;min-width:26px;height:26px;padding:0 6px;border:1px solid var(--tinta);border-bottom-width:2px;border-radius:6px;font:600 13px/1 var(--sans)}
-@media (hover:none){.k-hint{display:none}}
-.proof button{margin-top:20px;font:500 15px/1 var(--sans);background:none;border:1px solid var(--tinta);border-radius:999px;height:44px;padding:0 22px;cursor:pointer;color:var(--tinta);transition:background .2s,color .2s}
-.proof button:hover,.proof button[aria-pressed="true"]{background:var(--tinta);color:var(--papel)}
+/* Caso aún sin contar: solo el nombre, sin desplegable */
+.pj-soon .pj-head{cursor:default}
+.pj-soon .pj-title{color:var(--grafito)}
+.pj-soon .pj-head:hover .pj-title{transform:none}
+/* Cartel con el logo mientras no hay capturas */
+.poster .pst{position:absolute;inset:0;display:grid;place-items:center;background:#0E0B14}
+.poster .lg{color:#F7F8FA;opacity:.92}
 
 /* Cosas que no voy a hacer: lista editorial sobre el fondo. Título fijo a la izquierda; cada "no" numerado,
    con la línea de sonido como separador; al abrir, la respuesta entra debajo */
@@ -506,7 +399,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 }
 
 /* Sobre mí */
-.about .portrait{grid-column:1/span 4;position:relative;margin:0}
+.about .portrait{grid-column:1/span 4;align-self:start;position:relative;margin:0}
 .about .portrait::before{content:"";position:absolute;inset:0;transform:translate(14px,14px);border-radius:200px 200px 14px 14px;background:var(--grafito);opacity:.22}
 .about .photo{position:relative;aspect-ratio:4/5;border-radius:200px 200px 14px 14px;overflow:hidden;background:var(--linea)}
 .about .photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
@@ -550,7 +443,6 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 @supports not (aspect-ratio:1){
   .shot .frame{height:0;padding-top:62.5%}
   .shot .frame.demo{padding-top:56.25%}
-  .shot .frame.rep{height:auto;padding-top:0}
   .about .photo{height:0;padding-top:125%}
   .about .photo img{position:absolute;top:0;left:0}
 }
@@ -590,7 +482,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 ::view-transition-old(sc-mode){display:none}
 /* Durante el cambio de modo el navegador pinta la página como dos capturas y Safari deja de difuminar tras los cristales
    (solo tiñen y se transparentan). Mientras dura, los cristales pasan a fondo opaco de su mismo color */
-:root.vt-glass nav.glass .wrap,:root.vt-glass .mm,:root.vt-glass .tour,:root.vt-glass .pt-bg{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:var(--papel)!important;transition:none!important}
+:root.vt-glass nav.glass .wrap,:root.vt-glass .mm,:root.vt-glass .tour{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:var(--papel)!important;transition:none!important}
 ::view-transition-new(sc-mode){animation:none}
 /* Menú móvil: hamburguesa siempre a mano (aunque esté la cápsula) y, al abrir, una tarjeta flotante del mismo cristal
    que la cápsula, con la misma pastilla suave en la sección en la que estás. Mientras está abierto, la cápsula se aparta */
@@ -619,36 +511,17 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .nav-r>.sc-theme{display:none}
   .mm-mode{margin:0 6px;padding:12px 18px 14px;border-top:1px solid rgba(128,128,140,.16)}
 }
-/* Móvil: mientras lees el Servicio, la barra se desdobla en una pestaña bajo el logo con la fase en la que estás.
-   Se desliza unos píxeles (Inicio algo a la izquierda, Desarrollo al centro, Desenlace algo a la derecha) y, al cambiar
-   de fase, su línea suena un instante y se calma */
-.ph-tab{display:none}
-@media (max-width:900px){
-  .ph-tab{position:absolute;left:0;top:calc(100% - 1px);display:block;width:var(--tw,132px);height:30px;overflow:hidden;pointer-events:none;transform:translateX(var(--tx,0px))}
-  .pt-in{position:relative;height:28px;transform:translateY(-100%);transition:transform .45s cubic-bezier(.3,.8,.3,1)}
-  .ph-tab.on .pt-in{transform:none}
-  .menu-open .ph-tab .pt-in{transform:translateY(-100%)}
-  /* El mismo cristal que la barra y sin línea: la pestaña es la barra que se desdobla (la forma la recorta el JS) */
-  /* Va fuera de nav .wrap a propósito: dentro, el desenfoque de la barra le taparía la página y solo teñiría */
-  .pt-bg{position:absolute;left:0;top:0;width:100%;height:24px;background:rgba(247,248,250,.8);-webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);border-radius:0 0 12px 12px}
-  .pt-m{visibility:hidden}
-  .pt-t{position:absolute;left:50%;top:3px;transform:translateX(-50%);font:500 11.5px/17px var(--sans);letter-spacing:.02em;white-space:nowrap;color:var(--tinta);transition:opacity .22s}
-  .pt-t b{margin-right:6px;font-weight:400;color:var(--grafito)}
-  .pt-t.swap{opacity:0}
-}
 @media (prefers-color-scheme:dark) and (max-width:900px){
   :root:not([data-theme=light]) .tour{background:rgba(20,19,23,.92);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 8px 24px -12px rgba(0,0,0,.6)}
   :root:not([data-theme=light]) .tour-ind{background:rgba(255,255,255,.1)}
   :root:not([data-theme=light]) .mm{background:rgba(20,19,23,.92);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 14px 34px -14px rgba(0,0,0,.65)}
   :root:not([data-theme=light]) .mm a.on{background:rgba(255,255,255,.1)}
-  :root:not([data-theme=light]) .pt-bg{background:rgba(20,19,23,.78)}
 }
 @media (max-width:900px){
   :root[data-theme=dark] .tour{background:rgba(20,19,23,.92);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 8px 24px -12px rgba(0,0,0,.6)}
   :root[data-theme=dark] .tour-ind{background:rgba(255,255,255,.1)}
   :root[data-theme=dark] .mm{background:rgba(20,19,23,.92);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 14px 34px -14px rgba(0,0,0,.65)}
   :root[data-theme=dark] .mm a.on{background:rgba(255,255,255,.1)}
-  :root[data-theme=dark] .pt-bg{background:rgba(20,19,23,.78)}
 }
 
 /* Retícula */
@@ -662,8 +535,8 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .nav-r>ul{display:none}
   /* Móvil: barra de lado a lado, sin esquinas */
   html nav.glass .wrap{width:100%;height:60px;margin:0;border-radius:0;padding:0 var(--pad);box-shadow:inset 0 -1px 0 rgba(28,30,42,.08)}
-  .case .h2,.shot,.case ol,.detail .h2,.detail .prose,.proof,.nope .h2,.nope ul,.about .portrait,.about .txt{grid-column:1/-1}
-  .detail .prose,.nope ul,.about .txt{margin-top:32px}
+  .shot,.case ol,.nope .h2,.nope ul,.about .portrait,.about .txt{grid-column:1/-1}
+  .nope ul,.about .txt{margin-top:32px}
   .about .portrait{max-width:340px}
 }
 @media (max-width:600px){
@@ -674,7 +547,6 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   .wave{height:120px;margin-top:24px}
   .hero{padding-top:calc(72px + 48px)}
   .hero h1{grid-column:1/-1}
-  .hero .role{margin-top:40px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -694,8 +566,6 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   :root:not([data-theme=light]) .case .shot{background:#17161A}
   :root:not([data-theme=light]) .shot .frame{background:linear-gradient(160deg,#211C22,#17161A 60%)}
   :root:not([data-theme=light]) .cl-win{box-shadow:0 30px 60px -30px rgba(0,0,0,.75)}
-  :root:not([data-theme=light]) .cli-k{border-color:rgba(160,140,245,.35);background:rgba(160,140,245,.12)}
-  :root:not([data-theme=light]) .cli-k i{color:#0B0A0C}
   :root:not([data-theme=light]) nav.glass .wrap{background:rgba(20,19,23,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),inset 0 1px 0 rgba(255,255,255,.06),0 12px 30px -14px rgba(0,0,0,.6)}
 }
 /* Oscuro forzado con el interruptor: las mismas reglas */
@@ -709,8 +579,6 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 :root[data-theme=dark] .case .shot{background:#17161A}
 :root[data-theme=dark] .shot .frame{background:linear-gradient(160deg,#211C22,#17161A 60%)}
 :root[data-theme=dark] .cl-win{box-shadow:0 30px 60px -30px rgba(0,0,0,.75)}
-:root[data-theme=dark] .cli-k{border-color:rgba(160,140,245,.35);background:rgba(160,140,245,.12)}
-:root[data-theme=dark] .cli-k i{color:#0B0A0C}
 :root[data-theme=dark] nav.glass .wrap{background:rgba(20,19,23,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),inset 0 1px 0 rgba(255,255,255,.06),0 12px 30px -14px rgba(0,0,0,.6)}
 @media (prefers-color-scheme:dark) and (max-width:900px){
   :root:not([data-theme=light]) nav.glass .wrap{box-shadow:inset 0 -1px 0 rgba(255,255,255,.08)}
@@ -725,11 +593,11 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 
 <nav aria-label="Principal">
   <div class="wrap">
-    <a class="brand" href="#inicio" aria-label="Silence Club, dirección creativa de Jorge. Ir al inicio"><svg class="logo" viewBox="0 0 362 97" aria-hidden="true" focusable="false"><defs><clipPath id="sc-up"><rect x="-40" y="-40" width="440" height="87.2"/></clipPath><clipPath id="sc-dn"><rect x="-40" y="48.8" width="440" height="88"/></clipPath></defs><g clip-path="url(#sc-up)"><use class="ls" href="#sc-s0"/><use class="ls" href="#sc-s1"/><use class="ls" href="#sc-s2"/><use class="ls" href="#sc-s3"/><use class="ls" href="#sc-s4"/><use class="ls" href="#sc-s5"/><use class="ls" href="#sc-s6"/></g><path class="ln" d="M0 48H358"/><g clip-path="url(#sc-dn)"><use class="lc" href="#sc-c0"/><use class="lc" href="#sc-c1"/><use class="lc" href="#sc-c2"/><use class="lc" href="#sc-c3"/></g><g class="dot"><circle class="db" cx="351" cy="86.5" r="9"/><path class="dh" d="M351 77.5a9 9 0 0 1 0 18z"/></g></svg></a>
+    <a class="brand" href="#inicio" aria-label="Silence Club. Ir al inicio"><svg class="logo" viewBox="0 0 362 97" aria-hidden="true" focusable="false"><defs><clipPath id="sc-up"><rect x="-40" y="-40" width="440" height="87.2"/></clipPath><clipPath id="sc-dn"><rect x="-40" y="48.8" width="440" height="88"/></clipPath></defs><g clip-path="url(#sc-up)"><use class="ls" href="#sc-s0"/><use class="ls" href="#sc-s1"/><use class="ls" href="#sc-s2"/><use class="ls" href="#sc-s3"/><use class="ls" href="#sc-s4"/><use class="ls" href="#sc-s5"/><use class="ls" href="#sc-s6"/></g><path class="ln" d="M0 48H358"/><g clip-path="url(#sc-dn)"><use class="lc" href="#sc-c0"/><use class="lc" href="#sc-c1"/><use class="lc" href="#sc-c2"/><use class="lc" href="#sc-c3"/></g><g class="dot"><circle class="db" cx="351" cy="86.5" r="9"/><path class="dh" d="M351 77.5a9 9 0 0 1 0 18z"/></g></svg></a>
     <div class="nav-r">
     <ul>
       <li><a href="#servicio">Servicio</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#areas">Áreas</a></li>
       <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#contacto" class="cta">Hablemos</a></li>
     </ul>
@@ -737,11 +605,10 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mmenu"><svg viewBox="0 0 22 14" aria-hidden="true"><path class="l1" d="M1 2H21"/><path class="l2" d="M1 7H21"/><path class="l3" d="M1 12H21"/></svg></button>
     </div>
   </div>
-  <div class="ph-tab" aria-hidden="true"><div class="pt-in"><i class="pt-bg"></i><span class="pt-t"><b>01</b><span>Inicio</span></span><span class="pt-t pt-m"><b>01</b><span>Inicio</span></span></div></div>
   <div class="mm" id="mmenu">
     <ul>
       <li><a href="#servicio">Servicio</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#areas">Áreas</a></li>
       <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#contacto" class="cta">Hablemos</a></li>
     </ul>
@@ -752,7 +619,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   <ul>
     <li class="tour-ind" aria-hidden="true"></li>
     <li><a href="#servicio">Servicio</a></li>
-    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#areas">Áreas</a></li>
     <li><a href="#sobre-mi">Sobre mí</a></li>
     <li><a href="#contacto" class="cta">Hablemos</a></li>
   </ul>
@@ -846,13 +713,19 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 <main>
 <header class="hero" id="inicio">
   <div class="wrap grid">
-    <h1>Primero, silencio.</h1>
-    <h2 class="role">Dirección creativa<span>y estratégica</span></h2>
+    <h1>Decisiones inteligentes para tu negocio.</h1>
+    <h2 class="hook">Identifico y creo mejoras digitales para negocios que aún no imaginan el impacto que pueden tener.</h2>
     <div class="pitch">
-      <h3 class="hook">Acompaño a personas con un negocio que todavía no ven todo lo que pueden construir con él.</h3>
-      <p class="lead">Si piensas que tu marca puede estar mejor expresada, comunicar mejor qué te hace diferente, tener una web más fiel a ella o una mejor estrategia de captación, <span class="punch">este es tu sitio.</span></p>
+      <ul class="asks">
+        <li>¿Ves en un único panel cómo funciona tu negocio?</li>
+        <li>¿Recopilas datos de mil sitios para tomar decisiones?</li>
+        <li>¿Tienes un chat automático para responder a clientes?</li>
+        <li>¿Tu web transmite de verdad lo que es tu marca?</li>
+        <li>¿Utilizas mapas 3D de reservas?</li>
+      </ul>
+      <p class="lead">Si alguna es no, <span class="punch">entonces, este es tu sitio.</span></p>
       <div class="actions">
-        <a class="btn solid" href="#servicio">Ver cómo trabajo</a>
+        <a class="btn solid" href="#servicio">Ver cómo</a>
         <a class="btn ghost" href="#contacto">Cuéntame tu negocio</a>
       </div>
     </div>
@@ -868,232 +741,202 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   </div>
 </section>
 
-<section class="block proc-sec" id="servicio">
-  <div class="wrap grid proc-head">
-    <p class="kicker">Servicio</p>
-    <h2 class="h2">Trabajo por proyectos.</h2>
-    <p class="proc-lead">Cada uno tiene un inicio, un desarrollo y un desenlace. Te cuento qué pasa en cada parte.</p>
-  </div>
-  <div class="wrap grid proc">
-    <div class="proc-side">
-      <ol class="proc-idx" aria-label="Fases de un proyecto">
-        <li><a href="#fase-inicio"><i></i><span>01</span>Inicio<em class="st">Escuchando</em></a></li>
-        <li><a href="#fase-desarrollo"><i></i><span>02</span>Desarrollo<em class="st">Dando forma</em></a></li>
-        <li><a href="#fase-desenlace"><i></i><span>03</span>Desenlace<em class="st">Midiendo</em></a></li>
-      </ol>
-    </div>
-    <div class="proc-steps">
-      <article class="ph" id="fase-inicio">
-        <p class="ph-n"><span>01</span>Inicio</p>
-        <h3>Antes de proponer nada, te escucho.</h3>
-        <p class="ph-p">Analizo tu negocio contigo para ver qué lo frena y qué oportunidades tiene delante.</p>
-        <div class="score">
-          <figure class="score-c">
-            <figcaption class="score-h"><span><span class="score-k0">Lo que te llevas</span><span class="score-t">Scoring de tu negocio</span></span><em>Ejemplo</em></figcaption>
-            <ul class="score-l">
-              <li><span>Posicionamiento</span><span class="sds" role="img" aria-label="2,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i></span></li>
-              <li><span>Identidad y web</span><span class="sds" role="img" aria-label="1,5 de 5"><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i></span></li>
-              <li><span>Captación</span><span class="sds" role="img" aria-label="3,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i></span></li>
-            </ul>
-          </figure>
-          <p class="score-k">Al cerrar el scoring</p>
-          <ul class="score-out">
-            <li><span class="row-l"><i class="eur" aria-hidden="true">€</i>Alcance y presupuesto del proyecto</span><svg class="ok" viewBox="0 0 18 18" role="img" aria-label="Incluido"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></li>
-            <li class="sol">
-              <span class="sol-top"><span>Soluciones</span><a class="unlock" href="#fase-desarrollo"><svg viewBox="0 0 16 18" aria-hidden="true"><path class="shk" d="M4.5 8V5.5a3.5 3.5 0 0 1 7 0V8"/><rect x="2.5" y="8" width="11" height="8.5" rx="2"/><path d="M8 11.5v2"/></svg>Se desbloquean en Desarrollo</a></span>
-              <span class="sol-blur" aria-hidden="true">Nueva propuesta de marca, web a medida y un plan de captación por temporadas.</span>
-            </li>
-          </ul>
-        </div>
-      </article>
-      <article class="ph" id="fase-desarrollo">
-        <p class="ph-n"><span>02</span>Desarrollo</p>
-        <h3>Ahora, manos a la obra.</h3>
-        <p class="ph-p">Con todo lo analizado, paso a la acción. Trabajo sobre tres áreas:</p>
-        <ul class="pils">
-          <li class="pil">
-            <canvas class="pil-line" data-shape="signal" aria-hidden="true"></canvas>
-            <div class="pil-b">
-              <p class="pil-pain"><span class="pil-k">Responde a</span>«Lo hago bien, pero desde fuera parezco uno más.»</p>
-              <h4>Estrategia y posicionamiento de marca</h4>
-              <p class="pil-one">Pongo orden hasta que se vea claro qué te hace diferente.</p>
-              <div class="pil-more"><button type="button" class="pil-tg" aria-expanded="false" aria-controls="pd1">Ver entregables<svg viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg><svg class="pil-ln" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H200"/></svg></button><div class="pil-dw" id="pd1" role="region"><ul class="pil-does"><li>Análisis de tu competencia</li><li>Propuesta de valor</li><li>Mensajes y tono de voz</li></ul></div></div>
-              <p class="pil-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>Si tu proyecto lo necesita<span>desde <b class="amt">··· €</b></span></p>
-            </div>
-          </li>
-          <li class="pil">
-            <canvas class="pil-line" data-shape="form" aria-hidden="true"></canvas>
-            <div class="pil-b">
-              <p class="pil-pain"><span class="pil-k">Responde a</span>«Mi imagen y mi web no transmiten lo que hago.»</p>
-              <h4>Identidad visual y web</h4>
-              <p class="pil-one">Diseño cómo te ves, cómo hablas y la web donde te eligen.</p>
-              <div class="pil-more"><button type="button" class="pil-tg" aria-expanded="false" aria-controls="pd2">Ver entregables<svg viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg><svg class="pil-ln" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H200"/></svg></button><div class="pil-dw" id="pd2" role="region"><ul class="pil-does"><li>Logotipo y sistema visual</li><li>Manual de marca</li><li>Diseño y desarrollo de tu web</li></ul></div></div>
-              <p class="pil-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>Si tu proyecto lo necesita<span>desde <b class="amt">··· €</b></span></p>
-            </div>
-          </li>
-          <li class="pil">
-            <canvas class="pil-line" data-shape="reach" aria-hidden="true"></canvas>
-            <div class="pil-b">
-              <p class="pil-pain"><span class="pil-k">Responde a</span>«Me llegan pocos clientes. O no los que quiero.»</p>
-              <h4>Captación de clientes</h4>
-              <p class="pil-one">Hago que te encuentre quien te tiene que encontrar. Y que repita.</p>
-              <div class="pil-more"><button type="button" class="pil-tg" aria-expanded="false" aria-controls="pd3">Ver entregables<svg viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg><svg class="pil-ln" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H200"/></svg></button><div class="pil-dw" id="pd3" role="region"><ul class="pil-does"><li>Mapas de reservas en 2D y 3D</li><li>Estrategia de publicidad en RRSS</li><li>Posicionamiento SEO</li></ul></div></div>
-              <p class="pil-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>Si tu proyecto lo necesita<span>desde <b class="amt">··· €</b></span></p>
-            </div>
-          </li>
-        </ul>
-      </article>
-      <article class="ph" id="fase-desenlace">
-        <p class="ph-n"><span>03</span>Desenlace</p>
-        <h3>Medimos lo que hemos hecho y lo mejoramos.</h3>
-        <p class="ph-p">El proyecto no acaba al publicarlo. Vemos qué ajustar.</p>
-        <p class="ph-incl"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>Incluido en el precio de tu proyecto</p>
-        <div class="cli" id="area-cliente">
-          <p class="cli-k"><i aria-hidden="true"><svg viewBox="0 0 12 14"><circle cx="6" cy="4.6" r="2.6"/><path d="M1.6 12.8c0-2.5 2-4.2 4.4-4.2s4.4 1.7 4.4 4.2"/></svg></i>Tu área de cliente</p>
-          <h4 class="cli-t">Todo el proyecto, ordenado en un solo sitio.</h4>
-          <div class="cli-shot">
-            <a class="cl-win" href="https://clientes.silenceclub.es/" target="_blank" rel="noopener" aria-label="Entrar en el área de cliente (clientes.silenceclub.es, se abre en otra pestaña)">
-            <div class="cl-bar"><span class="cl-dots" aria-hidden="true"><i class="d-x"><svg viewBox="0 0 12 12"><path d="M4 4l4 4M8 4l-4 4"/></svg></i><i class="d-m"><svg viewBox="0 0 12 12"><path d="M3.5 6h5"/></svg></i><i class="d-f"><svg viewBox="0 0 12 12"><path d="M3.6 3.6h3.3L3.6 6.9zM8.4 8.4H5.1l3.3-3.3z"/></svg></i></span><span class="cl-url" aria-hidden="true"><svg viewBox="0 0 12 14" aria-hidden="true"><rect x="1.5" y="6" width="9" height="6.5" rx="1.5"/><path d="M3.5 6V4.5a2.5 2.5 0 0 1 5 0V6"/></svg>clientes.silenceclub.es<svg class="cl-go" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></span></div>
-            <div class="cl-page" aria-hidden="true">
-              <div class="cl-head"><span class="cl-lock"><svg class="cl-sc" viewBox="0 0 362 97"><use href="#sc-s0"/><use href="#sc-s1"/><use href="#sc-s2"/><use href="#sc-s3"/><use href="#sc-s4"/><use href="#sc-s5"/><use href="#sc-s6"/><path class="ln" d="M0 48H358"/><use href="#sc-c0"/><use href="#sc-c1"/><use href="#sc-c2"/><use href="#sc-c3"/><circle class="db" cx="351" cy="86.5" r="9"/><path d="M351 77.5a9 9 0 0 1 0 18z"/></svg><svg class="cl-br" viewBox="0 0 34 20"><path d="M0 10.00L1 10.00L2 10.00L3 10.00L4 10.00L5 10.00L6 10.00L7 10.00L8 10.00L9 10.00L10 9.97L11 9.67L12 8.37L13 6.00L14 5.13L15 7.46L16 11.21L17 14.44L18 14.86L19 12.29L20 9.48L21 7.96L22 8.15L23 9.19L24 9.82L25 9.98L26 10.00L27 10.00L28 10.00L29 10.00L30 10.00L31 10.00L32 10.00L33 10.00L34 10.00"/></svg><span class="cl-you">Tu marca</span></span><small>Área de cliente</small></div>
-              <p class="cl-k">Entregables</p>
-              <ul class="cl-items">
-                <li><span><small>Inicio</small>Scoring de tu negocio</span><b>Abrir</b></li>
-                <li><span><small>Desarrollo</small>Manual de marca</span><b>Abrir</b></li>
-                <li><span><small>Desenlace</small>Informe de resultados</span><b>Abrir</b></li>
-              </ul>
-            </div>
-            </a>
-          </div>
-          <ul class="cli-pts">
-            <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 5.5V15a1.5 1.5 0 0 0 1.5 1.5h12a1.5 1.5 0 0 0 1.5-1.5V8a1.5 1.5 0 0 0-1.5-1.5H10L8.2 4H4a1.5 1.5 0 0 0-1.5 1.5z"/></svg><b>Entregables centralizados</b></li>
-            <li><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="2"/><path d="M3 5.5l7 5.5 7-5.5"/></svg><b>Fácil acceso con tu email</b></li>
-            <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path class="fl" d="M10 3a7 7 0 0 1 0 14z"/></svg><b>Siempre al día</b></li>
-          </ul>
-        </div>
-      </article>
-    </div>
-  </div>
+<section class="block svc" id="servicio">
   <div class="wrap grid">
-    <aside class="beyond" aria-labelledby="beyond-t">
-      <span class="beyond-i" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M16.5 10a6.5 6.5 0 1 1-1.9-4.6"/><path d="M15 2.5v3.2h-3.2"/></svg></span>
-      <div>
-        <p class="beyond-k">Más allá del proyecto</p>
-        <h3 id="beyond-t">¿Estamos cómodos juntos?</h3>
-        <p>Seguimos trabajando juntos todo el año, con seguimiento de todo lo que hemos puesto en marcha.</p>
-      </div>
-      <div class="yr" aria-hidden="true"><svg viewBox="0 0 1200 30" preserveAspectRatio="none"><path d="M0 22H1200"/></svg><ol><li style="--d:0.00s">ENE</li><li style="--d:0.06s">FEB</li><li style="--d:0.12s">MAR</li><li style="--d:0.18s">ABR</li><li style="--d:0.24s">MAY</li><li style="--d:0.30s">JUN</li><li style="--d:0.36s">JUL</li><li style="--d:0.42s">AGO</li><li style="--d:0.48s">SEP</li><li style="--d:0.54s">OCT</li><li style="--d:0.60s">NOV</li><li style="--d:0.66s">DIC</li></ol></div>
-      <p class="beyond-price"><span>Seguimiento anual</span><b class="amt">··· €</b><small>al año</small></p>
-    </aside>
-    <div class="proc-end"><a class="ph-next" href="#proyectos">Mira cómo ha ido en negocios reales<svg viewBox="0 0 11 14" aria-hidden="true"><path d="M5.5 1v12M1 8.5l4.5 4.5 4.5-4.5"/></svg></a></div>
+    <p class="kicker">Servicio</p>
+    <h2 class="h2 svc-h">¿Qué necesita tu negocio para ser más eficiente o mejorar?</h2>
+    <div class="svc-l">
+      <h3 class="svc-t">Ok, lo primero, silencio. Me siento a escuchar.</h3>
+    </div>
+    <div class="score">
+      <figure class="score-c">
+        <figcaption class="score-h"><span><span class="score-k0">Lo que te llevas</span><span class="score-t">Scoring de tu negocio</span></span><em>Ejemplo</em></figcaption>
+        <ul class="score-l">
+          <li><span>¿Marca?</span><span class="sds" role="img" aria-label="2,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i></span></li>
+          <li><span>¿Cómo captas clientes ahora?</span><span class="sds" role="img" aria-label="3,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i></span></li>
+          <li><span>¿Cómo lo mides?</span><span class="sds" role="img" aria-label="1,5 de 5"><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i></span></li>
+          <li><span>¿Tienes paneles en tiempo real?</span><span class="sds" role="img" aria-label="1 de 5"><i class="sd f"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i></span></li>
+        </ul>
+        <p class="score-free"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>Venga, te lo regalo.<b class="amt">Free</b></p>
+      </figure>
+    </div>
   </div>
 </section>
 
-<section class="block case" id="proyectos">
+<section class="block case areas" id="areas">
   <div class="wrap grid">
-    <div class="pj-top">
-      <p class="kicker">Proyectos</p>
-      <h2 class="h2">Negocios a los que he acompañado.</h2>
+    <h2 class="h2 areas-h">Áreas sobre las que trabajo.</h2>
+  </div>
+
+  <article class="area" aria-labelledby="area-ventas">
+    <div class="wrap grid">
+      <canvas class="area-line" data-shape="reach" aria-hidden="true"></canvas>
+      <h3 class="area-t" id="area-ventas">Ventas</h3>
+      <ul class="area-do">
+        <li><b>Mapas 3D</b></li>
+      </ul>
+      <p class="area-q">¿Dónde hemos aplicado mejoras digitales?</p>
+      <div class="pjs">
+        <article class="pj card open" id="pj-amok">
+          <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
+          <button type="button" class="pj-head" aria-expanded="true" aria-controls="pjb-amok">
+            <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/amok.png);--r:3.294;--h:15.6px"></span><b>AMOK</b>Nightlife · Mallorca</span>
+            <span class="pj-title">Reservar mesa en pocos clics.</span>
+            <span class="pj-tags"><span>Experiencia digital</span><span>Reservas</span></span>
+            <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
+          </button>
+          <div class="pj-body" id="pjb-amok" role="region" aria-label="AMOK">
+            <div class="pj-inner">
+              <div class="pj-text">
+                <p class="pj-lbl">Qué necesitaba</p>
+                <p class="pj-ctx">Que el cliente supiera qué reservaba y lo hiciera sin dudar. Tiene dos espacios, interior y terraza, y la reserva no lo reflejaba.</p>
+                <p class="pj-lbl">Qué hicimos</p>
+                <ol class="pj-steps"><li><b>Escuché</b>Cómo se vendía cada espacio y qué preguntaba el cliente antes de reservar.</li><li><b>Definí</b>Un mapa por espacio, claro y rápido, para decidir sin dudas.</li><li><b>Dirigí</b>Mapas 2D de interior y terraza, conectados con la venta y activos en su web.</li></ol>
+                <p class="pj-lbl">Resultado</p>
+                <p class="pj-res">Más reservas online, cada una con su mesa elegida.</p>
+                <a class="link" href="https://www.amokmallorca.com" target="_blank" rel="noopener">Ver AMOK</a>
+              </div>
+              <figure class="shot pj-media"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>amokmallorca.com</span></div><div class="frame demo" data-pins='[[49.4, 15.6, "Reservado superior", "Desde 400 €", "ok"], [37.1, 24.7, "Galería principal", "Agotado", "no"], [21.5, 30.6, "Reservado esquina", "Desde 400 €", "ok"], [52.3, 21.2, "Reservado galería", "Desde 450 €", "ok"], [58.2, 38.9, "Reservado pista", "Agotado", "no"], [41.0, 61.1, "Lounge inferior", "Agotado", "no"], [66.4, 72.9, "Reservado backstage", "Desde 700 €", "ok"]]'><div class="cam"><img src="img/amok-mapa.webp" alt="Mapa de reservas del interior de AMOK" loading="lazy"><div class="pins"></div></div><div class="cursor"></div><div class="panel"><span class="p-zone"></span><span class="p-price"></span><span class="p-pax">Hasta 8 personas</span><span class="p-btn">Reservar mesa</span></div></div></figure>
+            </div>
+          </div>
+        </article>
+        <article class="pj card" id="pj-marina">
+          <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
+          <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-marina">
+            <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/marina.png);--r:1.325;--h:25.7px"></span><b>Marina Beach Club</b>Nightlife · Valencia</span>
+            <span class="pj-title">Elegir mesa como si ya estuvieras allí.</span>
+            <span class="pj-tags"><span>Experiencia digital</span><span>Reservas</span></span>
+            <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
+          </button>
+          <div class="pj-body" id="pjb-marina" role="region" aria-label="Marina Beach Club">
+            <div class="pj-inner">
+              <div class="pj-text">
+                <p class="pj-lbl">Qué necesitaba</p>
+                <p class="pj-ctx">Que el cliente viera el espacio y eligiera su mesa antes de llegar. Hasta entonces, reservar online era rellenar un formulario más.</p>
+                <p class="pj-lbl">Qué hicimos</p>
+                <ol class="pj-steps"><li><b>Escuché</b>Cómo se reservaba hasta ahora y qué echaban en falta sus clientes.</li><li><b>Definí</b>Una reserva en la que el propio espacio convence.</li><li><b>Dirigí</b>La creación de un mapa 3D navegable, conectado en tiempo real con la venta.</li></ol>
+                <p class="pj-lbl">Resultado</p>
+                <p class="pj-res">Más reservas online, porque el cliente elige su mesa viéndola.</p>
+              </div>
+              <figure class="shot pj-media"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Mapa 3D de reservas</span></div><div class="frame demo" data-glb="marina.glb" data-pins='[[40, 38, "Banco de cubierta", "Desde 500 €", "ok"], [48, 48, "Sofás lounge", "Agotado", "no"], [56, 42, "Sofás centrales", "Desde 700 €", "ok"], [68, 40, "Sofás escenario", "Desde 900 €", "ok"], [70, 34.5, "Primera fila", "Agotado", "no"]]'><div class="cam"><img src="img/marina-3d.webp" alt="Mapa 3D de reservas de Marina Beach Club" loading="lazy"><div class="pins"></div></div><div class="cursor"></div><div class="panel"><span class="p-zone"></span><span class="p-price"></span><span class="p-pax">Hasta 8 personas</span><span class="p-btn">Reservar mesa</span></div><button class="to3d" type="button">Explorar en 3D</button></div></figure>
+            </div>
+          </div>
+        </article>
+        <article class="pj card pj-soon" id="pj-fitz">
+          <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
+          <div class="pj-head">
+            <span class="pj-meta"><b>Fitz</b>Madrid</span>
+            <span class="pj-title">Caso en preparación.</span>
+          </div>
+        </article>
+      </div>
     </div>
-    <div class="pj-filter" role="group" aria-label="Filtrar proyectos por sector">
-      <button type="button" class="pf" data-f="*" aria-pressed="true"><svg class="pfi pfi-all" viewBox="0 0 20 20" aria-hidden="true"><g class="hf"><circle cx="10" cy="10" r="5"/><path class="fl" d="M10 5a5 5 0 0 1 0 10z"/></g></svg>Todos <span>4</span></button>
-      <button type="button" class="pf" data-f="nightlife" aria-pressed="false"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g transform="translate(17.6 5.2)" style="--d:0s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g><g transform="translate(2.2 8)" style="--d:0.2s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g><g transform="translate(18 16)" style="--d:0.35s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g></svg>Nightlife <span>3</span></button>
-      <button type="button" class="pf" data-f="belleza" aria-pressed="false"><svg class="pfi pfi-lip" viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="pfc-up"><rect x="-4" y="-6" width="28" height="14.6"/></clipPath><clipPath id="pfc-lip"><path d="M8.3 8.6V4.7L11.7 2.4V8.6Z"/><rect x="7.6" y="8.6" width="4.8" height="2.6"/><rect x="7" y="11.2" width="6" height="7.8" rx="1"/></clipPath></defs><g clip-path="url(#pfc-up)"><path class="bul" d="M8.3 11V4.7L11.7 2.4V11"/></g><rect x="7.6" y="8.6" width="4.8" height="2.6" rx=".4"/><rect x="7" y="11.2" width="6" height="7.8" rx="1"/><g clip-path="url(#pfc-lip)"><rect class="gl" x="9" y="-2" width="2.2" height="24" transform="rotate(24 10 10)"/></g><g transform="translate(14.6 3)" style="--d:0.25s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g></svg>Beauty <span>1</span></button>
+  </article>
+
+  <article class="area" aria-labelledby="area-datos">
+    <div class="wrap grid">
+      <canvas class="area-line" data-shape="signal" aria-hidden="true"></canvas>
+      <h3 class="area-t" id="area-datos">Análisis y medición<span>Toma de decisiones</span></h3>
+      <ul class="area-do">
+        <li><b>Paneles en tiempo real</b> conectados con cualquier fuente externa.</li>
+        <li class="area-cli"><i aria-hidden="true"><svg viewBox="0 0 12 14"><circle cx="6" cy="4.6" r="2.6"/><path d="M1.6 12.8c0-2.5 2-4.2 4.4-4.2s4.4 1.7 4.4 4.2"/></svg></i><b>Todo en tu área de cliente.</b></li>
+      </ul>
+      <p class="area-q">¿Dónde hemos aplicado esto?</p>
+      <div class="pjs">
+        <article class="pj card open" id="pj-marchica">
+          <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
+          <button type="button" class="pj-head" aria-expanded="true" aria-controls="pjb-marchica">
+            <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/marchica.png);--r:1.594;--h:23.2px"></span><b>Marchica</b>Nightlife · Temporada 25/26</span>
+            <span class="pj-title">Todo su negocio digital, en un panel en tiempo real.</span>
+            <span class="pj-tags"><span>Análisis</span><span>Panel en tiempo real</span></span>
+            <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
+          </button>
+          <div class="pj-body" id="pjb-marchica" role="region" aria-label="Marchica">
+            <div class="pj-inner">
+              <div class="pj-text">
+                <p class="pj-lbl">Qué necesitaba</p>
+                <p class="pj-ctx">Entender qué funcionaba y qué se le estaba escapando. Tenía los datos de toda una temporada, pero ninguna conclusión clara.</p>
+                <p class="pj-lbl">Qué hicimos</p>
+                <ol class="pj-steps"><li><b>Escuché</b>Dos temporadas completas de datos de venta: entradas, reservas y comportamiento del público.</li><li><b>Definí</b>Cinco conclusiones claras, cada una con su propuesta concreta.</li><li><b>Construí</b>Un panel global de su negocio digital, con el rendimiento en tiempo real, dentro de su área de cliente.</li></ol>
+                <p class="pj-lbl">Resultado</p>
+                <p class="pj-res">Siete objetivos medibles para la próxima temporada, con qué hacer, cuándo y cómo medirlo.</p>
+              </div>
+              <div class="pj-media cli-shot">
+                <a class="cl-win" href="https://clientes.silenceclub.es/" target="_blank" rel="noopener" aria-label="Entrar en el área de cliente (clientes.silenceclub.es, se abre en otra pestaña)">
+                <div class="cl-bar"><span class="cl-dots" aria-hidden="true"><i class="d-x"><svg viewBox="0 0 12 12"><path d="M4 4l4 4M8 4l-4 4"/></svg></i><i class="d-m"><svg viewBox="0 0 12 12"><path d="M3.5 6h5"/></svg></i><i class="d-f"><svg viewBox="0 0 12 12"><path d="M3.6 3.6h3.3L3.6 6.9zM8.4 8.4H5.1l3.3-3.3z"/></svg></i></span><span class="cl-url" aria-hidden="true"><svg viewBox="0 0 12 14" aria-hidden="true"><rect x="1.5" y="6" width="9" height="6.5" rx="1.5"/><path d="M3.5 6V4.5a2.5 2.5 0 0 1 5 0V6"/></svg>clientes.silenceclub.es<svg class="cl-go" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></span></div>
+                <div class="cl-page" aria-hidden="true">
+                  <div class="cl-head"><span class="cl-lock"><svg class="cl-sc" viewBox="0 0 362 97"><use href="#sc-s0"/><use href="#sc-s1"/><use href="#sc-s2"/><use href="#sc-s3"/><use href="#sc-s4"/><use href="#sc-s5"/><use href="#sc-s6"/><path class="ln" d="M0 48H358"/><use href="#sc-c0"/><use href="#sc-c1"/><use href="#sc-c2"/><use href="#sc-c3"/><circle class="db" cx="351" cy="86.5" r="9"/><path d="M351 77.5a9 9 0 0 1 0 18z"/></svg><svg class="cl-br" viewBox="0 0 34 20"><path d="M0 10.00L1 10.00L2 10.00L3 10.00L4 10.00L5 10.00L6 10.00L7 10.00L8 10.00L9 10.00L10 9.97L11 9.67L12 8.37L13 6.00L14 5.13L15 7.46L16 11.21L17 14.44L18 14.86L19 12.29L20 9.48L21 7.96L22 8.15L23 9.19L24 9.82L25 9.98L26 10.00L27 10.00L28 10.00L29 10.00L30 10.00L31 10.00L32 10.00L33 10.00L34 10.00"/></svg><span class="lg cl-you" style="--i:url(img/logos/marchica.png);--r:1.594;--h:22px"></span></span><small>Área de cliente</small></div>
+                  <p class="cl-k">Panel en tiempo real<span class="cl-on">En directo</span></p>
+                  <ul class="cl-kpis"><li>Entradas<b>0.000</b></li><li>Reservas<b>000</b></li><li>Ventas<b>00.000 €</b></li></ul>
+                  <svg class="cl-chart" viewBox="0 0 300 80" preserveAspectRatio="none"><path class="ar" d="M0 80H300"/><path class="ln" d="M0 60H300"/></svg>
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
-    <p class="sr-only" id="pjCount" aria-live="polite"></p>
-    <div class="pjs">
-      <article class="pj card open" id="pj-bela" data-sector="belleza">
-        <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
-        <button type="button" class="pj-head" aria-expanded="true" aria-controls="pjb-bela">
-          <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/bela.png);--r:2.524;--h:18.0px"></span><b>Bela Brow Studio</b>Micropigmentación · Valencia</span>
-          <span class="pj-title">Bela pidió una web. Salió una marca.</span>
-          <span class="pj-tags"><span>Estrategia</span><span>Marca</span><span>Web</span></span>
-          <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
-        </button>
-        <div class="pj-body" id="pjb-bela" role="region" aria-label="Bela Brow Studio">
-          <div class="pj-inner">
-            <div class="pj-text">
-              <p class="pj-lbl">Qué necesitaba</p>
-              <p class="pj-ctx">Que se notara por qué es diferente. En su sector casi todos se parecen, y tener web no bastaba.</p>
-              <p class="pj-lbl">Qué hicimos</p>
-              <ol class="pj-steps"><li><b>Escuché</b>Cómo trabaja, cómo trata a sus clientas y qué la hace única.</li><li><b>Definí</b>Qué tenía que transmitir su marca para separarse del resto de estudios.</li><li><b>Diseñé</b>Su web desde cero, coherente con esa marca y pensada para conseguir citas.</li></ol>
-              <p class="pj-lbl">Resultado</p>
-              <p class="pj-res">Una marca que se reconoce a primera vista y una web pensada para conseguir citas.</p>
-              <a class="link" href="https://bela-vlc.netlify.app/" target="_blank" rel="noopener">Ver la web de Bela</a>
+  </article>
+
+  <article class="area" aria-labelledby="area-marca">
+    <div class="wrap grid">
+      <canvas class="area-line" data-shape="form" aria-hidden="true"></canvas>
+      <h3 class="area-t" id="area-marca">Posicionamiento de marca</h3>
+      <ul class="area-do">
+        <li><b>Web con un trabajo de identidad visual real</b> y coherente con lo que tu marca pretende ser. No es suficiente pedirle a una IA «haz mi web» y ya.</li>
+        <li><b>Web enfocada a vender de verdad.</b> Se trabaja una estrategia de conversión web.</li>
+      </ul>
+      <p class="area-q">¿Dónde hemos aplicado esto?</p>
+      <div class="pjs">
+        <article class="pj card open" id="pj-condado">
+          <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
+          <button type="button" class="pj-head" aria-expanded="true" aria-controls="pjb-condado">
+            <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/condado.png);--r:3.188;--h:15.9px"></span><b>Condado Club</b>Nightlife · Denia</span>
+            <span class="pj-title">Una web que por fin transmite el show.</span>
+            <span class="pj-tags"><span>Identidad visual</span><span>Web</span></span>
+            <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
+          </button>
+          <div class="pj-body" id="pjb-condado" role="region" aria-label="Condado Club">
+            <div class="pj-inner">
+              <div class="pj-text">
+                <p class="pj-lbl">De dónde venía</p>
+                <p class="pj-ctx">De una web que no comunicaba ni transmitía el valor de Condado como discoteca show. Tampoco transmitía la identidad visual que Condado quería ser: un show, algo diferente en Denia.</p>
+                <p class="pj-lbl">Resultado</p>
+                <p class="pj-res">Ahora vemos claramente ese valor diferencial.</p>
+              </div>
+              <figure class="shot pj-media"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Condado Club</span></div><div class="frame poster"><div class="pst"><span class="lg" role="img" aria-label="Condado Club" style="--i:url(img/logos/condado.png);--r:3.188;--h:clamp(44px,5vw,64px)"></span></div></div></figure>
             </div>
-            <figure class="shot pj-media"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>belabrowstudio.com</span></div><div class="frame"><em>Bela</em><iframe id="belaFrame" src="https://bela-vlc.netlify.app/" title="Web de Bela Brow Studio" loading="lazy" tabindex="-1" scrolling="no"></iframe></div></figure>
           </div>
-        </div>
-      </article>
-      <article class="pj card" id="pj-marina" data-sector="nightlife">
-        <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
-        <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-marina">
-          <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/marina.png);--r:1.325;--h:25.7px"></span><b>Marina Beach Club</b>Nightlife · Valencia</span>
-          <span class="pj-title">Elegir mesa como si ya estuvieras allí.</span>
-          <span class="pj-tags"><span>Experiencia digital</span><span>Reservas</span></span>
-          <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
-        </button>
-        <div class="pj-body" id="pjb-marina" role="region" aria-label="Marina Beach Club">
-          <div class="pj-inner">
-            <div class="pj-text">
-              <p class="pj-lbl">Qué necesitaba</p>
-              <p class="pj-ctx">Que el cliente viera el espacio y eligiera su mesa antes de llegar. Hasta entonces, reservar online era rellenar un formulario más.</p>
-              <p class="pj-lbl">Qué hicimos</p>
-              <ol class="pj-steps"><li><b>Escuché</b>Cómo se reservaba hasta ahora y qué echaban en falta sus clientes.</li><li><b>Definí</b>Una reserva en la que el propio espacio convence.</li><li><b>Dirigí</b>La creación de un mapa 3D navegable, conectado en tiempo real con la venta.</li></ol>
-              <p class="pj-lbl">Resultado</p>
-              <p class="pj-res">Más reservas online, porque el cliente elige su mesa viéndola.</p>
+        </article>
+        <article class="pj card" id="pj-bela">
+          <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
+          <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-bela">
+            <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/bela.png);--r:2.524;--h:18.0px"></span><b>Bela Brow Studio</b>Micropigmentación · Valencia</span>
+            <span class="pj-title">Bela pidió una web. Salió una marca.</span>
+            <span class="pj-tags"><span>Estrategia</span><span>Marca</span><span>Web</span></span>
+            <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
+          </button>
+          <div class="pj-body" id="pjb-bela" role="region" aria-label="Bela Brow Studio">
+            <div class="pj-inner">
+              <div class="pj-text">
+                <p class="pj-lbl">De dónde venía</p>
+                <p class="pj-ctx">Frustrada de una web que no hablaba ni de su valor ni de qué la hacía diferente.</p>
+                <p class="pj-lbl">Qué hicimos</p>
+                <ol class="pj-steps"><li><b>Escuché</b>Cómo trabaja, cómo trata a sus clientas y qué la hace única.</li><li><b>Definí</b>Qué tenía que transmitir su marca para separarse del resto de estudios.</li><li><b>Diseñé</b>Su web desde cero, coherente con esa marca y pensada para conseguir citas.</li></ol>
+                <p class="pj-lbl">Resultado</p>
+                <p class="pj-res">Una marca que se reconoce a primera vista y una web pensada para conseguir citas.</p>
+                <a class="link" href="https://bela-vlc.netlify.app/" target="_blank" rel="noopener">Ver la web de Bela</a>
+              </div>
+              <figure class="shot pj-media"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>belabrowstudio.com</span></div><div class="frame"><em>Bela</em><iframe id="belaFrame" src="https://bela-vlc.netlify.app/" title="Web de Bela Brow Studio" loading="lazy" tabindex="-1" scrolling="no"></iframe></div></figure>
             </div>
-            <figure class="shot pj-media"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Mapa 3D de reservas</span></div><div class="frame demo" data-glb="marina.glb" data-pins='[[40, 38, "Banco de cubierta", "Desde 500 €", "ok"], [48, 48, "Sofás lounge", "Agotado", "no"], [56, 42, "Sofás centrales", "Desde 700 €", "ok"], [68, 40, "Sofás escenario", "Desde 900 €", "ok"], [70, 34.5, "Primera fila", "Agotado", "no"]]'><div class="cam"><img src="img/marina-3d.webp" alt="Mapa 3D de reservas de Marina Beach Club" loading="lazy"><div class="pins"></div></div><div class="cursor"></div><div class="panel"><span class="p-zone"></span><span class="p-price"></span><span class="p-pax">Hasta 8 personas</span><span class="p-btn">Reservar mesa</span></div><button class="to3d" type="button">Explorar en 3D</button></div></figure>
           </div>
-        </div>
-      </article>
-      <article class="pj card" id="pj-amok" data-sector="nightlife">
-        <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
-        <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-amok">
-          <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/amok.png);--r:3.294;--h:15.6px"></span><b>AMOK</b>Nightlife · Mallorca</span>
-          <span class="pj-title">Reservar mesa en pocos clics.</span>
-          <span class="pj-tags"><span>Experiencia digital</span><span>Reservas</span></span>
-          <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
-        </button>
-        <div class="pj-body" id="pjb-amok" role="region" aria-label="AMOK">
-          <div class="pj-inner">
-            <div class="pj-text">
-              <p class="pj-lbl">Qué necesitaba</p>
-              <p class="pj-ctx">Que el cliente supiera qué reservaba y lo hiciera sin dudar. Tiene dos espacios, interior y terraza, y la reserva no lo reflejaba.</p>
-              <p class="pj-lbl">Qué hicimos</p>
-              <ol class="pj-steps"><li><b>Escuché</b>Cómo se vendía cada espacio y qué preguntaba el cliente antes de reservar.</li><li><b>Definí</b>Un mapa por espacio, claro y rápido, para decidir sin dudas.</li><li><b>Dirigí</b>Mapas 2D de interior y terraza, conectados con la venta y activos en su web.</li></ol>
-              <p class="pj-lbl">Resultado</p>
-              <p class="pj-res">Más reservas online, cada una con su mesa elegida.</p>
-              <a class="link" href="https://www.amokmallorca.com" target="_blank" rel="noopener">Ver AMOK</a>
-            </div>
-            <figure class="shot pj-media"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>amokmallorca.com</span></div><div class="frame demo" data-pins='[[49.4, 15.6, "Reservado superior", "Desde 400 €", "ok"], [37.1, 24.7, "Galería principal", "Agotado", "no"], [21.5, 30.6, "Reservado esquina", "Desde 400 €", "ok"], [52.3, 21.2, "Reservado galería", "Desde 450 €", "ok"], [58.2, 38.9, "Reservado pista", "Agotado", "no"], [41.0, 61.1, "Lounge inferior", "Agotado", "no"], [66.4, 72.9, "Reservado backstage", "Desde 700 €", "ok"]]'><div class="cam"><img src="img/amok-mapa.webp" alt="Mapa de reservas del interior de AMOK" loading="lazy"><div class="pins"></div></div><div class="cursor"></div><div class="panel"><span class="p-zone"></span><span class="p-price"></span><span class="p-pax">Hasta 8 personas</span><span class="p-btn">Reservar mesa</span></div></div></figure>
-          </div>
-        </div>
-      </article>
-      <article class="pj card" id="pj-marchica" data-sector="nightlife">
-        <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
-        <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-marchica">
-          <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/marchica.png);--r:1.594;--h:23.2px"></span><b>Marchica</b>Nightlife · Temporada 25/26</span>
-          <span class="pj-title">Siete objetivos claros para la próxima temporada.</span>
-          <span class="pj-tags"><span>Análisis</span><span>Estrategia</span></span>
-          <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
-        </button>
-        <div class="pj-body" id="pjb-marchica" role="region" aria-label="Marchica">
-          <div class="pj-inner">
-            <div class="pj-text">
-              <p class="pj-lbl">Qué necesitaba</p>
-              <p class="pj-ctx">Entender qué funcionaba y qué se le estaba escapando. Tenía los datos de toda una temporada, pero ninguna conclusión clara.</p>
-              <p class="pj-lbl">Qué hicimos</p>
-              <ol class="pj-steps"><li><b>Escuché</b>Dos temporadas completas de datos de venta: entradas, reservas y comportamiento del público.</li><li><b>Definí</b>Cinco conclusiones claras, cada una con su propuesta concreta.</li><li><b>Construí</b>Un plan para la temporada siguiente con objetivos medibles y revisión cada quince días.</li></ol>
-              <p class="pj-lbl">Resultado</p>
-              <p class="pj-res">Siete objetivos medibles para la próxima temporada, con qué hacer, cuándo y cómo medirlo.</p>
-            </div>
-            <figure class="shot pj-media"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>Informe de temporada</span></div><div class="frame rep"><div><p class="rep-t">Cinco conclusiones</p><ol><li>El precio se acepta: se mantiene.</li><li>La promoción une los dos espacios.</li><li>El acceso anticipado puede recaudar más.</li><li>Las reservas deben cobrarse por adelantado.</li><li>Sin datos del comprador no hay decisiones.</li></ol></div></div></figure>
-          </div>
-        </div>
-      </article>
-      <svg class="pj-line pj-end" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
+        </article>
+      </div>
     </div>
+  </article>
+
+  <div class="wrap grid">
     <div class="brands">
       <p class="brands-k">Negocios que he acompañado</p>
       <ul class="brands-l"><li><span class="lg" role="img" aria-label="Grupo Sounds" style="--i:url(img/logos/sounds.png);--r:0.988;--h:50.3px"></span></li><li><span class="lg" role="img" aria-label="Condado Club" style="--i:url(img/logos/condado.png);--r:3.188;--h:26.4px"></span></li><li><span class="lg" role="img" aria-label="Marina Beach Club" style="--i:url(img/logos/marina.png);--r:1.325;--h:42.8px"></span></li><li><span class="lg" role="img" aria-label="AMOK" style="--i:url(img/logos/amok.png);--r:3.294;--h:26.0px"></span></li><li><span class="lg" role="img" aria-label="Sala Sonora" style="--i:url(img/logos/sonora.png);--r:3.587;--h:24.8px"></span></li><li><span class="lg" role="img" aria-label="Marchica" style="--i:url(img/logos/marchica.png);--r:1.594;--h:38.7px"></span></li><li><span class="lg" role="img" aria-label="The Big Room Formigal" style="--i:url(img/logos/bigroom.png);--r:2.388;--h:31.0px"></span></li><li><span class="lg" role="img" aria-label="Aramón" style="--i:url(img/logos/aramon.png);--r:3.519;--h:25.0px"></span></li><li><span class="lg" role="img" aria-label="Bela Brow Studio" style="--i:url(img/logos/bela.png);--r:2.524;--h:30.0px"></span></li></ul>
@@ -1101,59 +944,64 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   </div>
 </section>
 
-<section class="block detail has-int">
+<section class="block more" id="continuamos">
+  <div class="wrap grid">
+    <aside class="beyond" aria-labelledby="beyond-t">
+      <span class="beyond-i" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M16.5 10a6.5 6.5 0 1 1-1.9-4.6"/><path d="M15 2.5v3.2h-3.2"/></svg></span>
+      <div>
+        <h2 id="beyond-t">¿Continuamos?</h2>
+        <p class="beyond-p">Silence Club se convierte en tu partner.</p>
+        <p>Después de crear soluciones digitales, podemos continuar con un seguimiento.</p>
+      </div>
+      <p class="loop">Aplicamos <i>+</i> Medimos <i>+</i> Mejoramos.<span>Continuo.</span></p>
+      <div class="yr" aria-hidden="true"><svg viewBox="0 0 1200 30" preserveAspectRatio="none"><path d="M0 22H1200"/></svg><ol><li style="--d:0.00s">ENE</li><li style="--d:0.06s">FEB</li><li style="--d:0.12s">MAR</li><li style="--d:0.18s">ABR</li><li style="--d:0.24s">MAY</li><li style="--d:0.30s">JUN</li><li style="--d:0.36s">JUL</li><li style="--d:0.42s">AGO</li><li style="--d:0.48s">SEP</li><li style="--d:0.54s">OCT</li><li style="--d:0.60s">NOV</li><li style="--d:0.66s">DIC</li></ol></div>
+      <p class="beyond-price"><span>Seguimiento</span><b class="amt">··· €</b><small>/ año</small></p>
+    </aside>
+  </div>
+</section>
+
+<section class="block about has-int" id="sobre-mi">
   <div class="int" style="--l:30%;--w:300px" aria-hidden="true"><i class="seg a"></i><figure><svg viewBox="0 0 300 180"><path d="M0 179.4 C18 179.4 30 150 48 118" style="transition-duration:0.60s;transition-delay:0.00s"/><path class="acc" d="M43 118h10M48 113v10" style="transition-duration:0.24s;transition-delay:0.60s"/><path d="M48 118 L92 136" style="transition-duration:0.38s;transition-delay:0.84s"/><path class="acc" d="M87 136h10M92 131v10" style="transition-duration:0.24s;transition-delay:1.22s"/><path d="M92 136 L130 74" style="transition-duration:0.38s;transition-delay:1.46s"/><path class="acc" d="M125 74h10M130 69v10" style="transition-duration:0.24s;transition-delay:1.84s"/><path d="M130 74 L176 96" style="transition-duration:0.38s;transition-delay:2.08s"/><path class="acc" d="M171 96h10M176 91v10" style="transition-duration:0.24s;transition-delay:2.46s"/><path d="M176 96 L236 36" style="transition-duration:0.38s;transition-delay:2.70s"/><path class="acc" d="M231 36h10M236 31v10" style="transition-duration:0.24s;transition-delay:3.08s"/><path d="M236 36 C268 60 284 150 300 179.4" style="transition-duration:0.60s;transition-delay:3.32s"/></svg></figure><i class="seg b"></i></div>
   <div class="wrap grid">
-    <h2 class="h2">Tengo debilidad por el detalle.</h2>
-    <div class="prose">
-      <p>Intento cuidar siempre hasta el último detalle. Aplico un criterio estético a cada cosa que creo y no la termino hasta que la veo prácticamente perfecta. Me tomo el tiempo que haga falta.</p>
-    </div>
-    <div class="proof">
-      <p>Esta web está construida sobre una retícula de 12 columnas. Nada está colocado a ojo.<span class="k-hint"> Pulsa <kbd>G</kbd> para verla.</span></p>
-      <button type="button" id="gridBtn" aria-pressed="false">Mostrar retícula</button>
+    <figure class="portrait"><div class="photo"><img class="main" src="img/jorge.webp" alt="Retrato de Jorge"><img class="alt" src="img/jorge-alt.webp" alt="" aria-hidden="true"></div><span class="mono" aria-hidden="true">J<svg viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg></span></figure>
+    <div class="txt">
+      <h2 class="h2">Quién hay detrás.</h2>
+      <div class="prose">
+        <p>Me llamo Jorge y quiero dejarte algo claro: si te preguntas por qué aquí, la respuesta siempre se resume en mi manera de hacer las cosas.</p>
+        <p>Llevo más de cuatro años en Fourvenues, acompañando y escuchando a los mejores empresarios de nightlife, aprendiendo la manera de hacer crecer su negocio. Todo ello me ha dado una experiencia que hoy quiero aplicar en más negocios.</p>
+        <p>Aplico criterio estético en cada cosa que creo. Cuido hasta el más mínimo detalle y no doy nada por terminado. Aquí encontrarás visión sobre cómo puede ser mejor tu negocio y criterio para identificar qué aplicamos y cómo lo aplicamos.</p>
+        <p>Y, sobre todo, una base creativa en todo, porque el «cómo» importa mucho.</p>
+      </div>
+      <p class="why">No todo vale.</p>
     </div>
   </div>
 </section>
 
 <section class="block nope">
   <div class="wrap grid">
-    <h2 class="h2">Cosas que no voy a hacer.</h2>
+    <h2 class="h2">Qué no voy a hacer.</h2>
     <ul class="nos">
       <li class="no">
         <svg class="no-line" viewBox="0 0 600 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H600"/></svg>
-        <button type="button" class="no-q" aria-expanded="false" aria-controls="no0"><span>Pasarte un presupuesto sin escucharte.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
-        <div class="no-a" id="no0" role="region"><p>Primero entiendo. Después propongo.</p></div>
+        <button type="button" class="no-q" aria-expanded="false" aria-controls="no0"><span>Venderte que hago IA.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
+        <div class="no-a" id="no0" role="region"><p>Lo habrás visto ya millones de veces. La IA, en todo caso, será mi herramienta, pero no un servicio.</p></div>
       </li>
       <li class="no">
         <svg class="no-line" viewBox="0 0 600 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H600"/></svg>
-        <button type="button" class="no-q" aria-expanded="false" aria-controls="no1"><span>Diseñar para que te guste únicamente a ti.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
-        <div class="no-a" id="no1" role="region"><p>Diseño para que te elijan tus clientes. A veces coincide, a veces no.</p></div>
+        <button type="button" class="no-q" aria-expanded="false" aria-controls="no1"><span>Decirte únicamente lo que quieres oír.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
+        <div class="no-a" id="no1" role="region"><p>Aquí, complaciente, no.</p></div>
       </li>
       <li class="no">
         <svg class="no-line" viewBox="0 0 600 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H600"/></svg>
-        <button type="button" class="no-q" aria-expanded="false" aria-controls="no2"><span>Decirte que el problema es la web si el problema es otro.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
-        <div class="no-a" id="no2" role="region"><p>Si no te hace falta lo que hago, te lo diré.</p></div>
+        <button type="button" class="no-q" aria-expanded="false" aria-controls="no2"><span>Trabajar con cualquiera.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
+        <div class="no-a" id="no2" role="region"><p>Elijo mucho con quién me vinculo. Si estás dispuesto a escuchar, a dejar tu ego a un lado y crees que puedes mejorar, nos entenderemos.</p></div>
       </li>
       <li class="no">
         <svg class="no-line" viewBox="0 0 600 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H600"/></svg>
-        <button type="button" class="no-q" aria-expanded="false" aria-controls="no3"><span>Trabajar con todo el mundo.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
-        <div class="no-a" id="no3" role="region"><p>Elijo pocos proyectos para poder cuidarlos de verdad.</p></div>
+        <button type="button" class="no-q" aria-expanded="false" aria-controls="no3"><span>Darte precios sin haber entendido antes algo de tu negocio.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
+        <div class="no-a" id="no3" role="region"><p>Es importante ser honesto, y pondré precio a aquello que crea que te puede ayudar.</p></div>
       </li>
     </ul>
-  </div>
-</section>
-
-<section class="block about" id="sobre-mi">
-  <div class="wrap grid">
-    <figure class="portrait"><div class="photo"><img class="main" src="img/jorge.webp" alt="Retrato de Jorge"><img class="alt" src="img/jorge-alt.webp" alt="" aria-hidden="true"></div><span class="mono" aria-hidden="true">J<svg viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg></span></figure>
-    <div class="txt">
-      <h2 class="h2">Hola, soy Jorge.</h2>
-      <div class="prose">
-        <p>Soy creativo desde que tengo memoria. Pasé cinco años en una agencia de performance y creatividad, entendiendo cada día un negocio distinto: su cliente, su web, su forma de vender.</p>
-        <p>Hoy trabajo en Fourvenues, una empresa tecnológica, escuchando y acompañando cada semana a decenas de negocios. Esa mezcla de creatividad y realidad comercial es lo que traigo a cada proyecto.</p>
-      </div>
-      <p class="why">Silence Club es mi proyecto propio. No nace de la prisa, nace de las ganas. Por eso elijo bien en qué me implico.</p>
-    </div>
   </div>
 </section>
 
@@ -1170,7 +1018,7 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
 </section>
 <footer class="site-foot">
   <div class="wrap">
-    <span class="fbrand"><svg class="logo" viewBox="0 0 362 97" role="img" aria-label="Silence Club"><use href="#sc-s0"/><use href="#sc-s1"/><use href="#sc-s2"/><use href="#sc-s3"/><use href="#sc-s4"/><use href="#sc-s5"/><use href="#sc-s6"/><path class="ln" d="M0 48H358"/><use href="#sc-c0"/><use href="#sc-c1"/><use href="#sc-c2"/><use href="#sc-c3"/><circle class="db" cx="351" cy="86.5" r="9"/><path d="M351 77.5a9 9 0 0 1 0 18z"/></svg><span class="frole">Dirección creativa y estratégica</span></span>
+    <span class="fbrand"><svg class="logo" viewBox="0 0 362 97" role="img" aria-label="Silence Club"><use href="#sc-s0"/><use href="#sc-s1"/><use href="#sc-s2"/><use href="#sc-s3"/><use href="#sc-s4"/><use href="#sc-s5"/><use href="#sc-s6"/><path class="ln" d="M0 48H358"/><use href="#sc-c0"/><use href="#sc-c1"/><use href="#sc-c2"/><use href="#sc-c3"/><circle class="db" cx="351" cy="86.5" r="9"/><path d="M351 77.5a9 9 0 0 1 0 18z"/></svg><span class="frole">Decisiones inteligentes para tu negocio</span></span>
     <button type="button" id="gridBtn2">Mostrar retícula</button>
   </div>
 </footer>
@@ -1262,12 +1110,12 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   modeSync();
 
   /* Retícula */
-  var ov=document.getElementById('overlay'), b1=document.getElementById('gridBtn'), b2=document.getElementById('gridBtn2');
+  var ov=document.getElementById('overlay'), b2=document.getElementById('gridBtn2');
   function toggle(){
     var on=ov.classList.toggle('on');
-    [b1,b2].forEach(function(b){b.textContent=on?'Ocultar retícula':'Mostrar retícula';b.setAttribute('aria-pressed',on);});
+    b2.textContent=on?'Ocultar retícula':'Mostrar retícula';b2.setAttribute('aria-pressed',on);
   }
-  b1.addEventListener('click',toggle); b2.addEventListener('click',toggle);
+  b2.addEventListener('click',toggle);
   document.addEventListener('keydown',function(e){
     if((e.key==='g'||e.key==='G')&&!e.metaKey&&!e.ctrlKey&&!e.altKey&&!/input|textarea/i.test(e.target.tagName))toggle();
   });
@@ -1350,57 +1198,8 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
   } else start();
   size();
 
-  /* Cómo trabajo: la fase que lees se marca en el índice (escritorio) */
-  var pbox=document.querySelector('.proc'), phs=[].slice.call(document.querySelectorAll('.ph')), score=document.querySelector('.score');
-  var pIdx=[].slice.call(document.querySelectorAll('.proc-idx a'));
-  var pph=-1, pon=false, pq=false;
-  /* Una fase empieza cuando su título cruza algo por debajo de la mitad de la pantalla */
-  function phase(){var m=innerHeight*.55,k=0;phs.forEach(function(e,i){if(e.querySelector('.ph-n').getBoundingClientRect().top<m)k=i;});return k;}
-  /* Pestaña móvil de la fase: cae de la barra bajo el logo. Al cambiar de fase, ancho y posición se animan juntos en un
-     solo gesto (sin corregir después), el texto se funde a mitad de camino y su borde suena mientras viaja y se calma al llegar */
-  var tab=document.querySelector('.ph-tab'),tabT=tab.querySelector('.pt-t:not(.pt-m)'),tabM=tab.querySelector('.pt-m'),tabBg=tab.querySelector('.pt-bg'),
-      tabLogo=document.querySelector('nav .brand .logo'),TAB_N=['Inicio','Desarrollo','Desenlace'],TAB_X=[-10,0,10],tabPh=0,tabRaf=0,tabW=0,tabC=0,
-      tabClip=window.CSS&&CSS.supports&&CSS.supports('clip-path','path("M0 0H1V1Z")');
-  function tabApply(W,C,A,t){
-    tab.style.setProperty('--tw',W.toFixed(1)+'px');tab.style.setProperty('--tx',(C-W/2).toFixed(1)+'px');
-    if(!tabClip)return;
-    var b=W-32,d='M0 0H10C20 0 20 23 32 23';
-    for(var x=34;x<b;x+=2){var e=Math.sin(Math.PI*(x-32)/(b-32));d+='L'+x+' '+(23+A*e*(Math.sin(x*.5-t*20)*.6+Math.sin(x*1.1+t*31)*.4)).toFixed(2);}
-    d+='L'+b.toFixed(1)+' 23C'+(W-20).toFixed(1)+' 23 '+(W-20).toFixed(1)+' 0 '+(W-10).toFixed(1)+' 0H'+W.toFixed(1)+'Z';
-    tabBg.style.borderRadius='0';tabBg.style.webkitClipPath=tabBg.style.clipPath='path("'+d+'")';
-  }
-  function tabText(el,ph){el.firstChild.textContent='0'+(ph+1);el.lastChild.textContent=TAB_N[ph];}
-  /* Ancho: el del texto más 32 px de curva a cada lado; centro: el del logo, desplazado unos píxeles según la fase */
-  function tabMeasure(ph){tabText(tabM,ph);return tabM.offsetWidth+64;}
-  function tabCenter(ph){var r=tabLogo.getBoundingClientRect(),w=tab.parentNode.getBoundingClientRect();return r.left+r.width/2-w.left+TAB_X[ph];}
-  function tabSet(ph){
-    if(ph===tabPh)return;tabPh=ph;
-    var W1=tabMeasure(ph),C1=tabCenter(ph);cancelAnimationFrame(tabRaf);
-    if(!tab.classList.contains('on')||reduce){tabText(tabT,ph);tabW=W1;tabC=C1;tabApply(W1,C1,0,0);return;}
-    var W0=tabW,C0=tabC,t0=performance.now(),D=.7,sw=false;tabT.classList.add('swap');
-    (function f(){var t=(performance.now()-t0)/1000,q=Math.min(1,t/D),e=q<.5?4*q*q*q:1-Math.pow(-2*q+2,3)/2;
-      tabW=W0+(W1-W0)*e;tabC=C0+(C1-C0)*e;tabApply(tabW,tabC,1.6*Math.sin(Math.PI*q),t);
-      if(!sw&&q>.5){sw=true;tabText(tabT,ph);tabT.classList.remove('swap');}
-      if(q<1)tabRaf=requestAnimationFrame(f);})();
-  }
-  function tabShow(){var r=pbox.getBoundingClientRect();tab.classList.toggle('on',pon&&r.top<innerHeight*.5&&r.bottom>innerHeight*.35);}
-  function tabInit(){tabW=tabMeasure(tabPh);tabC=tabCenter(tabPh);tabApply(tabW,tabC,0,0);}
-  tabInit();window.addEventListener('resize',tabInit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(tabInit);
-
-  function pupd(){
-    pq=false;var ph=phase();tabShow();
-    if(ph===pph)return;pph=ph;tabSet(ph);
-    pIdx.forEach(function(a,i){a.classList.toggle('done',i<ph);if(i===ph)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
-    /* Al llegar a Desarrollo, el candado de las soluciones queda abierto */
-    if(ph>0)score.classList.add('open');
-  }
-  window.addEventListener('scroll',function(){if(pon&&!pq){pq=true;requestAnimationFrame(pupd);}},{passive:true});
-  if('IntersectionObserver' in window)new IntersectionObserver(function(en){pon=en[0].isIntersecting;if(pon)pupd();else tabShow();}).observe(pbox);
-  else pon=true;
-  pupd();
-
-  /* Las tres patas: su línea suena al verla, se calma y se queda respirando con su forma */
-  var L=[].map.call(document.querySelectorAll('canvas.pil-line'),function(c,i){return {i:i,c:c,x:c.getContext('2d'),s:c.dataset.shape,t0:null,v:false,W:0,H:0};});
+  /* Áreas: su línea suena al verla, se calma y se queda respirando con su forma */
+  var L=[].map.call(document.querySelectorAll('canvas.area-line'),function(c,i){return {i:i,c:c,x:c.getContext('2d'),s:c.dataset.shape,t0:null,v:false,W:0,H:0};});
   function lsize(o){var d=Math.min(window.devicePixelRatio||1,2);o.W=o.c.clientWidth;o.H=o.c.clientHeight;o.c.width=o.W*d;o.c.height=o.H*d;o.x.setTransform(d,0,0,d,0,0);}
   function lshape(s,x,t,W,H,p){
     if(s==='signal'){var cx=W*.66,g=Math.max(30,W*.04),d=x-cx;return -p*H*.3*Math.exp(-d*d/(2*g*g))*(1+.05*Math.sin(t*1.7));}
@@ -1442,10 +1241,6 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     [].forEach.call(sc.querySelectorAll('.sd.f,.sd.h'),function(d,i){d.style.setProperty('--d',(.15+i*.22).toFixed(2)+'s');});
     var sio=new IntersectionObserver(function(en){if(en[0].isIntersecting){sc.classList.remove('wait');sio.disconnect();}},{rootMargin:'0px 0px -30% 0px',threshold:.5});
     sio.observe(sc.querySelector('.score-c'));
-    /* Candado: cuando las soluciones cruzan la mitad de la pantalla, se sacude una vez (sigue cerrado) */
-    var un=sc.querySelector('.unlock'),uio=new IntersectionObserver(function(en){if(en[0].isIntersecting){uio.disconnect();
-      un.classList.add('nudge');un.addEventListener('animationend',function(){un.classList.remove('nudge');},{once:true});}},{rootMargin:'-42% 0px -42% 0px'});
-    uio.observe(sc.querySelector('.sol'));
   }
 
   var onTheme=function(){readInk();size();L.forEach(function(o){ldraw(o,lt(o));});};
@@ -1524,18 +1319,28 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     }
   }
 
-  /* Área de cliente: los entregables llegan uno a uno y la sintonía entre las dos marcas suena y se calma en su latido */
+  /* Área de cliente (Marchica): las cifras llegan una a una, la sintonía entre las dos marcas suena y se calma en su
+     latido, y la gráfica avanza sola mientras se ve, como un panel en directo */
   var cs=document.querySelector('.cli-shot');
-  if(cs&&!reduce&&'IntersectionObserver' in window){
-    var cbp=cs.querySelector('.cl-br path');
+  if(cs){
+    var cbp=cs.querySelector('.cl-br path'),cln=cs.querySelector('.cl-chart .ln'),car=cs.querySelector('.cl-chart .ar');
     var cbeat=function(u){return -5*Math.exp(-Math.pow((u+3.2)/1.7,2))+5.2*Math.exp(-Math.pow((u-.6)/1.7,2))-2.2*Math.exp(-Math.pow((u-4.3)/1.7,2));};
     var cdraw=function(a,b,t){var d='';for(var x=0;x<=34;x+=.5){d+=(x?'L':'M')+x+' '+(10+b*cbeat(x-17)+a*Math.sin(Math.PI*x/34)*(Math.sin(x*.6-t*17)*.6+Math.sin(x*1.3+t*29)*.4)).toFixed(2);}cbp.setAttribute('d',d);};
-    cs.classList.add('wait');
-    [].forEach.call(cs.querySelectorAll('.cl-items li'),function(l,i){l.style.setProperty('--d',(.2+i*.28).toFixed(2)+'s');});
-    var kio=new IntersectionObserver(function(en){if(!en[0].isIntersecting)return;kio.disconnect();cs.classList.remove('wait');var t0=performance.now();
-      (function f(){var t=(performance.now()-t0)/1000,p=Math.min(1,t/1.8);cdraw(5*Math.pow(1-p,1.4),Math.pow(p,1.6),t);if(p<1)requestAnimationFrame(f);})();
-    },{rootMargin:'0px 0px -20% 0px',threshold:.5});
-    kio.observe(cs);
+    /* Tendencia que sube con altibajos; con el tiempo, la curva corre hacia la izquierda */
+    var chart=function(t){var d='';for(var x=0;x<=300;x+=4){var u=x/300+t*.05,y=60-28*x/300-7*Math.sin(u*9)-4*Math.sin(u*23+1.3)-2*Math.sin(u*51);d+=(x?'L':'M')+x+' '+y.toFixed(2);}
+      cln.setAttribute('d',d);car.setAttribute('d',d+'L300 80L0 80Z');};
+    chart(0);
+    if(!reduce&&'IntersectionObserver' in window){
+      cs.classList.add('wait');
+      [].forEach.call(cs.querySelectorAll('.cl-kpis li'),function(l,i){l.style.setProperty('--d',(.2+i*.22).toFixed(2)+'s');});
+      var kio=new IntersectionObserver(function(en){if(!en[0].isIntersecting)return;kio.disconnect();cs.classList.remove('wait');var t0=performance.now();
+        (function f(){var t=(performance.now()-t0)/1000,p=Math.min(1,t/1.8);cdraw(5*Math.pow(1-p,1.4),Math.pow(p,1.6),t);if(p<1)requestAnimationFrame(f);})();
+      },{rootMargin:'0px 0px -20% 0px',threshold:.5});
+      kio.observe(cs);
+      var cv=false,craf=0,ct0=performance.now();
+      var crun=function(){chart((performance.now()-ct0)/1000);if(cv)craf=requestAnimationFrame(crun);};
+      new IntersectionObserver(function(en){cv=en[0].isIntersecting;cancelAnimationFrame(craf);if(cv)craf=requestAnimationFrame(crun);}).observe(cs);
+    }
   }
 
   /* Te toca a ti: el botón del email se rellena una vez al verlo */
@@ -1587,23 +1392,11 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     tupd();
   }
 
-  /* Patas: ver entregables */
-  [].forEach.call(document.querySelectorAll('.pil-more'),function(m){
-    var b=m.querySelector('.pil-tg'),lp=b.querySelector('.pil-ln path'),raf;
-    /* La línea se agita y vuelve al silencio, como en "Cosas que no voy a hacer" */
-    function shake(){
-      if(reduce)return;cancelAnimationFrame(raf);var t0=performance.now();
-      (function f(){var t=(performance.now()-t0)/1000,k=Math.max(0,1-t/1.4),A=5*Math.pow(k,2),d='M0 6';
-        for(var x=0;x<=200;x+=3){var e=Math.sin(Math.PI*x/200);d+='L'+x+' '+(6+A*e*(Math.sin(x*.15-t*14)*.6+Math.sin(x*.39+t*20)*.4)).toFixed(2);}
-        lp.setAttribute('d',k>0?d:'M0 6H200');if(k>0)raf=requestAnimationFrame(f);})();
-    }
-    b.addEventListener('click',function(){var o=!m.classList.contains('open');m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.firstChild.nodeValue=o?'Ocultar entregables':'Ver entregables';shake();});
-  });
-
   /* Trabajos: acordeón; la línea escucha el cursor y se agita al abrir */
-  var pjs=[].slice.call(document.querySelectorAll('.pj'));
-  var pjw=document.querySelector('.pjs');
-  if(pjw&&!reduce&&'IntersectionObserver' in window){var pio=new IntersectionObserver(function(en){if(en[0].isIntersecting){pjw.classList.add('invite');pio.disconnect();}},{threshold:.35});pio.observe(pjw);}
+  /* Cada área tiene su lista de casos: se abre uno a la vez dentro de cada lista; al verla, los cerrados invitan a abrirse */
+  var pjs=[].slice.call(document.querySelectorAll('.pj:not(.pj-soon)'));
+  if(!reduce&&'IntersectionObserver' in window)[].forEach.call(document.querySelectorAll('.pjs'),function(pjw){
+    var pio=new IntersectionObserver(function(en){if(en[0].isIntersecting){pjw.classList.add('invite');pio.disconnect();}},{threshold:.35});pio.observe(pjw);});
   pjs.forEach(function(pj){
     var b=pj.querySelector('.pj-head'),p=pj.querySelector('.pj-line path'),hx=-999,amp=0,ta=0,sh=0,t0=0,raf=0;
     function draw(){
@@ -1622,31 +1415,10 @@ section.proc-sec{padding-top:clamp(40px,5vw,72px)}
     }
     b.addEventListener('click',function(){
       var o=!pj.classList.contains('open');
-      pjs.forEach(function(q){if(q!==pj&&q.classList.contains('open')){q.classList.remove('open');q.querySelector('.pj-head').setAttribute('aria-expanded','false');q.shake();}});
+      pjs.forEach(function(q){if(q!==pj&&q.parentNode===pj.parentNode&&q.classList.contains('open')){q.classList.remove('open');q.querySelector('.pj-head').setAttribute('aria-expanded','false');q.shake();}});
       pj.classList.toggle('open',o);b.setAttribute('aria-expanded',o);pj.shake();
       if(o){if(window.fitBela)setTimeout(window.fitBela,60);
         setTimeout(function(){var top=pj.getBoundingClientRect().top;if(top<90||top>innerHeight*.6)window.scrollTo({top:scrollY+top-100,behavior:reduce?'auto':'smooth'});},480);}
-    });
-  });
-
-  /* Filtro por sector: los proyectos que quedan entran uno a uno y su línea suena al llegar */
-  var pfs=[].slice.call(document.querySelectorAll('.pf')), pjc=document.getElementById('pjCount');
-  function inSector(pj,f){return f==='*'||pj.dataset.sector===f;}
-  pfs.forEach(function(b){
-    var f=b.dataset.f;
-    b.querySelector('span').textContent=pjs.filter(function(pj){return inSector(pj,f);}).length;
-    b.addEventListener('click',function(){
-      b.classList.remove('play');void b.offsetWidth;b.classList.add('play');
-      if(b.getAttribute('aria-pressed')==='true')return;
-      pfs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
-      var k=0;
-      pjs.forEach(function(pj){
-        var on=inSector(pj,f);
-        if(!on&&pj.classList.contains('open')){pj.classList.remove('open');pj.querySelector('.pj-head').setAttribute('aria-expanded','false');}
-        pj.hidden=!on;pj.classList.remove('in');
-        if(on){pj.style.setProperty('--k',k);void pj.offsetWidth;pj.classList.add('in');setTimeout(pj.shake,k*80+120);k++;}
-      });
-      pjc.textContent=k+(k===1?' proyecto':' proyectos');
     });
   });
 
