@@ -148,9 +148,8 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 .ac-d{--ac:var(--violeta);--ac-t:rgba(107,79,214,.08);--ac-b:rgba(107,79,214,.3)}
 .ac-m{--ac:#D2603F;--ac-t:rgba(210,96,63,.09);--ac-b:rgba(210,96,63,.3)}
 @media (max-width:600px){.qa{max-width:94%}}
-.hero .pitch .lead{margin-top:22px;font-size:clamp(17px,1.45vw,20px);line-height:1.5;color:var(--tinta);opacity:.86}
-.hero .pitch .punch{display:block;width:fit-content;margin-top:.3em;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:clamp(19px,1.55vw,22px);line-height:1.3;color:var(--tinta);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}
-.hero .actions{display:flex;gap:12px 16px;flex-wrap:wrap;margin-top:36px}
+/* Tras la última respuesta (cuelga 12 px de su mensaje), aire suficiente para que los botones no se peguen al chat */
+.hero .actions{display:flex;gap:12px 16px;flex-wrap:wrap;margin-top:50px}
 .btn{display:inline-flex;align-items:center;height:52px;padding:0 28px;border-radius:999px;font:500 16px/1 var(--sans);text-decoration:none;transition:background .25s,color .25s,border-color .25s}
 .btn.solid{background:var(--tinta);color:var(--papel)}
 .btn.solid:hover{background:var(--violeta)}
@@ -189,52 +188,60 @@ section.svc{padding-bottom:0}
 .svc-t{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(28px,3vw,42px);line-height:1.08;letter-spacing:-.022em;text-wrap:balance}
 .score{--sp:28px;grid-column:7/span 6;margin-top:clamp(56px,7vw,96px)}
 .score-c{margin:0;padding:24px var(--sp) 0;overflow:hidden;border:1px solid var(--linea);border-radius:16px;background:var(--papel);box-shadow:0 24px 50px -32px rgba(28,30,42,.3)}
-.score-h{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.score-k{display:block;font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--violeta)}
-.score-t{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin-top:8px;font-weight:600;font-size:19px;letter-spacing:-.01em}
-.score-t em{padding:2px 9px;border:1px solid var(--linea);border-radius:999px;font:400 11.5px/1.4 var(--sans);font-style:normal;color:var(--grafito)}
-/* Nota global: un anillo que se completa hasta la nota */
-.score-g{position:relative;flex:none;display:grid;place-items:center;width:66px;height:66px}
-.score-g svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
-.g-bg{fill:none;stroke:var(--linea);stroke-width:5}
-.g-fg{fill:none;stroke:var(--violeta);stroke-width:5;stroke-linecap:round;stroke-dasharray:42 100;transition:stroke-dasharray 1.4s cubic-bezier(.45,0,.55,1) .2s}
-.score.wait .g-fg{stroke-dasharray:0 100}
-.score-g b{font:600 18px/1 var(--sans);letter-spacing:-.02em}
-.score-g small{font-size:10px;font-weight:500;color:var(--grafito)}
-/* Separador: la línea de sonido; el tramo de lo que ya funciona suena, el resto queda en silencio */
-.g-line{display:block;width:100%;height:26px;margin:12px 0 2px;overflow:visible}
-.g-on{fill:none;stroke:var(--violeta);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.g-off{fill:none;stroke:var(--grafito);stroke-opacity:.35;stroke-width:1.2}
-.g-line+.score-l li:first-child{border-top:0}
-.score-l{margin:0;padding:0;list-style:none}
-.score-l li{display:grid;grid-template-columns:1fr auto 118px;align-items:center;gap:14px;min-height:42px;padding:5px 0;border-top:1px solid var(--linea);font-size:15px;line-height:1.35}
-/* Puntuación con puntos: vacío, medio y lleno, como el punto del logo */
-.sds{display:inline-flex;flex:none;gap:6px;color:var(--tinta)}
-.sd{position:relative;width:11px;height:11px;border-radius:50%;border:1px solid currentColor}
-.sd.f::after,.sd.h::after{content:"";position:absolute;inset:-1px;border-radius:50%;background:currentColor;transition:opacity .9s cubic-bezier(.45,0,.55,1) var(--d,0s)}
-.sd.h::after{clip-path:inset(0 0 0 50%)}
-.score.wait .sd::after{opacity:0}
-/* Veredicto de cada pregunta; donde hay una mejora digital clara, "Oportunidad" en violeta */
-.score-l li.is-op .q{color:var(--tinta)}
-.score-l li:not(.is-op) .q{color:var(--grafito)}
-.sv{justify-self:end;display:inline-flex;align-items:center;gap:5px;font:500 10.5px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--grafito);transition:opacity .5s,transform .5s cubic-bezier(.3,1.5,.45,1)}
-.sv.op{padding:5px 9px 5px 8px;border-radius:999px;background:rgba(107,79,214,.1);color:var(--violeta);transition-delay:1.7s}
-.sv svg,.score-sum svg,.free svg{flex:none;width:10px;height:10px;fill:currentColor}
-.score.wait .sv.op{opacity:0;transform:scale(.8)}
-.score-sum{display:flex;align-items:center;gap:8px;margin-top:12px;font:500 13.5px/1.3 var(--sans);color:var(--violeta)}
-.score-sum svg{width:12px;height:12px}
+.score-h{display:block}
+.score-t{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;font-weight:600;font-size:21px;line-height:1.2;letter-spacing:-.015em}
+.score-t em{padding:2px 9px;border:1px solid var(--linea);border-radius:999px;font:400 11.5px/1.4 var(--sans);font-style:normal;letter-spacing:0;color:var(--grafito)}
+.score-s{display:block;margin-top:6px;font-size:14.5px;line-height:1.4;color:var(--grafito)}
+/* El scoring como un anillo de sonido, un tramo por área: lo que funciona suena (más cuanto mejor está) y lo que falla
+   se queda en silencio, punteado en violeta y con su destello. Nada de tablas: no se parece al panel de Marchica */
+.sring{position:relative;aspect-ratio:4/3;margin-top:10px}
+.sr-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.sr-g{fill:none;stroke:var(--linea);stroke-width:1;stroke-dasharray:1.5 5}
+.sr-w .on{fill:none;stroke:var(--tinta);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.85}
+.sr-w .off{fill:none;stroke:var(--violeta);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sr-w .ld{fill:none;stroke:var(--grafito);stroke-opacity:.28;stroke-width:1;transition:opacity .8s 1.4s}
+.score.wait .sr-w .ld{opacity:0}
+.sr-w .mk{fill:var(--violeta);transform-box:fill-box;transform-origin:center;transform:scale(0);transition:transform .7s cubic-bezier(.3,1.6,.5,1)}
+.sr-w .mk.lit{transform:none;animation:mktw 3.6s ease-in-out 1.2s infinite}
+@keyframes mktw{0%,72%{transform:none}86%{transform:scale(1.45) rotate(45deg)}100%{transform:rotate(90deg)}}
+.sr-c{position:absolute;left:50%;top:50%;display:flex;align-items:baseline;transform:translate(-50%,-50%);font:600 32px/1 var(--sans);letter-spacing:-.035em;transition:opacity .8s .3s}
+.sr-c small{margin-left:1px;font-size:13px;font-weight:500;letter-spacing:0;color:var(--grafito)}
+.sr-l{position:absolute;display:flex;flex-direction:column;gap:4px;font:500 13px/1.15 var(--sans);color:var(--grafito);transition:opacity .6s ease,transform .6s cubic-bezier(.3,.8,.3,1);transition-delay:var(--d,0s)}
+.sr-l b{font-weight:600;font-size:14.5px;letter-spacing:-.01em;color:var(--tinta)}
+.sr-l[data-a="0"]{left:0;top:0}
+.sr-l[data-a="1"]{right:0;top:0;align-items:flex-end}
+.sr-l[data-a="2"]{right:0;bottom:0;align-items:flex-end}
+.sr-l[data-a="3"]{left:0;bottom:0}
+.sr-l.op>span{display:inline-flex;align-items:center;gap:5px;color:var(--violeta)}
+.sr-l.op svg{width:9px;height:9px;fill:currentColor}
+.score.wait .sr-l{opacity:0;transform:translateY(5px)}
+.score.wait .sr-c{opacity:0}
+.score-sum{display:flex;align-items:center;gap:8px;margin-top:14px;font:500 13.5px/1.3 var(--sans);color:var(--violeta);transition:opacity .6s 2.6s}
+.score-sum svg{flex:none;width:12px;height:12px;fill:currentColor}
+.score.wait .score-sum{opacity:0}
 /* Pie de la tarjeta: en lugar de precio, "Free", en la misma franja con tinte violeta */
 .score-free{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;margin:16px calc(-1*var(--sp)) 0;padding:14px var(--sp) 15px;border-top:1px dashed var(--linea);background:rgba(107,79,214,.06);background:color-mix(in srgb,var(--violeta) 5%,var(--niebla));font-size:14px;color:var(--grafito)}
 .score-free b{font-weight:500;color:var(--tinta)}
 /* Línea perforada con muescas a los lados, como el resguardo de una invitación */
 .score-free::before,.score-free::after{content:"";position:absolute;top:-10px;width:20px;height:20px;border-radius:50%;background:var(--niebla);border:1px solid var(--linea)}
 .score-free::before{left:-11px}.score-free::after{right:-11px}
-/* Free: una insignia violeta que destella al completarse el scoring */
-.free{position:relative;flex:none;display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 16px 0 13px;overflow:hidden;border-radius:999px;background:var(--violeta);background:linear-gradient(135deg,var(--violeta),#9479F2);color:#fff;font:400 19px/1 var(--serif);font-variation-settings:"SOFT" 100;letter-spacing:-.01em;box-shadow:0 10px 22px -12px rgba(107,79,214,.9)}
+/* Free: una insignia violeta que destella al completarse el scoring; su estrella entra girando, suelta chispas y,
+   cada pocos segundos, vuelve a brillar: lo gratis es lo que se tiene que ver */
+.free{position:relative;flex:none;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 16px 0 13px;overflow:hidden;border-radius:999px;background:var(--violeta);background:linear-gradient(135deg,var(--violeta),#9479F2);color:#fff;font:400 19px/1 var(--serif);font-variation-settings:"SOFT" 100;letter-spacing:-.01em;box-shadow:0 10px 22px -12px rgba(107,79,214,.9)}
 .free::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.6) 50%,transparent 70%);transform:translateX(-130%)}
-.score:not(.wait) .free::after{animation:glim 1.1s ease 2s both}
+.score:not(.wait) .free::after{animation:glim 1.1s ease 2.4s both}
+.fs{position:relative;display:grid;place-items:center;width:12px;height:12px}
+.fs svg{width:12px;height:12px;fill:currentColor;overflow:visible}
+.fs i{position:absolute;left:50%;top:50%;width:3px;height:3px;margin:-1.5px;border-radius:50%;background:currentColor;opacity:0}
+.score.wait .fs svg{transform:scale(0)}
+.score:not(.wait) .fs svg{animation:fsin .9s cubic-bezier(.3,1.5,.5,1) 2.2s both,fstw 4s ease-in-out 4s infinite}
+.score:not(.wait) .fs i{animation:fspk 4s ease-out 2.35s infinite}
+.fs i:nth-child(3){--x:-9px;--y:-8px;animation-delay:2.45s!important}.fs i:nth-child(2){--x:9px;--y:-7px}.fs i:nth-child(4){--x:2px;--y:10px;animation-delay:2.55s!important}
+@keyframes fsin{0%{transform:scale(0) rotate(-120deg)}55%{transform:scale(1.7) rotate(20deg);filter:drop-shadow(0 0 4px rgba(255,255,255,.95))}100%{transform:none}}
+@keyframes fstw{0%,74%{transform:none}86%{transform:scale(1.45) rotate(45deg);filter:drop-shadow(0 0 4px rgba(255,255,255,.9))}100%{transform:rotate(90deg)}}
+@keyframes fspk{0%{opacity:0;transform:none}6%{opacity:1}22%,100%{opacity:0;transform:translate(var(--x),var(--y)) scale(.4)}}
 .amt{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:20px;letter-spacing:-.01em;color:var(--tinta)}
-@media (max-width:600px){.score{--sp:18px}.score-c{padding-top:20px}.score-l li{grid-template-columns:1fr auto auto;gap:10px}.sv{display:none}.sv.op{display:inline-flex;padding:5px;font-size:0;gap:0}.score-free{flex-wrap:wrap}}
+@media (max-width:600px){.score{--sp:18px}.score-c{padding-top:20px}.score-t{font-size:19px}.sr-l{font-size:12px}.sr-l b{font-size:13.5px}.sr-c{font-size:27px}.score-free{flex-wrap:wrap}}
 
 /* Áreas: tres bloques de trabajo, cada uno con su color, su icono y su ilustración (se entienden sin leer).
    La cinta de sonido hace de borde superior del bloque. Títulos en sans: más producto, menos página */
@@ -339,14 +346,18 @@ section.areas{padding-top:clamp(96px,12vw,152px)}
   :root:not([data-theme=light]) .ac-v{--ac:#4FD196;--ac-t:rgba(79,209,150,.1);--ac-b:rgba(79,209,150,.3)}
   :root:not([data-theme=light]) .ac-d{--ac:var(--violeta);--ac-t:rgba(160,140,245,.1);--ac-b:rgba(160,140,245,.3)}
   :root:not([data-theme=light]) .ac-m{--ac:#F2967B;--ac-t:rgba(242,150,123,.1);--ac-b:rgba(242,150,123,.3)}
-  :root:not([data-theme=light]) .shot .frame.web .lt{display:none}
-  :root:not([data-theme=light]) .shot .frame.web .dk{display:block}
+  :root:not([data-theme=light]) .shot .frame .lt{display:none}
+  :root:not([data-theme=light]) .shot .frame .dk{display:block}
+  :root:not([data-theme=light]) .tab-bl{background:radial-gradient(70% 62% at 50% 36%,rgba(214,120,140,.2),transparent 70%),linear-gradient(165deg,#2a1a1f,#0e080a)}
+  :root:not([data-theme=light]) .tab-bl .vp{background:#1d1416}
+  :root:not([data-theme=light]) .tv-bd{background:rgba(244,233,231,.55)}
+  :root:not([data-theme=light]) .tab-bl .tv-tap{background:rgba(255,235,240,.22);box-shadow:inset 0 0 0 2px rgba(255,225,232,.8),0 8px 22px rgba(0,0,0,.35)}
+  :root:not([data-theme=light]) .tab-bl .tv-tap::after{box-shadow:0 0 0 2px rgba(255,225,232,.7)}
   :root:not([data-theme=light]) .ans::after{background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%)}
   :root:not([data-theme=light]) .sec{background:rgba(255,255,255,.08)}
   :root:not([data-theme=light]) .sector{--n1:#A08CF5;--n2:#E58BF2;--b1:#EBA3B6;--b2:#F6C6B2}
   :root:not([data-theme=light]) .sp{fill:#FFE6EE;filter:drop-shadow(0 0 .08em rgba(255,170,200,.95))}
   :root:not([data-theme=light]) .sw[data-k=n] i{text-shadow:0 0 .35em rgba(190,140,255,.35)}
-  :root:not([data-theme=light]) .sv.op{background:rgba(160,140,245,.14)}
   :root:not([data-theme=light]) .free{background:linear-gradient(135deg,#A08CF5,#C3B4FF);color:#0B0A0C;box-shadow:0 10px 24px -12px rgba(160,140,245,.7)}
 }
 :root[data-theme=dark] .area{--ac:#4FD196;--ac-t:rgba(79,209,150,.1);--ac-b:rgba(79,209,150,.3)}
@@ -357,14 +368,18 @@ section.areas{padding-top:clamp(96px,12vw,152px)}
 :root[data-theme=dark] .ac-v{--ac:#4FD196;--ac-t:rgba(79,209,150,.1);--ac-b:rgba(79,209,150,.3)}
 :root[data-theme=dark] .ac-d{--ac:var(--violeta);--ac-t:rgba(160,140,245,.1);--ac-b:rgba(160,140,245,.3)}
 :root[data-theme=dark] .ac-m{--ac:#F2967B;--ac-t:rgba(242,150,123,.1);--ac-b:rgba(242,150,123,.3)}
-:root[data-theme=dark] .shot .frame.web .lt{display:none}
-:root[data-theme=dark] .shot .frame.web .dk{display:block}
+:root[data-theme=dark] .shot .frame .lt{display:none}
+:root[data-theme=dark] .shot .frame .dk{display:block}
+:root[data-theme=dark] .tab-bl{background:radial-gradient(70% 62% at 50% 36%,rgba(214,120,140,.2),transparent 70%),linear-gradient(165deg,#2a1a1f,#0e080a)}
+:root[data-theme=dark] .tab-bl .vp{background:#1d1416}
+:root[data-theme=dark] .tv-bd{background:rgba(244,233,231,.55)}
+:root[data-theme=dark] .tab-bl .tv-tap{background:rgba(255,235,240,.22);box-shadow:inset 0 0 0 2px rgba(255,225,232,.8),0 8px 22px rgba(0,0,0,.35)}
+:root[data-theme=dark] .tab-bl .tv-tap::after{box-shadow:0 0 0 2px rgba(255,225,232,.7)}
 :root[data-theme=dark] .ans::after{background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%)}
 :root[data-theme=dark] .sec{background:rgba(255,255,255,.08)}
 :root[data-theme=dark] .sector{--n1:#A08CF5;--n2:#E58BF2;--b1:#EBA3B6;--b2:#F6C6B2}
 :root[data-theme=dark] .sp{fill:#FFE6EE;filter:drop-shadow(0 0 .08em rgba(255,170,200,.95))}
 :root[data-theme=dark] .sw[data-k=n] i{text-shadow:0 0 .35em rgba(190,140,255,.35)}
-:root[data-theme=dark] .sv.op{background:rgba(160,140,245,.14)}
 :root[data-theme=dark] .free{background:linear-gradient(135deg,#A08CF5,#C3B4FF);color:#0B0A0C;box-shadow:0 10px 24px -12px rgba(160,140,245,.7)}
 
 /* ¿Continuamos?: el seguimiento; el ciclo, como leyenda discreta sobre la línea del año */
@@ -476,37 +491,41 @@ section.more{padding-top:0}
 .brands-l{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:26px clamp(30px,4.4vw,56px);margin:26px 0 0;padding:0;list-style:none}
 .lg{display:block;height:var(--h);width:calc(var(--h)*var(--r));background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat;color:var(--grafito);opacity:.55;transition:opacity .5s,color .5s,transform .8s cubic-bezier(.3,.8,.3,1)}
 .lg:hover{opacity:1;color:var(--tinta)}
-/* Logo de cada proyecto sobre su nombre: pequeño y apagado */
-.pj-lg{flex:none;width:100%;margin-bottom:12px;-webkit-mask-position:left center;mask-position:left center;opacity:.5}
-.pj-head:hover .pj-lg,.pj.open .pj-lg{opacity:.85}
-@media (max-width:900px){.pj-lg{flex-basis:100%}}
+/* Logo de cada proyecto, en su baldosa (como un icono de app), junto al nombre */
+.pj-lgw{flex:none;display:grid;place-items:center;width:76px;height:58px;border-radius:16px;background:var(--niebla);box-shadow:inset 0 0 0 1px var(--linea);transition:box-shadow .4s,background .4s}
+.pj-lgw .lg{color:var(--tinta);opacity:.82}
+.pj-head:hover .pj-lgw,.pj.open .pj-lgw{box-shadow:inset 0 0 0 1px var(--ac-b);background:var(--ac-t),var(--niebla);background:linear-gradient(var(--ac-t),var(--ac-t)),var(--niebla)}
+.pj-head:hover .pj-lgw .lg,.pj.open .pj-lgw .lg{opacity:1}
+.pj-lgw-0{color:var(--grafito)}.pj-lgw-0 svg{width:14px;height:14px}
 .brands.wait .lg{opacity:0;transform:translateY(8px)}
 @media (max-width:600px){.brands-l{display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;gap:26px 18px}.brands-l .lg{height:calc(var(--h)*.8);width:calc(var(--h)*var(--r)*.8)}}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .pj-line{display:block;width:100%;height:16px;margin:-8px 0;overflow:visible;pointer-events:none}
 .pj-line path{fill:none;stroke:var(--linea);stroke-width:1.2;vector-effect:non-scaling-stroke;transition:stroke .4s}
 .pj:hover>.pj-line path,.pj.open>.pj-line path{stroke:var(--grafito)}
-.pj-head{font:inherit;display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);align-items:baseline;width:100%;padding:52px 0 36px;background:none;border:0;text-align:left;cursor:pointer;color:var(--tinta)}
-.pj-meta{grid-column:1/span 3;display:flex;flex-direction:column;gap:2px;font-size:14px;color:var(--grafito)}
-.pj-meta b{font-weight:500;color:var(--tinta);font-size:15px}
-.pj-title{grid-column:4/span 8;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(28px,3.4vw,46px);line-height:1.05;letter-spacing:-.02em;transition:transform .6s cubic-bezier(.3,.8,.3,1)}
+/* Cabecera del caso: quién (logo, nombre, sector y ciudad), qué se consiguió y el botón de abrir */
+.pj-head{font:inherit;display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);align-items:center;width:100%;padding:30px 0 28px;background:none;border:0;text-align:left;cursor:pointer;color:var(--tinta)}
+.pj-id{grid-column:1/span 4;display:flex;align-items:center;gap:16px;min-width:0}
+.pj-who{display:flex;flex-direction:column;gap:7px;min-width:0}
+.pj-who b{font:600 17px/1.15 var(--sans);letter-spacing:-.015em;color:var(--tinta)}
+.pj-tg{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px}
+.pj-title{grid-column:5/span 7;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:360;font-size:clamp(28px,3.4vw,46px);line-height:1.05;letter-spacing:-.02em;transition:transform .6s cubic-bezier(.3,.8,.3,1)}
 .pj-head:hover .pj-title{transform:translateX(6px)}
 .pj.open .pj-head:hover .pj-title{transform:none}
 .pj{position:relative}
-.pj-meta{grid-row:1}
-.pj-title{grid-row:1/span 2}
-/* Desplegable: chevron claro, como en la web de Bela */
-.pj-chev{grid-column:12;grid-row:1/span 2;justify-self:end;align-self:center;width:34px;height:20px;overflow:visible;color:var(--ac,var(--violeta));transition:transform .6s cubic-bezier(.3,.8,.3,1)}
-.pj-chev path{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.pj-head:hover .pj-chev{transform:translateY(4px)}
-.pj.open .pj-chev{transform:rotate(180deg)}
-.pj.open .pj-head:hover .pj-chev{transform:rotate(180deg) translateY(4px)}
+/* Desplegable: el chevron del color del área, en un círculo que se rellena al abrir */
+.pj-chev{grid-column:12;justify-self:end;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--ac-b,var(--linea));color:var(--ac,var(--violeta));transition:transform .6s cubic-bezier(.3,.8,.3,1),background .4s}
+.pj-chev svg{width:16px;height:10px;overflow:visible;transition:transform .6s cubic-bezier(.3,.8,.3,1)}
+.pj-chev path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pj-head:hover .pj-chev{transform:translateY(3px)}
+.pj.open .pj-chev{background:var(--ac-t,rgba(107,79,214,.08))}
+.pj.open .pj-chev svg{transform:rotate(180deg)}
+.pj.open .pj-head:hover .pj-chev{transform:translateY(-3px)}
 .pjs.invite .pj:not(.open) .pj-chev{animation:nudge 1.4s cubic-bezier(.45,0,.55,1) 2}
 .pjs.invite .pj:nth-child(2) .pj-chev{animation-delay:.15s}
 .pjs.invite .pj:nth-child(3) .pj-chev{animation-delay:.3s}
 .pjs.invite .pj:nth-child(4) .pj-chev{animation-delay:.45s}
 @keyframes nudge{50%{transform:translateY(5px)}}
-.pj-head{padding:34px 0 30px}
 .shot .frame.demo{aspect-ratio:16/9;display:block;background:#141416;overflow:hidden}
 .demo .cam{position:absolute;inset:0;transition:transform 1.6s cubic-bezier(.65,0,.35,1);will-change:transform}
 .demo .cam img{position:static;width:100%;height:100%;object-fit:cover;display:block}
@@ -527,17 +546,36 @@ section.more{padding-top:0}
 .pj-inner{overflow:hidden;min-height:0;display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);opacity:0;transition:opacity .45s}
 .pj.open .pj-body{grid-template-rows:1fr}
 .pj.open .pj-inner{opacity:1;transition-delay:.15s}
-.pj-text{grid-column:8/span 5;padding:4px 0 0}
-.pj-lbl{margin-top:28px;font-size:14px;color:var(--grafito)}
-.pj-lbl:first-child{margin-top:0}
-.pj-ctx{margin-top:8px;font-size:17px;line-height:1.55}
-.pj-media.shot,.pj-media.cli-shot{grid-column:1/span 6;margin:4px 0 0;align-self:start}
+.pj-text{grid-column:8/span 5;display:flex;flex-direction:column;gap:14px;padding:4px 0 0 clamp(0px,1.2vw,14px)}
+/* Qué necesitaba: el problema en una frase que engancha; el caso entero se despliega */
+.pj-need{border-radius:16px;background:var(--niebla);box-shadow:inset 0 0 0 1px var(--linea);transition:box-shadow .4s}
+.pj-need:hover,.pj-need.open{box-shadow:inset 0 0 0 1px var(--ac-b)}
+.pj-nq{display:flex;flex-direction:column;align-items:flex-start;gap:10px;width:100%;padding:18px 20px 16px;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.pj-nk{display:flex;align-items:center;gap:8px;font:600 10.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ac)}
+.pj-nk::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;border:1px solid var(--ac);background:linear-gradient(90deg,transparent 50%,var(--ac) 50%)}
+.pj-nh{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:clamp(21px,1.8vw,25px);line-height:1.18;letter-spacing:-.015em;color:var(--tinta);text-wrap:balance}
+.pj-nm{display:inline-flex;align-items:center;gap:9px;margin-top:2px;font:600 13.5px/1 var(--sans);color:var(--tinta)}
+/* + que se convierte en − al abrir */
+.pj-nm i{position:relative;display:grid;width:24px;height:24px;border-radius:50%;background:var(--ac);transition:transform .5s cubic-bezier(.3,.8,.3,1)}
+.pj-nm i::before,.pj-nm i::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:1.6px;margin:-.8px 0 0 -5px;border-radius:1px;background:var(--papel);transition:transform .5s cubic-bezier(.3,.8,.3,1)}
+.pj-nm i::after{transform:rotate(90deg)}
+.pj-nq:hover .pj-nm i{transform:scale(1.1)}
+.pj-need.open .pj-nm i{transform:rotate(180deg)}.pj-need.open .pj-nm i::after{transform:rotate(180deg)}
+.pj-na{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.3,.8,.3,1)}
+.pj-na>p{overflow:hidden;min-height:0;padding:0 20px;font-size:16.5px;line-height:1.55;color:var(--grafito);opacity:0;transition:opacity .4s,padding .55s cubic-bezier(.3,.8,.3,1)}
+.pj-need.open .pj-na{grid-template-rows:1fr}
+.pj-need.open .pj-na>p{opacity:1;padding-bottom:20px;transition-delay:.1s,0s}
+/* Al verla, el + respira una vez para invitar a abrir */
+.pj.open .pj-need:not(.open) .pj-nm i{animation:nmhint 1.6s cubic-bezier(.45,0,.55,1) 1.2s 2}
+@keyframes nmhint{50%{transform:scale(1.18)}}
+.pj-media.shot,.pj-media.cli-shot{grid-column:1/span 7;margin:4px 0 0;align-self:start}
 .shot .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 @media (max-width:900px){
-  .pj-head{grid-template-columns:1fr auto;column-gap:20px;row-gap:10px}
-  .pj-meta{grid-column:1;flex-direction:row;flex-wrap:wrap;gap:0 8px}
-  .pj-title{grid-column:1;grid-row:2}
-  .pj-chev{grid-column:2;grid-row:1/span 2}
+  .pj-head{grid-template-columns:minmax(0,1fr) auto;column-gap:14px;row-gap:18px;padding:24px 0 24px}
+  .pj-id{grid-column:1;grid-row:1;gap:14px}
+  .pj-title{grid-column:1/-1;grid-row:2}
+  .pj-chev{grid-column:2;grid-row:1;width:42px;height:42px}
+  .pj-lgw{width:64px;height:52px;border-radius:14px}
   .pj-inner{display:flex;flex-direction:column}
   .pj-media.shot,.pj-media.cli-shot{align-self:stretch;margin:0 0 24px}
   .pj-text{padding-bottom:0}
@@ -545,17 +583,16 @@ section.more{padding-top:0}
 }
 .case .shot{background:#fff;box-shadow:0 0 0 1px var(--linea),0 30px 60px -34px rgba(28,30,42,.3)}
 .shot{grid-column:1/span 7;margin-top:72px;border-radius:14px;overflow:hidden;background:var(--papel);box-shadow:0 1px 0 var(--linea),0 30px 60px -30px rgba(28,30,42,.25)}
-.shot .bar{display:flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-bottom:1px solid var(--linea);font-size:12px;color:var(--grafito)}
-.shot .bar i{width:9px;height:9px;border-radius:50%;background:var(--linea)}
-.shot .bar span{margin-left:10px}
 .shot .frame{position:relative;aspect-ratio:16/10;display:grid;place-items:center;background:linear-gradient(160deg,#F9E7DE,#F7F8FA 60%)}
 /* Lo que se consiguió, en grande, con el color del área */
-.pj-stat{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin-top:22px;padding-top:16px;border-top:1px solid var(--linea)}
+.pj-stat{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin:2px 0 0;padding:4px 4px 0}
 .pj-stat b{font:600 clamp(30px,3vw,40px)/1 var(--sans);letter-spacing:-.03em;color:var(--ac)}
 .pj-stat span{font-size:14px;color:var(--grafito)}
-/* De dónde partíamos: pequeño, a un lado */
-.pj-before{display:flex;align-items:center;gap:12px;margin:22px 0 0;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:zoom-in}
-.pj-before img{flex:none;width:118px;height:74px;object-fit:cover;border-radius:8px;border:1px solid var(--linea);filter:saturate(.75);opacity:.9;transition:transform .4s cubic-bezier(.3,.8,.3,1),opacity .4s}
+/* De dónde partíamos: lo primero, para entender el cambio */
+.pj-before{display:flex;align-items:center;gap:14px;margin:0;padding:8px 14px 8px 8px;border:0;border-radius:16px;background:var(--niebla);box-shadow:inset 0 0 0 1px var(--linea);color:inherit;font:inherit;text-align:left;cursor:zoom-in;transition:box-shadow .4s}
+.pj-before:hover{box-shadow:inset 0 0 0 1px var(--ac-b)}
+.pj-before>svg{margin-left:auto!important}
+.pj-before img{flex:none;width:104px;height:66px;object-fit:cover;border-radius:8px;border:1px solid var(--linea);filter:saturate(.75);opacity:.9;transition:transform .4s cubic-bezier(.3,.8,.3,1),opacity .4s}
 .pj-before:hover img{transform:scale(1.04);opacity:1}
 .pj-before>span{font:600 10.5px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--grafito)}
 .pj-before small{display:block;margin-top:3px;font-weight:400;font-size:12.5px;letter-spacing:0;text-transform:none}
@@ -581,13 +618,16 @@ section.more{padding-top:0}
 /* Toda la imagen del caso lleva a la web de la que habla */
 a.shot{display:block;color:inherit;text-decoration:none;transition:transform .5s cubic-bezier(.3,.8,.3,1),box-shadow .5s}
 a.shot:hover{transform:translateY(-3px)}
-.shot .bar .go{flex:none;width:9px;height:9px;margin-left:auto;fill:none;stroke:var(--grafito);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s,stroke .3s}
-a.shot:hover .bar .go{stroke:var(--ac);transform:translate(1.5px,-1.5px)}
-a.shot:hover .bar span{color:var(--tinta)}
+a.shot{position:relative}
+/* La web del caso, en una cápsula de cristal sobre la imagen (sin barra de navegador de escritorio) */
+.shot-url{position:absolute;left:12px;bottom:12px;z-index:5;display:inline-flex;align-items:center;gap:7px;height:30px;padding:0 12px 0 13px;border-radius:999px;background:rgba(14,13,18,.55);-webkit-backdrop-filter:blur(12px) saturate(150%);backdrop-filter:blur(12px) saturate(150%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);font:500 12px/1 var(--sans);color:rgba(255,255,255,.92);pointer-events:none;transition:background .3s}
+.shot-url svg{width:9px;height:9px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+a.shot:hover .shot-url{background:rgba(14,13,18,.75)}
+a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
 /* Sector con su icono; al abrir o cerrar el caso, la bola se balancea y el pintalabios sube y baja */
-.secw{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;margin-top:6px}
 .sec{display:inline-flex;align-items:center;gap:7px;height:28px;padding:0 12px 0 8px;border-radius:999px;background:rgba(28,30,42,.06);font:500 13px/1 var(--sans);color:var(--tinta)}
-.city{font-size:13.5px;color:var(--grafito)}
+.city{display:inline-flex;align-items:center;gap:5px;font-size:13.5px;color:var(--grafito)}
+.city .pin{flex:none;width:10px;height:12px;fill:none;stroke:currentColor;stroke-width:1.2}
 .pfi{flex:none;width:19px;height:19px;overflow:visible;fill:none;stroke:var(--tinta);stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
 .pfi .spk{fill:var(--tinta);stroke:none}
 .pfi .spk{transform-box:fill-box;transform-origin:center;transform:scale(0)}
@@ -612,16 +652,57 @@ a.shot:hover .bar span{color:var(--tinta)}
 .pj-soon .pj-head{cursor:default}
 .pj-soon .pj-title{color:var(--grafito)}
 .pj-soon .pj-head:hover .pj-title{transform:none}
-/* Cartel con el logo mientras no hay capturas */
-/* La web de Condado: se recorre sola, despacio, de la portada al "Playita, amigos" */
-.shot .frame.web{background:#08070a}
-.shot .frame.web img{--pan:inherit}
-/* Barrido: un vistazo al hero (~1,3 s), baja con decisión a lo que importa (el bloque de venta), se queda, sigue y vuelve.
-   --mid = parada intermedia (fracción del recorrido; 1 = sin parada intermedia) */
-.shot .frame.web img{bottom:auto;height:auto;object-fit:fill;animation:webpan 10s cubic-bezier(.65,0,.35,1) .5s infinite}
-@keyframes webpan{0%,9%{transform:none}27%,46%{transform:translateY(calc(var(--pan,-40%)*var(--mid,1)))}62%,78%{transform:translateY(var(--pan,-40%))}95%,100%{transform:none}}
-/* Bela tiene modo oscuro propio: se enseña el que toca */
-.shot .frame.web .dk{display:none}
+/* Webs de los casos: un vídeo en una tablet (vertical, la web en su versión responsive). La cámara entra y sale
+   (zoom) por lo importante y un dedo la usa: en Condado, el hero (su vídeo real) y el calendario de Fourvenues;
+   en Bela, cambiar de servicio y reservar con el pop-up de Booksy. Todo son capturas reales, movidas con CSS */
+.shot .frame.tab{aspect-ratio:4/3;display:block;overflow:hidden;isolation:isolate}
+.tab-cd{background:radial-gradient(70% 62% at 50% 36%,rgba(232,169,74,.2),transparent 70%),linear-gradient(165deg,#1d1519,#060407)}
+.tab-bl{background:radial-gradient(70% 62% at 50% 36%,rgba(255,255,255,.8),transparent 70%),linear-gradient(165deg,#F5E6E3,#E7CDC9)}
+.tab-cam{position:absolute;left:0;top:0;width:100%;height:100%;transform-origin:0 0;transition:transform 1.5s cubic-bezier(.65,0,.35,1);will-change:transform}
+.tab-dev{position:absolute;left:0;top:0;background:#0d0d10;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 40px 70px -30px rgba(0,0,0,.6),0 14px 28px -14px rgba(0,0,0,.45)}
+.tab-scr{position:relative;width:100%;height:100%;overflow:hidden;background:#000}
+.vp{position:absolute;left:0;top:0;width:820px;height:1180px;overflow:hidden;transform-origin:0 0}
+.tab-cd .vp{background:#080509}.tab-bl .vp{background:#fff}
+.shot .tab .vp img{position:absolute;left:0;right:auto;bottom:auto;width:820px;max-width:none;height:auto;object-fit:fill}
+.tv-sc{position:absolute;left:0;top:0;width:820px;height:1180px;opacity:0;transform:translateX(7%);transition:opacity .6s ease,transform .9s cubic-bezier(.3,.8,.3,1)}
+.tv-sc.on{opacity:1;transform:none}
+.tv-sc.gone{opacity:0;transform:translateX(-7%)}
+.tv-doc{position:absolute;left:0;top:0;width:820px;height:2500px;transition:transform 1.4s cubic-bezier(.65,0,.35,1)}
+.tv-vid{position:absolute;left:0;top:0;width:820px;height:1180px;object-fit:cover;background:#080509}
+.shot .tab .vp .tv-ui{top:0;height:1180px}
+.shot .tab .vp .tv-pg{top:1180px;height:1320px}
+.tv-fv{position:absolute;left:56px;top:1524px;width:708px;height:440px;overflow:hidden}
+.shot .tab .vp .tv-strip{top:10px;width:1564px;height:419px;transition:transform 1s cubic-bezier(.3,.8,.3,1)}
+.shot .tab .vp .tv-nav{top:0;height:84px;opacity:0;transition:opacity .4s}
+.shot .tab .vp .tv-nav.on{opacity:1}
+.shot .tab .vp .tv-calh{top:0;height:283px}
+.shot .tab .vp .tv-ev,.shot .tab .vp .tv-mo{top:300px;opacity:0;transition:opacity .5s}
+.shot .tab .vp .tv-ev.on,.shot .tab .vp .tv-mo.on{opacity:1}
+.shot .tab .vp .tv-st{top:0;height:1180px;opacity:0;transition:opacity .45s}
+.shot .tab .vp .tv-st.on{opacity:1}
+.tv-bd{position:absolute;inset:0;background:rgba(43,31,34,.55);opacity:0;transition:opacity .5s}
+.tv-bd.on{opacity:1}
+.tv-pn{position:absolute;left:50px;top:71px;width:720px;height:1110px;overflow:hidden;border-radius:22px 22px 0 0;transform:translateY(1130px);transition:transform .75s cubic-bezier(.3,.8,.3,1)}
+.tv-pn.on{transform:none}
+.shot .tab .vp .tv-pn img{top:0;width:720px;height:1110px}
+/* Lo que se pulsa se marca un instante */
+.tv-hl{position:absolute;z-index:3;border-radius:999px;box-shadow:0 0 0 3px var(--hc,#E8A94A),0 0 24px 4px var(--hc,#E8A94A);opacity:0;transition:opacity .35s}
+.tv-hl.on{opacity:.9}
+.tv-hl-cal{left:287px;top:2000px;width:245px;height:43px}
+.tv-hl-tg{left:190px;top:300px;width:199px;height:44px}
+.tv-hl-day{left:576px;top:1012px;width:110px;height:150px;border-radius:4px}
+.tv-hl-bk{left:459px;top:512px;width:82px;height:30px;border-radius:6px;--hc:#1E87A7}
+/* El dedo: un círculo que se posa, se hunde al tocar y suelta una onda */
+.tv-tap{position:absolute;z-index:9;left:410px;top:900px;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:rgba(255,255,255,.32);box-shadow:inset 0 0 0 2px rgba(255,255,255,.85),0 8px 22px rgba(0,0,0,.35);opacity:0;transform:scale(.6);pointer-events:none;
+  transition:left .85s cubic-bezier(.65,0,.35,1),top .85s cubic-bezier(.65,0,.35,1),opacity .3s,transform .22s}
+.tab-bl .tv-tap{background:rgba(60,20,32,.16);box-shadow:inset 0 0 0 2px rgba(110,30,50,.55),0 8px 22px rgba(60,20,32,.25)}
+.tv-tap.on{opacity:1;transform:none}
+.tv-tap.dn{transform:scale(.8)}
+.tv-tap::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 2px rgba(255,255,255,.8);opacity:0}
+.tab-bl .tv-tap::after{box-shadow:0 0 0 2px rgba(110,30,50,.5)}
+.tv-tap.dn::after{animation:tvrip .7s ease-out}
+@keyframes tvrip{0%{opacity:1;transform:scale(.9)}100%{opacity:0;transform:scale(2.3)}}
+.shot .frame .dk{display:none}
 
 /* Cosas que no voy a hacer: lista editorial sobre el fondo. Título fijo a la izquierda; cada "no" numerado,
    con la línea de sonido como separador; al abrir, la respuesta entra debajo */
@@ -660,7 +741,6 @@ a.shot:hover .bar span{color:var(--tinta)}
 @media (hover:hover) and (pointer:fine){.about .portrait:hover .alt{opacity:1}.about .portrait{cursor:default}}
 .about .portrait:focus-visible{outline-offset:8px;border-radius:200px 200px 14px 14px}
 /* Logo de Fourvenues en lugar de la palabra, a la altura del texto */
-.bk{display:inline-block;height:.86em;width:auto;margin:0 .04em;vertical-align:-.15em;fill:currentColor}
 .fv{display:inline-block;height:.82em;width:auto;margin:0 .06em;vertical-align:-.08em;fill:currentColor}
 .about .mono{position:absolute;right:22px;bottom:18px;display:flex;align-items:baseline;gap:3px;color:var(--papel);font-family:var(--serif);font-variation-settings:"SOFT" 100;font-size:64px;font-weight:450;line-height:1;text-shadow:0 2px 16px rgba(28,30,42,.4)}
 .about .mono svg{width:16px;height:16px;color:currentColor;filter:drop-shadow(0 1px 4px rgba(28,30,42,.35))}
@@ -699,6 +779,8 @@ a.shot:hover .bar span{color:var(--tinta)}
 @supports not (aspect-ratio:1){
   .shot .frame{height:0;padding-top:62.5%}
   .shot .frame.demo{padding-top:56.25%}
+  .shot .frame.tab{padding-top:75%}
+  .sring{height:0;padding-top:75%}
   .about .photo{height:0;padding-top:125%}
   .about .photo img{position:absolute;top:0;left:0}
 }
@@ -969,13 +1051,11 @@ a.shot:hover .bar span{color:var(--tinta)}
       <div class="chat">
         <p class="chat-who" aria-hidden="true"><i>S</i>Silence</p>
         <div class="qa" data-s="n b" style="--d:0.70s"><p class="msg">¿Ves en un único panel cómo funciona tu negocio?</p><span class="ans ac-d"><span class="sr-only">Mejora digital: </span>Panel en tiempo real</span></div>
-        <div class="qa" data-s="n b" style="--d:1.25s"><p class="msg">¿Tienes un chat automático para responder a clientes?</p><span class="ans ac-v"><span class="sr-only">Mejora digital: </span>Chat automático</span></div>
+        <div class="qa" data-s="n b" style="--d:1.25s"><p class="msg">¿Tienes un chat automático para responder a clientes?</p><span class="ans ac-v"><span class="sr-only">Mejora digital: </span>Chatbot en WhatsApp</span></div>
         <div class="qa" data-s="n b" style="--d:1.80s"><p class="msg">¿Tu web transmite de verdad lo que es tu marca?</p><span class="ans ac-m"><span class="sr-only">Mejora digital: </span>Identidad visual y web</span></div>
         <div class="qa" data-s="n" style="--d:2.35s"><p class="msg">¿Utilizas mapas 3D de reservas?</p><span class="ans ac-v"><span class="sr-only">Mejora digital: </span>Mapas 3D de reservas</span></div>
-        <div class="qa off" data-s="b" style="--d:0.00s"><p class="msg">¿Utilizas un pop-up de <svg class="bk" viewBox="0 0 199 46" role="img" aria-label="Booksy"><path d="M178.4 45.6C177.1 45.5 175.5 45.0 174.6 44.6C173.8 44.2 173.6 43.9 173.8 43.0C174.1 42.3 174.7 41.0 175.1 40.6C175.4 40.3 175.9 40.3 177.4 40.7C178.5 41.0 178.7 41.0 179.5 41.0C180.2 40.9 180.5 40.9 181.0 40.6C181.9 40.2 182.7 39.3 183.2 38.3C183.5 37.7 183.5 37.5 183.5 36.9C183.5 36.1 183.4 35.9 181.6 31.9C178.6 25.5 175.1 17.6 173.4 13.8C172.6 12.0 172.5 11.5 172.8 11.2C173.2 11.0 175.8 10.9 177.2 11.2L177.7 11.3L178.3 12.6C178.7 13.4 179.8 15.9 180.9 18.2C183.1 23.3 185.4 28.4 185.8 29.3C186.0 29.7 186.2 30.0 186.3 30.1C186.7 30.2 187.3 29.0 191.3 18.8C193.2 13.8 194.1 11.7 194.3 11.4C194.6 11.1 195.9 11.0 197.5 11.1C198.7 11.1 199.2 11.3 199.2 11.6C199.2 12.2 198.5 13.9 194.1 24.9C189.1 37.1 188.7 38.1 187.7 40.1C186.1 43.3 184.0 45.0 181.1 45.6C180.3 45.7 179.1 45.7 178.4 45.6ZM35.3 38.3C33.3 38.0 30.9 37.3 29.0 36.3C27.3 35.4 25.8 34.5 22.1 31.8C17.9 28.7 15.5 27.3 14.3 26.9C13.5 26.6 11.4 26.5 10.3 26.7C9.8 26.7 9.3 26.9 9.0 27.1C8.2 27.5 7.2 28.5 6.3 29.8L5.6 30.9L3.6 30.9C1.5 30.8 0.6 30.7 0.3 30.4C-0.4 29.9 0.9 27.3 2.9 25.3C4.9 23.2 7.4 21.9 10.1 21.5C11.3 21.3 13.8 21.4 14.8 21.6C16.5 21.8 18.1 22.5 19.6 23.5C20.0 23.8 21.5 24.9 22.9 25.9C25.8 28.0 28.8 30.1 30.4 31.0C32.8 32.3 35.3 33.2 37.5 33.4C38.4 33.4 40.2 33.2 41.3 32.8C43.5 32.2 45.4 30.8 46.3 29.3C47.1 27.9 47.6 25.9 47.5 23.8C47.3 20.4 45.7 17.7 43.0 16.1C42.0 15.5 41.4 15.4 40.0 15.3C37.3 15.2 35.8 15.8 34.1 17.4C32.8 18.6 32.0 19.9 31.7 21.3C31.6 21.9 31.5 22.8 31.4 23.9C31.3 25.6 31.3 25.9 30.9 26.3C30.6 26.7 30.2 26.5 27.5 24.7L26.3 24.0L26.3 13.2C26.3 2.4 26.4 0.4 26.6 0.2C26.7 0.1 27.3 0.0 28.4 0.0C30.7-0.0 30.8 0.0 31.2 1.2C31.3 1.3 31.4 3.7 31.4 6.8C31.4 9.8 31.5 12.2 31.5 12.2C31.5 12.3 32.4 11.9 33.4 11.5C35.5 10.5 36.0 10.3 37.0 10.2C38.2 10.0 40.8 10.0 41.8 10.2C43.6 10.6 45.6 11.4 47.0 12.5C48.6 13.7 50.3 15.8 51.3 17.6C51.7 18.5 52.1 19.8 52.4 21.1C52.7 22.4 52.7 26.0 52.5 27.3C51.9 30.2 50.6 32.5 48.7 34.4C46.6 36.5 44.1 37.8 40.9 38.3C39.4 38.5 36.8 38.6 35.3 38.3ZM68.4 38.2C65.2 37.6 62.3 36.1 60.3 33.7C58.9 32.1 57.8 29.9 57.2 27.9C57.0 26.8 57.0 22.7 57.2 21.3C57.7 18.8 58.9 16.6 60.9 14.6C62.9 12.6 65.1 11.4 67.9 10.8C69.1 10.6 72.3 10.6 73.5 10.8C78.4 11.8 82.2 15.1 83.7 19.6C84.3 21.3 84.4 22.3 84.4 24.5C84.4 27.3 84.1 28.9 83.0 31.1C81.1 34.7 77.8 37.1 73.7 38.0C72.4 38.3 69.6 38.4 68.4 38.2ZM101.1 38.2C96.2 37.6 92.0 34.5 90.1 30.0C89.4 28.2 89.3 27.4 89.2 25.0C89.2 22.6 89.3 21.6 89.7 20.2C91.1 15.9 94.3 12.6 98.4 11.3C101.4 10.3 104.7 10.3 107.5 11.3C109.7 12.0 111.2 13.0 112.8 14.5C114.7 16.5 116.0 18.7 116.5 21.0C116.8 22.6 116.7 26.2 116.3 28.1C116.0 29.7 115.0 31.6 113.8 33.2C111.9 35.7 108.7 37.6 105.3 38.2C104.4 38.3 101.9 38.3 101.1 38.2ZM158.8 38.0C158.6 38.0 158.0 38.0 157.6 37.9C154.8 37.5 150.2 35.4 149.6 34.2C149.4 33.9 149.4 33.9 149.6 33.5C149.8 32.9 150.5 31.7 151.1 31.1C151.7 30.5 151.6 30.5 153.2 31.3C156.5 33.1 157.1 33.3 159.2 33.5C160.6 33.6 162.2 33.5 163.1 33.2C164.2 32.8 165.1 31.5 165.1 30.4C165.1 29.0 163.9 28.0 161.2 27.1C160.6 26.9 159.3 26.4 158.2 26.1C154.9 25.1 153.3 24.3 152.2 23.0C151.0 21.8 150.5 20.3 150.5 18.6C150.5 17.3 150.6 16.6 151.3 15.3C151.7 14.5 151.9 14.2 152.7 13.4C153.2 12.9 153.9 12.3 154.2 12.1C155.1 11.5 156.5 11.0 157.8 10.9C159.1 10.8 162.0 10.8 163.1 11.0C164.8 11.4 168.3 12.8 169.0 13.5C169.4 13.9 169.4 13.9 169.4 14.3C169.3 14.8 168.5 16.2 167.8 16.9C167.1 17.6 167.4 17.6 165.2 16.7C164.4 16.3 163.4 15.9 162.9 15.8C159.5 14.7 156.7 15.2 155.8 17.0C154.7 19.0 156.0 20.1 161.1 21.9C165.4 23.3 167.0 24.1 168.2 25.3C169.5 26.6 169.9 27.7 169.9 30.2C169.9 31.8 169.8 32.4 169.1 33.6C168.7 34.4 168.5 34.7 167.7 35.5C165.8 37.4 164.2 38.0 160.7 38.0C159.8 38.1 158.9 38.1 158.8 38.0ZM141.4 37.8C140.2 37.6 140.1 37.6 138.5 35.6C137.7 34.6 136.1 32.6 134.9 31.0C132.0 27.3 131.5 26.7 131.3 26.7C130.8 26.7 128.1 29.5 127.5 30.7C127.2 31.2 127.1 32.0 127.0 34.5C126.9 37.9 127.0 37.8 124.1 37.8C122.9 37.8 122.3 37.7 122.2 37.6C122.1 37.6 122.0 36.9 122.0 35.9C121.9 33.9 121.9 18.8 122.0 8.6L122.0 0.9L122.3 0.8C122.8 0.6 123.9 0.5 125.0 0.6C126.5 0.7 126.8 0.9 126.8 1.4C126.9 1.6 126.9 6.2 127.0 11.7C127.1 21.4 127.1 23.5 127.3 23.5C127.5 23.5 128.8 22.2 131.9 19.0C133.8 17.1 136.4 14.5 137.6 13.3L139.8 11.0L142.1 11.0C144.5 11.1 144.9 11.2 145.1 11.6C145.3 12.0 145.3 11.9 137.7 19.8L135.0 22.6L135.2 22.9C135.4 23.2 140.2 29.7 143.0 33.4C145.6 36.7 145.7 37.1 145.3 37.4C145.2 37.5 145.0 37.6 144.8 37.7C144.2 37.8 142.2 37.9 141.4 37.8ZM72.8 33.3C75.4 32.7 77.9 30.3 78.9 27.6C79.1 27.1 79.1 26.7 79.2 24.9C79.2 22.2 79.2 21.7 78.5 20.5C77.6 18.7 76.1 17.1 74.8 16.4C73.5 15.7 71.7 15.3 69.8 15.4C68.5 15.5 67.9 15.6 67.0 16.1C65.1 17.0 63.5 18.8 62.7 20.7C62.3 21.8 62.2 22.6 62.2 24.8C62.3 26.9 62.3 27.2 63.0 28.5C64.2 30.8 66.0 32.5 68.4 33.2C69.6 33.6 71.5 33.7 72.8 33.3ZM105.1 33.3C106.8 32.8 108.5 31.8 109.6 30.5C110.2 29.7 110.9 28.3 111.2 27.2C111.5 26.2 111.5 23.1 111.3 22.1C110.4 19.0 108.6 16.8 106.0 15.9C104.4 15.3 102.2 15.2 100.6 15.6C98.3 16.2 96.3 18.0 95.1 20.4C94.6 21.4 94.5 21.9 94.4 23.7C94.4 25.7 94.5 26.8 94.9 27.9C96.1 30.9 98.8 33.0 101.9 33.5C102.5 33.6 104.4 33.5 105.1 33.3Z"/></svg> propio en tu web?</p><span class="ans ac-v"><span class="sr-only">Mejora digital: </span>Pop-up de reservas</span></div>
         <div class="qa off" data-s="b" style="--d:0.00s"><p class="msg">¿Solo dependes de Instagram para agendar citas?</p><span class="ans ac-m"><span class="sr-only">Mejora digital: </span>Captación de clientes</span></div>
       </div>
-      <p class="lead">Si te falta alguna, <span class="punch">este es tu sitio.</span></p>
       <div class="actions">
         <a class="btn solid" href="#servicio">Ver cómo</a>
         <a class="btn ghost" href="#contacto">Cuéntame tu negocio</a>
@@ -1001,19 +1081,17 @@ a.shot:hover .bar span{color:var(--tinta)}
     </div>
     <div class="score">
       <figure class="score-c">
-        <figcaption class="score-h">
-          <span><span class="score-k">Diagnóstico digital</span><span class="score-t">Scoring de tu negocio <em>Ejemplo</em></span></span>
-          <span class="score-g" role="img" aria-label="Nota global: 2,1 de 5"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="g-bg" cx="32" cy="32" r="27"/><circle class="g-fg" cx="32" cy="32" r="27" pathLength="100"/></svg><b>2,1<small>/5</small></b></span>
-        </figcaption>
-        <svg class="g-line" aria-hidden="true" preserveAspectRatio="none"><path class="g-on"/><path class="g-off"/></svg>
-        <ul class="score-l">
-          <li><span class="q">¿Marca?</span><span class="sds" role="img" aria-label="2,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i></span><span class="sv"></span></li>
-          <li><span class="q">¿Cómo captas clientes ahora?</span><span class="sds" role="img" aria-label="3,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i></span><span class="sv"></span></li>
-          <li class="is-op"><span class="q">¿Cómo lo mides?</span><span class="sds" role="img" aria-label="1,5 de 5"><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i></span><span class="sv op"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>Oportunidad</span></li>
-          <li class="is-op"><span class="q">¿Tienes paneles en tiempo real?</span><span class="sds" role="img" aria-label="1 de 5"><i class="sd f"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i></span><span class="sv op"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>Oportunidad</span></li>
-        </ul>
-        <p class="score-sum"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>2 mejoras digitales detectadas</p>
-        <p class="score-free"><span>Tu scoring, <b>sin coste ni compromiso.</b></span><span class="free"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>Free</span></p>
+        <figcaption class="score-h"><span class="score-t">Scoring digital <em>Ejemplo</em></span><span class="score-s">Dónde suena tu negocio y dónde hay silencio.</span></figcaption>
+        <div class="sring" role="img" aria-label="Nota global 2,1 de 5. Marca 2,5; Captación 3,5; Ventas 1,5, oportunidad; Medición 1, oportunidad">
+          <svg class="sr-svg" aria-hidden="true"><circle class="sr-g"/><g class="sr-w"></g></svg>
+          <span class="sr-c" aria-hidden="true"><b>2,1</b><small>/5</small></span>
+          <span class="sr-l" data-a="0" data-v="2.5" aria-hidden="true"><b>Marca</b>2,5</span>
+          <span class="sr-l" data-a="1" data-v="3.5" aria-hidden="true"><b>Captación</b>3,5</span>
+          <span class="sr-l op" data-a="2" data-v="1.5" aria-hidden="true"><b>Ventas</b><span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>1,5</span></span>
+          <span class="sr-l op" data-a="3" data-v="1" aria-hidden="true"><b>Medición</b><span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>1</span></span>
+        </div>
+        <p class="score-sum"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>2 oportunidades: Ventas y Medición</p>
+        <p class="score-free"><span>Tu scoring, <b>sin coste ni compromiso.</b></span><span class="free"><span class="fs" aria-hidden="true"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg><i></i><i></i><i></i></span>Free</span></p>
       </figure>
     </div>
   </div>
@@ -1041,18 +1119,17 @@ a.shot:hover .bar span{color:var(--tinta)}
         <article class="pj card open" id="pj-amok">
           <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
           <button type="button" class="pj-head" aria-expanded="true" aria-controls="pjb-amok">
-            <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/amok.png);--r:3.294;--h:15.6px"></span><b>AMOK</b><span class="secw"><span class="sec"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g class="rays"><path class="ray" pathLength="1" d="M5.3 7.3L1.2 3.6" style="--d:.05s"/><path class="ray" pathLength="1" d="M15.3 9L19.6 7" style="--d:.3s"/><path class="ray" pathLength="1" d="M15 15.6L18.8 19" style="--d:.55s"/><path class="ray" pathLength="1" d="M4.4 15L.6 17.4" style="--d:.8s"/><path class="ray" pathLength="1" d="M3.6 11.5H-.8" style="--d:1s"/></g></svg>Nightlife</span><span class="city">Mallorca</span></span></span>
+            <span class="pj-id"><span class="pj-lgw"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/amok.png);--r:3.294;--h:15.6px"></span></span><span class="pj-who"><b>AMOK</b><span class="pj-tg"><span class="sec"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g class="rays"><path class="ray" pathLength="1" d="M5.3 7.3L1.2 3.6" style="--d:.05s"/><path class="ray" pathLength="1" d="M15.3 9L19.6 7" style="--d:.3s"/><path class="ray" pathLength="1" d="M15 15.6L18.8 19" style="--d:.55s"/><path class="ray" pathLength="1" d="M4.4 15L.6 17.4" style="--d:.8s"/><path class="ray" pathLength="1" d="M3.6 11.5H-.8" style="--d:1s"/></g></svg>Nightlife</span><span class="city"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13s-4.5-4.2-4.5-7.6a4.5 4.5 0 0 1 9 0C10.5 8.8 6 13 6 13z"/><circle cx="6" cy="5.4" r="1.5"/></svg>Mallorca</span></span></span></span>
             <span class="pj-title">Mejoramos la experiencia de compra.</span>
-            <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
+            <span class="pj-chev" aria-hidden="true"><svg viewBox="0 0 30 18"><path d="M2 4l13 11L28 4"/></svg></span>
           </button>
           <div class="pj-body" id="pjb-amok" role="region" aria-label="AMOK">
             <div class="pj-inner">
-              <a class="shot pj-media" href="https://www.amokmallorca.com/book-vip" target="_blank" rel="noopener" aria-label="Reservar en AMOK (amokmallorca.com, se abre en otra pestaña)"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>amokmallorca.com/book-vip</span><svg class="go" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></div><div class="frame demo" data-pins='[[49.4, 15.6, "Reservado superior", "Desde 400 €", "ok"], [37.1, 24.7, "Galería principal", "Agotado", "no"], [21.5, 30.6, "Reservado esquina", "Desde 400 €", "ok"], [52.3, 21.2, "Reservado galería", "Desde 450 €", "ok"], [58.2, 38.9, "Reservado pista", "Agotado", "no"], [41.0, 61.1, "Lounge inferior", "Agotado", "no"], [66.4, 72.9, "Reservado backstage", "Desde 700 €", "ok"]]'><div class="cam"><img src="img/amok-mapa.webp" alt="Mapa de reservas del interior de AMOK" loading="lazy"><div class="pins"></div></div><div class="cursor"></div><div class="panel"><span class="p-zone"></span><span class="p-price"></span><span class="p-pax">Hasta 8 personas</span><span class="p-btn">Reservar mesa</span></div></div></a>
+              <a class="shot pj-media" href="https://www.amokmallorca.com/book-vip" target="_blank" rel="noopener" aria-label="Reservar en AMOK (amokmallorca.com, se abre en otra pestaña)"><div class="frame demo" data-pins='[[49.4, 15.6, "Reservado superior", "Desde 400 €", "ok"], [37.1, 24.7, "Galería principal", "Agotado", "no"], [21.5, 30.6, "Reservado esquina", "Desde 400 €", "ok"], [52.3, 21.2, "Reservado galería", "Desde 450 €", "ok"], [58.2, 38.9, "Reservado pista", "Agotado", "no"], [41.0, 61.1, "Lounge inferior", "Agotado", "no"], [66.4, 72.9, "Reservado backstage", "Desde 700 €", "ok"]]'><div class="cam"><img src="img/amok-mapa.webp" alt="Mapa de reservas del interior de AMOK" loading="lazy"><div class="pins"></div></div><div class="cursor"></div><div class="panel"><span class="p-zone"></span><span class="p-price"></span><span class="p-pax">Hasta 8 personas</span><span class="p-btn">Reservar mesa</span></div></div><span class="shot-url" aria-hidden="true">amokmallorca.com/book-vip<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></span></a>
               <div class="pj-text">
-                <p class="pj-lbl">Qué necesitaba</p>
-                <p class="pj-ctx">Mejorar la tasa de compra en su web. Muchos clientes no entendían la discoteca y cada vez tenía más público turista que venía por primera vez. Un mapa interactivo de reservas adelanta la decisión de compra.</p>
+                <button type="button" class="pj-before" data-full="img/antes/amok-antes.webp" data-alt="Mapa de reservas de AMOK antes del cambio" aria-label="Ver en grande: Mapa de reservas de AMOK antes del cambio"><img src="img/antes/amok-antes.webp" alt="" loading="lazy"><span>Antes<small>Así era su mapa</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.4 10.4L14 14M7 5v4M5 7h4"/></svg></button>
+                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-amok"><span class="pj-nk">Qué necesitaba</span><span class="pj-nh">Turistas que no entendían la discoteca.</span><span class="pj-nm">Leer el caso<i aria-hidden="true"></i></span></button><div class="pj-na" id="nd-amok" role="region" aria-label="Qué necesitaba AMOK"><p>Mejorar la tasa de compra en su web. Muchos clientes no entendían la discoteca y cada vez tenía más público turista que venía por primera vez. Un mapa interactivo de reservas adelanta la decisión de compra.</p></div></div>
                 <p class="pj-stat"><b>+27 %</b><span>de tasa de compra</span></p>
-                <button type="button" class="pj-before" data-full="img/antes/amok-antes.webp" data-alt="Mapa de reservas de AMOK antes del cambio" aria-label="Ver en grande: Mapa de reservas de AMOK antes del cambio"><img src="img/antes/amok-antes.webp" alt="" loading="lazy"><span>Antes<small>Ver en grande</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.4 10.4L14 14M7 5v4M5 7h4"/></svg></button>
               </div>
               <p class="pj-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span class="pj-as"><span>Mapa interactivo de reservas</span></span><span class="pj-from">desde <b class="amt">··· €</b></span></p>
             </div>
@@ -1061,17 +1138,16 @@ a.shot:hover .bar span{color:var(--tinta)}
         <article class="pj card" id="pj-marina">
           <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
           <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-marina">
-            <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/marina.png);--r:1.325;--h:25.7px"></span><b>Marina Beach Club</b><span class="secw"><span class="sec"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g class="rays"><path class="ray" pathLength="1" d="M5.3 7.3L1.2 3.6" style="--d:.05s"/><path class="ray" pathLength="1" d="M15.3 9L19.6 7" style="--d:.3s"/><path class="ray" pathLength="1" d="M15 15.6L18.8 19" style="--d:.55s"/><path class="ray" pathLength="1" d="M4.4 15L.6 17.4" style="--d:.8s"/><path class="ray" pathLength="1" d="M3.6 11.5H-.8" style="--d:1s"/></g></svg>Nightlife</span><span class="city">Valencia</span></span></span>
+            <span class="pj-id"><span class="pj-lgw"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/marina.png);--r:1.325;--h:25.7px"></span></span><span class="pj-who"><b>Marina Beach Club</b><span class="pj-tg"><span class="sec"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g class="rays"><path class="ray" pathLength="1" d="M5.3 7.3L1.2 3.6" style="--d:.05s"/><path class="ray" pathLength="1" d="M15.3 9L19.6 7" style="--d:.3s"/><path class="ray" pathLength="1" d="M15 15.6L18.8 19" style="--d:.55s"/><path class="ray" pathLength="1" d="M4.4 15L.6 17.4" style="--d:.8s"/><path class="ray" pathLength="1" d="M3.6 11.5H-.8" style="--d:1s"/></g></svg>Nightlife</span><span class="city"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13s-4.5-4.2-4.5-7.6a4.5 4.5 0 0 1 9 0C10.5 8.8 6 13 6 13z"/><circle cx="6" cy="5.4" r="1.5"/></svg>Valencia</span></span></span></span>
             <span class="pj-title">Reservas directas, sin pasar por WhatsApp.</span>
-            <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
+            <span class="pj-chev" aria-hidden="true"><svg viewBox="0 0 30 18"><path d="M2 4l13 11L28 4"/></svg></span>
           </button>
           <div class="pj-body" id="pjb-marina" role="region" aria-label="Marina Beach Club">
             <div class="pj-inner">
-              <a class="shot pj-media" href="https://marinabeachclub.com/" target="_blank" rel="noopener" aria-label="Ver la web de Marina Beach Club (marinabeachclub.com, se abre en otra pestaña)"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>marinabeachclub.com</span><svg class="go" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></div><div class="frame demo" data-pins='[[40, 38, "Banco de cubierta", "Desde 500 €", "ok"], [48, 48, "Sofás lounge", "Agotado", "no"], [56, 42, "Sofás centrales", "Desde 700 €", "ok"], [68, 40, "Sofás escenario", "Desde 900 €", "ok"], [70, 34.5, "Primera fila", "Agotado", "no"]]'><div class="cam"><img src="img/marina-3d.webp" alt="Mapa 3D de reservas de Marina Beach Club" loading="lazy"><div class="pins"></div></div><div class="cursor"></div><div class="panel"><span class="p-zone"></span><span class="p-price"></span><span class="p-pax">Hasta 8 personas</span><span class="p-btn">Reservar mesa</span></div></div></a>
+              <a class="shot pj-media" href="https://marinabeachclub.com/" target="_blank" rel="noopener" aria-label="Ver la web de Marina Beach Club (marinabeachclub.com, se abre en otra pestaña)"><div class="frame demo" data-pins='[[40, 38, "Banco de cubierta", "Desde 500 €", "ok"], [48, 48, "Sofás lounge", "Agotado", "no"], [56, 42, "Sofás centrales", "Desde 700 €", "ok"], [68, 40, "Sofás escenario", "Desde 900 €", "ok"], [70, 34.5, "Primera fila", "Agotado", "no"]]'><div class="cam"><img src="img/marina-3d.webp" alt="Mapa 3D de reservas de Marina Beach Club" loading="lazy"><div class="pins"></div></div><div class="cursor"></div><div class="panel"><span class="p-zone"></span><span class="p-price"></span><span class="p-pax">Hasta 8 personas</span><span class="p-btn">Reservar mesa</span></div></div><span class="shot-url" aria-hidden="true">marinabeachclub.com<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></span></a>
               <div class="pj-text">
-                <p class="pj-lbl">Qué necesitaba</p>
-                <p class="pj-ctx">Muchas reservas acababan en WhatsApp y en el chat de redes sociales: nadie veía bien el mapa y el cliente tardaba mucho en decidirse. Ahora, además, se ve claramente cómo se combinan varias mesas al comprar.</p>
-                <button type="button" class="pj-before" data-full="img/antes/marina-antes.webp" data-alt="Mapa de reservas de Marina antes del cambio" aria-label="Ver en grande: Mapa de reservas de Marina antes del cambio"><img src="img/antes/marina-antes.webp" alt="" loading="lazy"><span>Antes<small>Ver en grande</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.4 10.4L14 14M7 5v4M5 7h4"/></svg></button>
+                <button type="button" class="pj-before" data-full="img/antes/marina-antes.webp" data-alt="Mapa de reservas de Marina antes del cambio" aria-label="Ver en grande: Mapa de reservas de Marina antes del cambio"><img src="img/antes/marina-antes.webp" alt="" loading="lazy"><span>Antes<small>Así era su mapa</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.4 10.4L14 14M7 5v4M5 7h4"/></svg></button>
+                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-marina"><span class="pj-nk">Qué necesitaba</span><span class="pj-nh">Las reservas se le escapaban a WhatsApp.</span><span class="pj-nm">Leer el caso<i aria-hidden="true"></i></span></button><div class="pj-na" id="nd-marina" role="region" aria-label="Qué necesitaba Marina Beach Club"><p>Muchas reservas acababan en WhatsApp y en el chat de redes sociales: nadie veía bien el mapa y el cliente tardaba mucho en decidirse. Ahora, además, se ve claramente cómo se combinan varias mesas al comprar.</p></div></div>
               </div>
               <p class="pj-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span class="pj-as"><span>Mapa 3D de reservas</span></span><span class="pj-from">desde <b class="amt">··· €</b></span></p>
             </div>
@@ -1080,7 +1156,7 @@ a.shot:hover .bar span{color:var(--tinta)}
         <article class="pj card pj-soon" id="pj-fitz">
           <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
           <div class="pj-head">
-            <span class="pj-meta"><b>Fitz</b><span class="city">Madrid</span></span>
+            <span class="pj-id"><span class="pj-lgw pj-lgw-0" aria-hidden="true"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg></span><span class="pj-who"><b>Fitz</b><span class="pj-tg"><span class="city"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13s-4.5-4.2-4.5-7.6a4.5 4.5 0 0 1 9 0C10.5 8.8 6 13 6 13z"/><circle cx="6" cy="5.4" r="1.5"/></svg>Madrid</span></span></span></span>
             <span class="pj-title">Caso en preparación.</span>
           </div>
         </article>
@@ -1106,9 +1182,9 @@ a.shot:hover .bar span{color:var(--tinta)}
         <article class="pj card open" id="pj-marchica">
           <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
           <button type="button" class="pj-head" aria-expanded="true" aria-controls="pjb-marchica">
-            <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/marchica.png);--r:1.594;--h:23.2px"></span><b>Marchica</b><span class="secw"><span class="sec"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g class="rays"><path class="ray" pathLength="1" d="M5.3 7.3L1.2 3.6" style="--d:.05s"/><path class="ray" pathLength="1" d="M15.3 9L19.6 7" style="--d:.3s"/><path class="ray" pathLength="1" d="M15 15.6L18.8 19" style="--d:.55s"/><path class="ray" pathLength="1" d="M4.4 15L.6 17.4" style="--d:.8s"/><path class="ray" pathLength="1" d="M3.6 11.5H-.8" style="--d:1s"/></g></svg>Nightlife</span><span class="city">Temporada 25/26</span></span></span>
+            <span class="pj-id"><span class="pj-lgw"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/marchica.png);--r:1.594;--h:23.2px"></span></span><span class="pj-who"><b>Marchica</b><span class="pj-tg"><span class="sec"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g class="rays"><path class="ray" pathLength="1" d="M5.3 7.3L1.2 3.6" style="--d:.05s"/><path class="ray" pathLength="1" d="M15.3 9L19.6 7" style="--d:.3s"/><path class="ray" pathLength="1" d="M15 15.6L18.8 19" style="--d:.55s"/><path class="ray" pathLength="1" d="M4.4 15L.6 17.4" style="--d:.8s"/><path class="ray" pathLength="1" d="M3.6 11.5H-.8" style="--d:1s"/></g></svg>Nightlife</span><span class="city"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="2.5" width="10" height="10" rx="1.6"/><path d="M1 6h10M4 1v3M8 1v3"/></svg>Temporada 25/26</span></span></span></span>
             <span class="pj-title">Todo su negocio, en un panel en tiempo real a medida.</span>
-            <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
+            <span class="pj-chev" aria-hidden="true"><svg viewBox="0 0 30 18"><path d="M2 4l13 11L28 4"/></svg></span>
           </button>
           <div class="pj-body" id="pjb-marchica" role="region" aria-label="Marchica">
             <div class="pj-inner">
@@ -1125,8 +1201,7 @@ a.shot:hover .bar span{color:var(--tinta)}
                 </a>
               </div>
               <div class="pj-text">
-                <p class="pj-lbl">Qué necesitaba</p>
-                <p class="pj-ctx">Agrupar en un solo sitio toda su facturación online: entradas, reservas, tipología de tarifas y ritmo de venta. Creamos un panel que le dice en tiempo real cómo va su negocio, qué acciones de precio puede tomar y qué está aprendiendo.</p>
+                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-marchica"><span class="pj-nk">Qué necesitaba</span><span class="pj-nh">Su facturación online, repartida en varios sitios.</span><span class="pj-nm">Leer el caso<i aria-hidden="true"></i></span></button><div class="pj-na" id="nd-marchica" role="region" aria-label="Qué necesitaba Marchica"><p>Agrupar en un solo sitio toda su facturación online: entradas, reservas, tipología de tarifas y ritmo de venta. Creamos un panel que le dice en tiempo real cómo va su negocio, qué acciones de precio puede tomar y qué está aprendiendo.</p></div></div>
               </div>
               <p class="pj-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span class="pj-as"><span>Panel en tiempo real</span></span><span class="pj-from">desde <b class="amt">··· €</b></span></p>
             </div>
@@ -1153,17 +1228,16 @@ a.shot:hover .bar span{color:var(--tinta)}
         <article class="pj card open" id="pj-condado">
           <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
           <button type="button" class="pj-head" aria-expanded="true" aria-controls="pjb-condado">
-            <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/condado.png);--r:3.188;--h:15.9px"></span><b>Condado Club</b><span class="secw"><span class="sec"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g class="rays"><path class="ray" pathLength="1" d="M5.3 7.3L1.2 3.6" style="--d:.05s"/><path class="ray" pathLength="1" d="M15.3 9L19.6 7" style="--d:.3s"/><path class="ray" pathLength="1" d="M15 15.6L18.8 19" style="--d:.55s"/><path class="ray" pathLength="1" d="M4.4 15L.6 17.4" style="--d:.8s"/><path class="ray" pathLength="1" d="M3.6 11.5H-.8" style="--d:1s"/></g></svg>Nightlife</span><span class="city">Denia</span></span></span>
+            <span class="pj-id"><span class="pj-lgw"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/condado.png);--r:3.188;--h:15.9px"></span></span><span class="pj-who"><b>Condado Club</b><span class="pj-tg"><span class="sec"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g class="rays"><path class="ray" pathLength="1" d="M5.3 7.3L1.2 3.6" style="--d:.05s"/><path class="ray" pathLength="1" d="M15.3 9L19.6 7" style="--d:.3s"/><path class="ray" pathLength="1" d="M15 15.6L18.8 19" style="--d:.55s"/><path class="ray" pathLength="1" d="M4.4 15L.6 17.4" style="--d:.8s"/><path class="ray" pathLength="1" d="M3.6 11.5H-.8" style="--d:1s"/></g></svg>Nightlife</span><span class="city"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13s-4.5-4.2-4.5-7.6a4.5 4.5 0 0 1 9 0C10.5 8.8 6 13 6 13z"/><circle cx="6" cy="5.4" r="1.5"/></svg>Denia</span></span></span></span>
             <span class="pj-title">Una web que por fin transmite el valor de su marca: el show.</span>
-            <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
+            <span class="pj-chev" aria-hidden="true"><svg viewBox="0 0 30 18"><path d="M2 4l13 11L28 4"/></svg></span>
           </button>
           <div class="pj-body" id="pjb-condado" role="region" aria-label="Condado Club">
             <div class="pj-inner">
-              <a class="shot pj-media" href="https://www.condadoclub.es/" target="_blank" rel="noopener" aria-label="Ver la web de Condado Club (condadoclub.es, se abre en otra pestaña)"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>condadoclub.es</span><svg class="go" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></div><div class="frame web" style="--pan:-44.7%"><img src="img/condado-web.webp" alt="Portada de la web de Condado Club" loading="lazy"></div></a>
+              <a class="shot pj-media" href="https://www.condadoclub.es/" target="_blank" rel="noopener" aria-label="Ver la web de Condado Club (condadoclub.es, se abre en otra pestaña)"><div class="frame tab tab-cd" data-tab="cd"><div class="tab-cam"><div class="tab-dev"><div class="tab-scr"><div class="vp"><div class="tv-sc tv-home on"><div class="tv-doc"><video class="tv-vid" muted playsinline loop preload="none" poster="img/vid/condado-hero.jpg" aria-hidden="true"><source data-src="img/vid/condado-hero.mp4" type="video/mp4"></video><img class="tv-ui" src="img/vid/condado-ui.webp" alt="" loading="lazy"><img class="tv-pg" src="img/vid/condado-page.webp" alt="" loading="lazy"><div class="tv-fv"><img class="tv-strip" src="img/vid/condado-strip.webp" alt="" loading="lazy"></div><i class="tv-hl tv-hl-cal"></i></div><img class="tv-nav" src="img/vid/condado-nav.webp" alt="" loading="lazy"></div><div class="tv-sc tv-cal"><div class="tv-doc"><img class="tv-calh" src="img/vid/condado-cal.webp" alt="" loading="lazy"><img class="tv-ev on" src="img/vid/condado-ev.webp" alt="" loading="lazy"><img class="tv-mo" src="img/vid/condado-mo.webp" alt="" loading="lazy"><i class="tv-hl tv-hl-tg"></i><i class="tv-hl tv-hl-day"></i></div><img class="tv-nav on" src="img/vid/condado-nav.webp" alt="" loading="lazy"></div><i class="tv-tap"></i></div></div></div></div></div><span class="shot-url" aria-hidden="true">condadoclub.es<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></span></a>
               <div class="pj-text">
-                <p class="pj-lbl">Qué necesitaba</p>
-                <p class="pj-ctx">Su web no estaba alineada con lo que su marca pretendía comunicar, con su valor. No había coherencia estética ni visual: no iban a la par.</p>
-                <button type="button" class="pj-before" data-full="img/antes/condado-antes.webp" data-alt="La web de Condado Club antes del cambio" aria-label="Ver en grande: La web de Condado Club antes del cambio"><img src="img/antes/condado-antes.webp" alt="" loading="lazy"><span>Antes<small>Ver en grande</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.4 10.4L14 14M7 5v4M5 7h4"/></svg></button>
+                <button type="button" class="pj-before" data-full="img/antes/condado-antes.webp" data-alt="La web de Condado Club antes del cambio" aria-label="Ver en grande: La web de Condado Club antes del cambio"><img src="img/antes/condado-antes.webp" alt="" loading="lazy"><span>Antes<small>Así era su web</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.4 10.4L14 14M7 5v4M5 7h4"/></svg></button>
+                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-condado"><span class="pj-nk">Qué necesitaba</span><span class="pj-nh">Su web no estaba a la altura de su marca.</span><span class="pj-nm">Leer el caso<i aria-hidden="true"></i></span></button><div class="pj-na" id="nd-condado" role="region" aria-label="Qué necesitaba Condado Club"><p>Su web no estaba alineada con lo que su marca pretendía comunicar, con su valor. No había coherencia estética ni visual: no iban a la par.</p></div></div>
               </div>
               <p class="pj-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span class="pj-as"><span>Identidad visual</span><span>Web</span></span><span class="pj-from">desde <b class="amt">··· €</b></span></p>
             </div>
@@ -1172,16 +1246,15 @@ a.shot:hover .bar span{color:var(--tinta)}
         <article class="pj card" id="pj-bela">
           <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
           <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-bela">
-            <span class="pj-meta"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/bela.png);--r:2.524;--h:18.0px"></span><b>Bela Brow Studio</b><span class="secw"><span class="sec"><svg class="pfi pfi-lip" viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="pfc-up"><rect x="-4" y="-6" width="28" height="14.6"/></clipPath><clipPath id="pfc-lip"><path d="M8.3 8.6V4.7L11.7 2.4V8.6Z"/><rect x="7.6" y="8.6" width="4.8" height="2.6"/><rect x="7" y="11.2" width="6" height="7.8" rx="1"/></clipPath></defs><g clip-path="url(#pfc-up)"><path class="bul" d="M8.3 11V4.7L11.7 2.4V11"/></g><rect x="7.6" y="8.6" width="4.8" height="2.6" rx=".4"/><rect x="7" y="11.2" width="6" height="7.8" rx="1"/><g clip-path="url(#pfc-lip)"><rect class="gl" x="9" y="-2" width="2.2" height="24" transform="rotate(24 10 10)"/></g><g transform="translate(14.6 3)" style="--d:0.25s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g><g transform="translate(4.4 6.2) scale(.7)" style="--d:0.55s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g><g transform="translate(15.6 13.6) scale(.6)" style="--d:0.85s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g></svg>Beauty</span><span class="city">Valencia</span></span></span>
+            <span class="pj-id"><span class="pj-lgw"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/bela.png);--r:2.524;--h:18.0px"></span></span><span class="pj-who"><b>Bela Brow Studio</b><span class="pj-tg"><span class="sec"><svg class="pfi pfi-lip" viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="pfc-up"><rect x="-4" y="-6" width="28" height="14.6"/></clipPath><clipPath id="pfc-lip"><path d="M8.3 8.6V4.7L11.7 2.4V8.6Z"/><rect x="7.6" y="8.6" width="4.8" height="2.6"/><rect x="7" y="11.2" width="6" height="7.8" rx="1"/></clipPath></defs><g clip-path="url(#pfc-up)"><path class="bul" d="M8.3 11V4.7L11.7 2.4V11"/></g><rect x="7.6" y="8.6" width="4.8" height="2.6" rx=".4"/><rect x="7" y="11.2" width="6" height="7.8" rx="1"/><g clip-path="url(#pfc-lip)"><rect class="gl" x="9" y="-2" width="2.2" height="24" transform="rotate(24 10 10)"/></g><g transform="translate(14.6 3)" style="--d:0.25s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g><g transform="translate(4.4 6.2) scale(.7)" style="--d:0.55s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g><g transform="translate(15.6 13.6) scale(.6)" style="--d:0.85s"><path class="spk" d="M0 -2.6L.55 -.55L2.6 0L.55 .55L0 2.6L-.55 .55L-2.6 0L-.55 -.55Z"/></g></svg>Beauty</span><span class="city"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13s-4.5-4.2-4.5-7.6a4.5 4.5 0 0 1 9 0C10.5 8.8 6 13 6 13z"/><circle cx="6" cy="5.4" r="1.5"/></svg>Valencia</span></span></span></span>
             <span class="pj-title">Bela pidió una web. Salió una marca.</span>
-            <svg class="pj-chev" viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg>
+            <span class="pj-chev" aria-hidden="true"><svg viewBox="0 0 30 18"><path d="M2 4l13 11L28 4"/></svg></span>
           </button>
           <div class="pj-body" id="pjb-bela" role="region" aria-label="Bela Brow Studio">
             <div class="pj-inner">
-              <a class="shot pj-media" href="https://www.belabrowstudio.com/" target="_blank" rel="noopener" aria-label="Ver la web de Bela Brow Studio (belabrowstudio.com, se abre en otra pestaña)"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>belabrowstudio.com</span><svg class="go" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></div><div class="frame web" style="--pan:-59.1%;--mid:.5"><img class="lt" src="img/bela-web.webp" alt="Portada de la web de Bela Brow Studio" loading="lazy"><img class="dk" src="img/bela-web-dark.webp" alt="Portada de la web de Bela Brow Studio, en modo oscuro" loading="lazy"></div></a>
+              <a class="shot pj-media" href="https://www.belabrowstudio.com/" target="_blank" rel="noopener" aria-label="Ver la web de Bela Brow Studio (belabrowstudio.com, se abre en otra pestaña)"><div class="frame tab tab-bl" data-tab="bl"><div class="tab-cam"><div class="tab-dev"><div class="tab-scr"><div class="vp"><img class="tv-st lt on" data-k="micro" src="img/vid/bela-lt-micro.webp" alt="" loading="lazy"><img class="tv-st lt" data-k="lam" src="img/vid/bela-lt-lam.webp" alt="" loading="lazy"><img class="tv-st lt" data-k="henna" src="img/vid/bela-lt-henna.webp" alt="" loading="lazy"><img class="tv-st dk on" data-k="micro" src="img/vid/bela-dk-micro.webp" alt="" loading="lazy"><img class="tv-st dk" data-k="lam" src="img/vid/bela-dk-lam.webp" alt="" loading="lazy"><img class="tv-st dk" data-k="henna" src="img/vid/bela-dk-henna.webp" alt="" loading="lazy"><i class="tv-bd"></i><div class="tv-pn"><img class="lt" src="img/vid/bela-lt-panel.webp" alt="" loading="lazy"><img class="dk" src="img/vid/bela-dk-panel.webp" alt="" loading="lazy"><i class="tv-hl tv-hl-bk"></i></div><i class="tv-tap"></i></div></div></div></div></div><span class="shot-url" aria-hidden="true">belabrowstudio.com<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></span></a>
               <div class="pj-text">
-                <p class="pj-lbl">Qué necesitaba</p>
-                <p class="pj-ctx">Venía frustrada de una web que no hablaba ni de su valor ni de qué la hacía diferente. Creamos su identidad visual y su marca, definimos qué la hace diferente, su web y su estrategia de captación de clientes.</p>
+                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-bela"><span class="pj-nk">Qué necesitaba</span><span class="pj-nh">Una web que no contaba qué la hacía diferente.</span><span class="pj-nm">Leer el caso<i aria-hidden="true"></i></span></button><div class="pj-na" id="nd-bela" role="region" aria-label="Qué necesitaba Bela Brow Studio"><p>Venía frustrada de una web que no hablaba ni de su valor ni de qué la hacía diferente. Creamos su identidad visual y su marca, definimos qué la hace diferente, su web y su estrategia de captación de clientes.</p></div></div>
               </div>
               <p class="pj-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span class="pj-as"><span>Identidad visual</span><span>Posicionamiento</span><span>Web</span><span>Captación</span></span><span class="pj-from">desde <b class="amt">··· €</b></span></p>
             </div>
@@ -1489,34 +1562,55 @@ a.shot:hover .bar span{color:var(--tinta)}
   }
   window.addEventListener('resize',function(){L.forEach(function(o){lsize(o);ldraw(o,lt(o));});});
 
-  /* Scoring: los puntos se rellenan despacio, uno a uno, cuando la tarjeta ya está bien a la vista */
-  var sc=document.querySelector('.score');
-  if(sc&&!reduce&&'IntersectionObserver' in window){
-    sc.classList.add('wait');
-    [].forEach.call(sc.querySelectorAll('.sd.f,.sd.h'),function(d,i){d.style.setProperty('--d',(.15+i*.22).toFixed(2)+'s');});
-    var sio=new IntersectionObserver(function(en){if(en[0].isIntersecting){sc.classList.remove('wait');sio.disconnect();}},{rootMargin:'0px 0px -30% 0px',threshold:.5});
-    sio.observe(sc.querySelector('.score-c'));
-  }
-  /* Nota global: la línea vibra al verla y se calma; el tramo de lo que ya funciona (2,1/5) sigue sonando suave,
-     el resto queda en silencio */
-  var gsv=document.querySelector('.g-line');
-  if(gsv){
-    var gon=gsv.querySelector('.g-on'),goff=gsv.querySelector('.g-off'),gq=2.1/5,gt0=null,gvis=false,grun=false,gW=0;
-    var gdraw=function(now){
-      var w=gsv.getBoundingClientRect().width||300,H=26,m=H/2,t=gt0===null?0:(now-gt0)/1000,k=reduce?0:Math.max(0,1-t/2.2),A=7*k*k,cut=w*gq,d1='',d2='';
-      if(w!==gW){gW=w;gsv.setAttribute('viewBox','0 0 '+w.toFixed(1)+' '+H);}
-      for(var x=0;x<=w;x+=2){
-        var n=Math.sin(x*.09-t*13)*.6+Math.sin(x*.21+t*19)*.4,e=Math.sin(Math.PI*x/w),on=x<=cut,
-            live=on?2.6*Math.sin(Math.PI*x/cut)*(Math.sin(x*.16-t*2.4)*.7+Math.sin(x*.37+t*3.1)*.3):0,
-            y=m+A*e*n+live;
-        if(on)d1+=(d1?'L':'M')+x.toFixed(1)+' '+y.toFixed(2);
-        if(x>=cut-2)d2+=(d2?'L':'M')+x.toFixed(1)+' '+y.toFixed(2);
-      }
-      gon.setAttribute('d',d1);goff.setAttribute('d',d2);
+  /* Scoring: al verlo, el anillo se dibuja y suena entero; después cada área se queda como está: lo que funciona
+     sigue sonando suave (más cuanto mejor nota) y lo que falla se calla, punteado en violeta, con su destello */
+  var sc=document.querySelector('.score'),sr=sc&&sc.querySelector('.sring');
+  if(sr){
+    var srv=sr.querySelector('.sr-svg'),srg=sr.querySelector('.sr-g'),srw=sr.querySelector('.sr-w'),NS='http://www.w3.org/2000/svg',
+        SA=[-135,-45,45,135],SR=[],st0=null,svis=false,srun=false;
+    [].forEach.call(sr.querySelectorAll('.sr-l'),function(l,i){
+      var k=+l.getAttribute('data-a'),o={a:SA[k]*Math.PI/180,v:+l.getAttribute('data-v'),op:l.classList.contains('op')};
+      o.p=document.createElementNS(NS,'path');o.p.setAttribute('class','on');srw.appendChild(o.p);
+      o.ld=document.createElementNS(NS,'path');o.ld.setAttribute('class','ld');srw.appendChild(o.ld);o.l=l;
+      if(o.op){o.g=document.createElementNS(NS,'g');o.m=document.createElementNS(NS,'path');o.m.setAttribute('class','mk');o.m.setAttribute('d','M0-5.5C.5-1.4 1.4-.5 5.5 0 1.4.5.5 1.4 0 5.5-.5 1.4-1.4.5-5.5 0-1.4-.5-.5-1.4 0-5.5Z');o.g.appendChild(o.m);srw.appendChild(o.g);}
+      l.style.setProperty('--d',(.5+i*.18).toFixed(2)+'s');SR.push(o);
+    });
+    var srDraw=function(now){
+      var r=sr.getBoundingClientRect(),w=r.width||400,h=r.height||300,cx=w/2,cy=h/2,R=Math.min(w*.24,h*.32),
+          t=reduce?9:st0===null?0:(now-st0)/1000,k=Math.max(0,1-Math.max(0,t-.35)/2.1),A=10*k*k,G=.2;
+      srv.setAttribute('viewBox','0 0 '+w.toFixed(1)+' '+h.toFixed(1));
+      srg.setAttribute('cx',cx);srg.setAttribute('cy',cy);srg.setAttribute('r',(R-16).toFixed(1));
+      SR.forEach(function(o,i){
+        var a0=o.a-Math.PI/4+G,a1=o.a+Math.PI/4-G,pr=reduce?1:Math.max(0,Math.min(1,(t-i*.12)/.9)),d='',quiet=o.op&&k<.02;
+        pr=pr<.5?2*pr*pr:1-Math.pow(-2*pr+2,2)/2;
+        for(var j=0;j<=40;j++){
+          var u=j/40;if(u>pr)break;var th=a0+(a1-a0)*u,e=Math.sin(Math.PI*u),
+              n=Math.sin(th*9-t*13)*.6+Math.sin(th*17+t*19)*.4,
+              live=o.op?0:(o.v/5)*6.5*e*(Math.sin(th*6-t*2.3)*.7+Math.sin(th*13+t*3.1)*.3),
+              rr=R+A*e*n+live;
+          d+=(d?'L':'M')+(cx+rr*Math.cos(th)).toFixed(1)+' '+(cy+rr*Math.sin(th)).toFixed(1);
+        }
+        o.p.setAttribute('d',d);
+        /* Al calmarse, lo que falla se queda en silencio: punteado violeta */
+        o.p.setAttribute('class',quiet?'off':'on');o.p.style.strokeDasharray=quiet?'.1 6':'';
+        if(o.m){o.g.setAttribute('transform','translate('+(cx+R*Math.cos(o.a)).toFixed(1)+' '+(cy+R*Math.sin(o.a)).toFixed(1)+') scale(1.3)');o.m.classList.toggle('lit',t>2.3);}
+        /* Guía de cada rótulo: sale del anillo en diagonal y corre bajo (o sobre) el nombre */
+        var lr=o.l.getBoundingClientRect(),dx=Math.cos(o.a)<0?-1:1,dy=Math.sin(o.a)<0?-1:1,
+            x0=cx+(R+12)*Math.cos(o.a),y0=cy+(R+12)*Math.sin(o.a),ly=dy<0?lr.bottom-r.top+9:lr.top-r.top-9,
+            x1=x0+dx*Math.abs(y0-ly),x2=dx<0?lr.left-r.left:lr.right-r.left;
+        o.ld.setAttribute('d','M'+x0.toFixed(1)+' '+y0.toFixed(1)+'L'+x1.toFixed(1)+' '+ly.toFixed(1)+'H'+x2.toFixed(1));
+      });
     };
-    var gloop=function(){if(!gvis){grun=false;return;}gdraw(performance.now());requestAnimationFrame(gloop);};
-    gdraw(performance.now());window.addEventListener('resize',function(){gdraw(performance.now());});
-    if(!reduce&&'IntersectionObserver' in window)new IntersectionObserver(function(en){gvis=en[0].isIntersecting;if(gvis){if(gt0===null)gt0=performance.now();if(!grun){grun=true;requestAnimationFrame(gloop);}}},{threshold:.6}).observe(gsv);
+    var srLoop=function(){if(!svis){srun=false;return;}srDraw(performance.now());requestAnimationFrame(srLoop);};
+    srDraw(performance.now());window.addEventListener('resize',function(){srDraw(performance.now());});
+    if(!reduce&&'IntersectionObserver' in window){
+      sc.classList.add('wait');
+      /* Empieza cuando la tarjeta ya está bien a la vista; el anillo solo se anima mientras se ve */
+      new IntersectionObserver(function(en){
+        svis=en[0].isIntersecting;if(svis&&en[0].intersectionRatio>=.45&&st0===null){st0=performance.now();sc.classList.remove('wait');}
+        if(svis&&st0!==null&&!srun){srun=true;requestAnimationFrame(srLoop);}
+      },{rootMargin:'0px 0px -25% 0px',threshold:[0,.45,.9]}).observe(sr);
+    }
   }
 
   var onTheme=function(){readInk();size();L.forEach(function(o){ldraw(o,lt(o));});};
@@ -1569,15 +1663,24 @@ a.shot:hover .bar span{color:var(--tinta)}
     pt.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pswap();}});
   }
 
-  /* ¿Continuamos?: la sintonía entre Silence Club y tu marca suena y se calma en su latido al verla */
+  /* ¿Continuamos?: la sintonía entre Silence Club y tu marca suena y las atrae: al verla, las dos marcas, algo
+     separadas, se acercan mientras el rayo suena y se calma en su latido; después, cada pocos segundos, el latido
+     vuelve y tira de ellas un poco más (sutil) */
   var dbp=document.querySelector('.duo-br path');
   if(dbp&&!reduce&&'IntersectionObserver' in window){
+    var duo=dbp.closest('.duo'),dsc=duo.querySelector('.duo-sc'),dyou=duo.querySelector('.duo-you'),dbr=duo.querySelector('.duo-br'),DG=18,dvis=false,drun=false,dt0=null;
     var dbeat=function(u){return -5*Math.exp(-Math.pow((u+3.2)/1.7,2))+5.2*Math.exp(-Math.pow((u-.6)/1.7,2))-2.2*Math.exp(-Math.pow((u-4.3)/1.7,2));};
     var ddraw=function(a,b,t){var d='';for(var x=0;x<=34;x+=.5){d+=(x?'L':'M')+x+' '+(10+b*dbeat(x-17)+a*Math.sin(Math.PI*x/34)*(Math.sin(x*.6-t*17)*.6+Math.sin(x*1.3+t*29)*.4)).toFixed(2);}dbp.setAttribute('d',d);};
-    var dio=new IntersectionObserver(function(en){if(!en[0].isIntersecting)return;dio.disconnect();var t0=performance.now();
-      (function f(){var t=(performance.now()-t0)/1000,p=Math.min(1,t/1.8);ddraw(5*Math.pow(1-p,1.4),Math.pow(p,1.6),t);if(p<1)requestAnimationFrame(f);})();
-    },{rootMargin:'0px 0px -20% 0px',threshold:1});
-    dio.observe(dbp.parentNode);
+    var dpos=function(o){var bw=dbr.offsetWidth||56;dsc.style.transform='translateX('+(-o).toFixed(2)+'px)';dyou.style.transform='translateX('+o.toFixed(2)+'px)';
+      dbr.style.transform='scaleX('+((bw+2*o)/bw).toFixed(4)+')';};
+    dpos(DG);
+    var dloop=function(){
+      if(!dvis){drun=false;return;}
+      var t=(performance.now()-dt0)/1000,p=Math.min(1,t/2.6),e=1-Math.pow(1-p,3),ph=t>2.6?(t-2.6)%5:9,pull=ph<1.8?Math.sin(Math.PI*ph/1.8):0;
+      dpos(DG*(1-e)-3.5*pull);ddraw(5*Math.pow(1-p,1.4)+2.4*pull,Math.pow(p,1.6)*(1+.3*pull),t);
+      requestAnimationFrame(dloop);
+    };
+    new IntersectionObserver(function(en){dvis=en[0].isIntersecting;if(dvis){if(dt0===null)dt0=performance.now();if(!drun){drun=true;requestAnimationFrame(dloop);}}},{rootMargin:'0px 0px -20% 0px',threshold:1}).observe(duo);
   }
 
   /* Áreas: al verlas, la pluma de Marca dibuja su curva (con "reducir movimiento", ya dibujada) */
@@ -1643,12 +1746,13 @@ a.shot:hover .bar span{color:var(--tinta)}
     }
   }
 
-  /* Hero: el sector va cambiando (nightlife ↔ beauty) cuando ya ha dado tiempo a verlo todo. La palabra se disuelve y
+  /* Hero: el sector va cambiando (nightlife ↔ beauty) pronto (a los 4,75 s y luego cada 4,5 s), para que se vea antes
+     de bajar. La palabra se disuelve y
      la nueva se enfoca letra a letra y se enciende con su luz (neón / iluminador); las preguntas se adaptan.
      Solo corre con el hero a la vista; con "reducir movimiento", se queda en nightlife */
   (function(){
     var sec=document.querySelector('.sector'),chat=document.querySelector('.chat');if(!sec||!chat)return;
-    var W={},qas=[].slice.call(chat.querySelectorAll('.qa')),cur='n',vis=true,acc=0,next=9500;
+    var W={},qas=[].slice.call(chat.querySelectorAll('.qa')),cur='n',vis=true,acc=0,next=4750;
     [].forEach.call(sec.querySelectorAll('.sw'),function(e){W[e.getAttribute('data-k')]=e;});
     function has(q,k){return q.getAttribute('data-s').indexOf(k)>=0;}
     function lit(e){e.classList.remove('lit');void e.offsetWidth;e.classList.add('lit');}
@@ -1677,7 +1781,7 @@ a.shot:hover .bar span{color:var(--tinta)}
     if(reduce)return;
     setTimeout(function(){lit(W.n);},900);
     if('IntersectionObserver' in window)new IntersectionObserver(function(en){vis=en[0].isIntersecting;},{threshold:.15}).observe(chat);
-    setInterval(function(){if(!vis||document.hidden)return;acc+=250;if(acc>=next){acc=0;next=9000;swap();}},250);
+    setInterval(function(){if(!vis||document.hidden)return;acc+=250;if(acc>=next){acc=0;next=4500;swap();}},250);
   })();
 
   /* Análisis: la línea de lectura recorre el relieve despacio (ida y vuelta) con su punto sobre la curva violeta */
@@ -1816,6 +1920,99 @@ a.shot:hover .bar span{color:var(--tinta)}
     loop();
   });
   })();
+
+  /* Webs de los casos: vídeo en tablet. La cámara (zoom) va a lo importante y un dedo usa la web; corre solo con el
+     marco a la vista (el caso abierto) y, con "reducir movimiento", se queda en la portada */
+  (function(){
+  var sleep=function(ms){return new Promise(function(r){setTimeout(r,ms)})},VW=820,VH=1180;
+  [].forEach.call(document.querySelectorAll('.frame.tab'),function(f){
+    var cam=f.querySelector('.tab-cam'),dev=f.querySelector('.tab-dev'),vp=f.querySelector('.vp'),tap=f.querySelector('.tv-tap'),
+        vid=f.querySelector('.tv-vid'),G={},cur=[VW/2,VH/2,1],vis=false,gen=0;
+    var q=function(x){return f.querySelector(x)},on=function(e,v){e.classList.toggle('on',v!==false)},
+        /* Al volver a empezar, los desplazamientos vuelven a su sitio sin animarse (no se ve rebobinar) */
+        jump=function(e){e.style.transition='none';e.style.transform='';void e.offsetWidth;e.style.transition='';};
+    function shot(x,y,z,ms){
+      cur=[x,y,z];if(!G.W)return;
+      var px=G.sx+x*G.s,py=G.sy+y*G.s,tx=z<=1?0:G.W/2-z*px,ty=z<=1?0:G.H/2-z*py;
+      /* Con zoom, sin enseñar lo que hay fuera de la tablet cuando ya llena el marco */
+      if(z*G.dw>=G.W)tx=Math.min(-z*G.dx,Math.max(G.W-z*(G.dx+G.dw),tx));
+      if(z*G.dh>=G.H)ty=Math.min(-z*G.dy,Math.max(G.H-z*(G.dy+G.dh),ty));
+      cam.style.transitionDuration=(ms==null?1500:ms)+'ms';
+      cam.style.transform='translate('+tx.toFixed(1)+'px,'+ty.toFixed(1)+'px) scale('+Math.max(1,z)+')';
+    }
+    function layout(){
+      var W=f.clientWidth,H=f.clientHeight;if(!W||!H)return;
+      var dh=H*.86,bz=Math.max(5,dh*.024),sh=dh-2*bz,sw=sh*VW/VH,dw=sw+2*bz,dx=(W-dw)/2,dy=(H-dh)/2;
+      dev.style.left=dx+'px';dev.style.top=dy+'px';dev.style.width=dw+'px';dev.style.height=dh+'px';dev.style.padding=bz+'px';dev.style.borderRadius=(bz*2.6)+'px';
+      dev.firstElementChild.style.borderRadius=(bz*1.5)+'px';
+      G={W:W,H:H,sx:dx+bz,sy:dy+bz,s:sw/VW,dx:dx,dw:dw,dy:dy,dh:dh};
+      vp.style.transform='scale('+G.s.toFixed(4)+')';shot(cur[0],cur[1],cur[2],0);
+    }
+    layout();window.addEventListener('resize',layout);
+    if(window.ResizeObserver)new ResizeObserver(layout).observe(f);
+    if(reduce||!('IntersectionObserver' in window))return;
+    /* El tiempo solo corre con el marco a la vista */
+    async function w(ms){var g=gen;while(ms>0){var d=Math.min(ms,100);await sleep(d);if(g!==gen)throw 0;if(vis&&!document.hidden)ms-=d;}}
+    function tapTo(x,y){tap.style.left=x+'px';tap.style.top=y+'px';on(tap);}
+    async function press(){tap.classList.add('dn');await w(230);tap.classList.remove('dn');}
+    new IntersectionObserver(function(en){vis=en[0].isIntersecting;
+      if(vid){if(vis){var src=vid.querySelector('source');if(src&&!src.src){src.src=src.getAttribute('data-src');vid.load();}var pr=vid.play();if(pr&&pr.catch)pr.catch(function(){});}else vid.pause();}
+    },{threshold:.25}).observe(f);
+    var run;
+    if(f.getAttribute('data-tab')==='cd'){
+      var home=q('.tv-home'),cal=q('.tv-cal'),hd=home.querySelector('.tv-doc'),cd=cal.querySelector('.tv-doc'),nav=home.querySelector('.tv-nav'),
+          strip=q('.tv-strip'),ev=q('.tv-ev'),mo=q('.tv-mo'),hc=q('.tv-hl-cal'),htg=q('.tv-hl-tg'),hday=q('.tv-hl-day');
+      run=async function(){
+        home.className='tv-sc tv-home on';cal.className='tv-sc tv-cal';jump(hd);jump(cd);jump(strip);on(nav,false);
+        on(ev);on(mo,false);[hc,htg,hday,tap].forEach(function(e){on(e,false);});
+        shot(410,590,1,900);await w(1300);
+        /* El hero: su vídeo (el show) y el nombre, de cerca */
+        shot(300,560,2.05);await w(3000);
+        /* Baja a los próximos eventos (el iframe de Fourvenues) */
+        shot(410,560,1.2,1300);hd.style.transform='translateY(-1350px)';await w(600);on(nav);await w(1000);
+        shot(410,400,1.75);await w(1500);
+        /* Se desliza el carrusel con el dedo y vuelve */
+        tapTo(600,430);await w(800);tap.classList.add('dn');strip.style.transform='translateX(-632px)';tapTo(250,430);await w(1000);tap.classList.remove('dn');await w(900);
+        tap.classList.add('dn');strip.style.transform='';tapTo(610,430);await w(1000);tap.classList.remove('dn');await w(600);
+        /* Ver calendario completo */
+        shot(410,630,2.2);tapTo(410,671);await w(1400);on(hc);await press();await w(450);
+        home.classList.remove('on');home.classList.add('gone');on(cal);on(tap,false);on(hc,false);shot(410,560,1.1,1200);await w(1700);
+        /* Del listado de eventos a la vista de calendario */
+        shot(330,390,2.1);await w(1300);tapTo(290,322);await w(1000);on(htg);await press();on(ev,false);on(mo);await w(600);on(htg,false);on(tap,false);await w(600);
+        cd.style.transform='translateY(-330px)';shot(560,700,1.5,1400);await w(1600);
+        /* Un evento del mes */
+        shot(600,740,2.5);await w(1200);tapTo(631,757);await w(1000);on(hday);await press();await w(1700);
+        on(tap,false);on(hday,false);shot(410,590,1,1500);await w(2100);
+        on(cal,false);await w(500);
+      };
+    }else{
+      var bd=q('.tv-bd'),pn=q('.tv-pn'),hb=q('.tv-hl-bk'),sts=[].slice.call(f.querySelectorAll('.tv-st'));
+      var state=function(k){sts.forEach(function(i){on(i,i.getAttribute('data-k')===k);});};
+      run=async function(){
+        state('micro');[bd,pn,hb,tap].forEach(function(e){on(e,false);});
+        shot(410,590,1,900);await w(1300);
+        shot(330,195,1.9);await w(2300);
+        /* ¿Qué te gustaría hacerte?: cambia de servicio y cambia lo que se reserva */
+        shot(410,600,2.05);await w(1400);
+        tapTo(401,529);await w(1000);await press();state('lam');await w(1500);
+        tapTo(545,529);await w(950);await press();state('henna');await w(1500);
+        tapTo(193,529);await w(1050);await press();state('micro');await w(1500);
+        /* Elegir día y hora: se abre el pop-up de Booksy dentro de su web */
+        tapTo(410,757);await w(1000);await press();on(bd);on(pn);on(tap,false);shot(410,620,1.15,1200);await w(1800);
+        shot(420,560,2.15);await w(1500);tapTo(550,598);await w(1000);on(hb);await press();await w(1500);on(hb,false);
+        shot(600,250,1.9);tapTo(727,112);await w(1300);await press();on(pn,false);on(bd,false);on(tap,false);await w(800);
+        shot(410,590,1,1500);await w(2100);
+      };
+    }
+    (async function(){var g=++gen;try{while(true){await run();}}catch(e){}})();
+  });
+  })();
+
+  /* Qué necesitaba: el problema completo, al desplegarlo */
+  [].forEach.call(document.querySelectorAll('.pj-need'),function(n){
+    var b=n.querySelector('.pj-nq');
+    b.addEventListener('click',function(){var o=!n.classList.contains('open');n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);});
+  });
 
   /* Constelación: se dibuja al verla por primera vez */
   [].forEach.call(document.querySelectorAll('.int'),function(el){
