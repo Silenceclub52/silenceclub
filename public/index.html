@@ -9,7 +9,7 @@
 try{var t=(localStorage.getItem('sc-theme')||'').split('|'),s=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
 if((t[0]==='light'||t[0]==='dark')&&t[1]===s)document.documentElement.setAttribute('data-theme',t[0]);else localStorage.removeItem('sc-theme');}catch(e){}</script>
 <title>Silence Club · Decisiones inteligentes para tu negocio</title>
-<meta name="description" content="Identifico y creo las soluciones digitales que aún no sabes que necesitas. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
+<meta name="description" content="Identifico oportunidades de mejora y las convierto en soluciones digitales. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
 <meta name="author" content="Jorge · Silence Club">
 <meta name="application-name" content="Silence Club">
 <meta name="apple-mobile-web-app-title" content="Silence Club">
@@ -23,7 +23,7 @@ if((t[0]==='light'||t[0]==='dark')&&t[1]===s)document.documentElement.setAttribu
 <meta property="og:site_name" content="Silence Club">
 <meta property="og:url" content="https://silenceclub.es/">
 <meta property="og:title" content="Silence Club · Decisiones inteligentes para tu negocio">
-<meta property="og:description" content="Identifico y creo las soluciones digitales que aún no sabes que necesitas. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
+<meta property="og:description" content="Identifico oportunidades de mejora y las convierto en soluciones digitales. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
 <meta property="og:image" content="https://silenceclub.es/img/og-silenceclub-2026.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -31,10 +31,10 @@ if((t[0]==='light'||t[0]==='dark')&&t[1]===s)document.documentElement.setAttribu
 <meta property="og:image:alt" content="Silence Club. Primero, silencio. Decisiones inteligentes para tu negocio. silenceclub.es">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Silence Club · Decisiones inteligentes para tu negocio">
-<meta name="twitter:description" content="Identifico y creo las soluciones digitales que aún no sabes que necesitas. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
+<meta name="twitter:description" content="Identifico oportunidades de mejora y las convierto en soluciones digitales. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
 <meta name="twitter:image" content="https://silenceclub.es/img/og-silenceclub-2026.jpg">
 <meta name="twitter:image:alt" content="Silence Club. Primero, silencio. Decisiones inteligentes para tu negocio. silenceclub.es">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Silence Club", "url": "https://silenceclub.es/", "description": "Identifico y creo las soluciones digitales que aún no sabes que necesitas. Mapas 3D de reservas, paneles en tiempo real y webs que venden.", "slogan": "Primero, silencio.", "email": "info@silenceclub.es", "logo": "https://silenceclub.es/icon-512.png", "image": "https://silenceclub.es/img/og-silenceclub-2026.jpg", "founder": {"@type": "Person", "name": "Jorge", "jobTitle": "Fundador de Silence Club"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Silence Club", "url": "https://silenceclub.es/", "description": "Identifico oportunidades de mejora y las convierto en soluciones digitales. Mapas 3D de reservas, paneles en tiempo real y webs que venden.", "slogan": "Primero, silencio.", "email": "info@silenceclub.es", "logo": "https://silenceclub.es/icon-512.png", "image": "https://silenceclub.es/img/og-silenceclub-2026.jpg", "founder": {"@type": "Person", "name": "Jorge", "jobTitle": "Fundador de Silence Club"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,100;1,9..144,300..600,100&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -181,20 +181,21 @@ section.block{padding:clamp(96px,14vw,176px) 0}
 /* Etiqueta de sección: medio punto y versalitas, sobria */
 .eyebrow{grid-column:1/-1;display:flex;align-items:center;gap:10px;margin-bottom:22px;font:600 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--grafito)}
 .eyebrow svg{width:10px;height:10px;color:var(--tinta)}
-/* Servicio: la pregunta; debajo, la escucha y el scoring (gratis) */
+/* Servicio: la pregunta; a un lado, cómo empiezo; al otro, el diagnóstico (gratis). Compacto: se pasa rápido */
 section.svc{padding-bottom:0}
 .svc-h{grid-column:1/span 9;text-wrap:balance}
-.svc-l{grid-column:1/span 5;margin-top:clamp(56px,7vw,96px)}
-.svc-t{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(28px,3vw,42px);line-height:1.08;letter-spacing:-.022em;text-wrap:balance}
-.score{--sp:28px;grid-column:7/span 6;margin-top:clamp(56px,7vw,96px)}
-.score-c{margin:0;padding:24px var(--sp) 0;overflow:hidden;border:1px solid var(--linea);border-radius:16px;background:var(--papel);box-shadow:0 24px 50px -32px rgba(28,30,42,.3)}
+.svc-l{grid-column:1/span 5;margin-top:clamp(32px,4.5vw,64px)}
+.svc-t{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(26px,2.6vw,36px);line-height:1.1;letter-spacing:-.022em;text-wrap:balance}
+.svc-p{margin-top:14px;max-width:28em;font-size:clamp(16px,1.3vw,18px);line-height:1.5;color:var(--grafito);text-wrap:pretty}
+.score{--sp:24px;grid-column:7/span 6;margin-top:clamp(32px,4.5vw,64px)}
+.score-c{margin:0;padding:20px var(--sp) 0;overflow:hidden;border:1px solid var(--linea);border-radius:16px;background:var(--papel);box-shadow:0 24px 50px -32px rgba(28,30,42,.3)}
 .score-h{display:block}
-.score-t{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;font-weight:600;font-size:21px;line-height:1.2;letter-spacing:-.015em}
+.score-t{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;font-weight:600;font-size:19px;line-height:1.2;letter-spacing:-.015em}
 .score-t em{padding:2px 9px;border:1px solid var(--linea);border-radius:999px;font:400 11.5px/1.4 var(--sans);font-style:normal;letter-spacing:0;color:var(--grafito)}
-.score-s{display:block;margin-top:6px;font-size:14.5px;line-height:1.4;color:var(--grafito)}
+.score-s{display:block;margin-top:5px;font-size:14px;line-height:1.45;color:var(--grafito);text-wrap:pretty}
 /* El scoring como un anillo de sonido, un tramo por área: lo que funciona suena (más cuanto mejor está) y lo que falla
    se queda en silencio, punteado en violeta y con su destello. Nada de tablas: no se parece al panel de Marchica */
-.sring{position:relative;aspect-ratio:4/3;margin-top:10px}
+.sring{position:relative;aspect-ratio:2.5/1;margin-top:10px}
 .sr-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .sr-g{fill:none;stroke:var(--linea);stroke-width:1;stroke-dasharray:1.5 5}
 .sr-w .on{fill:none;stroke:var(--tinta);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.85}
@@ -204,10 +205,10 @@ section.svc{padding-bottom:0}
 .sr-w .mk{fill:var(--violeta);transform-box:fill-box;transform-origin:center;transform:scale(0);transition:transform .7s cubic-bezier(.3,1.6,.5,1)}
 .sr-w .mk.lit{transform:none;animation:mktw 3.6s ease-in-out 1.2s infinite}
 @keyframes mktw{0%,72%{transform:none}86%{transform:scale(1.45) rotate(45deg)}100%{transform:rotate(90deg)}}
-.sr-c{position:absolute;left:50%;top:50%;display:flex;align-items:baseline;transform:translate(-50%,-50%);font:600 32px/1 var(--sans);letter-spacing:-.035em;transition:opacity .8s .3s}
-.sr-c small{margin-left:1px;font-size:13px;font-weight:500;letter-spacing:0;color:var(--grafito)}
-.sr-l{position:absolute;display:flex;flex-direction:column;gap:4px;font:500 13px/1.15 var(--sans);color:var(--grafito);transition:opacity .6s ease,transform .6s cubic-bezier(.3,.8,.3,1);transition-delay:var(--d,0s)}
-.sr-l b{font-weight:600;font-size:14.5px;letter-spacing:-.01em;color:var(--tinta)}
+.sr-c{position:absolute;left:50%;top:50%;display:flex;align-items:baseline;transform:translate(-50%,-50%);font:600 26px/1 var(--sans);letter-spacing:-.035em;transition:opacity .8s .3s}
+.sr-c small{margin-left:1px;font-size:12px;font-weight:500;letter-spacing:0;color:var(--grafito)}
+.sr-l{position:absolute;display:flex;flex-direction:column;gap:3px;font:500 12.5px/1.15 var(--sans);color:var(--grafito);transition:opacity .6s ease,transform .6s cubic-bezier(.3,.8,.3,1);transition-delay:var(--d,0s)}
+.sr-l b{font-weight:600;font-size:14px;letter-spacing:-.01em;color:var(--tinta)}
 .sr-l[data-a="0"]{left:0;top:0}
 .sr-l[data-a="1"]{right:0;top:0;align-items:flex-end}
 .sr-l[data-a="2"]{right:0;bottom:0;align-items:flex-end}
@@ -216,12 +217,14 @@ section.svc{padding-bottom:0}
 .sr-l.op svg{width:9px;height:9px;fill:currentColor}
 .score.wait .sr-l{opacity:0;transform:translateY(5px)}
 .score.wait .sr-c{opacity:0}
-.score-sum{display:flex;align-items:center;gap:8px;margin-top:14px;font:500 13.5px/1.3 var(--sans);color:var(--violeta);transition:opacity .6s 2.6s}
+.score-sum{display:flex;align-items:center;gap:8px;margin-top:10px;font:500 13.5px/1.3 var(--sans);color:var(--violeta);transition:opacity .6s 2.6s}
 .score-sum svg{flex:none;width:12px;height:12px;fill:currentColor}
 .score.wait .score-sum{opacity:0}
-/* Pie de la tarjeta: en lugar de precio, "Free", en la misma franja con tinte violeta */
-.score-free{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;margin:16px calc(-1*var(--sp)) 0;padding:14px var(--sp) 15px;border-top:1px dashed var(--linea);background:rgba(107,79,214,.06);background:color-mix(in srgb,var(--violeta) 5%,var(--niebla));font-size:14px;color:var(--grafito)}
+/* Pie de la tarjeta, como el resguardo de una invitación: "Free" y, debajo, el botón para pedirlo */
+.score-free{position:relative;display:grid;gap:14px;margin:14px calc(-1*var(--sp)) 0;padding:14px var(--sp) 16px;border-top:1px dashed var(--linea);background:rgba(107,79,214,.06);background:color-mix(in srgb,var(--violeta) 5%,var(--niebla));font-size:14px;color:var(--grafito)}
+.score-free>p{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .score-free b{font-weight:500;color:var(--tinta)}
+.score-cta{justify-content:center;height:46px;font-size:15px}
 /* Línea perforada con muescas a los lados, como el resguardo de una invitación */
 .score-free::before,.score-free::after{content:"";position:absolute;top:-10px;width:20px;height:20px;border-radius:50%;background:var(--niebla);border:1px solid var(--linea)}
 .score-free::before{left:-11px}.score-free::after{right:-11px}
@@ -229,48 +232,49 @@ section.svc{padding-bottom:0}
    cada pocos segundos, vuelve a brillar: lo gratis es lo que se tiene que ver */
 .free{position:relative;flex:none;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 16px 0 13px;overflow:hidden;border-radius:999px;background:var(--violeta);background:linear-gradient(135deg,var(--violeta),#9479F2);color:#fff;font:400 19px/1 var(--serif);font-variation-settings:"SOFT" 100;letter-spacing:-.01em;box-shadow:0 10px 22px -12px rgba(107,79,214,.9)}
 .free::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.6) 50%,transparent 70%);transform:translateX(-130%)}
-.score:not(.wait) .free::after{animation:glim 1.1s ease 2.4s both}
+.tk:not(.wait) .free::after{animation:glim 1.1s ease 2.4s both}
 .fs{position:relative;display:grid;place-items:center;width:12px;height:12px}
 .fs svg{width:12px;height:12px;fill:currentColor;overflow:visible}
 .fs i{position:absolute;left:50%;top:50%;width:3px;height:3px;margin:-1.5px;border-radius:50%;background:currentColor;opacity:0}
-.score.wait .fs svg{transform:scale(0)}
-.score:not(.wait) .fs svg{animation:fsin .9s cubic-bezier(.3,1.5,.5,1) 2.2s both,fstw 4s ease-in-out 4s infinite}
-.score:not(.wait) .fs i{animation:fspk 4s ease-out 2.35s infinite}
+.tk.wait .fs svg{transform:scale(0)}
+.tk:not(.wait) .fs svg{animation:fsin .9s cubic-bezier(.3,1.5,.5,1) 2.2s both,fstw 4s ease-in-out 4s infinite}
+.tk:not(.wait) .fs i{animation:fspk 4s ease-out 2.35s infinite}
 .fs i:nth-child(3){--x:-9px;--y:-8px;animation-delay:2.45s!important}.fs i:nth-child(2){--x:9px;--y:-7px}.fs i:nth-child(4){--x:2px;--y:10px;animation-delay:2.55s!important}
 @keyframes fsin{0%{transform:scale(0) rotate(-120deg)}55%{transform:scale(1.7) rotate(20deg);filter:drop-shadow(0 0 4px rgba(255,255,255,.95))}100%{transform:none}}
 @keyframes fstw{0%,74%{transform:none}86%{transform:scale(1.45) rotate(45deg);filter:drop-shadow(0 0 4px rgba(255,255,255,.9))}100%{transform:rotate(90deg)}}
 @keyframes fspk{0%{opacity:0;transform:none}6%{opacity:1}22%,100%{opacity:0;transform:translate(var(--x),var(--y)) scale(.4)}}
 .amt{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:20px;letter-spacing:-.01em;color:var(--tinta)}
-@media (max-width:600px){.score{--sp:18px}.score-c{padding-top:20px}.score-t{font-size:19px}.sr-l{font-size:12px}.sr-l b{font-size:13.5px}.sr-c{font-size:27px}.score-free{flex-wrap:wrap}}
+@media (max-width:600px){.score{--sp:18px}.score-c{padding-top:18px}.score-t{font-size:18px}.sr-l{font-size:11.5px}.sr-l b{font-size:13px}.sr-c{font-size:22px}}
+.free .amt{color:inherit;font-size:19px}
+.free small{margin-left:-3px;font:500 12px/1 var(--sans);opacity:.85}
 
 /* Áreas: tres bloques de trabajo, cada uno con su color, su icono y su ilustración (se entienden sin leer).
    La cinta de sonido hace de borde superior del bloque. Títulos en sans: más producto, menos página */
 section.areas{padding-top:clamp(96px,12vw,152px)}
 .areas-h{grid-column:1/span 8}
-.area{--ac:#1E9E66;--ac-t:rgba(30,158,102,.09);--ac-b:rgba(30,158,102,.3);margin-top:clamp(72px,9vw,120px)}
+.area{--ac:#1E9E66;--ac-t:rgba(30,158,102,.09);--ac-b:rgba(30,158,102,.3);margin-top:clamp(56px,7vw,96px)}
 .area-datos{--ac:var(--violeta);--ac-t:rgba(107,79,214,.08);--ac-b:rgba(107,79,214,.3)}
 .area-marca{--ac:#D2603F;--ac-t:rgba(210,96,63,.09);--ac-b:rgba(210,96,63,.3)}
 .area-h{grid-column:1/-1;position:relative;display:grid;grid-template-columns:minmax(0,1fr);align-items:start;
-  padding:clamp(40px,4.6vw,64px) clamp(24px,4vw,56px) clamp(32px,4vw,52px);border:1px solid var(--linea);border-top-color:transparent;border-radius:22px;
+  padding:clamp(30px,3.4vw,46px) clamp(22px,3.4vw,48px) clamp(26px,3vw,40px);border:1px solid var(--linea);border-top-color:transparent;border-radius:22px;
   background:var(--papel);box-shadow:0 30px 60px -40px rgba(28,30,42,.32)}
 .area-h::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(120% 90% at 100% 0%,var(--ac-t),transparent 60%)}
 .area-line{position:absolute;left:-1px;top:-22px;display:block;width:calc(100% + 2px);height:44px}
 .area-id{position:relative;z-index:1;max-width:38em}
-.area-top{display:flex;align-items:center;gap:14px}
-.area-ic{display:grid;place-items:center;flex:none;width:52px;height:52px;border-radius:15px;background:var(--ac-t);box-shadow:inset 0 0 0 1px var(--ac-b);color:var(--ac)}
-.area-ic svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+/* Área 0X · nombre, con su icono pequeño en el color del área */
+.area-n{display:flex;align-items:center;gap:10px;font:600 11.5px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--grafito)}
+.area-ic{display:inline-grid;place-items:center;flex:none;color:var(--ac)}
+.area-ic svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .area-ic .f{fill:currentColor;stroke:none}
-.area-n{font:600 12px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ac)}
-.area-n span{display:block;margin-top:3px;letter-spacing:.08em;color:var(--grafito);font-weight:500}
-.area-t{margin-top:26px;font:600 clamp(36px,4.2vw,60px)/1 var(--sans);letter-spacing:-.04em;text-wrap:balance}
-.area-v{margin-top:16px;max-width:30em;font-size:clamp(17px,1.4vw,20px);line-height:1.45;color:var(--grafito);text-wrap:pretty}
+.area-t{margin-top:16px;font:600 clamp(30px,3.4vw,46px)/1.02 var(--sans);letter-spacing:-.035em;text-wrap:balance}
+.area-v{margin-top:12px;max-width:34em;font-size:clamp(16px,1.25vw,18px);line-height:1.5;color:var(--grafito);text-wrap:pretty}
 .area-v b{font-weight:500;color:var(--tinta)}
 /* Activos que se crean en el área, como piezas */
-.area-as{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 0;padding:0;list-style:none}
-.area-as li{display:inline-flex;align-items:center;gap:9px;height:36px;padding:0 15px 0 12px;border-radius:999px;background:var(--ac-t);box-shadow:inset 0 0 0 1px var(--ac-b);font:500 14px/1 var(--sans);color:var(--tinta)}
+.area-as{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0;padding:0;list-style:none}
+.area-as li{display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 12px 0 10px;border-radius:999px;background:var(--papel);box-shadow:inset 0 0 0 1px var(--linea);font:500 13px/1 var(--sans);color:var(--tinta)}
 .area-as li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;border:1px solid var(--ac);background:linear-gradient(90deg,transparent 50%,var(--ac) 50%)}
 /* "Todo en tu área de cliente": un botón de verdad, con la silueta del área de cliente */
-.area-cli{display:inline-flex;align-items:center;gap:10px;height:42px;margin-top:14px;padding:0 16px 0 5px;border-radius:999px;background:var(--violeta);color:var(--papel);font:500 14.5px/1 var(--sans);text-decoration:none;box-shadow:0 10px 24px -14px rgba(107,79,214,.8);transition:transform .4s cubic-bezier(.3,.8,.3,1),box-shadow .4s}
+.area-cli{display:inline-flex;align-items:center;gap:10px;height:40px;margin-top:12px;padding:0 16px 0 5px;border-radius:999px;background:var(--violeta);color:var(--papel);font:500 14.5px/1 var(--sans);text-decoration:none;box-shadow:0 10px 24px -14px rgba(107,79,214,.8);transition:transform .4s cubic-bezier(.3,.8,.3,1),box-shadow .4s}
 .area-cli i{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.18)}
 .area-cli svg{width:12px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .area-cli .go{width:10px;height:10px;margin-left:2px;transition:transform .3s}
@@ -285,56 +289,49 @@ section.areas{padding-top:clamp(96px,12vw,152px)}
 .area-art{position:absolute;top:0;right:0;z-index:0;width:min(56%,580px);opacity:.5;pointer-events:none;color:var(--ac);
   -webkit-mask-image:radial-gradient(110% 105% at 100% 0%,#000 22%,transparent 70%);mask-image:radial-gradient(110% 105% at 100% 0%,#000 22%,transparent 70%)}
 .area-art svg{display:block;width:100%;height:auto;overflow:visible}
-.i-wall{fill:var(--ac);fill-opacity:.035;stroke:var(--grafito);stroke-opacity:.28;stroke-width:1}
-.i-floor{fill:none;stroke:var(--grafito);stroke-opacity:.35;stroke-width:1}
-.i-tier,.i-dj,.i-bar{stroke:var(--grafito);stroke-opacity:.42;stroke-width:1;stroke-linejoin:round}
-.i-top{fill:var(--papel)}.i-f1{fill:var(--grafito);fill-opacity:.07}.i-f2{fill:var(--grafito);fill-opacity:.12}
-.i-dj.i-top{fill:var(--grafito);fill-opacity:.1}
-.i-dance{fill:var(--ac);fill-opacity:.05;stroke:var(--ac);stroke-opacity:.35;stroke-width:1}
-.i-grid{stroke:var(--ac);stroke-opacity:.2;stroke-width:.8;stroke-dasharray:2 4}
-.i-tb path,.i-tb ellipse{fill:var(--papel);stroke:var(--grafito);stroke-opacity:.5;stroke-width:1}
-.i-sel path,.i-sel ellipse{stroke:var(--ac);stroke-opacity:1}
-.i-sel ellipse:last-child{fill:var(--ac);fill-opacity:.35}
-.i-halo{fill:none;stroke:var(--ac);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:ihalo 3.2s ease-out infinite}
-@keyframes ihalo{0%{transform:scale(.6);opacity:.8}80%,100%{transform:scale(2);opacity:0}}
-.i-pin{animation:ipin 3.2s ease-in-out infinite}
-@keyframes ipin{50%{transform:translateY(-4px)}}
-.i-stem{stroke:var(--ac);stroke-opacity:.6;stroke-width:1;stroke-dasharray:2 3}
-.i-drop{fill:var(--ac)}
-.i-eye{fill:var(--papel)}
-@keyframes vring{0%{transform:scale(.7);opacity:.9}70%,100%{transform:scale(2.6);opacity:0}}
-.d-ln{fill:none;stroke:var(--grafito);stroke-opacity:.35;stroke-width:.9;stroke-linejoin:round}
-.d-occ{fill:var(--papel)}
-.d-front{fill:none;stroke:var(--ac);stroke-width:1.6;stroke-linejoin:round}
-.d-fill{fill:url(#ad-g)}
-.d-r{animation:dbreath 7s ease-in-out infinite;animation-delay:calc(var(--i)*-.55s)}
-@keyframes dbreath{50%{transform:translateY(-3px)}}
+/* Ventas: una entrada con su código de barras como línea de sonido (respira) y el check de la compra */
+.v-tk{fill:var(--papel);stroke:var(--grafito);stroke-opacity:.45;stroke-width:1.1}
+.v-tk2{fill:none;stroke-opacity:.25;stroke-dasharray:3 5}
+.v-pf{fill:none;stroke:var(--grafito);stroke-opacity:.4;stroke-width:1;stroke-dasharray:3 4}
+.v-tx{fill:var(--grafito);fill-opacity:.14}
+.v-bc rect{fill:var(--grafito);fill-opacity:.4;transform-box:fill-box;transform-origin:50% 100%;animation:veq 1.8s ease-in-out infinite;animation-delay:calc(var(--i)*-.11s)}
+@keyframes veq{50%{transform:scaleY(.4)}}
+.v-ok{fill:var(--papel);stroke:var(--ac);stroke-width:1.6;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1s cubic-bezier(.45,0,.55,1) .3s}
+.v-ck{fill:none;stroke:var(--ac);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .6s cubic-bezier(.45,0,.55,1) 1.1s}
+.v-halo{fill:none;stroke:var(--ac);stroke-width:1;transform-box:fill-box;transform-origin:center;opacity:0}
+.area.seen .v-halo{animation:ihalo 3.2s ease-out 1.6s infinite}
+@keyframes ihalo{0%{transform:scale(.9);opacity:.8}80%,100%{transform:scale(2.2);opacity:0}}
+/* Análisis: la línea de los datos sale del ruido y se calma en una tendencia clara; la lectura la recorre */
+.a-gd{fill:none;stroke:var(--grafito);stroke-opacity:.22;stroke-width:1;stroke-dasharray:2 5}
+.a-ax{fill:none;stroke:var(--grafito);stroke-opacity:.35;stroke-width:1}
+.a-bars rect{fill:var(--grafito);fill-opacity:.12}
+.d-front{fill:none;stroke:var(--ac);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.2s cubic-bezier(.45,0,.55,1)}
+.d-fill{fill:url(#ad-g);opacity:0;transition:opacity 1.2s 1.4s}
 .d-dot{fill:var(--ac)}
 .d-sl{stroke:var(--ac);stroke-opacity:.35;stroke-width:1;stroke-dasharray:2 4}
 .d-sd{fill:var(--papel);stroke:var(--ac);stroke-width:1.6}
 .d-ring{fill:none;stroke:var(--ac);stroke-width:1.4;transform-box:fill-box;transform-origin:center;animation:vring 2.6s ease-out infinite}
-.m-gd{fill:none;stroke:var(--grafito);stroke-opacity:.32;stroke-width:1;stroke-dasharray:3 5}
-.m-c1,.m-c2,.m-c3,.m-arc{fill:none;stroke:var(--grafito);stroke-opacity:.5;stroke-width:1.1;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s cubic-bezier(.45,0,.55,1)}
-.m-c1{stroke:var(--ac);stroke-opacity:.7;stroke-width:1.2}
-.m-c2{transition-delay:.25s}.m-c3{stroke-opacity:.3;transition-delay:.45s}.m-arc{stroke:var(--ac);stroke-opacity:.55;transition-delay:.7s}
-.m-half{fill:var(--ac);opacity:.55}
-.m-tk{fill:none;stroke:var(--grafito);stroke-opacity:.55;stroke-width:1}
-.m-hl{fill:none;stroke:var(--grafito);stroke-opacity:.6;stroke-width:1}
-.m-pen{fill:none;stroke:var(--ac);stroke-width:1.8;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s cubic-bezier(.45,0,.55,1) .9s}
+@keyframes vring{0%{transform:scale(.7);opacity:.9}70%,100%{transform:scale(2.6);opacity:0}}
+/* Marca: un espécimen «Aa» con el punto a medias de la marca, sus guías, la paleta y una curva Bézier que se traza */
+.m-gd{fill:none;stroke:var(--grafito);stroke-opacity:.3;stroke-width:1;stroke-dasharray:3 5}
+.m-aa{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:178px;letter-spacing:-.02em;fill:var(--ac);fill-opacity:.06;stroke:var(--grafito);stroke-opacity:.55;stroke-width:1.1}
+.m-dot circle{fill:none;stroke:var(--ac);stroke-width:1.6}.m-dot path{fill:var(--ac)}
+.m-hl{fill:none;stroke:var(--grafito);stroke-opacity:.55;stroke-width:1}
+.m-pen{fill:none;stroke:var(--ac);stroke-width:1.8;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s cubic-bezier(.45,0,.55,1) .5s}
 .m-hd{fill:var(--papel);stroke:var(--grafito);stroke-opacity:.8}
 .m-an{fill:var(--papel);stroke:var(--ac);stroke-width:1.6}
-.m-pt{fill:var(--ac)}
-.m-sw{stroke:var(--papel);stroke-width:2.5;opacity:.7}
-.m-ring{fill:none;stroke:var(--ac);stroke-opacity:.45;stroke-width:1;stroke-dasharray:2 7;transform-box:fill-box;transform-origin:center;animation:mspin 60s linear infinite}
+.m-sw{stroke:var(--papel);stroke-width:2.5;opacity:.75}
+.m-ring{fill:none;stroke:var(--ac);stroke-opacity:.4;stroke-width:1;stroke-dasharray:2 7;transform-box:fill-box;transform-origin:center;animation:mspin 60s linear infinite}
 @keyframes mspin{to{transform:rotate(360deg)}}
-.area.seen .m-c1,.area.seen .m-c2,.area.seen .m-c3,.area.seen .m-arc,.area.seen .m-pen,.area.still .m-c1,.area.still .m-c2,.area.still .m-c3,.area.still .m-arc,.area.still .m-pen{stroke-dashoffset:0}
+.area.seen .v-ok,.area.seen .v-ck,.area.seen .d-front,.area.seen .m-pen,.area.still .v-ok,.area.still .v-ck,.area.still .d-front,.area.still .m-pen{stroke-dashoffset:0}
+.area.seen .d-fill,.area.still .d-fill{opacity:1}
 /* Debajo del bloque: en qué marcas se ha aplicado */
-.area-q{grid-column:1/-1;display:flex;align-items:center;gap:14px;margin:clamp(44px,5vw,64px) 0 26px;font:600 clamp(17px,1.4vw,20px)/1.3 var(--sans);letter-spacing:-.01em;color:var(--tinta)}
-.area-q::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ac);background:linear-gradient(90deg,transparent 50%,var(--ac) 50%)}
+.area-q{grid-column:1/-1;display:flex;align-items:center;gap:12px;margin:clamp(30px,3.4vw,44px) 0 18px;font:600 11.5px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--grafito)}
+.area-q::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;border:1px solid var(--ac);background:linear-gradient(90deg,transparent 50%,var(--ac) 50%)}
 .area-q::after{content:"";flex:1;min-width:24px;height:1px;background:linear-gradient(90deg,var(--linea),transparent)}
 @media (max-width:900px){
   .svc-h,.svc-l,.score,.areas-h{grid-column:1/-1}
-  .score{margin-top:32px}
+  .score{margin-top:28px}
   .area-art{width:100%;opacity:.3}
 }
 @media (prefers-color-scheme:dark){
@@ -384,7 +381,7 @@ section.areas{padding-top:clamp(96px,12vw,152px)}
 
 /* ¿Continuamos?: el seguimiento; el ciclo, como leyenda discreta sobre la línea del año */
 section.more{padding-top:0}
-.beyond{grid-column:2/span 10;position:relative;display:grid;gap:26px;padding:clamp(28px,3.4vw,48px);border-radius:22px;border:1px solid rgba(107,79,214,.28);border:1px solid color-mix(in srgb,var(--violeta) 28%,transparent);background:rgba(107,79,214,.05);background:color-mix(in srgb,var(--violeta) 5%,var(--papel))}
+.beyond{--sp:clamp(24px,3.4vw,48px);grid-column:2/span 10;position:relative;display:grid;gap:26px;padding:var(--sp);border-radius:22px;border:1px solid rgba(107,79,214,.28);border:1px solid color-mix(in srgb,var(--violeta) 28%,transparent);background:rgba(107,79,214,.05);background:color-mix(in srgb,var(--violeta) 5%,var(--papel))}
 .by-h{display:flex;align-items:flex-end;justify-content:space-between;gap:24px 40px;flex-wrap:wrap}
 .beyond .eyebrow{margin-bottom:16px;color:var(--violeta)}
 .beyond .eyebrow svg{color:var(--violeta)}
@@ -399,6 +396,7 @@ section.more{padding-top:0}
 .duo-br path{fill:none;stroke:var(--violeta);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
 .duo-you{flex:none;display:inline-grid;place-items:center;height:38px;padding:0 16px;border:1px dashed var(--grafito);border-radius:10px;font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--grafito)}
 @media (max-width:600px){.duo{gap:10px}.duo-sc{height:28px}.duo-br{width:44px}.duo-you{height:34px;padding:0 12px}}
+@media (max-width:360px){.duo{gap:8px}.duo-sc{height:24px}.duo-br{width:34px}.duo-you{padding:0 10px;font-size:11px}}
 /* El ciclo, como la leyenda de un gráfico sobre la línea del año */
 .cyc{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;margin:4px 0 -12px;font:500 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--grafito)}
 .cyc span{display:inline-flex;align-items:center;gap:10px}
@@ -407,7 +405,8 @@ section.more{padding-top:0}
 /* El año como línea de sonido: al llegar suena (ondas que se agitan) y, al calmarse, se queda en reposo con una
    montañita en cada mes. Entonces aparecen, suaves, las iniciales de los meses y se entiende que es el año */
 .yr{grid-column:1/-1;margin:0;color:var(--violeta)}
-.beyond .pj-price{grid-column:1/-1;margin:4px 0 0}
+.by-free{grid-column:1/-1;margin:4px calc(-1*var(--sp)) calc(-1*var(--sp));padding:16px var(--sp) 18px;border-radius:0 0 21px 21px;border-top-color:rgba(107,79,214,.3);background:rgba(107,79,214,.08);background:color-mix(in srgb,var(--violeta) 8%,var(--papel))}
+.by-free::before,.by-free::after{border-color:rgba(107,79,214,.28)}
 .yr svg{display:block;width:100%;height:30px;overflow:visible}
 .yr path{fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;opacity:.8}
 .yr ol{display:grid;grid-template-columns:repeat(12,1fr);margin:6px 0 0;padding:0;list-style:none;font:500 10.5px/1 var(--sans);letter-spacing:.06em;color:var(--grafito);text-align:center}
@@ -494,9 +493,9 @@ section.more{padding-top:0}
 /* Logo de cada proyecto, en su baldosa (como un icono de app), junto al nombre */
 .pj-lgw{flex:none;display:grid;place-items:center;width:76px;height:58px;border-radius:16px;background:var(--niebla);box-shadow:inset 0 0 0 1px var(--linea);transition:box-shadow .4s,background .4s}
 .pj-lgw .lg{color:var(--tinta);opacity:.82}
-.pj-head:hover .pj-lgw,.pj.open .pj-lgw{box-shadow:inset 0 0 0 1px var(--ac-b);background:var(--ac-t),var(--niebla);background:linear-gradient(var(--ac-t),var(--ac-t)),var(--niebla)}
-.pj-head:hover .pj-lgw .lg,.pj.open .pj-lgw .lg{opacity:1}
-.pj-lgw-0{color:var(--grafito)}.pj-lgw-0 svg{width:14px;height:14px}
+/* Al pasar o abrir, solo se colorea el filete de la baldosa */
+.pj-head:hover .pj-lgw,.pj.open .pj-lgw,.pj.peek .pj-lgw{box-shadow:inset 0 0 0 1px var(--ac-b)}
+.pj-head:hover .pj-lgw .lg,.pj.open .pj-lgw .lg,.pj.peek .pj-lgw .lg{opacity:1}
 .brands.wait .lg{opacity:0;transform:translateY(8px)}
 @media (max-width:600px){.brands-l{display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;gap:26px 18px}.brands-l .lg{height:calc(var(--h)*.8);width:calc(var(--h)*var(--r)*.8)}}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -514,20 +513,20 @@ section.more{padding-top:0}
 .pj.open .pj-head:hover .pj-title{transform:none}
 .pj{position:relative}
 /* Desplegable: el chevron del color del área, en un círculo que se rellena al abrir */
-.pj-chev{grid-column:12;justify-self:end;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--ac-b,var(--linea));color:var(--ac,var(--violeta));transition:transform .6s cubic-bezier(.3,.8,.3,1),background .4s}
+.pj-chev{grid-column:12;justify-self:end;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--linea);color:var(--grafito);transition:transform .6s cubic-bezier(.3,.8,.3,1),color .4s,box-shadow .4s}
 .pj-chev svg{width:16px;height:10px;overflow:visible;transition:transform .6s cubic-bezier(.3,.8,.3,1)}
 .pj-chev path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .pj-head:hover .pj-chev{transform:translateY(3px)}
-.pj.open .pj-chev{background:var(--ac-t,rgba(107,79,214,.08))}
+.pj-head:hover .pj-chev,.pj.open .pj-chev{color:var(--tinta);box-shadow:inset 0 0 0 1px var(--grafito)}
 .pj.open .pj-chev svg{transform:rotate(180deg)}
 .pj.open .pj-head:hover .pj-chev{transform:translateY(-3px)}
-.pjs.invite .pj:not(.open) .pj-chev{animation:nudge 1.4s cubic-bezier(.45,0,.55,1) 2}
+.pjs.invite .pj:not(.open):not(.peek) .pj-chev{animation:nudge 1.4s cubic-bezier(.45,0,.55,1) 2}
 .pjs.invite .pj:nth-child(2) .pj-chev{animation-delay:.15s}
 .pjs.invite .pj:nth-child(3) .pj-chev{animation-delay:.3s}
 .pjs.invite .pj:nth-child(4) .pj-chev{animation-delay:.45s}
 @keyframes nudge{50%{transform:translateY(5px)}}
 .shot .frame.demo{aspect-ratio:16/9;display:block;background:#141416;overflow:hidden}
-.demo .cam{position:absolute;inset:0;transition:transform 1.6s cubic-bezier(.65,0,.35,1);will-change:transform}
+.demo .cam{position:absolute;inset:0;transition:transform 1.6s cubic-bezier(.65,0,.35,1)}
 .demo .cam img{position:static;width:100%;height:100%;object-fit:cover;display:block}
 .demo .pin{position:absolute;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;border:2px solid #fff;opacity:0;transform:scale(.3);transition:opacity .4s,transform .4s}
 .demo .pin.show{opacity:1;transform:scale(1)}
@@ -543,31 +542,36 @@ section.more{padding-top:0}
 .demo .p-btn{margin-top:6px;text-align:center;font:600 12px/1 var(--sans);color:#15161E;background:#fff;border-radius:999px;padding:9px;transition:background .3s,transform .15s}
 .demo .p-btn.done{background:#35D07F}.demo .p-btn.press{transform:scale(.94)}
 .pj-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .75s cubic-bezier(.3,.8,.3,1)}
-.pj-inner{overflow:hidden;min-height:0;display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);opacity:0;transition:opacity .45s}
+.pj-inner{overflow:hidden;min-height:0;display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);opacity:0;transition:opacity .45s,max-height .75s cubic-bezier(.3,.8,.3,1)}
 .pj.open .pj-body{grid-template-rows:1fr}
+/* A medias (el primero de cada área): se ve la mitad de su imagen, se difumina hacia abajo y una píldora invita a verlo
+   entero. Menos scroll y menos ruido; lo que se intuye invita a abrir */
+.pj-body{position:relative}
+.pj.peek .pj-body{grid-template-rows:1fr}
+.pj.peek .pj-inner{opacity:1;max-height:var(--pk,220px)}
+.pj-body::after{content:"";position:absolute;left:0;right:0;bottom:0;z-index:5;height:min(62%,210px);background:var(--papel);-webkit-mask-image:linear-gradient(transparent,#000 85%);mask-image:linear-gradient(transparent,#000 85%);opacity:0;pointer-events:none;transition:opacity .5s}
+.pj.peek .pj-body::after{opacity:1}
+.pj-more{position:absolute;inset:0;z-index:6;display:none;align-items:flex-end;justify-content:center;padding:0 0 14px;border:0;background:none;color:var(--tinta);font:inherit;cursor:pointer}
+.pj.peek .pj-more{display:flex}
+.pj-more>span{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 18px 0 20px;border-radius:999px;background:var(--papel);box-shadow:inset 0 0 0 1px var(--linea),0 12px 26px -14px rgba(28,30,42,.35);font:600 14px/1 var(--sans);transition:transform .4s cubic-bezier(.3,.8,.3,1),box-shadow .4s}
+.pj-more svg{width:13px;height:8px;overflow:visible;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;animation:pkdn 1.8s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes pkdn{50%{transform:translateY(3px)}}
+.pj-more:hover>span{transform:translateY(-2px);box-shadow:inset 0 0 0 1px var(--grafito),0 16px 30px -14px rgba(28,30,42,.4)}
 .pj.open .pj-inner{opacity:1;transition-delay:.15s}
 .pj-text{grid-column:8/span 5;display:flex;flex-direction:column;gap:14px;padding:4px 0 0 clamp(0px,1.2vw,14px)}
-/* Qué necesitaba: el problema en una frase que engancha; el caso entero se despliega */
-.pj-need{border-radius:16px;background:var(--niebla);box-shadow:inset 0 0 0 1px var(--linea);transition:box-shadow .4s}
-.pj-need:hover,.pj-need.open{box-shadow:inset 0 0 0 1px var(--ac-b)}
-.pj-nq{display:flex;flex-direction:column;align-items:flex-start;gap:10px;width:100%;padding:18px 20px 16px;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
-.pj-nk{display:flex;align-items:center;gap:8px;font:600 10.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ac)}
-.pj-nk::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;border:1px solid var(--ac);background:linear-gradient(90deg,transparent 50%,var(--ac) 50%)}
-.pj-nh{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:clamp(21px,1.8vw,25px);line-height:1.18;letter-spacing:-.015em;color:var(--tinta);text-wrap:balance}
-.pj-nm{display:inline-flex;align-items:center;gap:9px;margin-top:2px;font:600 13.5px/1 var(--sans);color:var(--tinta)}
+/* Leer el caso: una sola línea, sin caja; el problema y lo que hicimos se despliegan debajo */
+.pj-need{border-top:1px solid var(--linea)}
+.pj-nq{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:14px 0;border:0;background:none;color:var(--tinta);font:600 14px/1 var(--sans);text-align:left;cursor:pointer}
 /* + que se convierte en − al abrir */
-.pj-nm i{position:relative;display:grid;width:24px;height:24px;border-radius:50%;background:var(--ac);transition:transform .5s cubic-bezier(.3,.8,.3,1)}
-.pj-nm i::before,.pj-nm i::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:1.6px;margin:-.8px 0 0 -5px;border-radius:1px;background:var(--papel);transition:transform .5s cubic-bezier(.3,.8,.3,1)}
-.pj-nm i::after{transform:rotate(90deg)}
-.pj-nq:hover .pj-nm i{transform:scale(1.1)}
-.pj-need.open .pj-nm i{transform:rotate(180deg)}.pj-need.open .pj-nm i::after{transform:rotate(180deg)}
+.pj-nq i{position:relative;flex:none;width:24px;height:24px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--linea);transition:transform .5s cubic-bezier(.3,.8,.3,1),box-shadow .4s}
+.pj-nq i::before,.pj-nq i::after{content:"";position:absolute;left:50%;top:50%;width:9px;height:1.3px;margin:-.65px 0 0 -4.5px;border-radius:1px;background:var(--grafito);transition:transform .5s cubic-bezier(.3,.8,.3,1)}
+.pj-nq i::after{transform:rotate(90deg)}
+.pj-nq:hover i{box-shadow:inset 0 0 0 1px var(--grafito)}
+.pj-need.open .pj-nq i{transform:rotate(180deg)}.pj-need.open .pj-nq i::after{transform:rotate(180deg)}
 .pj-na{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.3,.8,.3,1)}
-.pj-na>p{overflow:hidden;min-height:0;padding:0 20px;font-size:16.5px;line-height:1.55;color:var(--grafito);opacity:0;transition:opacity .4s,padding .55s cubic-bezier(.3,.8,.3,1)}
+.pj-na>p{overflow:hidden;min-height:0;font-size:15.5px;line-height:1.55;color:var(--grafito);opacity:0;transition:opacity .4s,padding .55s cubic-bezier(.3,.8,.3,1)}
 .pj-need.open .pj-na{grid-template-rows:1fr}
-.pj-need.open .pj-na>p{opacity:1;padding-bottom:20px;transition-delay:.1s,0s}
-/* Al verla, el + respira una vez para invitar a abrir */
-.pj.open .pj-need:not(.open) .pj-nm i{animation:nmhint 1.6s cubic-bezier(.45,0,.55,1) 1.2s 2}
-@keyframes nmhint{50%{transform:scale(1.18)}}
+.pj-need.open .pj-na>p{opacity:1;padding-bottom:16px;transition-delay:.1s,0s}
 .pj-media.shot,.pj-media.cli-shot{grid-column:1/span 7;margin:4px 0 0;align-self:start}
 .shot .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 @media (max-width:900px){
@@ -577,20 +581,20 @@ section.more{padding-top:0}
   .pj-chev{grid-column:2;grid-row:1;width:42px;height:42px}
   .pj-lgw{width:64px;height:52px;border-radius:14px}
   .pj-inner{display:flex;flex-direction:column}
+  .pj-inner>*{flex:none}
   .pj-media.shot,.pj-media.cli-shot{align-self:stretch;margin:0 0 24px}
   .pj-text{padding-bottom:0}
-  .pj-price{margin:24px 0 28px}
+  .pj-price{margin:22px 0 26px}
 }
 .case .shot{background:#fff;box-shadow:0 0 0 1px var(--linea),0 30px 60px -34px rgba(28,30,42,.3)}
 .shot{grid-column:1/span 7;margin-top:72px;border-radius:14px;overflow:hidden;background:var(--papel);box-shadow:0 1px 0 var(--linea),0 30px 60px -30px rgba(28,30,42,.25)}
 .shot .frame{position:relative;aspect-ratio:16/10;display:grid;place-items:center;background:linear-gradient(160deg,#F9E7DE,#F7F8FA 60%)}
 /* Lo que se consiguió, en grande, con el color del área */
-.pj-stat{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin:2px 0 0;padding:4px 4px 0}
-.pj-stat b{font:600 clamp(30px,3vw,40px)/1 var(--sans);letter-spacing:-.03em;color:var(--ac)}
+.pj-stat{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin:0;padding:2px 0 4px}
+.pj-stat b{font:600 clamp(30px,3vw,40px)/1 var(--sans);letter-spacing:-.03em;color:var(--tinta)}
 .pj-stat span{font-size:14px;color:var(--grafito)}
 /* De dónde partíamos: lo primero, para entender el cambio */
-.pj-before{display:flex;align-items:center;gap:14px;margin:0;padding:8px 14px 8px 8px;border:0;border-radius:16px;background:var(--niebla);box-shadow:inset 0 0 0 1px var(--linea);color:inherit;font:inherit;text-align:left;cursor:zoom-in;transition:box-shadow .4s}
-.pj-before:hover{box-shadow:inset 0 0 0 1px var(--ac-b)}
+.pj-before{display:flex;align-items:center;gap:14px;margin:0;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:zoom-in}
 .pj-before>svg{margin-left:auto!important}
 .pj-before img{flex:none;width:104px;height:66px;object-fit:cover;border-radius:8px;border:1px solid var(--linea);filter:saturate(.75);opacity:.9;transition:transform .4s cubic-bezier(.3,.8,.3,1),opacity .4s}
 .pj-before:hover img{transform:scale(1.04);opacity:1}
@@ -609,11 +613,11 @@ section.more{padding-top:0}
 .lb-x{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));right:14px;display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;cursor:pointer}
 .lb-x svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
 /* Cierre de cada caso: el activo y desde cuánto */
-.pj-price{grid-column:1/-1;display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;margin:28px 0 44px;padding:14px 18px;border-radius:12px;background:var(--ac-t);box-shadow:inset 0 0 0 1px var(--ac-b);font-size:14.5px;color:var(--tinta)}
-.pj-price .ok{flex:none;width:16px;height:16px;fill:none;stroke:var(--ac);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.pj-price{grid-column:1/-1;display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;margin:24px 0 36px;padding:16px 0 0;border-top:1px solid var(--linea);font-size:14.5px;color:var(--tinta)}
+.pj-price .ok{flex:none;width:16px;height:16px;fill:none;stroke:var(--grafito);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .pj-from{margin-left:auto;white-space:nowrap;color:var(--grafito)}
 .pj-as{display:flex;flex-wrap:wrap;gap:6px}
-.pj-as span{display:inline-flex;align-items:center;gap:7px;height:26px;padding:0 11px 0 9px;border-radius:999px;background:var(--papel);box-shadow:inset 0 0 0 1px var(--ac-b);font:500 12.5px/1 var(--sans);color:var(--tinta)}
+.pj-as span{display:inline-flex;align-items:center;gap:7px;height:26px;padding:0 11px 0 9px;border-radius:999px;background:var(--papel);box-shadow:inset 0 0 0 1px var(--linea);font:500 12.5px/1 var(--sans);color:var(--tinta)}
 .pj-as span::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;border:1px solid var(--ac);background:linear-gradient(90deg,transparent 50%,var(--ac) 50%)}
 /* Toda la imagen del caso lleva a la web de la que habla */
 a.shot{display:block;color:inherit;text-decoration:none;transition:transform .5s cubic-bezier(.3,.8,.3,1),box-shadow .5s}
@@ -648,17 +652,13 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
 .pfi-lip .gl{fill:var(--tinta);stroke:none;opacity:.55;transform:translateX(-12px)}
 .play .pfi-lip .gl{animation:pfsweep 1.1s cubic-bezier(.45,0,.55,1)}
 @keyframes pfsweep{from{transform:translateX(-12px)}to{transform:translateX(12px)}}
-/* Caso aún sin contar: solo el nombre, sin desplegable */
-.pj-soon .pj-head{cursor:default}
-.pj-soon .pj-title{color:var(--grafito)}
-.pj-soon .pj-head:hover .pj-title{transform:none}
 /* Webs de los casos: un vídeo en una tablet (vertical, la web en su versión responsive). La cámara entra y sale
    (zoom) por lo importante y un dedo la usa: en Condado, el hero (su vídeo real) y el calendario de Fourvenues;
    en Bela, cambiar de servicio y reservar con el pop-up de Booksy. Todo son capturas reales, movidas con CSS */
 .shot .frame.tab{aspect-ratio:4/3;display:block;overflow:hidden;isolation:isolate}
 .tab-cd{background:radial-gradient(70% 62% at 50% 36%,rgba(232,169,74,.2),transparent 70%),linear-gradient(165deg,#1d1519,#060407)}
 .tab-bl{background:radial-gradient(70% 62% at 50% 36%,rgba(255,255,255,.8),transparent 70%),linear-gradient(165deg,#F5E6E3,#E7CDC9)}
-.tab-cam{position:absolute;left:0;top:0;width:100%;height:100%;transform-origin:0 0;transition:transform 1.5s cubic-bezier(.65,0,.35,1);will-change:transform}
+.tab-cam{position:absolute;left:0;top:0;width:100%;height:100%;transform-origin:0 0;transition:transform 1.5s cubic-bezier(.65,0,.35,1)}
 .tab-dev{position:absolute;left:0;top:0;background:#0d0d10;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 40px 70px -30px rgba(0,0,0,.6),0 14px 28px -14px rgba(0,0,0,.45)}
 .tab-scr{position:relative;width:100%;height:100%;overflow:hidden;background:#000}
 .vp{position:absolute;left:0;top:0;width:820px;height:1180px;overflow:hidden;transform-origin:0 0}
@@ -692,6 +692,8 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
 .tv-hl-tg{left:190px;top:300px;width:199px;height:44px}
 .tv-hl-day{left:576px;top:1012px;width:110px;height:150px;border-radius:4px}
 .tv-hl-bk{left:459px;top:512px;width:82px;height:30px;border-radius:6px;--hc:#1E87A7}
+.shot .tab .vp .tv-fevp{top:0;height:1180px}
+.tv-hl-buy{left:706px;top:487px;width:42px;height:33px;border-radius:6px;--hc:#5B8CFF}
 /* El dedo: un círculo que se posa, se hunde al tocar y suelta una onda */
 .tv-tap{position:absolute;z-index:9;left:410px;top:900px;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:rgba(255,255,255,.32);box-shadow:inset 0 0 0 2px rgba(255,255,255,.85),0 8px 22px rgba(0,0,0,.35);opacity:0;transform:scale(.6);pointer-events:none;
   transition:left .85s cubic-bezier(.65,0,.35,1),top .85s cubic-bezier(.65,0,.35,1),opacity .3s,transform .22s}
@@ -751,9 +753,21 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
 /* Contacto */
 .contact{padding:clamp(96px,12vw,160px) 0 clamp(88px,10vw,136px);text-align:center}
 .contact .dot{grid-column:1/-1;display:block;width:12px;height:12px;margin:0 auto 28px;color:var(--grafito)}
-.contact .h2{grid-column:1/-1;font-size:clamp(52px,8vw,120px);line-height:.95;letter-spacing:-.035em}
+.contact .h2{grid-column:1/-1;font-size:clamp(44px,6.4vw,96px);line-height:.98;letter-spacing:-.035em;text-wrap:balance}
 .contact p{grid-column:1/-1;max-width:30em;margin:28px auto 0;font-size:19px}
-.contact .actions{grid-column:1/-1;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:40px}
+.contact .actions{grid-column:1/-1;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:18px}
+.cform{grid-column:3/span 8;display:grid;gap:16px;margin-top:40px;text-align:left}
+.cf-f{display:grid;gap:8px}
+.cf-f>span{font:600 11.5px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--grafito)}
+.cform input,.cform textarea{display:block;width:100%;padding:15px 18px;border:1px solid var(--linea);border-radius:14px;background:var(--papel);color:var(--tinta);font:400 16px/1.5 var(--sans);-webkit-appearance:none;appearance:none;transition:border-color .3s,box-shadow .3s}
+.cform textarea{min-height:156px;resize:vertical}
+.cform ::placeholder{color:var(--grafito);opacity:.75}
+.cform input:focus,.cform textarea:focus{outline:none;border-color:var(--violeta);box-shadow:0 0 0 4px rgba(107,79,214,.14)}
+.cf-go{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px;margin-top:4px}
+.cf-go small{font-size:13px;color:var(--grafito)}
+.contact .c-alt{margin-top:56px;font-size:16px;color:var(--grafito)}
+.cf-go .btn{border:0;cursor:pointer}
+@media (max-width:900px){.cform{grid-column:1/-1}.cf-go .btn{width:100%;justify-content:center}}
 .site-foot{background:var(--tinta);color:rgba(247,248,250,.62);font-size:14px}
 .site-foot .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px 32px;flex-wrap:wrap;padding-top:34px;padding-bottom:calc(34px + env(safe-area-inset-bottom,0px))}
 .fbrand{display:inline-flex;align-items:center;gap:18px}
@@ -780,7 +794,7 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
   .shot .frame{height:0;padding-top:62.5%}
   .shot .frame.demo{padding-top:56.25%}
   .shot .frame.tab{padding-top:75%}
-  .sring{height:0;padding-top:75%}
+  .sring{height:0;padding-top:40%}
   .about .photo{height:0;padding-top:125%}
   .about .photo img{position:absolute;top:0;left:0}
 }
@@ -1047,13 +1061,12 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
   <div class="wrap grid">
     <h2 class="role" aria-label="Decisiones inteligentes para tu negocio de nightlife o de beauty">Decisiones inteligentes<span class="r2" aria-hidden="true"><span class="r2t">para tu negocio de</span> <span class="sector"><span class="sw on" data-k="n"><i style="--i:0;--t:0%">n</i><i style="--i:1;--t:12%">i</i><i style="--i:2;--t:25%">g</i><i style="--i:3;--t:38%">h</i><i style="--i:4;--t:50%">t</i><i style="--i:5;--t:62%">l</i><i style="--i:6;--t:75%">i</i><i style="--i:7;--t:88%">f</i><i style="--i:8;--t:100%">e</i></span><span class="sw" data-k="b"><i style="--i:0;--t:0%">b<svg class="sp" viewBox="-10 -10 20 20" aria-hidden="true" style="--x:0.8;--y:0.09;--s:0.95;--d:0.24s"><path d="M0-10C.9-2.6 2.6-.9 10 0 2.6.9.9 2.6 0 10-.9 2.6-2.6.9-10 0-2.6-.9-.9-2.6 0-10Z"/></svg></i><i style="--i:1;--t:20%">e<svg class="sp" viewBox="-10 -10 20 20" aria-hidden="true" style="--x:0.92;--y:0.46;--s:0.55;--d:0.30s"><path d="M0-10C.9-2.6 2.6-.9 10 0 2.6.9.9 2.6 0 10-.9 2.6-2.6.9-10 0-2.6-.9-.9-2.6 0-10Z"/></svg></i><i style="--i:2;--t:40%">a<svg class="sp" viewBox="-10 -10 20 20" aria-hidden="true" style="--x:0.96;--y:0.44;--s:0.70;--d:0.36s"><path d="M0-10C.9-2.6 2.6-.9 10 0 2.6.9.9 2.6 0 10-.9 2.6-2.6.9-10 0-2.6-.9-.9-2.6 0-10Z"/></svg></i><i style="--i:3;--t:60%">u<svg class="sp" viewBox="-10 -10 20 20" aria-hidden="true" style="--x:0.98;--y:0.9;--s:0.35;--d:0.42s"><path d="M0-10C.9-2.6 2.6-.9 10 0 2.6.9.9 2.6 0 10-.9 2.6-2.6.9-10 0-2.6-.9-.9-2.6 0-10Z"/></svg></i><i style="--i:4;--t:80%">t<svg class="sp" viewBox="-10 -10 20 20" aria-hidden="true" style="--x:0.66;--y:0.24;--s:0.80;--d:0.48s"><path d="M0-10C.9-2.6 2.6-.9 10 0 2.6.9.9 2.6 0 10-.9 2.6-2.6.9-10 0-2.6-.9-.9-2.6 0-10Z"/></svg></i><i style="--i:5;--t:100%">y<svg class="sp" viewBox="-10 -10 20 20" aria-hidden="true" style="--x:0.96;--y:0.44;--s:0.50;--d:0.54s"><path d="M0-10C.9-2.6 2.6-.9 10 0 2.6.9.9 2.6 0 10-.9 2.6-2.6.9-10 0-2.6-.9-.9-2.6 0-10Z"/></svg><svg class="sp" viewBox="-10 -10 20 20" aria-hidden="true" style="--x:0.1;--y:1.12;--s:0.75;--d:0.61s"><path d="M0-10C.9-2.6 2.6-.9 10 0 2.6.9.9 2.6 0 10-.9 2.6-2.6.9-10 0-2.6-.9-.9-2.6 0-10Z"/></svg></i></span></span></span></h2>
     <div class="pitch">
-      <p class="hook">Identifico y creo las soluciones <span class="hand">digitales<svg viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true"><path d="M1.6 8.7C24 7 52 6.2 80 6.4S111.6 7.1 118.5 6.6C119.5 6.5 119.7 7.4 118.7 7.6C111 9 83 8.4 60 8.5S22 9.7 2.4 10.2C1 10.25.7 8.8 1.6 8.7Z"/></svg></span> que aún no sabes que necesitas.</p>
+      <p class="hook">Identifico oportunidades de mejora y las convierto en soluciones <span class="hand">digitales<svg viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true"><path d="M1.6 8.7C24 7 52 6.2 80 6.4S111.6 7.1 118.5 6.6C119.5 6.5 119.7 7.4 118.7 7.6C111 9 83 8.4 60 8.5S22 9.7 2.4 10.2C1 10.25.7 8.8 1.6 8.7Z"/></svg></span>.</p>
       <div class="chat">
         <p class="chat-who" aria-hidden="true"><i>S</i>Silence</p>
         <div class="qa" data-s="n b" style="--d:0.70s"><p class="msg">¿Ves en un único panel cómo funciona tu negocio?</p><span class="ans ac-d"><span class="sr-only">Mejora digital: </span>Panel en tiempo real</span></div>
-        <div class="qa" data-s="n b" style="--d:1.25s"><p class="msg">¿Tienes un chat automático para responder a clientes?</p><span class="ans ac-v"><span class="sr-only">Mejora digital: </span>Chatbot en WhatsApp</span></div>
-        <div class="qa" data-s="n b" style="--d:1.80s"><p class="msg">¿Tu web transmite de verdad lo que es tu marca?</p><span class="ans ac-m"><span class="sr-only">Mejora digital: </span>Identidad visual y web</span></div>
-        <div class="qa" data-s="n" style="--d:2.35s"><p class="msg">¿Utilizas mapas 3D de reservas?</p><span class="ans ac-v"><span class="sr-only">Mejora digital: </span>Mapas 3D de reservas</span></div>
+        <div class="qa" data-s="n b" style="--d:1.25s"><p class="msg">¿Tu web transmite de verdad lo que es tu marca?</p><span class="ans ac-m"><span class="sr-only">Mejora digital: </span>Identidad visual y web</span></div>
+        <div class="qa" data-s="n" style="--d:1.80s"><p class="msg">¿Utilizas mapas 3D de reservas?</p><span class="ans ac-v"><span class="sr-only">Mejora digital: </span>Mapas 3D de reservas</span></div>
         <div class="qa off" data-s="b" style="--d:0.00s"><p class="msg">¿Solo dependes de Instagram para agendar citas?</p><span class="ans ac-m"><span class="sr-only">Mejora digital: </span>Captación de clientes</span></div>
       </div>
       <div class="actions">
@@ -1077,11 +1090,12 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
     <p class="eyebrow"><svg viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg>Servicio</p>
     <h2 class="h2 svc-h">¿Dónde está el potencial de tu negocio?</h2>
     <div class="svc-l">
-      <h3 class="svc-t">Lo primero, me siento a escuchar.</h3>
+      <h3 class="svc-t">Primero, entiendo cómo funciona.</h3>
+      <p class="svc-p">Analizo las áreas clave de tu negocio para identificar oportunidades de mejora y ayudarte a decidir por dónde empezar.</p>
     </div>
-    <div class="score">
+    <div class="score tk">
       <figure class="score-c">
-        <figcaption class="score-h"><span class="score-t">Scoring digital <em>Ejemplo</em></span><span class="score-s">Dónde suena tu negocio y dónde hay silencio.</span></figcaption>
+        <figcaption class="score-h"><span class="score-t">Diagnóstico digital <em>Ejemplo</em></span><span class="score-s">Un diagnóstico de tu marca, captación, ventas y medición para detectar dónde tiene sentido actuar.</span></figcaption>
         <div class="sring" role="img" aria-label="Nota global 2,1 de 5. Marca 2,5; Captación 3,5; Ventas 1,5, oportunidad; Medición 1, oportunidad">
           <svg class="sr-svg" aria-hidden="true"><circle class="sr-g"/><g class="sr-w"></g></svg>
           <span class="sr-c" aria-hidden="true"><b>2,1</b><small>/5</small></span>
@@ -1090,8 +1104,11 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
           <span class="sr-l op" data-a="2" data-v="1.5" aria-hidden="true"><b>Ventas</b><span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>1,5</span></span>
           <span class="sr-l op" data-a="3" data-v="1" aria-hidden="true"><b>Medición</b><span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>1</span></span>
         </div>
-        <p class="score-sum"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>2 oportunidades: Ventas y Medición</p>
-        <p class="score-free"><span>Tu scoring, <b>sin coste ni compromiso.</b></span><span class="free"><span class="fs" aria-hidden="true"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg><i></i><i></i><i></i></span>Free</span></p>
+        <p class="score-sum"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>Por dónde empezar: Ventas y Medición</p>
+        <div class="score-free">
+          <p><span>Tu diagnóstico digital, <b>sin coste ni compromiso.</b></span><span class="free"><span class="fs" aria-hidden="true"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg><i></i><i></i><i></i></span>Free</span></p>
+          <a class="btn solid score-cta" href="#contacto">Quiero analizar mi negocio</a>
+        </div>
       </figure>
     </div>
   </div>
@@ -1099,7 +1116,7 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
 
 <section class="block case areas" id="areas">
   <div class="wrap grid">
-    <h2 class="h2 areas-h">Áreas sobre las que trabajo.</h2>
+    <h2 class="h2 areas-h">Tres áreas sobre las que mejorar tu negocio.</h2>
   </div>
 
   <article class="area area-ventas" aria-labelledby="area-ventas">
@@ -1107,20 +1124,20 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
       <div class="area-h">
         <canvas class="area-line" data-shape="reach" aria-hidden="true"></canvas>
         <div class="area-id">
-          <div class="area-top"><span class="area-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2.2"/><circle cx="12" cy="12" r="2.8"/><path d="M6 9.5v5M18 9.5v5"/></svg></span><p class="area-n">Área 01<span>Reservas y compra</span></p></div>
-          <h3 class="area-t" id="area-ventas">Ventas</h3>
-          <p class="area-v">Activos digitales que <b>adelantan la decisión de compra</b>: tu cliente ve el espacio, elige su sitio y paga sin dudar.</p>
+          <p class="area-n"><span class="area-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2.2"/><circle cx="12" cy="12" r="2.8"/><path d="M6 9.5v5M18 9.5v5"/></svg></span>Área 01 · Ventas</p>
+          <h3 class="area-t" id="area-ventas">Vende mejor.</h3>
+          <p class="area-v">Facilito el proceso de reserva y compra para que tus clientes entiendan lo que ofreces, encuentren lo que buscan y decidan con mayor facilidad.</p>
           <ul class="area-as"><li>Mapas 2D de reservas</li><li>Mapas 3D de reservas</li></ul>
         </div>
-        <div class="area-clip"><div class="area-art" aria-hidden="true"><svg viewBox="0 0 560 380" class="art art-v"><path class="i-wall" d="M280.0 34.0 L557.1 194.0 L557.1 130.0 L280.0 -30.0 Z"/><path class="i-wall" d="M280.0 34.0 L72.2 154.0 L72.2 90.0 L280.0 -30.0 Z"/><path class="i-floor" d="M280.0 34.0 L557.1 194.0 L349.3 314.0 L72.2 154.0 Z"/><path class="i-tier i-f1" d="M229.8 47.0 L506.9 207.0 L506.9 223.0 L229.8 63.0 Z"/><path class="i-tier i-f2" d="M557.1 178.0 L506.9 207.0 L506.9 223.0 L557.1 194.0 Z"/><path class="i-tier i-top" d="M280.0 18.0 L557.1 178.0 L506.9 207.0 L229.8 47.0 Z"/><path class="i-tier i-f1" d="M72.2 138.0 L122.4 167.0 L122.4 183.0 L72.2 154.0 Z"/><path class="i-tier i-f2" d="M280.0 76.0 L122.4 167.0 L122.4 183.0 L280.0 92.0 Z"/><path class="i-tier i-top" d="M229.8 47.0 L280.0 76.0 L122.4 167.0 L72.2 138.0 Z"/><path class="i-dj i-f1" d="M359.7 88.0 L415.1 120.0 L415.1 136.0 L359.7 104.0 Z"/><path class="i-dj i-f2" d="M441.1 105.0 L415.1 120.0 L415.1 136.0 L441.1 121.0 Z"/><path class="i-dj i-top" d="M385.7 73.0 L441.1 105.0 L415.1 120.0 L359.7 88.0 Z"/><path class="i-dance" d="M281.7 129.0 L403.0 199.0 L299.1 259.0 L177.8 189.0 Z"/><path class="i-grid" d="M281.7 129.0 L177.8 189.0"/><path class="i-grid" d="M306.0 143.0 L202.1 203.0"/><path class="i-grid" d="M330.2 157.0 L226.3 217.0"/><path class="i-grid" d="M354.5 171.0 L250.6 231.0"/><path class="i-grid" d="M378.7 185.0 L274.8 245.0"/><path class="i-grid" d="M403.0 199.0 L299.1 259.0"/><path class="i-grid" d="M281.7 129.0 L403.0 199.0"/><path class="i-grid" d="M255.8 144.0 L377.0 214.0"/><path class="i-grid" d="M229.8 159.0 L351.0 229.0"/><path class="i-grid" d="M203.8 174.0 L325.0 244.0"/><path class="i-grid" d="M177.8 189.0 L299.1 259.0"/><path class="i-bar i-f1" d="M295.6 261.0 L347.5 291.0 L347.5 305.0 L295.6 275.0 Z"/><path class="i-bar i-f2" d="M418.6 250.0 L347.5 291.0 L347.5 305.0 L418.6 264.0 Z"/><path class="i-bar i-top" d="M366.6 220.0 L418.6 250.0 L347.5 291.0 L295.6 261.0 Z"/><g class="i-tb"><path d="M270.2 42.0 V48.0 M289.8 42.0 V48.0"/><ellipse cx="280.0" cy="48.0" rx="9.8" ry="5.7" class="i-tb0"/><ellipse cx="280.0" cy="42.0" rx="9.8" ry="5.7"/></g><g class="i-tb"><path d="M308.3 64.0 V70.0 M327.9 64.0 V70.0"/><ellipse cx="318.1" cy="70.0" rx="9.8" ry="5.7" class="i-tb0"/><ellipse cx="318.1" cy="64.0" rx="9.8" ry="5.7"/></g><g class="i-tb"><path d="M483.2 165.0 V171.0 M502.8 165.0 V171.0"/><ellipse cx="493.0" cy="171.0" rx="9.8" ry="5.7" class="i-tb0"/><ellipse cx="493.0" cy="165.0" rx="9.8" ry="5.7"/></g><g class="i-tb"><path d="M213.0 75.0 V81.0 M232.6 75.0 V81.0"/><ellipse cx="222.8" cy="81.0" rx="9.8" ry="5.7" class="i-tb0"/><ellipse cx="222.8" cy="75.0" rx="9.8" ry="5.7"/></g><g class="i-tb"><path d="M174.9 97.0 V103.0 M194.5 97.0 V103.0"/><ellipse cx="184.7" cy="103.0" rx="9.8" ry="5.7" class="i-tb0"/><ellipse cx="184.7" cy="97.0" rx="9.8" ry="5.7"/></g><g class="i-tb"><path d="M142.0 116.0 V122.0 M161.6 116.0 V122.0"/><ellipse cx="151.8" cy="122.0" rx="9.8" ry="5.7" class="i-tb0"/><ellipse cx="151.8" cy="116.0" rx="9.8" ry="5.7"/></g><g class="i-tb"><path d="M110.9 134.0 V140.0 M130.5 134.0 V140.0"/><ellipse cx="120.7" cy="140.0" rx="9.8" ry="5.7" class="i-tb0"/><ellipse cx="120.7" cy="134.0" rx="9.8" ry="5.7"/></g><g class="i-tb i-sel"><path d="M439.9 140.0 V146.0 M459.5 140.0 V146.0"/><ellipse cx="449.7" cy="146.0" rx="9.8" ry="5.7" class="i-tb0"/><ellipse cx="449.7" cy="140.0" rx="9.8" ry="5.7"/></g><g class="i-pin"><path class="i-stem" d="M449.7 137.0 V110.0"/><path class="i-drop" d="M449.7 106.0 c-6.5-7.5-10-12.6-10-17.4a10 10 0 0 1 20 0c0 4.8-3.5 9.9-10 17.4z"/><circle class="i-eye" cx="449.7" cy="88.5" r="3.4"/></g><ellipse class="i-halo" cx="449.7" cy="146.0" rx="16" ry="9"/></svg></div></div>
+        <div class="area-clip"><div class="area-art" aria-hidden="true"><svg viewBox="0 0 560 380" class="art art-v"><g transform="rotate(-8 410 135)"><path class="v-tk v-tk2" transform="translate(-30 36)" d="M284 60H458A12 12 0 0 0 482 60H536Q550 60 550 74V196Q550 210 536 210H482A12 12 0 0 0 458 210H284Q270 210 270 196V74Q270 60 284 60Z"/><path class="v-tk" d="M284 60H458A12 12 0 0 0 482 60H536Q550 60 550 74V196Q550 210 536 210H482A12 12 0 0 0 458 210H284Q270 210 270 196V74Q270 60 284 60Z"/><path class="v-pf" d="M470 80V190"/><rect class="v-tx" x="292" y="84" width="96" height="9" rx="4.5"/><rect class="v-tx" x="292" y="102" width="58" height="7" rx="3.5"/><g class="v-bc"><rect x="292.0" y="178.9" width="2.6" height="9.1" rx="1.3" style="--i:0"/><rect x="298.8" y="174.2" width="2.6" height="13.8" rx="1.3" style="--i:1"/><rect x="305.6" y="173.0" width="2.6" height="15.0" rx="1.3" style="--i:2"/><rect x="312.4" y="167.8" width="2.6" height="20.2" rx="1.3" style="--i:3"/><rect x="319.2" y="165.4" width="2.6" height="22.6" rx="1.3" style="--i:4"/><rect x="326.0" y="164.3" width="2.6" height="23.7" rx="1.3" style="--i:5"/><rect x="332.8" y="158.1" width="2.6" height="29.9" rx="1.3" style="--i:6"/><rect x="339.6" y="164.4" width="2.6" height="23.6" rx="1.3" style="--i:7"/><rect x="346.4" y="153.1" width="2.6" height="34.9" rx="1.3" style="--i:8"/><rect x="353.2" y="161.4" width="2.6" height="26.6" rx="1.3" style="--i:9"/><rect x="360.0" y="151.8" width="2.6" height="36.2" rx="1.3" style="--i:10"/><rect x="366.8" y="155.5" width="2.6" height="32.5" rx="1.3" style="--i:11"/><rect x="373.6" y="154.5" width="2.6" height="33.5" rx="1.3" style="--i:12"/><rect x="380.4" y="152.4" width="2.6" height="35.6" rx="1.3" style="--i:13"/><rect x="387.2" y="160.2" width="2.6" height="27.8" rx="1.3" style="--i:14"/><rect x="394.0" y="153.2" width="2.6" height="34.8" rx="1.3" style="--i:15"/><rect x="400.8" y="165.5" width="2.6" height="22.5" rx="1.3" style="--i:16"/><rect x="407.6" y="157.8" width="2.6" height="30.2" rx="1.3" style="--i:17"/><rect x="414.4" y="165.1" width="2.6" height="22.9" rx="1.3" style="--i:18"/><rect x="421.2" y="165.0" width="2.6" height="23.0" rx="1.3" style="--i:19"/><rect x="428.0" y="168.1" width="2.6" height="19.9" rx="1.3" style="--i:20"/><rect x="434.8" y="172.6" width="2.6" height="15.4" rx="1.3" style="--i:21"/><rect x="441.6" y="174.3" width="2.6" height="13.7" rx="1.3" style="--i:22"/><rect x="448.4" y="178.8" width="2.6" height="9.2" rx="1.3" style="--i:23"/></g><circle class="v-halo" cx="510" cy="135" r="17"/><circle class="v-ok" pathLength="1" cx="510" cy="135" r="17"/><path class="v-ck" pathLength="1" d="M502 135.5l5.5 5.5 10.5-11"/></g></svg></div></div>
       </div>
-      <p class="area-q">¿En qué marcas hemos aplicado mejoras digitales?</p>
+      <p class="area-q">Proyectos reales</p>
       <div class="pjs">
-        <article class="pj card open" id="pj-amok">
+        <article class="pj card peek" id="pj-amok">
           <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
-          <button type="button" class="pj-head" aria-expanded="true" aria-controls="pjb-amok">
+          <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-amok">
             <span class="pj-id"><span class="pj-lgw"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/amok.png);--r:3.294;--h:15.6px"></span></span><span class="pj-who"><b>AMOK</b><span class="pj-tg"><span class="sec"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g class="rays"><path class="ray" pathLength="1" d="M5.3 7.3L1.2 3.6" style="--d:.05s"/><path class="ray" pathLength="1" d="M15.3 9L19.6 7" style="--d:.3s"/><path class="ray" pathLength="1" d="M15 15.6L18.8 19" style="--d:.55s"/><path class="ray" pathLength="1" d="M4.4 15L.6 17.4" style="--d:.8s"/><path class="ray" pathLength="1" d="M3.6 11.5H-.8" style="--d:1s"/></g></svg>Nightlife</span><span class="city"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13s-4.5-4.2-4.5-7.6a4.5 4.5 0 0 1 9 0C10.5 8.8 6 13 6 13z"/><circle cx="6" cy="5.4" r="1.5"/></svg>Mallorca</span></span></span></span>
-            <span class="pj-title">Mejoramos la experiencia de compra.</span>
+            <span class="pj-title">Un mapa de reservas más claro. Una experiencia de compra mejor.</span>
             <span class="pj-chev" aria-hidden="true"><svg viewBox="0 0 30 18"><path d="M2 4l13 11L28 4"/></svg></span>
           </button>
           <div class="pj-body" id="pjb-amok" role="region" aria-label="AMOK">
@@ -1128,18 +1145,19 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
               <a class="shot pj-media" href="https://www.amokmallorca.com/book-vip" target="_blank" rel="noopener" aria-label="Reservar en AMOK (amokmallorca.com, se abre en otra pestaña)"><div class="frame demo" data-pins='[[49.4, 15.6, "Reservado superior", "Desde 400 €", "ok"], [37.1, 24.7, "Galería principal", "Agotado", "no"], [21.5, 30.6, "Reservado esquina", "Desde 400 €", "ok"], [52.3, 21.2, "Reservado galería", "Desde 450 €", "ok"], [58.2, 38.9, "Reservado pista", "Agotado", "no"], [41.0, 61.1, "Lounge inferior", "Agotado", "no"], [66.4, 72.9, "Reservado backstage", "Desde 700 €", "ok"]]'><div class="cam"><img src="img/amok-mapa.webp" alt="Mapa de reservas del interior de AMOK" loading="lazy"><div class="pins"></div></div><div class="cursor"></div><div class="panel"><span class="p-zone"></span><span class="p-price"></span><span class="p-pax">Hasta 8 personas</span><span class="p-btn">Reservar mesa</span></div></div><span class="shot-url" aria-hidden="true">amokmallorca.com/book-vip<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></span></a>
               <div class="pj-text">
                 <button type="button" class="pj-before" data-full="img/antes/amok-antes.webp" data-alt="Mapa de reservas de AMOK antes del cambio" aria-label="Ver en grande: Mapa de reservas de AMOK antes del cambio"><img src="img/antes/amok-antes.webp" alt="" loading="lazy"><span>Antes<small>Así era su mapa</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.4 10.4L14 14M7 5v4M5 7h4"/></svg></button>
-                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-amok"><span class="pj-nk">Qué necesitaba</span><span class="pj-nh">Turistas que no entendían la discoteca.</span><span class="pj-nm">Leer el caso<i aria-hidden="true"></i></span></button><div class="pj-na" id="nd-amok" role="region" aria-label="Qué necesitaba AMOK"><p>Mejorar la tasa de compra en su web. Muchos clientes no entendían la discoteca y cada vez tenía más público turista que venía por primera vez. Un mapa interactivo de reservas adelanta la decisión de compra.</p></div></div>
                 <p class="pj-stat"><b>+27 %</b><span>de tasa de compra</span></p>
+                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-amok"><span>Leer el caso</span><i aria-hidden="true"></i></button><div class="pj-na" id="nd-amok" role="region" aria-label="Qué necesitaba AMOK"><p>El público que visitaba la discoteca por primera vez no siempre entendía cómo se distribuía el espacio. Creamos un mapa interactivo para facilitar la elección de mesa y mejorar la experiencia de compra.</p></div></div>
               </div>
               <p class="pj-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span class="pj-as"><span>Mapa interactivo de reservas</span></span><span class="pj-from">desde <b class="amt">··· €</b></span></p>
             </div>
+            <button type="button" class="pj-more" aria-controls="pjb-amok" aria-label="Ver completo el caso de AMOK"><span>Ver completo<svg viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg></span></button>
           </div>
         </article>
         <article class="pj card" id="pj-marina">
           <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
           <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-marina">
             <span class="pj-id"><span class="pj-lgw"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/marina.png);--r:1.325;--h:25.7px"></span></span><span class="pj-who"><b>Marina Beach Club</b><span class="pj-tg"><span class="sec"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g class="rays"><path class="ray" pathLength="1" d="M5.3 7.3L1.2 3.6" style="--d:.05s"/><path class="ray" pathLength="1" d="M15.3 9L19.6 7" style="--d:.3s"/><path class="ray" pathLength="1" d="M15 15.6L18.8 19" style="--d:.55s"/><path class="ray" pathLength="1" d="M4.4 15L.6 17.4" style="--d:.8s"/><path class="ray" pathLength="1" d="M3.6 11.5H-.8" style="--d:1s"/></g></svg>Nightlife</span><span class="city"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13s-4.5-4.2-4.5-7.6a4.5 4.5 0 0 1 9 0C10.5 8.8 6 13 6 13z"/><circle cx="6" cy="5.4" r="1.5"/></svg>Valencia</span></span></span></span>
-            <span class="pj-title">Reservas directas, sin pasar por WhatsApp.</span>
+            <span class="pj-title">Reservas directas, con menos fricción.</span>
             <span class="pj-chev" aria-hidden="true"><svg viewBox="0 0 30 18"><path d="M2 4l13 11L28 4"/></svg></span>
           </button>
           <div class="pj-body" id="pjb-marina" role="region" aria-label="Marina Beach Club">
@@ -1147,17 +1165,11 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
               <a class="shot pj-media" href="https://marinabeachclub.com/" target="_blank" rel="noopener" aria-label="Ver la web de Marina Beach Club (marinabeachclub.com, se abre en otra pestaña)"><div class="frame demo" data-pins='[[40, 38, "Banco de cubierta", "Desde 500 €", "ok"], [48, 48, "Sofás lounge", "Agotado", "no"], [56, 42, "Sofás centrales", "Desde 700 €", "ok"], [68, 40, "Sofás escenario", "Desde 900 €", "ok"], [70, 34.5, "Primera fila", "Agotado", "no"]]'><div class="cam"><img src="img/marina-3d.webp" alt="Mapa 3D de reservas de Marina Beach Club" loading="lazy"><div class="pins"></div></div><div class="cursor"></div><div class="panel"><span class="p-zone"></span><span class="p-price"></span><span class="p-pax">Hasta 8 personas</span><span class="p-btn">Reservar mesa</span></div></div><span class="shot-url" aria-hidden="true">marinabeachclub.com<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></span></a>
               <div class="pj-text">
                 <button type="button" class="pj-before" data-full="img/antes/marina-antes.webp" data-alt="Mapa de reservas de Marina antes del cambio" aria-label="Ver en grande: Mapa de reservas de Marina antes del cambio"><img src="img/antes/marina-antes.webp" alt="" loading="lazy"><span>Antes<small>Así era su mapa</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.4 10.4L14 14M7 5v4M5 7h4"/></svg></button>
-                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-marina"><span class="pj-nk">Qué necesitaba</span><span class="pj-nh">Las reservas se le escapaban a WhatsApp.</span><span class="pj-nm">Leer el caso<i aria-hidden="true"></i></span></button><div class="pj-na" id="nd-marina" role="region" aria-label="Qué necesitaba Marina Beach Club"><p>Muchas reservas acababan en WhatsApp y en el chat de redes sociales: nadie veía bien el mapa y el cliente tardaba mucho en decidirse. Ahora, además, se ve claramente cómo se combinan varias mesas al comprar.</p></div></div>
+                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-marina"><span>Leer el caso</span><i aria-hidden="true"></i></button><div class="pj-na" id="nd-marina" role="region" aria-label="Qué necesitaba Marina Beach Club"><p>Parte de las reservas se gestionaba mediante WhatsApp y redes sociales. Mejoramos la experiencia de reserva online y la visualización de las mesas para facilitar la elección del cliente.</p></div></div>
               </div>
               <p class="pj-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span class="pj-as"><span>Mapa 3D de reservas</span></span><span class="pj-from">desde <b class="amt">··· €</b></span></p>
             </div>
-          </div>
-        </article>
-        <article class="pj card pj-soon" id="pj-fitz">
-          <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
-          <div class="pj-head">
-            <span class="pj-id"><span class="pj-lgw pj-lgw-0" aria-hidden="true"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg></span><span class="pj-who"><b>Fitz</b><span class="pj-tg"><span class="city"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13s-4.5-4.2-4.5-7.6a4.5 4.5 0 0 1 9 0C10.5 8.8 6 13 6 13z"/><circle cx="6" cy="5.4" r="1.5"/></svg>Madrid</span></span></span></span>
-            <span class="pj-title">Caso en preparación.</span>
+            <button type="button" class="pj-more" aria-controls="pjb-marina" aria-label="Ver completo el caso de Marina Beach Club"><span>Ver completo<svg viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg></span></button>
           </div>
         </article>
       </div>
@@ -1169,21 +1181,21 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
       <div class="area-h">
         <canvas class="area-line" data-shape="signal" aria-hidden="true"></canvas>
         <div class="area-id">
-          <div class="area-top"><span class="area-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 3.5v16.5h16.5"/><path d="M7.5 15.5l3.6-4.2 3.1 2.6 4.8-6.4"/><circle class="f" cx="19" cy="7.5" r="1.5"/></svg></span><p class="area-n">Área 02<span>Toma de decisiones</span></p></div>
-          <h3 class="area-t" id="area-datos">Análisis y medición</h3>
-          <p class="area-v"><b>Paneles en tiempo real</b> conectados con cualquier fuente externa: cómo va tu negocio, qué acciones tomar y qué estás aprendiendo.</p>
-          <ul class="area-as"><li>Paneles en tiempo real</li><li>Cualquier fuente de datos</li><li>Acciones de precio</li></ul>
+          <p class="area-n"><span class="area-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 3.5v16.5h16.5"/><path d="M7.5 15.5l3.6-4.2 3.1 2.6 4.8-6.4"/><circle class="f" cx="19" cy="7.5" r="1.5"/></svg></span>Área 02 · Análisis y medición</p>
+          <h3 class="area-t" id="area-datos">Decide con datos.</h3>
+          <p class="area-v">Reúno la información de tu negocio en un mismo lugar para que entiendas qué está pasando y tomes decisiones con criterio.</p>
+          <ul class="area-as"><li>Paneles en tiempo real</li><li>Integración de fuentes de datos</li><li>Conexiones vía API</li></ul>
           <a class="area-cli" href="https://clientes.silenceclub.es/" target="_blank" rel="noopener"><i aria-hidden="true"><svg viewBox="0 0 12 14"><circle cx="6" cy="4.6" r="2.6"/><path d="M1.6 12.8c0-2.5 2-4.2 4.4-4.2s4.4 1.7 4.4 4.2"/></svg></i>Todo en tu área de cliente<svg class="go" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></a>
         </div>
-        <div class="area-clip"><div class="area-art" aria-hidden="true"><svg viewBox="0 0 560 380" class="art art-d"><defs><linearGradient id="ad-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="currentColor" stop-opacity=".26"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs><g class="d-r" style="--i:0"><path class="d-occ" d="M60 24.8 L64 24.6 L68 24.6 L72 24.7 L76 24.9 L80 25.1 L84 25.5 L88 25.8 L92 26.2 L96 26.6 L100 26.9 L104 27.2 L108 27.3 L112 27.4 L116 27.3 L120 27.2 L124 26.9 L128 26.6 L132 26.2 L136 25.8 L140 25.4 L144 25.1 L148 24.8 L152 24.5 L156 24.3 L160 24.2 L164 24.0 L168 23.9 L172 23.8 L176 23.5 L180 23.0 L184 22.4 L188 21.4 L192 20.1 L196 18.4 L200 16.4 L204 14.0 L208 11.3 L212 8.5 L216 5.6 L220 2.8 L224 0.2 L228 -2.0 L232 -3.6 L236 -4.6 L240 -4.9 L244 -4.6 L248 -3.6 L252 -2.0 L256 0.1 L260 2.4 L264 4.7 L268 6.9 L272 8.8 L276 10.2 L280 10.8 L284 10.7 L288 9.6 L292 7.5 L296 4.5 L300 0.6 L304 -4.2 L308 -9.5 L312 -15.2 L316 -21.0 L320 -26.6 L324 -31.7 L328 -35.9 L332 -39.1 L336 -41.0 L340 -41.5 L344 -40.5 L348 -38.1 L352 -34.5 L356 -29.9 L360 -24.4 L364 -18.5 L368 -12.5 L372 -6.5 L376 -0.8 L380 4.3 L384 8.9 L388 12.7 L392 15.8 L396 18.3 L400 20.1 L404 21.5 L408 22.4 L412 23.0 L416 23.4 L420 23.7 L424 24.0 L428 24.2 L432 24.4 L436 24.7 L440 25.1 L444 25.5 L448 25.9 L452 26.3 L456 26.7 L460 27.0 L464 27.2 L468 27.4 L472 27.4 L476 27.3 L480 27.1 L484 26.9 L488 26.5 L492 26.2 L496 25.8 L500 25.4 L504 25.1 L508 24.8 L512 24.7 L516 24.6 L520 24.7 L524 24.8 L528 25.1 L532 25.4 L536 25.8 L540 26.1 L544 26.5 L548 26.9 L552 27.1 L556 27.3 L560 27.4 L564 54 L60 54 Z"/><path class="d-ln" d="M60 24.8 L64 24.6 L68 24.6 L72 24.7 L76 24.9 L80 25.1 L84 25.5 L88 25.8 L92 26.2 L96 26.6 L100 26.9 L104 27.2 L108 27.3 L112 27.4 L116 27.3 L120 27.2 L124 26.9 L128 26.6 L132 26.2 L136 25.8 L140 25.4 L144 25.1 L148 24.8 L152 24.5 L156 24.3 L160 24.2 L164 24.0 L168 23.9 L172 23.8 L176 23.5 L180 23.0 L184 22.4 L188 21.4 L192 20.1 L196 18.4 L200 16.4 L204 14.0 L208 11.3 L212 8.5 L216 5.6 L220 2.8 L224 0.2 L228 -2.0 L232 -3.6 L236 -4.6 L240 -4.9 L244 -4.6 L248 -3.6 L252 -2.0 L256 0.1 L260 2.4 L264 4.7 L268 6.9 L272 8.8 L276 10.2 L280 10.8 L284 10.7 L288 9.6 L292 7.5 L296 4.5 L300 0.6 L304 -4.2 L308 -9.5 L312 -15.2 L316 -21.0 L320 -26.6 L324 -31.7 L328 -35.9 L332 -39.1 L336 -41.0 L340 -41.5 L344 -40.5 L348 -38.1 L352 -34.5 L356 -29.9 L360 -24.4 L364 -18.5 L368 -12.5 L372 -6.5 L376 -0.8 L380 4.3 L384 8.9 L388 12.7 L392 15.8 L396 18.3 L400 20.1 L404 21.5 L408 22.4 L412 23.0 L416 23.4 L420 23.7 L424 24.0 L428 24.2 L432 24.4 L436 24.7 L440 25.1 L444 25.5 L448 25.9 L452 26.3 L456 26.7 L460 27.0 L464 27.2 L468 27.4 L472 27.4 L476 27.3 L480 27.1 L484 26.9 L488 26.5 L492 26.2 L496 25.8 L500 25.4 L504 25.1 L508 24.8 L512 24.7 L516 24.6 L520 24.7 L524 24.8 L528 25.1 L532 25.4 L536 25.8 L540 26.1 L544 26.5 L548 26.9 L552 27.1 L556 27.3 L560 27.4"/></g><g class="d-r" style="--i:1"><path class="d-occ" d="M60 45.6 L64 45.8 L68 46.0 L72 46.2 L76 46.5 L80 46.6 L84 46.7 L88 46.6 L92 46.4 L96 45.9 L100 45.2 L104 44.1 L108 42.8 L112 41.2 L116 39.2 L120 37.0 L124 34.4 L128 31.6 L132 28.4 L136 25.1 L140 21.5 L144 17.7 L148 13.8 L152 9.8 L156 5.8 L160 1.8 L164 -2.1 L168 -5.8 L172 -9.3 L176 -12.4 L180 -15.0 L184 -17.2 L188 -18.8 L192 -19.7 L196 -20.0 L200 -19.6 L204 -18.4 L208 -16.6 L212 -14.1 L216 -11.0 L220 -7.4 L224 -3.4 L228 0.9 L232 5.4 L236 10.0 L240 14.6 L244 19.0 L248 23.3 L252 27.3 L256 30.9 L260 34.2 L264 37.1 L268 39.5 L272 41.5 L276 43.1 L280 44.3 L284 45.1 L288 45.7 L292 46.0 L296 46.1 L300 46.1 L304 45.9 L308 45.8 L312 45.6 L316 45.5 L320 45.5 L324 45.5 L328 45.6 L332 45.9 L336 46.2 L340 46.5 L344 46.9 L348 47.3 L352 47.7 L356 48.0 L360 48.2 L364 48.4 L368 48.4 L372 48.3 L376 48.1 L380 47.9 L384 47.5 L388 47.2 L392 46.8 L396 46.4 L400 46.0 L404 45.7 L408 45.5 L412 45.2 L416 45.0 L420 44.7 L424 44.2 L428 43.4 L432 42.2 L436 40.7 L440 38.7 L444 36.3 L448 33.9 L452 31.5 L456 29.6 L460 28.2 L464 27.7 L468 28.2 L472 29.4 L476 31.3 L480 33.5 L484 35.9 L488 38.1 L492 40.1 L496 41.7 L500 43.0 L504 44.0 L508 44.8 L512 45.4 L516 45.9 L520 46.4 L524 46.9 L528 47.3 L532 47.7 L536 48.0 L540 48.2 L544 48.4 L548 48.4 L552 48.3 L556 48.1 L560 47.8 L564 75 L60 75 Z"/><path class="d-ln" d="M60 45.6 L64 45.8 L68 46.0 L72 46.2 L76 46.5 L80 46.6 L84 46.7 L88 46.6 L92 46.4 L96 45.9 L100 45.2 L104 44.1 L108 42.8 L112 41.2 L116 39.2 L120 37.0 L124 34.4 L128 31.6 L132 28.4 L136 25.1 L140 21.5 L144 17.7 L148 13.8 L152 9.8 L156 5.8 L160 1.8 L164 -2.1 L168 -5.8 L172 -9.3 L176 -12.4 L180 -15.0 L184 -17.2 L188 -18.8 L192 -19.7 L196 -20.0 L200 -19.6 L204 -18.4 L208 -16.6 L212 -14.1 L216 -11.0 L220 -7.4 L224 -3.4 L228 0.9 L232 5.4 L236 10.0 L240 14.6 L244 19.0 L248 23.3 L252 27.3 L256 30.9 L260 34.2 L264 37.1 L268 39.5 L272 41.5 L276 43.1 L280 44.3 L284 45.1 L288 45.7 L292 46.0 L296 46.1 L300 46.1 L304 45.9 L308 45.8 L312 45.6 L316 45.5 L320 45.5 L324 45.5 L328 45.6 L332 45.9 L336 46.2 L340 46.5 L344 46.9 L348 47.3 L352 47.7 L356 48.0 L360 48.2 L364 48.4 L368 48.4 L372 48.3 L376 48.1 L380 47.9 L384 47.5 L388 47.2 L392 46.8 L396 46.4 L400 46.0 L404 45.7 L408 45.5 L412 45.2 L416 45.0 L420 44.7 L424 44.2 L428 43.4 L432 42.2 L436 40.7 L440 38.7 L444 36.3 L448 33.9 L452 31.5 L456 29.6 L460 28.2 L464 27.7 L468 28.2 L472 29.4 L476 31.3 L480 33.5 L484 35.9 L488 38.1 L492 40.1 L496 41.7 L500 43.0 L504 44.0 L508 44.8 L512 45.4 L516 45.9 L520 46.4 L524 46.9 L528 47.3 L532 47.7 L536 48.0 L540 48.2 L544 48.4 L548 48.4 L552 48.3 L556 48.1 L560 47.8"/></g><g class="d-r" style="--i:2"><path class="d-occ" d="M60 67.9 L64 68.3 L68 68.6 L72 68.9 L76 69.2 L80 69.3 L84 69.3 L88 69.2 L92 69.0 L96 68.7 L100 68.3 L104 67.7 L108 67.1 L112 66.5 L116 65.8 L120 65.0 L124 64.3 L128 63.5 L132 62.7 L136 61.9 L140 61.1 L144 60.2 L148 59.4 L152 58.6 L156 57.8 L160 57.2 L164 56.6 L168 56.1 L172 55.8 L176 55.6 L180 55.5 L184 55.6 L188 55.8 L192 55.9 L196 56.1 L200 56.2 L204 56.2 L208 56.0 L212 55.7 L216 55.3 L220 54.7 L224 54.2 L228 53.8 L232 53.6 L236 53.7 L240 54.2 L244 55.0 L248 56.2 L252 57.6 L256 59.2 L260 60.8 L264 62.4 L268 63.7 L272 64.8 L276 65.7 L280 66.2 L284 66.6 L288 66.7 L292 66.7 L296 66.6 L300 66.5 L304 66.5 L308 66.5 L312 66.6 L316 66.7 L320 66.9 L324 67.2 L328 67.5 L332 67.7 L336 67.9 L340 68.0 L344 68.0 L348 67.7 L352 67.3 L356 66.6 L360 65.7 L364 64.6 L368 63.3 L372 61.7 L376 60.1 L380 58.4 L384 56.7 L388 55.1 L392 53.6 L396 52.4 L400 51.5 L404 50.9 L408 50.7 L412 50.8 L416 51.3 L420 52.2 L424 53.3 L428 54.6 L432 56.0 L436 57.5 L440 58.9 L444 60.3 L448 61.5 L452 62.6 L456 63.4 L460 64.1 L464 64.6 L468 65.0 L472 65.3 L476 65.5 L480 65.6 L484 65.8 L488 66.0 L492 66.2 L496 66.6 L500 66.9 L504 67.3 L508 67.7 L512 68.1 L516 68.5 L520 68.9 L524 69.2 L528 69.3 L532 69.4 L536 69.4 L540 69.2 L544 69.0 L548 68.6 L552 68.3 L556 67.9 L560 67.5 L564 96 L60 96 Z"/><path class="d-ln" d="M60 67.9 L64 68.3 L68 68.6 L72 68.9 L76 69.2 L80 69.3 L84 69.3 L88 69.2 L92 69.0 L96 68.7 L100 68.3 L104 67.7 L108 67.1 L112 66.5 L116 65.8 L120 65.0 L124 64.3 L128 63.5 L132 62.7 L136 61.9 L140 61.1 L144 60.2 L148 59.4 L152 58.6 L156 57.8 L160 57.2 L164 56.6 L168 56.1 L172 55.8 L176 55.6 L180 55.5 L184 55.6 L188 55.8 L192 55.9 L196 56.1 L200 56.2 L204 56.2 L208 56.0 L212 55.7 L216 55.3 L220 54.7 L224 54.2 L228 53.8 L232 53.6 L236 53.7 L240 54.2 L244 55.0 L248 56.2 L252 57.6 L256 59.2 L260 60.8 L264 62.4 L268 63.7 L272 64.8 L276 65.7 L280 66.2 L284 66.6 L288 66.7 L292 66.7 L296 66.6 L300 66.5 L304 66.5 L308 66.5 L312 66.6 L316 66.7 L320 66.9 L324 67.2 L328 67.5 L332 67.7 L336 67.9 L340 68.0 L344 68.0 L348 67.7 L352 67.3 L356 66.6 L360 65.7 L364 64.6 L368 63.3 L372 61.7 L376 60.1 L380 58.4 L384 56.7 L388 55.1 L392 53.6 L396 52.4 L400 51.5 L404 50.9 L408 50.7 L412 50.8 L416 51.3 L420 52.2 L424 53.3 L428 54.6 L432 56.0 L436 57.5 L440 58.9 L444 60.3 L448 61.5 L452 62.6 L456 63.4 L460 64.1 L464 64.6 L468 65.0 L472 65.3 L476 65.5 L480 65.6 L484 65.8 L488 66.0 L492 66.2 L496 66.6 L500 66.9 L504 67.3 L508 67.7 L512 68.1 L516 68.5 L520 68.9 L524 69.2 L528 69.3 L532 69.4 L536 69.4 L540 69.2 L544 69.0 L548 68.6 L552 68.3 L556 67.9 L560 67.5"/></g><g class="d-r" style="--i:3"><path class="d-occ" d="M60 90.1 L64 90.3 L68 90.4 L72 90.4 L76 90.3 L80 90.0 L84 89.7 L88 89.4 L92 89.0 L96 88.6 L100 88.2 L104 87.9 L108 87.7 L112 87.6 L116 87.6 L120 87.7 L124 87.9 L128 88.2 L132 88.6 L136 88.9 L140 89.3 L144 89.7 L148 90.0 L152 90.2 L156 90.4 L160 90.4 L164 90.3 L168 90.1 L172 89.9 L176 89.5 L180 89.2 L184 88.8 L188 88.4 L192 88.1 L196 87.8 L200 87.7 L204 87.6 L208 87.7 L212 87.8 L216 88.1 L220 88.4 L224 88.8 L228 89.2 L232 89.5 L236 89.9 L240 90.1 L244 90.3 L248 90.3 L252 90.3 L256 90.0 L260 89.7 L264 89.2 L268 88.5 L272 87.7 L276 86.8 L280 85.6 L284 84.1 L288 82.4 L292 80.4 L296 77.9 L300 75.1 L304 71.8 L308 68.0 L312 63.8 L316 59.3 L320 54.6 L324 49.9 L328 45.4 L332 41.2 L336 37.6 L340 34.7 L344 32.7 L348 31.6 L352 31.4 L356 32.1 L360 33.5 L364 35.5 L368 38.0 L372 40.7 L376 43.5 L380 46.2 L384 48.8 L388 51.2 L392 53.4 L396 55.4 L400 57.3 L404 59.0 L408 60.8 L412 62.5 L416 64.4 L420 66.3 L424 68.3 L428 70.4 L432 72.5 L436 74.5 L440 76.5 L444 78.3 L448 79.9 L452 81.3 L456 82.5 L460 83.5 L464 84.4 L468 85.1 L472 85.7 L476 86.3 L480 86.8 L484 87.4 L488 87.9 L492 88.4 L496 88.9 L500 89.3 L504 89.7 L508 90.0 L512 90.3 L516 90.4 L520 90.4 L524 90.3 L528 90.1 L532 89.8 L536 89.4 L540 89.1 L544 88.7 L548 88.3 L552 88.0 L556 87.8 L560 87.6 L564 117 L60 117 Z"/><path class="d-ln" d="M60 90.1 L64 90.3 L68 90.4 L72 90.4 L76 90.3 L80 90.0 L84 89.7 L88 89.4 L92 89.0 L96 88.6 L100 88.2 L104 87.9 L108 87.7 L112 87.6 L116 87.6 L120 87.7 L124 87.9 L128 88.2 L132 88.6 L136 88.9 L140 89.3 L144 89.7 L148 90.0 L152 90.2 L156 90.4 L160 90.4 L164 90.3 L168 90.1 L172 89.9 L176 89.5 L180 89.2 L184 88.8 L188 88.4 L192 88.1 L196 87.8 L200 87.7 L204 87.6 L208 87.7 L212 87.8 L216 88.1 L220 88.4 L224 88.8 L228 89.2 L232 89.5 L236 89.9 L240 90.1 L244 90.3 L248 90.3 L252 90.3 L256 90.0 L260 89.7 L264 89.2 L268 88.5 L272 87.7 L276 86.8 L280 85.6 L284 84.1 L288 82.4 L292 80.4 L296 77.9 L300 75.1 L304 71.8 L308 68.0 L312 63.8 L316 59.3 L320 54.6 L324 49.9 L328 45.4 L332 41.2 L336 37.6 L340 34.7 L344 32.7 L348 31.6 L352 31.4 L356 32.1 L360 33.5 L364 35.5 L368 38.0 L372 40.7 L376 43.5 L380 46.2 L384 48.8 L388 51.2 L392 53.4 L396 55.4 L400 57.3 L404 59.0 L408 60.8 L412 62.5 L416 64.4 L420 66.3 L424 68.3 L428 70.4 L432 72.5 L436 74.5 L440 76.5 L444 78.3 L448 79.9 L452 81.3 L456 82.5 L460 83.5 L464 84.4 L468 85.1 L472 85.7 L476 86.3 L480 86.8 L484 87.4 L488 87.9 L492 88.4 L496 88.9 L500 89.3 L504 89.7 L508 90.0 L512 90.3 L516 90.4 L520 90.4 L524 90.3 L528 90.1 L532 89.8 L536 89.4 L540 89.1 L544 88.7 L548 88.3 L552 88.0 L556 87.8 L560 87.6"/></g><g class="d-r" style="--i:4"><path class="d-occ" d="M60 111.3 L64 111.1 L68 110.9 L72 110.5 L76 110.1 L80 109.8 L84 109.4 L88 109.1 L92 108.8 L96 108.7 L100 108.6 L104 108.7 L108 108.8 L112 109.1 L116 109.4 L120 109.8 L124 110.2 L128 110.5 L132 110.9 L136 111.1 L140 111.3 L144 111.4 L148 111.4 L152 111.2 L156 111.0 L160 110.7 L164 110.3 L168 109.9 L172 109.5 L176 109.2 L180 108.9 L184 108.7 L188 108.6 L192 108.6 L196 108.7 L200 108.9 L204 109.2 L208 109.6 L212 110.0 L216 110.3 L220 110.6 L224 110.7 L228 110.6 L232 110.1 L236 109.2 L240 107.7 L244 105.4 L248 102.2 L252 98.3 L256 93.7 L260 88.7 L264 83.9 L268 79.6 L272 76.6 L276 75.2 L280 75.6 L284 77.8 L288 81.4 L292 86.0 L296 90.9 L300 95.7 L304 100.0 L308 103.6 L312 106.4 L316 108.4 L320 109.7 L324 110.5 L328 110.9 L332 111.0 L336 110.8 L340 110.6 L344 110.2 L348 109.8 L352 109.5 L356 109.1 L360 108.7 L364 108.5 L368 108.2 L372 108.0 L376 107.8 L380 107.5 L384 107.2 L388 106.7 L392 106.0 L396 105.0 L400 103.7 L404 102.2 L408 100.5 L412 98.6 L416 96.7 L420 94.9 L424 93.4 L428 92.1 L432 91.4 L436 91.0 L440 91.2 L444 91.7 L448 92.6 L452 93.7 L456 94.8 L460 95.9 L464 96.8 L468 97.4 L472 97.7 L476 97.7 L480 97.3 L484 96.5 L488 95.4 L492 94.0 L496 92.2 L500 90.3 L504 88.1 L508 85.9 L512 83.6 L516 81.4 L520 79.3 L524 77.4 L528 75.8 L532 74.6 L536 73.7 L540 73.3 L544 73.4 L548 74.0 L552 75.1 L556 76.6 L560 78.5 L564 138 L60 138 Z"/><path class="d-ln" d="M60 111.3 L64 111.1 L68 110.9 L72 110.5 L76 110.1 L80 109.8 L84 109.4 L88 109.1 L92 108.8 L96 108.7 L100 108.6 L104 108.7 L108 108.8 L112 109.1 L116 109.4 L120 109.8 L124 110.2 L128 110.5 L132 110.9 L136 111.1 L140 111.3 L144 111.4 L148 111.4 L152 111.2 L156 111.0 L160 110.7 L164 110.3 L168 109.9 L172 109.5 L176 109.2 L180 108.9 L184 108.7 L188 108.6 L192 108.6 L196 108.7 L200 108.9 L204 109.2 L208 109.6 L212 110.0 L216 110.3 L220 110.6 L224 110.7 L228 110.6 L232 110.1 L236 109.2 L240 107.7 L244 105.4 L248 102.2 L252 98.3 L256 93.7 L260 88.7 L264 83.9 L268 79.6 L272 76.6 L276 75.2 L280 75.6 L284 77.8 L288 81.4 L292 86.0 L296 90.9 L300 95.7 L304 100.0 L308 103.6 L312 106.4 L316 108.4 L320 109.7 L324 110.5 L328 110.9 L332 111.0 L336 110.8 L340 110.6 L344 110.2 L348 109.8 L352 109.5 L356 109.1 L360 108.7 L364 108.5 L368 108.2 L372 108.0 L376 107.8 L380 107.5 L384 107.2 L388 106.7 L392 106.0 L396 105.0 L400 103.7 L404 102.2 L408 100.5 L412 98.6 L416 96.7 L420 94.9 L424 93.4 L428 92.1 L432 91.4 L436 91.0 L440 91.2 L444 91.7 L448 92.6 L452 93.7 L456 94.8 L460 95.9 L464 96.8 L468 97.4 L472 97.7 L476 97.7 L480 97.3 L484 96.5 L488 95.4 L492 94.0 L496 92.2 L500 90.3 L504 88.1 L508 85.9 L512 83.6 L516 81.4 L520 79.3 L524 77.4 L528 75.8 L532 74.6 L536 73.7 L540 73.3 L544 73.4 L548 74.0 L552 75.1 L556 76.6 L560 78.5"/></g><g class="d-r" style="--i:5"><path class="d-occ" d="M60 131.3 L64 130.9 L68 130.5 L72 130.2 L76 129.9 L80 129.7 L84 129.6 L88 129.6 L92 129.7 L96 129.9 L100 130.2 L104 130.6 L108 131.0 L112 131.4 L116 131.7 L120 132.0 L124 132.2 L128 132.3 L132 132.2 L136 132.1 L140 131.8 L144 131.4 L148 130.9 L152 130.4 L156 129.7 L160 129.0 L164 128.3 L168 127.6 L172 126.9 L176 126.1 L180 125.3 L184 124.5 L188 123.7 L192 122.8 L196 121.8 L200 120.6 L204 119.4 L208 118.0 L212 116.5 L216 114.9 L220 113.2 L224 111.5 L228 109.7 L232 108.0 L236 106.4 L240 104.9 L244 103.5 L248 102.4 L252 101.5 L256 100.8 L260 100.4 L264 100.2 L268 100.2 L272 100.4 L276 100.7 L280 101.1 L284 101.5 L288 102.0 L292 102.5 L296 103.0 L300 103.4 L304 103.9 L308 104.4 L312 104.8 L316 105.4 L320 105.9 L324 106.6 L328 107.4 L332 108.4 L336 109.4 L340 110.7 L344 112.0 L348 113.5 L352 115.1 L356 116.8 L360 118.5 L364 120.2 L368 122.0 L372 123.6 L376 125.2 L380 126.6 L384 127.9 L388 128.9 L392 129.8 L396 130.5 L400 131.0 L404 131.3 L408 131.3 L412 131.3 L416 131.1 L420 130.8 L424 130.4 L428 130.1 L432 129.7 L436 129.3 L440 129.0 L444 128.8 L448 128.6 L452 128.4 L456 128.3 L460 128.2 L464 128.1 L468 127.9 L472 127.7 L476 127.3 L480 126.8 L484 126.2 L488 125.5 L492 124.6 L496 123.7 L500 122.7 L504 121.7 L508 120.7 L512 119.7 L516 119.0 L520 118.3 L524 117.9 L528 117.8 L532 117.9 L536 118.2 L540 118.8 L544 119.7 L548 120.6 L552 121.8 L556 123.0 L560 124.2 L564 159 L60 159 Z"/><path class="d-ln" d="M60 131.3 L64 130.9 L68 130.5 L72 130.2 L76 129.9 L80 129.7 L84 129.6 L88 129.6 L92 129.7 L96 129.9 L100 130.2 L104 130.6 L108 131.0 L112 131.4 L116 131.7 L120 132.0 L124 132.2 L128 132.3 L132 132.2 L136 132.1 L140 131.8 L144 131.4 L148 130.9 L152 130.4 L156 129.7 L160 129.0 L164 128.3 L168 127.6 L172 126.9 L176 126.1 L180 125.3 L184 124.5 L188 123.7 L192 122.8 L196 121.8 L200 120.6 L204 119.4 L208 118.0 L212 116.5 L216 114.9 L220 113.2 L224 111.5 L228 109.7 L232 108.0 L236 106.4 L240 104.9 L244 103.5 L248 102.4 L252 101.5 L256 100.8 L260 100.4 L264 100.2 L268 100.2 L272 100.4 L276 100.7 L280 101.1 L284 101.5 L288 102.0 L292 102.5 L296 103.0 L300 103.4 L304 103.9 L308 104.4 L312 104.8 L316 105.4 L320 105.9 L324 106.6 L328 107.4 L332 108.4 L336 109.4 L340 110.7 L344 112.0 L348 113.5 L352 115.1 L356 116.8 L360 118.5 L364 120.2 L368 122.0 L372 123.6 L376 125.2 L380 126.6 L384 127.9 L388 128.9 L392 129.8 L396 130.5 L400 131.0 L404 131.3 L408 131.3 L412 131.3 L416 131.1 L420 130.8 L424 130.4 L428 130.1 L432 129.7 L436 129.3 L440 129.0 L444 128.8 L448 128.6 L452 128.4 L456 128.3 L460 128.2 L464 128.1 L468 127.9 L472 127.7 L476 127.3 L480 126.8 L484 126.2 L488 125.5 L492 124.6 L496 123.7 L500 122.7 L504 121.7 L508 120.7 L512 119.7 L516 119.0 L520 118.3 L524 117.9 L528 117.8 L532 117.9 L536 118.2 L540 118.8 L544 119.7 L548 120.6 L552 121.8 L556 123.0 L560 124.2"/></g><g class="d-r" style="--i:6"><path class="d-occ" d="M60 151.0 L64 150.8 L68 150.6 L72 150.6 L76 150.7 L80 150.8 L84 151.1 L88 151.4 L92 151.8 L96 152.2 L100 152.6 L104 152.9 L108 153.2 L112 153.3 L116 153.4 L120 153.3 L124 153.1 L128 152.7 L132 152.2 L136 151.6 L140 150.8 L144 149.8 L148 148.5 L152 147.1 L156 145.2 L160 143.0 L164 140.5 L168 137.5 L172 134.2 L176 130.6 L180 126.9 L184 123.3 L188 120.1 L192 117.4 L196 115.4 L200 114.5 L204 114.5 L208 115.6 L212 117.6 L216 120.3 L220 123.6 L224 127.2 L228 130.9 L232 134.4 L236 137.6 L240 140.5 L244 142.9 L248 144.9 L252 146.6 L256 148.0 L260 149.1 L264 150.0 L268 150.8 L272 151.4 L276 152.0 L280 152.5 L284 152.8 L288 153.1 L292 153.3 L296 153.3 L300 153.2 L304 152.9 L308 152.6 L312 152.1 L316 151.6 L320 151.0 L324 150.3 L328 149.6 L332 148.9 L336 148.1 L340 147.4 L344 146.6 L348 145.8 L352 145.0 L356 144.2 L360 143.2 L364 142.3 L368 141.2 L372 140.2 L376 139.0 L380 137.9 L384 136.8 L388 135.7 L392 134.7 L396 133.9 L400 133.3 L404 132.8 L408 132.7 L412 132.8 L416 133.2 L420 133.8 L424 134.8 L428 135.9 L432 137.3 L436 138.8 L440 140.4 L444 142.1 L448 143.8 L452 145.3 L456 146.8 L460 148.1 L464 149.1 L468 149.9 L472 150.5 L476 150.7 L480 150.6 L484 150.2 L488 149.4 L492 148.4 L496 147.1 L500 145.7 L504 144.1 L508 142.4 L512 140.8 L516 139.4 L520 138.3 L524 137.4 L528 137.0 L532 137.0 L536 137.4 L540 138.3 L544 139.5 L548 140.9 L552 142.5 L556 144.1 L560 145.7 L564 180 L60 180 Z"/><path class="d-ln" d="M60 151.0 L64 150.8 L68 150.6 L72 150.6 L76 150.7 L80 150.8 L84 151.1 L88 151.4 L92 151.8 L96 152.2 L100 152.6 L104 152.9 L108 153.2 L112 153.3 L116 153.4 L120 153.3 L124 153.1 L128 152.7 L132 152.2 L136 151.6 L140 150.8 L144 149.8 L148 148.5 L152 147.1 L156 145.2 L160 143.0 L164 140.5 L168 137.5 L172 134.2 L176 130.6 L180 126.9 L184 123.3 L188 120.1 L192 117.4 L196 115.4 L200 114.5 L204 114.5 L208 115.6 L212 117.6 L216 120.3 L220 123.6 L224 127.2 L228 130.9 L232 134.4 L236 137.6 L240 140.5 L244 142.9 L248 144.9 L252 146.6 L256 148.0 L260 149.1 L264 150.0 L268 150.8 L272 151.4 L276 152.0 L280 152.5 L284 152.8 L288 153.1 L292 153.3 L296 153.3 L300 153.2 L304 152.9 L308 152.6 L312 152.1 L316 151.6 L320 151.0 L324 150.3 L328 149.6 L332 148.9 L336 148.1 L340 147.4 L344 146.6 L348 145.8 L352 145.0 L356 144.2 L360 143.2 L364 142.3 L368 141.2 L372 140.2 L376 139.0 L380 137.9 L384 136.8 L388 135.7 L392 134.7 L396 133.9 L400 133.3 L404 132.8 L408 132.7 L412 132.8 L416 133.2 L420 133.8 L424 134.8 L428 135.9 L432 137.3 L436 138.8 L440 140.4 L444 142.1 L448 143.8 L452 145.3 L456 146.8 L460 148.1 L464 149.1 L468 149.9 L472 150.5 L476 150.7 L480 150.6 L484 150.2 L488 149.4 L492 148.4 L496 147.1 L500 145.7 L504 144.1 L508 142.4 L512 140.8 L516 139.4 L520 138.3 L524 137.4 L528 137.0 L532 137.0 L536 137.4 L540 138.3 L544 139.5 L548 140.9 L552 142.5 L556 144.1 L560 145.7"/></g><g class="d-r" style="--i:7"><path class="d-occ" d="M60 171.6 L64 171.8 L68 172.0 L72 172.3 L76 172.7 L80 173.0 L84 173.4 L88 173.8 L92 174.1 L96 174.3 L100 174.4 L104 174.4 L108 174.3 L112 174.1 L116 173.8 L120 173.4 L124 173.0 L128 172.6 L132 172.3 L136 171.9 L140 171.7 L144 171.5 L148 171.3 L152 171.2 L156 171.0 L160 170.7 L164 170.0 L168 168.9 L172 167.1 L176 164.3 L180 160.6 L184 155.8 L188 150.1 L192 143.8 L196 137.5 L200 131.8 L204 127.2 L208 124.1 L212 122.8 L216 123.3 L220 125.1 L224 127.9 L228 131.3 L232 134.9 L236 138.3 L240 141.6 L244 144.6 L248 147.5 L252 150.3 L256 153.1 L260 155.8 L264 158.4 L268 160.9 L272 163.3 L276 165.4 L280 167.2 L284 168.6 L288 169.8 L292 170.6 L296 171.2 L300 171.5 L304 171.7 L308 171.7 L312 171.6 L316 171.5 L320 171.4 L324 171.4 L328 171.5 L332 171.6 L336 171.9 L340 172.2 L344 172.5 L348 172.9 L352 173.3 L356 173.7 L360 174.0 L364 174.2 L368 174.4 L372 174.4 L376 174.3 L380 174.1 L384 173.8 L388 173.5 L392 173.0 L396 172.5 L400 171.9 L404 171.2 L408 170.4 L412 169.4 L416 168.2 L420 166.7 L424 164.9 L428 163.0 L432 160.8 L436 158.8 L440 157.0 L444 155.7 L448 155.1 L452 155.3 L456 156.2 L460 157.8 L464 159.9 L468 162.1 L472 164.3 L476 166.3 L480 168.0 L484 169.2 L488 170.1 L492 170.6 L496 171.0 L500 171.2 L504 171.3 L508 171.5 L512 171.6 L516 171.9 L520 172.2 L524 172.6 L528 173.0 L532 173.4 L536 173.7 L540 174.0 L544 174.2 L548 174.4 L552 174.4 L556 174.3 L560 174.1 L564 201 L60 201 Z"/><path class="d-ln" d="M60 171.6 L64 171.8 L68 172.0 L72 172.3 L76 172.7 L80 173.0 L84 173.4 L88 173.8 L92 174.1 L96 174.3 L100 174.4 L104 174.4 L108 174.3 L112 174.1 L116 173.8 L120 173.4 L124 173.0 L128 172.6 L132 172.3 L136 171.9 L140 171.7 L144 171.5 L148 171.3 L152 171.2 L156 171.0 L160 170.7 L164 170.0 L168 168.9 L172 167.1 L176 164.3 L180 160.6 L184 155.8 L188 150.1 L192 143.8 L196 137.5 L200 131.8 L204 127.2 L208 124.1 L212 122.8 L216 123.3 L220 125.1 L224 127.9 L228 131.3 L232 134.9 L236 138.3 L240 141.6 L244 144.6 L248 147.5 L252 150.3 L256 153.1 L260 155.8 L264 158.4 L268 160.9 L272 163.3 L276 165.4 L280 167.2 L284 168.6 L288 169.8 L292 170.6 L296 171.2 L300 171.5 L304 171.7 L308 171.7 L312 171.6 L316 171.5 L320 171.4 L324 171.4 L328 171.5 L332 171.6 L336 171.9 L340 172.2 L344 172.5 L348 172.9 L352 173.3 L356 173.7 L360 174.0 L364 174.2 L368 174.4 L372 174.4 L376 174.3 L380 174.1 L384 173.8 L388 173.5 L392 173.0 L396 172.5 L400 171.9 L404 171.2 L408 170.4 L412 169.4 L416 168.2 L420 166.7 L424 164.9 L428 163.0 L432 160.8 L436 158.8 L440 157.0 L444 155.7 L448 155.1 L452 155.3 L456 156.2 L460 157.8 L464 159.9 L468 162.1 L472 164.3 L476 166.3 L480 168.0 L484 169.2 L488 170.1 L492 170.6 L496 171.0 L500 171.2 L504 171.3 L508 171.5 L512 171.6 L516 171.9 L520 172.2 L524 172.6 L528 173.0 L532 173.4 L536 173.7 L540 174.0 L544 174.2 L548 174.4 L552 174.4 L556 174.3 L560 174.1"/></g><g class="d-r" style="--i:8"><path class="d-occ" d="M60 193.5 L64 193.9 L68 194.3 L72 194.6 L76 195.0 L80 195.2 L84 195.4 L88 195.4 L92 195.3 L96 195.2 L100 194.9 L104 194.6 L108 194.2 L112 193.8 L116 193.4 L120 193.1 L124 192.8 L128 192.6 L132 192.5 L136 192.6 L140 192.7 L144 192.9 L148 193.1 L152 193.4 L156 193.6 L160 193.8 L164 193.9 L168 193.8 L172 193.6 L176 193.2 L180 192.4 L184 191.4 L188 190.1 L192 188.4 L196 186.2 L200 183.6 L204 180.5 L208 176.9 L212 172.8 L216 168.2 L220 163.3 L224 158.2 L228 153.2 L232 148.5 L236 144.6 L240 141.7 L244 140.1 L248 139.9 L252 141.2 L256 143.9 L260 147.8 L264 152.6 L268 157.9 L272 163.3 L276 168.5 L280 173.3 L284 177.5 L288 181.0 L292 183.8 L296 186.0 L300 187.7 L304 189.0 L308 189.9 L312 190.7 L316 191.3 L320 191.9 L324 192.4 L328 192.9 L332 193.4 L336 193.9 L340 194.4 L344 194.7 L348 195.0 L352 195.0 L356 194.9 L360 194.5 L364 193.8 L368 192.7 L372 191.1 L376 189.0 L380 186.4 L384 183.4 L388 180.0 L392 176.6 L396 173.5 L400 171.0 L404 169.4 L408 168.9 L412 169.7 L416 171.5 L420 174.2 L424 177.4 L428 180.9 L432 184.3 L436 187.3 L440 189.8 L444 191.7 L448 193.0 L452 193.8 L456 194.3 L460 194.4 L464 194.2 L468 194.0 L472 193.7 L476 193.3 L480 193.0 L484 192.8 L488 192.6 L492 192.6 L496 192.7 L500 192.8 L504 193.1 L508 193.4 L512 193.8 L516 194.2 L520 194.6 L524 194.9 L528 195.2 L532 195.3 L536 195.4 L540 195.4 L544 195.2 L548 195.0 L552 194.7 L556 194.3 L560 193.9 L564 222 L60 222 Z"/><path class="d-ln" d="M60 193.5 L64 193.9 L68 194.3 L72 194.6 L76 195.0 L80 195.2 L84 195.4 L88 195.4 L92 195.3 L96 195.2 L100 194.9 L104 194.6 L108 194.2 L112 193.8 L116 193.4 L120 193.1 L124 192.8 L128 192.6 L132 192.5 L136 192.6 L140 192.7 L144 192.9 L148 193.1 L152 193.4 L156 193.6 L160 193.8 L164 193.9 L168 193.8 L172 193.6 L176 193.2 L180 192.4 L184 191.4 L188 190.1 L192 188.4 L196 186.2 L200 183.6 L204 180.5 L208 176.9 L212 172.8 L216 168.2 L220 163.3 L224 158.2 L228 153.2 L232 148.5 L236 144.6 L240 141.7 L244 140.1 L248 139.9 L252 141.2 L256 143.9 L260 147.8 L264 152.6 L268 157.9 L272 163.3 L276 168.5 L280 173.3 L284 177.5 L288 181.0 L292 183.8 L296 186.0 L300 187.7 L304 189.0 L308 189.9 L312 190.7 L316 191.3 L320 191.9 L324 192.4 L328 192.9 L332 193.4 L336 193.9 L340 194.4 L344 194.7 L348 195.0 L352 195.0 L356 194.9 L360 194.5 L364 193.8 L368 192.7 L372 191.1 L376 189.0 L380 186.4 L384 183.4 L388 180.0 L392 176.6 L396 173.5 L400 171.0 L404 169.4 L408 168.9 L412 169.7 L416 171.5 L420 174.2 L424 177.4 L428 180.9 L432 184.3 L436 187.3 L440 189.8 L444 191.7 L448 193.0 L452 193.8 L456 194.3 L460 194.4 L464 194.2 L468 194.0 L472 193.7 L476 193.3 L480 193.0 L484 192.8 L488 192.6 L492 192.6 L496 192.7 L500 192.8 L504 193.1 L508 193.4 L512 193.8 L516 194.2 L520 194.6 L524 194.9 L528 195.2 L532 195.3 L536 195.4 L540 195.4 L544 195.2 L548 195.0 L552 194.7 L556 194.3 L560 193.9"/></g><g class="d-r" style="--i:9"><path class="d-fill" d="M60 215.8 L64 216.1 L68 216.3 L72 216.4 L76 216.4 L80 216.3 L84 216.0 L88 215.7 L92 215.4 L96 215.0 L100 214.6 L104 214.2 L108 213.9 L112 213.7 L116 213.6 L120 213.6 L124 213.7 L128 213.9 L132 214.2 L136 214.5 L140 214.9 L144 215.3 L148 215.7 L152 216.0 L156 216.2 L160 216.4 L164 216.4 L168 216.3 L172 216.1 L176 215.9 L180 215.5 L184 215.2 L188 214.8 L192 214.4 L196 214.1 L200 213.8 L204 213.7 L208 213.6 L212 213.7 L216 213.8 L220 214.1 L224 214.4 L228 214.8 L232 215.1 L236 215.5 L240 215.8 L244 216.1 L248 216.2 L252 216.2 L256 216.0 L260 215.7 L264 215.1 L268 214.3 L272 213.2 L276 211.8 L280 210.0 L284 207.8 L288 205.3 L292 202.3 L296 198.9 L300 195.3 L304 191.5 L308 187.7 L312 184.0 L316 180.8 L320 178.3 L324 176.5 L328 175.8 L332 176.0 L336 177.2 L340 179.3 L344 182.0 L348 185.1 L352 188.4 L356 191.5 L360 194.1 L364 196.1 L368 197.3 L372 197.5 L376 196.8 L380 195.0 L384 192.3 L388 188.7 L392 184.4 L396 179.4 L400 174.1 L404 168.6 L408 163.2 L412 158.1 L416 153.7 L420 150.0 L424 147.4 L428 145.9 L432 145.4 L436 145.9 L440 147.0 L444 148.4 L448 149.5 L452 149.8 L456 148.8 L460 146.2 L464 141.6 L468 135.4 L472 127.9 L476 119.9 L480 112.5 L484 106.8 L488 103.8 L492 104.2 L496 108.3 L500 115.9 L504 126.4 L508 138.8 L512 152.0 L516 165.0 L520 177.0 L524 187.2 L528 195.6 L532 201.9 L536 206.5 L540 209.6 L544 211.5 L548 212.6 L552 213.1 L556 213.4 L560 213.4 L564 400 L60 400 Z"/><path class="d-front" d="M60 215.8 L64 216.1 L68 216.3 L72 216.4 L76 216.4 L80 216.3 L84 216.0 L88 215.7 L92 215.4 L96 215.0 L100 214.6 L104 214.2 L108 213.9 L112 213.7 L116 213.6 L120 213.6 L124 213.7 L128 213.9 L132 214.2 L136 214.5 L140 214.9 L144 215.3 L148 215.7 L152 216.0 L156 216.2 L160 216.4 L164 216.4 L168 216.3 L172 216.1 L176 215.9 L180 215.5 L184 215.2 L188 214.8 L192 214.4 L196 214.1 L200 213.8 L204 213.7 L208 213.6 L212 213.7 L216 213.8 L220 214.1 L224 214.4 L228 214.8 L232 215.1 L236 215.5 L240 215.8 L244 216.1 L248 216.2 L252 216.2 L256 216.0 L260 215.7 L264 215.1 L268 214.3 L272 213.2 L276 211.8 L280 210.0 L284 207.8 L288 205.3 L292 202.3 L296 198.9 L300 195.3 L304 191.5 L308 187.7 L312 184.0 L316 180.8 L320 178.3 L324 176.5 L328 175.8 L332 176.0 L336 177.2 L340 179.3 L344 182.0 L348 185.1 L352 188.4 L356 191.5 L360 194.1 L364 196.1 L368 197.3 L372 197.5 L376 196.8 L380 195.0 L384 192.3 L388 188.7 L392 184.4 L396 179.4 L400 174.1 L404 168.6 L408 163.2 L412 158.1 L416 153.7 L420 150.0 L424 147.4 L428 145.9 L432 145.4 L436 145.9 L440 147.0 L444 148.4 L448 149.5 L452 149.8 L456 148.8 L460 146.2 L464 141.6 L468 135.4 L472 127.9 L476 119.9 L480 112.5 L484 106.8 L488 103.8 L492 104.2 L496 108.3 L500 115.9 L504 126.4 L508 138.8 L512 152.0 L516 165.0 L520 177.0 L524 187.2 L528 195.6 L532 201.9 L536 206.5 L540 209.6 L544 211.5 L548 212.6 L552 213.1 L556 213.4 L560 213.4"/></g><g class="d-scan" data-x0="60" data-ys="215.8,216.1,216.3,216.4,216.4,216.3,216.0,215.7,215.4,215.0,214.6,214.2,213.9,213.7,213.6,213.6,213.7,213.9,214.2,214.5,214.9,215.3,215.7,216.0,216.2,216.4,216.4,216.3,216.1,215.9,215.5,215.2,214.8,214.4,214.1,213.8,213.7,213.6,213.7,213.8,214.1,214.4,214.8,215.1,215.5,215.8,216.1,216.2,216.2,216.0,215.7,215.1,214.3,213.2,211.8,210.0,207.8,205.3,202.3,198.9,195.3,191.5,187.7,184.0,180.8,178.3,176.5,175.8,176.0,177.2,179.3,182.0,185.1,188.4,191.5,194.1,196.1,197.3,197.5,196.8,195.0,192.3,188.7,184.4,179.4,174.1,168.6,163.2,158.1,153.7,150.0,147.4,145.9,145.4,145.9,147.0,148.4,149.5,149.8,148.8,146.2,141.6,135.4,127.9,119.9,112.5,106.8,103.8,104.2,108.3,115.9,126.4,138.8,152.0,165.0,177.0,187.2,195.6,201.9,206.5,209.6,211.5,212.6,213.1,213.4,213.4"><path class="d-sl" d="M0 -400V420"/><circle class="d-sd" r="4"/></g><g class="d-live"><circle class="d-ring" cx="488" cy="103.8" r="7"/><circle class="d-dot" cx="488" cy="103.8" r="4.5"/></g></svg></div></div>
+        <div class="area-clip"><div class="area-art" aria-hidden="true"><svg viewBox="0 0 560 380" class="art art-d"><defs><linearGradient id="ad-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="currentColor" stop-opacity=".22"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs><path class="a-gd" d="M222 70H560"/><path class="a-gd" d="M222 120H560"/><path class="a-gd" d="M222 170H560"/><path class="a-gd" d="M222 220H560"/><path class="a-ax" d="M222 240H560M222 40V240"/><g class="a-bars"><rect x="236" y="234.0" width="6" height="6.0" rx="1.5"/><rect x="250" y="228.6" width="6" height="11.4" rx="1.5"/><rect x="264" y="226.9" width="6" height="13.1" rx="1.5"/><rect x="278" y="230.7" width="6" height="9.3" rx="1.5"/><rect x="292" y="230.4" width="6" height="9.6" rx="1.5"/><rect x="306" y="225.6" width="6" height="14.4" rx="1.5"/><rect x="320" y="227.0" width="6" height="13.0" rx="1.5"/><rect x="334" y="233.8" width="6" height="6.2" rx="1.5"/><rect x="348" y="226.1" width="6" height="13.9" rx="1.5"/><rect x="362" y="224.0" width="6" height="16.0" rx="1.5"/><rect x="376" y="229.6" width="6" height="10.4" rx="1.5"/><rect x="390" y="228.9" width="6" height="11.1" rx="1.5"/><rect x="404" y="222.6" width="6" height="17.4" rx="1.5"/><rect x="418" y="224.8" width="6" height="15.2" rx="1.5"/><rect x="432" y="233.6" width="6" height="6.4" rx="1.5"/><rect x="446" y="223.6" width="6" height="16.4" rx="1.5"/><rect x="460" y="221.1" width="6" height="18.9" rx="1.5"/><rect x="474" y="228.5" width="6" height="11.5" rx="1.5"/><rect x="488" y="227.3" width="6" height="12.7" rx="1.5"/><rect x="502" y="219.5" width="6" height="20.5" rx="1.5"/><rect x="516" y="222.6" width="6" height="17.4" rx="1.5"/><rect x="530" y="233.2" width="6" height="6.8" rx="1.5"/><rect x="544" y="221.0" width="6" height="19.0" rx="1.5"/></g><path class="d-fill" d="M230 204.1 L234 206.2 L238 186.8 L242 177.8 L246 210.0 L250 218.1 L254 205.7 L258 209.9 L262 192.8 L266 170.9 L270 188.6 L274 201.3 L278 196.3 L282 205.6 L286 197.6 L290 171.7 L294 174.8 L298 184.2 L302 181.1 L306 192.7 L310 195.4 L314 174.1 L318 168.2 L322 171.7 L326 166.2 L330 175.0 L334 184.9 L338 172.4 L342 164.1 L346 163.7 L350 155.2 L354 157.8 L358 169.0 L362 164.5 L366 158.2 L370 157.2 L374 147.9 L378 144.3 L382 152.2 L386 152.1 L390 148.5 L394 148.8 L398 141.5 L402 134.6 L406 137.6 L410 138.1 L414 136.0 L418 137.3 L422 133.3 L426 126.3 L430 125.6 L434 125.0 L438 122.8 L442 123.8 L446 122.3 L450 117.1 L454 114.8 L458 113.1 L462 110.4 L466 110.1 L470 109.4 L474 106.1 L478 103.6 L482 101.5 L486 98.7 L490 97.2 L494 96.0 L498 93.6 L502 91.4 L506 89.3 L510 86.9 L514 84.8 L518 82.9 L522 80.8 L526 78.6 L530 76.5 L534 74.3 L538 72.2 L542 70.0 L542 240 L230 240Z"/><path class="d-front" pathLength="1" d="M230 204.1 L234 206.2 L238 186.8 L242 177.8 L246 210.0 L250 218.1 L254 205.7 L258 209.9 L262 192.8 L266 170.9 L270 188.6 L274 201.3 L278 196.3 L282 205.6 L286 197.6 L290 171.7 L294 174.8 L298 184.2 L302 181.1 L306 192.7 L310 195.4 L314 174.1 L318 168.2 L322 171.7 L326 166.2 L330 175.0 L334 184.9 L338 172.4 L342 164.1 L346 163.7 L350 155.2 L354 157.8 L358 169.0 L362 164.5 L366 158.2 L370 157.2 L374 147.9 L378 144.3 L382 152.2 L386 152.1 L390 148.5 L394 148.8 L398 141.5 L402 134.6 L406 137.6 L410 138.1 L414 136.0 L418 137.3 L422 133.3 L426 126.3 L430 125.6 L434 125.0 L438 122.8 L442 123.8 L446 122.3 L450 117.1 L454 114.8 L458 113.1 L462 110.4 L466 110.1 L470 109.4 L474 106.1 L478 103.6 L482 101.5 L486 98.7 L490 97.2 L494 96.0 L498 93.6 L502 91.4 L506 89.3 L510 86.9 L514 84.8 L518 82.9 L522 80.8 L526 78.6 L530 76.5 L534 74.3 L538 72.2 L542 70.0"/><g class="d-scan" data-x0="230" data-ys="204.1,206.2,186.8,177.8,210.0,218.1,205.7,209.9,192.8,170.9,188.6,201.3,196.3,205.6,197.6,171.7,174.8,184.2,181.1,192.7,195.4,174.1,168.2,171.7,166.2,175.0,184.9,172.4,164.1,163.7,155.2,157.8,169.0,164.5,158.2,157.2,147.9,144.3,152.2,152.1,148.5,148.8,141.5,134.6,137.6,138.1,136.0,137.3,133.3,126.3,125.6,125.0,122.8,123.8,122.3,117.1,114.8,113.1,110.4,110.1,109.4,106.1,103.6,101.5,98.7,97.2,96.0,93.6,91.4,89.3,86.9,84.8,82.9,80.8,78.6,76.5,74.3,72.2,70.0"><path class="d-sl" d="M0 40V240"/><circle class="d-sd" cx="0" cy="0" r="5"/></g><circle class="d-ring" cx="542" cy="70.0" r="7"/><circle class="d-dot" cx="542" cy="70.0" r="4.5"/></svg></div></div>
       </div>
-      <p class="area-q">¿En qué marcas lo hemos aplicado?</p>
+      <p class="area-q">Proyectos reales</p>
       <div class="pjs">
-        <article class="pj card open" id="pj-marchica">
+        <article class="pj card peek" id="pj-marchica">
           <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
-          <button type="button" class="pj-head" aria-expanded="true" aria-controls="pjb-marchica">
+          <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-marchica">
             <span class="pj-id"><span class="pj-lgw"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/marchica.png);--r:1.594;--h:23.2px"></span></span><span class="pj-who"><b>Marchica</b><span class="pj-tg"><span class="sec"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g class="rays"><path class="ray" pathLength="1" d="M5.3 7.3L1.2 3.6" style="--d:.05s"/><path class="ray" pathLength="1" d="M15.3 9L19.6 7" style="--d:.3s"/><path class="ray" pathLength="1" d="M15 15.6L18.8 19" style="--d:.55s"/><path class="ray" pathLength="1" d="M4.4 15L.6 17.4" style="--d:.8s"/><path class="ray" pathLength="1" d="M3.6 11.5H-.8" style="--d:1s"/></g></svg>Nightlife</span><span class="city"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="2.5" width="10" height="10" rx="1.6"/><path d="M1 6h10M4 1v3M8 1v3"/></svg>Temporada 25/26</span></span></span></span>
-            <span class="pj-title">Todo su negocio, en un panel en tiempo real a medida.</span>
+            <span class="pj-title">Todo el negocio online, en un solo panel.</span>
             <span class="pj-chev" aria-hidden="true"><svg viewBox="0 0 30 18"><path d="M2 4l13 11L28 4"/></svg></span>
           </button>
           <div class="pj-body" id="pjb-marchica" role="region" aria-label="Marchica">
@@ -1201,10 +1213,11 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
                 </a>
               </div>
               <div class="pj-text">
-                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-marchica"><span class="pj-nk">Qué necesitaba</span><span class="pj-nh">Su facturación online, repartida en varios sitios.</span><span class="pj-nm">Leer el caso<i aria-hidden="true"></i></span></button><div class="pj-na" id="nd-marchica" role="region" aria-label="Qué necesitaba Marchica"><p>Agrupar en un solo sitio toda su facturación online: entradas, reservas, tipología de tarifas y ritmo de venta. Creamos un panel que le dice en tiempo real cómo va su negocio, qué acciones de precio puede tomar y qué está aprendiendo.</p></div></div>
+                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-marchica"><span>Leer el caso</span><i aria-hidden="true"></i></button><div class="pj-na" id="nd-marchica" role="region" aria-label="Qué necesitaba Marchica"><p>La información de entradas, reservas, tarifas y ventas estaba repartida entre distintas fuentes. Creamos un panel a medida que permite consultar la evolución del negocio y detectar qué acciones conviene tomar.</p></div></div>
               </div>
               <p class="pj-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span class="pj-as"><span>Panel en tiempo real</span></span><span class="pj-from">desde <b class="amt">··· €</b></span></p>
             </div>
+            <button type="button" class="pj-more" aria-controls="pjb-marchica" aria-label="Ver completo el caso de Marchica"><span>Ver completo<svg viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg></span></button>
           </div>
         </article>
       </div>
@@ -1216,31 +1229,32 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
       <div class="area-h">
         <canvas class="area-line" data-shape="form" aria-hidden="true"></canvas>
         <div class="area-id">
-          <div class="area-top"><span class="area-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8l6.4 7.6L12 21.2 5.6 10.4z"/><path d="M12 12.2v9"/><circle cx="12" cy="10.4" r="1.8"/></svg></span><p class="area-n">Área 03<span>Marca, identidad y web</span></p></div>
-          <h3 class="area-t" id="area-marca">Posicionamiento de marca</h3>
-          <p class="area-v"><b>Web con un trabajo de identidad visual real</b> y coherente con lo que tu marca pretende ser. No es suficiente pedirle a una IA «haz mi web» y ya. Y enfocada a vender de verdad.</p>
-          <ul class="area-as"><li>Identidad visual</li><li>Web</li><li>Estrategia de conversión</li></ul>
+          <p class="area-n"><span class="area-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8l6.4 7.6L12 21.2 5.6 10.4z"/><path d="M12 12.2v9"/><circle cx="12" cy="10.4" r="1.8"/></svg></span>Área 03 · Marca, identidad y web</p>
+          <h3 class="area-t" id="area-marca">Comunica mejor tu valor.</h3>
+          <p class="area-v">Alineo identidad visual, mensaje y web para que tu marca transmita lo que la hace diferente y su presencia digital sea coherente con lo que ofrece.</p>
+          <ul class="area-as"><li>Diseño y desarrollo web</li><li>Identidad visual</li><li>Estrategia de conversión</li></ul>
         </div>
-        <div class="area-clip"><div class="area-art" aria-hidden="true"><svg viewBox="0 0 560 380" class="art art-m"><circle class="m-ring" cx="380" cy="150" r="155.8"/><path class="m-gd" pathLength="1" d="M0 32 H560 M0 150 H560 M0 268 H560 M262 -10 V390 M380 -10 V390 M498 -10 V390 M120 -110 L640 410 M120 410 L640 -110"/><circle class="m-c1" pathLength="1" cx="380" cy="150" r="118.0"/><circle class="m-c2" pathLength="1" cx="380" cy="150" r="72.9"/><circle class="m-c2" pathLength="1" cx="380" cy="150" r="45.1"/><circle class="m-c3" pathLength="1" cx="380" cy="150" r="190.9"/><path class="m-half" d="M380 104.9 a45.1 45.1 0 0 1 0 90.2 z"/><path class="m-arc" pathLength="1" d="M262 150 A190 190 0 0 0 427 332"/><path class="m-tk" d="M262 282 v10 M291 282 v6 M321 282 v10 M350 282 v6 M380 282 v10 M409 282 v6 M439 282 v10 M468 282 v6 M498 282 v10"/><path class="m-hl" d="M118 330 L190 170 M372 250 L300 360"/><path class="m-pen" pathLength="1" d="M118 330 C190 170 300 360 372 250"/><circle class="m-hd" cx="190" cy="170" r="4"/><circle class="m-hd" cx="300" cy="360" r="4"/><circle class="m-sw" cx="289.6" cy="74.2" r="11" style="fill:var(--ac)"/><circle class="m-sw" cx="324.6" cy="45.8" r="11" style="fill:var(--melocoton)"/><circle class="m-sw" cx="367.7" cy="32.6" r="11" style="fill:var(--tinta)"/><rect class="m-an" x="113" y="325" width="9" height="9"/><rect class="m-an" x="367" y="245" width="9" height="9"/><rect class="m-pt" x="259" y="147" width="6" height="6"/><rect class="m-pt" x="495" y="147" width="6" height="6"/><rect class="m-pt" x="377" y="29" width="6" height="6"/><rect class="m-pt" x="377" y="265" width="6" height="6"/></svg></div></div>
+        <div class="area-clip"><div class="area-art" aria-hidden="true"><svg viewBox="0 0 560 380" class="art art-m"><circle class="m-ring" cx="400" cy="150" r="150"/><path class="m-gd" d="M226 72H560M226 122H560M226 212H560M226 252H560M282 20V290"/><text class="m-aa" x="282" y="212">Aa</text><g class="m-dot"><circle cx="503" cy="200" r="11"/><path d="M503 189a11 11 0 0 1 0 22z"/></g><path class="m-hl" d="M318 52L350 8M486 8L514 50"/><path class="m-pen" pathLength="1" d="M318 52C350 8 486 8 514 50"/><circle class="m-hd" cx="350" cy="8" r="4"/><circle class="m-hd" cx="486" cy="8" r="4"/><rect class="m-an" x="313.5" y="47.5" width="9" height="9"/><rect class="m-an" x="509.5" y="45.5" width="9" height="9"/><circle class="m-sw" cx="540" cy="92" r="10" style="fill:var(--ac)"/><circle class="m-sw" cx="540" cy="120" r="10" style="fill:var(--melocoton)"/><circle class="m-sw" cx="540" cy="148" r="10" style="fill:var(--tinta)"/></svg></div></div>
       </div>
-      <p class="area-q">¿En qué marcas lo hemos aplicado?</p>
+      <p class="area-q">Proyectos reales</p>
       <div class="pjs">
-        <article class="pj card open" id="pj-condado">
+        <article class="pj card peek" id="pj-condado">
           <svg class="pj-line" viewBox="0 0 1000 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 8H1000"/></svg>
-          <button type="button" class="pj-head" aria-expanded="true" aria-controls="pjb-condado">
+          <button type="button" class="pj-head" aria-expanded="false" aria-controls="pjb-condado">
             <span class="pj-id"><span class="pj-lgw"><span class="lg pj-lg" aria-hidden="true" style="--i:url(img/logos/condado.png);--r:3.188;--h:15.9px"></span></span><span class="pj-who"><b>Condado Club</b><span class="pj-tg"><span class="sec"><svg class="pfi pfi-ball" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 .5V5"/><g class="bl"><circle cx="10" cy="11.5" r="6.5"/><path d="M4.23 8.5H15.77M3.5 11.5H16.5M4.23 14.5H15.77M6.5 6.02V16.98M10 5V18M13.5 6.02V16.98"/><circle class="gl" cx="7.4" cy="9.1" r=".9"/><circle class="gl" cx="12.6" cy="13.2" r=".8" style="--d:.2s"/><circle class="gl" cx="12.4" cy="8.4" r=".7" style="--d:.42s"/><circle class="gl" cx="7.6" cy="14" r=".8" style="--d:.62s"/><circle class="gl" cx="10" cy="11.4" r=".9" style="--d:.8s"/></g><g class="rays"><path class="ray" pathLength="1" d="M5.3 7.3L1.2 3.6" style="--d:.05s"/><path class="ray" pathLength="1" d="M15.3 9L19.6 7" style="--d:.3s"/><path class="ray" pathLength="1" d="M15 15.6L18.8 19" style="--d:.55s"/><path class="ray" pathLength="1" d="M4.4 15L.6 17.4" style="--d:.8s"/><path class="ray" pathLength="1" d="M3.6 11.5H-.8" style="--d:1s"/></g></svg>Nightlife</span><span class="city"><svg class="pin" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 13s-4.5-4.2-4.5-7.6a4.5 4.5 0 0 1 9 0C10.5 8.8 6 13 6 13z"/><circle cx="6" cy="5.4" r="1.5"/></svg>Denia</span></span></span></span>
-            <span class="pj-title">Una web que por fin transmite el valor de su marca: el show.</span>
+            <span class="pj-title">Una web que refleja el valor de su marca: el show.</span>
             <span class="pj-chev" aria-hidden="true"><svg viewBox="0 0 30 18"><path d="M2 4l13 11L28 4"/></svg></span>
           </button>
           <div class="pj-body" id="pjb-condado" role="region" aria-label="Condado Club">
             <div class="pj-inner">
-              <a class="shot pj-media" href="https://www.condadoclub.es/" target="_blank" rel="noopener" aria-label="Ver la web de Condado Club (condadoclub.es, se abre en otra pestaña)"><div class="frame tab tab-cd" data-tab="cd"><div class="tab-cam"><div class="tab-dev"><div class="tab-scr"><div class="vp"><div class="tv-sc tv-home on"><div class="tv-doc"><video class="tv-vid" muted playsinline loop preload="none" poster="img/vid/condado-hero.jpg" aria-hidden="true"><source data-src="img/vid/condado-hero.mp4" type="video/mp4"></video><img class="tv-ui" src="img/vid/condado-ui.webp" alt="" loading="lazy"><img class="tv-pg" src="img/vid/condado-page.webp" alt="" loading="lazy"><div class="tv-fv"><img class="tv-strip" src="img/vid/condado-strip.webp" alt="" loading="lazy"></div><i class="tv-hl tv-hl-cal"></i></div><img class="tv-nav" src="img/vid/condado-nav.webp" alt="" loading="lazy"></div><div class="tv-sc tv-cal"><div class="tv-doc"><img class="tv-calh" src="img/vid/condado-cal.webp" alt="" loading="lazy"><img class="tv-ev on" src="img/vid/condado-ev.webp" alt="" loading="lazy"><img class="tv-mo" src="img/vid/condado-mo.webp" alt="" loading="lazy"><i class="tv-hl tv-hl-tg"></i><i class="tv-hl tv-hl-day"></i></div><img class="tv-nav on" src="img/vid/condado-nav.webp" alt="" loading="lazy"></div><i class="tv-tap"></i></div></div></div></div></div><span class="shot-url" aria-hidden="true">condadoclub.es<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></span></a>
+              <a class="shot pj-media" href="https://www.condadoclub.es/" target="_blank" rel="noopener" aria-label="Ver la web de Condado Club (condadoclub.es, se abre en otra pestaña)"><div class="frame tab tab-cd" data-tab="cd"><div class="tab-cam"><div class="tab-dev"><div class="tab-scr"><div class="vp"><div class="tv-sc tv-home on"><div class="tv-doc"><video class="tv-vid" muted playsinline loop preload="none" poster="img/vid/condado-hero.jpg" aria-hidden="true"><source data-src="img/vid/condado-hero.mp4" type="video/mp4"></video><img class="tv-ui" src="img/vid/condado-ui.webp" alt="" loading="lazy"><img class="tv-pg" src="img/vid/condado-page.webp" alt="" loading="lazy"><div class="tv-fv"><img class="tv-strip" src="img/vid/condado-strip.webp" alt="" loading="lazy"></div><i class="tv-hl tv-hl-cal"></i></div><img class="tv-nav" src="img/vid/condado-nav.webp" alt="" loading="lazy"></div><div class="tv-sc tv-cal"><div class="tv-doc"><img class="tv-calh" src="img/vid/condado-cal.webp" alt="" loading="lazy"><img class="tv-ev on" src="img/vid/condado-ev.webp" alt="" loading="lazy"><img class="tv-mo" src="img/vid/condado-mo.webp" alt="" loading="lazy"><i class="tv-hl tv-hl-tg"></i><i class="tv-hl tv-hl-day"></i></div><img class="tv-nav on" src="img/vid/condado-nav.webp" alt="" loading="lazy"></div><div class="tv-sc tv-fev"><div class="tv-doc"><img class="tv-fevp" src="img/vid/condado-fever.webp" alt="" loading="lazy"><i class="tv-hl tv-hl-buy"></i></div></div><i class="tv-tap"></i></div></div></div></div></div><span class="shot-url" aria-hidden="true">condadoclub.es<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></span></a>
               <div class="pj-text">
                 <button type="button" class="pj-before" data-full="img/antes/condado-antes.webp" data-alt="La web de Condado Club antes del cambio" aria-label="Ver en grande: La web de Condado Club antes del cambio"><img src="img/antes/condado-antes.webp" alt="" loading="lazy"><span>Antes<small>Así era su web</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.4 10.4L14 14M7 5v4M5 7h4"/></svg></button>
-                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-condado"><span class="pj-nk">Qué necesitaba</span><span class="pj-nh">Su web no estaba a la altura de su marca.</span><span class="pj-nm">Leer el caso<i aria-hidden="true"></i></span></button><div class="pj-na" id="nd-condado" role="region" aria-label="Qué necesitaba Condado Club"><p>Su web no estaba alineada con lo que su marca pretendía comunicar, con su valor. No había coherencia estética ni visual: no iban a la par.</p></div></div>
+                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-condado"><span>Leer el caso</span><i aria-hidden="true"></i></button><div class="pj-na" id="nd-condado" role="region" aria-label="Qué necesitaba Condado Club"><p>La presencia digital no transmitía suficientemente la experiencia que ofrecía la marca. Trabajamos la coherencia visual y la web para acercar ambas cosas.</p></div></div>
               </div>
               <p class="pj-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span class="pj-as"><span>Identidad visual</span><span>Web</span></span><span class="pj-from">desde <b class="amt">··· €</b></span></p>
             </div>
+            <button type="button" class="pj-more" aria-controls="pjb-condado" aria-label="Ver completo el caso de Condado Club"><span>Ver completo<svg viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg></span></button>
           </div>
         </article>
         <article class="pj card" id="pj-bela">
@@ -1254,10 +1268,11 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
             <div class="pj-inner">
               <a class="shot pj-media" href="https://www.belabrowstudio.com/" target="_blank" rel="noopener" aria-label="Ver la web de Bela Brow Studio (belabrowstudio.com, se abre en otra pestaña)"><div class="frame tab tab-bl" data-tab="bl"><div class="tab-cam"><div class="tab-dev"><div class="tab-scr"><div class="vp"><img class="tv-st lt on" data-k="micro" src="img/vid/bela-lt-micro.webp" alt="" loading="lazy"><img class="tv-st lt" data-k="lam" src="img/vid/bela-lt-lam.webp" alt="" loading="lazy"><img class="tv-st lt" data-k="henna" src="img/vid/bela-lt-henna.webp" alt="" loading="lazy"><img class="tv-st dk on" data-k="micro" src="img/vid/bela-dk-micro.webp" alt="" loading="lazy"><img class="tv-st dk" data-k="lam" src="img/vid/bela-dk-lam.webp" alt="" loading="lazy"><img class="tv-st dk" data-k="henna" src="img/vid/bela-dk-henna.webp" alt="" loading="lazy"><i class="tv-bd"></i><div class="tv-pn"><img class="lt" src="img/vid/bela-lt-panel.webp" alt="" loading="lazy"><img class="dk" src="img/vid/bela-dk-panel.webp" alt="" loading="lazy"><i class="tv-hl tv-hl-bk"></i></div><i class="tv-tap"></i></div></div></div></div></div><span class="shot-url" aria-hidden="true">belabrowstudio.com<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></span></a>
               <div class="pj-text">
-                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-bela"><span class="pj-nk">Qué necesitaba</span><span class="pj-nh">Una web que no contaba qué la hacía diferente.</span><span class="pj-nm">Leer el caso<i aria-hidden="true"></i></span></button><div class="pj-na" id="nd-bela" role="region" aria-label="Qué necesitaba Bela Brow Studio"><p>Venía frustrada de una web que no hablaba ni de su valor ni de qué la hacía diferente. Creamos su identidad visual y su marca, definimos qué la hace diferente, su web y su estrategia de captación de clientes.</p></div></div>
+                <div class="pj-need"><button type="button" class="pj-nq" aria-expanded="false" aria-controls="nd-bela"><span>Leer el caso</span><i aria-hidden="true"></i></button><div class="pj-na" id="nd-bela" role="region" aria-label="Qué necesitaba Bela Brow Studio"><p>Partimos de una web que no explicaba qué hacía diferente al negocio. Trabajamos su identidad, su posicionamiento y su presencia digital, incorporando una estrategia de captación.</p></div></div>
               </div>
               <p class="pj-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span class="pj-as"><span>Identidad visual</span><span>Posicionamiento</span><span>Web</span><span>Captación</span></span><span class="pj-from">desde <b class="amt">··· €</b></span></p>
             </div>
+            <button type="button" class="pj-more" aria-controls="pjb-bela" aria-label="Ver completo el caso de Bela Brow Studio"><span>Ver completo<svg viewBox="0 0 30 18" aria-hidden="true"><path d="M2 4l13 11L28 4"/></svg></span></button>
           </div>
         </article>
       </div>
@@ -1274,18 +1289,18 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
 
 <section class="block more" id="continuamos">
   <div class="wrap grid">
-    <aside class="beyond ac-d" aria-labelledby="beyond-t">
+    <aside class="beyond ac-d tk" aria-labelledby="beyond-t">
       <div class="by-h">
         <div>
           <p class="eyebrow"><svg viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg>Seguimiento anual</p>
-          <h2 id="beyond-t">¿Continuamos?</h2>
-          <p class="by-p">Después de crear soluciones digitales, podemos continuar con un seguimiento.</p>
+          <h2 id="beyond-t">La mejora no termina con el lanzamiento.</h2>
+          <p class="by-p">Sigo de cerca la evolución de cada solución para seguir mejorándola y responder a las nuevas necesidades que surjan.</p>
         </div>
         <p class="duo" role="img" aria-label="Silence Club y tu marca, como partners"><svg class="duo-sc" viewBox="0 0 362 97" aria-hidden="true"><use href="#sc-s0"/><use href="#sc-s1"/><use href="#sc-s2"/><use href="#sc-s3"/><use href="#sc-s4"/><use href="#sc-s5"/><use href="#sc-s6"/><path class="ln" d="M0 48H358"/><use href="#sc-c0"/><use href="#sc-c1"/><use href="#sc-c2"/><use href="#sc-c3"/><circle class="db" cx="351" cy="86.5" r="9"/><path d="M351 77.5a9 9 0 0 1 0 18z"/></svg><svg class="duo-br" viewBox="0 0 34 20"><path d="M0 10.00L1 10.00L2 10.00L3 10.00L4 10.00L5 10.00L6 10.00L7 10.00L8 10.00L9 10.00L10 9.97L11 9.67L12 8.37L13 6.00L14 5.13L15 7.46L16 11.21L17 14.44L18 14.86L19 12.29L20 9.48L21 7.96L22 8.15L23 9.19L24 9.82L25 9.98L26 10.00L27 10.00L28 10.00L29 10.00L30 10.00L31 10.00L32 10.00L33 10.00L34 10.00"/></svg><span class="duo-you">Tu marca</span></p>
       </div>
       <p class="cyc" aria-label="Seguimiento continuo"><span class="cyc-c"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.2 8a5.2 5.2 0 1 1-1.5-3.7"/><path d="M12 1.8v2.6H9.4"/></svg>Continuo</span></p>
       <div class="yr" aria-hidden="true"><svg viewBox="0 0 1200 30" preserveAspectRatio="none"><path d="M0 22H1200"/></svg><ol><li style="--d:0.00s">ENE</li><li style="--d:0.06s">FEB</li><li style="--d:0.12s">MAR</li><li style="--d:0.18s">ABR</li><li style="--d:0.24s">MAY</li><li style="--d:0.30s">JUN</li><li style="--d:0.36s">JUL</li><li style="--d:0.42s">AGO</li><li style="--d:0.48s">SEP</li><li style="--d:0.54s">OCT</li><li style="--d:0.60s">NOV</li><li style="--d:0.66s">DIC</li></ol></div>
-      <p class="pj-price beyond-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span class="pj-as"><span>Seguimiento</span></span><span class="pj-from"><b class="amt">··· €</b> / año</span></p>
+      <div class="score-free by-free"><p><span>Seguimiento continuo, <b>mes a mes.</b></span><span class="free"><span class="fs" aria-hidden="true"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg><i></i><i></i><i></i></span><b class="amt">··· €</b><small>/ año</small></span></p></div>
     </aside>
   </div>
 </section>
@@ -1319,18 +1334,13 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
       </li>
       <li class="no">
         <svg class="no-line" viewBox="0 0 600 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H600"/></svg>
-        <button type="button" class="no-q" aria-expanded="false" aria-controls="no1"><span>Decirte únicamente lo que quieres oír.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
-        <div class="no-a" id="no1" role="region"><p>Aquí, complaciente, no.</p></div>
+        <button type="button" class="no-q" aria-expanded="false" aria-controls="no1"><span>Decirte que sí a todo.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
+        <div class="no-a" id="no1" role="region"><p>Si veo una alternativa mejor, te explicaré por qué. Mi trabajo también consiste en cuestionar decisiones cuando hay una forma más adecuada de resolverlas.</p></div>
       </li>
       <li class="no">
         <svg class="no-line" viewBox="0 0 600 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H600"/></svg>
-        <button type="button" class="no-q" aria-expanded="false" aria-controls="no2"><span>Trabajar con cualquiera.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
-        <div class="no-a" id="no2" role="region"><p>Elijo mucho con quién me vinculo. Si estás dispuesto a escuchar, a dejar tu ego a un lado y crees que puedes mejorar, nos entenderemos.</p></div>
-      </li>
-      <li class="no">
-        <svg class="no-line" viewBox="0 0 600 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6H600"/></svg>
-        <button type="button" class="no-q" aria-expanded="false" aria-controls="no3"><span>Darte precios sin haber entendido antes algo de tu negocio.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
-        <div class="no-a" id="no3" role="region"><p>Es importante ser honesto, y pondré precio a aquello que crea que te puede ayudar.</p></div>
+        <button type="button" class="no-q" aria-expanded="false" aria-controls="no2"><span>Proponer soluciones sin entender el contexto.</span><svg class="no-i" viewBox="0 0 24 14" aria-hidden="true"><path d="M2 3l10 8 10-8"/></svg></button>
+        <div class="no-a" id="no2" role="region"><p>Primero analizo el problema. Después, planteo una solución y un presupuesto coherentes con lo que realmente necesitas.</p></div>
       </li>
     </ul>
   </div>
@@ -1339,8 +1349,14 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
 <section class="contact" id="contacto">
   <div class="wrap grid">
     <svg class="dot" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg>
-    <h2 class="h2">Te toca a ti.</h2>
-    <p class="muted">Cuéntame en qué punto está tu negocio y encontraremos qué mejora digital le puede hacer crecer.</p>
+    <h2 class="h2">¿Qué te gustaría mejorar?</h2>
+    <p class="muted">Cuéntame qué está funcionando, qué te está frenando y qué te gustaría conseguir. Analizaremos dónde puede haber una oportunidad de mejora y si tiene sentido trabajar juntos.</p>
+    <form class="cform" action="mailto:info@silenceclub.es" method="post" enctype="text/plain">
+      <label class="cf-f"><span>Tu nombre y tu negocio</span><input name="nombre" autocomplete="name" required placeholder="Ej.: Laura · Estudio de cejas, Valencia"></label>
+      <label class="cf-f"><span>Cuéntame</span><textarea name="mensaje" rows="5" required placeholder="Ej.: Tengo una discoteca en Valencia. Las entradas se venden bien, pero las reservas de mesa me llegan por WhatsApp y muchas se pierden. Me gustaría que se reservara directamente en la web."></textarea></label>
+      <div class="cf-go"><button class="btn solid" type="submit">Enviar</button><small>Se abrirá tu correo con el mensaje listo para enviar.</small></div>
+    </form>
+    <p class="c-alt">¿Prefieres contactar directamente?</p>
     <div class="actions">
       <a class="btn solid" href="mailto:info@silenceclub.es">info@silenceclub.es</a>
       <a class="btn ghost" href="tel:+34685775581">Llámame al 685 77 55 81</a>
@@ -1806,12 +1822,23 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
   document.addEventListener('keydown',function(e){if(e.key==='Escape')lbClose();});
 
   /* Te toca a ti: el botón del email se rellena una vez al verlo */
-  var cta=document.querySelector('#contacto .btn.solid');
+  var cta=document.querySelector('#contacto .actions .btn.solid');
   if(cta&&!reduce&&'IntersectionObserver' in window){
     var cio=new IntersectionObserver(function(en){if(!en[0].isIntersecting)return;cio.disconnect();
       setTimeout(function(){cta.classList.add('fill');if(cta.sweep)cta.sweep(900);cta.addEventListener('animationend',function(){cta.classList.remove('fill');},{once:true});},250);},{rootMargin:'0px 0px -20% 0px',threshold:1});
     cio.observe(cta);
   }
+
+  /* Formulario: abre el correo con el mensaje ya escrito (la web no tiene servidor) */
+  var cf=document.querySelector('.cform');
+  if(cf)cf.addEventListener('submit',function(e){e.preventDefault();
+    var n=cf.elements.nombre.value.trim(),m=cf.elements.mensaje.value.trim();
+    location.href='mailto:info@silenceclub.es?subject='+encodeURIComponent('Quiero mejorar mi negocio'+(n?' · '+n:''))+'&body='+encodeURIComponent(m+'\n\n'+n);});
+
+  /* Seguimiento: el resguardo del precio destella al verlo, como el Free del diagnóstico */
+  var byk=document.querySelector('.beyond.tk');
+  if(byk&&!reduce&&'IntersectionObserver' in window){byk.classList.add('wait');
+    var bio=new IntersectionObserver(function(en){if(en[0].intersectionRatio>=.5){byk.classList.remove('wait');bio.disconnect();}},{threshold:[0,.5]});bio.observe(byk.querySelector('.by-free'));}
 
   /* Barra de recorrido (móvil): aparece cuando el usuario la va a querer, no mientras lee.
      - Bajando (lectura): se aparta tras 24 px seguidos hacia abajo.
@@ -1856,7 +1883,7 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
 
   /* Trabajos: acordeón; la línea escucha el cursor y se agita al abrir */
   /* Cada área tiene su lista de casos: se abre uno a la vez dentro de cada lista; al verla, los cerrados invitan a abrirse */
-  var pjs=[].slice.call(document.querySelectorAll('.pj:not(.pj-soon)'));
+  var pjs=[].slice.call(document.querySelectorAll('.pj'));
   if(!reduce&&'IntersectionObserver' in window)[].forEach.call(document.querySelectorAll('.pjs'),function(pjw){
     var pio=new IntersectionObserver(function(en){if(en[0].isIntersecting){pjw.classList.add('invite');pio.disconnect();[].forEach.call(pjw.querySelectorAll('.sec'),function(x){x.classList.add('play');});}},{threshold:.35});pio.observe(pjw);});
   pjs.forEach(function(pj){
@@ -1878,14 +1905,30 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
       b.addEventListener('pointermove',function(e){var r=pj.getBoundingClientRect();hx=(e.clientX-r.left)/r.width*1000;ta=1;go();});
       b.addEventListener('pointerleave',function(){ta=0;go();});
     }
-    b.addEventListener('click',function(){
-      var o=!pj.classList.contains('open');
-      pjs.forEach(function(q){if(q!==pj&&q.parentNode===pj.parentNode&&q.classList.contains('open')){q.classList.remove('open');q.querySelector('.pj-head').setAttribute('aria-expanded','false');q.shake();}});
-      pj.classList.toggle('open',o);b.setAttribute('aria-expanded',o);pj.shake();pj.sec();
+    /* A medias: alto = hasta la mitad de su imagen */
+    var inner=pj.querySelector('.pj-inner'),media=pj.querySelector('.pj-media'),more=pj.querySelector('.pj-more');
+    pj.pk=function(){if(!pj.classList.contains('peek')||!media)return;var r=media.getBoundingClientRect(),q=inner.getBoundingClientRect();
+      pj.style.setProperty('--pk',Math.round(r.top-q.top+r.height*.5)+'px');};
+    pj.pk();
+    /* Desde "a medias", el alto se anima desde donde está (al abrir, hasta el entero; al cerrar, hasta cero) */
+    pj.set=function(o){
+      var pk=pj.classList.contains('peek');
+      if(pk){inner.style.maxHeight=inner.offsetHeight+'px';pj.classList.remove('peek');void inner.offsetWidth;}
+      pj.classList.toggle('open',o);pj.querySelector('.pj-head').setAttribute('aria-expanded',o);
+      if(pk){if(o)inner.style.maxHeight=inner.scrollHeight+'px';clearTimeout(pj.mt);pj.mt=setTimeout(function(){inner.style.maxHeight='';},o?800:820);}
+    };
+    function toggle(o){
+      pjs.forEach(function(q){if(q!==pj&&q.parentNode===pj.parentNode&&(q.classList.contains('open')||q.classList.contains('peek'))){q.set(false);q.shake();}});
+      pj.set(o);pj.shake();pj.sec();
       if(o){
         setTimeout(function(){var top=pj.getBoundingClientRect().top;if(top<90||top>innerHeight*.6)window.scrollTo({top:scrollY+top-100,behavior:reduce?'auto':'smooth'});},480);}
-    });
+    }
+    b.addEventListener('click',function(){toggle(!pj.classList.contains('open'));});
+    if(more)more.addEventListener('click',function(){toggle(true);});
   });
+
+  window.addEventListener('resize',function(){pjs.forEach(function(q){q.pk();});});
+  window.addEventListener('load',function(){pjs.forEach(function(q){q.pk();});});
 
   /* Mapas de reservas: demo animada */
   (function(){
@@ -1961,10 +2004,10 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
     var run;
     if(f.getAttribute('data-tab')==='cd'){
       var home=q('.tv-home'),cal=q('.tv-cal'),hd=home.querySelector('.tv-doc'),cd=cal.querySelector('.tv-doc'),nav=home.querySelector('.tv-nav'),
-          strip=q('.tv-strip'),ev=q('.tv-ev'),mo=q('.tv-mo'),hc=q('.tv-hl-cal'),htg=q('.tv-hl-tg'),hday=q('.tv-hl-day');
+          strip=q('.tv-strip'),ev=q('.tv-ev'),mo=q('.tv-mo'),hc=q('.tv-hl-cal'),htg=q('.tv-hl-tg'),hday=q('.tv-hl-day'),fev=q('.tv-fev'),hbuy=q('.tv-hl-buy');
       run=async function(){
-        home.className='tv-sc tv-home on';cal.className='tv-sc tv-cal';jump(hd);jump(cd);jump(strip);on(nav,false);
-        on(ev);on(mo,false);[hc,htg,hday,tap].forEach(function(e){on(e,false);});
+        home.className='tv-sc tv-home on';cal.className='tv-sc tv-cal';fev.className='tv-sc tv-fev';jump(hd);jump(cd);jump(strip);on(nav,false);
+        on(ev);on(mo,false);[hc,htg,hday,hbuy,tap].forEach(function(e){on(e,false);});
         shot(410,590,1,900);await w(1300);
         /* El hero: su vídeo (el show) y el nombre, de cerca */
         shot(300,560,2.05);await w(3000);
@@ -1981,9 +2024,13 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
         shot(330,390,2.1);await w(1300);tapTo(290,322);await w(1000);on(htg);await press();on(ev,false);on(mo);await w(600);on(htg,false);on(tap,false);await w(600);
         cd.style.transform='translateY(-330px)';shot(560,700,1.5,1400);await w(1600);
         /* Un evento del mes */
-        shot(600,740,2.5);await w(1200);tapTo(631,757);await w(1000);on(hday);await press();await w(1700);
-        on(tap,false);on(hday,false);shot(410,590,1,1500);await w(2100);
-        on(cal,false);await w(500);
+        shot(600,740,2.5);await w(1200);tapTo(631,757);await w(1000);on(hday);await press();await w(700);
+        /* Entra en el evento (FEVER): el nombre, las entradas y pulsa una para comprarla */
+        on(hday,false);on(tap,false);cal.classList.remove('on');cal.classList.add('gone');on(fev);shot(410,300,1.15,1200);await w(1600);
+        shot(220,170,2.3);await w(1900);
+        shot(520,430,1.9);await w(1500);tapTo(727,503);await w(1100);on(hbuy);await press();await w(1700);
+        on(tap,false);on(hbuy,false);shot(410,590,1,1500);await w(2100);
+        on(fev,false);await w(500);
       };
     }else{
       var bd=q('.tv-bd'),pn=q('.tv-pn'),hb=q('.tv-hl-bk'),sts=[].slice.call(f.querySelectorAll('.tv-st'));
@@ -1994,9 +2041,10 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
         shot(330,195,1.9);await w(2300);
         /* ¿Qué te gustaría hacerte?: cambia de servicio y cambia lo que se reserva */
         shot(410,600,2.05);await w(1400);
-        tapTo(401,529);await w(1000);await press();state('lam');await w(1500);
-        tapTo(545,529);await w(950);await press();state('henna');await w(1500);
-        tapTo(193,529);await w(1050);await press();state('micro');await w(1500);
+        shot(401,529,3.1,1100);tapTo(401,529);await w(1200);await press();state('lam');await w(1500);
+        shot(545,529,3.1,1100);tapTo(545,529);await w(1200);await press();state('henna');await w(1500);
+        shot(193,529,3.1,1300);tapTo(193,529);await w(1350);await press();state('micro');await w(1500);
+        shot(410,640,1.9,1200);await w(900);
         /* Elegir día y hora: se abre el pop-up de Booksy dentro de su web */
         tapTo(410,757);await w(1000);await press();on(bd);on(pn);on(tap,false);shot(410,620,1.15,1200);await w(1800);
         shot(420,560,2.15);await w(1500);tapTo(550,598);await w(1000);on(hb);await press();await w(1500);on(hb,false);
