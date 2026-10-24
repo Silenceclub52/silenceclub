@@ -9,7 +9,7 @@
 try{var t=(localStorage.getItem('sc-theme')||'').split('|'),s=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
 if((t[0]==='light'||t[0]==='dark')&&t[1]===s)document.documentElement.setAttribute('data-theme',t[0]);else localStorage.removeItem('sc-theme');}catch(e){}</script>
 <title>Silence Club · Decisiones inteligentes para tu negocio</title>
-<meta name="description" content="Identifico y creo las mejoras digitales que tu negocio aún no sabe que necesita. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
+<meta name="description" content="Identifico y creo las soluciones digitales que tu negocio aún no sabe que necesita. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
 <meta name="author" content="Jorge · Silence Club">
 <meta name="application-name" content="Silence Club">
 <meta name="apple-mobile-web-app-title" content="Silence Club">
@@ -23,7 +23,7 @@ if((t[0]==='light'||t[0]==='dark')&&t[1]===s)document.documentElement.setAttribu
 <meta property="og:site_name" content="Silence Club">
 <meta property="og:url" content="https://silenceclub.es/">
 <meta property="og:title" content="Silence Club · Decisiones inteligentes para tu negocio">
-<meta property="og:description" content="Identifico y creo las mejoras digitales que tu negocio aún no sabe que necesita. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
+<meta property="og:description" content="Identifico y creo las soluciones digitales que tu negocio aún no sabe que necesita. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
 <meta property="og:image" content="https://silenceclub.es/img/og-silenceclub-2026.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -31,10 +31,10 @@ if((t[0]==='light'||t[0]==='dark')&&t[1]===s)document.documentElement.setAttribu
 <meta property="og:image:alt" content="Silence Club. Primero, silencio. Decisiones inteligentes para tu negocio. silenceclub.es">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Silence Club · Decisiones inteligentes para tu negocio">
-<meta name="twitter:description" content="Identifico y creo las mejoras digitales que tu negocio aún no sabe que necesita. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
+<meta name="twitter:description" content="Identifico y creo las soluciones digitales que tu negocio aún no sabe que necesita. Mapas 3D de reservas, paneles en tiempo real y webs que venden.">
 <meta name="twitter:image" content="https://silenceclub.es/img/og-silenceclub-2026.jpg">
 <meta name="twitter:image:alt" content="Silence Club. Primero, silencio. Decisiones inteligentes para tu negocio. silenceclub.es">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Silence Club", "url": "https://silenceclub.es/", "description": "Identifico y creo las mejoras digitales que tu negocio aún no sabe que necesita. Mapas 3D de reservas, paneles en tiempo real y webs que venden.", "slogan": "Primero, silencio.", "email": "info@silenceclub.es", "logo": "https://silenceclub.es/icon-512.png", "image": "https://silenceclub.es/img/og-silenceclub-2026.jpg", "founder": {"@type": "Person", "name": "Jorge", "jobTitle": "Fundador de Silence Club"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Silence Club", "url": "https://silenceclub.es/", "description": "Identifico y creo las soluciones digitales que tu negocio aún no sabe que necesita. Mapas 3D de reservas, paneles en tiempo real y webs que venden.", "slogan": "Primero, silencio.", "email": "info@silenceclub.es", "logo": "https://silenceclub.es/icon-512.png", "image": "https://silenceclub.es/img/og-silenceclub-2026.jpg", "founder": {"@type": "Person", "name": "Jorge", "jobTitle": "Fundador de Silence Club"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,100;1,9..144,300..600,100&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -339,6 +339,8 @@ section.areas{padding-top:clamp(96px,12vw,152px)}
   :root:not([data-theme=light]) .ac-v{--ac:#4FD196;--ac-t:rgba(79,209,150,.1);--ac-b:rgba(79,209,150,.3)}
   :root:not([data-theme=light]) .ac-d{--ac:var(--violeta);--ac-t:rgba(160,140,245,.1);--ac-b:rgba(160,140,245,.3)}
   :root:not([data-theme=light]) .ac-m{--ac:#F2967B;--ac-t:rgba(242,150,123,.1);--ac-b:rgba(242,150,123,.3)}
+  :root:not([data-theme=light]) .shot .frame.web .lt{display:none}
+  :root:not([data-theme=light]) .shot .frame.web .dk{display:block}
   :root:not([data-theme=light]) .ans::after{background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%)}
   :root:not([data-theme=light]) .sec{background:rgba(255,255,255,.08)}
   :root:not([data-theme=light]) .sector{--n1:#A08CF5;--n2:#E58BF2;--b1:#EBA3B6;--b2:#F6C6B2}
@@ -355,6 +357,8 @@ section.areas{padding-top:clamp(96px,12vw,152px)}
 :root[data-theme=dark] .ac-v{--ac:#4FD196;--ac-t:rgba(79,209,150,.1);--ac-b:rgba(79,209,150,.3)}
 :root[data-theme=dark] .ac-d{--ac:var(--violeta);--ac-t:rgba(160,140,245,.1);--ac-b:rgba(160,140,245,.3)}
 :root[data-theme=dark] .ac-m{--ac:#F2967B;--ac-t:rgba(242,150,123,.1);--ac-b:rgba(242,150,123,.3)}
+:root[data-theme=dark] .shot .frame.web .lt{display:none}
+:root[data-theme=dark] .shot .frame.web .dk{display:block}
 :root[data-theme=dark] .ans::after{background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%)}
 :root[data-theme=dark] .sec{background:rgba(255,255,255,.08)}
 :root[data-theme=dark] .sector{--n1:#A08CF5;--n2:#E58BF2;--b1:#EBA3B6;--b2:#F6C6B2}
@@ -383,7 +387,6 @@ section.more{padding-top:0}
 /* El ciclo, como la leyenda de un gráfico sobre la línea del año */
 .cyc{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;margin:4px 0 -12px;font:500 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--grafito)}
 .cyc span{display:inline-flex;align-items:center;gap:10px}
-.cyc .ar{width:14px;height:9px;fill:none;stroke:var(--violeta);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;opacity:.8}
 .cyc-c{color:var(--violeta)}
 .cyc-c svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 /* El año como línea de sonido: al llegar suena (ondas que se agitan) y, al calmarse, se queda en reposo con una
@@ -613,8 +616,12 @@ a.shot:hover .bar span{color:var(--tinta)}
 /* La web de Condado: se recorre sola, despacio, de la portada al "Playita, amigos" */
 .shot .frame.web{background:#08070a}
 .shot .frame.web img{--pan:inherit}
-.shot .frame.web img{bottom:auto;height:auto;object-fit:fill;animation:webpan 18s ease-in-out 1s infinite alternate}
-@keyframes webpan{0%,10%{transform:none}90%,100%{transform:translateY(var(--pan,-40%))}}
+/* Barrido: un vistazo al hero (~1,3 s), baja con decisión a lo que importa (el bloque de venta), se queda, sigue y vuelve.
+   --mid = parada intermedia (fracción del recorrido; 1 = sin parada intermedia) */
+.shot .frame.web img{bottom:auto;height:auto;object-fit:fill;animation:webpan 10s cubic-bezier(.65,0,.35,1) .5s infinite}
+@keyframes webpan{0%,9%{transform:none}27%,46%{transform:translateY(calc(var(--pan,-40%)*var(--mid,1)))}62%,78%{transform:translateY(var(--pan,-40%))}95%,100%{transform:none}}
+/* Bela tiene modo oscuro propio: se enseña el que toca */
+.shot .frame.web .dk{display:none}
 
 /* Cosas que no voy a hacer: lista editorial sobre el fondo. Título fijo a la izquierda; cada "no" numerado,
    con la línea de sonido como separador; al abrir, la respuesta entra debajo */
@@ -958,7 +965,7 @@ a.shot:hover .bar span{color:var(--tinta)}
   <div class="wrap grid">
     <h2 class="role" aria-label="Decisiones inteligentes para tu negocio de nightlife o de beauty">Decisiones inteligentes<span class="r2" aria-hidden="true"><span class="r2t">para tu negocio de</span> <span class="sector"><span class="sw on" data-k="n"><i style="--i:0;--t:0%">n</i><i style="--i:1;--t:12%">i</i><i style="--i:2;--t:25%">g</i><i style="--i:3;--t:38%">h</i><i style="--i:4;--t:50%">t</i><i style="--i:5;--t:62%">l</i><i style="--i:6;--t:75%">i</i><i style="--i:7;--t:88%">f</i><i style="--i:8;--t:100%">e</i></span><span class="sw" data-k="b"><i style="--i:0;--t:0%">b<svg class="sp" viewBox="-10 -10 20 20" aria-hidden="true" style="--x:0.8;--y:0.09;--s:0.95;--d:0.24s"><path d="M0-10C.9-2.6 2.6-.9 10 0 2.6.9.9 2.6 0 10-.9 2.6-2.6.9-10 0-2.6-.9-.9-2.6 0-10Z"/></svg></i><i style="--i:1;--t:20%">e<svg class="sp" viewBox="-10 -10 20 20" aria-hidden="true" style="--x:0.92;--y:0.46;--s:0.55;--d:0.30s"><path d="M0-10C.9-2.6 2.6-.9 10 0 2.6.9.9 2.6 0 10-.9 2.6-2.6.9-10 0-2.6-.9-.9-2.6 0-10Z"/></svg></i><i style="--i:2;--t:40%">a<svg class="sp" viewBox="-10 -10 20 20" aria-hidden="true" style="--x:0.96;--y:0.44;--s:0.70;--d:0.36s"><path d="M0-10C.9-2.6 2.6-.9 10 0 2.6.9.9 2.6 0 10-.9 2.6-2.6.9-10 0-2.6-.9-.9-2.6 0-10Z"/></svg></i><i style="--i:3;--t:60%">u<svg class="sp" viewBox="-10 -10 20 20" aria-hidden="true" style="--x:0.98;--y:0.9;--s:0.35;--d:0.42s"><path d="M0-10C.9-2.6 2.6-.9 10 0 2.6.9.9 2.6 0 10-.9 2.6-2.6.9-10 0-2.6-.9-.9-2.6 0-10Z"/></svg></i><i style="--i:4;--t:80%">t<svg class="sp" viewBox="-10 -10 20 20" aria-hidden="true" style="--x:0.66;--y:0.24;--s:0.80;--d:0.48s"><path d="M0-10C.9-2.6 2.6-.9 10 0 2.6.9.9 2.6 0 10-.9 2.6-2.6.9-10 0-2.6-.9-.9-2.6 0-10Z"/></svg></i><i style="--i:5;--t:100%">y<svg class="sp" viewBox="-10 -10 20 20" aria-hidden="true" style="--x:0.96;--y:0.44;--s:0.50;--d:0.54s"><path d="M0-10C.9-2.6 2.6-.9 10 0 2.6.9.9 2.6 0 10-.9 2.6-2.6.9-10 0-2.6-.9-.9-2.6 0-10Z"/></svg><svg class="sp" viewBox="-10 -10 20 20" aria-hidden="true" style="--x:0.1;--y:1.12;--s:0.75;--d:0.61s"><path d="M0-10C.9-2.6 2.6-.9 10 0 2.6.9.9 2.6 0 10-.9 2.6-2.6.9-10 0-2.6-.9-.9-2.6 0-10Z"/></svg></i></span></span></span></h2>
     <div class="pitch">
-      <p class="hook">Identifico y creo las mejoras <span class="hand">digitales<svg viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true"><path d="M1.6 8.7C24 7 52 6.2 80 6.4S111.6 7.1 118.5 6.6C119.5 6.5 119.7 7.4 118.7 7.6C111 9 83 8.4 60 8.5S22 9.7 2.4 10.2C1 10.25.7 8.8 1.6 8.7Z"/></svg></span> que tu negocio aún no sabe que necesita.</p>
+      <p class="hook">Identifico y creo las soluciones <span class="hand">digitales<svg viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true"><path d="M1.6 8.7C24 7 52 6.2 80 6.4S111.6 7.1 118.5 6.6C119.5 6.5 119.7 7.4 118.7 7.6C111 9 83 8.4 60 8.5S22 9.7 2.4 10.2C1 10.25.7 8.8 1.6 8.7Z"/></svg></span> que tu negocio aún no sabe que necesita.</p>
       <div class="chat">
         <p class="chat-who" aria-hidden="true"><i>S</i>Silence</p>
         <div class="qa" data-s="n b" style="--d:0.70s"><p class="msg">¿Ves en un único panel cómo funciona tu negocio?</p><span class="ans ac-d"><span class="sr-only">Mejora digital: </span>Panel en tiempo real</span></div>
@@ -1112,7 +1119,7 @@ a.shot:hover .bar span{color:var(--tinta)}
                   <div class="cl-head"><span class="cl-lock"><svg class="cl-sc" viewBox="0 0 362 97"><use href="#sc-s0"/><use href="#sc-s1"/><use href="#sc-s2"/><use href="#sc-s3"/><use href="#sc-s4"/><use href="#sc-s5"/><use href="#sc-s6"/><path class="ln" d="M0 48H358"/><use href="#sc-c0"/><use href="#sc-c1"/><use href="#sc-c2"/><use href="#sc-c3"/><circle class="db" cx="351" cy="86.5" r="9"/><path d="M351 77.5a9 9 0 0 1 0 18z"/></svg><svg class="cl-br" viewBox="0 0 34 20"><path d="M0 10.00L1 10.00L2 10.00L3 10.00L4 10.00L5 10.00L6 10.00L7 10.00L8 10.00L9 10.00L10 9.97L11 9.67L12 8.37L13 6.00L14 5.13L15 7.46L16 11.21L17 14.44L18 14.86L19 12.29L20 9.48L21 7.96L22 8.15L23 9.19L24 9.82L25 9.98L26 10.00L27 10.00L28 10.00L29 10.00L30 10.00L31 10.00L32 10.00L33 10.00L34 10.00"/></svg><span class="lg cl-you" style="--i:url(img/logos/marchica.png);--r:1.594;--h:22px"></span></span><small>Área de cliente</small></div>
                   <p class="cl-k">Panel en tiempo real<span class="cl-on">En directo</span></p>
                   <ul class="cl-kpis"><li>Entradas<b>0.000</b></li><li>Reservas<b>000</b></li><li>Ventas<b>00.000 €</b></li></ul>
-                  <div class="cl-act"><div><p class="cl-ah"><i class="radar"></i>Acciones a aplicar</p><p>Sube el precio de las entradas Generales.</p></div><div><p class="cl-ah"><svg class="bulb" viewBox="0 0 14 16" aria-hidden="true"><path class="bf" d="M7 1.6a4.6 4.6 0 0 0-2.7 8.3c.6.5.9 1 .9 1.7v.4h3.6v-.4c0-.7.3-1.2.9-1.7A4.6 4.6 0 0 0 7 1.6z"/><path d="M5.3 14.3h3.4"/></svg>Recomendaciones</p><p>El público repite un 12 % más que el año pasado.</p></div></div>
+                  <div class="cl-act"><div><p class="cl-ah"><i class="radar"></i>Acciones</p><p>Sube el precio de las entradas Generales.</p></div><div><p class="cl-ah"><svg class="bulb" viewBox="0 0 14 16" aria-hidden="true"><path class="bf" d="M7 1.6a4.6 4.6 0 0 0-2.7 8.3c.6.5.9 1 .9 1.7v.4h3.6v-.4c0-.7.3-1.2.9-1.7A4.6 4.6 0 0 0 7 1.6z"/><path d="M5.3 14.3h3.4"/></svg>Aprendizajes</p><p>El público repite un 12 % más que el año pasado.</p></div></div>
                   <svg class="cl-chart" viewBox="0 0 300 80" preserveAspectRatio="none"><path class="ar" d="M0 80H300"/><path class="ln" d="M0 60H300"/></svg>
                 </div>
                 </a>
@@ -1171,7 +1178,7 @@ a.shot:hover .bar span{color:var(--tinta)}
           </button>
           <div class="pj-body" id="pjb-bela" role="region" aria-label="Bela Brow Studio">
             <div class="pj-inner">
-              <a class="shot pj-media" href="https://www.belabrowstudio.com/" target="_blank" rel="noopener" aria-label="Ver la web de Bela Brow Studio (belabrowstudio.com, se abre en otra pestaña)"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>belabrowstudio.com</span><svg class="go" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></div><div class="frame web" style="--pan:-59.1%"><img src="img/bela-web.webp" alt="Portada de la web de Bela Brow Studio" loading="lazy"></div></a>
+              <a class="shot pj-media" href="https://www.belabrowstudio.com/" target="_blank" rel="noopener" aria-label="Ver la web de Bela Brow Studio (belabrowstudio.com, se abre en otra pestaña)"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>belabrowstudio.com</span><svg class="go" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 7.5l5-5M3.5 2.5h4v4"/></svg></div><div class="frame web" style="--pan:-59.1%;--mid:.5"><img class="lt" src="img/bela-web.webp" alt="Portada de la web de Bela Brow Studio" loading="lazy"><img class="dk" src="img/bela-web-dark.webp" alt="Portada de la web de Bela Brow Studio, en modo oscuro" loading="lazy"></div></a>
               <div class="pj-text">
                 <p class="pj-lbl">Qué necesitaba</p>
                 <p class="pj-ctx">Venía frustrada de una web que no hablaba ni de su valor ni de qué la hacía diferente. Creamos su identidad visual y su marca, definimos qué la hace diferente, su web y su estrategia de captación de clientes.</p>
@@ -1203,7 +1210,7 @@ a.shot:hover .bar span{color:var(--tinta)}
         </div>
         <p class="duo" role="img" aria-label="Silence Club y tu marca, como partners"><svg class="duo-sc" viewBox="0 0 362 97" aria-hidden="true"><use href="#sc-s0"/><use href="#sc-s1"/><use href="#sc-s2"/><use href="#sc-s3"/><use href="#sc-s4"/><use href="#sc-s5"/><use href="#sc-s6"/><path class="ln" d="M0 48H358"/><use href="#sc-c0"/><use href="#sc-c1"/><use href="#sc-c2"/><use href="#sc-c3"/><circle class="db" cx="351" cy="86.5" r="9"/><path d="M351 77.5a9 9 0 0 1 0 18z"/></svg><svg class="duo-br" viewBox="0 0 34 20"><path d="M0 10.00L1 10.00L2 10.00L3 10.00L4 10.00L5 10.00L6 10.00L7 10.00L8 10.00L9 10.00L10 9.97L11 9.67L12 8.37L13 6.00L14 5.13L15 7.46L16 11.21L17 14.44L18 14.86L19 12.29L20 9.48L21 7.96L22 8.15L23 9.19L24 9.82L25 9.98L26 10.00L27 10.00L28 10.00L29 10.00L30 10.00L31 10.00L32 10.00L33 10.00L34 10.00"/></svg><span class="duo-you">Tu marca</span></p>
       </div>
-      <p class="cyc" aria-label="Aplicamos, medimos y mejoramos, en continuo"><span>Aplicamos<svg class="ar" viewBox="0 0 16 10" aria-hidden="true"><path d="M1 5h13M10 1.5L14 5l-4 3.5"/></svg>Medimos<svg class="ar" viewBox="0 0 16 10" aria-hidden="true"><path d="M1 5h13M10 1.5L14 5l-4 3.5"/></svg>Mejoramos</span><span class="cyc-c"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.2 8a5.2 5.2 0 1 1-1.5-3.7"/><path d="M12 1.8v2.6H9.4"/></svg>Continuo</span></p>
+      <p class="cyc" aria-label="Seguimiento continuo"><span class="cyc-c"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.2 8a5.2 5.2 0 1 1-1.5-3.7"/><path d="M12 1.8v2.6H9.4"/></svg>Continuo</span></p>
       <div class="yr" aria-hidden="true"><svg viewBox="0 0 1200 30" preserveAspectRatio="none"><path d="M0 22H1200"/></svg><ol><li style="--d:0.00s">ENE</li><li style="--d:0.06s">FEB</li><li style="--d:0.12s">MAR</li><li style="--d:0.18s">ABR</li><li style="--d:0.24s">MAY</li><li style="--d:0.30s">JUN</li><li style="--d:0.36s">JUL</li><li style="--d:0.42s">AGO</li><li style="--d:0.48s">SEP</li><li style="--d:0.54s">OCT</li><li style="--d:0.60s">NOV</li><li style="--d:0.66s">DIC</li></ol></div>
       <p class="pj-price beyond-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span class="pj-as"><span>Seguimiento</span></span><span class="pj-from"><b class="amt">··· €</b> / año</span></p>
     </aside>
