@@ -187,14 +187,14 @@ section.svc{padding-bottom:0}
 .svc-l{grid-column:1/span 5;margin-top:clamp(32px,4.5vw,64px)}
 .svc-t{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(26px,2.6vw,36px);line-height:1.1;letter-spacing:-.022em;text-wrap:balance}
 .svc-p{margin-top:14px;max-width:28em;font-size:clamp(16px,1.3vw,18px);line-height:1.5;color:var(--grafito);text-wrap:pretty}
-.score{--sp:24px;grid-column:7/span 6;margin-top:clamp(48px,4.5vw,64px)}
+.score{--sp:24px;grid-column:7/span 6;margin-top:clamp(36px,4.5vw,64px)}
 .score-c{margin:0;padding:24px var(--sp) 0;overflow:hidden;border:1px solid var(--linea);border-radius:16px;background:var(--papel);box-shadow:0 24px 50px -32px rgba(28,30,42,.3)}
 .score-h{display:block}
 .score-t{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;font-weight:600;font-size:19px;line-height:1.2;letter-spacing:-.015em}
 .score-t em{padding:2px 9px;border:1px solid var(--linea);border-radius:999px;font:400 11.5px/1.4 var(--sans);font-style:normal;letter-spacing:0;color:var(--grafito)}
 /* Aquí empieza todo: el borde superior de la tarjeta es una línea de sonido que nace en el punto a medias de la marca.
    Al verla, el punto aparece, suelta sus ondas y el primer sonido recorre el borde de izquierda a derecha, dibujándolo,
-   y se calma; cada pocos segundos vuelve a salir un pulso suave del punto. Encima, "01 · Aquí empieza todo" */
+   y se calma; cada pocos segundos vuelve a salir un pulso suave del punto. A su lado, sobre la línea, "01 Aquí empieza todo", como la leyenda de un plano */
 .score{position:relative}
 .score-c{border-top-color:transparent}
 .sg-line{position:absolute;left:0;top:-20px;z-index:2;height:40px;overflow:visible;pointer-events:none}
@@ -207,9 +207,9 @@ section.svc{padding-bottom:0}
 .score:not(.wait) .sg-rp{animation:sgrip 6s ease-out .1s infinite}
 .score:not(.wait) .sg-rp+.sg-rp{animation-delay:.55s}
 @keyframes sgrip{0%{opacity:.8;transform:scale(1)}22%,100%{opacity:0;transform:scale(3.4)}}
-.score-go{position:absolute;left:calc(var(--sp) - 7px);top:-39px;z-index:2;display:flex;align-items:baseline;gap:9px;margin:0;font:600 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--grafito);white-space:nowrap;transition:opacity .7s .2s,transform .7s cubic-bezier(.3,.8,.3,1) .2s}
+.score-go{position:absolute;left:calc(var(--sp) + 11px);top:.5px;z-index:3;display:flex;align-items:baseline;gap:8px;margin:0;padding:0 4px;transform:translateY(-50%);background:linear-gradient(var(--niebla) 50%,var(--papel) 50%);font:600 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--grafito);white-space:nowrap;transition:opacity .7s .25s}
 .score-go b{font:400 15px/1 var(--serif);font-variation-settings:"SOFT" 100;letter-spacing:0;color:var(--violeta);font-feature-settings:"lnum"}
-.score.wait .score-go{opacity:0;transform:translateY(4px)}
+.score.wait .score-go{opacity:0}
 .score.wait .sg-dot{opacity:0}
 /* El scoring como un anillo de sonido, un tramo por área: lo que funciona suena (más cuanto mejor está) y lo que falla
    se queda en silencio, punteado en violeta y con su destello. Nada de tablas: no se parece al panel de Marchica */
@@ -352,7 +352,7 @@ section.areas{padding-top:clamp(96px,12vw,152px)}
 .area-q::after{content:"";flex:1;min-width:24px;height:1px;background:linear-gradient(90deg,var(--linea),transparent)}
 @media (max-width:900px){
   .svc-h,.svc-l,.score,.areas-h{grid-column:1/-1}
-  .score{margin-top:52px}
+  .score{margin-top:36px}
   .area-art{width:100%;opacity:.3}
 }
 @media (prefers-color-scheme:dark){
@@ -440,51 +440,65 @@ section.more{padding-top:0}
 /* Área de cliente (Marchica): una miniatura fiel a la real, con su panel en tiempo real; las cifras, desenfocadas */
 /* Marco de navegador: puntos y dirección, para que se lea "esto es una web" */
 /* Toda la ventana es un enlace al área de cliente: al pasar, sube un poco, se marca en violeta y los botones del navegador toman color */
-.cl-win{display:block;overflow:hidden;border:1px solid var(--linea);border-radius:14px;background:var(--papel);color:inherit;text-decoration:none;box-shadow:0 2px 4px -2px rgba(28,30,42,.08),0 30px 60px -36px rgba(28,30,42,.35);transition:transform .5s cubic-bezier(.3,.8,.3,1),border-color .4s,box-shadow .5s}
-.cl-win:hover{transform:translateY(-3px);border-color:rgba(107,79,214,.45);box-shadow:0 2px 4px -2px rgba(28,30,42,.08),0 40px 70px -36px rgba(28,30,42,.42)}
-.cl-bar{display:flex;align-items:center;height:36px;padding:0 14px;border-bottom:1px solid var(--linea);background:var(--niebla)}
+/* El panel es siempre oscuro, como una sala de control de noche: destaca sobre el fondo claro y, en oscuro, lo separa
+   un filete violeta y su resplandor. Aurora violeta arriba, retícula de puntos, cristal en las cifras y la curva en directo
+   con brillo y su punto vivo al final: la firma visual de Silence Club */
+.cl-win{--cw-t:#EEEBF7;--cw-m:rgba(238,235,247,.56);--cw-l:rgba(255,255,255,.08);--cw-g:rgba(255,255,255,.035);--cw-v:#A08CF5;
+  position:relative;display:block;overflow:hidden;border-radius:16px;background:#0D0B14;color:var(--cw-t);text-decoration:none;
+  box-shadow:0 0 0 1px rgba(107,79,214,.22),0 2px 4px -2px rgba(20,14,40,.2),0 34px 64px -30px rgba(36,22,84,.6);transition:transform .5s cubic-bezier(.3,.8,.3,1),box-shadow .5s}
+.cl-win:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(160,140,245,.5),0 2px 4px -2px rgba(20,14,40,.2),0 44px 76px -30px rgba(36,22,84,.7)}
+.cl-bar{position:relative;z-index:1;display:flex;align-items:center;height:36px;padding:0 14px;border-bottom:1px solid var(--cw-l);background:rgba(255,255,255,.025)}
 .cl-dots{display:flex;gap:7px;width:50px}
-/* Cerrar, minimizar y pantalla completa, dibujados en sutil; se ven del todo al pasar */
-.cl-dots i{display:grid;place-items:center;width:11px;height:11px;border-radius:50%;background:var(--linea);transition:background .35s}
-.cl-dots svg{width:9px;height:9px;fill:none;stroke:var(--grafito);stroke-width:1.2;stroke-linecap:round;opacity:.45;transition:opacity .35s,stroke .35s}
-.cl-dots .d-f path{fill:var(--grafito);stroke:none}
+/* Cerrar, minimizar y pantalla completa, sutiles; se ven del todo al pasar */
+.cl-dots i{display:grid;place-items:center;width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.12);transition:background .35s}
+.cl-dots svg{width:9px;height:9px;fill:none;stroke:#fff;stroke-width:1.2;stroke-linecap:round;opacity:.35;transition:opacity .35s,stroke .35s}
+.cl-dots .d-f path{fill:#fff;stroke:none}
 .cl-win:hover .d-x{background:#EC6A5E}.cl-win:hover .d-m{background:#F4BF4F}.cl-win:hover .d-f{background:#61C554}
 .cl-win:hover .cl-dots svg{opacity:.7;stroke:#1C1E2A}.cl-win:hover .d-f path{fill:#1C1E2A}
-.cl-url{display:inline-flex;align-items:center;gap:7px;margin:0 auto;padding:4px 12px 4px 14px;border:1px solid transparent;border-radius:999px;background:var(--papel);font-size:11.5px;color:var(--grafito);transform:translateX(-25px);transition:color .3s,border-color .3s}
-.cl-win:hover .cl-url{color:var(--tinta);border-color:var(--violeta)}
-.cl-go{width:9px!important;height:9px!important;stroke:var(--violeta)!important;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.cl-url{display:inline-flex;align-items:center;gap:7px;margin:0 auto;padding:4px 12px 4px 14px;border:1px solid transparent;border-radius:999px;background:rgba(255,255,255,.06);font-size:11.5px;color:var(--cw-m);transform:translateX(-25px);transition:color .3s,border-color .3s}
+.cl-win:hover .cl-url{color:var(--cw-t);border-color:rgba(160,140,245,.6)}
+.cl-go{width:9px!important;height:9px!important;stroke:var(--cw-v)!important;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
 .cl-win:hover .cl-go{transform:translate(1.5px,-1.5px)}
 .cl-url svg{width:10px;height:12px;fill:none;stroke:currentColor;stroke-width:1.3}
-.cl-page{padding:22px 24px 24px}
-.cl-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--linea)}
-.cl-head small{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--grafito);white-space:nowrap}
+.cl-page{position:relative;padding:22px 24px 20px;background:radial-gradient(90% 70% at 88% -10%,rgba(124,92,255,.34),transparent 62%),radial-gradient(70% 60% at -10% 110%,rgba(240,138,60,.09),transparent 60%)}
+/* Retícula de puntos que se desvanece: el "papel milimetrado" del panel */
+.cl-page::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.2px) 0 0/16px 16px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.cl-page>*{position:relative}
+.cl-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--cw-l)}
+.cl-head small{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cw-m);white-space:nowrap}
 .cl-lock{display:flex;align-items:center;gap:8px;min-width:0}
 .cl-sc{flex:none;height:20px;width:auto;overflow:visible;fill:currentColor}
 .cl-sc .ln{fill:none;stroke:currentColor;stroke-width:1.6;opacity:.85}
 .cl-sc .db{opacity:.45}
-.cl-br{flex:none;width:34px;height:20px;overflow:visible}
-.cl-br path{fill:none;stroke:var(--violeta);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
-.cl-you{flex:none;color:var(--tinta);opacity:.85}
-.cl-k{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--grafito)}
-.cl-on{display:inline-flex;align-items:center;gap:6px;font-weight:500;color:var(--violeta)}
-.cl-on::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;animation:rec 1.8s ease-in-out infinite}
+.cl-br{flex:none;width:34px;height:20px;overflow:visible;filter:drop-shadow(0 0 4px rgba(160,140,245,.8))}
+.cl-br path{fill:none;stroke:var(--cw-v);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.cl-you{flex:none;color:var(--cw-t);opacity:.9}
+.cl-k{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cw-m)}
+.cl-on{display:inline-flex;align-items:center;gap:7px;padding:4px 9px 4px 8px;border-radius:999px;background:rgba(47,182,115,.12);font-weight:600;color:#5BE0A0}
+.cl-on::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor;animation:rec 1.8s ease-in-out infinite}
 @keyframes rec{50%{opacity:.25}}
 .cl-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 0;padding:0;list-style:none}
-.cl-kpis li{padding:10px 12px 11px;border:1px solid var(--linea);border-radius:10px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--grafito);transition:opacity .6s ease,transform .6s cubic-bezier(.3,.8,.3,1);transition-delay:var(--d,0s)}
+.cl-kpis li{padding:10px 12px 11px;border-radius:11px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));box-shadow:inset 0 0 0 1px var(--cw-l),inset 0 1px 0 rgba(255,255,255,.07);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--cw-m);transition:opacity .6s ease,transform .6s cubic-bezier(.3,.8,.3,1);transition-delay:var(--d,0s)}
 /* Los datos del cliente son suyos: se intuyen, no se leen */
-.cl-kpis b{display:block;margin-top:7px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:19px;letter-spacing:0;text-transform:none;color:var(--tinta);filter:blur(4.5px);user-select:none}
-.cl-chart{display:block;width:100%;height:84px;margin-top:14px;overflow:visible;color:var(--violeta)}
-.cl-chart .ar{fill:currentColor;opacity:.09;stroke:none}
-.cl-chart .ln{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.cl-kpis b{display:block;margin-top:7px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:19px;letter-spacing:0;text-transform:none;color:var(--cw-t);filter:blur(4.5px);user-select:none}
+/* La curva en directo: degradado violeta con brillo, su área, la del año pasado en punteado y el punto vivo */
+.cl-cw{position:relative;margin-top:16px}
+.cl-chart{display:block;width:100%;height:88px;overflow:visible;filter:drop-shadow(0 6px 12px rgba(139,108,246,.45))}
+.cl-chart .gd{fill:none;stroke:rgba(255,255,255,.06);stroke-width:1;vector-effect:non-scaling-stroke}
+.cl-chart .gh{fill:none;stroke:rgba(255,255,255,.22);stroke-width:1;stroke-dasharray:2 4;vector-effect:non-scaling-stroke}
+.cl-chart .ar{fill:url(#cl-ga);stroke:none}
+.cl-chart .ln{fill:none;stroke:url(#cl-gl);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.cl-live{position:absolute;right:-4px;top:30%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:#F1ECFF;box-shadow:0 0 0 3px rgba(160,140,245,.3),0 0 16px 2px #A08CF5}
+.cl-live::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid #C3B4FF;animation:radar 2.4s ease-out infinite}
 .cl-act{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
-.cl-act>div{padding:9px 11px 10px;border:1px solid var(--linea);border-radius:10px;transition:opacity .6s ease,transform .6s cubic-bezier(.3,.8,.3,1);transition-delay:var(--d,0s)}
-.cl-ah{display:flex;align-items:center;gap:7px;font:600 9.5px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--grafito)}
-.cl-act p+p{margin-top:5px;font-size:11.5px;line-height:1.35;color:var(--tinta)}
+.cl-act>div{padding:9px 11px 10px;border-radius:11px;background:rgba(255,255,255,.03);box-shadow:inset 0 0 0 1px var(--cw-l);transition:opacity .6s ease,transform .6s cubic-bezier(.3,.8,.3,1);transition-delay:var(--d,0s)}
+.cl-ah{display:flex;align-items:center;gap:7px;font:600 9.5px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--cw-m)}
+.cl-act p+p{margin-top:5px;font-size:11.5px;line-height:1.35;color:var(--cw-t)}
 /* Acciones: un radar verde; recomendaciones: una bombilla que se enciende en naranja y se apaga, despacio */
 .radar{position:relative;flex:none;width:7px;height:7px;border-radius:50%;background:#2FB673}
 .radar::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid #2FB673;animation:radar 2.8s ease-out infinite}
 @keyframes radar{0%{transform:scale(1);opacity:.9}100%{transform:scale(3.4);opacity:0}}
-.bulb{flex:none;width:11px;height:13px;overflow:visible;fill:none;stroke:var(--grafito);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+.bulb{flex:none;width:11px;height:13px;overflow:visible;fill:none;stroke:var(--cw-m);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
 .bulb .bf{fill:#F08A3C;fill-opacity:0;animation:bulb 4s ease-in-out infinite}
 @keyframes bulb{0%,100%{fill-opacity:0}40%,62%{fill-opacity:.95}}
 .cli-shot.wait .cl-kpis li,.cli-shot.wait .cl-act>div{opacity:0;transform:translateY(6px)}
@@ -603,7 +617,8 @@ section.more{padding-top:0}
   .pj-inner>*{flex:none}
   .pj-media.shot,.pj-media.cli-shot{align-self:stretch;margin:0 0 24px}
   .pj-text{padding-bottom:0}
-  .pj-price{margin:22px 0 26px}
+  .pj-price{margin:22px calc(-1*var(--cx)) 0;padding-bottom:22px}
+  .pj-inner{border-radius:0 0 18px 18px}
 }
 .case .shot{background:#fff;box-shadow:0 0 0 1px var(--linea),0 30px 60px -34px rgba(28,30,42,.3)}
 .shot{grid-column:1/span 7;margin-top:72px;border-radius:14px;overflow:hidden;background:var(--papel);box-shadow:0 1px 0 var(--linea),0 30px 60px -30px rgba(28,30,42,.25)}
@@ -639,7 +654,9 @@ section.more{padding-top:0}
 .lb-x{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));right:14px;display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;cursor:pointer}
 .lb-x svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
 /* Cierre de cada caso: el activo y desde cuánto */
-.pj-price{grid-column:1/-1;display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;margin:24px 0 36px;padding:16px 0 0;border-top:1px solid var(--linea);font-size:14.5px;color:var(--tinta)}
+/* El faldón llega a los bordes de la tarjeta y se tiñe muy suave del color del área, más hacia el precio: zona de precio */
+.pj-inner{margin:0 calc(-1*var(--cx));padding:0 var(--cx);border-radius:0 0 22px 22px}
+.pj-price{grid-column:1/-1;display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;margin:24px calc(-1*var(--cx)) 0;padding:16px var(--cx) 24px;border-top:1px solid var(--linea);background:radial-gradient(150% 220% at 100% 100%,var(--ac-t),transparent 70%);font-size:14.5px;color:var(--tinta)}
 .pj-price .ok{flex:none;width:16px;height:16px;fill:none;stroke:var(--grafito);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .pj-from{margin-left:auto;white-space:nowrap;color:var(--grafito)}
 .pj-as{display:flex;flex-wrap:wrap;gap:6px}
@@ -936,7 +953,7 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
   :root:not([data-theme=light]) .about .mono{color:#F7F8FA}
   :root:not([data-theme=light]) .case .shot{background:#17161A}
   :root:not([data-theme=light]) .shot .frame{background:linear-gradient(160deg,#211C22,#17161A 60%)}
-  :root:not([data-theme=light]) .cl-win{box-shadow:0 30px 60px -30px rgba(0,0,0,.75)}
+  :root:not([data-theme=light]) .cl-win{box-shadow:0 0 0 1px rgba(160,140,245,.26),0 0 60px -20px rgba(124,92,255,.35),0 30px 60px -30px rgba(0,0,0,.8)}
   :root:not([data-theme=light]) nav.glass .wrap{background:rgba(20,19,23,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),inset 0 1px 0 rgba(255,255,255,.06),0 12px 30px -14px rgba(0,0,0,.6)}
 }
 /* Oscuro forzado con el interruptor: las mismas reglas */
@@ -949,7 +966,7 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
 :root[data-theme=dark] .about .mono{color:#F7F8FA}
 :root[data-theme=dark] .case .shot{background:#17161A}
 :root[data-theme=dark] .shot .frame{background:linear-gradient(160deg,#211C22,#17161A 60%)}
-:root[data-theme=dark] .cl-win{box-shadow:0 30px 60px -30px rgba(0,0,0,.75)}
+:root[data-theme=dark] .cl-win{box-shadow:0 0 0 1px rgba(160,140,245,.26),0 0 60px -20px rgba(124,92,255,.35),0 30px 60px -30px rgba(0,0,0,.8)}
 :root[data-theme=dark] nav.glass .wrap{background:rgba(20,19,23,.78);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),inset 0 1px 0 rgba(255,255,255,.06),0 12px 30px -14px rgba(0,0,0,.6)}
 @media (prefers-color-scheme:dark) and (max-width:900px){
   :root:not([data-theme=light]) nav.glass .wrap{box-shadow:inset 0 -1px 0 rgba(255,255,255,.08)}
@@ -1134,7 +1151,7 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
         </div>
         <p class="score-sum"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>Por dónde empezar: Ventas y Medición</p>
         <div class="score-free">
-          <p><span>Tu diagnóstico digital, <b>sin coste ni compromiso.</b></span><span class="free"><span class="fs" aria-hidden="true"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg><i></i><i></i><i></i></span>Free</span></p>
+          <p><span><b>Sin coste ni compromiso.</b></span><span class="free"><span class="fs" aria-hidden="true"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg><i></i><i></i><i></i></span>Free</span></p>
           <a class="btn solid score-cta" href="#contacto">Quiero analizar mi negocio</a>
         </div>
       </figure>
@@ -1236,7 +1253,7 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
                   <p class="cl-k">Panel en tiempo real<span class="cl-on">En directo</span></p>
                   <ul class="cl-kpis"><li>Entradas<b>0.000</b></li><li>Reservas<b>000</b></li><li>Ventas<b>00.000 €</b></li></ul>
                   <div class="cl-act"><div><p class="cl-ah"><i class="radar"></i>Acciones</p><p>Sube el precio de las entradas Generales.</p></div><div><p class="cl-ah"><svg class="bulb" viewBox="0 0 14 16" aria-hidden="true"><path class="bf" d="M7 1.6a4.6 4.6 0 0 0-2.7 8.3c.6.5.9 1 .9 1.7v.4h3.6v-.4c0-.7.3-1.2.9-1.7A4.6 4.6 0 0 0 7 1.6z"/><path d="M5.3 14.3h3.4"/></svg>Aprendizajes</p><p>El público repite un 12 % más que el año pasado.</p></div></div>
-                  <svg class="cl-chart" viewBox="0 0 300 80" preserveAspectRatio="none"><path class="ar" d="M0 80H300"/><path class="ln" d="M0 60H300"/></svg>
+                  <div class="cl-cw"><svg class="cl-chart" viewBox="0 0 300 80" preserveAspectRatio="none"><defs><linearGradient id="cl-gl" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6B4FD6"/><stop offset=".6" stop-color="#A08CF5"/><stop offset="1" stop-color="#EDE6FF"/></linearGradient><linearGradient id="cl-ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B6CF6" stop-opacity=".42"/><stop offset="1" stop-color="#8B6CF6" stop-opacity="0"/></linearGradient></defs><path class="gd" d="M0 20H300M0 40H300M0 60H300"/><path class="gh" d="M0 66H300"/><path class="ar" d="M0 80H300"/><path class="ln" d="M0 60H300"/></svg><i class="cl-live"></i></div>
                 </div>
                 </a>
               </div>
@@ -1660,25 +1677,25 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
   /* Aquí empieza todo: la línea del borde de la tarjeta del diagnóstico nace en el punto */
   (function(){
     var sv=sc&&sc.querySelector('.sg-line');if(!sv)return;
-    var card=sc.querySelector('.score-c'),pb=sv.querySelector('.sg-b'),pvs=sv.querySelectorAll('.sg-v'),dot=sv.querySelector('.sg-dot'),
+    var card=sc.querySelector('.score-c'),pb=sv.querySelector('.sg-b'),pvs=sv.querySelectorAll('.sg-v'),lab=sc.querySelector('.score-go'),X1=80,dot=sv.querySelector('.sg-dot'),
         W=0,X0=24,R=15.5,Y=20.5,t0=null,vis=false,run=false;
     function size(){W=card.offsetWidth;X0=parseFloat(getComputedStyle(sc).getPropertyValue('--sp'))||24;
-      sv.setAttribute('viewBox','0 0 '+W+' 40');sv.style.width=W+'px';dot.setAttribute('transform','translate('+X0+' '+Y+')');}
+      X1=lab.offsetLeft+lab.offsetWidth+4;sv.setAttribute('viewBox','0 0 '+W+' 40');sv.style.width=W+'px';dot.setAttribute('transform','translate('+X0+' '+Y+')');}
     /* Paquetes de sonido que salen del punto y recorren el borde: el primero, fuerte, dibuja la línea; luego, suaves */
-    function packs(t){var L=W-X0+60,o=[];
-      if(t>=0&&t<2){var p=t/2;o.push({c:X0+L*(1-Math.pow(1-p,1.6)),a:7*Math.pow(1-p,1.1)});}
-      if(t>=2){var k=(t-2)%6;if(k<1.8){var q=k/1.8;o.push({c:X0+L*q,a:3.2*(1-q)});}}
+    function packs(t){var L=W-X1+60,o=[];
+      if(t>=0&&t<2){var p=t/2;o.push({c:X1+L*(1-Math.pow(1-p,1.6)),a:7*Math.pow(1-p,1.1)});}
+      if(t>=2){var k=(t-2)%6;if(k<1.8){var q=k/1.8;o.push({c:X1+L*q,a:3.2*(1-q)});}}
       return o;}
     function yy(x,P){var y=Y;P.forEach(function(p){var u=(x-p.c)/24;y+=p.a*Math.exp(-u*u)*Math.sin((x-p.c)*.32);});return y;}
     function draw(now){
       if(!W)size();
       var t=reduce?99:t0===null?-1:(now-t0)/1000,P=reduce?[]:packs(t),
-          rev=t<0?X0:t<2?Math.max(X0,P[0].c+30):W,d='M.5 '+(Y+R)+'A'+R+' '+R+' 0 0 1 '+(R+.5)+' '+Y;
-      for(var x=R+.5;x<=Math.min(rev,W-R-.5);x+=3)d+='L'+x.toFixed(1)+' '+yy(x,P).toFixed(2);
+          rev=t<0?X1:t<2?Math.max(X1,P[0].c+30):W,d='M.5 '+(Y+R)+'A'+R+' '+R+' 0 0 1 '+(R+.5)+' '+Y+'L'+X0+' '+Y+'M'+X1+' '+Y;
+      for(var x=X1;x<=Math.min(rev,W-R-.5);x+=3)d+='L'+x.toFixed(1)+' '+yy(x,P).toFixed(2);
       if(rev>=W-R-.5)d+='L'+(W-R-.5)+' '+Y+'A'+R+' '+R+' 0 0 1 '+(W-.5)+' '+(Y+R);
       /* El tramo que suena, en violeta; se apaga a medida que se calma */
       [].forEach.call(pvs,function(e,i){var p=P[i],s2='';
-        if(p&&p.a>.2){var a=Math.max(X0+7,p.c-64),b=Math.min(W-R-1,p.c+40);for(var x=a;x<=b;x+=2)s2+=(s2?'L':'M')+x.toFixed(1)+' '+yy(x,P).toFixed(2);}
+        if(p&&p.a>.2){var a=Math.max(X1,p.c-64),b=Math.min(W-R-1,p.c+40);for(var x=a;x<=b;x+=2)s2+=(s2?'L':'M')+x.toFixed(1)+' '+yy(x,P).toFixed(2);}
         e.setAttribute('d',s2);e.style.opacity=p?Math.min(1,p.a/2.6).toFixed(2):0;});
       pb.setAttribute('d',d);
     }
@@ -1803,12 +1820,14 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
      latido, y la gráfica avanza sola mientras se ve, como un panel en directo */
   var cs=document.querySelector('.cli-shot');
   if(cs){
-    var cbp=cs.querySelector('.cl-br path'),cln=cs.querySelector('.cl-chart .ln'),car=cs.querySelector('.cl-chart .ar');
+    var cbp=cs.querySelector('.cl-br path'),cln=cs.querySelector('.cl-chart .ln'),car=cs.querySelector('.cl-chart .ar'),cgh=cs.querySelector('.cl-chart .gh'),clv=cs.querySelector('.cl-live');
     var cbeat=function(u){return -5*Math.exp(-Math.pow((u+3.2)/1.7,2))+5.2*Math.exp(-Math.pow((u-.6)/1.7,2))-2.2*Math.exp(-Math.pow((u-4.3)/1.7,2));};
     var cdraw=function(a,b,t){var d='';for(var x=0;x<=34;x+=.5){d+=(x?'L':'M')+x+' '+(10+b*cbeat(x-17)+a*Math.sin(Math.PI*x/34)*(Math.sin(x*.6-t*17)*.6+Math.sin(x*1.3+t*29)*.4)).toFixed(2);}cbp.setAttribute('d',d);};
     /* Tendencia que sube con altibajos; con el tiempo, la curva corre hacia la izquierda */
-    var chart=function(t){var d='';for(var x=0;x<=300;x+=4){var u=x/300+t*.05,y=60-28*x/300-7*Math.sin(u*9)-4*Math.sin(u*23+1.3)-2*Math.sin(u*51);d+=(x?'L':'M')+x+' '+y.toFixed(2);}
-      cln.setAttribute('d',d);car.setAttribute('d',d+'L300 80L0 80Z');};
+    /* Y el año pasado, más bajo y en punteado; el punto vivo sigue el final de la curva */
+    var chart=function(t){var d='',g='',y=0;for(var x=0;x<=300;x+=4){var u=x/300+t*.05;y=60-28*x/300-7*Math.sin(u*9)-4*Math.sin(u*23+1.3)-2*Math.sin(u*51);d+=(x?'L':'M')+x+' '+y.toFixed(2);
+        g+=(x?'L':'M')+x+' '+(70-16*x/300-5*Math.sin(u*7+2)-2*Math.sin(u*19)).toFixed(2);}
+      cln.setAttribute('d',d);car.setAttribute('d',d+'L300 80L0 80Z');cgh.setAttribute('d',g);clv.style.top=(y/80*100).toFixed(2)+'%';};
     chart(0);
     if(!reduce&&'IntersectionObserver' in window){
       cs.classList.add('wait');
