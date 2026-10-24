@@ -229,7 +229,7 @@ section.areas{padding-top:clamp(96px,12vw,152px)}
 .area-datos{--ac:var(--violeta);--ac-t:rgba(107,79,214,.08);--ac-b:rgba(107,79,214,.3)}
 .area-marca{--ac:#D2603F;--ac-t:rgba(210,96,63,.09);--ac-b:rgba(210,96,63,.3)}
 .area-h{grid-column:1/-1;position:relative;display:grid;grid-template-columns:minmax(0,1fr);align-items:start;
-  padding:clamp(40px,4.6vw,64px) clamp(24px,4vw,56px) clamp(32px,4vw,52px);border:1px solid var(--linea);border-top:0;border-radius:0 0 22px 22px;
+  padding:clamp(40px,4.6vw,64px) clamp(24px,4vw,56px) clamp(32px,4vw,52px);border:1px solid var(--linea);border-top-color:transparent;border-radius:22px;
   background:var(--papel);box-shadow:0 30px 60px -40px rgba(28,30,42,.32)}
 .area-h::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(120% 90% at 100% 0%,var(--ac-t),transparent 60%)}
 .area-line{position:absolute;left:-1px;top:-22px;display:block;width:calc(100% + 2px);height:44px}
@@ -1456,20 +1456,26 @@ a.shot:hover .bar span{color:var(--tinta)}
     if(s==='form')return p*H*.09*Math.sin(x*.032-t*1.2);
     if(t<2.4)return 0;var ph=((t-2.4)%4)/4,c=-150+(W+300)*ph,e=x-c;return -p*H*.13*Math.exp(-e*e/(2*60*60))*Math.sin(x*.11-t*7);
   }
+  /* El borde superior de cada área es una línea de sonido: fina, del color del borde, con las esquinas redondeadas de la
+     caja (borde lateral, esquina y línea son un solo trazo). Donde suena, toma el color del área y el fondo de la caja
+     sube con ella. Al verla se agita y se calma quedándose con su forma (pico, onda o pulso) */
+  function hx2(c,a){c=(c||'').trim();if(c[0]!=='#')return 'rgba(128,128,140,'+a+')';if(c.length===4)c='#'+c[1]+c[1]+c[2]+c[2]+c[3]+c[3];
+    return 'rgba('+parseInt(c.slice(1,3),16)+','+parseInt(c.slice(3,5),16)+','+parseInt(c.slice(5,7),16)+','+a+')';}
   function ldraw(o,t){
-    var c=o.x,W=o.W,H=o.H,mid=o.s==='signal'?H*.6:H/2,k=Math.max(0,1-t/2.6),A=H*.36*Math.pow(k,2.2),p=1-k*k;
-    c.clearRect(0,0,W,H);var ys=[],xs=[];
-    for(var x=0;x<=W+3;x+=3){
-      var env=Math.sin(Math.PI*Math.min(x,W)/W),n=Math.sin(x*.018-t*7)*.45+Math.sin(x*.047+t*11)*.3+Math.sin(x*.113-t*19)*.25;
-      xs.push(x);ys.push(mid+A*env*(.55+.45*Math.sin(x*.006+t*2.3))*n+lshape(o.s,x,t,W,H,p)+Math.sin(x*.012+t*.6)*.5);
-    }
-    /* Cinta fina y difuminada (antes 16 px; ahora 8) */
-    c.beginPath();
-    for(var i=0;i<xs.length;i++){var h=(8+3*Math.sin(xs[i]*.005+t*.4))/2;i?c.lineTo(xs[i],ys[i]-h):c.moveTo(xs[i],ys[i]-h);}
-    for(i=xs.length-1;i>=0;i--){h=(8+3*Math.sin(xs[i]*.005+t*.4))/2;c.lineTo(xs[i],ys[i]+h);}
-    c.closePath();
-    var dk=isDk(),g=c.createLinearGradient(0,0,W,0);g.addColorStop(0,dk?'rgba(200,190,255,.06)':'rgba(255,255,255,.5)');g.addColorStop(.5,dk?'rgba(214,206,255,.2)':'#fff');g.addColorStop(1,dk?'rgba(200,190,255,.06)':'rgba(255,255,255,.5)');
-    var sh=[[-6,7],[2,8],[6,6]][o.i%3];c.save();c.shadowColor=dk?'rgba(0,0,0,.6)':'rgba(28,30,42,.18)';c.shadowBlur=16;c.shadowOffsetX=sh[0];c.shadowOffsetY=sh[1];c.fillStyle=g;c.fill();c.restore();
+    var c=o.x,W=o.W,H=o.H,mid=21.5,R=21.5,x0=.5,x1=W-.5,a=x0+R,b=x1-R,k=Math.max(0,1-t/2.6),A=12*Math.pow(k,2.2),p=1-k*k;
+    var cs=getComputedStyle(o.c),lin=cs.getPropertyValue('--linea').trim()||'#CDD1DA',pap=cs.getPropertyValue('--papel').trim()||'#F7F8FA',ac=cs.getPropertyValue('--ac').trim();
+    c.clearRect(0,0,W,H);var xs=[],ys=[];
+    for(var x=a;x<=b+2;x+=2){var X=Math.min(x,b),u=(X-a)/(b-a),env=Math.sin(Math.PI*u),edge=Math.max(0,Math.min(1,(X-a)/90,(b-X)/90)),
+      n=Math.sin(X*.018-t*7)*.45+Math.sin(X*.047+t*11)*.3+Math.sin(X*.113-t*19)*.25;
+      xs.push(X);ys.push(mid+A*env*(.55+.45*Math.sin(X*.006+t*2.3))*n+.8*edge*lshape(o.s,X,t,W,H,p)+.35*edge*Math.sin(X*.012+t*.6));}
+    var path=function(){c.beginPath();c.moveTo(x0,H);c.arcTo(x0,mid,a,mid,R);for(var i=0;i<xs.length;i++)c.lineTo(xs[i],ys[i]);c.arcTo(x1,mid,x1,H,R);c.lineTo(x1,H);};
+    /* El fondo de la caja sube con la línea (papel + el tinte del área, como su degradado de la esquina) */
+    c.beginPath();c.moveTo(a,mid+1.5);for(var i=0;i<xs.length;i++)c.lineTo(xs[i],ys[i]);c.lineTo(b,mid+1.5);c.closePath();
+    c.fillStyle=pap;c.fill();var tg=c.createLinearGradient(0,0,W,0);tg.addColorStop(.35,hx2(ac,0));tg.addColorStop(1,hx2(ac,.08));c.fillStyle=tg;c.fill();
+    /* Trazo: el del borde y, encima, el color del área donde suena */
+    path();c.lineWidth=1;c.strokeStyle=lin;c.stroke();
+    var g=c.createLinearGradient(0,0,W,0);g.addColorStop(0,hx2(ac,0));g.addColorStop(.3,hx2(ac,0));g.addColorStop(.62,hx2(ac,.75));g.addColorStop(.9,hx2(ac,.15));g.addColorStop(1,hx2(ac,0));
+    path();c.lineWidth=1.3;c.strokeStyle=g;c.stroke();
   }
   function lt(o){return reduce?10:o.t0===null?0:(performance.now()-o.t0)/1000;}
   var lr=false;
