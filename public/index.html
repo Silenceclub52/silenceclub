@@ -1666,9 +1666,9 @@ a.shot:hover .bar span{color:var(--tinta)}
       var from=W[cur];cur=cur==='n'?'b':'n';var to=W[cur];
       from.classList.remove('on','lit');from.classList.add('out');sec.classList.remove('burst');
       setTimeout(function(){to.classList.add('on');},420);
-      /* beauty: cuando la palabra ya está entera, el brillo la recorre y cada destello salta al pasar por su letra */
-      if(cur==='b')setTimeout(function(){lit(to);sec.classList.add('burst');setTimeout(function(){sec.classList.remove('burst');},1500);},1320);
-      else setTimeout(function(){lit(to);},420+650);
+      /* Las dos con el mismo ritmo: la luz llega cuando la palabra ya está entera y asentada (1,32 s).
+         beauty: el brillo la recorre y cada destello salta al pasar por su letra; nightlife: se enciende como un neón */
+      setTimeout(function(){lit(to);if(cur==='b'){sec.classList.add('burst');setTimeout(function(){sec.classList.remove('burst');},1500);}},1320);
       setTimeout(function(){from.classList.remove('out');},1000);
       setQ(cur);
     }
