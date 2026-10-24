@@ -8,7 +8,9 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Responder en español, de forma contundente, crítica y enfocada al trabajo.
 - Jorge no es técnico: dar pasos concretos, uno a uno, con los nombres exactos de los botones.
 - No inventar datos ni cifras de clientes. Los textos con resultados (punto pendiente "3") esperan datos reales de Jorge.
-- Nunca tocar `main` sin que Jorge lo pida ("pásalo a main").
+- Nunca tocar `main` sin que Jorge lo pida ("pásalo a main", "sube a main", "a main": cualquiera vale como permiso para ese cambio).
+- Jorge pide no gastar mucho tiempo en auditorías: para cambios pequeños basta con comprobar que el JS no da errores y `npx wrangler@4 deploy --dry-run`; la auditoría completa (ver Pruebas locales), solo para cambios grandes de maquetación.
+- Cuando pide valorar algo ("¿lo cambiarías?"), opinar con criterio de usuario y cliente potencial, decidir y aplicarlo, sin darle la razón por defecto.
 
 ## Infraestructura
 | Pieza | Dónde |
@@ -24,9 +26,9 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Rama `main` → producción (`silenceclub.es`). Comando: `npx wrangler deploy`.
 - Cualquier otra rama → versión de prueba automática (`npx wrangler preview`):
   `https://<rama-con-guiones>-silenceclub.floral-snowflake-c31a.workers.dev/`
-- Última rama de trabajo (ya en `main`): `claude/vigilant-newton-9w4vnx` →
+- Última rama de trabajo: `claude/vigilant-newton-9w4vnx` (= `main`, commit `6615b16`, 24 oct 2026) →
   https://claude-vigilant-newton-9w4vnx-silenceclub.floral-snowflake-c31a.workers.dev/
-  (La remodelación de octubre 2026 se hizo en `claude/gracious-bohr-x2jrp1`.)
+  Como ya está todo en `main`, un chat nuevo puede crear su rama desde `main`. (La remodelación de octubre 2026 se hizo en `claude/gracious-bohr-x2jrp1`.)
   Antes de empezar una rama nueva, partir de la última rama de trabajo si aún no está en `main`, no de `main`: así se perdió el menú una vez.
   Ramas antiguas solo de referencia (descartadas o ya dentro de `main`): `claude/nueva-estetica`, `claude/nueva-estetica-contraste`, `claude/intelligent-cannon-dipviu`, `claude/gallant-thompson-hyejgu`.
 - Pasar a `main`: avance rápido (`git push origin <rama>:main`), sin merge ni rebase. Antes, `npx wrangler@4 deploy --dry-run`.
@@ -34,18 +36,15 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Método: cambios en la rama de pruebas → Jorge revisa → si aprueba, se pasa a `main`.
 - Volver atrás: Cloudflare → silenceclub → Implementaciones → ⋯ → Revertir.
 
-### Lo último que pasó a `main` (octubre 2026)
-- Último paso: *nightlife* se enciende con el mismo ritmo que *beauty* (1,32 s tras empezar el cambio, con la palabra ya asentada; antes, 1,07 s: Jorge lo veía precipitado).
-- Paso anterior: frase del hero "Identifico y creo las **soluciones** digitales que tu negocio aún no sabe que necesita." (también en la descripción SEO); panel de Marchica con "Acciones" y "Aprendizajes" (antes "Acciones a aplicar" y "Recomendaciones"); ¿Continuamos? solo con "↻ Continuo" (fuera "Aplicamos → Medimos → Mejoramos"); barrido de las webs de Condado y Bela más dinámico (ver Casos); Bela en modo oscuro cuando la página está en oscuro (`img/bela-web-dark.webp`, su propio modo oscuro capturado de belabrowstudio.com).
-- Paso anterior (rama `claude/vigilant-newton-9w4vnx`): frase del hero un poco más grande (22–28,5 px); fuera "¿Recopilas datos de mil sitios…?" (Datos conectados); Booksy con su logo vectorizado en línea (`svg.bk`, como Fourvenues); las respuestas del chat, más destacadas (fondo teñido del color del área, peso 600, sombra de color) y con **flecha** del color del área en lugar del medio punto (pregunta → solución; el medio punto queda para las piezas de cada caso, `.pj-as`); y arreglado el recorte de *nightlife*/*beauty* en Safari (ver Hero).
-- **La remodelación entera** (descrita en "La web", abajo): fuera "Dirección creativa y estratégica", las fases Inicio · Desarrollo · Desenlace, la sección Detalle/retícula y el filtro por sector de Proyectos. Nueva estructura: hero (Primero, silencio. + "Decisiones inteligentes para tu negocio de *nightlife/beauty*") · pausa · Servicio (scoring) · Áreas con sus casos · ¿Continuamos? · Sobre mí · Qué no voy a hacer · Contacto.
-- Frase del hero (Jorge): "Identifico y creo las mejoras *digitales* que tu negocio aún no sabe que necesita." Misma frase al principio de la descripción SEO.
-- Imagen para redes nueva: `img/og-silenceclub-2026.jpg` ("Decisiones inteligentes para tu negocio"). La antigua `og-silenceclub.jpg` se borró.
-- Limpieza al pasar: fuera el código del visor 3D de Marina (`model-viewer`, botón "Explorar en 3D"; nunca tuvo el modelo), el ajuste de iframes (`fitFrames`), y estilos y animaciones sin uso (`.pj-steps`, `.pj-res`, `.pj-tags`, `.pj-end`, `.pj.in`, `.case .link`, `.glit`, `.a-t1/.a-t2`, `aring`, `isDk`).
-- Lo que había antes en `main` (fases, filtro de proyectos, candado, etc.) está en el historial: commit `e1f9e8a`.
+### Lo último que pasó a `main` (octubre 2026, del más reciente al más antiguo)
+1. *nightlife* se enciende con el mismo ritmo que *beauty*: 1,32 s tras empezar el cambio, con la palabra ya asentada (antes 1,07 s; Jorge lo veía precipitado). Al cargar la página sigue encendiéndose a los 0,9 s (ofrecido igualarlo; sin respuesta).
+2. Frase del hero: "Identifico y creo las **soluciones** digitales que tu negocio aún no sabe que necesita." (también en la descripción SEO). Panel de Marchica: "Acciones" y "Aprendizajes". ¿Continuamos?: solo "↻ Continuo". Barrido de Condado y Bela más dinámico. Bela en modo oscuro cuando la página está en oscuro.
+3. Frase del hero un poco más grande (22–28,5 px); fuera "¿Recopilas datos de mil sitios…?"; Booksy con su logo vectorizado en línea (`svg.bk`); respuestas del chat más destacadas y con flecha → del color del área; arreglado el recorte de *nightlife*/*beauty* en Safari.
+4. Limpieza de código muerto (visor 3D de Marina sin modelo, `fitFrames`, `.pj-steps`, `.pj-res`, `.pj-tags`, `.pj-end`, `.pj.in`, `.case .link`, `.glit`, `.a-t1/.a-t2`, `aring`, `isDk`) e imagen para redes nueva `img/og-silenceclub-2026.jpg` (la antigua `og-silenceclub.jpg` se borró).
+5. **La remodelación entera** (descrita en "La web"): fuera "Dirección creativa y estratégica", las fases Inicio · Desarrollo · Desenlace, la sección Detalle/retícula y el filtro por sector de Proyectos. Lo de antes está en el historial: commit `e1f9e8a`.
 
 ### Estado (actualizar en cada paso a `main`)
-- `main` = rama `claude/vigilant-newton-9w4vnx` en el último "pásalo a main" (antes, `claude/gracious-bohr-x2jrp1`, la remodelación). Precios "··· €" por definir. Ejemplos del panel de Marchica (Acciones / Aprendizajes) inventados a petición de Jorge.
+- `main` = rama `claude/vigilant-newton-9w4vnx` (commit `6615b16`). Precios "··· €" por definir. Ejemplos del panel de Marchica (Acciones / Aprendizajes) inventados a petición de Jorge.
 - Auditoría previa: 8 anchos (320–1440) × claro/oscuro × Safari antiguo simulado, sin errores JS ni scroll horizontal; logos, imágenes y marcos correctos. (El detector de "elementos fuera de pantalla" marca el panel de la demo de reservas, `.demo .panel`: está oculto a propósito dentro de su marco con `overflow:hidden`.)
 - Los cambios nuevos se hacen en una rama de pruebas y se vuelven a pasar.
 
@@ -116,13 +115,16 @@ Solo se publica `public/`. No meter nada sensible ahí.
 
 ## Pendientes conocidos
 0. WhatsApp: si no sale vista previa o sale una antigua, es la caché o Cloudflare bloqueando al lector (Security → Bots). Comprobar con developers.facebook.com/tools/debug. Tras publicar en `main` cambios de SEO o imagen para redes: forzar la relectura en developers.facebook.com/tools/debug (Volver a extraer) y linkedin.com/post-inspector; enviar `sitemap.xml` en Search Console.
-2. Hecho: Bela ya enlaza a www.belabrowstudio.com (sin iframe; captura que se recorre).
 3. Textos (descartado por ahora): resultados con cifras reales, frase de entrada más clara, quitar "Soy perfeccionista. Mucho.".
 5. Si se usa `workers.dev` de producción, apagarlo en Cloudflare → Dominios, para no duplicar la web.
 6. Bajar Netlify a Free.
 7. Decidir si se quita la cápsula de recorrido de abajo (`.tour`) ahora que hay hamburguesa (Claude recomienda quitarla).
 4. Cuando Jorge tenga importe: sustituir el "··· €" del seguimiento.
-8. Remodelación: datos de Fitz (logo, qué se hizo, imagen; ahora sale "Caso en preparación").
+8. Fitz: faltan logo, qué se hizo e imagen (ahora sale "Caso en preparación").
+9. Precios "desde ··· €" de cada caso: Jorge aún no ha dado importes.
+10. Ejemplos del panel de Marchica (Acciones / Aprendizajes) inventados: cambiarlos por reales cuando Jorge los tenga.
+11. Si Bela o Condado cambian su web, rehacer las capturas (Bela: clara y oscura, 1440 px a escala .75 → 1080×1650, `colorScheme` light/dark; su web aplica su modo oscuro con `prefers-color-scheme`).
+12. Comprobar en el iPhone de Jorge que *nightlife*/*beauty* ya no se cortan (aquí no hay Safari real; se simuló en Chromium con `overflow:hidden` en cada letra).
 
 ## Pruebas locales
 - **Compatibilidad (iPhone con Safari antiguo)**: no depender de `aspect-ratio` (Safari ≥15) ni de `color-mix` (Safari ≥16.2) sin alternativa. Los logos `.lg` llevan ancho explícito `calc(var(--h)*var(--r))` (antes, con `aspect-ratio`, salían con ancho 0 en algunos iPhone). Cada `color-mix` va precedido de un `rgba` equivalente, y hay un bloque `@supports not (aspect-ratio:1)` para los marcos y el retrato. Nada de `max-width:100%` en hijos de celdas de grid que se ajustan al contenido.
@@ -138,4 +140,5 @@ Solo se publica `public/`. No meter nada sensible ahí.
 - iPhone 15 Pro Max (el de Jorge): 430 px de ancho; en Safari la altura útil al cargar ronda los 760 px por las barras del navegador, así que la onda del hero (top ≈ 797 px) queda bajo el pliegue. Simular con `viewport {width:430,height:760}, isMobile, hasTouch`.
 - Gestos táctiles reales (scroll con el dedo, tirar del borde): `Input.dispatchTouchEvent` vía CDP.
 - Al detectar el final de la página, dejar margen: `scrollY` puede quedarse unos píxeles por debajo de `scrollHeight - innerHeight` (se usa `m-6`).
+- Vectorizar un logo (Booksy, Fourvenues): `pip install potracer` (potrace en Python puro; pasar el bitmap invertido, `~tinta`, o sale el negativo) y escribir el `path` con `fill:currentColor` en línea, como `svg.bk`/`svg.fv`.
 - Imágenes generadas (favicon, `og-silenceclub-2026.jpg`, iconos): se dibujan en HTML/SVG y se capturan con Playwright. Fraunces y Figtree se obtienen de npm (`@fontsource-variable/fraunces`, `@fontsource-variable/figtree`), porque Google Fonts no es accesible desde el entorno.
