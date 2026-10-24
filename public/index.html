@@ -115,7 +115,7 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 @keyframes glitter{0%{opacity:0;transform:scale(0) rotate(0)}22%{opacity:1;transform:scale(var(--s)) rotate(45deg)}100%{opacity:0;transform:scale(0) rotate(90deg)}}
 @keyframes sheen{0%,100%{filter:brightness(1)}45%{filter:brightness(1.3) drop-shadow(0 0 .1em rgba(255,214,200,.55))}}
 .hero .pitch{grid-column:7/span 6;max-width:34em;margin-top:16px}
-.hero .pitch .hook{font-size:clamp(22px,2.05vw,28.5px);font-weight:400;line-height:1.32;letter-spacing:-.01em;color:var(--tinta);text-wrap:pretty}
+.hero .pitch .hook{font-size:clamp(24.5px,2.4vw,33px);font-weight:450;line-height:1.26;letter-spacing:-.018em;color:var(--tinta);text-wrap:pretty}
 /* Las preguntas, como una conversación conmigo: mensajes que llegan uno a uno */
 .chat{display:flex;flex-direction:column;align-items:flex-start;gap:18px;margin-top:26px}
 .chat-who{display:flex;align-items:center;gap:8px;margin-bottom:2px;font-size:12.5px;color:var(--grafito)}
@@ -187,22 +187,30 @@ section.svc{padding-bottom:0}
 .svc-l{grid-column:1/span 5;margin-top:clamp(32px,4.5vw,64px)}
 .svc-t{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(26px,2.6vw,36px);line-height:1.1;letter-spacing:-.022em;text-wrap:balance}
 .svc-p{margin-top:14px;max-width:28em;font-size:clamp(16px,1.3vw,18px);line-height:1.5;color:var(--grafito);text-wrap:pretty}
-.score{--sp:24px;grid-column:7/span 6;margin-top:clamp(40px,4.5vw,64px)}
+.score{--sp:24px;grid-column:7/span 6;margin-top:clamp(48px,4.5vw,64px)}
 .score-c{margin:0;padding:24px var(--sp) 0;overflow:hidden;border:1px solid var(--linea);border-radius:16px;background:var(--papel);box-shadow:0 24px 50px -32px rgba(28,30,42,.3)}
 .score-h{display:block}
 .score-t{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;font-weight:600;font-size:19px;line-height:1.2;letter-spacing:-.015em}
 .score-t em{padding:2px 9px;border:1px solid var(--linea);border-radius:999px;font:400 11.5px/1.4 var(--sans);font-style:normal;letter-spacing:0;color:var(--grafito)}
-/* Paso 1: una pestaña sobre el borde de la tarjeta (no ocupa sitio). El diagnóstico es la entrada a todo: su punto
-   late como algo en marcha y una línea de sonido sale de él hacia la derecha, el camino que empieza aquí */
+/* Aquí empieza todo: el borde superior de la tarjeta es una línea de sonido que nace en el punto a medias de la marca.
+   Al verla, el punto aparece, suelta sus ondas y el primer sonido recorre el borde de izquierda a derecha, dibujándolo,
+   y se calma; cada pocos segundos vuelve a salir un pulso suave del punto. Encima, "01 · Aquí empieza todo" */
 .score{position:relative}
-.score-go{position:absolute;left:calc(var(--sp) - 6px);top:1px;z-index:2;display:flex;align-items:center;gap:8px;height:26px;margin:0;padding:0 12px 0 10px;transform:translateY(-50%);border-radius:999px;background:var(--tinta);color:var(--papel);font:500 12px/1 var(--sans);white-space:nowrap;box-shadow:0 8px 18px -10px rgba(28,30,42,.6)}
-.score-go b{font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:10.5px}
-.score-go span{opacity:.72}
-.score-go i{position:relative;flex:none;width:7px;height:7px;border-radius:50%;background:#9F8CF5}
-.score-go i::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid #9F8CF5;animation:radar 2.6s ease-out infinite}
-.score-go svg{position:absolute;left:100%;top:50%;width:clamp(40px,12vw,90px);height:12px;margin:-6px 0 0 6px;overflow:visible}
-.score-go path{fill:none;stroke:var(--grafito);stroke-opacity:.45;stroke-width:1.1;stroke-linecap:round;stroke-dasharray:2 4;animation:gopath 1.4s linear infinite}
-@keyframes gopath{to{stroke-dashoffset:-12}}
+.score-c{border-top-color:transparent}
+.sg-line{position:absolute;left:0;top:-20px;z-index:2;height:40px;overflow:visible;pointer-events:none}
+.sg-b{fill:none;stroke:var(--linea);stroke-width:1}
+.sg-v{fill:none;stroke:var(--violeta);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.sg-dot{transition:opacity .5s}
+.sg-dot .sg-o{fill:var(--niebla);stroke:var(--violeta);stroke-width:1.3}
+.sg-dot .sg-h{fill:var(--violeta)}
+.sg-rp{fill:none;stroke:var(--violeta);stroke-width:1;transform-box:fill-box;transform-origin:center;opacity:0}
+.score:not(.wait) .sg-rp{animation:sgrip 6s ease-out .1s infinite}
+.score:not(.wait) .sg-rp+.sg-rp{animation-delay:.55s}
+@keyframes sgrip{0%{opacity:.8;transform:scale(1)}22%,100%{opacity:0;transform:scale(3.4)}}
+.score-go{position:absolute;left:calc(var(--sp) - 7px);top:-39px;z-index:2;display:flex;align-items:baseline;gap:9px;margin:0;font:600 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--grafito);white-space:nowrap;transition:opacity .7s .2s,transform .7s cubic-bezier(.3,.8,.3,1) .2s}
+.score-go b{font:400 15px/1 var(--serif);font-variation-settings:"SOFT" 100;letter-spacing:0;color:var(--violeta);font-feature-settings:"lnum"}
+.score.wait .score-go{opacity:0;transform:translateY(4px)}
+.score.wait .sg-dot{opacity:0}
 /* El scoring como un anillo de sonido, un tramo por área: lo que funciona suena (más cuanto mejor está) y lo que falla
    se queda en silencio, punteado en violeta y con su destello. Nada de tablas: no se parece al panel de Marchica */
 .sring{position:relative;aspect-ratio:2.5/1;margin-top:10px}
@@ -344,7 +352,7 @@ section.areas{padding-top:clamp(96px,12vw,152px)}
 .area-q::after{content:"";flex:1;min-width:24px;height:1px;background:linear-gradient(90deg,var(--linea),transparent)}
 @media (max-width:900px){
   .svc-h,.svc-l,.score,.areas-h{grid-column:1/-1}
-  .score{margin-top:28px}
+  .score{margin-top:52px}
   .area-art{width:100%;opacity:.3}
 }
 @media (prefers-color-scheme:dark){
@@ -1112,7 +1120,8 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
       <p class="svc-p">Analizo las áreas clave de tu negocio para identificar oportunidades de mejora y ayudarte a decidir por dónde empezar.</p>
     </div>
     <div class="score tk">
-      <p class="score-go" aria-label="El primer paso"><i aria-hidden="true"></i><b>Paso 1</b><span>Empieza aquí</span><svg viewBox="0 0 40 12" aria-hidden="true"><path d="M0 6H40"/></svg></p>
+      <p class="score-go"><b>01</b>Aquí empieza todo</p>
+      <svg class="sg-line" aria-hidden="true"><path class="sg-b"/><path class="sg-v"/><path class="sg-v"/><g class="sg-dot"><circle class="sg-rp" r="6"/><circle class="sg-rp" r="6"/><circle class="sg-o" r="6"/><path class="sg-h" d="M0-6a6 6 0 0 1 0 12z"/></g></svg>
       <figure class="score-c">
         <figcaption class="score-h"><span class="score-t">Diagnóstico digital <em>Ejemplo</em></span></figcaption>
         <div class="sring" role="img" aria-label="Nota global 2,1 de 5. Marca 2,5; Captación 3,5; Ventas 1,5, oportunidad; Medición 1, oportunidad">
@@ -1647,6 +1656,39 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
       },{rootMargin:'0px 0px -25% 0px',threshold:[0,.45,.9]}).observe(sr);
     }
   }
+
+  /* Aquí empieza todo: la línea del borde de la tarjeta del diagnóstico nace en el punto */
+  (function(){
+    var sv=sc&&sc.querySelector('.sg-line');if(!sv)return;
+    var card=sc.querySelector('.score-c'),pb=sv.querySelector('.sg-b'),pvs=sv.querySelectorAll('.sg-v'),dot=sv.querySelector('.sg-dot'),
+        W=0,X0=24,R=15.5,Y=20.5,t0=null,vis=false,run=false;
+    function size(){W=card.offsetWidth;X0=parseFloat(getComputedStyle(sc).getPropertyValue('--sp'))||24;
+      sv.setAttribute('viewBox','0 0 '+W+' 40');sv.style.width=W+'px';dot.setAttribute('transform','translate('+X0+' '+Y+')');}
+    /* Paquetes de sonido que salen del punto y recorren el borde: el primero, fuerte, dibuja la línea; luego, suaves */
+    function packs(t){var L=W-X0+60,o=[];
+      if(t>=0&&t<2){var p=t/2;o.push({c:X0+L*(1-Math.pow(1-p,1.6)),a:7*Math.pow(1-p,1.1)});}
+      if(t>=2){var k=(t-2)%6;if(k<1.8){var q=k/1.8;o.push({c:X0+L*q,a:3.2*(1-q)});}}
+      return o;}
+    function yy(x,P){var y=Y;P.forEach(function(p){var u=(x-p.c)/24;y+=p.a*Math.exp(-u*u)*Math.sin((x-p.c)*.32);});return y;}
+    function draw(now){
+      if(!W)size();
+      var t=reduce?99:t0===null?-1:(now-t0)/1000,P=reduce?[]:packs(t),
+          rev=t<0?X0:t<2?Math.max(X0,P[0].c+30):W,d='M.5 '+(Y+R)+'A'+R+' '+R+' 0 0 1 '+(R+.5)+' '+Y;
+      for(var x=R+.5;x<=Math.min(rev,W-R-.5);x+=3)d+='L'+x.toFixed(1)+' '+yy(x,P).toFixed(2);
+      if(rev>=W-R-.5)d+='L'+(W-R-.5)+' '+Y+'A'+R+' '+R+' 0 0 1 '+(W-.5)+' '+(Y+R);
+      /* El tramo que suena, en violeta; se apaga a medida que se calma */
+      [].forEach.call(pvs,function(e,i){var p=P[i],s2='';
+        if(p&&p.a>.2){var a=Math.max(X0+7,p.c-64),b=Math.min(W-R-1,p.c+40);for(var x=a;x<=b;x+=2)s2+=(s2?'L':'M')+x.toFixed(1)+' '+yy(x,P).toFixed(2);}
+        e.setAttribute('d',s2);e.style.opacity=p?Math.min(1,p.a/2.6).toFixed(2):0;});
+      pb.setAttribute('d',d);
+    }
+    function loop(now){if(!vis){run=false;return;}
+      if(t0===null&&!sc.classList.contains('wait'))t0=now;draw(now);requestAnimationFrame(loop);}
+    size();draw(performance.now());
+    window.addEventListener('resize',function(){size();draw(performance.now());});
+    if(reduce||!('IntersectionObserver' in window))return;
+    new IntersectionObserver(function(en){vis=en[0].isIntersecting;if(vis&&!run){run=true;requestAnimationFrame(loop);}}).observe(card);
+  })();
 
   var onTheme=function(){readInk();size();L.forEach(function(o){ldraw(o,lt(o));});};
   if(dm.addEventListener)dm.addEventListener('change',onTheme);else if(dm.addListener)dm.addListener(onTheme);
