@@ -106,12 +106,11 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 .sw[data-k=n].lit i{animation:neon .9s steps(1,end) both;animation-delay:calc(var(--i)*55ms)}
 @keyframes neon{0%{opacity:.25}12%{opacity:1}22%{opacity:.35}30%{opacity:1}46%{opacity:.6}54%,100%{opacity:1}}
 .sw[data-k=b].lit i{animation:sheen .9s ease-in-out both;animation-delay:calc(var(--i)*60ms)}
-/* Purpurina: estrellitas de cuatro puntas que destellan al llegar beauty y siguen titilando de vez en cuando */
+/* Purpurina: estrellitas y motas que destellan en cascada al llegar beauty; dura lo mismo que el neón de nightlife (~1,3 s) */
 .glit{position:absolute;inset:0;pointer-events:none}
 .sp{position:absolute;width:.5em;height:.5em;margin:-.25em 0 0 -.25em;overflow:visible;fill:#D47E93;opacity:0;transform:scale(0) rotate(0);filter:drop-shadow(0 0 .06em rgba(255,190,205,.9))}
-.sector.is-b .sp{animation:twk var(--p,3s) ease-in-out infinite;animation-delay:var(--d,0s)}
-.sector.burst .sp{animation:twk 1.3s ease-in-out both;animation-delay:calc(var(--d,0s)*.7)}
-@keyframes twk{0%{opacity:0;transform:scale(0) rotate(0)}10%{opacity:1;transform:scale(var(--s)) rotate(45deg)}20%{opacity:1;transform:scale(calc(var(--s)*.7)) rotate(70deg)}32%{opacity:0;transform:scale(0) rotate(90deg)}100%{opacity:0;transform:scale(0) rotate(90deg)}}
+.sector.burst .sp{animation:glitter .85s ease-in-out both;animation-delay:calc(var(--d,0s)*.36)}
+@keyframes glitter{0%{opacity:0;transform:scale(0) rotate(0)}35%{opacity:1;transform:scale(var(--s)) rotate(45deg)}100%{opacity:0;transform:scale(0) rotate(90deg)}}
 @keyframes sheen{0%,100%{filter:brightness(1)}45%{filter:brightness(1.3) drop-shadow(0 0 .1em rgba(255,214,200,.55))}}
 .hero .pitch{grid-column:7/span 6;max-width:34em;margin-top:16px}
 .hero .pitch .hook{font-size:clamp(21px,1.95vw,27px);font-weight:400;line-height:1.32;letter-spacing:-.01em;color:var(--tinta);text-wrap:pretty}
@@ -1627,9 +1626,9 @@ a.shot:hover .bar span{color:var(--tinta)}
     }
     function swap(){
       var from=W[cur];cur=cur==='n'?'b':'n';var to=W[cur];
-      from.classList.remove('on','lit');from.classList.add('out');sec.classList.remove('is-b','burst');
+      from.classList.remove('on','lit');from.classList.add('out');sec.classList.remove('burst');
       setTimeout(function(){to.classList.add('on');},420);
-      setTimeout(function(){lit(to);if(cur==='b'){sec.classList.add('burst');setTimeout(function(){sec.classList.remove('burst');sec.classList.add('is-b');},1900);}},420+650);
+      setTimeout(function(){lit(to);if(cur==='b'){sec.classList.add('burst');setTimeout(function(){sec.classList.remove('burst');},1400);}},420+650);
       setTimeout(function(){from.classList.remove('out');},1000);
       setQ(cur);
     }
