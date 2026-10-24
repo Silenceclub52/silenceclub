@@ -156,7 +156,7 @@ nav ul a.cta{color:var(--tinta);border-bottom:1px solid var(--tinta);padding-bot
 .btn.solid{position:relative;overflow:hidden;isolation:isolate}
 .btn .btn-line{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
 .btn .btn-txt{position:relative;z-index:1}
-/* "Te toca a ti": la primera vez que se ve, el botón del email se rellena de violeta de izquierda a derecha y vuelve a su color */
+/* Contacto: la primera vez que se ve, el botón del email se rellena de violeta de izquierda a derecha y vuelve a su color */
 .btn.solid::before{content:"";position:absolute;inset:0;z-index:0;border-radius:inherit;background:var(--violeta);transform:scaleX(0);transform-origin:left center;pointer-events:none}
 .btn.solid.fill::before{animation:btnfill 1.25s cubic-bezier(.45,0,.55,1)}
 @keyframes btnfill{0%{transform:scaleX(0);opacity:1}50%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
@@ -211,7 +211,7 @@ section.svc{padding-bottom:0}
 .score-go b{font:400 15px/1 var(--serif);font-variation-settings:"SOFT" 100;letter-spacing:0;color:var(--violeta);font-feature-settings:"lnum"}
 .score.wait .score-go{opacity:0}
 .score.wait .sg-dot{opacity:0}
-/* El scoring como un anillo de sonido, un tramo por área: lo que funciona suena (más cuanto mejor está) y lo que falla
+/* El diagnóstico como un anillo de sonido, un tramo por área: lo que funciona suena (más cuanto mejor está) y lo que falla
    se queda en silencio, punteado en violeta y con su destello. Nada de tablas: no se parece al panel de Marchica */
 .sring{position:relative;aspect-ratio:2.5/1;margin-top:10px}
 .sr-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
@@ -246,7 +246,7 @@ section.svc{padding-bottom:0}
 /* Línea perforada con muescas a los lados, como el resguardo de una invitación */
 .score-free::before,.score-free::after{content:"";position:absolute;top:-10px;width:20px;height:20px;border-radius:50%;background:var(--niebla);border:1px solid var(--linea)}
 .score-free::before{left:-11px}.score-free::after{right:-11px}
-/* Free: una insignia violeta que destella al completarse el scoring; su estrella entra girando, suelta chispas y,
+/* Free: una insignia violeta que destella al completarse el diagnóstico; su estrella entra girando, suelta chispas y,
    cada pocos segundos, vuelve a brillar: lo gratis es lo que se tiene que ver */
 .free{position:relative;flex:none;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 16px 0 13px;overflow:hidden;border-radius:999px;background:var(--violeta);background:linear-gradient(135deg,var(--violeta),#9479F2);color:#fff;font:400 19px/1 var(--serif);font-variation-settings:"SOFT" 100;letter-spacing:-.01em;box-shadow:0 10px 22px -12px rgba(107,79,214,.9)}
 .free::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.6) 50%,transparent 70%);transform:translateX(-130%)}
@@ -305,8 +305,8 @@ section.areas{padding-top:clamp(96px,12vw,152px)}
 /* Capa que recorta la ilustración al bloque (no el bloque entero: la cinta de sonido sobresale por arriba) */
 .area-clip{position:absolute;inset:0;z-index:0;overflow:hidden;border-radius:inherit;pointer-events:none}
 /* La ilustración, como sugerencia: en la esquina del degradado, desvaneciéndose hacia el texto. Habla el idioma de la
-   marca (la línea de sonido): Ventas, la sala en perspectiva con las filas como ondas que salen del escenario;
-   Análisis, un relieve de líneas de sonido apiladas; Marca, la retícula de construcción de un logotipo */
+   marca (la línea de sonido): Ventas, una entrada con su código de barras que respira; Análisis, una gráfica que sale
+   del ruido y se calma en una tendencia; Marca, un espécimen «Aa» con el punto a medias de la marca */
 .area-art{position:absolute;top:0;right:0;z-index:0;width:min(56%,580px);opacity:.5;pointer-events:none;color:var(--ac);
   -webkit-mask-image:radial-gradient(110% 105% at 100% 0%,#000 22%,transparent 70%);mask-image:radial-gradient(110% 105% at 100% 0%,#000 22%,transparent 70%)}
 .area-art svg{display:block;width:100%;height:auto;overflow:visible}
@@ -943,7 +943,7 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
 
 /* Modo oscuro: sigue al sistema salvo que el interruptor fuerce claro u oscuro (data-theme en <html>) */
 @media (prefers-color-scheme:dark){
-  /* Hero y "Te toca a ti": casi negro con un toque muy ligero de púrpura */
+  /* Hero y contacto: casi negro con un toque muy ligero de púrpura */
   :root:not([data-theme=light]) .hero,:root:not([data-theme=light]) .contact{background:#0E0B14}
   :root:not([data-theme=light]){--niebla:#0B0A0C;--papel:#141317;--tinta:#EDECF0;--grafito:#9D9BA5;--linea:#27262C;--violeta:#A08CF5;--melocoton:#F2BCA3;color-scheme:dark}
   :root:not([data-theme=light]) ::selection{color:#0B0A0C}
@@ -1437,7 +1437,7 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
     b.addEventListener('pointerenter',function(e){sz();pos(e);vx=px;vy=py;ta=1;if(!run){run=true;requestAnimationFrame(fr);}});
     b.addEventListener('pointermove',pos);
     b.addEventListener('pointerleave',function(){ta=0;});
-    /* Barrido sin cursor: la ondita recorre el botón de izquierda a derecha (lo usa el relleno de "Te toca a ti") */
+    /* Barrido sin cursor: la ondita recorre el botón de izquierda a derecha (lo usa el relleno del botón del email del contacto) */
     b.sweep=function(dur){
       sz();var s0=performance.now();px=vx=0;py=vy=H*.62;ta=1;if(!run){run=true;requestAnimationFrame(fr);}
       (function mv(){var q=Math.min(1,(performance.now()-s0)/dur),e=q<.5?2*q*q:1-Math.pow(-2*q+2,2)/2;px=e*W;if(q<1)requestAnimationFrame(mv);else ta=0;})();
@@ -1623,7 +1623,7 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
   }
   window.addEventListener('resize',function(){L.forEach(function(o){lsize(o);ldraw(o,lt(o));});});
 
-  /* Scoring: al verlo, el anillo se dibuja y suena entero; después cada área se queda como está: lo que funciona
+  /* Diagnóstico: al verlo, el anillo se dibuja y suena entero; después cada área se queda como está: lo que funciona
      sigue sonando suave (más cuanto mejor nota) y lo que falla se calla, punteado en violeta, con su destello */
   var sc=document.querySelector('.score'),sr=sc&&sc.querySelector('.sring');
   if(sr){
@@ -1677,7 +1677,7 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
   /* Aquí empieza todo: la línea del borde de la tarjeta del diagnóstico nace en el punto */
   (function(){
     var sv=sc&&sc.querySelector('.sg-line');if(!sv)return;
-    var card=sc.querySelector('.score-c'),pb=sv.querySelector('.sg-b'),pvs=sv.querySelectorAll('.sg-v'),lab=sc.querySelector('.score-go'),X1=80,dot=sv.querySelector('.sg-dot'),
+    var card=sc.querySelector('.score-c'),pb=sv.querySelector('.sg-b'),pvs=sv.querySelectorAll('.sg-v'),X1=80,dot=sv.querySelector('.sg-dot'),
         W=0,X0=24,R=15.5,Y=20.5,t0=null,vis=false,run=false;
     function size(){W=card.offsetWidth;X0=parseFloat(getComputedStyle(sc).getPropertyValue('--sp'))||24;
       X1=X0+8;sv.setAttribute('viewBox','0 0 '+W+' 40');sv.style.width=W+'px';dot.setAttribute('transform','translate('+X0+' '+Y+')');}
@@ -1880,7 +1880,7 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
     setInterval(function(){if(!vis||document.hidden)return;acc+=250;if(acc>=next){acc=0;next=4500;swap();}},250);
   })();
 
-  /* Análisis: la línea de lectura recorre el relieve despacio (ida y vuelta) con su punto sobre la curva violeta */
+  /* Análisis: la línea de lectura recorre la gráfica despacio (ida y vuelta) con su punto sobre la curva violeta */
   [].forEach.call(document.querySelectorAll('.d-scan'),function(g){
     var x0=+g.getAttribute('data-x0'),ys=g.getAttribute('data-ys').split(',').map(Number),dot=g.querySelector('.d-sd'),t0=performance.now(),on=false;
     function at(x){var f=(x-x0)/4,i=Math.max(0,Math.min(ys.length-2,Math.floor(f))),r=f-i;return ys[i]+(ys[i+1]-ys[i])*r;}
@@ -1901,7 +1901,7 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
   lb.addEventListener('click',function(e){if(e.target!==lbi)lbClose();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')lbClose();});
 
-  /* Te toca a ti: el botón del email se rellena una vez al verlo */
+  /* Contacto: el botón del email se rellena una vez al verlo */
   var cta=document.querySelector('#contacto .actions .btn.solid');
   if(cta&&!reduce&&'IntersectionObserver' in window){
     var cio=new IntersectionObserver(function(en){if(!en[0].isIntersecting)return;cio.disconnect();
@@ -1925,7 +1925,7 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
      - Subiendo 40 px seguidos (intención de volver o saltar): aparece y se queda hasta que vuelvas a bajar.
      - Al entrar en otra sección: aparece 2,2 s para decir dónde estás y qué hay, y se aparta si sigues leyendo.
      - Al pulsar una sección: marca el destino al instante, se queda durante el desplazamiento y se aparta 1,6 s después de llegar.
-     - Nunca en el hero (ya tiene sus botones) ni en "Te toca a ti" (ya estás en el destino). */
+     - Nunca en el hero (ya tiene sus botones) ni en el contacto (ya estás en el destino). */
   var tour=document.querySelector('.tour');
   if(tour){
     var tl=[].slice.call(tour.querySelectorAll('a')),tind=tour.querySelector('.tour-ind'),
@@ -2132,11 +2132,11 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
         shot(410,590,1,1500);await w(2100);
       };
     }
-    (async function(){var g=++gen;try{while(true){await run();}}catch(e){}})();
+    (async function(){++gen;try{while(true){await run();}}catch(e){}})();
   });
   })();
 
-  /* Qué necesitaba: el problema completo, al desplegarlo */
+  /* Leer el caso: el problema y lo que hicimos, al desplegarlo */
   [].forEach.call(document.querySelectorAll('.pj-need'),function(n){
     var b=n.querySelector('.pj-nq');
     b.addEventListener('click',function(){var o=!n.classList.contains('open');n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);});
