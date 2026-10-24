@@ -26,8 +26,8 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Rama `main` → producción (`silenceclub.es`). Comando: `npx wrangler deploy`.
 - Cualquier otra rama → versión de prueba automática (`npx wrangler preview`):
   `https://<rama-con-guiones>-silenceclub.floral-snowflake-c31a.workers.dev/`
-- Última rama de trabajo: `claude/vibrant-goldberg-boqguz` (= `main`, 24 oct 2026) →
-  https://claude-vibrant-goldberg-boqguz-silenceclub.floral-snowflake-c31a.workers.dev/
+- Última rama de trabajo: `claude/carga-ligera` (= `main`, 24 oct 2026) →
+  https://claude-carga-ligera-silenceclub.floral-snowflake-c31a.workers.dev/
   Como ya está todo en `main`, un chat nuevo puede crear su rama desde `main`. (La remodelación de octubre 2026 se hizo en `claude/gracious-bohr-x2jrp1`.)
   Antes de empezar una rama nueva, partir de la última rama de trabajo si aún no está en `main`, no de `main`: así se perdió el menú una vez.
   Ramas antiguas solo de referencia (descartadas o ya dentro de `main`): `claude/happy-knuth-dgcy58`, `claude/nueva-estetica`, `claude/nueva-estetica-contraste`, `claude/intelligent-cannon-dipviu`, `claude/gallant-thompson-hyejgu`.
@@ -37,6 +37,7 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 - Volver atrás: Cloudflare → silenceclub → Implementaciones → ⋯ → Revertir.
 
 ### Lo último que pasó a `main` (octubre 2026, del más reciente al más antiguo)
+000. Rama `claude/carga-ligera` (Jorge notaba problemas de carga): las animaciones CSS se pausan fuera de pantalla (`.zz`, puesto por un `IntersectionObserver` sobre `main>section`, `article.area` y `.pj`, margen 120 px). Había ~40 animaciones infinitas corriendo siempre; en móvil simulado (CPU ×4) la CPU bajó del 82 % al 38 % en el hero y del 56 % al 12 % al final. Además, 12 px más de aire sobre "01 Aquí empieza todo" (margen superior de `.score`).
 00. Rama `claude/vibrant-goldberg-boqguz` (web más compacta, textos de Jorge): hero "Identifico oportunidades de mejora y las convierto en soluciones digitales." (también SEO) con preguntas nuevas; Servicio "¿Dónde está el potencial de tu negocio?" con el **Diagnóstico digital** compacto, "01 Aquí empieza todo" y el borde que nace en el medio punto; Áreas por resultado ("Vende mejor", "Decide con datos", "Comunica mejor tu valor") con ilustraciones nuevas; casos a medias con "Ver completo", "Leer el caso" en una línea, menos color, faldón de precio con tinte del área, fuera Fitz; panel de Marchica oscuro; Condado termina comprando en FEVER y Bela con zoom a los tratamientos; Seguimiento "La mejora no termina con el lanzamiento"; "Qué no voy a hacer" reducido; contacto con formulario. Limpieza: sin CSS ni JS sin uso, comentarios al día.
 0. Rama `claude/happy-knuth-dgcy58`: fuera "Si te falta alguna, este es tu sitio." y la pregunta de Booksy del hero; "Chat automático" → "Chatbot en WhatsApp"; el sector cambia antes (4,75 s y luego cada 4,5 s). Scoring rehecho como anillo de sonido ("Scoring digital"). Casos rediseñados (cabecera nueva, "Antes" primero, "Qué necesitaba" desplegable, URL en cápsula). Webs de Condado y Bela como vídeo en tablet (`img/vid/`). ¿Continuamos?: las dos marcas se atraen.
 1. *nightlife* se enciende con el mismo ritmo que *beauty*: 1,32 s tras empezar el cambio, con la palabra ya asentada (antes 1,07 s; Jorge lo veía precipitado). Al cargar la página sigue encendiéndose a los 0,9 s (ofrecido igualarlo; sin respuesta).
@@ -46,7 +47,7 @@ Concepto de marca: *"Primero, silencio."* Escuchar antes de proponer. La **líne
 5. **La remodelación entera** (descrita en "La web"): fuera "Dirección creativa y estratégica", las fases Inicio · Desarrollo · Desenlace, la sección Detalle/retícula y el filtro por sector de Proyectos. Lo de antes está en el historial: commit `e1f9e8a`.
 
 ### Estado (actualizar en cada paso a `main`)
-- `main` = rama `claude/vibrant-goldberg-boqguz` (ver `git log`). Precios "··· €" por definir. Ejemplos del panel de Marchica (Acciones / Aprendizajes) inventados a petición de Jorge.
+- `main` = rama `claude/carga-ligera` (ver `git log`). Precios "··· €" por definir. Ejemplos del panel de Marchica (Acciones / Aprendizajes) inventados a petición de Jorge.
 - Comprobación previa (rápida, a petición de Jorge): 7 anchos (320–1440) × claro/oscuro con todos los casos abiertos, sin errores JS, sin scroll horizontal y con todas las imágenes cargadas; ESLint sin variables sin uso; ninguna clase CSS sin uso. No se repitió la simulación de Safari antiguo. (El detector de "elementos fuera de pantalla" marca el panel de la demo de reservas, `.demo .panel`: está oculto a propósito dentro de su marco con `overflow:hidden`.)
 - Los cambios nuevos se hacen en una rama de pruebas y se vuelven a pasar.
 
@@ -100,6 +101,7 @@ Solo se publica `public/`. No meter nada sensible ahí.
 - **Precio**: "desde ··· €" en el pie de cada caso y "··· € / año" en el seguimiento (marcador **"··· €"** en `.amt`). El diagnóstico, "Free".
 - Contacto: "¿Qué te gustaría mejorar?" + "Cuéntame qué está funcionando, qué te está frenando y qué te gustaría conseguir. Analizaremos…". Formulario sencillo (`.cform`: nombre y negocio + "Cuéntame" con un ejemplo de qué escribir en el placeholder) que **abre el correo** del visitante con el mensaje escrito (`mailto:`, la web no tiene servidor). Después "¿Prefieres contactar directamente?" y los botones de email y teléfono.
 - Pie: logo vectorial + "Decisiones inteligentes para tu negocio". **Sin retícula** (quitados botón, tecla G y capa).
+- **Animaciones fuera de pantalla**: `.zz` pausa todas las animaciones CSS de lo que no se ve. Una animación infinita nueva tiene que ir dentro de una sección, un `article.area` o un `.pj` para pausarse.
 - Tipografías Google Fonts: Fraunces (serif) y Figtree (sans).
 - Colores: tokens en `:root` (`--niebla` fondo, `--papel`, `--tinta`, `--grafito`, `--linea`, `--violeta`, `--melocoton`).
   Modo oscuro: sigue al sistema salvo que el interruptor fuerce uno (`data-theme="light|dark"` en `<html>`). Negros profundos: fondo `#0B0A0C`, superficies `#141317`, secciones oscuras `#040405`. Cada regla oscura está dos veces: dentro de `@media (prefers-color-scheme:dark)` con el prefijo `:root:not([data-theme=light])` y fuera con `:root[data-theme=dark]`. Al añadir una regla oscura, ponerla en los dos sitios. En JS, el modo efectivo es `isDark()`, no `matchMedia` a secas.
