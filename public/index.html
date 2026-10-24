@@ -184,20 +184,24 @@ section.svc{padding-bottom:0}
 .svc-t{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(28px,3vw,42px);line-height:1.08;letter-spacing:-.022em;text-wrap:balance}
 .score{--sp:28px;grid-column:7/span 6;margin-top:clamp(56px,7vw,96px)}
 .score-c{margin:0;padding:24px var(--sp) 0;overflow:hidden;border:1px solid var(--linea);border-radius:16px;background:var(--papel);box-shadow:0 24px 50px -32px rgba(28,30,42,.3)}
-.score-h{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.score-k{display:block;font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--violeta)}
-.score-t{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin-top:8px;font-weight:600;font-size:19px;letter-spacing:-.01em}
-.score-t em{padding:2px 9px;border:1px solid var(--linea);border-radius:999px;font:400 11.5px/1.4 var(--sans);font-style:normal;color:var(--grafito)}
-/* Nota global: un anillo que se completa hasta la nota */
-.score-g{position:relative;flex:none;display:grid;place-items:center;width:66px;height:66px}
-.score-g svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
-.g-bg{fill:none;stroke:var(--linea);stroke-width:5}
-.g-fg{fill:none;stroke:var(--violeta);stroke-width:5;stroke-linecap:round;stroke-dasharray:42 100;transition:stroke-dasharray 1.4s cubic-bezier(.45,0,.55,1) .2s}
-.score.wait .g-fg{stroke-dasharray:0 100}
-.score-g b{font:600 18px/1 var(--sans);letter-spacing:-.02em}
-.score-g small{font-size:10px;font-weight:500;color:var(--grafito)}
-.score-l{margin:14px 0 0;padding:0;list-style:none}
-.score-l li{display:grid;grid-template-columns:1fr auto 118px;align-items:center;gap:14px;min-height:44px;padding:6px 0;border-top:1px solid var(--linea);font-size:15px;line-height:1.35}
+/* Cabecera: etiqueta con el medio punto y el título en Fraunces */
+.score-k{display:flex;align-items:center;gap:8px;font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--violeta)}
+.score-k svg{width:9px;height:9px}
+.score-k em{margin-left:auto;padding:3px 9px;border:1px solid var(--linea);border-radius:999px;font:400 11px/1.3 var(--sans);font-style:normal;letter-spacing:0;text-transform:none;color:var(--grafito)}
+.score-t{margin-top:12px;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:380;font-size:clamp(24px,2.2vw,30px);line-height:1.1;letter-spacing:-.02em}
+/* Nota global: la cifra y, al lado, la línea de sonido: lo que ya funciona suena; lo que falta, aún en silencio */
+.score-g{display:flex;align-items:flex-end;gap:18px;margin-top:20px;padding:16px 0 18px;border-top:1px solid var(--linea)}
+.g-n{flex:none;display:flex;align-items:baseline;gap:2px;font-family:var(--serif);font-variation-settings:"SOFT" 100;line-height:.9}
+.g-n b{font-weight:340;font-size:clamp(48px,4.6vw,64px);letter-spacing:-.04em}
+.g-n span{font-size:17px;color:var(--grafito)}
+.g-w{flex:1;min-width:0;padding-bottom:4px}
+.g-line{display:block;width:100%;height:34px;overflow:visible}
+.g-on{fill:none;stroke:var(--violeta);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.g-off{fill:none;stroke:var(--grafito);stroke-opacity:.45;stroke-width:1.2;stroke-dasharray:2 4}
+.g-cap{display:flex;justify-content:space-between;gap:10px;margin-top:6px;font-size:11px;color:var(--grafito)}
+.g-cap span:first-child{color:var(--violeta)}
+.score-l{margin:0;padding:0;list-style:none}
+.score-l li{display:grid;grid-template-columns:1fr auto 118px;align-items:center;gap:14px;min-height:42px;padding:5px 0;border-top:1px solid var(--linea);font-size:15px;line-height:1.35}
 /* Puntuación con puntos: vacío, medio y lleno, como el punto del logo */
 .sds{display:inline-flex;flex:none;gap:6px;color:var(--tinta)}
 .sd{position:relative;width:11px;height:11px;border-radius:50%;border:1px solid currentColor}
@@ -205,21 +209,26 @@ section.svc{padding-bottom:0}
 .sd.h::after{clip-path:inset(0 0 0 50%)}
 .score.wait .sd::after{opacity:0}
 /* Veredicto de cada pregunta; donde hay una mejora digital clara, "Oportunidad" en violeta */
+.score-l li.is-op .q{color:var(--tinta)}
+.score-l li:not(.is-op) .q{color:var(--grafito)}
 .sv{justify-self:end;display:inline-flex;align-items:center;gap:5px;font:500 10.5px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--grafito);transition:opacity .5s,transform .5s cubic-bezier(.3,1.5,.45,1)}
 .sv.op{padding:5px 9px 5px 8px;border-radius:999px;background:rgba(107,79,214,.1);color:var(--violeta);transition-delay:1.7s}
-.sv svg,.score-sum svg,.free svg{flex:none;width:10px;height:10px;fill:currentColor}
+.sv svg,.score-sum svg{flex:none;width:10px;height:10px;fill:currentColor}
 .score.wait .sv.op{opacity:0;transform:scale(.8)}
 .score-sum{display:flex;align-items:center;gap:8px;margin-top:12px;font:500 13.5px/1.3 var(--sans);color:var(--violeta)}
 .score-sum svg{width:12px;height:12px}
 /* Pie de la tarjeta: en lugar de precio, "Free", en la misma franja con tinte violeta */
-.score-free{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px calc(-1*var(--sp)) 0;padding:13px var(--sp) 14px;border-top:1px solid var(--linea);background:rgba(107,79,214,.06);background:color-mix(in srgb,var(--violeta) 5%,var(--niebla));font-size:14px;color:var(--grafito)}
-.score-free b{font-weight:500;color:var(--tinta)}
-/* Free: una insignia violeta que destella al completarse el scoring */
-.free{position:relative;flex:none;display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 16px 0 13px;overflow:hidden;border-radius:999px;background:var(--violeta);background:linear-gradient(135deg,var(--violeta),#9479F2);color:#fff;font:400 19px/1 var(--serif);font-variation-settings:"SOFT" 100;letter-spacing:-.01em;box-shadow:0 10px 22px -12px rgba(107,79,214,.9)}
-.free::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.6) 50%,transparent 70%);transform:translateX(-130%)}
-.score:not(.wait) .free::after{animation:glim 1.1s ease 2s both}
+/* Pie: el resguardo de una invitación (línea perforada con muescas a los lados) y "Free" en cursiva */
+.score-free{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;margin:16px calc(-1*var(--sp)) 0;padding:16px var(--sp) 18px;border-top:1px dashed var(--linea);background:rgba(107,79,214,.05);background:color-mix(in srgb,var(--violeta) 5%,var(--papel))}
+.score-free::before,.score-free::after{content:"";position:absolute;top:-10px;width:20px;height:20px;border-radius:50%;background:var(--niebla);border:1px solid var(--linea)}
+.score-free::before{left:-11px}.score-free::after{right:-11px}
+.tk-t{font:600 14px/1.2 var(--sans);color:var(--tinta)}
+.tk-s{margin-top:3px;font-size:13px;color:var(--grafito)}
+.free{position:relative;flex:none;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-weight:400;font-size:clamp(34px,3vw,42px);line-height:1;letter-spacing:-.02em;color:var(--violeta)}
+.free::after{content:"";position:absolute;left:-4%;right:-4%;bottom:-.08em;height:.08em;border-radius:2px;background:currentColor;opacity:.35;transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.3,.8,.3,1) 1.9s}
+.score:not(.wait) .free::after{transform:scaleX(1)}
 .amt{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:20px;letter-spacing:-.01em;color:var(--tinta)}
-@media (max-width:600px){.score{--sp:18px}.score-c{padding-top:20px}.score-l li{grid-template-columns:1fr auto auto;gap:10px}.sv{display:none}.sv.op{display:inline-flex;padding:5px;font-size:0;gap:0}.score-free{flex-wrap:wrap}}
+@media (max-width:600px){.score{--sp:18px}.score-c{padding-top:20px}.score-l li{grid-template-columns:1fr auto auto;gap:10px}.sv{display:none}.sv.op{display:inline-flex;padding:5px;font-size:0;gap:0}.g-cap span:last-child{text-align:right}}
 
 /* Áreas: tres bloques de trabajo, cada uno con su color, su icono y su ilustración (se entienden sin leer).
    La cinta de sonido hace de borde superior del bloque. Títulos en sans: más producto, menos página */
@@ -333,7 +342,6 @@ section.areas{padding-top:clamp(96px,12vw,152px)}
   :root:not([data-theme=light]) .sp{fill:#FFE6EE;filter:drop-shadow(0 0 .08em rgba(255,170,200,.95))}
   :root:not([data-theme=light]) .sw[data-k=n] i{text-shadow:0 0 .35em rgba(190,140,255,.35)}
   :root:not([data-theme=light]) .sv.op{background:rgba(160,140,245,.14)}
-  :root:not([data-theme=light]) .free{background:linear-gradient(135deg,#A08CF5,#C3B4FF);color:#0B0A0C;box-shadow:0 10px 24px -12px rgba(160,140,245,.7)}
 }
 :root[data-theme=dark] .area{--ac:#4FD196;--ac-t:rgba(79,209,150,.1);--ac-b:rgba(79,209,150,.3)}
 :root[data-theme=dark] .area-datos{--ac:var(--violeta);--ac-t:rgba(160,140,245,.1);--ac-b:rgba(160,140,245,.3)}
@@ -349,28 +357,34 @@ section.areas{padding-top:clamp(96px,12vw,152px)}
 :root[data-theme=dark] .sp{fill:#FFE6EE;filter:drop-shadow(0 0 .08em rgba(255,170,200,.95))}
 :root[data-theme=dark] .sw[data-k=n] i{text-shadow:0 0 .35em rgba(190,140,255,.35)}
 :root[data-theme=dark] .sv.op{background:rgba(160,140,245,.14)}
-:root[data-theme=dark] .free{background:linear-gradient(135deg,#A08CF5,#C3B4FF);color:#0B0A0C;box-shadow:0 10px 24px -12px rgba(160,140,245,.7)}
 
-/* ¿Continuamos?: el seguimiento, en otra superficie (tinte violeta), con el año como línea de sonido */
+/* ¿Continuamos?: el seguimiento, con el ciclo hecho año. Aplicamos · Medimos · Mejoramos llevan el medio punto de la
+   marca (vacío, medio, lleno) y la línea del año marca cada mes con el punto de su fase: el ciclo se repite cada trimestre */
 section.more{padding-top:0}
-.beyond{grid-column:2/span 10;position:relative;display:grid;grid-template-columns:auto 1fr;gap:16px 24px;padding:clamp(24px,3vw,40px);border-radius:20px;border:1px solid rgba(107,79,214,.28);border:1px solid color-mix(in srgb,var(--violeta) 28%,transparent);background:rgba(107,79,214,.05);background:color-mix(in srgb,var(--violeta) 5%,var(--papel))}
-.beyond-i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(107,79,214,.14);background:color-mix(in srgb,var(--violeta) 14%,transparent);color:var(--violeta)}
-.beyond-i svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.beyond h2{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(30px,3vw,42px);line-height:1.02;letter-spacing:-.025em}
+.beyond{grid-column:2/span 10;position:relative;display:grid;gap:26px;padding:clamp(28px,3.4vw,48px);border-radius:22px;border:1px solid rgba(107,79,214,.28);border:1px solid color-mix(in srgb,var(--violeta) 28%,transparent);background:rgba(107,79,214,.05);background:color-mix(in srgb,var(--violeta) 5%,var(--papel))}
+.by-h{display:flex;align-items:flex-end;justify-content:space-between;gap:24px 40px;flex-wrap:wrap}
+.beyond .eyebrow{margin-bottom:16px;color:var(--violeta)}
+.beyond .eyebrow svg{color:var(--violeta)}
+.beyond h2{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:340;font-size:clamp(34px,3.6vw,50px);line-height:1;letter-spacing:-.025em}
+.by-p{margin-top:12px;max-width:30em;font-size:clamp(16px,1.3vw,18px);line-height:1.5;color:var(--grafito)}
+.cyc{display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px;margin:0;padding:0;list-style:none;font:600 clamp(16px,1.4vw,19px)/1 var(--sans);letter-spacing:-.02em}
+.cyc li{display:inline-flex;align-items:center;gap:9px}
+.cyc-c{font:500 11.5px/1 var(--sans)!important;letter-spacing:.16em!important;text-transform:uppercase;color:var(--violeta)}
+.cyc-c svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 /* Silence Club ~ tu marca: la misma sintonía que en el área de cliente, invitando a ser partners */
-.duo{display:flex;align-items:center;gap:14px;margin-top:16px}
-@media (max-width:600px){.msg{max-width:90%}.duo{gap:10px}.duo-sc{height:28px!important}.duo-br{width:44px!important}.duo-you{height:34px!important;padding:0 12px!important}}
+.duo{display:flex;align-items:center;gap:14px;flex:none}
 .duo-sc{flex:none;height:34px;width:auto;overflow:visible;fill:currentColor}
 .duo-sc .ln{fill:none;stroke:currentColor;stroke-width:1.6;opacity:.85}
 .duo-sc .db{opacity:.45}
 .duo-br{flex:none;width:56px;height:33px;overflow:visible}
 .duo-br path{fill:none;stroke:var(--violeta);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
 .duo-you{flex:none;display:inline-grid;place-items:center;height:38px;padding:0 16px;border:1px dashed var(--grafito);border-radius:10px;font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--grafito)}
-.beyond div>p:last-child{margin-top:12px;max-width:34em;font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--grafito)}
-/* Aplicamos + Medimos + Mejoramos, y vuelta a empezar */
-.loop{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font:600 clamp(19px,1.8vw,25px)/1.2 var(--sans);letter-spacing:-.03em}
-.loop i{font-style:normal;color:var(--violeta)}
-.loop span{margin-left:4px;font:500 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--violeta)}
+@media (max-width:600px){.duo{gap:10px}.duo-sc{height:28px}.duo-br{width:44px}.duo-you{height:34px;padding:0 12px}}
+/* El medio punto: vacío (aplicamos), medio (medimos), lleno (mejoramos) */
+.cd{flex:none;display:inline-block;width:11px;height:11px;border-radius:50%;border:1.3px solid var(--violeta)}
+.cd.h{background:linear-gradient(90deg,transparent 50%,var(--violeta) 50%)}
+.cd.f{background:var(--violeta)}
+.yr li .cd{display:block;width:8px;height:8px;margin:0 auto 7px;border-width:1px}
 /* El año como línea de sonido: al llegar suena (ondas que se agitan) y, al calmarse, se queda en reposo con una
    montañita en cada mes. Entonces aparecen, suaves, las iniciales de los meses y se entiende que es el año */
 .yr{grid-column:1/-1;margin:0;color:var(--violeta)}
@@ -382,7 +396,8 @@ section.more{padding-top:0}
 .yr.wait li{opacity:0;transform:translateY(-4px)}
 @media (max-width:420px){.yr ol{font-size:9.5px;letter-spacing:.02em}}
 @media (max-width:900px){
-  .beyond{grid-column:1/-1;grid-template-columns:1fr}
+  .beyond{grid-column:1/-1}
+  .by-h{align-items:flex-start}
 }
 
 /* Área de cliente (Marchica): una miniatura fiel a la real, con su panel en tiempo real; las cifras, desenfocadas */
@@ -1005,17 +1020,21 @@ a.shot:hover .bar span{color:var(--tinta)}
     <div class="score">
       <figure class="score-c">
         <figcaption class="score-h">
-          <span><span class="score-k">Diagnóstico digital</span><span class="score-t">Scoring de tu negocio <em>Ejemplo</em></span></span>
-          <span class="score-g" role="img" aria-label="Nota global: 2,1 de 5"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="g-bg" cx="32" cy="32" r="27"/><circle class="g-fg" cx="32" cy="32" r="27" pathLength="100"/></svg><b>2,1<small>/5</small></b></span>
+          <p class="score-k"><svg viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg>Diagnóstico digital<em>Ejemplo</em></p>
+          <p class="score-t">Scoring de tu negocio</p>
         </figcaption>
+        <div class="score-g" role="img" aria-label="Nota global: 2,1 de 5">
+          <p class="g-n"><b>2,1</b><span>/5</span></p>
+          <div class="g-w"><svg class="g-line" preserveAspectRatio="none"><path class="g-on"/><path class="g-off"/></svg><p class="g-cap"><span>Lo que ya suena</span><span>Lo que aún está en silencio</span></p></div>
+        </div>
         <ul class="score-l">
-          <li><span class="q">¿Marca?</span><span class="sds" role="img" aria-label="2,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i></span><span class="sv">Mejorable</span></li>
-          <li><span class="q">¿Cómo captas clientes ahora?</span><span class="sds" role="img" aria-label="3,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i></span><span class="sv">Bien</span></li>
-          <li><span class="q">¿Cómo lo mides?</span><span class="sds" role="img" aria-label="1,5 de 5"><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i></span><span class="sv op"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>Oportunidad</span></li>
-          <li><span class="q">¿Tienes paneles en tiempo real?</span><span class="sds" role="img" aria-label="1 de 5"><i class="sd f"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i></span><span class="sv op"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>Oportunidad</span></li>
+          <li><span class="q">¿Marca?</span><span class="sds" role="img" aria-label="2,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i></span><span class="sv"></span></li>
+          <li><span class="q">¿Cómo captas clientes ahora?</span><span class="sds" role="img" aria-label="3,5 de 5"><i class="sd f"></i><i class="sd f"></i><i class="sd f"></i><i class="sd h"></i><i class="sd"></i></span><span class="sv"></span></li>
+          <li class="is-op"><span class="q">¿Cómo lo mides?</span><span class="sds" role="img" aria-label="1,5 de 5"><i class="sd f"></i><i class="sd h"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i></span><span class="sv op"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>Oportunidad</span></li>
+          <li class="is-op"><span class="q">¿Tienes paneles en tiempo real?</span><span class="sds" role="img" aria-label="1 de 5"><i class="sd f"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i><i class="sd"></i></span><span class="sv op"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>Oportunidad</span></li>
         </ul>
         <p class="score-sum"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>2 mejoras digitales detectadas</p>
-        <p class="score-free"><span>Tu scoring, <b>sin coste ni compromiso.</b></span><span class="free"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8l1.2 3.9L11.2 6 7.2 7.3 6 11.2 4.8 7.3.8 6l4-1.3z"/></svg>Free</span></p>
+        <div class="score-free"><div><p class="tk-t">Tu primer scoring</p><p class="tk-s">Sin coste ni compromiso.</p></div><b class="free">Free</b></div>
       </figure>
     </div>
   </div>
@@ -1204,14 +1223,16 @@ a.shot:hover .bar span{color:var(--tinta)}
 <section class="block more" id="continuamos">
   <div class="wrap grid">
     <aside class="beyond ac-d" aria-labelledby="beyond-t">
-      <span class="beyond-i" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M16.5 10a6.5 6.5 0 1 1-1.9-4.6"/><path d="M15 2.5v3.2h-3.2"/></svg></span>
-      <div>
-        <h2 id="beyond-t">¿Continuamos?</h2>
+      <div class="by-h">
+        <div>
+          <p class="eyebrow"><svg viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="none" stroke="currentColor" stroke-width="1"/><path d="M5 .6a4.4 4.4 0 0 1 0 8.8z" fill="currentColor"/></svg>Seguimiento anual</p>
+          <h2 id="beyond-t">¿Continuamos?</h2>
+          <p class="by-p">Después de crear soluciones digitales, podemos continuar con un seguimiento.</p>
+        </div>
         <p class="duo" role="img" aria-label="Silence Club y tu marca, como partners"><svg class="duo-sc" viewBox="0 0 362 97" aria-hidden="true"><use href="#sc-s0"/><use href="#sc-s1"/><use href="#sc-s2"/><use href="#sc-s3"/><use href="#sc-s4"/><use href="#sc-s5"/><use href="#sc-s6"/><path class="ln" d="M0 48H358"/><use href="#sc-c0"/><use href="#sc-c1"/><use href="#sc-c2"/><use href="#sc-c3"/><circle class="db" cx="351" cy="86.5" r="9"/><path d="M351 77.5a9 9 0 0 1 0 18z"/></svg><svg class="duo-br" viewBox="0 0 34 20"><path d="M0 10.00L1 10.00L2 10.00L3 10.00L4 10.00L5 10.00L6 10.00L7 10.00L8 10.00L9 10.00L10 9.97L11 9.67L12 8.37L13 6.00L14 5.13L15 7.46L16 11.21L17 14.44L18 14.86L19 12.29L20 9.48L21 7.96L22 8.15L23 9.19L24 9.82L25 9.98L26 10.00L27 10.00L28 10.00L29 10.00L30 10.00L31 10.00L32 10.00L33 10.00L34 10.00"/></svg><span class="duo-you">Tu marca</span></p>
-        <p>Después de crear soluciones digitales, podemos continuar con un seguimiento.</p>
       </div>
-      <p class="loop">Aplicamos <i>+</i> Medimos <i>+</i> Mejoramos.<span>Continuo.</span></p>
-      <div class="yr" aria-hidden="true"><svg viewBox="0 0 1200 30" preserveAspectRatio="none"><path d="M0 22H1200"/></svg><ol><li style="--d:0.00s">ENE</li><li style="--d:0.06s">FEB</li><li style="--d:0.12s">MAR</li><li style="--d:0.18s">ABR</li><li style="--d:0.24s">MAY</li><li style="--d:0.30s">JUN</li><li style="--d:0.36s">JUL</li><li style="--d:0.42s">AGO</li><li style="--d:0.48s">SEP</li><li style="--d:0.54s">OCT</li><li style="--d:0.60s">NOV</li><li style="--d:0.66s">DIC</li></ol></div>
+      <ul class="cyc" aria-label="El ciclo, todo el año: aplicamos, medimos y mejoramos, en continuo"><li><i class="cd e"></i>Aplicamos</li><li><i class="cd h"></i>Medimos</li><li><i class="cd f"></i>Mejoramos</li><li class="cyc-c"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.2 8a5.2 5.2 0 1 1-1.5-3.7"/><path d="M12 1.8v2.6H9.4"/></svg>Continuo</li></ul>
+      <div class="yr" aria-hidden="true"><svg viewBox="0 0 1200 30" preserveAspectRatio="none"><path d="M0 22H1200"/></svg><ol><li style="--d:0.00s"><i class="cd e"></i>ENE</li><li style="--d:0.06s"><i class="cd h"></i>FEB</li><li style="--d:0.12s"><i class="cd f"></i>MAR</li><li style="--d:0.18s"><i class="cd e"></i>ABR</li><li style="--d:0.24s"><i class="cd h"></i>MAY</li><li style="--d:0.30s"><i class="cd f"></i>JUN</li><li style="--d:0.36s"><i class="cd e"></i>JUL</li><li style="--d:0.42s"><i class="cd h"></i>AGO</li><li style="--d:0.48s"><i class="cd f"></i>SEP</li><li style="--d:0.54s"><i class="cd e"></i>OCT</li><li style="--d:0.60s"><i class="cd h"></i>NOV</li><li style="--d:0.66s"><i class="cd f"></i>DIC</li></ol></div>
       <p class="pj-price beyond-price"><svg class="ok" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span class="pj-as"><span>Seguimiento</span></span><span class="pj-from"><b class="amt">··· €</b> / año</span></p>
     </aside>
   </div>
@@ -1497,6 +1518,27 @@ a.shot:hover .bar span{color:var(--tinta)}
     [].forEach.call(sc.querySelectorAll('.sd.f,.sd.h'),function(d,i){d.style.setProperty('--d',(.15+i*.22).toFixed(2)+'s');});
     var sio=new IntersectionObserver(function(en){if(en[0].isIntersecting){sc.classList.remove('wait');sio.disconnect();}},{rootMargin:'0px 0px -30% 0px',threshold:.5});
     sio.observe(sc.querySelector('.score-c'));
+  }
+  /* Nota global: la línea vibra al verla y se calma; el tramo de lo que ya funciona (2,1/5) sigue sonando suave,
+     el resto queda en silencio */
+  var gsv=document.querySelector('.g-line');
+  if(gsv){
+    var gon=gsv.querySelector('.g-on'),goff=gsv.querySelector('.g-off'),gq=2.1/5,gt0=null,gvis=false,grun=false,gW=0;
+    var gdraw=function(now){
+      var w=gsv.getBoundingClientRect().width||300,H=34,m=H/2,t=gt0===null?0:(now-gt0)/1000,k=reduce?0:Math.max(0,1-t/2.2),A=9*k*k,cut=w*gq,d1='',d2='';
+      if(w!==gW){gW=w;gsv.setAttribute('viewBox','0 0 '+w.toFixed(1)+' '+H);}
+      for(var x=0;x<=w;x+=2){
+        var n=Math.sin(x*.09-t*13)*.6+Math.sin(x*.21+t*19)*.4,e=Math.sin(Math.PI*x/w),on=x<=cut,
+            live=on?(reduce?3:3.2)*Math.sin(Math.PI*x/cut)*(Math.sin(x*.16-t*2.4)*.7+Math.sin(x*.37+t*3.1)*.3):0,
+            y=m+A*e*n+live;
+        if(on)d1+=(d1?'L':'M')+x.toFixed(1)+' '+y.toFixed(2);
+        if(x>=cut-2)d2+=(d2?'L':'M')+x.toFixed(1)+' '+y.toFixed(2);
+      }
+      gon.setAttribute('d',d1);goff.setAttribute('d',d2);
+    };
+    var gloop=function(){if(!gvis){grun=false;return;}gdraw(performance.now());requestAnimationFrame(gloop);};
+    gdraw(performance.now());window.addEventListener('resize',function(){gdraw(performance.now());});
+    if(!reduce&&'IntersectionObserver' in window)new IntersectionObserver(function(en){gvis=en[0].isIntersecting;if(gvis){if(gt0===null)gt0=performance.now();if(!grun){grun=true;requestAnimationFrame(gloop);}}},{threshold:.6}).observe(gsv);
   }
 
   var onTheme=function(){readInk();size();L.forEach(function(o){ldraw(o,lt(o));});};
