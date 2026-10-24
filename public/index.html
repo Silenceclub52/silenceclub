@@ -936,6 +936,8 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
   .hero{padding-top:calc(72px + 48px)}
   .hero h1{grid-column:1/-1}
 }
+/* Fuera de pantalla, las animaciones se paran (JS pone .zz): si no, gastan CPU y batería sin verse */
+.zz *,.zz *::before,.zz *::after{animation-play-state:paused!important}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none!important;animation:none!important}
@@ -1419,6 +1421,9 @@ a.shot:hover .shot-url svg{transform:translate(1.5px,-1.5px)}
 <script>
 (function(){
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* Pausa las animaciones CSS de lo que no está a la vista (.zz) */
+  if('IntersectionObserver' in window){var zo=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('zz',!e.isIntersecting);});},{rootMargin:'120px 0px'});
+    [].forEach.call(document.querySelectorAll('main>section,article.area,.pj'),function(el){zo.observe(el);});}
   /* Línea del silencio dentro de los CTA */
   if(!reduce)[].forEach.call(document.querySelectorAll('.btn.solid'),function(b){
     var tx=document.createElement('span');tx.className='btn-txt';while(b.firstChild)tx.appendChild(b.firstChild);b.appendChild(tx);
